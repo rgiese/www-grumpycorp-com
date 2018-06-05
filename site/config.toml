@@ -5,10 +5,15 @@ title = "GrumpyCorp Heavy Industries"
 
 theme = "hugo-theme-dopetrope"
 
+enableEmoji = true
+
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details: 
 # https://gohugo.io/getting-started/configuration/#toml-configuration
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+
+[params]
+    author = "Robin Giese"
 
 [params.portfolio]
     title = "My Portfolio"

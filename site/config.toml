@@ -3,7 +3,24 @@ languageCode = "en-us"
 languageLang = "en"
 title = "GrumpyCorp Heavy Industries"
 
+theme = "hugo-theme-dopetrope"
+
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details: 
 # https://gohugo.io/getting-started/configuration/#toml-configuration
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+
+[params.portfolio]
+    title = "My Portfolio"
+    foldername = "portfolio"
+    findoutmoretext = "Find out more"
+
+[params.blog]
+    title = "The Blog"
+    viewalltext = "View All"
+    foldername = "blog"
+
+
+#[params.settings]
+#    googleanalytics = "UA-113904582-2"
+#    disqus = "hugo-dopetrope"

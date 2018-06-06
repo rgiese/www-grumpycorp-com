@@ -1,0 +1,60 @@
+<!-- Footer -->
+<div id="footer-wrapper">
+    <section id="footer" class="container">
+        <div class="row">
+            {{ partial "footer/recentposts.html" . }}
+            <div class="4u 12u(mobile)">
+                <section>
+                    {{ with index .Site.Data.footer.content.sections 1 }}
+                    <header>
+                        <h2>{{ .title }}</h2>
+                    </header>
+                    <a href="{{ .imagelink }}" class="image featured"><img src="{{ .Site.BaseURL }}{{ .imageurl }}" alt="" /></a>
+                    <p>
+                        {{ .description }}
+                    </p>
+                    <footer>
+                        <a href="{{ .buttonlink }}" class="button">{{ .buttontext }}</a>
+                    </footer>
+                    {{ end }}
+                </section>
+            </div>
+        </div>
+        <div id="contact" class="row">
+            <div class="4u 12u(mobile)">
+                <section>
+                    <header>
+                        <h2>{{ (index .Site.Data.footer.content.sections 2).title }}</h2>
+                    </header>
+                    <ul class="divided">
+                        {{ range .Site.Data.footer.links.left.links }}
+                        <li><a href="{{ .url }}">{{ .text }}</a></li>
+                        {{ end }}
+                    </ul>
+                </section>
+            </div>
+            <div class="4u 12u(mobile)">
+                <section>
+                    <header>
+                        <h2>{{ (index .Site.Data.footer.content.sections 3).title }}</h2>
+                    </header>
+                    <ul class="divided">
+                        {{ range .Site.Data.footer.links.right.links }}
+                        <li><a href="{{ .url }}">{{ .text }}</a></li>
+                        {{ end }}
+                    </ul>
+                </section>
+            </div>
+            <div class="4u 12u(mobile)">
+                <section>
+                    <header>
+                        <h2>{{ (index .Site.Data.footer.content.sections 4).title }}</h2>
+                    </header>
+                    {{ partial "footer/social.html" . }}
+                    {{ partial "footer/contact.html" . }}
+                </section>
+            </div>
+        </div>
+        {{ partial "footer/copyright.html" . }}
+    </section>
+</div>

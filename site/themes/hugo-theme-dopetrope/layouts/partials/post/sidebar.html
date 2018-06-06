@@ -1,0 +1,30 @@
+{{ $sidebar := .Site.Data.sidebar.content }}
+{{ $sidebarsection1 := index $sidebar.sections 0 }}
+{{ $sidebarsection2 := index $sidebar.sections 1 }}
+<!-- Sidebar -->
+<section class="box">
+    {{ if $sidebarsection1.image }}
+    <a href="{{ $sidebarsection1.imagelink }}" class="image featured"><img src="{{ .Site.BaseURL }}{{ $sidebarsection1.image }}" alt="" /></a>
+    {{ end }}
+    <header>
+        <h3>{{ $sidebarsection1.title }}</h3>
+    </header>
+    <p>{{ $sidebarsection1.description }}</p>
+    <footer>
+        <a href="{{ $sidebarsection1.buttonlink }}" class="button alt">{{ $sidebarsection1.buttontext }}</a>
+    </footer>
+</section>
+<section class="box">
+    <header>
+        <h3>{{ $sidebarsection2.title }}</h3>
+    </header>
+    <p>{{ $sidebarsection2.description }}</p>
+    <ul class="divided">
+        {{ range first 4 (where .Site.Pages "Type" .Site.Params.Blog.foldername) }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ end }}
+    </ul>
+    <footer>
+        <a href="{{ $sidebarsection2.buttonlink }}" class="button alt">{{ $sidebarsection2.buttontext }}</a>
+    </footer>
+</section>

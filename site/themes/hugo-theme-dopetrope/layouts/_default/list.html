@@ -1,0 +1,44 @@
+{{ define "main" }}
+	<div id="page-wrapper">
+
+		<!-- Header -->
+			<div id="header-wrapper">
+				<div id="header">
+
+					{{ partial "logo.html" . }}
+					{{ partial "nav.html" . }}
+
+				</div>
+			</div>
+
+						<!-- Main -->
+			<div id="main-wrapper">
+				<div class="container">
+
+					{{ $paginator := .Paginate (where .Data.Pages "Type" .Site.Params.Blog.foldername) }}
+					{{ partial "blog.html" (dict "title" .Site.Params.Blog.title "paginator" $paginator) }}
+
+					<footer>
+						<ul class="actions" style="text-align: center">
+							{{ if $paginator.HasPrev }}
+							<li><a href="{{ .Site.BaseURL }}{{ $paginator.Prev.URL }}" class="button big">Prev</a></li>
+							{{ end }}
+							{{ if $paginator.HasNext }}
+							<li><a href="{{ .Site.BaseURL }}{{ $paginator.Next.URL }}" class="button alt big">Next</a></li>
+							{{ end }}
+						</ul>
+					</footer>
+
+				</div>
+			</div>
+
+			{{ partial "footer/index.html" . }}
+
+	</div>
+
+	{{ partial "scripts/index.html" . }}
+	{{ if .Site.Params.Settings.disqus }}
+	<script id="dsq-count-scr" src="//{{ .Site.Params.Settings.disqus }}.disqus.com/count.js" async></script>
+	{{ end }}
+		
+{{ end }}

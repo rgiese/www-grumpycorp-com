@@ -1,0 +1,18 @@
+<div class="8u 12u(mobile)">
+    <section>
+        {{ with index .Site.Data.footer.content.sections 0 }}
+        <header>
+            <h2>{{ .title }}</h2>
+        </header>
+        {{ end }}
+        <ul class="dates">
+            {{ range first 5 (where .Site.Pages "Type" .Site.Params.Blog.foldername) }}
+            <li>
+                <span class="date">{{ .Date.Format "Jan" }} <strong>{{ .Date.Format "_2" }}</strong></span>
+                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                <p>{{ .Description }}</p>
+            </li>
+            {{ end }}
+        </ul>
+    </section>
+</div>

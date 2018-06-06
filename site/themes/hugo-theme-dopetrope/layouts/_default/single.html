@@ -1,0 +1,45 @@
+{{ define "main" }}
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<div id="header-wrapper">
+			<div id="header">
+
+				{{ partial "logo.html" . }}
+				{{ partial "nav.html" . }}
+
+			</div>
+		</div>
+
+		<!-- Main -->
+		<div id="main-wrapper">
+			<div class="container">
+				{{ if and (or (eq .Site.Data.sidebar.content.position "left") (eq .Site.Data.sidebar.content.position "right")) (not (eq .Params.hidesidebar true)) }}
+				<div class="row">
+					{{ if eq .Site.Data.sidebar.content.position "left" }}
+					<div class="4u 12u(mobile)">
+						{{ partial "post/sidebar" . }}
+					</div>
+					{{ end }}
+					<div class="8u 12u(mobile)">
+						{{ partial "post/content.html" . }}
+					</div>
+					{{ if eq .Site.Data.sidebar.content.position "right" }}
+					<div class="4u 12u(mobile)">
+						{{ partial "post/sidebar" . }}
+					</div>
+					{{ end }}
+				</div>
+				{{ else }}
+				{{ partial "post/content.html" . }}
+				{{ end }}
+			</div>
+		</div>
+
+		{{ partial "footer/index.html" . }}
+
+	</div>
+
+	{{ partial "scripts/index.html" . }}
+
+{{ end }}

@@ -3,8 +3,6 @@ languageCode = "en-us"
 languageLang = "en"
 title = "GrumpyCorp Heavy Industries"
 
-theme = "hugo-theme-dopetrope"
-
 enableEmoji = true
 
 # RSS, categories and tags disabled for an easy start

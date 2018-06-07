@@ -4,7 +4,7 @@
         <h1>GrumpyCorp</h1>
         <h2>Heavy Industries</h2>
 
-        <div class="card-columns text-left mt-4">
+        <div class="card-columns mt-4">
             {{ $blogPaginator := .Paginate (where .Data.Pages "Type" "post") }}
             {{ range $blogPaginator.Pages }}
                 {{ partial "index-card.html" . }}

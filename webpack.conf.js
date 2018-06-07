@@ -18,6 +18,8 @@ export default {
     ]
   },
 
+  mode: 'production',
+  
   plugins: [
     new webpack.ProvidePlugin({
       "fetch": "imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch"
@@ -25,13 +27,16 @@ export default {
   ],
 
   context: path.join(__dirname, "src"),
+
   entry: {
     app: ["./js/app"]
   },
+
   output: {
     path: path.join(__dirname, "dist"),
     publicPath: "/",
     filename: "[name].js"
   },
+
   externals:  [/^vendor\/.+\.js$/]
 };

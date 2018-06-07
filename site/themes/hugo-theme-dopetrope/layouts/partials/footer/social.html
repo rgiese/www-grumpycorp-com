@@ -1,19 +1,22 @@
 <ul class="social">
     {{ with .Site.Data.footer.links.social }}
+    {{ if .github }}
+    <li><a class="icon fab fa-github" href="{{ .github }}"><span class="label">GitHub</span></a></li>
+    {{ end }}
     {{ if .linkedin }}
-    <li><a class="icon fa-linkedin" href="{{ .linkedin }}"><span class="label">LinkedIn</span></a></li>
+    <li><a class="icon fab fa-linkedin" href="{{ .linkedin }}"><span class="label">LinkedIn</span></a></li>
     {{ end }}
     {{ if .facebook }}
-    <li><a class="icon fa-facebook" href="{{ .facebook }}"><span class="label">Facebook</span></a></li>
+    <li><a class="icon fab fa-facebook" href="{{ .facebook }}"><span class="label">Facebook</span></a></li>
     {{ end }}
     {{ if .twitter }}
-    <li><a class="icon fa-twitter" href="{{ .twitter }}"><span class="label">Twitter</span></a></li>
+    <li><a class="icon fab fa-twitter" href="{{ .twitter }}"><span class="label">Twitter</span></a></li>
     {{ end }}
     {{ if .dribbble }}
-    <li><a class="icon fa-dribbble" href="{{ .dribbble }}"><span class="label">Dribbble</span></a></li>
+    <li><a class="icon fab fa-dribbble" href="{{ .dribbble }}"><span class="label">Dribbble</span></a></li>
     {{ end }}
     {{ if .googleplus }}
-    <li><a class="icon fa-google-plus" href="{{ .googleplus }}"><span class="label">Google+</span></a></li>
+    <li><a class="icon fab fa-google-plus" href="{{ .googleplus }}"><span class="label">Google+</span></a></li>
     {{ end }}
     {{ end }}
 </ul>

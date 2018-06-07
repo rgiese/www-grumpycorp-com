@@ -1529,6 +1529,14 @@
 					line-height: 1.5em;
 				}
 
+				ul.social li a.fa-github {
+					background: #3a3a3a;
+				}
+
+					ul.social li a.fa-github:hover {
+						background: #525252;
+					}
+
 				ul.social li a.fa-facebook {
 					background: #3c5a98;
 				}

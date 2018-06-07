@@ -1907,8 +1907,8 @@
 				#header h1 {
 					color: #252122;
 					font-weight: 900;
-					font-size: 2.5em;
-					letter-spacing: -0.035em;
+					font-family: "charcuterie-block";
+					font-size: 4.5em;
 					margin: 0 0 1em 0;
 				}
 
@@ -2032,7 +2032,7 @@
 				}
 
 				#intro h2 {
-					font-size: 1.75em;
+					font-size: 2em;
 				}
 
 				#intro p {

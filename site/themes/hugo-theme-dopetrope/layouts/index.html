@@ -11,7 +11,7 @@
 
 					{{ partial "banner.html" . }}
 
-					{{ partial "intro.html" . }}
+					<!-- partial "intro.html" . -->
 
 				</div>
 			</div>
@@ -19,14 +19,7 @@
 		<!-- Main -->
 			<div id="main-wrapper">
 				<div class="container">
-					{{ $portfolioItems := where .Site.Pages "Type" .Site.Params.Portfolio.foldername }}
-					{{ if $portfolioItems }}
-					<div class="row">
-						<div class="12u">
-							{{ partial "portfolio.html" . }}
-						</div>
-					</div>
-					{{ end }}
+					<!-- Blog -->
 					{{ $blogPaginator := .Paginate (where .Data.Pages "Type" .Site.Params.Blog.foldername) 2 }}
 					{{ if $blogPaginator.TotalNumberOfElements }}
 					<div class="row">
@@ -39,6 +32,16 @@
 							<li><a href="{{ .Site.Params.Blog.foldername }}" class="button big">{{ .Site.Params.Blog.viewalltext }}</a></li>
 						</ul>
 					</footer>
+					{{ end }}
+
+					<!-- Portfolio -->
+					{{ $portfolioItems := where .Site.Pages "Type" .Site.Params.Portfolio.foldername }}
+					{{ if $portfolioItems }}
+					<div class="row">
+						<div class="12u">
+							{{ partial "portfolio.html" . }}
+						</div>
+					</div>
 					{{ end }}
 				</div>
 			</div>

@@ -1,10 +1,6 @@
 addresslines:
-- line: 'Untitled Incorporated'
+- line: 'Seattle, WA, USA'
 
-- line: '1234 Somewhere Road Suite'
+email: 'robin@grumpycorp.com'
 
-- line: 'Nashville, TN 00000-0000'
-
-email: 'someone@untitled.tld'
-
-phone: '(800) 000-0000'
+phone: '+1-317-762-4655'

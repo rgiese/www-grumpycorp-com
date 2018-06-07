@@ -1,5 +1,8 @@
 <ul class="social">
     {{ with .Site.Data.footer.links.social }}
+    {{ if .linkedin }}
+    <li><a class="icon fa-linkedin" href="{{ .linkedin }}"><span class="label">LinkedIn</span></a></li>
+    {{ end }}
     {{ if .facebook }}
     <li><a class="icon fa-facebook" href="{{ .facebook }}"><span class="label">Facebook</span></a></li>
     {{ end }}
@@ -8,9 +11,6 @@
     {{ end }}
     {{ if .dribbble }}
     <li><a class="icon fa-dribbble" href="{{ .dribbble }}"><span class="label">Dribbble</span></a></li>
-    {{ end }}
-    {{ if .linkedin }}
-    <li><a class="icon fa-linkedin" href="{{ .linkedin }}"><span class="label">LinkedIn</span></a></li>
     {{ end }}
     {{ if .googleplus }}
     <li><a class="icon fa-google-plus" href="{{ .googleplus }}"><span class="label">Google+</span></a></li>

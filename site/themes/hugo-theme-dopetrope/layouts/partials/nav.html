@@ -2,12 +2,7 @@
 <nav id="nav">
     <ul>
         <li class="current"><a href="{{ .Site.BaseURL }}">Home</a></li>
-        {{ $portfolioItems := where .Site.Pages "Type" .Site.Params.Portfolio.foldername }}
-		{{ if $portfolioItems }}
-        <li>
-            <a href="{{ .Site.BaseURL }}#portfolio">{{ .Site.Params.Portfolio.title }}</a>
-        </li>
-        {{ end }}
+
         {{ $blogPosts := first 5 (where .Site.Pages "Type" .Site.Params.Blog.foldername) }}
         {{ if $blogPosts }}
         <li>
@@ -19,6 +14,14 @@
             </ul>
         </li>
         {{ end }}
+
+        {{ $portfolioItems := where .Site.Pages "Type" .Site.Params.Portfolio.foldername }}
+		{{ if $portfolioItems }}
+        <li>
+            <a href="{{ .Site.BaseURL }}#portfolio">{{ .Site.Params.Portfolio.title }}</a>
+        </li>
+        {{ end }}
+
         <li><a href="{{ .Site.BaseURL }}#contact">Contact</a></li>
     </ul>
 </nav>

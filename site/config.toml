@@ -16,12 +16,12 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
     author = "Robin Giese"
 
 [params.portfolio]
-    title = "My Portfolio"
+    title = "Portfolio"
     foldername = "portfolio"
     findoutmoretext = "Find out more"
 
 [params.blog]
-    title = "The Blog"
+    title = "Blog"
     viewalltext = "View All"
     foldername = "blog"
 

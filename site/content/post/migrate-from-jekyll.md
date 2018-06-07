@@ -1,5 +1,6 @@
 ---
 title: "Migrate from Jekyll"
+description: "How to do foo"
 date: 2014-03-10
 tags: ["go", "golang", "hugo", "jekyll", "static-site-generator"]
 draft: false

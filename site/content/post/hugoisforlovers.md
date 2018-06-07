@@ -1,5 +1,6 @@
 ---
 title: "Getting Started with Hugo"
+description: "How to do do bar"
 date: 2014-04-02
 tags: ["go", "golang", "hugo", "development"]
 draft: false

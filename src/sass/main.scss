@@ -15,7 +15,13 @@ main {
     margin: auto;
     padding: 25px;
     flex: 1 0 auto;
-    max-width: 750px;
+    max-width: 95%;
+}
+
+@media screen and (min-width: 800px) {
+    main {
+        max-width: 750px;
+    }
 }
 
 :root {
@@ -37,18 +43,12 @@ main {
 
 .intro > h1 {
     color: #212121;
-    font-size: 12vh;
+    font-size: 12vmin;
 }
 
 .intro > h2 {
     color: #757575;
-    font-size: 3vmin;
-}
-
-.intro > .profile {
-    width: 10vh;
-    height: 10vh;
-    border-radius: 50%;
+    font-size: 6vmin;
 }
 
 /*apply accent colour to links*/

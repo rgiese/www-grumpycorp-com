@@ -6,6 +6,7 @@ html, body {
 
 body {
     display: flex;
+    padding-top: 5rem; /* For nav bar */
     text-align: center;
     flex-direction: column;
 }

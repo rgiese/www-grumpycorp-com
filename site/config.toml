@@ -39,16 +39,16 @@ enableEmoji = true
     weight = 1
 
 [[menu.icon]]
-    url = "https://github.com/rgiese/"
-    name = "fab fa-github"
-    weight = 2
-
-[[menu.icon]]
     url = "https://www.linkedin.com/in/robingiese"
     name = "fab fa-linkedin"
-    weight = 3
+    weight = 2
 
 [[menu.icon]]
     url = "https://www.imdb.com/name/nm8515322/"
     name = "fab fa-imdb"
+    weight = 3
+
+[[menu.icon]]
+    url = "https://github.com/rgiese/"
+    name = "fab fa-github"
     weight = 4

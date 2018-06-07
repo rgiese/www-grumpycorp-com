@@ -5,24 +5,55 @@ title = "GrumpyCorp Heavy Industries"
 
 enableEmoji = true
 
-# RSS, categories and tags disabled for an easy start
-# See configuration options for more details: 
-# https://gohugo.io/getting-started/configuration/#toml-configuration
-disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
-
 [params]
     author = "Robin Giese"
+    description = "-add description here-"
+    githubUsername = "rgiese"
+    accent = "blue"
+    showBorder = true
+    backgroundColor = "white"
+    font = "Raleway" # should match the name on Google Fonts!
+    highlight = true
+    highlightStyle = "solarized-dark"
+    highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
 
-[params.portfolio]
-    title = "Portfolio"
-    foldername = "portfolio"
-    findoutmoretext = "Find out more"
+##
+## Configure menu
+##
 
-[params.blog]
-    title = "Blog"
-    viewalltext = "View All"
-    foldername = "blog"
+[[menu.main]]
+    url = "/"
+    name = "Home"
+    weight = 1
 
+[[menu.main]]
+    url = "/post/"
+    name = "Posts"
+    weight = 2
 
-#[params.settings]
-#    googleanalytics = "UA-113904582-2"
+[[menu.main]]
+    url = "/project/"
+    name = "Projects"
+    weight = 3
+
+# Sidebar
+
+[[menu.icon]]
+    url = "mailto:robin@grumpycorp.com"
+    name = "envelope-o"
+    weight = 1
+
+[[menu.icon]]
+    url = "https://github.com/rgiese/"
+    name = "github"
+    weight = 2
+
+[[menu.icon]]
+    url = "https://www.linkedin.com/in/robingiese"
+    name = "linkedin"
+    weight = 3
+
+[[menu.icon]]
+    url = "https://www.imdb.com/name/nm8515322/?ref_=fn_al_nm_1"
+    name = "imdb"
+    weight = 4

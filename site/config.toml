@@ -49,6 +49,6 @@ enableEmoji = true
     weight = 3
 
 [[menu.icon]]
-    url = "https://www.imdb.com/name/nm8515322/?ref_=fn_al_nm_1"
+    url = "https://www.imdb.com/name/nm8515322/"
     name = "fab fa-imdb"
     weight = 4

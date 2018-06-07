@@ -1545,6 +1545,14 @@
 						background: #4c6aa8;
 					}
 
+				ul.social li a.fa-imdb {
+					background: #b49911;
+				}
+
+					ul.social li a.fa-imdb:hover {
+						background: #c9a90c;
+					}
+
 				ul.social li a.fa-twitter {
 					background: #2daae4;
 				}

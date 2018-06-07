@@ -5,7 +5,6 @@ html, body {
 }
 
 body {
-    padding-top: 55px;
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -26,7 +25,7 @@ main {
 /*footer*/
 
 .copyright {
-    margin: 15px 0;
+    margin: 1em 0;
 }
 
 /*home page*/
@@ -94,7 +93,7 @@ a:hover {
 
 /*coloured borders at top and bottom of the page*/
 
-.navbar.navbar-default {
+.navbar.top-border-band {
     border-top: var(--border-width) solid var(--accent);
 }
 

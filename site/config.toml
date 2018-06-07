@@ -36,20 +36,20 @@ enableEmoji = true
 
 [[menu.icon]]
     url = "mailto:robin@grumpycorp.com"
-    name = "envelope-o"
+    name = "far fa-envelope"
     weight = 1
 
 [[menu.icon]]
     url = "https://github.com/rgiese/"
-    name = "github"
+    name = "fab fa-github"
     weight = 2
 
 [[menu.icon]]
     url = "https://www.linkedin.com/in/robingiese"
-    name = "linkedin"
+    name = "fab fa-linkedin"
     weight = 3
 
 [[menu.icon]]
     url = "https://www.imdb.com/name/nm8515322/?ref_=fn_al_nm_1"
-    name = "imdb"
+    name = "fab fa-imdb"
     weight = 4

@@ -2,27 +2,27 @@
 <html lang="{{ .Site.LanguageCode }}">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>{{ .Title }}</title>
 
         {{ if .Site.Params.favicon }}
-        <link rel="icon" href="{{ .Site.Params.favicon | absURL }}">
+            <link rel="icon" href="{{ .Site.Params.favicon | absURL }}">
         {{ end }}
         
         {{ partial "css" . }} 
-        {{ partial "js" . }} 
+        
         {{ .Hugo.Generator }}
 
         {{ if .Site.GoogleAnalytics }}
-        <!-- Global Site Tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.GoogleAnalytics }}"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments)};
-          gtag('js', new Date());
+            <!-- Global Site Tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.GoogleAnalytics }}"></script>
+            <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments)};
+            gtag('js', new Date());
 
-          gtag('config', '{{ .Site.GoogleAnalytics }}');
-        </script>
+            gtag('config', '{{ .Site.GoogleAnalytics }}');
+            </script>
         {{ end }}
     </head>
 
@@ -34,42 +34,27 @@
     {{ end }}
 
     <body>
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <nav class="navbar top-border-band navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <div class="container">
-
-                <div class="navbar-header">
-
-                    <a class="navbar-brand visible-xs" href="#">{{ .Title }}</a>
-
-                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="navbar-nav mr-auto">
+                    {{ range sort .Site.Menus.main }}
+                        <!-- add class 'active' if active page -->
+                        <a class="nav-item nav-link px-3" href="{{ .URL }}">{{ .Name }}</a>
+                    {{ end }}
                 </div>
 
-                <div class="collapse navbar-collapse">
-
-                    {{ if .Site.Menus.main }}
-                        <ul class="nav navbar-nav">
-                            {{ range sort .Site.Menus.main }}
-                                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-                            {{ end }}
-                        </ul>
+                <div class="navbar-nav navbar-right">
+                    <!-- Treat these as a single item so they'll show up on one row in the collapsed tray -->
+                    <div class="nav-item navbar-icon">
+                    {{ range sort .Site.Menus.icon }}
+                        <a class="px-2" href="{{ .URL }}"><i class="{{ .Name }} text-secondary"></i></a>
                     {{ end }}
-
-                    {{ if .Site.Menus.icon }}
-                        <ul class="nav navbar-nav navbar-right">
-                            {{ range sort .Site.Menus.icon }}
-                                <li class="navbar-icon"><a href="{{ .URL }}"><i class="fa fa-{{ .Name }}"></i></a></li>
-                            {{ end }}
-                        </ul>
-                    {{ end }}
-
+                    </div>
                 </div>
-
             </div>
-
         </nav>

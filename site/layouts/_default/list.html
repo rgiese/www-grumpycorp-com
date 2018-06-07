@@ -1,6 +1,5 @@
 {{ define "main" }}
 	<div id="page-wrapper">
-
 		<!-- Header -->
 			<div id="header-wrapper">
 				<div id="header">
@@ -11,7 +10,7 @@
 				</div>
 			</div>
 
-						<!-- Main -->
+			<!-- Main -->
 			<div id="main-wrapper">
 				<div class="container">
 
@@ -31,14 +30,7 @@
 
 				</div>
 			</div>
-
 			{{ partial "footer/index.html" . }}
-
 	</div>
-
 	{{ partial "scripts/index.html" . }}
-	{{ if .Site.Params.Settings.disqus }}
-	<script id="dsq-count-scr" src="//{{ .Site.Params.Settings.disqus }}.disqus.com/count.js" async></script>
-	{{ end }}
-		
 {{ end }}

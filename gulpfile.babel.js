@@ -1,13 +1,20 @@
 import gulp from "gulp";
+
 import {spawn} from "child_process";
+import del from "del";
+
 import hugoBin from "hugo-bin";
+
+import autoprefixer from "gulp-autoprefixer";
 import gutil from "gulp-util";
 import flatten from "gulp-flatten";
-import autoprefixer from "gulp-autoprefixer";
+import hash from "gulp-hash";
 import sass from "gulp-sass";
-import BrowserSync from "browser-sync";
+
 import webpack from "webpack";
 import webpackConfig from "./webpack.conf";
+
+import BrowserSync from "browser-sync";
 
 const browserSync = BrowserSync.create();
 
@@ -15,32 +22,39 @@ const browserSync = BrowserSync.create();
 const hugoArgsDefault = ["-d", "../dist", "-s", "site", "-v"];
 const hugoArgsPreview = ["--buildDrafts", "--buildFuture"];
 
-// Development tasks
-gulp.task("hugo", (cb) => buildSite(cb));
-gulp.task("hugo-preview", (cb) => buildSite(cb, hugoArgsPreview));
+const hugoDependencies = ["css", "js", "fonts"];
+
+// Build tasks
+gulp.task("build-prod", hugoDependencies, (cb) => buildSite(cb, [], "production"));
+gulp.task("build-prod-preview", hugoDependencies, (cb) => buildSite(cb, hugoArgsPreview, "production"));
+
+gulp.task("build-dev", hugoDependencies, (cb) => buildSite(cb));
+gulp.task("build-dev-preview", hugoDependencies, (cb) => buildSite(cb, hugoArgsPreview));
 
 // Run server tasks
-gulp.task("server", ["hugo", "css", "js", "fonts"], (cb) => runServer(cb));
-gulp.task("server-preview", ["hugo-preview", "css", "js", "fonts"], (cb) => runServer(cb));
+gulp.task("server", ["build-dev"], (cb) => runServer(cb));
+gulp.task("server-preview", ["build-dev-preview"], (cb) => runServer(cb));
 
-// Build/production tasks
-gulp.task("build", ["css", "js", "fonts"], (cb) => buildSite(cb, [], "production"));
-gulp.task("build-preview", ["css", "js", "fonts"], (cb) => buildSite(cb, hugoArgsPreview, "production"));
 
 // Compile CSS with SASS
-gulp.task("css", () => (
-  gulp.src("./src/sass/**/*.scss")
+gulp.task("css", () => {
+  del("./dist/assets/css/**/*");
+
+  return gulp.src("./src/sass/**/*.scss")
     .pipe(sass({ outputStyle : "compressed" }))
     .pipe(autoprefixer({ browsers : ["last 20 versions"] }))
+    .pipe(hash())
     .pipe(gulp.dest("./dist/assets/css"))
-    .pipe(browserSync.stream())
-));
+    .pipe(hash.manifest("hash.json"))
+    .pipe(gulp.dest("./site/data/generated"))
+    .pipe(browserSync.stream());
+});
 
 // Compile Javascript
 gulp.task("js", (cb) => {
   const myConfig = Object.assign({}, webpackConfig);
 
-  webpack(myConfig, (err, stats) => {
+  return webpack(myConfig, (err, stats) => {
     if (err) throw new gutil.PluginError("webpack", err);
     gutil.log("[webpack]", stats.toString({
       colors: true,
@@ -52,12 +66,12 @@ gulp.task("js", (cb) => {
 });
 
 // Move all fonts in a flattened directory
-gulp.task('fonts', () => (
-  gulp.src("./src/fonts/**/*")
+gulp.task('fonts', () => {
+  return gulp.src("./src/fonts/**/*")
     .pipe(flatten())
     .pipe(gulp.dest("./dist/fonts"))
-    .pipe(browserSync.stream())
-));
+    .pipe(browserSync.stream());
+});
 
 // Development server with browsersync
 function runServer() {

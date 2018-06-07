@@ -1,13 +1,12 @@
 baseurl = "/"
 languageCode = "en-us"
 languageLang = "en"
-title = "GrumpyCorp Heavy Industries"
+title = "GrumpyCorp"
 
 enableEmoji = true
 
 [params]
     author = "Robin Giese"
-    description = "-add description here-"
     githubUsername = "rgiese"
     highlight = true
     highlightStyle = "solarized-dark"

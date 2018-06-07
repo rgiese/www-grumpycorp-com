@@ -83,7 +83,7 @@ function runServer() {
   gulp.watch("./src/js/**/*.js", ["js"]);
   gulp.watch("./src/sass/**/*.scss", ["css"]);
   gulp.watch("./src/fonts/**/*", ["fonts"]);
-  gulp.watch("./site/**/*", ["hugo"]);
+  gulp.watch("./site/**/*", ["build-dev"]);
 };
 
 /**

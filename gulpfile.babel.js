@@ -3,9 +3,8 @@ import {spawn} from "child_process";
 import hugoBin from "hugo-bin";
 import gutil from "gulp-util";
 import flatten from "gulp-flatten";
-import postcss from "gulp-postcss";
-import cssImport from "postcss-import";
-import cssnext from "postcss-cssnext";
+import autoprefixer from "gulp-autoprefixer";
+import sass from "gulp-sass";
 import BrowserSync from "browser-sync";
 import webpack from "webpack";
 import webpackConfig from "./webpack.conf";
@@ -28,11 +27,12 @@ gulp.task("server-preview", ["hugo-preview", "css", "js", "fonts"], (cb) => runS
 gulp.task("build", ["css", "js", "fonts"], (cb) => buildSite(cb, [], "production"));
 gulp.task("build-preview", ["css", "js", "fonts"], (cb) => buildSite(cb, hugoArgsPreview, "production"));
 
-// Compile CSS with PostCSS
+// Compile CSS with SASS
 gulp.task("css", () => (
-  gulp.src("./src/css/*.css")
-    .pipe(postcss([cssImport({from: "./src/css/main.css"}), cssnext()]))
-    .pipe(gulp.dest("./dist/css"))
+  gulp.src("./src/sass/**/*.scss")
+    .pipe(sass({ outputStyle : "compressed" }))
+    .pipe(autoprefixer({ browsers : ["last 20 versions"] }))
+    .pipe(gulp.dest("./dist/assets/css"))
     .pipe(browserSync.stream())
 ));
 
@@ -67,7 +67,7 @@ function runServer() {
     }
   });
   gulp.watch("./src/js/**/*.js", ["js"]);
-  gulp.watch("./src/css/**/*.css", ["css"]);
+  gulp.watch("./src/sass/**/*.scss", ["css"]);
   gulp.watch("./src/fonts/**/*", ["fonts"]);
   gulp.watch("./site/**/*", ["hugo"]);
 };

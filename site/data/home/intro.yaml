@@ -1,16 +1,26 @@
 sections:
-- icon: 'fa-cog'
-  title: 'Ipsum consequat'
-  description: 'Nisl amet dolor sit ipsum veroeros sed blandit consequat veroeros et magna tempus.'
+- icon: 'fas fa-question'
+  title: 'What gives?'
+  description: >-
+    GrumpyCorp represents the "professional" side of my life as I try to grow up and figure out what I'm supposed to be.
+    I'm taking some time off work to figure out what that all means, making me available for all manner of shenanigans.
 
-- icon: 'fa-flash'
-  title: 'Magna etiam dolor'
-  description: 'Nisl amet dolor sit ipsum veroeros sed blandit consequat veroeros et magna tempus.'
+- icon: 'fas fa-kiwi-bird'
+  title: 'What do you do?'
+  description: >-
+    Software engineering, engineering management, software performance analysis.
+    All things food (licensed food worker in WA).
+    Stage and lighting design, interior design.
+    Musician.
+    Carpentry and metalwork.
+    
 
-- icon: 'fa-star'
-  title: 'Tempus adipiscing'
-  description: 'Nisl amet dolor sit ipsum veroeros sed blandit consequat veroeros et magna tempus.'
+- icon: 'fas fa-dollar-sign'
+  title: 'Can I hire you?'
+  description: >-
+    Yes! You don't even need to pay me much while I'm finding my way.
 
+# Buttons not used at the moment (see theme's layout/partials/intro.html)
 buttons:
 - link: '#'
   text: 'Get Started'

@@ -1,5 +1,6 @@
 ---
 title: "The Nutella Thief"
+description: "A micro-short film"
 date: 2018-04-23
 icon: "fas fa-film"
 tags: ["film making"]

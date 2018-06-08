@@ -11,25 +11,3 @@ enableEmoji = true
     highlight = true
     highlightStyle = "solarized-dark"
     highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
-
-# Nav bar icons
-
-[[menu.icon]]
-    url = "mailto:robin@grumpycorp.com"
-    name = "far fa-envelope"
-    weight = 1
-
-[[menu.icon]]
-    url = "https://www.linkedin.com/in/robingiese"
-    name = "fab fa-linkedin"
-    weight = 2
-
-[[menu.icon]]
-    url = "https://www.imdb.com/name/nm8515322/"
-    name = "fab fa-imdb"
-    weight = 3
-
-[[menu.icon]]
-    url = "https://github.com/rgiese/"
-    name = "fab fa-github"
-    weight = 4

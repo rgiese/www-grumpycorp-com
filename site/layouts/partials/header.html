@@ -82,8 +82,8 @@
                 <div class="navbar-nav navbar-right">
                     <!-- Treat these as a single item so they'll show up on one row in the collapsed tray -->
                     <div class="nav-item navbar-icon">
-                    {{ range sort .Site.Menus.icon }}
-                        <a class="px-2" target="_blank" href="{{ .URL }}"><i class="{{ .Name }} text-secondary"></i></a>
+                    {{ range .Site.Data.social.links }}
+                        <a class="px-2" target="_blank" href="{{ .url }}"><i class="{{ .icon }}" style="color: {{ .color }}" ></i></a>
                     {{ end }}
                     </div>
                 </div>

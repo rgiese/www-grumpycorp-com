@@ -4,8 +4,9 @@
 <!-- Main site CSS from SASS -->
 <link rel="stylesheet" href="{{ .Site.BaseURL }}assets/css/{{ index .Site.Data.generated.hash "main.css" }}">
 
-<!-- Google fonts -->
+<!-- Fonts -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://use.typekit.net/cfg7ddl.css">
 
 <!-- highlight.js -->
 {{ if .Site.Params.highlight | default false }} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/{{ .Site.Params.highlightStyle | default "default" }}.min.css"> {{ end }}

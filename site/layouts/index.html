@@ -1,8 +1,7 @@
 {{ partial "header" . }}
 <main>
     <div class="intro">
-        <h1>GrumpyCorp</h1>
-        <h2>Heavy Industries</h2>
+        <h1 class="grumpycorp">GrumpyCorp</h1>
 
         <div class="card-columns mt-4">
             {{ $pages := first 10 (where .Site.RegularPages.ByDate.Reverse "Type" "post") }}

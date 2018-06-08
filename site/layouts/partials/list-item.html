@@ -1,0 +1,20 @@
+<div class="item">
+    <h2>
+        {{ if .Params.repo }}
+            <i class="fab fa-github"></i>
+        {{ end }}
+        <a href="{{ .Params.repo | default .RelPermalink }}">{{ .Title }}</a>
+    </h2>
+
+    {{ if not .Date.IsZero }}
+        <h6>{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}</h6>
+    {{ end }}
+
+    {{ if .Description }}
+        <h5>{{ .Description }}</h5>
+    {{ end }}
+
+    {{ range .Params.tags }}
+    <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}"><kbd class="item-tag">{{ . }}</kbd></a>
+    {{ end }}
+</div>

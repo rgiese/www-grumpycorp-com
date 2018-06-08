@@ -1,0 +1,18 @@
+<div class="card">
+    {{ if and (isset .Params "icon") (.Params.Icon) }}
+        <div class="card-header" style="background-color: var(--accent)">
+            <i class="{{ .Params.Icon }}" style="color: white; font-size: 400%"></i>
+        </div>
+    {{ end }}
+    <div class="card-body text-left">
+        <h5 class="card-title">
+            <a href="{{ .Permalink }}">
+                {{ .Title }}
+            </a>
+        </h5>
+        <div class="card-text">{{ .Description }}</div>
+    </div>
+    <div class="card-footer text-left">
+        <small class="text-muted">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}</small>
+    </div>
+</div>

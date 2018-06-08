@@ -1,28 +1,12 @@
 baseurl = "/"
 languageCode = "en-us"
 languageLang = "en"
-title = "GrumpyCorp Heavy Industries"
+title = "GrumpyCorp"
 
 enableEmoji = true
 
-# RSS, categories and tags disabled for an easy start
-# See configuration options for more details: 
-# https://gohugo.io/getting-started/configuration/#toml-configuration
-disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
-
 [params]
     author = "Robin Giese"
-
-[params.portfolio]
-    title = "Portfolio"
-    foldername = "portfolio"
-    findoutmoretext = "Find out more"
-
-[params.blog]
-    title = "Blog"
-    viewalltext = "View All"
-    foldername = "blog"
-
-
-#[params.settings]
-#    googleanalytics = "UA-113904582-2"
+    highlight = true
+    highlightStyle = "solarized-dark"
+    highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]

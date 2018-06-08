@@ -1,50 +1,18 @@
-{{ define "main" }}
-	<div id="page-wrapper">
-		<!-- Header -->
-		<div id="header-wrapper">
-			<div id="header">
+{{ partial "header" . }}
+<main>
+    <div class="intro">
+        <h1 class="grumpycorp">GrumpyCorp</h1>
 
-				{{ partial "logo.html" . }}
-
-				{{ partial "nav.html" . }}
-
-				<!-- partial "banner.html" . -->
-
-				{{ partial "intro.html" . }}
-
-			</div>
-		</div>
-
-		<!-- Main -->
-		<div id="main-wrapper">
-			<div class="container">
-				<!-- Blog -->
-				{{ $blogPaginator := .Paginate (where .Data.Pages "Type" .Site.Params.Blog.foldername) 2 }}
-				{{ if $blogPaginator.TotalNumberOfElements }}
-				<div class="row">
-					<div class="12u">
-						{{ partial "blog.html" (dict "title" .Site.Params.Blog.title "paginator" $blogPaginator) }}
-					</div>
-				</div>
-				<footer>
-					<ul class="actions" style="text-align: center">
-						<li><a href="{{ .Site.Params.Blog.foldername }}" class="button big">{{ .Site.Params.Blog.viewalltext }}</a></li>
-					</ul>
-				</footer>
-				{{ end }}
-
-				<!-- Portfolio -->
-				{{ $portfolioItems := where .Site.Pages "Type" .Site.Params.Portfolio.foldername }}
-				{{ if $portfolioItems }}
-				<div class="row">
-					<div class="12u">
-						{{ partial "portfolio.html" . }}
-					</div>
-				</div>
-				{{ end }}
-			</div>
-		</div>
-		{{ partial "footer/index.html" . }}
-	</div>
-	{{ partial "scripts/index.html" . }}
-{{ end }}
+        <div class="card-columns mt-4">
+            {{ $pages := first 10 (where .Site.RegularPages.ByDate.Reverse "Type" "about") }}
+            {{ range $pages }}
+                {{ partial "index-card.html" . }}
+            {{ end }}
+            {{ $pages := first 10 (where .Site.RegularPages.ByDate.Reverse "Type" "post") }}
+            {{ range $pages }}
+                {{ partial "index-card.html" . }}
+            {{ end }}
+        </div>
+    </div>
+</main>
+{{ partial "footer" . }}

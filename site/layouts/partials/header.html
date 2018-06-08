@@ -71,7 +71,10 @@
                             {{ $pages := first 5 (where .Site.RegularPages.ByDate.Reverse "Type" "project") }}
                             {{ range $pages }}
                                 <div class="dropdown-item">
-                                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                                    {{ if .Params.repo }}
+                                        <i class="fab fa-github"></i>
+                                    {{ end }}
+                                    <a href="{{ index .Params "repo" | default .Permalink }}">{{ .Title }}</a>
                                 </div>
                             {{ end }}
                             <div class="dropdown-divider"></div>

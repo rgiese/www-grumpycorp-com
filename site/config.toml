@@ -7,7 +7,6 @@ enableEmoji = true
 
 [params]
     author = "Robin Giese"
-    githubUsername = "rgiese"
     highlight = true
     highlightStyle = "solarized-dark"
     highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]

@@ -1,5 +1,5 @@
 <div class="card">
-    {{ if (isset .Params "icon") }}
+    {{ if and (isset .Params "icon") (.Params.Icon) }}
         <div class="card-header" style="background-color: var(--accent)">
             <i class="{{ .Params.Icon }}" style="color: white; font-size: 400%"></i>
         </div>

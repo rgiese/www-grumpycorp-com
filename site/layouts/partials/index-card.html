@@ -1,7 +1,9 @@
 <div class="card">
     {{ if and (isset .Params "icon") (.Params.Icon) }}
         <div class="card-header" style="background-color: var(--accent)">
-            <i class="{{ .Params.Icon }}" style="color: white; font-size: 400%"></i>
+            <a href="{{ .Permalink }}">
+                <i class="{{ .Params.Icon }}" style="color: white; font-size: 400%"></i>
+            </a>
         </div>
     {{ end }}
     <div class="card-body text-left">

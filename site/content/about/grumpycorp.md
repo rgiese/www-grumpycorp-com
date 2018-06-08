@@ -30,3 +30,12 @@ If you want my help on anything - a project, a problem, an opportunity - don't h
 - Needlessly geek out with current technology
     - Automate my house's radiant heat system into IoT nirvana
 - Read
+
+### Resume
+- As a software engineer and engineering manager: see [LinkedIn](https://www.linkedin.com/in/robingiese)
+- As a film maker: see [IMDB](https://www.imdb.com/name/nm8515322/)
+- As a stage and lighting designer: some 30+ productions, including at:
+    - [ACT Theatre](http://www.acttheatre.org/) (Seattle)
+    - [McCarter Theater](https://www.mccarter.org/) (Princeton, NJ)
+    - [Microsoft Theater Troupe](https://www.facebook.com/MicrosoftTheaterTroupe/) (Redmond, WA)
+    - [Theatre Intime](https://www.theatreintime.org/) (Princeton, NJ).

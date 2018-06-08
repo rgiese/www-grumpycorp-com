@@ -3,7 +3,11 @@ new_page_extension: md
 auto_deploy: false
 admin_path: 
 webhook_url: 
-sections: 
+sections:
+  project:
+    default_front_matter_template: project
+  post:
+    default_front_matter_template: post
 upload_dir: site//static/uploads
 public_path: "/uploads"
 front_matter_path: ''

@@ -35,6 +35,7 @@
 
     <body>
         <nav class="navbar fixed-top top-border-band navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand visible-xs" href="/">{{ .Title }}</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -43,9 +44,6 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="navbar-nav mr-auto">
                     <!-- add class 'active' if active page -->
-                    <li class="nav-item">
-                        <a class="nav-link px-3" href="/">Home</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Posts

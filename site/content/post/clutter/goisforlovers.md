@@ -3,7 +3,7 @@ title: "(Hu)go Template Primer"
 date: 2014-04-02
 icon: "fas fa-kiwi-bird"
 tags: [ "go", "golang", "template", "themes", "development"]
-draft: false
+draft: true
 ---
 
 Hugo uses the excellent [go][] [html/template][gohtmltemplate] library for

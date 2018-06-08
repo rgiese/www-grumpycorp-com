@@ -5,8 +5,8 @@
         <h2>Heavy Industries</h2>
 
         <div class="card-columns mt-4">
-            {{ $blogPaginator := .Paginate (where .Data.Pages "Type" "post") }}
-            {{ range $blogPaginator.Pages }}
+            {{ $pages := first 10 (where .Site.RegularPages.ByDate.Reverse "Type" "post") }}
+            {{ range $pages }}
                 {{ partial "index-card.html" . }}
             {{ end }}
         </div>

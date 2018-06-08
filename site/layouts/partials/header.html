@@ -42,10 +42,41 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="navbar-nav mr-auto">
-                    {{ range sort .Site.Menus.main }}
-                        <!-- add class 'active' if active page -->
-                        <a class="nav-item nav-link px-3" href="{{ .URL }}">{{ .Name }}</a>
-                    {{ end }}
+                    <!-- add class 'active' if active page -->
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Posts
+                        </a>
+                        <div class="dropdown-menu" style="left: auto" aria-labelledby="navbarDropdown">
+                            {{ $pages := first 5 (where .Site.RegularPages.ByDate.Reverse "Type" "post") }}
+                            {{ range $pages }}
+                                <div class="dropdown-item">
+                                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                                    <small class="text-muted">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}</small>
+                                </div>
+                            {{ end }}
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/post/"><b>All posts</b></a>
+                        </div>                        
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Projects
+                        </a>
+                        <div class="dropdown-menu" style="left: auto" aria-labelledby="navbarDropdown">
+                            {{ $pages := first 5 (where .Site.RegularPages.ByDate.Reverse "Type" "project") }}
+                            {{ range $pages }}
+                                <div class="dropdown-item">
+                                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                                </div>
+                            {{ end }}
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/project/"><b>All projects</b></a>
+                        </div>                        
+                    </li>
                 </div>
 
                 <div class="navbar-nav navbar-right">

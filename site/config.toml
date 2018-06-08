@@ -12,26 +12,7 @@ enableEmoji = true
     highlightStyle = "solarized-dark"
     highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
 
-##
-## Configure menu
-##
-
-[[menu.main]]
-    url = "/"
-    name = "Home"
-    weight = 1
-
-[[menu.main]]
-    url = "/post/"
-    name = "Posts"
-    weight = 2
-
-[[menu.main]]
-    url = "/project/"
-    name = "Projects"
-    weight = 3
-
-# Sidebar
+# Nav bar icons
 
 [[menu.icon]]
     url = "mailto:robin@grumpycorp.com"

@@ -81,6 +81,7 @@ gulp.task('fonts', () => {
 gulp.task('img', () => {
   return gulp.src("./src/img/**/*")
     .pipe(newer("./dist/img"))
+    .pipe(gulp.dest("./dist/img-original"))
     .pipe(responsive({
       "**/*": [{
         width: 480,

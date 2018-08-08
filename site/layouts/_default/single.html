@@ -1,16 +1,20 @@
 {{ partial "header" . }}
 <main>
-    {{ partial "list-item" . }}
+    {{ .Title }}
     <br>
     
     <div class="text-left">{{ .Content }}</div>
 
     <!-- related posts with the same tags -->
-    {{ $related := first 3 (where (where (where .Site.Pages.ByDate.Reverse ".Type" "==" "post") ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
+    {{ $related := first 4 (where (where (where .Site.Pages.ByDate.Reverse ".Type" "==" "post") ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
 
     {{ if $related }}
-        <h4 class="page-header">Related</h4>
-        {{ range $related }} {{ partial "list-item" . }} {{ end }}
+        <h4>Related</h4>
+        <div class="cf center mw8">
+            {{ range $related }} 
+                {{ partial "index-card" . }} 
+            {{ end }}
+        </div>
     {{ end }}
 </main>
 {{ partial "footer.html" . }}

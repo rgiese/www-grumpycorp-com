@@ -37,13 +37,15 @@
         <main class="tc">
             <nav class="flex justify-between bg-black-05 bt bw2 b--accent">
                 <ul class="list pl2">
-                    <li class="dib ph2">
+                    <li class="dib ph1 ph2-ns">
                         <a class="link dim f4 black grumpycorp" href="/">GrumpyCorp</a>
                     </li>
-                    <li class="dib ph2">
+
+                    <li class="dn dib-ns ph1 ph2-ns"> <!-- Drop on small screens -->
                         <a class="link dim f5 black-60" href="/about/grumpycorp">About</a>
                     </li>
-                    <li class="dib ph2 hide-child">
+
+                    <li class="dib ph1 ph2-ns hide-child">
                         <a class="link dim f5 black-60" href="/post">Posts</a>
                         <ul class="list dib child absolute pl0 bg-white ba b--black-20">
                             {{ $pages := first 5 (where .Site.RegularPages.ByDate.Reverse "Type" "post") }}
@@ -55,7 +57,8 @@
                             {{ end }}
                         </ul>
                     </li>
-                    <li class="dib ph2 hide-child">
+
+                    <li class="dib ph1 ph2-ns hide-child">
                         <a class="link dim f5 black-60" href="/project">Projects</a>
                         <ul class="list child absolute pl0 bg-white ba b--black-20">
                             {{ $pages := first 5 (where .Site.RegularPages.ByDate.Reverse "Type" "project") }}
@@ -73,8 +76,8 @@
 
                 <ul class="list ph3">
                     {{ range .Site.Data.social.links }}
-                    <li class="dib ph2">
-                        <a class="link f3 dim" target="_blank" href="{{ .url }}"><i class="{{ .icon }}" style="color: {{ .color }}" ></i></a>
+                    <li class="dib ph1 ph2-ns">
+                        <a class="link f4 f3-ns dim" target="_blank" href="{{ .url }}"><i class="{{ .icon }}" style="color: {{ .color }}" ></i></a>
                     </li>
                     {{ end }}                    
                 </ul>

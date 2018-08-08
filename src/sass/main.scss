@@ -1,117 +1,38 @@
-html, body {
-    height: 100%;
-    font-family: 'Raleway', sans-serif;
-    background-color: white;
-}
-
-body {
-    display: flex;
-    padding-top: 5rem; /* For nav bar */
-    text-align: center;
-    flex-direction: column;
-}
-
-main {
-    margin: auto;
-    padding: 25px;
-    flex: 1 0 auto;
-    max-width: 95%;
-}
-
-@media screen and (min-width: 800px) {
-    main {
-        max-width: 750px;
-    }
-}
-
-:root {
-    --accent: #1292a8;
-    --border-width: 5px;
-}
+//
+// Typefaces
+//
 
 .grumpycorp {
     font-family: "charcuterie-block";
 }
 
-// footer
+//
+// Global
+//
 
-.copyright {
-    margin: 1em 0;
+:root {
+    --accent: #1292a8;
 }
 
-// home page
-
-.intro {
-    transform: translateY(2vh);
+html {
+    font-family: 'Raleway', sans-serif;
 }
 
-.intro > h1 {
-    color: #212121;
-    font-size: 12vmin;
-}
-
-.intro > h2 {
-    color: #757575;
-    font-size: 6vmin;
-}
-
-@media screen and (min-width: 800px) {
-    .intro.card-columns {
-        column-count: 3;
-    }
-}
-
-// apply accent colour to links
-
-a:link, a:visited {
-    color: var(--accent);
-}
-
-a.icon:hover {
-    text-decoration: none;
-}
-
-a:hover {
-    color: var(--accent) !important;
-}
-
-// paginator at bottom of list view
-
-.pages {
-    padding: 15px 0;
-}
-
-.pages-icon {
-    padding: 0 15px;
-}
-
-// list item for posts and projects
-
-.item {
-    padding: 10px 0;
-}
-
-.item-tag {
-    background-color: var(--accent);
-}
-
-// navigation bar icons
-
-.navbar-icon {
-    font-size: 150%;
-    display: inline-block !important;
-}
-
-// coloured borders at top and bottom of the page
-
-.navbar.top-border-band {
-    border-top: var(--border-width) solid var(--accent);
-}
-
-footer {
-    border-bottom: var(--border-width) solid var(--accent);
-}
-
+/*
 img {
+    // Don't let images scale up past their built-in size (but they'll still scale down)
     max-width: 100%;
+}
+*/
+
+//
+// Tachyons extensions
+//
+
+.b--accent {
+    border-color:var(--accent)
+}
+
+.accent {
+    color:var(--accent)
 }

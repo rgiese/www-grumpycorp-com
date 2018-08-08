@@ -18,12 +18,18 @@ html {
     font-family: 'Raleway', sans-serif;
 }
 
-/*
 img {
     // Don't let images scale up past their built-in size (but they'll still scale down)
     max-width: 100%;
 }
-*/
+
+#content a:link, #content a:visited {
+    color: var(--accent);
+}
+
+#content a:hover {
+    color: var(--accent) !important;
+}
 
 //
 // Tachyons extensions

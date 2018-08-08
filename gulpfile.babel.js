@@ -12,6 +12,8 @@ import hash from "gulp-hash";
 import sass from "gulp-sass";
 import newer from "gulp-newer";
 import responsive from "gulp-responsive";
+import imagemin from "gulp-imagemin";
+import mozjpeg from "imagemin-mozjpeg";
 
 import webpack from "webpack";
 import webpackConfig from "./webpack.conf";
@@ -97,6 +99,12 @@ gulp.task('img', () => {
       silent: false,
       errorOnUnusedConfig: false // Accept empty input set for incremental builds
     }))
+    .pipe(imagemin([
+      imagemin.gifsicle(),
+      imagemin.optipng(),
+      imagemin.svgo(),
+      mozjpeg()
+    ]))
     .pipe(gulp.dest("./dist/img"));
 });
 

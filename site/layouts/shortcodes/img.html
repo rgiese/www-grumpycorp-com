@@ -1,0 +1,15 @@
+<div class="db pv2">
+    <figure class="ma0">
+    <figcaption class="f6 ph3 pv1 bt b--gray white bg-black-50">{{ .Get "caption" }}</figcaption>
+        <picture>
+            <!-- Large screens -->
+            <source media="(min-width: 535px)" data-srcset="/img/{{ .Get "src" }}.{{ .Get "type" | default "jpg" }} 1x, /img/{{ .Get "src" }}@2x.{{ .Get "type" | default "jpg" }} 2x">
+        
+            <!-- Small screens -->
+            <source media="(max-width: 534px)" data-srcset="/img/{{ .Get "src" }}-sm.{{ .Get "type" | default "jpg" }} 1x, /img/{{ .Get "src" }}-sm@2x.{{ .Get "type" | default "jpg" }} 2x">
+
+            <!-- Fallback for IE -->
+            <img data-src="/img/{{ .Get "src" }}.{{ .Get "type" | default "jpg" }}" alt="{{ .Get "alt" }}">
+        </picture>
+    </figure>
+</div>

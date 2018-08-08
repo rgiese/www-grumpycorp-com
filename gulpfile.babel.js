@@ -10,6 +10,8 @@ import gutil from "gulp-util";
 import flatten from "gulp-flatten";
 import hash from "gulp-hash";
 import sass from "gulp-sass";
+import newer from "gulp-newer";
+import responsive from "gulp-responsive";
 
 import webpack from "webpack";
 import webpackConfig from "./webpack.conf";
@@ -22,7 +24,7 @@ const browserSync = BrowserSync.create();
 const hugoArgsDefault = ["-d", "../dist", "-s", "site", "-v"];
 const hugoArgsPreview = ["--buildDrafts", "--buildFuture"];
 
-const hugoDependencies = ["css", "js", "fonts"];
+const hugoDependencies = ["css", "js", "fonts", "img"];
 
 // Build tasks
 gulp.task("build-prod", hugoDependencies, (cb) => buildSite(cb, [], "production"));
@@ -71,6 +73,31 @@ gulp.task('fonts', () => {
     .pipe(flatten())
     .pipe(gulp.dest("./dist/fonts"))
     .pipe(browserSync.stream());
+});
+
+// Resize images to responsive sizes
+gulp.task('img', () => {
+  return gulp.src("./src/img/**/*")
+    .pipe(newer("./dist/img"))
+    .pipe(responsive({
+      "**/*": [{
+        width: 480,
+        rename: {suffix: "-sm"},
+      }, {
+        width: 480 * 2,
+        rename: {suffix: "-sm@2x"},
+      }, {
+        width: 752,
+      }, {
+        width: 752 * 2,
+        withoutEnlargement: false,
+        rename: {suffix: "@2x"},
+      }],
+    }, {
+      silent: false,
+      errorOnUnusedConfig: false // Accept empty input set for incremental builds
+    }))
+    .pipe(gulp.dest("./dist/img"));
 });
 
 // Development server with browsersync

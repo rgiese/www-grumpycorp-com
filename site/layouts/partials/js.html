@@ -11,3 +11,18 @@
     <script>hljs.initHighlightingOnLoad();</script>
 
 {{ end }}
+
+<!-- lazyload (c.f. https://github.com/verlok/lazyload) -->
+<script>
+    (function (w, d) {
+        w.addEventListener('LazyLoad::Initialized', function (e) {
+            w.lazyLoadInstance = e.detail.instance;
+        }, false);
+        var b = d.getElementsByTagName('body')[0];
+        var s = d.createElement("script"); s.async = true;
+        var v = !("IntersectionObserver" in w) ? "8.11.0" : "10.10.0";
+        s.src = "https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/" + v + "/lazyload.min.js";
+        w.lazyLoadOptions = {};
+        b.appendChild(s);
+    }(window, document));
+</script>

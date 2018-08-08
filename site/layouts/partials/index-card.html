@@ -1,37 +1,40 @@
-<div class="fl w-50 w-25-m w-20-l ma3 br2 ba b--black-10">
-    <!-- Icon -->
-    {{ $.Scratch.Delete "cardIcon" }}
-    {{ if and (isset .Params "icon") (.Params.Icon) }}
-        {{ $.Scratch.Set "cardIcon" .Params.Icon }}
-    {{ else if .Params.Repo }}
-        {{ $.Scratch.Set "cardIcon" "fab fa-github" }}
-    {{ end }}
+<div class="fl w-100 w-50-m w-25-l pa2 ph3-ns ph4">
+    <!-- Nest card for padding (margin on outer container accrues into awkward right margin) -->
+    <div class="br2 ba b--black-10">
+        <!-- Icon -->
+        {{ $.Scratch.Delete "cardIcon" }}
+        {{ if and (isset .Params "icon") (.Params.Icon) }}
+            {{ $.Scratch.Set "cardIcon" .Params.Icon }}
+        {{ else if .Params.Repo }}
+            {{ $.Scratch.Set "cardIcon" "fab fa-github" }}
+        {{ end }}
 
-    {{ if ($.Scratch.Get "cardIcon") }}
-        <div class="pv2 br2 br--top bg-accent">
-            <a class="f2 white" href="{{ .Params.repo | default .RelPermalink }}">
-                <i class="{{ $.Scratch.Get "cardIcon" }}"></i>
-            </a>
-        </div>
-    {{ end }}
+        {{ if ($.Scratch.Get "cardIcon") }}
+            <div class="pv2 br2 br--top bg-accent">
+                <a class="f2 white" href="{{ .Params.repo | default .RelPermalink }}">
+                    <i class="{{ $.Scratch.Get "cardIcon" }}"></i>
+                </a>
+            </div>
+        {{ end }}
 
-    <!-- Title -->
-    <div class="ph3 pt3 tl f3"><a class="link accent" href="{{ .Params.repo | default .RelPermalink }}">{{ .Title }}</a></div>
+        <!-- Title -->
+        <div class="ph3 pt3 tl f3"><a class="link accent" href="{{ .Params.repo | default .RelPermalink }}">{{ .Title }}</a></div>
 
-    <!-- Description -->
-    {{ if .Description }}
-        <div class="ph3 pv3 tl f5">{{ .Description }}</div>
-    {{ end }}
+        <!-- Description -->
+        {{ if .Description }}
+            <div class="ph3 pv3 tl f5">{{ .Description }}</div>
+        {{ end }}
 
-    <!-- Tags -->
-    {{ range .Params.tags }}
-        <div class="ph3 pv1 tl f6">
-            <a class="link code accent" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}"><i class="fas fa-tag"></i> {{ . }}</a>
-        </div>
-    {{ end }}
+        <!-- Tags -->
+        {{ range .Params.tags }}
+            <div class="ph3 pv1 tl f6">
+                <a class="link code accent" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}"><i class="fas fa-tag"></i> {{ . }}</a>
+            </div>
+        {{ end }}
 
-    <!-- Date -->
-    {{ if not .Date.IsZero }}
-        <div class="ph3 pv3 tl f6 black-60 br2 br--bottom bg-black-05">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}</div>
-    {{ end }}
+        <!-- Date -->
+        {{ if not .Date.IsZero }}
+            <div class="ph3 pv3 tl f6 black-60 br2 br--bottom bg-black-05">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}</div>
+        {{ end }}
+    </div>
 </div>

@@ -29,10 +29,14 @@ img {
 // Tachyons extensions
 //
 
-.b--accent {
-    border-color:var(--accent)
-}
-
 .accent {
     color:var(--accent)
+}
+
+.bg-accent {
+    background-color:var(--accent)
+}
+
+.b--accent {
+    border-color:var(--accent)
 }

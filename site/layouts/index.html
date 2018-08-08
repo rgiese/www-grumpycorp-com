@@ -2,7 +2,7 @@
 
 <h1 class="grumpycorp">GrumpyCorp</h1>
 
-<div class="card-columns mt-4">
+<div>
     {{ $pages := first 10 (where .Site.RegularPages.ByDate.Reverse "Type" "about") }}
     {{ range $pages }}
         {{ partial "index-card.html" . }}

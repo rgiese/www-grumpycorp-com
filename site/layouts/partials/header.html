@@ -47,6 +47,9 @@
                             {{ $pages := first 5 (where .Site.RegularPages.ByDate.Reverse "Type" "about") }}
                             {{ range $pages }}
                                 <li class="pa2 tl">
+                                    {{ if and (isset .Params "icon") (.Params.Icon) }}
+                                        <span class="accent o-60"><i class="{{ .Params.Icon }}"></i></span>
+                                    {{ end }}
                                     <a class="link dim f5 black-60" href="{{ .Permalink }}">{{ .Title }} - {{ .Description }}</a>
                                 </li>
                             {{ end }}
@@ -59,6 +62,9 @@
                             {{ $pages := first 5 (where .Site.RegularPages.ByDate.Reverse "Type" "post") }}
                             {{ range $pages }}
                                 <li class="pa2 tl">
+                                    {{ if and (isset .Params "icon") (.Params.Icon) }}
+                                        <span class="accent o-60"><i class="{{ .Params.Icon }}"></i></span>
+                                    {{ end }}
                                     <a class="link dim f5 black-60" href="{{ .Permalink }}">{{ .Title }}</a>
                                     <small class="accent">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}</small>
                                 </li>
@@ -73,7 +79,7 @@
                             {{ range $pages }}
                                 <li class="pa2 tl">
                                     {{ if .Params.repo }}
-                                        <i class="fab fa-github"></i>
+                                        <span class="accent o-60"><i class="fab fa-github"></i></span>
                                     {{ end }}                                    
                                     <a class="link dim f5 black-60" href="{{ index .Params "repo" | default .Permalink }}">{{ .Title }}</a>
                                 </li>

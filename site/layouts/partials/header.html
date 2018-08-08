@@ -40,9 +40,9 @@
                     <a class="link dim f4 black grumpycorp" href="/">GrumpyCorp</a>
                 </div>
 
-                <div class="dn dib-ns ph1 ph2-ns hide-child"> <!-- Drop on small screens -->
+                <div class="dn dib-ns ph1 ph2-ns nav-hide-child"> <!-- Drop on small screens -->
                     <a class="link dim f5 black-60" href="/about/grumpycorp">About</a>
-                    <div class="child absolute pl0 bg-white ba b--black-20">
+                    <div class="nav-child absolute pl0 bg-white ba b--black-20">
                         {{ $pages := first 5 (where .Site.RegularPages.ByDate.Reverse "Type" "about") }}
                         {{ range $pages }}
                             <div class="pa2 tl">
@@ -57,9 +57,9 @@
                     </div>
                 </div>
 
-                <div class="dib ph1 ph2-ns hide-child">
+                <div class="dib ph1 ph2-ns nav-hide-child">
                     <a class="link dim f5 black-60" href="/post">Posts</a>
-                    <div class="child absolute pl0 bg-white ba b--black-20">
+                    <div class="nav-child absolute pl0 bg-white ba b--black-20">
                         {{ $pages := first 5 (where .Site.RegularPages.ByDate.Reverse "Type" "post") }}
                         {{ range $pages }}
                             <div class="pa2 tl">
@@ -81,9 +81,9 @@
                     </div>
                 </div>
 
-                <div class="dib ph1 ph2-ns hide-child">
+                <div class="dib ph1 ph2-ns nav-hide-child">
                     <a class="link dim f5 black-60" href="/project">Projects</a>
-                    <div class="child absolute pl0 bg-white ba b--black-20">
+                    <div class="nav-child absolute pl0 bg-white ba b--black-20">
                         {{ $pages := first 5 (where .Site.RegularPages.ByDate.Reverse "Type" "project") }}
                         {{ range $pages }}
                             <div class="pa2 tl">

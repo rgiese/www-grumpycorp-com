@@ -46,10 +46,12 @@
                         {{ $pages := first 5 (where .Site.RegularPages.ByDate.Reverse "Type" "about") }}
                         {{ range $pages }}
                             <div class="pa2 tl">
-                                {{ if and (isset .Params "icon") (.Params.Icon) }}
-                                    <span class="accent o-60"><i class="{{ .Params.Icon }}"></i></span>
-                                {{ end }}
-                                <a class="link dim f5 black-60" href="{{ .Permalink }}">{{ .Title }} - {{ .Description }}</a>
+                                <a class="link dim f5 black-60" href="{{ .Permalink }}">
+                                    {{ if and (isset .Params "icon") (.Params.Icon) }}
+                                        <div class="dib accent o-60"><i class="{{ .Params.Icon }}"></i></div>
+                                    {{ end }}
+                                    {{ .Title }} - {{ .Description }}
+                                </a>
                             </div>
                         {{ end }}
                     </div>
@@ -61,16 +63,20 @@
                         {{ $pages := first 5 (where .Site.RegularPages.ByDate.Reverse "Type" "post") }}
                         {{ range $pages }}
                             <div class="pa2 tl">
-                                {{ if and (isset .Params "icon") (.Params.Icon) }}
-                                    <span class="accent o-60"><i class="{{ .Params.Icon }}"></i></span>
-                                {{ end }}
-                                <a class="link dim f5 black-60" href="{{ .Permalink }}">{{ .Title }}</a>
+                                <a class="link dim f5 black-60" href="{{ .Permalink }}">
+                                    {{ if and (isset .Params "icon") (.Params.Icon) }}
+                                        <div class="dib accent o-60"><i class="{{ .Params.Icon }}"></i></div>
+                                    {{ end }}
+                                    {{ .Title }}
+                                </a>
                                 <small class="accent">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}</small>
                             </div>
                         {{ end }}
                         <div class="ph2 pv3 tl w-100 bt b--black-20">
-                            <span class="accent o-40"><i class="fas fa-angle-double-right"></i></span>
-                            <a class="link dim f5 fw5 black-60" href="/post">All posts</a>
+                            <a class="link dim f5 fw5 black-60" href="/post">
+                                <div class="dib accent o-40"><i class="fas fa-angle-double-right"></i></div>
+                                All posts
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -81,15 +87,19 @@
                         {{ $pages := first 5 (where .Site.RegularPages.ByDate.Reverse "Type" "project") }}
                         {{ range $pages }}
                             <div class="pa2 tl">
-                                {{ if .Params.repo }}
-                                    <span class="accent o-60"><i class="fab fa-github"></i></span>
-                                {{ end }}                                    
-                                <a class="link dim f5 black-60" href="{{ index .Params "repo" | default .Permalink }}">{{ .Title }}</a>
+                                <a class="link dim f5 black-60" href="{{ index .Params "repo" | default .Permalink }}">
+                                    {{ if .Params.repo }}
+                                        <div class="dib accent o-60"><i class="fab fa-github"></i></div>
+                                    {{ end }}                                    
+                                    {{ .Title }}
+                                </a>
                             </div>
                         {{ end }}
                         <div class="ph2 pv3 tl w-100 bt b--black-20">
-                            <span class="accent o-40"><i class="fas fa-angle-double-right"></i></span>
-                            <a class="link dim f5 fw5 black-60" href="/project">All projects</a>
+                            <a class="link dim f5 fw5 black-60" href="/project">
+                                <div class="dib accent o-40"><i class="fas fa-angle-double-right"></i></div>
+                                All projects
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -13,17 +13,15 @@
         
         {{ .Hugo.Generator }}
 
-        {{ if .Site.GoogleAnalytics }}
-            <!-- Global Site Tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.GoogleAnalytics }}"></script>
-            <script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123683528-1"></script>
+        <script>
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments)};
+            function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', '{{ .Site.GoogleAnalytics }}');
-            </script>
-        {{ end }}
+            gtag('config', 'UA-123683528-1');
+        </script>
     </head>
 
     {{ if .Site.Params.MathJax | default false }}

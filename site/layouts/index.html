@@ -1,8 +1,8 @@
 {{ partial "header" . }}
 
-<h1 class="grumpycorp">GrumpyCorp</h1>
+<div class="f1 pt4 grumpycorp">GrumpyCorp</div>
 
-<div>
+<div class="cf center mw8">
     {{ $pages := first 10 (where .Site.RegularPages.ByDate.Reverse "Type" "about") }}
     {{ range $pages }}
         {{ partial "index-card.html" . }}

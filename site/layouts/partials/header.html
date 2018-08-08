@@ -34,74 +34,74 @@
     {{ end }}
 
     <body class="flex flex-column items-stretch tc bg-white">
-        <nav class="flex justify-between bg-black-05 bt bw2 b--accent">
-            <ul class="list pl2">
-                <li class="dib ph1 ph2-ns">
+        <nav class="cf pv2 bg-black-05 bt bw2 b--accent">
+            <div class="fl dib pl2">
+                <div class="dib ph1 ph2-ns">
                     <a class="link dim f4 black grumpycorp" href="/">GrumpyCorp</a>
-                </li>
+                </div>
 
-                <li class="dn dib-ns ph1 ph2-ns hide-child"> <!-- Drop on small screens -->
+                <div class="dn dib-ns ph1 ph2-ns hide-child"> <!-- Drop on small screens -->
                     <a class="link dim f5 black-60" href="/about/grumpycorp">About</a>
-                    <ul class="list dib child absolute pl0 bg-white ba b--black-20">
+                    <div class="child absolute pl0 bg-white ba b--black-20">
                         {{ $pages := first 5 (where .Site.RegularPages.ByDate.Reverse "Type" "about") }}
                         {{ range $pages }}
-                            <li class="pa2 tl">
+                            <div class="pa2 tl">
                                 {{ if and (isset .Params "icon") (.Params.Icon) }}
                                     <span class="accent o-60"><i class="{{ .Params.Icon }}"></i></span>
                                 {{ end }}
                                 <a class="link dim f5 black-60" href="{{ .Permalink }}">{{ .Title }} - {{ .Description }}</a>
-                            </li>
+                            </div>
                         {{ end }}
-                    </ul>
-                </li>
+                    </div>
+                </div>
 
-                <li class="dib ph1 ph2-ns hide-child">
+                <div class="dib ph1 ph2-ns hide-child">
                     <a class="link dim f5 black-60" href="/post">Posts</a>
-                    <ul class="list dib child absolute pl0 bg-white ba b--black-20">
+                    <div class="child absolute pl0 bg-white ba b--black-20">
                         {{ $pages := first 5 (where .Site.RegularPages.ByDate.Reverse "Type" "post") }}
                         {{ range $pages }}
-                            <li class="pa2 tl">
+                            <div class="pa2 tl">
                                 {{ if and (isset .Params "icon") (.Params.Icon) }}
                                     <span class="accent o-60"><i class="{{ .Params.Icon }}"></i></span>
                                 {{ end }}
                                 <a class="link dim f5 black-60" href="{{ .Permalink }}">{{ .Title }}</a>
                                 <small class="accent">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}</small>
-                            </li>
+                            </div>
                         {{ end }}
-                        <li class="ph2 pv3 tl w-100 bt b--black-20">
+                        <div class="ph2 pv3 tl w-100 bt b--black-20">
                             <span class="accent o-40"><i class="fas fa-angle-double-right"></i></span>
                             <a class="link dim f5 fw5 black-60" href="/post">All posts</a>
-                        </li>
-                    </ul>
-                </li>
+                        </div>
+                    </div>
+                </div>
 
-                <li class="dib ph1 ph2-ns hide-child">
+                <div class="dib ph1 ph2-ns hide-child">
                     <a class="link dim f5 black-60" href="/project">Projects</a>
-                    <ul class="list child absolute pl0 bg-white ba b--black-20">
+                    <div class="child absolute pl0 bg-white ba b--black-20">
                         {{ $pages := first 5 (where .Site.RegularPages.ByDate.Reverse "Type" "project") }}
                         {{ range $pages }}
-                            <li class="pa2 tl">
+                            <div class="pa2 tl">
                                 {{ if .Params.repo }}
                                     <span class="accent o-60"><i class="fab fa-github"></i></span>
                                 {{ end }}                                    
                                 <a class="link dim f5 black-60" href="{{ index .Params "repo" | default .Permalink }}">{{ .Title }}</a>
-                            </li>
+                            </div>
                         {{ end }}
-                        <li class="ph2 pv3 tl w-100 bt b--black-20">
+                        <div class="ph2 pv3 tl w-100 bt b--black-20">
                             <span class="accent o-40"><i class="fas fa-angle-double-right"></i></span>
                             <a class="link dim f5 fw5 black-60" href="/project">All projects</a>
-                        </li>
-                    </ul>
-                </li>                    
-            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <ul class="list ph3">
+            <div class="fr dib ph3">
                 {{ range .Site.Data.social.links }}
-                <li class="dib ph1 ph2-ns">
+                <div class="dib ph1 ph2-ns">
                     <a class="link f4 f3-ns dim" target="_blank" href="{{ .url }}"><i class="{{ .icon }}" style="color: {{ .color }}" ></i></a>
-                </li>
+                </div>
                 {{ end }}                    
-            </ul>
+            </div>
         </nav>
 
         <main style="flex-grow: 1">

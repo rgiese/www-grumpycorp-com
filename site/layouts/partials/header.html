@@ -69,6 +69,10 @@
                                     <small class="accent">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}</small>
                                 </li>
                             {{ end }}
+                            <li class="ph2 pv3 tl w-100 bt b--black-20">
+                                <span class="accent o-40"><i class="fas fa-angle-double-right"></i></span>
+                                <a class="link dim f5 fw5 black-60" href="/post">All posts</a>
+                            </li>
                         </ul>
                     </li>
 
@@ -84,6 +88,10 @@
                                     <a class="link dim f5 black-60" href="{{ index .Params "repo" | default .Permalink }}">{{ .Title }}</a>
                                 </li>
                             {{ end }}
+                            <li class="ph2 pv3 tl w-100 bt b--black-20">
+                                <span class="accent o-40"><i class="fas fa-angle-double-right"></i></span>
+                                <a class="link dim f5 fw5 black-60" href="/project">All projects</a>
+                            </li>
                         </ul>
                     </li>                    
                 </ul>

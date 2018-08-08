@@ -1,18 +1,16 @@
 {{ partial "header" . }}
-<main>
-    <div class="intro">
-        <h1 class="grumpycorp">GrumpyCorp</h1>
 
-        <div class="card-columns mt-4">
-            {{ $pages := first 10 (where .Site.RegularPages.ByDate.Reverse "Type" "about") }}
-            {{ range $pages }}
-                {{ partial "index-card.html" . }}
-            {{ end }}
-            {{ $pages := first 10 (where .Site.RegularPages.ByDate.Reverse "Type" "post") }}
-            {{ range $pages }}
-                {{ partial "index-card.html" . }}
-            {{ end }}
-        </div>
-    </div>
-</main>
+<div class="f-5 pt4 grumpycorp">GrumpyCorp</div>
+
+<div class="cf center mw8">
+    {{ $pages := first 10 (where .Site.RegularPages.ByDate.Reverse "Type" "about") }}
+    {{ range $pages }}
+        {{ partial "index-card.html" . }}
+    {{ end }}
+    {{ $pages := first 10 (where .Site.RegularPages.ByDate.Reverse "Type" "post") }}
+    {{ range $pages }}
+        {{ partial "index-card.html" . }}
+    {{ end }}
+</div>
+
 {{ partial "footer" . }}

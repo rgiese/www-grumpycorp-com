@@ -1,16 +1,32 @@
 {{ partial "header" . }}
-<main>
-    {{ partial "list-item" . }}
-    <br>
-    
-    <div class="text-left">{{ .Content }}</div>
 
-    <!-- related posts with the same tags -->
-    {{ $related := first 3 (where (where (where .Site.Pages.ByDate.Reverse ".Type" "==" "post") ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
+<div class="pt3 pb1">
+    <a class="link f2 fw2 accent" href="{{ .Params.repo | default .RelPermalink }}">{{ .Title }}</a>
+</div>
+<div class="pa2 f3">{{ .Description }}</div>
+<div class="pa1 f5 black-60">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}</div>
+<div>
+    {{ range .Params.tags }}
+        <span class="ph3 f6">
+            <a class="link code accent" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}"><i class="fas fa-tag"></i> {{ . }}</a>
+        </span>
+    {{ end }}    
+</div>
 
-    {{ if $related }}
-        <h4 class="page-header">Related</h4>
-        {{ range $related }} {{ partial "list-item" . }} {{ end }}
-    {{ end }}
-</main>
+<div id="content" class="center mw7 tl lh-copy ph2">
+    {{ .Content }}
+</div>
+
+<!-- related posts with the same tags -->
+{{ $related := first 4 (where (where (where .Site.Pages.ByDate.Reverse ".Type" "==" "post") ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
+
+{{ if $related }}
+    <div class="pt4 f2 black-80">Related</div>
+    <div class="cf center mw7">
+        {{ range $related }} 
+            {{ partial "index-card" . }} 
+        {{ end }}
+    </div>
+{{ end }}
+
 {{ partial "footer.html" . }}

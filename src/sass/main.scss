@@ -18,6 +18,13 @@ html {
     font-family: 'Raleway', sans-serif;
 }
 
+html, body {
+    // Without this, browser enters quirk mode and top-level flexbox layout doesn't scale to full height
+    // unless you remove the top-level DOCTYPE - oy.
+    // See https://stackoverflow.com/questions/32214152/why-does-my-div-height-100-work-only-when-doctype-is-removed/32215263#32215263.
+    height: 100%;
+}
+
 img {
     // Don't let images scale up past their built-in size (but they'll still scale down)
     max-width: 100%;

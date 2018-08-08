@@ -33,13 +33,13 @@ main {
     font-family: "charcuterie-block";
 }
 
-/*footer*/
+// footer
 
 .copyright {
     margin: 1em 0;
 }
 
-/*home page*/
+// home page
 
 .intro {
     transform: translateY(2vh);
@@ -61,7 +61,7 @@ main {
     }
 }
 
-/*apply accent colour to links*/
+// apply accent colour to links
 
 a:link, a:visited {
     color: var(--accent);
@@ -75,7 +75,7 @@ a:hover {
     color: var(--accent) !important;
 }
 
-/*paginator at bottom of list view*/
+// paginator at bottom of list view
 
 .pages {
     padding: 15px 0;
@@ -85,7 +85,7 @@ a:hover {
     padding: 0 15px;
 }
 
-/*list item for posts and projects*/
+// list item for posts and projects
 
 .item {
     padding: 10px 0;
@@ -95,14 +95,14 @@ a:hover {
     background-color: var(--accent);
 }
 
-/*navigation bar icons*/
+// navigation bar icons
 
 .navbar-icon {
     font-size: 150%;
     display: inline-block !important;
 }
 
-/*coloured borders at top and bottom of the page*/
+// coloured borders at top and bottom of the page
 
 .navbar.top-border-band {
     border-top: var(--border-width) solid var(--accent);

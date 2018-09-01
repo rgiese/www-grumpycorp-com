@@ -9,7 +9,7 @@ type = ""
 
 +++
 We just returned from a week-ish-long RV trip with the family that (to me) was some form of love song to my parents.
-Overall it was a pretty successful trips despite some cuts and changes - we saw lots of things, nobody murdered anyone (despite some close calls),
+Overall it was a pretty successful trip despite some cuts and changes - we saw lots of things, nobody murdered anyone (despite some close calls),
 and I think we'd all do it again (albeit differently - see _Lessons Learned_ below.)
 
 With this being some form of love song to my parents, I will go in full-on 'my dad' mode and present some data.

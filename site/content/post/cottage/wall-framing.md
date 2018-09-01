@@ -19,7 +19,7 @@ While I had already trimmed the 5/8" threaded rods to about the right height, th
 I should have been more careful the first time 'round about nailing off a diagonal support for the wall since I managed to tip it over and off the edge of the structure; it took a while to haul it back into place from a position of considerable disadvantage with it hanging off the side of the damn thing. I was a lot more careful with the second long wall (which, due to all of its windows and resulting lack of top plate came together in two separate, easier to manage sections).
 
 After I had two walls in place, I put up the lower roof beam (two 7-1/4" x 1-3/4" LVLs), partially just out of spite.
-<<{ img src="cottage/IMG_20180701_180854" caption="Two walls in place" >}}
+{{< img src="cottage/IMG_20180701_180854" caption="Two walls in place" >}}
 
 I then put up the remaining walls, plumbed and installed the first piece of sheathing for each wall to start getting things more solid, and got the second roof beam in place.
 {{< img src="cottage/IMG_20180710_160619" caption="All walls in place" >}}

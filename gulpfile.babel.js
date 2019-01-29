@@ -13,7 +13,6 @@ import sass from "gulp-sass";
 import newer from "gulp-newer";
 import responsive from "gulp-responsive";
 import imagemin from "gulp-imagemin";
-import mozjpeg from "imagemin-mozjpeg";
 
 import webpack from "webpack";
 import webpackConfig from "./webpack.conf";
@@ -102,9 +101,9 @@ gulp.task('img', () => {
     }))
     .pipe(imagemin([
       imagemin.gifsicle(),
+      imagemin.jpegtran(),
       imagemin.optipng(),
-      imagemin.svgo(),
-      mozjpeg()
+      imagemin.svgo()
     ]))
     .pipe(gulp.dest("./dist/img"));
 });

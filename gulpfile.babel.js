@@ -1,9 +1,13 @@
 import gulp from "gulp";
 
 import {spawn} from "child_process";
+import del from "del";
 
 import hugoBin from "hugo-bin";
 
+import autoprefixer from "gulp-autoprefixer";
+import hash from "gulp-hash";
+import sass from "gulp-sass";
 import newer from "gulp-newer";
 import responsive from "gulp-responsive";
 import imagemin from "gulp-imagemin";
@@ -18,6 +22,19 @@ const browserSync = BrowserSync.create();
 //
 // Tasks
 //
+
+// Compile CSS with SASS
+function compileCSS() {
+  del("./dist/assets/css/**/*");
+
+  return gulp.src("./src/sass/**/*.scss")
+    .pipe(sass({ outputStyle : "compressed" }))
+    .pipe(autoprefixer({ browsers : ["last 20 versions"] }))
+    .pipe(hash())
+    .pipe(gulp.dest("./dist/assets/css"))
+    .pipe(hash.manifest("hash.json"))
+    .pipe(gulp.dest("./site/data/generated"));
+}
 
 // Compile Javascript
 function compileJS() {
@@ -73,11 +90,13 @@ function runServer() {
     }
   });
 
+  // Allow top-level build task to regenerate CSS etc. (required due to the CSS hash trick (c.f. hash.json))
   gulp.watch([
     "./src/js/**/*.js",
+    "./src/sass/**/*.scss",
     "./src/svg/**/*.svg",
     "./site/**/*",
-    "!./site/resources/_gen/**" // Don't watch Hugo-generated files
+    "!./site/data/generated/*" // ignore hash.json updates so we don't get into an infinite loop
   ], exports.build);
 };
 
@@ -115,7 +134,7 @@ function buildSite_ProductionPreview(cb) {
 //
 
 // Build tasks
-const hugoDependencies = gulp.parallel(compileJS, compileSVG, resizeImages);
+const hugoDependencies = gulp.parallel(compileCSS, compileJS, compileSVG, resizeImages);
 
 exports.build = gulp.series(hugoDependencies, buildSite_Production);
 exports.build_preview = gulp.series(hugoDependencies, buildSite_ProductionPreview);

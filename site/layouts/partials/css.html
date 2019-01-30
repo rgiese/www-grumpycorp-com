@@ -1,9 +1,8 @@
 <!-- Tachyons -->
 <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
 
-<!-- Main site CSS from SCSS -->
-{{ $style := resources.Get "scss/main.scss" | toCSS | minify | fingerprint }} 
-<link rel="stylesheet" href="{{ $style.Permalink }}">
+<!-- Main site CSS from SASS -->
+<link rel="stylesheet" href="{{ .Site.BaseURL }}assets/css/{{ index .Site.Data.generated.hash "main.css" }}">
 
 <!-- Fonts -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">

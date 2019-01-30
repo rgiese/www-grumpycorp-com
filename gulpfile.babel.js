@@ -15,6 +15,8 @@ import BrowserSync from "browser-sync";
 import { doesNotReject } from "assert";
 const browserSync = BrowserSync.create();
 
+var log = require('fancy-log');
+
 //
 // Tasks
 //
@@ -90,15 +92,28 @@ function buildSite(cb, options) {
 
   process.env.NODE_ENV = "production";
 
-  return spawn(hugoBin, args, {stdio: "inherit"}).on("close", (code) => {
-    if (code === 0) {
-      browserSync.reload();
-      cb();
-    } else {
-      browserSync.notify("Hugo build failed :(");
-      cb("Hugo build failed");
+  log("Hugo binary: " + hugoBin);
+
+  const ldLibPath = process.env.HOME + "/stdc++6/usr/lib/x86_64-linux-gnu ./hugo";
+  log("LD_LIBRARY_PATH hack: " + ldLibPath);
+
+  process.env.LD_LIBRARY_PATH = ldLibPath;
+
+  return spawn(
+    hugoBin, args, 
+    {
+      stdio: "inherit",
+    })
+    .on("close", (code) => {
+      if (code === 0) {
+        browserSync.reload();
+        cb();
+      } else {
+        browserSync.notify("Hugo build failed :(");
+        cb("Hugo build failed");
+      }
     }
-  });
+  );
 }
 
 function buildSite_Production(cb) {

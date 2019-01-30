@@ -5,11 +5,11 @@ icon: "grumpy-robin.svg"
 date: 2018-06-08
 ---
 
-Hi, I'm Robin. 
-I've been working in one way or another for almost 25 years and have recently been given the amazing opportunity to take some time off.
+Hi, I'm Robin (thus <img class="h1" src="/assets/svg/grumpy-robin.svg"/>). 
+I've been working in one way or another for almost 25 years and am currently taking some time off.
 I intend to use this time to explore, learn, and take care of a bunch of things that have queued up over the years.
 
-{{< grumpycorp >}} is the name of my movie studio / consulting company / record label, whatever it ends up being - likely several of these and more.
+{{< grumpycorp >}} is the name of my movie studio / consulting company / record label / construction outfit, whatever it ends up being - likely several of these and more.
 
 If you want my help on anything - a project, a problem, an opportunity - don't hesitate to [ask](mailto:robin@grumpycorp.com).
 

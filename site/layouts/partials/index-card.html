@@ -12,7 +12,7 @@
     {{ if ($.Scratch.Get "cardIcon") }}
         <div class="pv2 bg-accent-mono-light bt bl br b--accent-mono">
             <a class="f2 white" href="{{ .Params.repo | default .RelPermalink }}">
-                <i class="{{ $.Scratch.Get "cardIcon" }}"></i>
+                <img class="h2 v-mid" src='/assets/svg/{{ $.Scratch.Get "cardIcon" }}'/>
             </a>
         </div>
     {{ end }}

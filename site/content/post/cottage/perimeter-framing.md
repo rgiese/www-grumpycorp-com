@@ -2,7 +2,7 @@
 date = "2018-06-26T07:00:00+00:00"
 description = "Framing the perimeter"
 draft = false
-icon = "fas fa-screwdriver"
+icon = "cottage.svg"
 tags = ["cottage"]
 title = "Cottage perimeter"
 type = ""

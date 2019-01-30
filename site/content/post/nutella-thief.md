@@ -2,7 +2,7 @@
 title: The Nutella Thief
 description: A micro-short film
 date: 2018-04-23 00:00:00 +0000
-icon: fas fa-film
+icon: movie.svg
 tags:
 - film making
 draft: false

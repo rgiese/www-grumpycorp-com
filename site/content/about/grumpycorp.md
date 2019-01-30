@@ -1,7 +1,7 @@
 ---
 title: "Wat?"
 description: "About GRUMPYCORP"
-icon: "fas fa-kiwi-bird"
+icon: "grumpy-robin.svg"
 date: 2018-06-08
 ---
 

@@ -61,9 +61,9 @@
                         {{ $pages := first 5 (where .Site.RegularPages.ByDate.Reverse "Type" "post") }}
                         {{ range $pages }}
                             <div class="pa2 tl">
-                                <a class="link dim f5 black-80" href="{{ .Permalink }}">
+                                <a class="link dim f5 v-base black-80" href="{{ .Permalink }}">
                                     {{ if and (isset .Params "icon") (.Params.Icon) }}
-                                        <div class="dib accent o-80"><i class="{{ .Params.Icon }}"></i></div>
+                                        <img class="dib h1" src="/assets/svg/{{ .Params.Icon }}"/>
                                     {{ end }}
                                     {{ .Title }}
                                 </a>
@@ -72,7 +72,7 @@
                         {{ end }}
                         <div class="ph2 pv3 tl w-100 bt b--black-20">
                             <a class="link dim f5 fw5 black-60" href="/post">
-                                <div class="dib accent o-40"><i class="fas fa-angle-double-right"></i></div>
+                                <div class="dib accent o-80"><i class="fas fa-angle-double-right"></i></div>
                                 All posts
                             </a>
                         </div>
@@ -95,7 +95,7 @@
                         {{ end }}
                         <div class="ph2 pv3 tl w-100 bt b--black-20">
                             <a class="link dim f5 fw5 black-60" href="/project">
-                                <div class="dib accent o-40"><i class="fas fa-angle-double-right"></i></div>
+                                <div class="dib accent o-80"><i class="fas fa-angle-double-right"></i></div>
                                 All projects
                             </a>
                         </div>

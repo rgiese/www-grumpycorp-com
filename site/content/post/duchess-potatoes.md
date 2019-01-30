@@ -2,7 +2,7 @@
 date = "2018-06-06T07:00:00+00:00"
 description = "Re-inventing an existing dish"
 draft = false
-icon = "fas fa-utensils"
+icon = "vegetables.svg"
 tags = ["food"]
 title = "Duchess potatoes"
 type = ""

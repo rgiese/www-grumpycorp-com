@@ -35,7 +35,10 @@
         <nav class="cf pv2 bg-accent-mono-light">
             <div class="fl dib pl2">
                 <div class="dib ph1 ph2-ns">
-                    <a class="link dim f4 black grumpycorp" href="/"><img class="v-mid h2" src="/assets/svg/grumpy-robin.svg"/> GRUMPYCORP</a>
+                    <a class="link dim f4 black grumpycorp" href="/">
+                        {{ partial "svg-icon.html" (dict "icon" "grumpy-robin" "class" "v-mid w2 h2") }}
+                        GRUMPYCORP
+                    </a>
                 </div>
 
                 <div class="dib ph1 ph2-ns nav-hide-child">
@@ -46,7 +49,7 @@
                             <div class="pa2 tl">
                                 <a class="link dim f5 black-80" href="{{ .Permalink }}">
                                     {{ if and (isset .Params "icon") (.Params.Icon) }}
-                                        <div class="dib accent o-80"><i class="{{ .Params.Icon }}"></i></div>
+                                        {{ partial "svg-icon.html" (dict "icon" .Params.Icon "class" "dib w1 h1 v-base") }}
                                     {{ end }}
                                     {{ .Title }} - {{ .Description }}
                                 </a>
@@ -63,7 +66,7 @@
                             <div class="pa2 tl">
                                 <a class="link dim f5 v-base black-80" href="{{ .Permalink }}">
                                     {{ if and (isset .Params "icon") (.Params.Icon) }}
-                                        <img class="dib h1" src="/assets/svg/{{ .Params.Icon }}"/>
+                                        {{ partial "svg-icon.html" (dict "icon" .Params.Icon "class" "dib w1 h1 v-base") }}
                                     {{ end }}
                                     {{ .Title }}
                                 </a>

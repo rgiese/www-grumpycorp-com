@@ -2,7 +2,7 @@
 date = "2018-08-30T07:00:00+00:00"
 description = "By the numbers"
 draft = false
-icon = "rv.svg"
+icon = "rv"
 tags = ["travel"]
 title = "Family RV Trip"
 type = ""

@@ -2,7 +2,7 @@
 date = "2018-06-28T07:00:00+00:00"
 description = "Framing the floor"
 draft = false
-icon = "cottage.svg"
+icon = "cottage"
 tags = ["cottage"]
 title = "Cottage floor"
 type = ""

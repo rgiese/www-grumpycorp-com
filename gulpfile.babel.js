@@ -11,6 +11,7 @@ import sass from "gulp-sass";
 import newer from "gulp-newer";
 import responsive from "gulp-responsive";
 import imagemin from "gulp-imagemin";
+import svgstore from "gulp-svgstore";
 
 import webpack from "webpack-stream";
 import webpackConfig from "./webpack.conf";
@@ -45,8 +46,9 @@ function compileJS() {
 
 // Compile SVG
 function compileSVG() {
-  return gulp.src("./src/svg/**/*.svg")
+  return gulp.src("./src/svg/icons/*.svg")
     .pipe(imagemin([imagemin.svgo()]))
+    .pipe(svgstore())
     .pipe(gulp.dest("./dist/assets/svg"));
 }
 

@@ -1,7 +1,7 @@
 ---
 title: "Wat?"
 description: "About GRUMPYCORP"
-icon: "grumpy-robin.svg"
+icon: "grumpy-robin"
 date: 2018-06-08
 ---
 

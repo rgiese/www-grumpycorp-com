@@ -46,6 +46,7 @@ function compileJS() {
 // Compile SVG
 function compileSVG() {
   return gulp.src("./src/svg/**/*.svg")
+    .pipe(imagemin([imagemin.svgo()]))
     .pipe(gulp.dest("./dist/assets/svg"));
 }
 

@@ -38,7 +38,7 @@
                     <a class="link dim f4 black grumpycorp" href="/"><img class="v-mid h2" src="/assets/svg/grumpy-robin.svg"/> GRUMPYCORP</a>
                 </div>
 
-                <div class="dn dib-ns ph1 ph2-ns nav-hide-child"> <!-- Drop on small screens -->
+                <div class="dib ph1 ph2-ns nav-hide-child">
                     <a class="link dim f5 black-80" href="/about/grumpycorp">About</a>
                     <div class="nav-child absolute pl0 bg-white ba b--black-20">
                         {{ $pages := first 5 (where .Site.RegularPages.ByDate.Reverse "Type" "about") }}
@@ -103,7 +103,8 @@
                 </div>
             </div>
 
-            <div class="fr dib ph3">
+            <!-- Drop on small screens: "dn" - don't display by default, "dib-ns" - display on non-small screens -->
+            <div class="fr dn dib-ns ph3">
                 {{ range .Site.Data.social.links }}
                 <div class="dib ph1 ph2-ns">
                     <a class="link f4 f3-ns dim" target="_blank" href="{{ .url }}"><i class="{{ .icon }} black-40"></i></a>

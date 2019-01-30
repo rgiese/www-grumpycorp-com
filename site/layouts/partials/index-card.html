@@ -6,7 +6,7 @@
     {{ if and (isset .Params "icon") (.Params.Icon) }}
         {{ $.Scratch.Set "cardIcon" .Params.Icon }}
     {{ else if .Params.Repo }}
-        {{ $.Scratch.Set "cardIcon" "fab fa-github" }}
+        {{ $.Scratch.Set "cardIcon" "logo-github" }}
     {{ end }}
 
     {{ if ($.Scratch.Get "cardIcon") }}
@@ -34,7 +34,10 @@
         <!-- Tags -->
         {{ range .Params.tags }}
             <div class="ph3 pt3 pb2 tl f6">
-                <a class="link accent-mono" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}"><i class="fas fa-tag"></i> {{ . }}</a>
+                <a class="link accent-mono" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">
+                    {{ partial "svg-icon.html" (dict "icon" "tag" "class" "w1 h1 v-mid") }}
+                    {{ . }}
+                </a>
             </div>
         {{ end }}
     </div>

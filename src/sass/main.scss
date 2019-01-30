@@ -59,6 +59,10 @@ img {
     fill: currentColor
 }
 
+.svg-h-mirror {
+    transform: scale(-1, 1);
+}
+
 //
 // Tachyons extensions
 //

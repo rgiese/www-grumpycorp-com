@@ -1,12 +1,15 @@
 {{ if or .Paginator.HasPrev .Paginator.HasNext }}
     <div>
         {{ if .Paginator.HasPrev }}
-        <a class="link f2 accent" href="{{ .Paginator.Prev.URL }}" rel="prev">
-            <i class="fas fa-angle-double-left"></i>
+        <a class="link f3 accent ph3" href="{{ .Paginator.Prev.URL }}" rel="prev">
+            {{ partial "svg-icon.html" (dict "icon" "arrow-right" "class" "w1 h1 svg-fill-current-color svg-h-mirror") }}
+            previous
         </a>
-        {{ end }} {{ if .Paginator.HasNext }}
-        <a class="link f2 accent" href="{{ .Paginator.Next.URL }}" rel="next">
-            <i class="fas fa-angle-double-right"></i>
+        {{ end }} 
+        {{ if .Paginator.HasNext }}
+        <a class="link f3 accent ph3" href="{{ .Paginator.Next.URL }}" rel="next">
+            next
+            {{ partial "svg-icon.html" (dict "icon" "arrow-right" "class" "w1 h1 svg-fill-current-color") }}
         </a>
         {{ end }}
     </div>

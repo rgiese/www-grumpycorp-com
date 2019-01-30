@@ -8,7 +8,10 @@
 <div>
     {{ range .Params.tags }}
         <span class="ph3 f6">
-            <a class="link code accent" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}"><i class="fas fa-tag"></i> {{ . }}</a>
+            <a class="link code accent" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">
+                {{ partial "svg-icon.html" (dict "icon" "tag" "class" "w1 h1 v-mid") }}
+                {{ . }}
+            </a>
         </span>
     {{ end }}    
 </div>

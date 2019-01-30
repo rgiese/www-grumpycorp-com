@@ -2,6 +2,7 @@ import gulp from "gulp";
 
 import {spawn} from "child_process";
 import del from "del";
+import path from "path";
 
 import hugoBin from "hugo-bin";
 
@@ -11,7 +12,9 @@ import sass from "gulp-sass";
 import newer from "gulp-newer";
 import responsive from "gulp-responsive";
 import imagemin from "gulp-imagemin";
+
 import svgstore from "gulp-svgstore";
+import svgmin from "gulp-svgmin";
 
 import webpack from "webpack-stream";
 import webpackConfig from "./webpack.conf";
@@ -47,7 +50,17 @@ function compileJS() {
 // Compile SVG
 function compileSVG() {
   return gulp.src("./src/svg/icons/*.svg")
-    .pipe(imagemin([imagemin.svgo()]))
+    .pipe(svgmin(function (file) {
+      var prefix = path.basename(file.relative, path.extname(file.relative));
+      return {
+          plugins: [{
+              cleanupIDs: {
+                  prefix: prefix + '-',
+                  minify: true
+              }
+          }]
+      }
+    }))
     .pipe(svgstore())
     .pipe(gulp.dest("./dist/assets/svg"));
 }

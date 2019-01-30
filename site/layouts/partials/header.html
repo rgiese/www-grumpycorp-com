@@ -110,7 +110,9 @@
             <div class="fr dn dib-ns ph3">
                 {{ range .Site.Data.social.links }}
                 <div class="dib ph1 ph2-ns">
-                    <a class="link f4 f3-ns dim" target="_blank" href="{{ .url }}"><i class="{{ .icon }} black-40"></i></a>
+                    <a class="link f4 f3-ns dim" target="_blank" href="{{ .url }}">
+                        {{ partial "svg-icon.html" (dict "icon" .icon "class" "dib w1 h1 v-base svg-fill-current-color black-40") }}
+                    </a>
                 </div>
                 {{ end }}                    
             </div>

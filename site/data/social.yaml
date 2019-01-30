@@ -1,16 +1,16 @@
 links:
-- icon: 'far fa-envelope'
+- icon: 'logo-gmail'
   url: 'mailto:robin@grumpycorp.com'
   color: gray
   
-- icon: 'fab fa-linkedin'
+- icon: 'logo-linkedin'
   url: 'https://www.linkedin.com/in/robingiese'
   color: '#006599'
 
-- icon: 'fab fa-imdb'
+- icon: 'logo-imdb'
   url: 'https://www.imdb.com/name/nm8515322/'
   color: '#c9a90c'
 
-- icon: 'fab fa-github'
+- icon: 'logo-github'
   url: 'https://github.com/rgiese/'
   color: '#3a3a3a'

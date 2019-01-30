@@ -52,6 +52,14 @@ img {
 }
 
 //
+// SVG madness
+//
+
+.svg-fill-current-color { // Assign to an SVG element to inherit fill color
+    fill: currentColor
+}
+
+//
 // Tachyons extensions
 //
 

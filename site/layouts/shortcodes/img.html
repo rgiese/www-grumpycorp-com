@@ -11,13 +11,13 @@
         </figcaption>
         <picture>
             <!-- Large screens -->
-            <source media="(min-width: 535px)" data-srcset="/img/{{ .Get "src" }}.{{ .Get "type" | default "jpg" }} 1x, /img/{{ .Get "src" }}@2x.{{ .Get "type" | default "jpg" }} 2x">
+            <source media="(min-width: 535px)" data-srcset="/img/{{ .Get "src" }}.{{ .Get "type" | default "jpeg" }} 1x, /img/{{ .Get "src" }}@2x.{{ .Get "type" | default "jpeg" }} 2x">
         
             <!-- Small screens -->
-            <source media="(max-width: 534px)" data-srcset="/img/{{ .Get "src" }}-sm.{{ .Get "type" | default "jpg" }} 1x, /img/{{ .Get "src" }}-sm@2x.{{ .Get "type" | default "jpg" }} 2x">
+            <source media="(max-width: 534px)" data-srcset="/img/{{ .Get "src" }}-sm.{{ .Get "type" | default "jpeg" }} 1x, /img/{{ .Get "src" }}-sm@2x.{{ .Get "type" | default "jpeg" }} 2x">
 
             <!-- Fallback for IE -->
-            <img data-src="/img/{{ .Get "src" }}.{{ .Get "type" | default "jpg" }}" alt="{{ .Get "alt" }}">
+            <img class="lazy" data-src="/img/{{ .Get "src" }}.{{ .Get "type" | default "jpeg" }}" alt="{{ .Get "alt" }}">
         </picture>
     </figure>
 </div>

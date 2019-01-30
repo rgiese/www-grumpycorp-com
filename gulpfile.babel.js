@@ -33,16 +33,20 @@ function compileCSS() {
     .pipe(hash())
     .pipe(gulp.dest("./dist/assets/css"))
     .pipe(hash.manifest("hash.json"))
-    .pipe(gulp.dest("./site/data/generated"))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest("./site/data/generated"));
 }
 
 // Compile Javascript
 function compileJS() {
   return gulp.src("./src/js/app.js")
     .pipe(webpack(webpackConfig))
-    .pipe(gulp.dest("dist/"))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest("dist/"));
+}
+
+// Compile SVG
+function compileSVG() {
+  return gulp.src("./src/svg/**/*.svg")
+    .pipe(gulp.dest("./dist/assets/svg"));
 }
 
 // Resize images to responsive sizes
@@ -77,7 +81,7 @@ function resizeImages() {
     .pipe(gulp.dest("./dist/img"));
 }
 
-// Development server with browsersync
+// Development server
 function runServer() {
   browserSync.init({
     server: {
@@ -85,9 +89,14 @@ function runServer() {
     }
   });
 
-  gulp.watch("./src/js/**/*.js", compileJS);
-  gulp.watch("./src/sass/**/*.scss", compileCSS);
-  gulp.watch(["./site/**/*", "!./site/data/generated/*"], exports.build);
+  // Allow top-level build task to regenerate CSS etc. (required due to the CSS hash trick (c.f. hash.json))
+  gulp.watch([
+    "./src/js/**/*.js",
+    "./src/sass/**/*.scss",
+    "./src/svg/**/*.svg",
+    "./site/**/*",
+    "!./site/data/generated/*" // ignore hash.json updates so we don't get into an infinite loop
+  ], exports.build);
 };
 
 // Build site with Hugo
@@ -124,7 +133,7 @@ function buildSite_ProductionPreview(cb) {
 //
 
 // Build tasks
-const hugoDependencies = gulp.parallel(compileCSS, compileJS, resizeImages);
+const hugoDependencies = gulp.parallel(compileCSS, compileJS, compileSVG, resizeImages);
 
 exports.build = gulp.series(hugoDependencies, buildSite_Production);
 exports.build_preview = gulp.series(hugoDependencies, buildSite_ProductionPreview);

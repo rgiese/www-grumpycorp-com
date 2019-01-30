@@ -1,7 +1,13 @@
 {{ partial "header" . }}
 
-<div class="f-5 pt4 grumpycorp">GrumpyCorp</div>
-
+<div class="pv5">
+    <img class="v-mid h3" src="/assets/svg/grumpy-robin.svg"/>
+    <div class="dib v-mid">
+        <div class="f1 grumpycorp" style="line-height: 1">GRUMPYCORP</div>
+        <div class="f4 grumpycorp-extralight accent">creative industries</div>
+    </div>
+</div>
+    
 <div class="cf center mw8">
     {{ $pages := first 10 (where .Site.RegularPages.ByDate.Reverse "Type" "about") }}
     {{ range $pages }}

@@ -32,21 +32,21 @@
     {{ end }}
 
     <body class="flex flex-column items-stretch tc bg-white">
-        <nav class="cf pv2 bg-black-05 bt bw2 b--accent">
+        <nav class="cf pv2 bg-accent-mono-light">
             <div class="fl dib pl2">
                 <div class="dib ph1 ph2-ns">
-                    <a class="link dim f4 black grumpycorp" href="/">GrumpyCorp</a>
+                    <a class="link dim f4 black grumpycorp" href="/"><img class="v-mid h2" src="/assets/svg/grumpy-robin.svg"/> GRUMPYCORP</a>
                 </div>
 
                 <div class="dn dib-ns ph1 ph2-ns nav-hide-child"> <!-- Drop on small screens -->
-                    <a class="link dim f5 black-60" href="/about/grumpycorp">About</a>
+                    <a class="link dim f5 black-80" href="/about/grumpycorp">About</a>
                     <div class="nav-child absolute pl0 bg-white ba b--black-20">
                         {{ $pages := first 5 (where .Site.RegularPages.ByDate.Reverse "Type" "about") }}
                         {{ range $pages }}
                             <div class="pa2 tl">
-                                <a class="link dim f5 black-60" href="{{ .Permalink }}">
+                                <a class="link dim f5 black-80" href="{{ .Permalink }}">
                                     {{ if and (isset .Params "icon") (.Params.Icon) }}
-                                        <div class="dib accent o-60"><i class="{{ .Params.Icon }}"></i></div>
+                                        <div class="dib accent o-80"><i class="{{ .Params.Icon }}"></i></div>
                                     {{ end }}
                                     {{ .Title }} - {{ .Description }}
                                 </a>
@@ -56,14 +56,14 @@
                 </div>
 
                 <div class="dib ph1 ph2-ns nav-hide-child">
-                    <a class="link dim f5 black-60" href="/post">Posts</a>
+                    <a class="link dim f5 black-80" href="/post">Posts</a>
                     <div class="nav-child absolute pl0 bg-white ba b--black-20">
                         {{ $pages := first 5 (where .Site.RegularPages.ByDate.Reverse "Type" "post") }}
                         {{ range $pages }}
                             <div class="pa2 tl">
-                                <a class="link dim f5 black-60" href="{{ .Permalink }}">
+                                <a class="link dim f5 black-80" href="{{ .Permalink }}">
                                     {{ if and (isset .Params "icon") (.Params.Icon) }}
-                                        <div class="dib accent o-60"><i class="{{ .Params.Icon }}"></i></div>
+                                        <div class="dib accent o-80"><i class="{{ .Params.Icon }}"></i></div>
                                     {{ end }}
                                     {{ .Title }}
                                 </a>
@@ -80,14 +80,14 @@
                 </div>
 
                 <div class="dib ph1 ph2-ns nav-hide-child">
-                    <a class="link dim f5 black-60" href="/project">Projects</a>
+                    <a class="link dim f5 black-80" href="/project">Projects</a>
                     <div class="nav-child absolute pl0 bg-white ba b--black-20">
                         {{ $pages := first 5 (where .Site.RegularPages.ByDate.Reverse "Type" "project") }}
                         {{ range $pages }}
                             <div class="pa2 tl">
-                                <a class="link dim f5 black-60" href="{{ index .Params "repo" | default .Permalink }}">
+                                <a class="link dim f5 black-80" href="{{ index .Params "repo" | default .Permalink }}">
                                     {{ if .Params.repo }}
-                                        <div class="dib accent o-60"><i class="fab fa-github"></i></div>
+                                        <div class="dib accent o-80"><i class="fab fa-github"></i></div>
                                     {{ end }}                                    
                                     {{ .Title }}
                                 </a>
@@ -106,7 +106,7 @@
             <div class="fr dib ph3">
                 {{ range .Site.Data.social.links }}
                 <div class="dib ph1 ph2-ns">
-                    <a class="link f4 f3-ns dim" target="_blank" href="{{ .url }}"><i class="{{ .icon }}" style="color: {{ .color }}" ></i></a>
+                    <a class="link f4 f3-ns dim" target="_blank" href="{{ .url }}"><i class="{{ .icon }} black-40"></i></a>
                 </div>
                 {{ end }}                    
             </div>

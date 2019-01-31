@@ -1,8 +1,10 @@
 {{ partial "header" . }}
 
-<h2>{{ .Title }}</h2>
+<div class="f2 pt4">
+    {{ .Title }}
+</div>
 
-<div class="cf center mw8">
+<div class="cf center mw7 ph3">
     {{ range (.Paginator 8).Pages }} 
         {{ partial "index-card" . }} 
     {{ end }}

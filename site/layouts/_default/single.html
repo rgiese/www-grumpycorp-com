@@ -24,11 +24,14 @@
 {{ $related := first 4 (where (where (where .Site.Pages.ByDate.Reverse ".Type" "==" "post") ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
 
 {{ if $related }}
-    <div class="pt4 f2 black-80">Related</div>
-    <div class="cf center mw7">
-        {{ range $related }} 
-            {{ partial "index-card" . }} 
-        {{ end }}
+    <div class="cf center mw7 ph2">
+        <div class="pt4 f2 tl black-80">Related</div>
+
+        <div class="w-80"> <!-- Reduce width somewhat so this isn't as prominent as the main content -->
+            {{ range $related }} 
+                {{ partial "index-card" . }} 
+            {{ end }}
+        </div>
     </div>
 {{ end }}
 

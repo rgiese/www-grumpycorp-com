@@ -1,0 +1,18 @@
+{
+  "include": ["./src/**/*"],
+  "compilerOptions": {
+    "strict": true,
+
+    "target": "esnext",
+
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true, // allows for `import React from "react"` vs. `import * as React from "react"`
+
+    "lib": ["dom", "esnext"],
+    "jsx": "react",
+
+    "forceConsistentCasingInFileNames": true,
+
+    "noEmit": true
+  }
+}

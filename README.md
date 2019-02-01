@@ -11,3 +11,5 @@ See [The Noun Project](https://thenounproject.com/).
 
 ## Links
 - [Gatsby](https://www.gatsbyjs.org)
+- [TypeScript guide](http://2ality.com/2018/04/type-notation-typescript.html)
+- [React/TypeScript cheatsheet](https://github.com/sw-yx/react-typescript-cheatsheet)

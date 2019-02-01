@@ -5,6 +5,9 @@ module.exports = {
     author: `Robin Giese`,
   },
   plugins: [
+    // TypeScript
+    `gatsby-plugin-typescript`,
+
     // HTML headers management
     `gatsby-plugin-react-helmet`,
 

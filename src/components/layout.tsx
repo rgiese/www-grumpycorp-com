@@ -1,5 +1,5 @@
+import { graphql, StaticQuery } from "gatsby"
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
@@ -15,6 +15,7 @@ const Layout: React.FunctionComponent<{}> = ({ children }) => (
         }
       }
     `}
+    // tslint:disable-next-line jsx-no-lambda
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />

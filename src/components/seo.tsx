@@ -1,6 +1,6 @@
+import { graphql, StaticQuery } from "gatsby"
 import React from "react"
 import Helmet from "react-helmet"
-import { StaticQuery, graphql } from "gatsby"
 
 const SEO: React.FunctionComponent<{ 
     description?: string,
@@ -10,6 +10,7 @@ const SEO: React.FunctionComponent<{
   }> = ({ description, lang = "en", keywords = [], title }) => (
   <StaticQuery
     query={detailsQuery}
+    // tslint:disable-next-line jsx-no-lambda
     render={data => {
       const metaDescription =
         description || data.site.siteMetadata.description
@@ -23,27 +24,27 @@ const SEO: React.FunctionComponent<{
           meta={
             [
               {
+                content: metaDescription,
                 name: `description`,
-                content: metaDescription,
               },
               {
-                property: `og:title`,
                 content: title,
+                property: `og:title`,
               },
               {
-                property: `og:description`,
                 content: metaDescription,
+                property: `og:description`,
               },
               {
-                property: `og:type`,
                 content: `website`,
+                property: `og:type`,
               },
             ]
             .concat(
               keywords.length > 0
                 ? {
-                    name: `keywords`,
                     content: keywords.join(`, `),
+                    name: `keywords`,
                   }
                 : []
             )

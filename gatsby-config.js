@@ -7,7 +7,7 @@ module.exports = {
   plugins: [
     // TypeScript
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-typescript-checker`, // Consider commenting out for drastically better build times
+    // `gatsby-plugin-typescript-checker`, // Commenting out for drastically better build times, given that we have pre-commit hooks in place
 
     // HTML headers management
     `gatsby-plugin-react-helmet`,

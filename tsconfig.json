@@ -12,6 +12,7 @@
     "jsx": "react",
 
     "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": true,
 
     "noEmit": true
   }

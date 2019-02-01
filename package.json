@@ -21,6 +21,8 @@
     "gatsby-plugin-typescript-checker": "^1.0.3",
     "gatsby-source-filesystem": "^2.0.19",
     "gatsby-transformer-sharp": "^2.1.13",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.1",
     "prettier": "1.16.3",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
@@ -32,7 +34,7 @@
     "typescript": "^3.3.1"
   },
   "config": {
-    "prettierglob": "{.,./src/**}/*.{css,ts,tsx,js,jsx,json}"
+    "prettierglob": "{.,./src/**}/*.{css,js,jsx,json,ts,tsx}"
   },
   "scripts": {
     "build": "gatsby build",
@@ -43,5 +45,16 @@
     "ts:lint": "tslint --project .",
     "format:check": "cross-var prettier --check $npm_package_config_prettierglob",
     "format:fix": "cross-var prettier --write $npm_package_config_prettierglob"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{css,js,jsx,json,ts,tsx}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }

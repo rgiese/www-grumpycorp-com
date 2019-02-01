@@ -1,8 +1,8 @@
-import { graphql, StaticQuery } from "gatsby"
-import React from "react"
+import { graphql, StaticQuery } from "gatsby";
+import React from "react";
 
-import Header from "./header"
-import "./layout.css"
+import Header from "./header";
+import "./layout.css";
 
 const Layout: React.FunctionComponent<{}> = ({ children }) => (
   <StaticQuery
@@ -29,12 +29,13 @@ const Layout: React.FunctionComponent<{}> = ({ children }) => (
         >
           <main>{children}</main>
           <footer>
-            © {new Date().getFullYear()}, Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
+            © {new Date().getFullYear()}, Built with{" "}
+            <a href="https://www.gatsbyjs.org">Gatsby</a>
           </footer>
         </div>
       </>
     )}
   />
-)
+);
 
-export default Layout
+export default Layout;

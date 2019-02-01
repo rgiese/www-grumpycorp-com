@@ -1,7 +1,9 @@
-import { Link } from "gatsby"
-import React from "react"
+import { Link } from "gatsby";
+import React from "react";
 
-const Header: React.FunctionComponent<{ siteTitle: string }> = ({ siteTitle }) => (
+const Header: React.FunctionComponent<{ siteTitle: string }> = ({
+  siteTitle,
+}) => (
   <header
     style={{
       background: `rebeccapurple`,
@@ -28,6 +30,6 @@ const Header: React.FunctionComponent<{ siteTitle: string }> = ({ siteTitle }) =
       </h1>
     </div>
   </header>
-)
+);
 
-export default Header
+export default Header;

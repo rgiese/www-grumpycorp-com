@@ -15,6 +15,8 @@ import imagemin from "gulp-imagemin";
 
 import svgstore from "gulp-svgstore";
 import svgmin from "gulp-svgmin";
+import through2 from "through2";
+import cheerio from "cheerio";
 
 import webpack from "webpack-stream";
 import webpackConfig from "./webpack.conf";
@@ -50,6 +52,7 @@ function compileJS() {
 // Compile SVG
 function compileSVG() {
   return gulp.src("./src/svg/icons/*.svg")
+    // Minify source SVGs
     .pipe(svgmin(function (file) {
       var prefix = path.basename(file.relative, path.extname(file.relative));
       return {
@@ -61,8 +64,32 @@ function compileSVG() {
           }]
       }
     }))
+    // Build and save SVG store into a single file
     .pipe(svgstore())
-    .pipe(gulp.dest("./dist/assets/svg"));
+    .pipe(gulp.dest("./dist/assets/svg"))
+    // Extract viewbox per symbol
+    .pipe(through2.obj(function (file, encoding, callback) {
+      // Load SVG store
+      const $ = cheerio.load(file.contents.toString(), {xmlMode: true});
+
+      // Extract
+      var viewBoxes = {};
+      // const metadata = $("svg > symbol").map(function () {
+      //     return { [$(this).attr("id")]: $(this).attr("viewBox") };
+      // }).get();
+      $("svg > symbol").map(function () {
+        viewBoxes[$(this).attr("id")] = $(this).attr("viewBox");
+      });
+
+      // Save
+      file.contents = Buffer.from(JSON.stringify(viewBoxes));
+
+      //file.stem = file.stem + "_viewbox";
+      file.extname = ".json";
+
+      callback(null, file);
+    }))
+    .pipe(gulp.dest("./site/data/generated"));
 }
 
 // Resize images to responsive sizes

@@ -32,7 +32,7 @@
     "typescript": "^3.3.1"
   },
   "config": {
-    "prettierglob": "src/**/*.{css,ts,tsx,js,jsx}"
+    "prettierglob": "{.,./src/**}/*.{css,ts,tsx,js,jsx,json}"
   },
   "scripts": {
     "build": "gatsby build",

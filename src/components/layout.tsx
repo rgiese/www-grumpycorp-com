@@ -2,6 +2,9 @@ import { graphql, StaticQuery } from "gatsby";
 import React from "react";
 
 import Header from "./header";
+
+// CSS
+import "tachyons";
 import "./layout.css";
 
 const Layout: React.FunctionComponent<{}> = ({ children }) => (

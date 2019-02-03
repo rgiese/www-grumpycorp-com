@@ -17,3 +17,4 @@ See [The Noun Project](https://thenounproject.com/).
 ## Breadcrumbs for future things to consider
 - [CSS class name spec management based on state](https://www.npmjs.com/package/classnames#usage-with-reactjs)
 - [Smart quotation marks generated from Markdown](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-remark-smartypants#readme)
+- [Code syntax highlighting from Markdown](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/)

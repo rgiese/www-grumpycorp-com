@@ -12,7 +12,7 @@ interface IPostIndexProps {
 // Internal GraphQL query
 const postIndexQuery = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
         node {

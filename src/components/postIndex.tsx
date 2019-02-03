@@ -1,4 +1,4 @@
-import { graphql, StaticQuery } from "gatsby";
+import { graphql, Link, StaticQuery } from "gatsby";
 import React from "react";
 
 // TODO: Figure out how (or whether) we should filter by post type/location.
@@ -12,11 +12,17 @@ interface IPostIndexProps {
 // Internal GraphQL query
 const postIndexQuery = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { fields: { sourceInstanceName: { eq: "posts" } } }
+    ) {
       totalCount
       edges {
         node {
           id
+          fields {
+            slug
+          }
           frontmatter {
             title
             date
@@ -36,6 +42,9 @@ interface IPostIndexPropsWithData extends IPostIndexProps {
       edges: Array<{
         node: {
           id: string;
+          fields: {
+            slug: string;
+          };
           frontmatter: {
             title: string;
             date: string;
@@ -59,8 +68,9 @@ const PostIndex: React.SFC<IPostIndexPropsWithData> = ({
       </h1>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>
-          {node.id}
-          {node.frontmatter.title} — {node.frontmatter.date}
+          <Link to={node.fields.slug}>
+            {node.frontmatter.title} — {node.frontmatter.date}
+          </Link>
           <p>{node.excerpt}</p>
         </div>
       ))}

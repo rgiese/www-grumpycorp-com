@@ -1,13 +1,11 @@
-+++
-date = "2018-07-17T07:00:00+00:00"
-description = "Framing the roof"
-draft = false
-icon = "cottage"
-tags = ["cottage"]
-title = "Cottage roof"
-type = ""
+---
+title: Cottage roof
+description: Framing the roof
+date: 2018-07-17
+icon: cottage
+tags: ["cottage"]
+---
 
-+++
 The roof framing was again a bit precious due to the nature of the floor-to-ceiling windows. Rather than having simple-ish roof rafters between the beams and then separate short extensions for the overhangs, I decided to notch the beams into full-length solid-sawn 2x10 rafters. 
 I made a template out of scrap plywood, transcribed AutoCAD-derived dimensions onto it, and it magically fit on the first cut.
 

@@ -1,13 +1,11 @@
 ---
 title: The Nutella Thief
 description: A micro-short film
-date: 2018-04-23 00:00:00 +0000
+date: 2018-04-23
 icon: movie
-tags:
-- film making
-draft: false
-
+tags: ["film making"]
 ---
+
 _The Nutella Thief_ is my first micro-short film, conceived on a Saturday over a late breakfast, filmed that afternoon, and edited and scored the next day.
 
 {{< vimeo 266134889 >}}

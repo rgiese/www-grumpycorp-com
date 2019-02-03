@@ -1,13 +1,11 @@
-+++
-date = "2018-08-30T07:00:00+00:00"
-description = "By the numbers"
-draft = false
-icon = "rv"
-tags = ["travel"]
-title = "Family RV Trip"
-type = ""
+---
+title: Family RV Trip
+description: By the numbers
+date: 2018-08-30
+icon: rv
+tags: ["travel"]
+---
 
-+++
 We just returned from a week-ish-long RV trip with the family that (to me) was some form of love song to my parents.
 Overall it was a pretty successful trip despite some cuts and changes - we saw lots of things, nobody murdered anyone (despite some close calls),
 and I think we'd all do it again (albeit differently - see _Lessons Learned_ below.)

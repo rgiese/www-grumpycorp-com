@@ -1,13 +1,11 @@
-+++
-date = "2018-06-12T07:00:00+00:00"
-description = "Introducing the project"
-draft = false
-icon = "cottage"
-tags = ["cottage"]
-title = "Cottage 101"
-type = ""
+---
+title: Cottage 101
+description: Introducing the project
+date: 2018-06-12
+icon: cottage
+tags: ["cottage"]
+---
 
-+++
 A few years ago we were tremendously fortunate to get to build our dream house with the amazing folks at [Build LLC](https://www.buildllc.com/).
 
 I had wanted to carve out some future work for myself for the property, so the idea of the _Writer's Cottage_ was born - 

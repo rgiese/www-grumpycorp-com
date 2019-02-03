@@ -1,13 +1,11 @@
-+++
-date = "2018-06-06T07:00:00+00:00"
-description = "Re-inventing an existing dish"
-draft = false
-icon = "vegetables"
-tags = ["food"]
-title = "Duchess potatoes"
-type = ""
+---
+title: Duchess potatoes
+description: Re-inventing an existing dish
+date: 2018-06-06
+icon: vegetables
+tags: ["food"]
+---
 
-+++
 I had picked up asparagus for dinner yet again since it's fun, easy, and in season. I wanted to add some potatoes to the mix and thought about mashing them and piping them in some needlessly fancy way. Turns out this is an actual thing (duchess potatoes) that I'd managed to re-invent.
   
 {{< img src="IMG_20180606_184555_Bokeh" caption="Duchess potatoes, asparagus, tofu, mushrooms" >}}

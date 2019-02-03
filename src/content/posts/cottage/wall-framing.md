@@ -1,13 +1,11 @@
-+++
-date = "2018-07-10T07:00:00+00:00"
-description = "Framing the walls"
-draft = false
-icon = "cottage"
-tags = ["cottage"]
-title = "Cottage walls"
-type = ""
+---
+title: Cottage walls
+description: Framing the walls
+date: 2018-07-10
+icon: cottage
+tags: ["cottage"]
+---
 
-+++
 The wall framing is surprisingly cooky because of the nature of the floor-to-ceiling windows. Wherever there's a window, the rough opening goes all the way to the underside of the roof system so there is no top plate and the roof system needs to hang off a beam rather than sitting on top of one.
 
 I made the somewhat special choice to continue doing all the work by myself, so putting up walls by myself took a while.

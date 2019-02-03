@@ -1,13 +1,11 @@
-+++
-date = "2018-06-26T07:00:00+00:00"
-description = "Framing the perimeter"
-draft = false
-icon = "cottage"
-tags = ["cottage"]
-title = "Cottage perimeter"
-type = ""
+---
+title: Cottage perimeter
+description: Framing the perimeter
+date: 2018-06-26
+icon: cottage
+tags: ["cottage"]
+---
 
-+++
 I spent a lot of effort getting a perfectly leveled perimeter frame in place so that from that point forward, 
 everything would just need to be square in order to be level and plumb.
 

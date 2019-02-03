@@ -1,13 +1,11 @@
-+++
-date = "2018-06-28T07:00:00+00:00"
-description = "Framing the floor"
-draft = false
-icon = "cottage"
-tags = ["cottage"]
-title = "Cottage floor"
-type = ""
+---
+title: Cottage floor
+description: Framing the floor
+date: 2018-06-28
+icon: cottage
+tags: ["cottage"]
+---
 
-+++
 It was surprisingly fast getting the I-joists in place. 
 I also ran wires from each wall to where a small exterior electrical panel will go so I don't need to route wires around corners.
 (All wires are 10-3 just in case and because I can.)

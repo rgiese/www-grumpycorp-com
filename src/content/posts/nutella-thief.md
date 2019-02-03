@@ -5,10 +5,11 @@ date: 2018-04-23
 icon: movie
 tags: ["film making"]
 ---
-
 _The Nutella Thief_ is my first micro-short film, conceived on a Saturday over a late breakfast, filmed that afternoon, and edited and scored the next day.
 
-{{< vimeo 266134889 >}}
+import Vimeo from "../../components/vimeo.tsx"
+
+<Vimeo videoId="266134889"/>
 
 ### Lessons learned
 

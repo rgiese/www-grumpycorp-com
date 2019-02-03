@@ -12,6 +12,16 @@ module.exports = {
     // HTML headers management
     `gatsby-plugin-react-helmet`,
 
+    // Markdown processing
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/content/posts`,
+      },
+    },
+    `gatsby-transformer-remark`,
+
     // Image processing pipeline
     {
       resolve: `gatsby-source-filesystem`,

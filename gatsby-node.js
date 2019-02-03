@@ -6,7 +6,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
   // Create slugs and attach source instance names for Markdown content
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `Mdx`) {
     // Get source instance name so we can filter on it in queries
     const parent = getNode(node.parent);
     const sourceInstanceName = parent.sourceInstanceName;
@@ -34,9 +34,7 @@ exports.createPages = ({ graphql, actions }) => {
   // Build pages for posts
   graphql(`
     {
-      allMarkdownRemark(
-        filter: { fields: { sourceInstanceName: { eq: "posts" } } }
-      ) {
+      allMdx(filter: { fields: { sourceInstanceName: { eq: "posts" } } }) {
         edges {
           node {
             fields {
@@ -47,7 +45,7 @@ exports.createPages = ({ graphql, actions }) => {
       }
     }
   `).then(result => {
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    result.data.allMdx.edges.forEach(({ node }) => {
       createPage({
         path: node.fields.slug,
         component: path.resolve(`./src/templates/post.tsx`),

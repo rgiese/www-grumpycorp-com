@@ -9,8 +9,7 @@ interface IPostIndexProps {
 // Internal GraphQL query
 const postIndexQuery = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      totalCount
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           id
@@ -32,8 +31,7 @@ const postIndexQuery = graphql`
 // Extend component properties with TypeScript-typed fields corresponding to GraphQL query
 interface IPostIndexPropsWithData extends IPostIndexProps {
   data: {
-    allMarkdownRemark: {
-      totalCount: number;
+    allMdx: {
       edges: Array<{
         node: {
           id: string;
@@ -57,7 +55,7 @@ const PostIndex: React.SFC<IPostIndexPropsWithData> = ({
   sourceName,
   data,
 }) => {
-  const posts = data.allMarkdownRemark.edges.filter(
+  const posts = data.allMdx.edges.filter(
     ({ node }) => node.fields.sourceInstanceName === sourceName
   );
 

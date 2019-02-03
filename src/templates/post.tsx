@@ -1,4 +1,6 @@
 import { graphql } from "gatsby";
+// tslint:disable-next-line no-submodule-imports
+import MDXRenderer from "gatsby-mdx/mdx-renderer";
 import React from "react";
 
 import Layout from "../components/layout";
@@ -7,8 +9,10 @@ import SEO from "../components/seo";
 // Page-level GraphQL query
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(fields: { slug: { eq: $slug } }) {
+      code {
+        body
+      }
       frontmatter {
         title
         date
@@ -20,8 +24,10 @@ export const query = graphql`
 // Component properties with TypeScript-typed fields corresponding to GraphQL query
 interface IPostPropsWithData {
   data: {
-    markdownRemark: {
-      html: string;
+    mdx: {
+      code: {
+        body: string;
+      };
       frontmatter: {
         title: string;
         date: string;
@@ -32,12 +38,12 @@ interface IPostPropsWithData {
 
 // Component definition
 const IndexPage: React.SFC<IPostPropsWithData> = ({ data }) => {
-  const post = data.markdownRemark;
+  const post = data.mdx;
   return (
     <Layout>
       <SEO title={post.frontmatter.title} />
       <h1>{post.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <MDXRenderer>{post.code.body}</MDXRenderer>
     </Layout>
   );
 };

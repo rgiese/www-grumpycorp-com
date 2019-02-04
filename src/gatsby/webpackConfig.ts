@@ -55,6 +55,10 @@ export const onCreateWebpackConfig: GatsbyOnCreateWebpackConfig = ({
             spriteFilename: `icons.svg`,
           },
         },
+        {
+          loader: "svgo-loader",
+          options: {},
+        },
       ],
     },
   ];

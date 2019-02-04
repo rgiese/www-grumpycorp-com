@@ -32,3 +32,13 @@ export type GatsbyCreatePages = (fns: {
   graphql: any;
   boundActionCreators: ICreatePageActionCreators;
 }) => void;
+
+// onCreateWebpackConfig
+interface IOnCreateWebpackConfigActionCreators {
+  replaceWebpackConfig: (opts: { config: any }) => void;
+}
+
+export type GatsbyOnCreateWebpackConfig = (fns: {
+  boundActionCreators: IOnCreateWebpackConfigActionCreators;
+  getConfig: () => any;
+}) => void;

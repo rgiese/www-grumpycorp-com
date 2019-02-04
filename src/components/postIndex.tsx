@@ -1,6 +1,8 @@
 import { graphql, Link, StaticQuery } from "gatsby";
 import React from "react";
 
+import NamedIcon from "./namedIcon";
+
 // Component properties
 interface IPostIndexProps {
   sourceName: string;
@@ -18,8 +20,9 @@ const postIndexQuery = graphql`
             sourceInstanceName
           }
           frontmatter {
-            title
             date
+            icon
+            title
           }
           excerpt
         }
@@ -40,8 +43,9 @@ interface IPostIndexPropsWithData extends IPostIndexProps {
             sourceInstanceName: string;
           };
           frontmatter: {
-            title: string;
             date: string;
+            icon: string;
+            title: string;
           };
           excerpt: string;
         };
@@ -66,6 +70,7 @@ const PostIndex: React.SFC<IPostIndexPropsWithData> = ({
       </h1>
       {posts.map(({ node }) => (
         <div key={node.id}>
+          <NamedIcon name={node.frontmatter.icon} className="w2 h2" />
           <Link to={node.fields.slug}>
             {node.frontmatter.title} — {node.frontmatter.date}
           </Link>

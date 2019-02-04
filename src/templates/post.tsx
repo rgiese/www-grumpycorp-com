@@ -6,10 +6,16 @@ import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
+// Page context to be provided from ../gatsby/createPages.ts
+export interface IPostPageContext {
+  slug: string;
+  sourceInstanceName: string;
+}
+
 // Page-level GraphQL query
-export const query = graphql`
+export const pageContentQuery = graphql`
   query($slug: String!) {
-    mdx(fields: { slug: { eq: $slug } }) {
+    post: mdx(fields: { slug: { eq: $slug } }) {
       code {
         body
       }
@@ -21,24 +27,26 @@ export const query = graphql`
   }
 `;
 
-// Component properties with TypeScript-typed fields corresponding to GraphQL query
-interface IPostPropsWithData {
-  data: {
-    mdx: {
-      code: {
-        body: string;
-      };
-      frontmatter: {
-        title: string;
-        date: string;
-      };
+// TypeScript-typed fields corresponding to automatic (exported) GraphQL query
+interface IPageContentData {
+  post: {
+    code: {
+      body: string;
+    };
+    frontmatter: {
+      title: string;
+      date: string;
     };
   };
 }
 
 // Component definition
-const IndexPage: React.SFC<IPostPropsWithData> = ({ data }) => {
-  const post = data.mdx;
+const IndexPage: React.SFC<{
+  data: IPageContentData;
+  pageContext: IPostPageContext;
+}> = ({ data }) => {
+  const post = data.post;
+
   return (
     <Layout>
       <SEO title={post.frontmatter.title} />

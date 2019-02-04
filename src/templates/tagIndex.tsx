@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import { IPostIndexPosts, PostIndex } from "../components/postIndex";
 import SEO from "../components/seo";
 
+// Page context to be provided from ../gatsby/createPages.ts
 export interface ITagIndexPageContext {
   sourceInstanceName: string;
   tag: string;

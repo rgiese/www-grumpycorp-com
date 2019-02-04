@@ -3,6 +3,7 @@ import { resolve } from "path";
 
 import { GatsbyCreatePages, GatsbyOnCreateNode } from "./gatsby-node";
 
+import { IPostPageContext } from "../templates/post";
 import { ITagIndexPageContext } from "../templates/tagIndex";
 
 // tslint:disable object-literal-sort-keys
@@ -91,13 +92,12 @@ export const createPages: GatsbyCreatePages = async ({
     const slug = node.fields.slug;
     const sourceInstanceName = node.fields.sourceInstanceName;
 
+    const postPageContext: IPostPageContext = { slug, sourceInstanceName };
+
     createPage({
       path: slug,
       component: resolve(`./src/templates/post.tsx`),
-      context: {
-        slug,
-        sourceInstanceName,
-      },
+      context: postPageContext,
     });
 
     // Accumulate tags

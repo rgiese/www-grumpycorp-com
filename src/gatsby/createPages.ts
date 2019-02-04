@@ -3,6 +3,8 @@ import { resolve } from "path";
 
 import { GatsbyCreatePages, GatsbyOnCreateNode } from "./gatsby-node";
 
+import { ITagIndexPageContext } from "../templates/tagIndex";
+
 // tslint:disable object-literal-sort-keys
 
 // onCreateNode
@@ -37,13 +39,17 @@ export const onCreateNode: GatsbyOnCreateNode = ({
 };
 
 // createPages
-interface IAllMdx {
+interface IPosts {
   data: {
-    allMdx: {
+    posts: {
       edges: Array<{
         node: {
           fields: {
             slug: string;
+            sourceInstanceName: string;
+          };
+          frontmatter: {
+            tags: string[];
           };
         };
       }>;
@@ -58,13 +64,19 @@ export const createPages: GatsbyCreatePages = async ({
   const { createPage } = boundActionCreators;
 
   // Build pages for posts
-  const allMdx: IAllMdx = await graphql(`
+  const postData: IPosts = await graphql(`
     {
-      allMdx(filter: { fields: { sourceInstanceName: { eq: "posts" } } }) {
+      posts: allMdx(
+        filter: { fields: { sourceInstanceName: { eq: "posts" } } }
+      ) {
         edges {
           node {
             fields {
               slug
+              sourceInstanceName
+            }
+            frontmatter {
+              tags
             }
           }
         }
@@ -72,15 +84,43 @@ export const createPages: GatsbyCreatePages = async ({
     }
   `);
 
-  allMdx.data.allMdx.edges.forEach(({ node }) => {
+  const tagsWithSourceInstance = new Set();
+  const tagSeparator = `/`;
+
+  postData.data.posts.edges.forEach(({ node }) => {
+    const slug = node.fields.slug;
+    const sourceInstanceName = node.fields.sourceInstanceName;
+
     createPage({
-      path: node.fields.slug,
+      path: slug,
       component: resolve(`./src/templates/post.tsx`),
       context: {
-        // Data passed to context is available
-        // in page queries as GraphQL variables.
-        slug: node.fields.slug,
+        slug,
+        sourceInstanceName,
       },
     });
+
+    // Accumulate tags
+    node.frontmatter.tags.forEach(tag => {
+      // Since JavaScript doesn't seem to have a proper std::set<T>,
+      // we'll just cram our two values into a delimited string.
+      // Sadness.
+      tagsWithSourceInstance.add(`${sourceInstanceName}${tagSeparator}${tag}`);
+    });
   });
+
+  // Create tag index pages across all source instances
+  for (const sourceInstanceNameAndTag of tagsWithSourceInstance) {
+    const [sourceInstanceName, tag] = sourceInstanceNameAndTag.split(
+      tagSeparator
+    );
+
+    const tagPageContext: ITagIndexPageContext = { sourceInstanceName, tag };
+
+    createPage({
+      path: `/tags/${sourceInstanceName}/${tag}`,
+      component: resolve(`./src/templates/tagIndex.tsx`),
+      context: tagPageContext,
+    });
+  }
 };

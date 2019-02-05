@@ -59,7 +59,7 @@ interface IPostContentData {
 }
 
 // Component definition
-const IndexPage: React.FunctionComponent<{
+const PostPage: React.FunctionComponent<{
   data: IPostContentData;
   pageContext: IPostPageContext;
 }> = ({ data, pageContext }) => {
@@ -86,4 +86,4 @@ const IndexPage: React.FunctionComponent<{
   );
 };
 
-export default IndexPage;
+export default PostPage;

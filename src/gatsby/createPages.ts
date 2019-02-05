@@ -3,6 +3,7 @@ import { resolve } from "path";
 
 import { GatsbyCreatePages, GatsbyOnCreateNode } from "./gatsby-node";
 
+import { IPagePageContext } from "../templates/page";
 import { IPostPageContext } from "../templates/post";
 import { ITagIndexPageContext } from "../templates/tagIndex";
 
@@ -29,7 +30,11 @@ export const onCreateNode: GatsbyOnCreateNode = ({
     });
 
     // Build slug
-    const slug = `/${sourceInstanceName}${createFilePath({ node, getNode })}`;
+    const filePath = createFilePath({ node, getNode });
+    const slug =
+      sourceInstanceName === "pages"
+        ? filePath
+        : `/${sourceInstanceName}${filePath}`;
 
     createNodeField({
       node,
@@ -84,6 +89,21 @@ function getNextPostForTag(
   }
 }
 
+interface IPages {
+  data: {
+    pages: {
+      edges: Array<{
+        node: {
+          fields: {
+            slug: string;
+            sourceInstanceName: string;
+          };
+        };
+      }>;
+    };
+  };
+}
+
 export const createPages: GatsbyCreatePages = async ({
   graphql,
   boundActionCreators,
@@ -92,6 +112,10 @@ export const createPages: GatsbyCreatePages = async ({
 
   const tagsWithSourceInstanceName = new Set();
   const tagSeparator = `/`;
+
+  //
+  // Build pages of all types (posts, standalone pages)
+  //
 
   // Build pages for posts (sort ascending for get[Next,Previous]Posts)
   const postData: IPosts = await graphql(`
@@ -153,7 +177,46 @@ export const createPages: GatsbyCreatePages = async ({
     });
   });
 
+  // Build pages for standalone pages
+  const pageData: IPages = await graphql(`
+    {
+      pages: allMdx(
+        filter: { fields: { sourceInstanceName: { eq: "pages" } } }
+      ) {
+        edges {
+          node {
+            fields {
+              slug
+              sourceInstanceName
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const pages = pageData.data.pages.edges.map(({ node }) => node);
+
+  pages.forEach(page => {
+    const slug = page.fields.slug;
+    const sourceInstanceName = page.fields.sourceInstanceName;
+
+    const pagePageContext: IPagePageContext = {
+      slug,
+      sourceInstanceName,
+    };
+
+    createPage({
+      path: slug,
+      component: resolve(`./src/templates/page.tsx`),
+      context: pagePageContext,
+    });
+  });
+
+  //
   // Create tag index pages across all source instances
+  //
+
   for (const sourceInstanceNameAndTag of tagsWithSourceInstanceName) {
     const [sourceInstanceName, tag] = sourceInstanceNameAndTag.split(
       tagSeparator

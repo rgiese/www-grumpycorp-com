@@ -5,7 +5,7 @@ import Header from "./header";
 
 // CSS
 import "tachyons";
-import "./layout.css";
+import "./layout.scss";
 
 const Layout: React.FunctionComponent<{}> = ({ children }) => (
   <StaticQuery

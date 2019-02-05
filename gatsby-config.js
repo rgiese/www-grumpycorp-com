@@ -12,6 +12,9 @@ module.exports = {
     // HTML headers management
     `gatsby-plugin-react-helmet`,
 
+    // SCSS
+    `gatsby-plugin-sass`,
+
     // Markdown processing
     {
       resolve: `gatsby-source-filesystem`,

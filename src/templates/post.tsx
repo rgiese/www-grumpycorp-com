@@ -17,7 +17,7 @@ export interface IPostPageContext {
 }
 
 // Page-level GraphQL query
-export const pageContentQuery = graphql`
+export const postContentQuery = graphql`
   query(
     $slug: String!
     $previousPostSlugs: [String]
@@ -44,7 +44,7 @@ export const pageContentQuery = graphql`
 `;
 
 // TypeScript-typed fields corresponding to automatic (exported) GraphQL query
-interface IPageContentData {
+interface IPostContentData {
   post: {
     code: {
       body: string;
@@ -60,7 +60,7 @@ interface IPageContentData {
 
 // Component definition
 const IndexPage: React.FunctionComponent<{
-  data: IPageContentData;
+  data: IPostContentData;
   pageContext: IPostPageContext;
 }> = ({ data, pageContext }) => {
   const post = data.post;

@@ -15,8 +15,8 @@ and matched the design of the house precisely. Since we had a bunch of the sidin
 The existing house is clean Danish Modern with a simple shed roof, aluminum windows, and a mix of aluminum panel and wood siding.
 On the inside, the windows are floor-to-ceiling and all trim is museum-style, i.e. recessed.
 
-![Main house exterior](images/BUILD LLC Merrimount Ext E 06.jpg)
-![Main house interior](images/BUILD LLC Merrimount Int Master Bedroom 01.jpg)
+![](images/BUILD LLC Merrimount Ext E 06.jpg "Main house exterior")
+![](images/BUILD LLC Merrimount Int Master Bedroom 01.jpg "Main house interior")
 
 I wanted to keep the cottage as simple as possible, if there is such a thing, so I settled on an 8'x12' footprint
 with a door on the bottom left, full-height windows in the front and back walls, and a clerestory window along the back wall wherever it wasn't full-height window.
@@ -24,13 +24,13 @@ The roof is a simple shed roof at the same angle as the existing house's roof, w
 The roof also has a 3' overhang over the door, with a small deck underneath that.
 
 Off to AutoCAD I went...
-![8'x12' cottage footprint](images/autocad-top.png)
+![](images/autocad-top.png "8'x12' cottage footprint")
 
 And a sketchy-looking perspective rendering showing the back elevation and the entry door.
-![Back elevation](images/autocad-3d-back.png)
+![](images/autocad-3d-back.png "Back elevation")
 
 I wanted to get power and internet to the cottage so we ran some trenches last year while our landscapers were still around.
-![Trenches](images/IMG_20170129_151022.jpg)
+![](images/IMG_20170129_151022.jpg "Trenches")
 
 We also poured some footings at the time in holes generously dug by our landscaping crew.
 

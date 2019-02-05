@@ -1,0 +1,10 @@
+figure {
+  display: table;
+  width: 100%;
+}
+
+figcaption {
+  display: table-caption;
+  caption-side: top;
+  background-color: gray;
+}

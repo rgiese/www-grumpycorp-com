@@ -10,17 +10,17 @@ It was surprisingly fast getting the I-joists in place.
 I also ran wires from each wall to where a small exterior electrical panel will go so I don't need to route wires around corners.
 (All wires are 10-3 just in case and because I can.)
 
-![Floor system I-joists](images/IMG_20180627_175057.jpg)
+![](images/IMG_20180627_175057.jpg "Floor system I-joists")
 
 
 In order to keep all manner of critters from getting into the insulation, I installed some (shockingly cheap) rebar mesh in between the joists...
-![Floor system rebar mesh](images/IMG_20180627_175108.jpg)
+![](images/IMG_20180627_175108.jpg "Floor system rebar mesh")
 
 ...followed by some hardware cloth and finally some landscaping fabric:
-![Floor system hardware cloth and landscaping fabric](images/IMG_20180628_111534.jpg)
+![](images/IMG_20180628_111534.jpg "Floor system hardware cloth and landscaping fabric")
 
 The insulation went in like butter:
-![Floor system insulation](images/IMG_20180628_121454.jpg)
+![](images/IMG_20180628_121454.jpg "Floor system insulation")
 
 Then I glued and screwed down 3/4" tongue-and-groove OSB, used an edge-trim bit on the router to clean off any minor overhangs on the edges (since I didn't quite get the tongues and grooves to fit so it got a touch weird) and called it a day.
 

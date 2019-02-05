@@ -16,7 +16,7 @@ export interface ITagIndexPageContext {
 export const tagIndexQuery = graphql`
   query($sourceInstanceName: String, $tag: String) {
     posts: allMdx(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___date], order: ASC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       ...PostIndexPosts

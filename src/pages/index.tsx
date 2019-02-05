@@ -33,7 +33,7 @@ interface IPostIndexData {
   tagIndex: ITagIndexTags;
 }
 
-const IndexPage: React.SFC<{
+const IndexPage: React.FunctionComponent<{
   data: IPostIndexData;
 }> = ({ data }) => {
   return (

@@ -36,7 +36,7 @@ interface ITagIndexData {
 }
 
 // Component definition
-const TagIndexPage: React.SFC<{
+const TagIndexPage: React.FunctionComponent<{
   pageContext: ITagIndexPageContext;
   data: ITagIndexData;
 }> = ({ pageContext, data }) => {

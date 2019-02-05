@@ -24,7 +24,7 @@ export interface ITagIndexProps {
 }
 
 // Component definition
-export const TagIndex: React.SFC<ITagIndexProps> = ({
+export const TagIndex: React.FunctionComponent<ITagIndexProps> = ({
   sourceInstanceName,
   tags,
 }) => {

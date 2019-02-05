@@ -54,7 +54,9 @@ export interface IPostIndexProps {
 }
 
 // Component definition
-export const PostIndex: React.SFC<IPostIndexProps> = ({ posts }) => {
+export const PostIndex: React.FunctionComponent<IPostIndexProps> = ({
+  posts,
+}) => {
   return (
     <div>
       <h1>{posts.edges.length}</h1>

@@ -59,7 +59,7 @@ interface IPageContentData {
 }
 
 // Component definition
-const IndexPage: React.SFC<{
+const IndexPage: React.FunctionComponent<{
   data: IPageContentData;
   pageContext: IPostPageContext;
 }> = ({ data, pageContext }) => {

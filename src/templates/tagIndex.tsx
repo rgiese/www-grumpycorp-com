@@ -4,6 +4,7 @@ import React from "react";
 import Layout from "../components/layout";
 import { IPostIndexPosts, PostIndex } from "../components/postIndex";
 import SEO from "../components/seo";
+import { ITagIndexTags, TagIndex } from "../components/tagIndex";
 
 // Page context to be provided from ../gatsby/createPages.ts
 export interface ITagIndexPageContext {
@@ -13,12 +14,17 @@ export interface ITagIndexPageContext {
 
 // Automatic (exported) GraphQL query
 export const tagIndexQuery = graphql`
-  query($tag: String) {
+  query($sourceInstanceName: String, $tag: String) {
     posts: allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       ...PostIndexPosts
+    }
+    tagIndex: allMdx(
+      filter: { fields: { sourceInstanceName: { eq: $sourceInstanceName } } }
+    ) {
+      ...TagIndexTags
     }
   }
 `;
@@ -26,10 +32,11 @@ export const tagIndexQuery = graphql`
 // TypeScript-typed fields corresponding to automatic (exported) GraphQL query
 interface ITagIndexData {
   posts: IPostIndexPosts;
+  tagIndex: ITagIndexTags;
 }
 
 // Component definition
-const IndexPage: React.SFC<{
+const TagIndexPage: React.SFC<{
   pageContext: ITagIndexPageContext;
   data: ITagIndexData;
 }> = ({ pageContext, data }) => {
@@ -40,8 +47,13 @@ const IndexPage: React.SFC<{
       <SEO title={tag} />
       <h1>{tag}</h1>
       <PostIndex posts={data.posts} />
+      <h2>All tags</h2>
+      <TagIndex
+        sourceInstanceName={pageContext.sourceInstanceName}
+        tags={data.tagIndex}
+      />
     </Layout>
   );
 };
 
-export default IndexPage;
+export default TagIndexPage;

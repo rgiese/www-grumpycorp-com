@@ -15,6 +15,19 @@ module.exports = {
     // SCSS
     `gatsby-plugin-sass`,
 
+    // Typefaces
+    {
+      resolve: `gatsby-plugin-web-font-loader`,
+      options: {
+        google: {
+          families: [`Raleway`],
+        },
+        typekit: {
+          id: `cfg7ddl`,
+        },
+      },
+    },
+
     // Markdown processing
     {
       resolve: `gatsby-source-filesystem`,

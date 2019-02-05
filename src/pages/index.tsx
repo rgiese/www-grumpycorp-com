@@ -39,7 +39,7 @@ const IndexPage: React.FunctionComponent<{
   return (
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      <h1>Hi people</h1>
+      <h1 className="grumpycorp">Hi people</h1>
       <p>Welcome to your new Gatsby site.</p>
       <Icon sprite={GrumpyRobin} className="w3 h3" />
       <p>Now go build something great.</p>

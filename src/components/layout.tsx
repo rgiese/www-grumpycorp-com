@@ -1,6 +1,5 @@
 import { graphql, StaticQuery } from "gatsby";
 import React from "react";
-import Helmet from "react-helmet";
 
 import Footer from "./footer";
 import Header from "./header";
@@ -22,16 +21,11 @@ const Layout: React.FunctionComponent<{}> = ({ children }) => (
     `}
     // tslint:disable-next-line jsx-no-lambda
     render={data => (
-      <>
-        <Helmet
-          bodyAttributes={{
-            class: `flex flex-column items-stretch tc bg-white`,
-          }}
-        />
+      <div className="flex flex-column items-stretch min-vh-100 tc bg-white">
         <Header />
         <main style={{ flexGrow: 1 }}>{children}</main>
         <Footer />
-      </>
+      </div>
     )}
   />
 );

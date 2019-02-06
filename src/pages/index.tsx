@@ -8,6 +8,7 @@ import SEO from "../components/seo";
 import { IPostIndexPosts, PostIndex } from "../components/postIndex";
 import { ITagListTags, TagList } from "../components/tagList";
 
+import ArrowRight from "../assets/icons/arrow-right.svg";
 import GrumpyRobin from "../assets/icons/grumpy-robin.svg";
 
 // Automatic (exported) GraphQL query
@@ -16,6 +17,7 @@ export const postIndexAndTagsQuery = graphql`
     posts: allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { fields: { sourceInstanceName: { eq: "posts" } } }
+      limit: 5
     ) {
       ...PostIndexPosts
     }
@@ -83,6 +85,17 @@ const IndexPage: React.FunctionComponent<{
         posts={data.posts}
         header={<div className="f3 tl mt3">Recent</div>}
       />
+
+      {/*** Link to all posts ***/}
+      <div className="center mw7 f4 tc">
+        <Link className="link accent" to="/posts/all">
+          <Icon
+            sprite={ArrowRight}
+            className="w1 h1 v-mid accent svg-fill-current-color"
+          />
+          {` `}All posts
+        </Link>
+      </div>
     </Layout>
   );
 };

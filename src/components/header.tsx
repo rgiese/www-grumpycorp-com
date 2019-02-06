@@ -94,10 +94,6 @@ const Header: React.FunctionComponent<{}> = () => (
           </div>
 
           {/*** Posts ***/}
-          {
-            // Note: We'll eventually need to introduce pagination to the index page and create a paginated post index.
-            // At that time, we'll adjust the links below.
-          }
           <div className="dib ph1 ph2-ns nav-hide-child">
             <Link className="link dim f5 black-80" to="/">
               Posts
@@ -122,7 +118,10 @@ const Header: React.FunctionComponent<{}> = () => (
               ))}
 
               <div className="ph2 pv3 tl w-100 bt b--black-20">
-                <Link className="link dim f5 fw5 v-mid black-60" to="/">
+                <Link
+                  className="link dim f5 fw5 v-mid black-60"
+                  to="/posts/all"
+                >
                   <Icon
                     sprite={ArrowRight}
                     className="w1 h1 v-mid accent svg-fill-current-color"

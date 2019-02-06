@@ -69,7 +69,7 @@ const IndexPage: React.FunctionComponent<{
         <div className="fl w-100 w-50-ns pv3">
           <Link
             className="f4 link dim mh3 ph5 pv2 black bg-accent-mono-light"
-            to="/hireme/"
+            to="/hire-me/"
           >
             Hire me
           </Link>

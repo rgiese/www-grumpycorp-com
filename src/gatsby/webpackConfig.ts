@@ -4,6 +4,7 @@ import { GatsbyOnCreateWebpackConfig } from "./gatsby-node";
 const SpriteLoaderPlugin = require("svg-sprite-loader/plugin"); // Won't convert to import presumably due to svg-sprite-loader craziness.
 
 export const onCreateWebpackConfig: GatsbyOnCreateWebpackConfig = ({
+  stage,
   boundActionCreators,
   getConfig,
 }) => {
@@ -51,7 +52,14 @@ export const onCreateWebpackConfig: GatsbyOnCreateWebpackConfig = ({
           loader: require.resolve("svg-sprite-loader"),
           options: {
             extract: true,
-            publicPath: `/assets/`,
+            //
+            // Gatsby runs webpack in multiple stages so the svg-sprite-loader plugin runs multiple times.
+            // We need to differentiate the outgoing extracted SVG bundle so the plugin doesn't get confused on
+            // Markdown- vs. JSX-originated SVG content.
+            //
+            // There seems to be somewhat further magic at play here but we'll call this good enough for now since it works. Yay.
+            //
+            publicPath: `/assets/${stage}/`,
             spriteFilename: `icons.svg`,
           },
         },

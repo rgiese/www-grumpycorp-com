@@ -39,6 +39,7 @@ interface IOnCreateWebpackConfigActionCreators {
 }
 
 export type GatsbyOnCreateWebpackConfig = (fns: {
+  stage: string;
   boundActionCreators: IOnCreateWebpackConfigActionCreators;
   getConfig: () => any;
 }) => void;

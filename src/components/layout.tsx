@@ -28,7 +28,7 @@ const Layout: React.FunctionComponent<{}> = ({ children }) => (
             class: `flex flex-column items-stretch tc bg-white`,
           }}
         />
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header />
         <main style={{ flexGrow: 1 }}>{children}</main>
         <Footer />
       </>

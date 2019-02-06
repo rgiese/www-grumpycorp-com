@@ -46,7 +46,7 @@
     "typescript": "^3.3.1"
   },
   "config": {
-    "prettierglob": "{.,./src/**}/*.{css,js,jsx,json,scss,ts,tsx}"
+    "prettierglob": "{.,./src/**}/*.{css,js,jsx,json,mdx,scss,ts,tsx}"
   },
   "scripts": {
     "build": "gatsby build",

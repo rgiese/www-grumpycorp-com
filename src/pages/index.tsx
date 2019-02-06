@@ -3,8 +3,9 @@ import React from "react";
 
 import Icon from "../components/icon";
 import Layout from "../components/layout";
-import { IPostIndexPosts, PostIndex } from "../components/postIndex";
 import SEO from "../components/seo";
+
+import { IPostIndexPosts, PostIndex } from "../components/postIndex";
 import { ITagListTags, TagList } from "../components/tagList";
 
 import GrumpyRobin from "../assets/icons/grumpy-robin.svg";

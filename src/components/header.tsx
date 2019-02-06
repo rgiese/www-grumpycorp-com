@@ -21,6 +21,7 @@ const headerPostsStaticQuery = graphql`
     ) {
       edges {
         node {
+          id
           fields {
             slug
           }
@@ -40,6 +41,7 @@ interface IHeaderData {
   posts: {
     edges: Array<{
       node: {
+        id: string;
         fields: {
           slug: string;
         };
@@ -102,7 +104,7 @@ const Header: React.FunctionComponent<{}> = () => (
             </Link>
             <div className="nav-child absolute pl0 bg-white ba b--black-20">
               {data.posts.edges.map(({ node }) => (
-                <div className="pa2 tl">
+                <div key={node.id} className="pa2 tl">
                   <Link
                     className="link dim f5 v-base black-80"
                     to={node.fields.slug}

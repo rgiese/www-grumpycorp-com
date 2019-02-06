@@ -1,10 +1,13 @@
 import { graphql } from "gatsby";
 import React from "react";
 
+import Icon from "../components/icon";
 import Layout from "../components/layout";
 import { IPostIndexPosts, PostIndex } from "../components/postIndex";
 import SEO from "../components/seo";
-import { ITagIndexTags, TagIndex } from "../components/tagIndex";
+import { ITagListTags, TagList } from "../components/tagList";
+
+import TagIcon from "../assets/icons/tag.svg";
 
 // Page context to be provided from ../gatsby/createPages.ts
 export interface ITagIndexPageContext {
@@ -21,10 +24,10 @@ export const tagIndexQuery = graphql`
     ) {
       ...PostIndexPosts
     }
-    tagIndex: allMdx(
+    tagList: allMdx(
       filter: { fields: { sourceInstanceName: { eq: $sourceInstanceName } } }
     ) {
-      ...TagIndexTags
+      ...TagListTags
     }
   }
 `;
@@ -32,7 +35,7 @@ export const tagIndexQuery = graphql`
 // TypeScript-typed fields corresponding to automatic (exported) GraphQL query
 interface ITagIndexData {
   posts: IPostIndexPosts;
-  tagIndex: ITagIndexTags;
+  tagList: ITagListTags;
 }
 
 // Component definition
@@ -45,13 +48,26 @@ const TagIndexPage: React.FunctionComponent<{
   return (
     <Layout>
       <SEO title={tag} />
-      <h1>{tag}</h1>
-      <PostIndex posts={data.posts} />
-      <h2>All tags</h2>
-      <TagIndex
-        sourceInstanceName={pageContext.sourceInstanceName}
-        tags={data.tagIndex}
+      <PostIndex
+        posts={data.posts}
+        header={
+          <div className="f3 tl mt3">
+            <span className="accent-mono">All posts in</span>
+            {` `}
+            <Icon sprite={TagIcon} className="w1 h1 v-bottom" />
+            {` `} {tag}
+          </div>
+        }
       />
+
+      <div className="center tl mw7 ph3">
+        <span className="mr3">Other tags:</span>
+        <TagList
+          sourceInstanceName={pageContext.sourceInstanceName}
+          tags={data.tagList}
+          removeTags={[tag]}
+        />
+      </div>
     </Layout>
   );
 };

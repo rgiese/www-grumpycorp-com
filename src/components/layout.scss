@@ -1,10 +1,149 @@
+//
+// Typefaces
+//
+
+.grumpycorp {
+    font-family: 'clone-rounded-latin', 'sans-serif';
+    font-weight: 500;
+}
+
+.grumpycorp-light {
+    font-family: 'clone-rounded-latin', 'sans-serif';
+    font-weight: 300;
+}
+
+.grumpycorp-extralight {
+    font-family: 'clone-rounded-latin', 'sans-serif';
+    font-weight: 200;
+}
+
+//
+// Global
+//
+
+:root {
+    --accent: #f26739;
+    --accent-mono: #999;
+    --accent-mono-light: #ddd;
+}
+
+html {
+    font-family: 'Raleway', 'sans-serif';
+}
+
+html, body {
+    // Without this, browser enters quirk mode and top-level flexbox layout doesn't scale to full height
+    // unless you remove the top-level DOCTYPE - oy.
+    // See https://stackoverflow.com/questions/32214152/why-does-my-div-height-100-work-only-when-doctype-is-removed/32215263#32215263.
+    height: 100%;
+}
+
+img {
+    // Don't let images scale up past their built-in size (but they'll still scale down)
+    max-width: 100%;
+}
+
+#content a:link, #content a:visited {
+    color: var(--accent);
+}
+
+#content a:hover {
+    color: var(--accent);
+}
+
+//
+// SVG madness
+//
+
+.svg-fill-current-color { // Assign to an SVG element to inherit fill color
+    fill: currentColor
+}
+
+.svg-h-mirror {
+    transform: scale(-1, 1);
+}
+
+//
+// Figures (i.e. image captions) madness
+//
+ 
 figure {
   display: table;
   width: 100%;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
 }
 
 figcaption {
   display: table-caption;
   caption-side: top;
-  background-color: gray;
+
+  font-size: 0.875rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+
+  color: white;
+  background-color: rgba(0,0,0,0.5)
 }
+
+//
+// Tachyons extensions
+//
+
+.accent {
+    color:var(--accent)
+}
+
+.bg-accent {
+    background-color:var(--accent)
+}
+
+.b--accent {
+    border-color:var(--accent)
+}
+
+
+.accent-mono {
+    color:var(--accent-mono)
+}
+
+.bg-accent-mono {
+    background-color:var(--accent-mono)
+}
+
+.b--accent-mono {
+    border-color:var(--accent-mono)
+}
+
+
+.accent-mono-light {
+    color:var(--accent-mono-light)
+}
+
+.bg-accent-mono-light {
+    background-color:var(--accent-mono-light)
+}
+
+.b--accent-mono-light {
+    border-color:var(--accent-mono-light)
+}
+
+
+// An improvement over Tachyons' hide-child (which opens submenus on hover over the invisible submenu)
+// courtesy of https://css-tricks.com/solved-with-css-dropdown-menus/
+.nav-hide-child .nav-child {
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+}
+
+.nav-hide-child:hover .nav-child,
+.nav-hide-child .nav-child:hover {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+

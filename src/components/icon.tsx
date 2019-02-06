@@ -7,7 +7,7 @@ import React from "react";
 //   <Icon sprite={GrumpyRobin} className="w3 h3" />
 //
 
-interface ISprite {
+export interface ISprite {
   viewBox: string;
   url: string;
 }

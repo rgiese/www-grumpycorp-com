@@ -1,6 +1,8 @@
 import { graphql, StaticQuery } from "gatsby";
 import React from "react";
+import Helmet from "react-helmet";
 
+import Footer from "./footer";
 import Header from "./header";
 
 // CSS
@@ -21,21 +23,14 @@ const Layout: React.FunctionComponent<{}> = ({ children }) => (
     // tslint:disable-next-line jsx-no-lambda
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
+        <Helmet
+          bodyAttributes={{
+            class: `flex flex-column items-stretch tc bg-white`,
           }}
-        >
-          <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with{" "}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
-        </div>
+        />
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <main style={{ flexGrow: 1 }}>{children}</main>
+        <Footer />
       </>
     )}
   />

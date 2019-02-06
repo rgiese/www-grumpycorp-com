@@ -1,11 +1,14 @@
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 // tslint:disable-next-line no-submodule-imports
 import MDXRenderer from "gatsby-mdx/mdx-renderer";
 import React from "react";
 
+import Icon from "../components/icon";
 import Layout from "../components/layout";
 import { IPostIndexPosts, PostIndex } from "../components/postIndex";
 import SEO from "../components/seo";
+
+import TagIcon from "../assets/icons/tag.svg";
 
 // Page context to be provided from ../gatsby/createPages.ts
 export interface IPostPageContext {
@@ -27,9 +30,14 @@ export const postContentQuery = graphql`
       code {
         body
       }
+      fields {
+        slug
+        sourceInstanceName
+      }
       frontmatter {
         title
-        date
+        date(formatString: "MMMM Do, YYYY")
+        tags
       }
     }
     previousPosts: allMdx(
@@ -49,9 +57,14 @@ interface IPostContentData {
     code: {
       body: string;
     };
+    fields: {
+      slug: string;
+      sourceInstanceName: string;
+    };
     frontmatter: {
       title: string;
       date: string;
+      tags: string[];
     };
   };
   previousPosts: IPostIndexPosts;
@@ -68,20 +81,65 @@ const PostPage: React.FunctionComponent<{
   return (
     <Layout>
       <SEO title={post.frontmatter.title} />
-      <h1>{post.frontmatter.title}</h1>
+
+      <div className="pt3 pb1">
+        <Link className="link f2 fw2 accent" to={post.fields.slug}>
+          {post.frontmatter.title}
+        </Link>
+      </div>
+
+      <div className="pa1 f5 black-60">{post.frontmatter.date}</div>
+
+      <div>
+        {post.frontmatter.tags.map(tag => {
+          return (
+            <>
+              <Link
+                className="link accent-mono"
+                to={`/tags/${post.fields.sourceInstanceName}/${tag}`}
+              >
+                <Icon sprite={TagIcon} className="w1 h1 v-mid" />
+                {` `}
+                {tag}
+              </Link>
+            </>
+          );
+        })}
+      </div>
+
+      {/* Post body */}
+      <div className="center mw7 tl lh-copy ph2">
+        <MDXRenderer>{post.code.body}</MDXRenderer>
+      </div>
+
+      {/* Previous/next navigation */}
+      <div className="mt4">
+        {/* Some vertical padding */}
+        &nbsp;
+      </div>
+
       {data.previousPosts && (
-        <div>
-          Previous:
-          <PostIndex posts={data.previousPosts} />
-        </div>
+        <PostIndex
+          posts={data.previousPosts}
+          header={
+            <div className="f3 tl mt3">
+              Previous <span className="accent-mono">by tag</span>
+            </div>
+          }
+          cardDivClass="w-80"
+        />
       )}
       {data.nextPosts && (
-        <div>
-          Next:
-          <PostIndex posts={data.nextPosts} />
-        </div>
+        <PostIndex
+          posts={data.nextPosts}
+          header={
+            <div className="f3 tl mt3">
+              Next <span className="accent-mono">by tag</span>
+            </div>
+          }
+          cardDivClass="w-80"
+        />
       )}
-      <MDXRenderer>{post.code.body}</MDXRenderer>
     </Layout>
   );
 };

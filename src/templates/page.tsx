@@ -49,7 +49,9 @@ const PagePage: React.FunctionComponent<{
     <Layout>
       <SEO title={page.frontmatter.title} />
       <h1>{page.frontmatter.title}</h1>
-      <MDXRenderer>{page.code.body}</MDXRenderer>
+      <div className="center mw7 tl lh-copy ph2">
+        <MDXRenderer>{page.code.body}</MDXRenderer>
+      </div>
     </Layout>
   );
 };

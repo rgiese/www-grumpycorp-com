@@ -1,9 +1,11 @@
+siteMetadata = {
+  title: `GrumpyCorp`,
+  description: `Creative Industries`,
+  author: `Robin Giese`,
+};
+
 module.exports = {
-  siteMetadata: {
-    title: `GrumpyCorp`,
-    description: `Creative Industries`,
-    author: `Robin Giese`,
-  },
+  siteMetadata: siteMetadata,
   plugins: [
     // TypeScript
     `gatsby-plugin-typescript`,
@@ -70,5 +72,19 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+
+    // App manifest (PWA)
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `${siteMetadata.title} ${siteMetadata.description}`,
+        short_name: `${siteMetadata.title}`,
+        start_url: `/`,
+        background_color: `#000000`,
+        theme_color: `#f26739`,
+        icon: `${__dirname}/src/assets/icons/grumpy-robin.svg`,
+        include_favicon: true,
+      },
+    },
   ],
 };

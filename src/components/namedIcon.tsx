@@ -11,6 +11,9 @@ const nameToSprite = new Map();
 import ArrowRight from "../assets/icons/arrow-right.svg";
 nameToSprite.set("arrow-right", ArrowRight);
 
+import Bug from "../assets/icons/bug.svg";
+nameToSprite.set("bug", Bug);
+
 import Cottage from "../assets/icons/cottage.svg";
 nameToSprite.set("cottage", Cottage);
 

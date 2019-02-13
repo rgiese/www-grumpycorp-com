@@ -26,6 +26,9 @@ nameToSprite.set("rv", RV);
 import Vegetables from "../assets/icons/vegetables.svg";
 nameToSprite.set("vegetables", Vegetables);
 
+import Welding from "../assets/icons/welding.svg";
+nameToSprite.set("welding", Welding);
+
 const NamedIcon: React.FunctionComponent<{
   name: string;
   className?: string;

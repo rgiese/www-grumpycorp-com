@@ -118,23 +118,23 @@ const PostPage: React.FunctionComponent<{
         &nbsp;
       </div>
 
-      {data.previousPosts && (
-        <PostIndex
-          posts={data.previousPosts}
-          header={
-            <div className="f3 tl mt3">
-              Previous <span className="accent-mono">by tag</span>
-            </div>
-          }
-          cardDivClass="w-80"
-        />
-      )}
       {data.nextPosts && (
         <PostIndex
           posts={data.nextPosts}
           header={
             <div className="f3 tl mt3">
               Next <span className="accent-mono">by tag</span>
+            </div>
+          }
+          cardDivClass="w-80"
+        />
+      )}
+      {data.previousPosts && (
+        <PostIndex
+          posts={data.previousPosts}
+          header={
+            <div className="f3 tl mt3">
+              Previous <span className="accent-mono">by tag</span>
             </div>
           }
           cardDivClass="w-80"

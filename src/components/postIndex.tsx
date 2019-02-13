@@ -63,7 +63,10 @@ const PostCard: React.FunctionComponent<{ post: IPost }> = ({ post }) => {
     <div
       key={post.id}
       className="flex items-center mv4 ba b--accent-mono-light"
-      style={{ borderLeftWidth: "1rem", borderLeftColor: "var(--accent-mono)" }}
+      style={{
+        borderLeftColor: "var(--accent-mono-light)",
+        borderLeftWidth: "1rem",
+      }}
     >
       <div className="v-mid ph4">
         <Link className="dim v-top" to={post.fields.slug}>

@@ -38,18 +38,16 @@ export const TagList: React.FunctionComponent<ITagListProps> = ({
     <span className="f5 black">
       {filteredTags.map(tag => {
         return (
-          <>
-            <span className="mr3">
-              <Icon sprite={TagIcon} className="w1 h1" />
-              {` `}
-              <Link
-                className="link accent-mono"
-                to={`/tags/${sourceInstanceName}/${tag}`}
-              >
-                {tag}
-              </Link>
-            </span>
-          </>
+          <span className="mr3" key={tag}>
+            <Icon sprite={TagIcon} className="w1 h1" />
+            {` `}
+            <Link
+              className="link accent-mono"
+              to={`/tags/${sourceInstanceName}/${tag}`}
+            >
+              {tag}
+            </Link>
+          </span>
         );
       })}
     </span>

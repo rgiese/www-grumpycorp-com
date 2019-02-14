@@ -61,7 +61,6 @@ export interface IPostIndexProps {
 const PostCard: React.FunctionComponent<{ post: IPost }> = ({ post }) => {
   return (
     <div
-      key={post.id}
       className="flex items-center mv4 ba b--accent-mono-light"
       style={{
         borderLeftColor: "var(--accent-mono-light)",
@@ -95,16 +94,15 @@ const PostCard: React.FunctionComponent<{ post: IPost }> = ({ post }) => {
         <div className="tl f6 pt2">
           {post.frontmatter.tags.map(tag => {
             return (
-              <>
-                <Link
-                  className="link accent-mono"
-                  to={`/tags/${post.fields.sourceInstanceName}/${tag}`}
-                >
-                  <Icon sprite={TagIcon} className="w1 h1 v-mid" />
-                  {` `}
-                  {tag}
-                </Link>
-              </>
+              <Link
+                className="link accent-mono"
+                key={tag}
+                to={`/tags/${post.fields.sourceInstanceName}/${tag}`}
+              >
+                <Icon sprite={TagIcon} className="w1 h1 v-mid" />
+                {` `}
+                {tag}
+              </Link>
             );
           })}
         </div>
@@ -125,7 +123,7 @@ export const PostIndex: React.FunctionComponent<IPostIndexProps> = ({
 
       <div className={cardDivClass}>
         {posts.edges.map(({ node }) => (
-          <PostCard post={node} />
+          <PostCard post={node} key={node.id} />
         ))}
       </div>
     </div>

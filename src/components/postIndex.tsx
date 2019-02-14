@@ -85,7 +85,7 @@ const PostCard: React.FunctionComponent<{ post: IPost }> = ({ post }) => {
         <div className="tl f6 black-60">{post.frontmatter.date}</div>
 
         {/* Description */}
-        <div className="pv2 tl f5">
+        <div className="pv2 pr3 tl f5">
           <Link className="link black" to={post.fields.slug}>
             {post.frontmatter.description}
           </Link>

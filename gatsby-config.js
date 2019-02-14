@@ -54,7 +54,8 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1080,
+              maxWidth: 750,
+              srcSetBreakpoints: [375, 750, 1500, 2250], // constrain some of the image processing madness (default: 188, 375, 750, 1125, 1500, 2250, 4608)
               showCaptions: true,
             },
           },

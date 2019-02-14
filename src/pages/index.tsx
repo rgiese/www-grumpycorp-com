@@ -17,7 +17,7 @@ export const postIndexAndTagsQuery = graphql`
     posts: allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { fields: { sourceInstanceName: { eq: "posts" } } }
-      limit: 5
+      limit: 10
     ) {
       ...PostIndexPosts
     }

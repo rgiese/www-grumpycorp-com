@@ -10,6 +10,9 @@ import SEO from "../components/seo";
 
 import TagIcon from "../assets/icons/tag.svg";
 
+// "Shortcodes" for use inside of MDX
+import Vimeo from "../components/vimeo";
+
 // Page context to be provided from ../gatsby/createPages.ts
 export interface IPostPageContext {
   slug: string;
@@ -109,7 +112,7 @@ const PostPage: React.FunctionComponent<{
 
       {/* Post body */}
       <div className="center mw7 tl lh-copy ph2">
-        <MDXRenderer>{post.code.body}</MDXRenderer>
+        <MDXRenderer scope={{ Vimeo }}>{post.code.body}</MDXRenderer>
       </div>
 
       {/* Previous/next navigation */}

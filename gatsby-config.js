@@ -22,7 +22,7 @@ module.exports = {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
         google: {
-          families: [`Raleway`],
+          families: [`Noto Serif`, `Noto Sans`],
         },
         typekit: {
           id: `cfg7ddl`,

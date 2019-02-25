@@ -53,7 +53,7 @@ export interface IPostIndexPosts {
 // Component properties including GraphQL data
 export interface IPostIndexProps {
   posts: IPostIndexPosts;
-  header: React.ReactFragment;
+  header?: React.ReactFragment;
   cardDivClass?: string;
 }
 
@@ -75,13 +75,10 @@ const PostCard: React.FunctionComponent<{ post: IPost }> = ({ post }) => {
       <div className="pv3">
         {/* Title */}
         <div className="tl f3">
-          <Link className="link accent" to={post.fields.slug}>
+          <Link className="link accent sans" to={post.fields.slug}>
             {post.frontmatter.title}
           </Link>
         </div>
-
-        {/* Date */}
-        <div className="tl f6 black-60">{post.frontmatter.date}</div>
 
         {/* Description */}
         <div className="pv2 pr3 tl f5">
@@ -89,6 +86,9 @@ const PostCard: React.FunctionComponent<{ post: IPost }> = ({ post }) => {
             {post.frontmatter.description}
           </Link>
         </div>
+
+        {/* Date */}
+        <div className="pv1 tl f6 black-60">{post.frontmatter.date}</div>
 
         {/* Tags */}
         <div className="tl f6 pt2">
@@ -119,7 +119,7 @@ export const PostIndex: React.FunctionComponent<IPostIndexProps> = ({
 }) => {
   return (
     <div className="center mw7 ph3">
-      {header}
+      <span className="sans">{header}</span>
 
       <div className={cardDivClass}>
         {posts.edges.map(({ node }) => (

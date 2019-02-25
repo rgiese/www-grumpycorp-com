@@ -76,7 +76,7 @@ const Header: React.FunctionComponent<{}> = () => (
     query={headerPostsStaticQuery}
     // tslint:disable-next-line jsx-no-lambda
     render={(data: IHeaderData) => (
-      <nav className="cf pv2 bg-accent-mono-light">
+      <nav className="cf pv2 bg-accent-mono-light sans">
         <div className="fl dib pl2">
           {/*** Logo ***/}
           <div className="dib ph1 ph2-ns">

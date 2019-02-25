@@ -3,6 +3,21 @@
 // -  Note: external typefaces are managed by gatsby-plugin-web-font-loader through gatsby-config.js.
 //
 
+html {
+  font-family: "Noto Serif", "serif";
+}
+
+h1,
+h2,
+h3,
+.sans {
+  font-family: "Noto Sans", "sans-serif";
+}
+
+.serif {
+  font-family: "Noto Serif";
+}
+
 .grumpycorp {
   font-family: "clone-rounded-latin", "sans-serif";
   font-weight: 500;
@@ -28,10 +43,6 @@
   --accent-mono-light: #ddd;
 }
 
-html {
-  font-family: "Raleway", "sans-serif";
-}
-
 html,
 body {
   // Without this, browser enters quirk mode and top-level flexbox layout doesn't scale to full height
@@ -45,13 +56,15 @@ img {
   max-width: 100%;
 }
 
-#content a:link,
-#content a:visited {
-  color: var(--accent);
-}
+.content {
+  a:link {
+    color: var(--accent);
+  }
 
-#content a:hover {
-  color: var(--accent);
+  a:hover,
+  a:visited {
+    color: var(--accent-mono);
+  }
 }
 
 //

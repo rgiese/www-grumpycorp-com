@@ -81,10 +81,7 @@ const IndexPage: React.FunctionComponent<{
         <TagList sourceInstanceName="posts" tags={data.tagList} />
       </div>
 
-      <PostIndex
-        posts={data.posts}
-        header={<div className="f3 tl mt3">Recent</div>}
-      />
+      <PostIndex posts={data.posts} />
 
       {/*** Link to all posts ***/}
       <div className="center mw7 f4 tc">

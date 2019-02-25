@@ -86,7 +86,7 @@ const PostPage: React.FunctionComponent<{
       <SEO title={post.frontmatter.title} />
 
       <div className="pt3 pb1">
-        <Link className="link f2 fw2 accent" to={post.fields.slug}>
+        <Link className="link f2 fw2 accent sans" to={post.fields.slug}>
           {post.frontmatter.title}
         </Link>
       </div>
@@ -111,7 +111,7 @@ const PostPage: React.FunctionComponent<{
       </div>
 
       {/* Post body */}
-      <div className="center mw7 tl lh-copy ph2">
+      <div className="center mw7 tl lh-copy ph2 content">
         <MDXRenderer scope={{ Vimeo }}>{post.code.body}</MDXRenderer>
       </div>
 

@@ -49,7 +49,7 @@ const PagePage: React.FunctionComponent<{
     <Layout>
       <SEO title={page.frontmatter.title} />
       <h1>{page.frontmatter.title}</h1>
-      <div className="center mw7 tl lh-copy ph2">
+      <div className="center mw7 tl lh-copy ph2 content">
         <MDXRenderer>{page.code.body}</MDXRenderer>
       </div>
     </Layout>

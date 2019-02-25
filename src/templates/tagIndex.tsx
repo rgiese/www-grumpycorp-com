@@ -52,10 +52,9 @@ const TagIndexPage: React.FunctionComponent<{
         posts={data.posts}
         header={
           <div className="f3 tl mt3">
-            <span className="accent-mono">All posts in</span>
-            {` `}
             <Icon sprite={TagIcon} className="w1 h1 v-bottom" />
             {` `} {tag}
+            <span className="accent-mono ml2">oldest to newest</span>
           </div>
         }
       />

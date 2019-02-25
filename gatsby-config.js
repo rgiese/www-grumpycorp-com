@@ -59,6 +59,9 @@ module.exports = {
               showCaptions: true,
             },
           },
+          {
+            resolve: `gatsby-remark-smartypants`,
+          },
         ],
       },
     },

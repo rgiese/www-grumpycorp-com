@@ -1,4 +1,4 @@
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 // tslint:disable-next-line no-submodule-imports
 import MDXRenderer from "gatsby-mdx/mdx-renderer";
 import React from "react";
@@ -48,7 +48,12 @@ const PagePage: React.FunctionComponent<{
   return (
     <Layout>
       <SEO title={page.frontmatter.title} />
-      <h1>{page.frontmatter.title}</h1>
+
+      <div className="pt3 pb1">
+        <Link className="link f2 fw2 accent sans" to={pageContext.slug}>
+          {page.frontmatter.title}
+        </Link>
+      </div>
       <div className="center mw7 tl lh-copy ph2 content">
         <MDXRenderer>{page.code.body}</MDXRenderer>
       </div>

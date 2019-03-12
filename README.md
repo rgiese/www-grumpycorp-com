@@ -1,5 +1,5 @@
 # www-grumpycorp-com
-Website for GrumpyCorp Heavy Industries (via Gatsby).
+Website for GrumpyCorp Creative Industries (via Gatsby).
 
 ## Setup
 *Probably no longer needed:* System prep for Windows: `choco install visualstudio2017-workload-vctools` or just install Visual Studio with native tools. May also need to `set PYTHON=3.7` as appropriate.

@@ -21,12 +21,24 @@ module.exports = {
     {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
-        google: {
-          families: [`Noto Serif`, `Noto Sans`],
-        },
         typekit: {
           id: `cfg7ddl`,
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Noto Serif`,
+            subsets: [`latin`],
+          },
+          {
+            family: `Noto Sans`,
+            subsets: [`latin`],
+          },
+        ],
       },
     },
 

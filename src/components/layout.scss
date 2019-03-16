@@ -18,21 +18,6 @@ h3,
   font-family: "Noto Serif";
 }
 
-.grumpycorp {
-  font-family: "clone-rounded-latin", "sans-serif";
-  font-weight: 500;
-}
-
-.grumpycorp-light {
-  font-family: "clone-rounded-latin", "sans-serif";
-  font-weight: 300;
-}
-
-.grumpycorp-extralight {
-  font-family: "clone-rounded-latin", "sans-serif";
-  font-weight: 200;
-}
-
 //
 // Global
 //
@@ -144,6 +129,11 @@ figcaption {
 
 .b--accent-mono-light {
   border-color: var(--accent-mono-light);
+}
+
+.h075 {
+  // as a complement to http://tachyons.io/docs/layout/heights/
+  height: 0.75rem;
 }
 
 // An improvement over Tachyons' hide-child (which opens submenus on hover over the invisible submenu)

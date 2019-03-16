@@ -25,7 +25,6 @@
     "gatsby-plugin-sharp": "^2.0.29",
     "gatsby-plugin-typescript": "^2.0.11",
     "gatsby-plugin-typescript-checker": "^1.0.3",
-    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-images": "^3.0.10",
     "gatsby-remark-smartypants": "^2.0.9",
     "gatsby-source-filesystem": "^2.0.27",

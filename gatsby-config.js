@@ -19,14 +19,6 @@ module.exports = {
 
     // Typefaces
     {
-      resolve: `gatsby-plugin-web-font-loader`,
-      options: {
-        typekit: {
-          id: `cfg7ddl`,
-        },
-      },
-    },
-    {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [

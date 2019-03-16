@@ -10,6 +10,7 @@ import { ITagListTags, TagList } from "../components/tagList";
 
 import ArrowRight from "../assets/icons/arrow-right.svg";
 import GrumpyRobin from "../assets/icons/grumpy-robin.svg";
+import GrumpyCorpName from "../assets/icons/grumpycorp-name.svg";
 
 // Automatic (exported) GraphQL query
 export const postIndexAndTagsQuery = graphql`
@@ -46,12 +47,10 @@ const IndexPage: React.FunctionComponent<{
       <div className="pt5 pb4">
         <Icon sprite={GrumpyRobin} className="v-mid w3 h3" />
         <div className="dib v-mid">
-          <div className="f1 grumpycorp" style={{ lineHeight: 1 }}>
-            GRUMPYCORP
+          <div>
+            <Icon sprite={GrumpyCorpName} className="v-mid h2 pl1" />
           </div>
-          <div className="f4 grumpycorp-extralight accent">
-            creative industries
-          </div>
+          <div className="f4 pt1 serif accent">creative industries</div>
         </div>
       </div>
 

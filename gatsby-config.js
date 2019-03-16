@@ -19,14 +19,18 @@ module.exports = {
 
     // Typefaces
     {
-      resolve: `gatsby-plugin-web-font-loader`,
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
-        google: {
-          families: [`Noto Serif`, `Noto Sans`],
-        },
-        typekit: {
-          id: `cfg7ddl`,
-        },
+        fonts: [
+          {
+            family: `Noto Serif`,
+            subsets: [`latin`],
+          },
+          {
+            family: `Noto Sans`,
+            subsets: [`latin`],
+          },
+        ],
       },
     },
 

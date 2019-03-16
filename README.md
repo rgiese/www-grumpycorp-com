@@ -9,6 +9,9 @@ Website for GrumpyCorp Creative Industries (via Gatsby).
 ## Icons
 See [The Noun Project](https://thenounproject.com/).
 
+## Fonts
+The GrumpyCorp logo text is set in Clone Rounded Latin (Medium weight) from TypeKit.
+
 ## Links
 - [Gatsby](https://www.gatsbyjs.org)
 - [TypeScript guide](http://2ality.com/2018/04/type-notation-typescript.html)

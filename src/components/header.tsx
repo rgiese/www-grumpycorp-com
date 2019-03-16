@@ -6,6 +6,7 @@ import NamedIcon from "./namedIcon";
 
 import ArrowRight from "../assets/icons/arrow-right.svg";
 import GrumpyRobin from "../assets/icons/grumpy-robin.svg";
+import GrumpyCorpName from "../assets/icons/grumpycorp-name.svg";
 import LogoGitHub from "../assets/icons/logo-github.svg";
 import LogoGMail from "../assets/icons/logo-gmail.svg";
 import LogoIMDB from "../assets/icons/logo-imdb.svg";
@@ -80,9 +81,9 @@ const Header: React.FunctionComponent<{}> = () => (
         <div className="fl dib pl2">
           {/*** Logo ***/}
           <div className="dib ph1 ph2-ns">
-            <Link className="link dim f4 black grumpycorp" to="/">
+            <Link className="link dim" to="/">
               <Icon sprite={GrumpyRobin} className="v-mid w2 h2" />
-              GRUMPYCORP
+              <Icon sprite={GrumpyCorpName} className="v-mid h075" />
             </Link>
           </div>
 

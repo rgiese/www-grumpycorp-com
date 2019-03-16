@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import React from "react";
 
 import Icon from "./icon";
@@ -28,7 +29,13 @@ const Footer: React.FunctionComponent<{}> = () => (
     <a className="link accent dim" href="https://netlify.com">
       Netlify
     </a>
-    .
+    .{` `}
+    <Link
+      to="/posts/code/improving-site-visitor-privacy/"
+      className="link accent dim"
+    >
+      Privacy notice.
+    </Link>
   </footer>
 );
 

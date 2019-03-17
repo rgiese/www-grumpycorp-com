@@ -67,6 +67,6 @@
     }
   },
   "lint-staged": {
-    "*.{css,js,jsx,json,ts,tsx}": "prettier --check"
+    "*.{css,js,jsx,json,mdx,scss,ts,tsx}": "prettier --check"
   }
 }

@@ -17,7 +17,7 @@ const Icon: React.FunctionComponent<{
   className?: string;
 }> = ({ sprite, className }) => (
   <svg viewBox={sprite.viewBox} className={className}>
-    <use href={sprite.url} />
+    <use href={sprite.url} xlinkHref={sprite.url} />
   </svg>
 );
 

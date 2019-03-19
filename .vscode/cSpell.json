@@ -1,5 +1,16 @@
 {
   "version": "0.1",
   "language": "en",
-  "words": ["frontmatter", "grumpycorp", "vimeo"]
+  "words": [
+    "frontmatter",
+    "grumpycorp",
+    "vimeo",
+    "hydronic",
+    "cooktop",
+    "desoldering",
+    "GPIO",
+    "SOIC",
+    "SOT",
+    "breadboard"
+  ]
 }

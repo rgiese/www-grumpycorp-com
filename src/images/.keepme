@@ -1,1 +1,0 @@
-Keep this directory alive in case we use non-SVG images in TSX files again (or remove the corresponding processing in ../../gatsby-config.js).

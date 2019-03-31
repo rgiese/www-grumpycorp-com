@@ -121,7 +121,7 @@ const PostPage: React.FunctionComponent<{
         &nbsp;
       </div>
 
-      {data.nextPosts && (
+      {data.nextPosts.edges.length > 0 && (
         <PostIndex
           posts={data.nextPosts}
           header={
@@ -132,7 +132,7 @@ const PostPage: React.FunctionComponent<{
           cardDivClass="w-80"
         />
       )}
-      {data.previousPosts && (
+      {data.previousPosts.edges.length > 0 && (
         <PostIndex
           posts={data.previousPosts}
           header={

@@ -52,7 +52,7 @@ const PortfolioPage: React.FunctionComponent<{
   return (
     <Layout>
       <SEO title={page.frontmatter.title} />
-      <div className="center tl lh-copy content portfolio-container sans">
+      <div className="center tl lh-copy content portfolio-container pt2 sans">
         <MDXRenderer scope={{ Icon, Icon_Tag, PortfolioPhoto }}>
           {page.code.body}
         </MDXRenderer>

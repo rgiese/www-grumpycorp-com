@@ -92,6 +92,61 @@ figcaption {
 }
 
 //
+// Portfolio page styles
+//
+
+@mixin non-small {
+  @media (min-width: 30em) {
+    @content;
+  }
+}
+
+.portfolio-container {
+  max-width: 72rem; // in between .mw8 and .mw9
+}
+
+@mixin portfolio-item-padding {
+  // .ph3
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.portfolio-w100 {
+  @include portfolio-item-padding;
+}
+
+.portfolio-sxs-container:before,
+.portfolio-sxs-container:after {
+  content: " ";
+  display: table;
+}
+.portfolio-sxs-container:after {
+  clear: both;
+}
+.portfolio-sxs-container {
+  *zoom: 1; // .cf
+  width: 100%; // .w-100
+}
+
+@each $width in 40, 50, 60 {
+  .portfolio-sxs-w#{$width} {
+    @include portfolio-item-padding;
+
+    // .fl
+    float: left;
+    _display: inline;
+
+    // .w-100 - Default to 100% width, reduce to 50% width on non-small screens
+    width: 100%;
+
+    // .w-XXX-ns
+    @include non-small {
+      width: $width * 1%;
+    }
+  }
+}
+
+//
 // Tachyons extensions
 //
 

@@ -34,6 +34,23 @@ const headerPostsStaticQuery = graphql`
         }
       }
     }
+    portfolio: allMdx(
+      sort: { fields: [frontmatter___title], order: ASC }
+      filter: { fields: { sourceInstanceName: { eq: "portfolio" } } }
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            icon
+            title
+          }
+        }
+      }
+    }
   }
 `;
 
@@ -48,6 +65,20 @@ interface IHeaderData {
         };
         frontmatter: {
           date: string;
+          icon: string;
+          title: string;
+        };
+      };
+    }>;
+  };
+  portfolio: {
+    edges: Array<{
+      node: {
+        id: string;
+        fields: {
+          slug: string;
+        };
+        frontmatter: {
           icon: string;
           title: string;
         };
@@ -131,6 +162,30 @@ const Header: React.FunctionComponent<{}> = () => (
                   All posts
                 </Link>
               </div>
+            </div>
+          </div>
+
+          {/*** Portfolio ***/}
+          <div className="dib ph1 ph2-ns nav-hide-child">
+            <Link className="link dim f5 black-80" to="/">
+              Portfolio
+            </Link>
+            <div className="nav-child absolute pl0 bg-white ba b--black-20">
+              {data.portfolio.edges.map(({ node }) => (
+                <div key={node.id} className="pa2 tl">
+                  <Link
+                    className="link dim f5 v-base black-80"
+                    to={node.fields.slug}
+                  >
+                    <NamedIcon
+                      name={node.frontmatter.icon}
+                      className="w1 h1 v-base"
+                    />
+                    {` `}
+                    {node.frontmatter.title}
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
         </div>

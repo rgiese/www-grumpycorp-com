@@ -4,6 +4,7 @@ import { resolve } from "path";
 import { GatsbyCreatePages, GatsbyOnCreateNode } from "./gatsby-node";
 
 import { IPagePageContext } from "../templates/page";
+import { IPortfolioPageContext } from "../templates/portfolio";
 import { IPostPageContext } from "../templates/post";
 import { ITagIndexPageContext } from "../templates/tagIndex";
 
@@ -104,6 +105,21 @@ interface IPages {
   };
 }
 
+interface IPortfolios {
+  data: {
+    pages: {
+      edges: Array<{
+        node: {
+          fields: {
+            slug: string;
+            sourceInstanceName: string;
+          };
+        };
+      }>;
+    };
+  };
+}
+
 export const createPages: GatsbyCreatePages = async ({
   graphql,
   boundActionCreators,
@@ -114,7 +130,7 @@ export const createPages: GatsbyCreatePages = async ({
   const tagSeparator = `/`;
 
   //
-  // Build pages of all types (posts, standalone pages)
+  // Build pages of all types (posts, standalone pages, portfolio pages)
   //
 
   // Build pages for posts (sort ascending for get[Next,Previous]Posts)
@@ -210,6 +226,42 @@ export const createPages: GatsbyCreatePages = async ({
       path: slug,
       component: resolve(`./src/templates/page.tsx`),
       context: pagePageContext,
+    });
+  });
+
+  // Build pages for portfolio pages
+  const portfolioData: IPortfolios = await graphql(`
+    {
+      pages: allMdx(
+        filter: { fields: { sourceInstanceName: { eq: "portfolio" } } }
+      ) {
+        edges {
+          node {
+            fields {
+              slug
+              sourceInstanceName
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const portfolio = portfolioData.data.pages.edges.map(({ node }) => node);
+
+  portfolio.forEach(page => {
+    const slug = page.fields.slug;
+    const sourceInstanceName = page.fields.sourceInstanceName;
+
+    const portfolioPageContext: IPortfolioPageContext = {
+      slug,
+      sourceInstanceName,
+    };
+
+    createPage({
+      path: slug,
+      component: resolve(`./src/templates/portfolio.tsx`),
+      context: portfolioPageContext,
     });
   });
 

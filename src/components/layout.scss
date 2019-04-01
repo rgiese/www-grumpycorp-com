@@ -106,9 +106,8 @@ figcaption {
 }
 
 @mixin portfolio-item-padding {
-  // .ph3
-  padding-left: 1rem;
-  padding-right: 1rem;
+  // in between .pa2 and .pa3
+  padding: 0.75rem;
 }
 
 .portfolio-w100 {

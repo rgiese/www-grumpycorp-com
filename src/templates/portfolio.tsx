@@ -3,8 +3,12 @@ import { graphql } from "gatsby";
 import MDXRenderer from "gatsby-mdx/mdx-renderer";
 import React from "react";
 
+import Icon from "../components/icon";
 import Layout from "../components/layout";
+import PortfolioPhoto from "../components/portfolioPhoto";
 import SEO from "../components/seo";
+
+import Icon_Tag from "../assets/icons/tag.svg";
 
 // Page context to be provided from ../gatsby/createPages.ts
 export interface IPortfolioPageContext {
@@ -49,7 +53,9 @@ const PortfolioPage: React.FunctionComponent<{
     <Layout>
       <SEO title={page.frontmatter.title} />
       <div className="center tl lh-copy content portfolio-container sans">
-        <MDXRenderer>{page.code.body}</MDXRenderer>
+        <MDXRenderer scope={{ Icon, Icon_Tag, PortfolioPhoto }}>
+          {page.code.body}
+        </MDXRenderer>
       </div>
     </Layout>
   );

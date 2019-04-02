@@ -40,19 +40,28 @@ interface IAllPhotos {
 const PortfolioPhoto: React.FunctionComponent<{
   src: string;
   alt?: string;
-}> = ({ src, alt }) => {
+  className?: string;
+}> = ({ src, alt, className }) => {
   const allPhotos: IAllPhotos = useStaticQuery(allPhotosQuery);
 
   const thisPhotoNodes = allPhotos.allPhotos.edges.filter(
     ({ node }) => node.relativePath === src
   );
 
-  if (thisPhotoNodes.length > 0) {
-    const thisPhoto = thisPhotoNodes[0].node;
-    return <Img fluid={thisPhoto.childImageSharp.fluid} alt={alt} />;
-  } else {
-    return <>Photo {src} not found.</>;
-  }
+  const innerHtml =
+    thisPhotoNodes.length > 0 ? (
+      <Img fluid={thisPhotoNodes[0].node.childImageSharp.fluid} alt={alt} />
+    ) : (
+      <>Photo {src} not found.</>
+    );
+
+  // The positioning magic we're doing with CSS doesn't work if we just forward it to the Img's className
+  // so we have to further the <div> forest spectacle, regrettably.
+  return className !== undefined ? (
+    <div className={className}>{innerHtml}</div>
+  ) : (
+    innerHtml
+  );
 };
 
 export default PortfolioPhoto;

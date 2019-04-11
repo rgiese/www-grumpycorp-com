@@ -1,5 +1,4 @@
 import { graphql } from "gatsby";
-// tslint:disable-next-line no-submodule-imports
 import MDXRenderer from "gatsby-mdx/mdx-renderer";
 import React from "react";
 
@@ -8,10 +7,10 @@ import Layout from "../components/layout";
 import PortfolioPhoto from "../components/portfolioPhoto";
 import SEO from "../components/seo";
 
-import Icon_Tag from "../assets/icons/tag.svg";
+import IconTag from "../assets/icons/tag.svg";
 
 // Page context to be provided from ../gatsby/createPages.ts
-export interface IPortfolioPageContext {
+export interface PortfolioPageContext {
   slug: string;
   sourceInstanceName: string;
 }
@@ -31,7 +30,7 @@ export const pageContentQuery = graphql`
 `;
 
 // TypeScript-typed fields corresponding to automatic (exported) GraphQL query
-interface IPageContentData {
+interface PageContentData {
   page: {
     code: {
       body: string;
@@ -44,16 +43,16 @@ interface IPageContentData {
 
 // Component definition
 const PortfolioPage: React.FunctionComponent<{
-  data: IPageContentData;
-  pageContext: IPortfolioPageContext;
-}> = ({ data, pageContext }) => {
+  data: PageContentData;
+  pageContext: PortfolioPageContext; // used in GraphQL query
+}> = ({ data }) => {
   const page = data.page;
 
   return (
     <Layout>
       <SEO title={page.frontmatter.title} />
       <div className="center tl lh-copy content portfolio-container pt2 sans">
-        <MDXRenderer scope={{ Icon, Icon_Tag, PortfolioPhoto }}>
+        <MDXRenderer scope={{ Icon, IconTag: IconTag, PortfolioPhoto }}>
           {page.code.body}
         </MDXRenderer>
       </div>

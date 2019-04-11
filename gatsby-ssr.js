@@ -11,6 +11,6 @@ function getAnalyticsCode() {
   );
 }
 
-export const onRenderBody = ({ setPostBodyComponents }, pluginOptions) => {
+export const onRenderBody = ({ setPostBodyComponents }) => {
   setPostBodyComponents([getAnalyticsCode()]);
 };

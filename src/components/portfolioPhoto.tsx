@@ -26,14 +26,14 @@ const allPhotosQuery = graphql`
 `;
 
 // TypeScript-typed fields corresponding to GraphQL query
-interface IAllPhotos {
+interface AllPhotos {
   allPhotos: {
-    edges: Array<{
+    edges: {
       node: {
         relativePath: string;
         childImageSharp: any;
       };
-    }>;
+    }[];
   };
 }
 
@@ -42,7 +42,7 @@ const PortfolioPhoto: React.FunctionComponent<{
   alt?: string;
   className?: string;
 }> = ({ src, alt, className }) => {
-  const allPhotos: IAllPhotos = useStaticQuery(allPhotosQuery);
+  const allPhotos: AllPhotos = useStaticQuery(allPhotosQuery);
 
   const thisPhotoNodes = allPhotos.allPhotos.edges.filter(
     ({ node }) => node.relativePath === src

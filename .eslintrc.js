@@ -13,6 +13,8 @@ module.exports = {
   },
   rules: {
     "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-function-return-type": "off", // Most of that would be JSX.Element here and that's just not interesting
+    "react/prop-types": "off", // We're a closed, TypeScript-based project so we'll just rely on build-time props checks (good-ish enough-ish)
   },
   settings: {
     react: {

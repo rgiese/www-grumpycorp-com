@@ -3,14 +3,14 @@ import React from "react";
 
 import Icon from "../components/icon";
 import Layout from "../components/layout";
-import { IPostIndexPosts, PostIndex } from "../components/postIndex";
+import { PostIndexPosts, PostIndex } from "../components/postIndex";
 import SEO from "../components/seo";
-import { ITagListTags, TagList } from "../components/tagList";
+import { TagListTags, TagList } from "../components/tagList";
 
 import TagIcon from "../assets/icons/tag.svg";
 
 // Page context to be provided from ../gatsby/createPages.ts
-export interface ITagIndexPageContext {
+export interface TagIndexPageContext {
   sourceInstanceName: string;
   tag: string;
 }
@@ -33,15 +33,15 @@ export const tagIndexQuery = graphql`
 `;
 
 // TypeScript-typed fields corresponding to automatic (exported) GraphQL query
-interface ITagIndexData {
-  posts: IPostIndexPosts;
-  tagList: ITagListTags;
+interface TagIndexData {
+  posts: PostIndexPosts;
+  tagList: TagListTags;
 }
 
 // Component definition
 const TagIndexPage: React.FunctionComponent<{
-  pageContext: ITagIndexPageContext;
-  data: ITagIndexData;
+  pageContext: TagIndexPageContext;
+  data: TagIndexData;
 }> = ({ pageContext, data }) => {
   const tag = pageContext.tag;
 

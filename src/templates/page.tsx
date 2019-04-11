@@ -1,5 +1,4 @@
 import { graphql, Link } from "gatsby";
-// tslint:disable-next-line no-submodule-imports
 import MDXRenderer from "gatsby-mdx/mdx-renderer";
 import React from "react";
 
@@ -7,7 +6,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 // Page context to be provided from ../gatsby/createPages.ts
-export interface IPagePageContext {
+export interface PagePageContext {
   slug: string;
   sourceInstanceName: string;
 }
@@ -27,7 +26,7 @@ export const pageContentQuery = graphql`
 `;
 
 // TypeScript-typed fields corresponding to automatic (exported) GraphQL query
-interface IPageContentData {
+interface PageContentData {
   page: {
     code: {
       body: string;
@@ -40,8 +39,8 @@ interface IPageContentData {
 
 // Component definition
 const PagePage: React.FunctionComponent<{
-  data: IPageContentData;
-  pageContext: IPagePageContext;
+  data: PageContentData;
+  pageContext: PagePageContext;
 }> = ({ data, pageContext }) => {
   const page = data.page;
 

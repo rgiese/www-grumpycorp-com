@@ -13,19 +13,19 @@ export const tagsQueryFragment = graphql`
 `;
 
 // Corresponding TypeScript definition
-export interface ITagListTags {
+export interface TagListTags {
   distinctTags: string[];
 }
 
 // Component properties including GraphQL data
-export interface ITagListProps {
+export interface TagListProps {
   sourceInstanceName: string;
-  tags: ITagListTags;
+  tags: TagListTags;
   removeTags?: string[];
 }
 
 // Component definition
-export const TagList: React.FunctionComponent<ITagListProps> = ({
+export const TagList: React.FunctionComponent<TagListProps> = ({
   sourceInstanceName,
   tags,
   removeTags = [],

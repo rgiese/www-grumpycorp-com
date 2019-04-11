@@ -1,7 +1,7 @@
 import { graphql, Link, StaticQuery } from "gatsby";
 import React from "react";
 
-import Icon, { ISprite } from "./icon";
+import Icon, { Sprite } from "./icon";
 import NamedIcon from "./namedIcon";
 
 import ArrowRight from "../assets/icons/arrow-right.svg";
@@ -55,9 +55,9 @@ const headerPostsStaticQuery = graphql`
 `;
 
 // TypeScript-typed fields corresponding to automatic (exported) GraphQL query
-interface IHeaderData {
+interface HeaderData {
   posts: {
-    edges: Array<{
+    edges: {
       node: {
         id: string;
         fields: {
@@ -69,10 +69,10 @@ interface IHeaderData {
           title: string;
         };
       };
-    }>;
+    }[];
   };
   portfolio: {
-    edges: Array<{
+    edges: {
       node: {
         id: string;
         fields: {
@@ -83,17 +83,22 @@ interface IHeaderData {
           title: string;
         };
       };
-    }>;
+    }[];
   };
 }
 
 // Interior components
-const SocialLink: React.FunctionComponent<{ uri: string; sprite: ISprite }> = ({
+const SocialLink: React.FunctionComponent<{ uri: string; sprite: Sprite }> = ({
   uri,
   sprite,
-}) => (
+}): JSX.Element => (
   <div className="dib ph1 ph2-ns">
-    <a className="link f4 f3-ns dim" target="_blank" href={uri}>
+    <a
+      className="link f4 f3-ns dim"
+      target="_blank"
+      rel="noopener noreferrer"
+      href={uri}
+    >
       <Icon
         sprite={sprite}
         className="w1 h1 v-base black-40 svg-fill-current-color"
@@ -106,8 +111,7 @@ const SocialLink: React.FunctionComponent<{ uri: string; sprite: ISprite }> = ({
 const Header: React.FunctionComponent<{}> = () => (
   <StaticQuery
     query={headerPostsStaticQuery}
-    // tslint:disable-next-line jsx-no-lambda
-    render={(data: IHeaderData) => (
+    render={(data: HeaderData) => (
       <nav className="cf pv2 bg-accent-mono-light sans">
         <div className="fl dib pl2">
           {/*** Logo ***/}

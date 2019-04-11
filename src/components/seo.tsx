@@ -2,6 +2,18 @@ import { graphql, StaticQuery } from "gatsby";
 import React from "react";
 import Helmet from "react-helmet";
 
+const detailsQuery = graphql`
+  query DefaultSEOQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        author
+      }
+    }
+  }
+`;
+
 const SEO: React.FunctionComponent<{
   description?: string;
   lang?: string;
@@ -10,7 +22,6 @@ const SEO: React.FunctionComponent<{
 }> = ({ description, lang = "en", keywords = [], title }) => (
   <StaticQuery
     query={detailsQuery}
-    // tslint:disable-next-line jsx-no-lambda
     render={data => {
       const metaDescription = description || data.site.siteMetadata.description;
       return (
@@ -52,15 +63,3 @@ const SEO: React.FunctionComponent<{
 );
 
 export default SEO;
-
-const detailsQuery = graphql`
-  query DefaultSEOQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-      }
-    }
-  }
-`;

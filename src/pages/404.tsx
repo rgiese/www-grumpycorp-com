@@ -12,7 +12,7 @@ const NotFoundPage = () => (
     <SEO title="404: Not found" />
     <h1>NOT FOUND</h1>
     <Icon sprite={SadTurnip} className="h4 w4" />
-    <p>You just hit a page that doesn't exist... such sadness.</p>
+    <p>You just hit a page that doesn&apos;t exist... such sadness.</p>
     <p>
       Try heading{` `}
       <Link className="link accent" to="/">

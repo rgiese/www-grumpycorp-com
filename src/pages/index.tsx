@@ -5,8 +5,8 @@ import Icon from "../components/icon";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-import { IPostIndexPosts, PostIndex } from "../components/postIndex";
-import { ITagListTags, TagList } from "../components/tagList";
+import { PostIndexPosts, PostIndex } from "../components/postIndex";
+import { TagListTags, TagList } from "../components/tagList";
 
 import ArrowRight from "../assets/icons/arrow-right.svg";
 import GrumpyRobin from "../assets/icons/grumpy-robin.svg";
@@ -31,13 +31,13 @@ export const postIndexAndTagsQuery = graphql`
 `;
 
 // TypeScript-typed fields corresponding to automatic (exported) GraphQL query
-interface IPostIndexData {
-  posts: IPostIndexPosts;
-  tagList: ITagListTags;
+interface PostIndexData {
+  posts: PostIndexPosts;
+  tagList: TagListTags;
 }
 
 const IndexPage: React.FunctionComponent<{
-  data: IPostIndexData;
+  data: PostIndexData;
 }> = ({ data }) => {
   return (
     <Layout>

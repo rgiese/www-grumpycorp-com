@@ -1,6 +1,6 @@
 import { GatsbyOnCreateWebpackConfig } from "./gatsby-node";
 
-// tslint:disable-next-line no-var-requires no-submodule-imports
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const SpriteLoaderPlugin = require("svg-sprite-loader/plugin"); // Won't convert to import presumably due to svg-sprite-loader craziness.
 
 export const onCreateWebpackConfig: GatsbyOnCreateWebpackConfig = ({

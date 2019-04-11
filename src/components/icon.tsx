@@ -7,13 +7,13 @@ import React from "react";
 //   <Icon sprite={GrumpyRobin} className="w3 h3" />
 //
 
-export interface ISprite {
+export interface Sprite {
   viewBox: string;
   url: string;
 }
 
 const Icon: React.FunctionComponent<{
-  sprite: ISprite;
+  sprite: Sprite;
   className?: string;
 }> = ({ sprite, className }) => (
   <svg viewBox={sprite.viewBox} className={className}>

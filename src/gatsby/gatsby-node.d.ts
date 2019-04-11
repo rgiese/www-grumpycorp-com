@@ -1,25 +1,25 @@
 // onCreateNode
-interface IOnCreateNodeActionCreators {
+interface OnCreateNodeActionCreators {
   createNodeField: (opts: { node: any; name: string; value: string }) => void;
 }
 
 export type GatsbyOnCreateNode = (fns: {
   node: any;
   getNode: any;
-  boundActionCreators: IOnCreateNodeActionCreators;
+  boundActionCreators: OnCreateNodeActionCreators;
 }) => void;
 
 // CreatePages
-interface IPageInput {
+interface PageInput {
   path: string;
   component: string;
   layout?: string;
   context?: any;
 }
 
-interface ICreatePageActionCreators {
-  createPage: (page: IPageInput) => void;
-  deletePage: (page: IPageInput) => void;
+interface CreatePageActionCreators {
+  createPage: (page: PageInput) => void;
+  deletePage: (page: PageInput) => void;
   createRedirect: (opts: {
     fromPath: string;
     isPermanent?: boolean;
@@ -30,16 +30,16 @@ interface ICreatePageActionCreators {
 
 export type GatsbyCreatePages = (fns: {
   graphql: any;
-  boundActionCreators: ICreatePageActionCreators;
+  boundActionCreators: CreatePageActionCreators;
 }) => void;
 
 // onCreateWebpackConfig
-interface IOnCreateWebpackConfigActionCreators {
+interface OnCreateWebpackConfigActionCreators {
   replaceWebpackConfig: (opts: { config: any }) => void;
 }
 
 export type GatsbyOnCreateWebpackConfig = (fns: {
   stage: string;
-  boundActionCreators: IOnCreateWebpackConfigActionCreators;
+  boundActionCreators: OnCreateWebpackConfigActionCreators;
   getConfig: () => any;
 }) => void;

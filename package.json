@@ -52,7 +52,8 @@
     "typescript": "^3.4.3"
   },
   "config": {
-    "prettierglob": "{.,./src/**}/*.{css,js,jsx,json,mdx,scss,ts,tsx}"
+    "prettierglob": "{.,./src/**}/*.{css,js,jsx,json,mdx,scss,ts,tsx}",
+    "tslintglob": "{.,./**}/*.{js,ts,tsx}"
   },
   "scripts": {
     "build": "gatsby build",
@@ -60,8 +61,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "ts:check": "tsc --noEmit",
-    "ts:lint": "eslint .",
-    "ts:fix": "eslint --fix .",
+    "ts:lint": "cross-var eslint $npm_package_config_tslintglob",
+    "ts:fix": "cross-var eslint --fix $npm_package_config_tslintglob",
     "format:check": "cross-var prettier --check $npm_package_config_prettierglob",
     "format:fix": "cross-var prettier --write $npm_package_config_prettierglob"
   },

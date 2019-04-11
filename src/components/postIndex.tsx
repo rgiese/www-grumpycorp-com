@@ -29,7 +29,7 @@ export const postsQueryFragment = graphql`
 `;
 
 // Corresponding TypeScript definition
-export interface IPost {
+export interface Post {
   id: string;
   fields: {
     slug: string;
@@ -44,21 +44,21 @@ export interface IPost {
   };
 }
 
-export interface IPostIndexPosts {
-  edges: Array<{
-    node: IPost;
-  }>;
+export interface PostIndexPosts {
+  edges: {
+    node: Post;
+  }[];
 }
 
 // Component properties including GraphQL data
-export interface IPostIndexProps {
-  posts: IPostIndexPosts;
+export interface PostIndexProps {
+  posts: PostIndexPosts;
   header?: React.ReactFragment;
   cardDivClass?: string;
 }
 
 // Interior component
-const PostCard: React.FunctionComponent<{ post: IPost }> = ({ post }) => {
+const PostCard: React.FunctionComponent<{ post: Post }> = ({ post }) => {
   return (
     <div
       className="flex items-center mv4 ba b--accent-mono-light"
@@ -112,7 +112,7 @@ const PostCard: React.FunctionComponent<{ post: IPost }> = ({ post }) => {
 };
 
 // Component definition
-export const PostIndex: React.FunctionComponent<IPostIndexProps> = ({
+export const PostIndex: React.FunctionComponent<PostIndexProps> = ({
   posts,
   header,
   cardDivClass = "w-100",

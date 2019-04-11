@@ -1,11 +1,10 @@
 import { graphql, Link } from "gatsby";
-// tslint:disable-next-line no-submodule-imports
 import MDXRenderer from "gatsby-mdx/mdx-renderer";
 import React from "react";
 
 import Icon from "../components/icon";
 import Layout from "../components/layout";
-import { IPostIndexPosts, PostIndex } from "../components/postIndex";
+import { PostIndexPosts, PostIndex } from "../components/postIndex";
 import SEO from "../components/seo";
 
 import TagIcon from "../assets/icons/tag.svg";
@@ -14,7 +13,7 @@ import TagIcon from "../assets/icons/tag.svg";
 import Vimeo from "../components/vimeo";
 
 // Page context to be provided from ../gatsby/createPages.ts
-export interface IPostPageContext {
+export interface PostPageContext {
   slug: string;
   sourceInstanceName: string;
 
@@ -55,7 +54,7 @@ export const postContentQuery = graphql`
 `;
 
 // TypeScript-typed fields corresponding to automatic (exported) GraphQL query
-interface IPostContentData {
+interface PostContentData {
   post: {
     code: {
       body: string;
@@ -70,15 +69,15 @@ interface IPostContentData {
       tags: string[];
     };
   };
-  previousPosts: IPostIndexPosts;
-  nextPosts: IPostIndexPosts;
+  previousPosts: PostIndexPosts;
+  nextPosts: PostIndexPosts;
 }
 
 // Component definition
 const PostPage: React.FunctionComponent<{
-  data: IPostContentData;
-  pageContext: IPostPageContext;
-}> = ({ data, pageContext }) => {
+  data: PostContentData;
+  pageContext: PostPageContext; // used in GraphQL query
+}> = ({ data }) => {
   const post = data.post;
 
   return (

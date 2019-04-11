@@ -86,12 +86,12 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `${siteMetadata.title} ${siteMetadata.description}`,
-        short_name: `${siteMetadata.title}`,
-        start_url: `/`,
-        background_color: `#000000`,
-        theme_color: `#f26739`,
+        short_name: `${siteMetadata.title}`, // eslint-disable-line @typescript-eslint/camelcase
+        start_url: `/`, // eslint-disable-line @typescript-eslint/camelcase
+        background_color: `#000000`, // eslint-disable-line @typescript-eslint/camelcase
+        theme_color: `#f26739`, // eslint-disable-line @typescript-eslint/camelcase
         icon: `${__dirname}/src/assets/icons/grumpy-robin.svg`,
-        include_favicon: true,
+        include_favicon: true, // eslint-disable-line @typescript-eslint/camelcase
       },
     },
   ],

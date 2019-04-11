@@ -3,12 +3,10 @@ import { resolve } from "path";
 
 import { GatsbyCreatePages, GatsbyOnCreateNode } from "./gatsby-node";
 
-import { IPagePageContext } from "../templates/page";
-import { IPortfolioPageContext } from "../templates/portfolio";
-import { IPostPageContext } from "../templates/post";
-import { ITagIndexPageContext } from "../templates/tagIndex";
-
-// tslint:disable object-literal-sort-keys
+import { PagePageContext } from "../templates/page";
+import { PortfolioPageContext } from "../templates/portfolio";
+import { PostPageContext } from "../templates/post";
+import { TagIndexPageContext } from "../templates/tagIndex";
 
 // onCreateNode
 export const onCreateNode: GatsbyOnCreateNode = ({
@@ -46,7 +44,7 @@ export const onCreateNode: GatsbyOnCreateNode = ({
 };
 
 // createPages
-interface IPost {
+interface Post {
   fields: {
     slug: string;
     sourceInstanceName: string;
@@ -56,18 +54,18 @@ interface IPost {
   };
 }
 
-interface IPosts {
+interface Posts {
   data: {
     posts: {
-      edges: Array<{
-        node: IPost;
-      }>;
+      edges: {
+        node: Post;
+      }[];
     };
   };
 }
 
 function getPreviousPostForTag(
-  posts: IPost[],
+  posts: Post[],
   currentPostIndex: number,
   tag: string
 ): string | undefined {
@@ -79,7 +77,7 @@ function getPreviousPostForTag(
 }
 
 function getNextPostForTag(
-  posts: IPost[],
+  posts: Post[],
   currentPostIndex: number,
   tag: string
 ): string | undefined {
@@ -90,32 +88,32 @@ function getNextPostForTag(
   }
 }
 
-interface IPages {
+interface Pages {
   data: {
     pages: {
-      edges: Array<{
+      edges: {
         node: {
           fields: {
             slug: string;
             sourceInstanceName: string;
           };
         };
-      }>;
+      }[];
     };
   };
 }
 
-interface IPortfolios {
+interface Portfolios {
   data: {
     pages: {
-      edges: Array<{
+      edges: {
         node: {
           fields: {
             slug: string;
             sourceInstanceName: string;
           };
         };
-      }>;
+      }[];
     };
   };
 }
@@ -134,7 +132,7 @@ export const createPages: GatsbyCreatePages = async ({
   //
 
   // Build pages for posts (sort ascending for get[Next,Previous]Posts)
-  const postData: IPosts = await graphql(`
+  const postData: Posts = await graphql(`
     {
       posts: allMdx(
         sort: { fields: [frontmatter___date], order: ASC }
@@ -169,7 +167,7 @@ export const createPages: GatsbyCreatePages = async ({
       .map(tag => getNextPostForTag(posts, index, tag))
       .filter(postSlug => postSlug !== undefined) as string[];
 
-    const postPageContext: IPostPageContext = {
+    const postPageContext: PostPageContext = {
       slug,
       sourceInstanceName,
       previousPostSlugs,
@@ -194,7 +192,7 @@ export const createPages: GatsbyCreatePages = async ({
   });
 
   // Build pages for standalone pages
-  const pageData: IPages = await graphql(`
+  const pageData: Pages = await graphql(`
     {
       pages: allMdx(
         filter: { fields: { sourceInstanceName: { eq: "pages" } } }
@@ -217,7 +215,7 @@ export const createPages: GatsbyCreatePages = async ({
     const slug = page.fields.slug;
     const sourceInstanceName = page.fields.sourceInstanceName;
 
-    const pagePageContext: IPagePageContext = {
+    const pagePageContext: PagePageContext = {
       slug,
       sourceInstanceName,
     };
@@ -230,7 +228,7 @@ export const createPages: GatsbyCreatePages = async ({
   });
 
   // Build pages for portfolio pages
-  const portfolioData: IPortfolios = await graphql(`
+  const portfolioData: Portfolios = await graphql(`
     {
       pages: allMdx(
         filter: { fields: { sourceInstanceName: { eq: "portfolio" } } }
@@ -253,7 +251,7 @@ export const createPages: GatsbyCreatePages = async ({
     const slug = page.fields.slug;
     const sourceInstanceName = page.fields.sourceInstanceName;
 
-    const portfolioPageContext: IPortfolioPageContext = {
+    const portfolioPageContext: PortfolioPageContext = {
       slug,
       sourceInstanceName,
     };
@@ -274,7 +272,7 @@ export const createPages: GatsbyCreatePages = async ({
       tagSeparator
     );
 
-    const tagPageContext: ITagIndexPageContext = { sourceInstanceName, tag };
+    const tagPageContext: TagIndexPageContext = { sourceInstanceName, tag };
 
     createPage({
       path: `/tags/${sourceInstanceName}/${tag}`,

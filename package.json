@@ -14,7 +14,13 @@
     "@types/react": "^16.8.13",
     "@types/react-dom": "^16.8.3",
     "@types/react-helmet": "^5.0.8",
+    "@typescript-eslint/eslint-plugin": "^1.6.0",
+    "@typescript-eslint/parser": "^1.6.0",
     "cross-var-no-babel": "^1.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
     "gatsby": "^2.3.17",
     "gatsby-image": "^2.0.37",
     "gatsby-mdx": "^0.3.6",
@@ -43,9 +49,6 @@
     "svgo-loader": "^2.2.0",
     "tachyons": "^4.11.1",
     "ts-node": "^8.0.3",
-    "tslint": "^5.15.0",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-react": "^3.6.0",
     "typescript": "^3.4.3"
   },
   "config": {
@@ -57,7 +60,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "ts:check": "tsc --noEmit",
-    "ts:lint": "tslint --project .",
+    "ts:lint": "eslint .",
+    "ts:fix": "eslint --fix .",
     "format:check": "cross-var prettier --check $npm_package_config_prettierglob",
     "format:fix": "cross-var prettier --write $npm_package_config_prettierglob"
   },

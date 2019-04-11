@@ -13,6 +13,7 @@
 
     "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true,
+    "noImplicitAny": true,
 
     "noEmit": true,
 

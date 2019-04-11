@@ -1,4 +1,4 @@
-import { graphql, Link, StaticQuery } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import React from "react";
 
 import Icon, { Sprite } from "./icon";
@@ -108,111 +108,107 @@ const SocialLink: React.FunctionComponent<{ uri: string; sprite: Sprite }> = ({
 );
 
 // Component definition
-const Header: React.FunctionComponent<{}> = () => (
-  <StaticQuery
-    query={headerPostsStaticQuery}
-    render={(data: HeaderData) => (
-      <nav className="cf pv2 bg-accent-mono-light sans">
-        <div className="fl dib pl2">
-          {/*** Logo ***/}
-          <div className="dib ph1 ph2-ns">
-            <Link className="link dim" to="/">
-              <Icon sprite={GrumpyRobin} className="v-mid w2 h2" />
-              <Icon sprite={GrumpyCorpName} className="v-mid h075" />
-            </Link>
-          </div>
+const Header: React.FunctionComponent<{}> = () => {
+  const data: HeaderData = useStaticQuery(headerPostsStaticQuery);
 
-          {/*** About ***/}
-          <div className="dib ph1 ph2-ns">
-            <Link className="link dim f5 black-80" to="/about/">
-              About
-            </Link>
-          </div>
+  return (
+    <nav className="cf pv2 bg-accent-mono-light sans">
+      <div className="fl dib pl2">
+        {/*** Logo ***/}
+        <div className="dib ph1 ph2-ns">
+          <Link className="link dim" to="/">
+            <Icon sprite={GrumpyRobin} className="v-mid w2 h2" />
+            <Icon sprite={GrumpyCorpName} className="v-mid h075" />
+          </Link>
+        </div>
 
-          {/*** Posts ***/}
-          <div className="dib ph1 ph2-ns nav-hide-child">
-            <Link className="link dim f5 black-80" to="/">
-              Posts
-            </Link>
-            <div className="nav-child absolute pl0 bg-white ba b--black-20">
-              {data.posts.edges.map(({ node }) => (
-                <div key={node.id} className="pa2 tl">
-                  <Link
-                    className="link dim f5 v-base black-80"
-                    to={node.fields.slug}
-                  >
-                    <NamedIcon
-                      name={node.frontmatter.icon}
-                      className="w1 h1 v-base"
-                    />
-                    {` `}
-                    {node.frontmatter.title}
-                  </Link>
-                  {` `}
-                  <small className="accent">{node.frontmatter.date}</small>
-                </div>
-              ))}
+        {/*** About ***/}
+        <div className="dib ph1 ph2-ns">
+          <Link className="link dim f5 black-80" to="/about/">
+            About
+          </Link>
+        </div>
 
-              <div className="ph2 pv3 tl w-100 bt b--black-20">
+        {/*** Posts ***/}
+        <div className="dib ph1 ph2-ns nav-hide-child">
+          <Link className="link dim f5 black-80" to="/">
+            Posts
+          </Link>
+          <div className="nav-child absolute pl0 bg-white ba b--black-20">
+            {data.posts.edges.map(({ node }) => (
+              <div key={node.id} className="pa2 tl">
                 <Link
-                  className="link dim f5 fw5 v-mid black-60"
-                  to="/posts/all"
+                  className="link dim f5 v-base black-80"
+                  to={node.fields.slug}
                 >
-                  <Icon
-                    sprite={ArrowRight}
-                    className="w1 h1 v-mid accent svg-fill-current-color"
+                  <NamedIcon
+                    name={node.frontmatter.icon}
+                    className="w1 h1 v-base"
                   />
                   {` `}
-                  All posts
+                  {node.frontmatter.title}
+                </Link>
+                {` `}
+                <small className="accent">{node.frontmatter.date}</small>
+              </div>
+            ))}
+
+            <div className="ph2 pv3 tl w-100 bt b--black-20">
+              <Link className="link dim f5 fw5 v-mid black-60" to="/posts/all">
+                <Icon
+                  sprite={ArrowRight}
+                  className="w1 h1 v-mid accent svg-fill-current-color"
+                />
+                {` `}
+                All posts
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/*** Portfolio ***/}
+        <div className="dib ph1 ph2-ns nav-hide-child">
+          <Link className="link dim f5 black-80" to="/">
+            Portfolio
+          </Link>
+          <div className="nav-child absolute pl0 bg-white ba b--black-20">
+            {data.portfolio.edges.map(({ node }) => (
+              <div key={node.id} className="pa2 tl">
+                <Link
+                  className="link dim f5 v-base black-80"
+                  to={node.fields.slug}
+                >
+                  <NamedIcon
+                    name={node.frontmatter.icon}
+                    className="w1 h1 v-base"
+                  />
+                  {` `}
+                  {node.frontmatter.title}
                 </Link>
               </div>
-            </div>
-          </div>
-
-          {/*** Portfolio ***/}
-          <div className="dib ph1 ph2-ns nav-hide-child">
-            <Link className="link dim f5 black-80" to="/">
-              Portfolio
-            </Link>
-            <div className="nav-child absolute pl0 bg-white ba b--black-20">
-              {data.portfolio.edges.map(({ node }) => (
-                <div key={node.id} className="pa2 tl">
-                  <Link
-                    className="link dim f5 v-base black-80"
-                    to={node.fields.slug}
-                  >
-                    <NamedIcon
-                      name={node.frontmatter.icon}
-                      className="w1 h1 v-base"
-                    />
-                    {` `}
-                    {node.frontmatter.title}
-                  </Link>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
+      </div>
 
-        {/*** "Social" links (as it were) ***/}
+      {/*** "Social" links (as it were) ***/}
 
-        {/* Drop on small screens: "dn" - don't display by default, "dib-ns" - display on non-small screens */}
-        <div className="fr dn dib-ns ph3">
-          <SocialLink uri="mailto:robin@grumpycorp.com" sprite={LogoGMail} />
-          <SocialLink
-            uri="https://www.linkedin.com/in/robingiese"
-            sprite={LogoLinkedIn}
-          />
+      {/* Drop on small screens: "dn" - don't display by default, "dib-ns" - display on non-small screens */}
+      <div className="fr dn dib-ns ph3">
+        <SocialLink uri="mailto:robin@grumpycorp.com" sprite={LogoGMail} />
+        <SocialLink
+          uri="https://www.linkedin.com/in/robingiese"
+          sprite={LogoLinkedIn}
+        />
 
-          <SocialLink
-            uri="https://www.imdb.com/name/nm8515322/"
-            sprite={LogoIMDB}
-          />
-          <SocialLink uri="https://github.com/rgiese/" sprite={LogoGitHub} />
-        </div>
-      </nav>
-    )}
-  />
-);
+        <SocialLink
+          uri="https://www.imdb.com/name/nm8515322/"
+          sprite={LogoIMDB}
+        />
+        <SocialLink uri="https://github.com/rgiese/" sprite={LogoGitHub} />
+      </div>
+    </nav>
+  );
+};
 
 export default Header;

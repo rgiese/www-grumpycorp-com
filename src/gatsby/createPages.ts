@@ -124,7 +124,7 @@ export const createPages: GatsbyCreatePages = async ({
 }) => {
   const { createPage } = boundActionCreators;
 
-  const tagsWithSourceInstanceName = new Set();
+  const tagsWithSourceInstanceName = new Set<string>();
   const tagSeparator = `/`;
 
   //

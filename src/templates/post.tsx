@@ -1,5 +1,6 @@
 import { graphql, Link } from "gatsby";
-import MDXRenderer from "gatsby-mdx/mdx-renderer";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import { MDXProvider } from "@mdx-js/react";
 import React from "react";
 
 import Icon from "../components/icon";
@@ -29,9 +30,7 @@ export const postContentQuery = graphql`
     $nextPostSlugs: [String]
   ) {
     post: mdx(fields: { slug: { eq: $slug } }) {
-      code {
-        body
-      }
+      body
       fields {
         slug
         sourceInstanceName
@@ -56,9 +55,7 @@ export const postContentQuery = graphql`
 // TypeScript-typed fields corresponding to automatic (exported) GraphQL query
 interface PostContentData {
   post: {
-    code: {
-      body: string;
-    };
+    body: string;
     fields: {
       slug: string;
       sourceInstanceName: string;
@@ -111,7 +108,9 @@ const PostPage: React.FunctionComponent<{
 
       {/* Post body */}
       <div className="center mw7 tl lh-copy ph2 content">
-        <MDXRenderer scope={{ Vimeo }}>{post.code.body}</MDXRenderer>
+        <MDXProvider components={{ Vimeo }}>
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </MDXProvider>
       </div>
 
       {/* Previous/next navigation */}

@@ -1,5 +1,5 @@
 import { graphql, Link } from "gatsby";
-import MDXRenderer from "gatsby-mdx/mdx-renderer";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 import React from "react";
 
 import Layout from "../components/layout";
@@ -15,9 +15,7 @@ export interface PagePageContext {
 export const pageContentQuery = graphql`
   query($slug: String!) {
     page: mdx(fields: { slug: { eq: $slug } }) {
-      code {
-        body
-      }
+      body
       frontmatter {
         title
       }
@@ -28,9 +26,7 @@ export const pageContentQuery = graphql`
 // TypeScript-typed fields corresponding to automatic (exported) GraphQL query
 interface PageContentData {
   page: {
-    code: {
-      body: string;
-    };
+    body: string;
     frontmatter: {
       title: string;
     };
@@ -54,7 +50,7 @@ const PagePage: React.FunctionComponent<{
         </Link>
       </div>
       <div className="center mw7 tl lh-copy ph2 content">
-        <MDXRenderer>{page.code.body}</MDXRenderer>
+        <MDXRenderer>{page.body}</MDXRenderer>
       </div>
     </Layout>
   );

@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.4.5",
-    "@mdx-js/tag": "^0.20.3",
+    "@mdx-js/react": "^1.4.5",
+    "@types/node": "^12.7.5",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "@types/react-helmet": "^5.0.10",
@@ -24,8 +25,8 @@
     "eslint-plugin-react": "^7.14.3",
     "gatsby": "^2.15.18",
     "gatsby-image": "^2.2.19",
-    "gatsby-mdx": "^1.0.0",
     "gatsby-plugin-manifest": "^2.2.17",
+    "gatsby-plugin-mdx": "^1.0.43",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet": "^3.1.7",
     "gatsby-plugin-sass": "^2.1.14",
@@ -53,17 +54,17 @@
     "typescript": "^3.6.3"
   },
   "config": {
-    "prettierglob": "{.,./src/**}/*.{css,js,jsx,json,mdx,scss,ts,tsx}",
-    "tslintglob": "{.,./**}/*.{js,ts,tsx}"
+    "prettierglob": "{.,./src/**}/*.{css,js,jsx,json,mdx,scss,ts,tsx}"
   },
   "scripts": {
+    "clean": "gatsby clean",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "ts:check": "tsc --noEmit",
-    "ts:lint": "cross-var eslint $npm_package_config_tslintglob",
-    "ts:fix": "cross-var eslint --fix $npm_package_config_tslintglob",
+    "ts:lint": "eslint \"./src/**/*.{js,ts,tsx}\"",
+    "ts:fix": "eslint --fix \"./src/**/*.{js,ts,tsx}\"",
     "format:check": "cross-var prettier --check $npm_package_config_prettierglob",
     "format:fix": "cross-var prettier --write $npm_package_config_prettierglob"
   },

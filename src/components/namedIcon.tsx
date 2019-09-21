@@ -26,6 +26,9 @@ nameToSprite.set("movie", Movie);
 import RV from "../assets/icons/rv.svg";
 nameToSprite.set("rv", RV);
 
+import Tag from "../assets/icons/tag.svg";
+nameToSprite.set("tag", Tag);
+
 import Thermometer from "../assets/icons/thermometer.svg";
 nameToSprite.set("thermometer", Thermometer);
 

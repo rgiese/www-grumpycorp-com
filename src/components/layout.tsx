@@ -16,28 +16,34 @@ const TwoColumnLayout: React.FunctionComponent<{
   mainColumn: React.ReactNode;
   rightColumn: React.ReactNode;
 }> = ({ mainColumn, rightColumn }): React.ReactElement => (
-  <>
+  <div className="cf">
     {/**
-     * Top-level layout:
-     *  - fl-ns: float-left the main div and right div for non-small (-ns) screens at 75/25 widths
-     *  - fn: don't float (== stack) the main div and right div on small screens
+     * Top-level layout: three divs (left = empty, main, and right)
+     *  - fl-ns: float-left the for non-small (-ns) screens at [10 @ medium / 20 @ large] / 50 / 30 percent widths
+     *  - fn: don't float (== stack) the divs on small screens
      *
      * Main div layout:
      *  - mw7: constrain width for readability
-     *  - ml-auto: flush to the right (auto left margin)
+     *  - center: center content box
      *
      * Right div layout:
+     *  - mw5: constrain width for readability
      *  - device-dependent left padding
      *  - a hint of bottom-padding for small screens
+     *
+     * Containing div (see above) clears floats.
      */}
 
-    <div className="fl-ns fn w-75-ns">
-      <main className="mw7 ml-auto">{mainColumn}</main>
+    <div className="fl-ns fn w-10-m w-20-l">&nbsp;</div>
+
+    <div className="fl-ns fn w-50-ns">
+      <main className="mw7 center">{mainColumn}</main>
     </div>
 
-    {/*** Right div ***/}
-    <div className="fl-ns fn w-25-ns pl2 pl5-ns pb3">{rightColumn}</div>
-  </>
+    <div className="fl-ns fn w-30-ns">
+      <nav className="mw5 pl2 pl5-ns pb3">{rightColumn}</nav>
+    </div>
+  </div>
 );
 
 const Layout: React.FunctionComponent<{}> = ({ children }) => (

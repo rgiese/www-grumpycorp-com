@@ -3,12 +3,9 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
 import React from "react";
 
-import Icon from "../components/icon";
 import Layout from "../components/layout";
 import { PostIndexPosts, PostIndex } from "../components/postIndex";
 import SEO from "../components/seo";
-
-import TagIcon from "../assets/icons/tag.svg";
 
 // "Shortcodes" for use inside of MDX
 import Vimeo from "../components/vimeo";
@@ -38,7 +35,6 @@ export const postContentQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM Do, YYYY")
-        tags
       }
     }
     previousPosts: allMdx(
@@ -63,7 +59,6 @@ interface PostContentData {
     frontmatter: {
       title: string;
       date: string;
-      tags: string[];
     };
   };
   previousPosts: PostIndexPosts;
@@ -81,33 +76,14 @@ const PostPage: React.FunctionComponent<{
     <Layout>
       <SEO title={post.frontmatter.title} />
 
-      <div className="pt3 pb1">
-        <Link className="link f2 fw2 accent sans" to={post.fields.slug}>
-          {post.frontmatter.title}
-        </Link>
-      </div>
+      <Link className="link f2 fw2 accent sans" to={post.fields.slug}>
+        {post.frontmatter.title}
+      </Link>
 
-      <div className="pa1 f5 black-60">{post.frontmatter.date}</div>
-
-      <div>
-        {post.frontmatter.tags.map(tag => {
-          return (
-            <>
-              <Link
-                className="link accent-mono"
-                to={`/tags/${post.fields.sourceInstanceName}/${tag}`}
-              >
-                <Icon sprite={TagIcon} className="w1 h1 v-mid" />
-                {` `}
-                {tag}
-              </Link>
-            </>
-          );
-        })}
-      </div>
+      <div className="pv2 f5 black-60">{post.frontmatter.date}</div>
 
       {/* Post body */}
-      <div className="center mw7 tl lh-copy ph2 content">
+      <div className="lh-copy content">
         <MDXProvider components={{ Vimeo }}>
           <MDXRenderer>{post.body}</MDXRenderer>
         </MDXProvider>

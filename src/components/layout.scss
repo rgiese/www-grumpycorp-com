@@ -189,19 +189,3 @@ figcaption {
   // as a complement to http://tachyons.io/docs/layout/heights/
   height: 0.75rem;
 }
-
-// An improvement over Tachyons' hide-child (which opens submenus on hover over the invisible submenu)
-// courtesy of https://css-tricks.com/solved-with-css-dropdown-menus/
-.nav-hide-child .nav-child {
-  visibility: hidden;
-  opacity: 0;
-  display: none;
-}
-
-.nav-hide-child:hover .nav-child,
-.nav-hide-child .nav-child:hover {
-  visibility: visible;
-  opacity: 1;
-  display: block;
-  z-index: 5;
-}

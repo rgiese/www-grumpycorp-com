@@ -2,8 +2,6 @@ import { graphql, Link } from "gatsby";
 import React from "react";
 
 import Icon from "./icon";
-import NamedIcon from "./namedIcon";
-
 import TagIcon from "../assets/icons/tag.svg";
 
 // GraphQL fragment to be used by caller
@@ -53,19 +51,15 @@ export interface PostIndexPosts {
 // Component properties including GraphQL data
 export interface PostIndexProps {
   posts: PostIndexPosts;
-  header?: React.ReactFragment;
-  cardDivClass?: string;
 }
 
 // Component definition
 export const PostIndex: React.FunctionComponent<PostIndexProps> = ({
   posts,
-  header,
-  cardDivClass = "w-100",
 }) => {
   return (
     <table>
-      <tbody>
+      <tbody className="lh-copy v-top">
         {posts.edges.map(({ node }) => (
           <tr key={node.id}>
             <td>

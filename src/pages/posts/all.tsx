@@ -29,14 +29,7 @@ const IndexPage: React.FunctionComponent<{
   return (
     <Layout>
       <SEO title="All posts" />
-      <PostIndex
-        posts={data.posts}
-        header={
-          <div className="f3 tl mt3">
-            All posts <span className="accent-mono ml2">newest to oldest</span>
-          </div>
-        }
-      />
+      <PostIndex posts={data.posts} />
     </Layout>
   );
 };

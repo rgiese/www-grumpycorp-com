@@ -1,8 +1,8 @@
 import { graphql, Link } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import React from "react";
 
 import Layout from "../components/layout";
+import MDXPresenter from "../components/mdxPresenter";
 import SEO from "../components/seo";
 
 // Page context to be provided from ../gatsby/createPages.ts
@@ -50,7 +50,7 @@ const PagePage: React.FunctionComponent<{
         </Link>
       </div>
       <div className="center mw7 tl lh-copy ph2 content">
-        <MDXRenderer>{page.body}</MDXRenderer>
+        <MDXPresenter data={page.body} />
       </div>
     </Layout>
   );

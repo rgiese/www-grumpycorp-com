@@ -1,14 +1,10 @@
 import { graphql, Link } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
-import { MDXProvider } from "@mdx-js/react";
 import React from "react";
 
 import Layout from "../components/layout";
+import MDXPresenter from "../components/mdxPresenter";
 import { PostIndexPosts, PostIndex } from "../components/postIndex";
 import SEO from "../components/seo";
-
-// "Shortcodes" for use inside of MDX
-import Vimeo from "../components/vimeo";
 
 // Page context to be provided from ../gatsby/createPages.ts
 export interface PostPageContext {
@@ -84,9 +80,7 @@ const PostPage: React.FunctionComponent<{
 
       {/* Post body */}
       <div className="lh-copy content">
-        <MDXProvider components={{ Vimeo }}>
-          <MDXRenderer>{post.body}</MDXRenderer>
-        </MDXProvider>
+        <MDXPresenter data={post.body} />
       </div>
 
       {/* Previous/next navigation */}

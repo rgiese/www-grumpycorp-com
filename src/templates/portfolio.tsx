@@ -1,11 +1,8 @@
 import { graphql } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
-import { MDXProvider } from "@mdx-js/react";
 import React from "react";
 
 import Layout from "../components/layout";
-import NamedIcon from "../components/namedIcon";
-import PortfolioPhoto from "../components/portfolioPhoto";
+import MDXPresenter from "../components/mdxPresenter";
 import SEO from "../components/seo";
 
 // Page context to be provided from ../gatsby/createPages.ts
@@ -47,9 +44,7 @@ const PortfolioPage: React.FunctionComponent<{
     <Layout>
       <SEO title={page.frontmatter.title} />
       <div className="center tl lh-copy content portfolio-container pt2 sans">
-        <MDXProvider components={{ NamedIcon, PortfolioPhoto }}>
-          <MDXRenderer>{page.body}</MDXRenderer>
-        </MDXProvider>
+        <MDXPresenter data={page.body} />
       </div>
     </Layout>
   );

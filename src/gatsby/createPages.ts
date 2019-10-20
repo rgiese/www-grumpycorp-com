@@ -137,20 +137,29 @@ export const createPages: GatsbyCreatePages = async ({
   posts.forEach((post, index) => {
     const slug = post.fields.slug;
     const sourceInstanceName = post.fields.sourceInstanceName;
+    const isLastPost = index === posts.length - 1;
 
-    const previousPostSlugs = post.frontmatter.tags
+    const previousPostSlugs = new Set<string>(post.frontmatter.tags
       .map(tag => getPreviousPostForTag(posts, index, tag))
-      .filter(postSlug => postSlug !== undefined) as string[];
+      .filter(postSlug => postSlug !== undefined) as string[]);
 
-    const nextPostSlugs = post.frontmatter.tags
+    if (index > 0) {
+      previousPostSlugs.add(posts[index - 1].fields.slug);
+    }
+
+    const nextPostSlugs = new Set<string>(post.frontmatter.tags
       .map(tag => getNextPostForTag(posts, index, tag))
-      .filter(postSlug => postSlug !== undefined) as string[];
+      .filter(postSlug => postSlug !== undefined) as string[]);
+
+    if (!isLastPost) {
+      nextPostSlugs.add(posts[index + 1].fields.slug);
+    }
 
     const postPageContext: PostPageContext = {
       slug,
       sourceInstanceName,
-      previousPostSlugs,
-      nextPostSlugs,
+      previousPostSlugs: [...previousPostSlugs],
+      nextPostSlugs: [...nextPostSlugs],
     };
 
     createPage({
@@ -159,7 +168,7 @@ export const createPages: GatsbyCreatePages = async ({
       context: postPageContext,
     });
 
-    if (index === posts.length - 1) {
+    if (isLastPost) {
       // Generate site index page from most recent post
       createPage({
         path: `/`,

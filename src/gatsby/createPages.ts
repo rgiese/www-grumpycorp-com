@@ -180,6 +180,15 @@ export const createPages: GatsbyCreatePages = async ({
       context: postPageContext,
     });
 
+    if (index === posts.length - 1) {
+      // Generate site index page from most recent post
+      createPage({
+        path: `/`,
+        component: resolve(`./src/templates/post.tsx`),
+        context: postPageContext,
+      });
+    }
+
     // Accumulate tags
     post.frontmatter.tags.forEach(tag => {
       // Since JavaScript doesn't seem to have a proper std::set<T>,

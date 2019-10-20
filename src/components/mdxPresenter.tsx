@@ -3,7 +3,9 @@ import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
 // "Shortcodes" for use inside of MDX
-import NamedIcon from "../components/namedIcon";
+import Icon from "../components/icon";
+import TagIcon from "../assets/icons/tag.svg";
+
 import PortfolioPhoto from "../components/portfolioPhoto";
 import Vimeo from "../components/vimeo";
 
@@ -12,7 +14,7 @@ const MDXPresenter: React.FunctionComponent<{
   data: string;
 }> = ({ data }) => {
   return (
-    <MDXProvider components={{ NamedIcon, PortfolioPhoto, Vimeo }}>
+    <MDXProvider components={{ Icon, TagIcon, PortfolioPhoto, Vimeo }}>
       <MDXRenderer>{data}</MDXRenderer>
     </MDXProvider>
   );

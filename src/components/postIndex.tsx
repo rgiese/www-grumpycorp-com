@@ -16,8 +16,6 @@ export const postsQueryFragment = graphql`
         }
         frontmatter {
           date(formatString: "MMMM Do, YYYY")
-          description
-          icon
           tags
           title
         }
@@ -35,8 +33,6 @@ export interface Post {
   };
   frontmatter: {
     date: string;
-    description: string;
-    icon: string;
     tags: string[];
     title: string;
   };

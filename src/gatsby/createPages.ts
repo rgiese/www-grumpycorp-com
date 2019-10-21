@@ -54,7 +54,7 @@ interface Post {
   };
 }
 
-interface Posts {
+interface PostNodes {
   data: {
     posts: {
       edges: {
@@ -64,79 +64,15 @@ interface Posts {
   };
 }
 
-function getPreviousPostForTag(
-  posts: Post[],
-  currentPostIndex: number,
-  tag: string
-): string | undefined {
-  for (let idx = currentPostIndex - 1; idx >= 0; --idx) {
-    if (posts[idx].frontmatter.tags.includes(tag)) {
-      return posts[idx].fields.slug;
-    }
-  }
-}
-
-function getNextPostForTag(
-  posts: Post[],
-  currentPostIndex: number,
-  tag: string
-): string | undefined {
-  for (let idx = currentPostIndex + 1; idx < posts.length; ++idx) {
-    if (posts[idx].frontmatter.tags.includes(tag)) {
-      return posts[idx].fields.slug;
-    }
-  }
-}
-
-interface Pages {
-  data: {
-    pages: {
-      edges: {
-        node: {
-          fields: {
-            slug: string;
-            sourceInstanceName: string;
-          };
-        };
-      }[];
-    };
-  };
-}
-
-interface Portfolios {
-  data: {
-    pages: {
-      edges: {
-        node: {
-          fields: {
-            slug: string;
-            sourceInstanceName: string;
-          };
-        };
-      }[];
-    };
-  };
-}
-
-export const createPages: GatsbyCreatePages = async ({
-  graphql,
-  boundActionCreators,
-}) => {
-  const { createPage } = boundActionCreators;
-
-  const tagsWithSourceInstanceName = new Set<string>();
-  const tagSeparator = `/`;
-
-  //
-  // Build pages of all types (posts, standalone pages, portfolio pages)
-  //
-
-  // Build pages for posts (sort ascending for get[Next,Previous]Posts)
-  const postData: Posts = await graphql(`
+async function getPostsForSourceName(
+  graphql: any,
+  sourceName: string
+): Promise<Post[]> {
+  const postNodes: PostNodes = await graphql(`
     {
       posts: allMdx(
         sort: { fields: [frontmatter___date], order: ASC }
-        filter: { fields: { sourceInstanceName: { eq: "posts" } } }
+        filter: { fields: { sourceInstanceName: { eq: "${sourceName}" } } }
       ) {
         edges {
           node {
@@ -153,25 +89,38 @@ export const createPages: GatsbyCreatePages = async ({
     }
   `);
 
-  const posts = postData.data.posts.edges.map(({ node }) => node);
+  const posts = postNodes.data.posts.edges.map(({ node }) => node);
+
+  return posts;
+}
+
+export const createPages: GatsbyCreatePages = async ({
+  graphql,
+  boundActionCreators,
+}) => {
+  const { createPage } = boundActionCreators;
+
+  const tagsWithSourceInstanceName = new Set<string>();
+  const tagSeparator = `/`;
+
+  //
+  // Build pages of all types (posts, standalone pages, portfolio pages)
+  //
+
+  // Build pages for posts (sort ascending for get[Next,Previous]Posts)
+  const posts = await getPostsForSourceName(graphql, "posts");
 
   posts.forEach((post, index) => {
     const slug = post.fields.slug;
     const sourceInstanceName = post.fields.sourceInstanceName;
 
-    const previousPostSlugs = post.frontmatter.tags
-      .map(tag => getPreviousPostForTag(posts, index, tag))
-      .filter(postSlug => postSlug !== undefined) as string[];
-
-    const nextPostSlugs = post.frontmatter.tags
-      .map(tag => getNextPostForTag(posts, index, tag))
-      .filter(postSlug => postSlug !== undefined) as string[];
+    const isLastPost = index === posts.length - 1;
 
     const postPageContext: PostPageContext = {
       slug,
       sourceInstanceName,
-      previousPostSlugs,
-      nextPostSlugs,
+      previousPostSlug: index > 0 ? posts[index - 1].fields.slug : undefined,
+      nextPostSlug: !isLastPost ? posts[index + 1].fields.slug : undefined,
     };
 
     createPage({
@@ -180,9 +129,18 @@ export const createPages: GatsbyCreatePages = async ({
       context: postPageContext,
     });
 
+    if (isLastPost) {
+      // Generate site index page from most recent post
+      createPage({
+        path: `/`,
+        component: resolve(`./src/templates/post.tsx`),
+        context: postPageContext,
+      });
+    }
+
     // Accumulate tags
     post.frontmatter.tags.forEach(tag => {
-      // Since JavaScript doesn't seem to have a proper std::set<T>,
+      // Since JavaScript doesn't have a proper std::set<T>,
       // we'll just cram our two values into a delimited string.
       // Sadness.
       tagsWithSourceInstanceName.add(
@@ -192,24 +150,7 @@ export const createPages: GatsbyCreatePages = async ({
   });
 
   // Build pages for standalone pages
-  const pageData: Pages = await graphql(`
-    {
-      pages: allMdx(
-        filter: { fields: { sourceInstanceName: { eq: "pages" } } }
-      ) {
-        edges {
-          node {
-            fields {
-              slug
-              sourceInstanceName
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  const pages = pageData.data.pages.edges.map(({ node }) => node);
+  const pages = await getPostsForSourceName(graphql, "pages");
 
   pages.forEach(page => {
     const slug = page.fields.slug;
@@ -228,24 +169,7 @@ export const createPages: GatsbyCreatePages = async ({
   });
 
   // Build pages for portfolio pages
-  const portfolioData: Portfolios = await graphql(`
-    {
-      pages: allMdx(
-        filter: { fields: { sourceInstanceName: { eq: "portfolio" } } }
-      ) {
-        edges {
-          node {
-            fields {
-              slug
-              sourceInstanceName
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  const portfolio = portfolioData.data.pages.edges.map(({ node }) => node);
+  const portfolio = await getPostsForSourceName(graphql, "portfolio");
 
   portfolio.forEach(page => {
     const slug = page.fields.slug;

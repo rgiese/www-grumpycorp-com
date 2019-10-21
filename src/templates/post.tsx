@@ -1,34 +1,33 @@
 import { graphql, Link } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
-import { MDXProvider } from "@mdx-js/react";
 import React from "react";
 
 import Icon from "../components/icon";
 import Layout from "../components/layout";
-import { PostIndexPosts, PostIndex } from "../components/postIndex";
+import MDXPresenter from "../components/mdxPresenter";
 import SEO from "../components/seo";
 
 import TagIcon from "../assets/icons/tag.svg";
-
-// "Shortcodes" for use inside of MDX
-import Vimeo from "../components/vimeo";
 
 // Page context to be provided from ../gatsby/createPages.ts
 export interface PostPageContext {
   slug: string;
   sourceInstanceName: string;
-
-  previousPostSlugs: string[];
-  nextPostSlugs: string[];
+  previousPostSlug: string | undefined;
+  nextPostSlug: string | undefined;
 }
 
 // Page-level GraphQL query
 export const postContentQuery = graphql`
-  query(
-    $slug: String!
-    $previousPostSlugs: [String]
-    $nextPostSlugs: [String]
-  ) {
+  fragment PreviousOrNextPostFragment on Mdx {
+    fields {
+      slug
+    }
+    frontmatter {
+      title
+    }
+  }
+
+  query($slug: String!, $previousPostSlug: String, $nextPostSlug: String) {
     post: mdx(fields: { slug: { eq: $slug } }) {
       body
       fields {
@@ -41,18 +40,25 @@ export const postContentQuery = graphql`
         tags
       }
     }
-    previousPosts: allMdx(
-      filter: { fields: { slug: { in: $previousPostSlugs } } }
-    ) {
-      ...PostIndexPosts
+    previousPost: mdx(fields: { slug: { eq: $previousPostSlug } }) {
+      ...PreviousOrNextPostFragment
     }
-    nextPosts: allMdx(filter: { fields: { slug: { in: $nextPostSlugs } } }) {
-      ...PostIndexPosts
+    nextPost: mdx(fields: { slug: { eq: $nextPostSlug } }) {
+      ...PreviousOrNextPostFragment
     }
   }
 `;
 
 // TypeScript-typed fields corresponding to automatic (exported) GraphQL query
+interface PreviousOrNextPostData {
+  fields: {
+    slug: string;
+  };
+  frontmatter: {
+    title: string;
+  };
+}
+
 interface PostContentData {
   post: {
     body: string;
@@ -66,9 +72,46 @@ interface PostContentData {
       tags: string[];
     };
   };
-  previousPosts: PostIndexPosts;
-  nextPosts: PostIndexPosts;
+  previousPost?: PreviousOrNextPostData;
+  nextPost?: PreviousOrNextPostData;
 }
+
+// Internal components
+const PreviousNextLinks: React.FunctionComponent<{
+  data: PostContentData;
+  linkClass: string;
+}> = ({ data, linkClass }) => {
+  return (
+    <table className="w-100 pv3">
+      <tbody>
+        <tr>
+          <td className="w-50">
+            {data.previousPost && (
+              <Link
+                className={`link ${linkClass}`}
+                to={data.previousPost.fields.slug}
+              >
+                &laquo;{` `}
+                {data.previousPost.frontmatter.title}
+              </Link>
+            )}
+          </td>
+          <td className="w-50 tr">
+            {data.nextPost && (
+              <Link
+                className={`link ${linkClass}`}
+                to={data.nextPost.fields.slug}
+              >
+                {data.nextPost.frontmatter.title}
+                {` `}&raquo;
+              </Link>
+            )}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  );
+};
 
 // Component definition
 const PostPage: React.FunctionComponent<{
@@ -81,66 +124,38 @@ const PostPage: React.FunctionComponent<{
     <Layout>
       <SEO title={post.frontmatter.title} />
 
-      <div className="pt3 pb1">
-        <Link className="link f2 fw2 accent sans" to={post.fields.slug}>
-          {post.frontmatter.title}
-        </Link>
+      {/* Post title */}
+      <Link className="link f2 fw2 accent sans" to={post.fields.slug}>
+        {post.frontmatter.title}
+      </Link>
+
+      {/* Post date and tags */}
+      <div className="pv2 f5 black-60">
+        {post.frontmatter.date}
+        <span className="ph2 black-40">in</span>
+        {post.frontmatter.tags.map(tag => (
+          <Link
+            className="link accent-mono"
+            to={`/tags/${post.fields.sourceInstanceName}/${tag}`}
+            key={tag}
+          >
+            <Icon sprite={TagIcon} className="w1 h1 v-mid" />
+            {` `}
+            {tag}
+          </Link>
+        ))}
       </div>
 
-      <div className="pa1 f5 black-60">{post.frontmatter.date}</div>
-
-      <div>
-        {post.frontmatter.tags.map(tag => {
-          return (
-            <>
-              <Link
-                className="link accent-mono"
-                to={`/tags/${post.fields.sourceInstanceName}/${tag}`}
-              >
-                <Icon sprite={TagIcon} className="w1 h1 v-mid" />
-                {` `}
-                {tag}
-              </Link>
-            </>
-          );
-        })}
-      </div>
+      {/* Previous/next navigation (top) */}
+      <PreviousNextLinks data={data} linkClass="black-40" />
 
       {/* Post body */}
-      <div className="center mw7 tl lh-copy ph2 content">
-        <MDXProvider components={{ Vimeo }}>
-          <MDXRenderer>{post.body}</MDXRenderer>
-        </MDXProvider>
+      <div className="lh-copy content">
+        <MDXPresenter data={post.body} />
       </div>
 
-      {/* Previous/next navigation */}
-      <div className="mt4">
-        {/* Some vertical padding */}
-        &nbsp;
-      </div>
-
-      {data.nextPosts.edges.length > 0 && (
-        <PostIndex
-          posts={data.nextPosts}
-          header={
-            <div className="f3 tl mt3">
-              Next <span className="accent-mono">by tag</span>
-            </div>
-          }
-          cardDivClass="w-80"
-        />
-      )}
-      {data.previousPosts.edges.length > 0 && (
-        <PostIndex
-          posts={data.previousPosts}
-          header={
-            <div className="f3 tl mt3">
-              Previous <span className="accent-mono">by tag</span>
-            </div>
-          }
-          cardDivClass="w-80"
-        />
-      )}
+      {/* Previous/next navigation (bottom) */}
+      <PreviousNextLinks data={data} linkClass="accent" />
     </Layout>
   );
 };

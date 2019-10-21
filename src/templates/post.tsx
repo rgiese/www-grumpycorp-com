@@ -76,6 +76,41 @@ interface PostContentData {
   nextPost?: PreviousOrNextPostData;
 }
 
+// Internal components
+const PreviousNextLinks: React.FunctionComponent<{
+  data: PostContentData;
+  linkClass: string;
+}> = ({ data, linkClass }) => {
+  return (
+    <table className="w-100 pv3">
+      <tr>
+        <td className="w-50">
+          {data.previousPost && (
+            <Link
+              className={`link ${linkClass}`}
+              to={data.previousPost.fields.slug}
+            >
+              &laquo;{` `}
+              {data.previousPost.frontmatter.title}
+            </Link>
+          )}
+        </td>
+        <td className="w-50 tr">
+          {data.nextPost && (
+            <Link
+              className={`link ${linkClass}`}
+              to={data.nextPost.fields.slug}
+            >
+              {data.nextPost.frontmatter.title}
+              {` `}&raquo;
+            </Link>
+          )}
+        </td>
+      </tr>
+    </table>
+  );
+};
+
 // Component definition
 const PostPage: React.FunctionComponent<{
   data: PostContentData;
@@ -109,32 +144,16 @@ const PostPage: React.FunctionComponent<{
         ))}
       </div>
 
+      {/* Previous/next navigation (top) */}
+      <PreviousNextLinks data={data} linkClass="black-40" />
+
       {/* Post body */}
       <div className="lh-copy content">
         <MDXPresenter data={post.body} />
       </div>
 
-      {/* Previous/next navigation */}
-      <table className="w-100 pb3">
-        <tr>
-          <td className="w-50">
-            {data.previousPost && (
-              <Link className="link accent" to={data.previousPost.fields.slug}>
-                &laquo;{` `}
-                {data.previousPost.frontmatter.title}
-              </Link>
-            )}
-          </td>
-          <td className="w-50 tr">
-            {data.nextPost && (
-              <Link className="link accent" to={data.nextPost.fields.slug}>
-                {data.nextPost.frontmatter.title}
-                {` `}&raquo;
-              </Link>
-            )}
-          </td>
-        </tr>
-      </table>
+      {/* Previous/next navigation (bottom) */}
+      <PreviousNextLinks data={data} linkClass="accent" />
     </Layout>
   );
 };

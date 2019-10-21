@@ -3,25 +3,28 @@ import React from "react";
 
 import Layout from "../components/layout";
 import MDXPresenter from "../components/mdxPresenter";
-import { PostIndexPosts, PostIndex } from "../components/postIndex";
 import SEO from "../components/seo";
 
 // Page context to be provided from ../gatsby/createPages.ts
 export interface PostPageContext {
   slug: string;
   sourceInstanceName: string;
-
-  previousPostSlugs: string[];
-  nextPostSlugs: string[];
+  previousPostSlug: string | undefined;
+  nextPostSlug: string | undefined;
 }
 
 // Page-level GraphQL query
 export const postContentQuery = graphql`
-  query(
-    $slug: String!
-    $previousPostSlugs: [String]
-    $nextPostSlugs: [String]
-  ) {
+  fragment PreviousOrNextPostFragment on Mdx {
+    fields {
+      slug
+    }
+    frontmatter {
+      title
+    }
+  }
+
+  query($slug: String!, $previousPostSlug: String, $nextPostSlug: String) {
     post: mdx(fields: { slug: { eq: $slug } }) {
       body
       fields {
@@ -33,18 +36,25 @@ export const postContentQuery = graphql`
         date(formatString: "MMMM Do, YYYY")
       }
     }
-    previousPosts: allMdx(
-      filter: { fields: { slug: { in: $previousPostSlugs } } }
-    ) {
-      ...PostIndexPosts
+    previousPost: mdx(fields: { slug: { eq: $previousPostSlug } }) {
+      ...PreviousOrNextPostFragment
     }
-    nextPosts: allMdx(filter: { fields: { slug: { in: $nextPostSlugs } } }) {
-      ...PostIndexPosts
+    nextPost: mdx(fields: { slug: { eq: $nextPostSlug } }) {
+      ...PreviousOrNextPostFragment
     }
   }
 `;
 
 // TypeScript-typed fields corresponding to automatic (exported) GraphQL query
+interface PreviousOrNextPostData {
+  fields: {
+    slug: string;
+  };
+  frontmatter: {
+    title: string;
+  };
+}
+
 interface PostContentData {
   post: {
     body: string;
@@ -57,8 +67,8 @@ interface PostContentData {
       date: string;
     };
   };
-  previousPosts: PostIndexPosts;
-  nextPosts: PostIndexPosts;
+  previousPost?: PreviousOrNextPostData;
+  nextPost?: PreviousOrNextPostData;
 }
 
 // Component definition
@@ -71,28 +81,36 @@ const PostPage: React.FunctionComponent<{
   return (
     <Layout>
       <SEO title={post.frontmatter.title} />
-
       <Link className="link f2 fw2 accent sans" to={post.fields.slug}>
         {post.frontmatter.title}
       </Link>
-
       <div className="pv2 f5 black-60">{post.frontmatter.date}</div>
-
       {/* Post body */}
       <div className="lh-copy content">
         <MDXPresenter data={post.body} />
       </div>
 
       {/* Previous/next navigation */}
-      <div className="mt4">
-        {/* Some vertical padding */}
-        &nbsp;
-      </div>
-
-      {data.nextPosts.edges.length > 0 && <PostIndex posts={data.nextPosts} />}
-      {data.previousPosts.edges.length > 0 && (
-        <PostIndex posts={data.previousPosts} />
-      )}
+      <table className="w-100 pb3">
+        <tr>
+          <td className="w-50">
+            {data.previousPost && (
+              <Link className="link accent" to={data.previousPost.fields.slug}>
+                &laquo;{` `}
+                {data.previousPost.frontmatter.title}
+              </Link>
+            )}
+          </td>
+          <td className="w-50 tr">
+            {data.nextPost && (
+              <Link className="link accent" to={data.nextPost.fields.slug}>
+                {data.nextPost.frontmatter.title}
+                {` `}&raquo;
+              </Link>
+            )}
+          </td>
+        </tr>
+      </table>
     </Layout>
   );
 };

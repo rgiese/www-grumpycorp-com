@@ -94,30 +94,6 @@ async function getPostsForSourceName(
   return posts;
 }
 
-function getPreviousPostForTag(
-  posts: Post[],
-  currentPostIndex: number,
-  tag: string
-): string | undefined {
-  for (let idx = currentPostIndex - 1; idx >= 0; --idx) {
-    if (posts[idx].frontmatter.tags.includes(tag)) {
-      return posts[idx].fields.slug;
-    }
-  }
-}
-
-function getNextPostForTag(
-  posts: Post[],
-  currentPostIndex: number,
-  tag: string
-): string | undefined {
-  for (let idx = currentPostIndex + 1; idx < posts.length; ++idx) {
-    if (posts[idx].frontmatter.tags.includes(tag)) {
-      return posts[idx].fields.slug;
-    }
-  }
-}
-
 export const createPages: GatsbyCreatePages = async ({
   graphql,
   boundActionCreators,
@@ -137,29 +113,14 @@ export const createPages: GatsbyCreatePages = async ({
   posts.forEach((post, index) => {
     const slug = post.fields.slug;
     const sourceInstanceName = post.fields.sourceInstanceName;
+
     const isLastPost = index === posts.length - 1;
-
-    const previousPostSlugs = new Set<string>(post.frontmatter.tags
-      .map(tag => getPreviousPostForTag(posts, index, tag))
-      .filter(postSlug => postSlug !== undefined) as string[]);
-
-    if (index > 0) {
-      previousPostSlugs.add(posts[index - 1].fields.slug);
-    }
-
-    const nextPostSlugs = new Set<string>(post.frontmatter.tags
-      .map(tag => getNextPostForTag(posts, index, tag))
-      .filter(postSlug => postSlug !== undefined) as string[]);
-
-    if (!isLastPost) {
-      nextPostSlugs.add(posts[index + 1].fields.slug);
-    }
 
     const postPageContext: PostPageContext = {
       slug,
       sourceInstanceName,
-      previousPostSlugs: [...previousPostSlugs],
-      nextPostSlugs: [...nextPostSlugs],
+      previousPostSlug: index > 0 ? posts[index - 1].fields.slug : undefined,
+      nextPostSlug: !isLastPost ? posts[index + 1].fields.slug : undefined,
     };
 
     createPage({
@@ -179,7 +140,7 @@ export const createPages: GatsbyCreatePages = async ({
 
     // Accumulate tags
     post.frontmatter.tags.forEach(tag => {
-      // Since JavaScript doesn't seem to have a proper std::set<T>,
+      // Since JavaScript doesn't have a proper std::set<T>,
       // we'll just cram our two values into a delimited string.
       // Sadness.
       tagsWithSourceInstanceName.add(

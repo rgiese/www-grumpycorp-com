@@ -1,9 +1,12 @@
 import { graphql, Link } from "gatsby";
 import React from "react";
 
+import Icon from "../components/icon";
 import Layout from "../components/layout";
 import MDXPresenter from "../components/mdxPresenter";
 import SEO from "../components/seo";
+
+import TagIcon from "../assets/icons/tag.svg";
 
 // Page context to be provided from ../gatsby/createPages.ts
 export interface PostPageContext {
@@ -34,6 +37,7 @@ export const postContentQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM Do, YYYY")
+        tags
       }
     }
     previousPost: mdx(fields: { slug: { eq: $previousPostSlug } }) {
@@ -65,6 +69,7 @@ interface PostContentData {
     frontmatter: {
       title: string;
       date: string;
+      tags: string[];
     };
   };
   previousPost?: PreviousOrNextPostData;
@@ -81,10 +86,29 @@ const PostPage: React.FunctionComponent<{
   return (
     <Layout>
       <SEO title={post.frontmatter.title} />
+
+      {/* Post title */}
       <Link className="link f2 fw2 accent sans" to={post.fields.slug}>
         {post.frontmatter.title}
       </Link>
-      <div className="pv2 f5 black-60">{post.frontmatter.date}</div>
+
+      {/* Post date and tags */}
+      <div className="pv2 f5 black-60">
+        {post.frontmatter.date}
+        <span className="ph2 black-40">in</span>
+        {post.frontmatter.tags.map(tag => (
+          <Link
+            className="link accent-mono"
+            to={`/tags/${post.fields.sourceInstanceName}/${tag}`}
+            key={tag}
+          >
+            <Icon sprite={TagIcon} className="w1 h1 v-mid" />
+            {` `}
+            {tag}
+          </Link>
+        ))}
+      </div>
+
       {/* Post body */}
       <div className="lh-copy content">
         <MDXPresenter data={post.body} />

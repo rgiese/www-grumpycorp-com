@@ -15,7 +15,8 @@ import "./layout.scss";
 const TwoColumnLayout: React.FunctionComponent<{
   mainColumn: React.ReactNode;
   rightColumn: React.ReactNode;
-}> = ({ mainColumn, rightColumn }): React.ReactElement => (
+  bodyMaxWidth?: string;
+}> = ({ mainColumn, rightColumn, bodyMaxWidth }): React.ReactElement => (
   <div className="cf">
     {/**
      * Top-level layout: three divs (left = empty, main, and right)
@@ -37,7 +38,7 @@ const TwoColumnLayout: React.FunctionComponent<{
     <div className="fl-ns fn w-10-m w-20-l">&nbsp;</div>
 
     <div className="fl-ns fn w-50-ns">
-      <main className="mw7 center">{mainColumn}</main>
+      <main className={`${bodyMaxWidth || "mw7"} center`}>{mainColumn}</main>
     </div>
 
     <div className="fl-ns fn w-30-ns">
@@ -46,7 +47,9 @@ const TwoColumnLayout: React.FunctionComponent<{
   </div>
 );
 
-const Layout: React.FunctionComponent<{}> = ({ children }) => (
+const Layout: React.FunctionComponent<{
+  bodyMaxWidth?: string;
+}> = ({ children, bodyMaxWidth }) => (
   <div className="ph3 pt4 tl bg-white">
     {/**
      * Execute two column layout twice:
@@ -73,9 +76,14 @@ const Layout: React.FunctionComponent<{}> = ({ children }) => (
         </>
       }
       rightColumn={<></>}
+      bodyMaxWidth={bodyMaxWidth}
     />
 
-    <TwoColumnLayout mainColumn={children} rightColumn={<RightBar />} />
+    <TwoColumnLayout
+      mainColumn={children}
+      rightColumn={<RightBar />}
+      bodyMaxWidth={bodyMaxWidth}
+    />
   </div>
 );
 

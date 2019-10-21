@@ -83,30 +83,32 @@ const PreviousNextLinks: React.FunctionComponent<{
 }> = ({ data, linkClass }) => {
   return (
     <table className="w-100 pv3">
-      <tr>
-        <td className="w-50">
-          {data.previousPost && (
-            <Link
-              className={`link ${linkClass}`}
-              to={data.previousPost.fields.slug}
-            >
-              &laquo;{` `}
-              {data.previousPost.frontmatter.title}
-            </Link>
-          )}
-        </td>
-        <td className="w-50 tr">
-          {data.nextPost && (
-            <Link
-              className={`link ${linkClass}`}
-              to={data.nextPost.fields.slug}
-            >
-              {data.nextPost.frontmatter.title}
-              {` `}&raquo;
-            </Link>
-          )}
-        </td>
-      </tr>
+      <tbody>
+        <tr>
+          <td className="w-50">
+            {data.previousPost && (
+              <Link
+                className={`link ${linkClass}`}
+                to={data.previousPost.fields.slug}
+              >
+                &laquo;{` `}
+                {data.previousPost.frontmatter.title}
+              </Link>
+            )}
+          </td>
+          <td className="w-50 tr">
+            {data.nextPost && (
+              <Link
+                className={`link ${linkClass}`}
+                to={data.nextPost.fields.slug}
+              >
+                {data.nextPost.frontmatter.title}
+                {` `}&raquo;
+              </Link>
+            )}
+          </td>
+        </tr>
+      </tbody>
     </table>
   );
 };

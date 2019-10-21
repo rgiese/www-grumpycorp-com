@@ -4,10 +4,16 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 
 // "Shortcodes" for use inside of MDX
 import Icon from "../components/icon";
-import TagIcon from "../assets/icons/tag.svg";
+import IconTag from "../assets/icons/tag.svg";
 
 import PortfolioPhoto from "../components/portfolioPhoto";
 import Vimeo from "../components/vimeo";
+
+const TagIcon: React.FunctionComponent<{ className: string }> = ({
+  className,
+}) => {
+  return <Icon sprite={IconTag} className={className} />;
+};
 
 // Component definition
 const MDXPresenter: React.FunctionComponent<{

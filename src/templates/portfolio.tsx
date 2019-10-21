@@ -43,7 +43,7 @@ const PortfolioPage: React.FunctionComponent<{
   return (
     <Layout>
       <SEO title={page.frontmatter.title} />
-      <div className="center tl lh-copy content portfolio-container pt2 sans">
+      <div className="lh-copy content portfolio-container sans">
         <MDXPresenter data={page.body} />
       </div>
     </Layout>

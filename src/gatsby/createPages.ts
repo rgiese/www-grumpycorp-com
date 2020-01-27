@@ -1,12 +1,11 @@
-import { createFilePath } from "gatsby-source-filesystem";
-import { resolve } from "path";
-
 import { GatsbyCreatePages, GatsbyOnCreateNode } from "./gatsby-node";
 
 import { PagePageContext } from "../templates/page";
 import { PortfolioPageContext } from "../templates/portfolio";
 import { PostPageContext } from "../templates/post";
 import { TagIndexPageContext } from "../templates/tagIndex";
+import { createFilePath } from "gatsby-source-filesystem";
+import { resolve } from "path";
 
 // onCreateNode
 export const onCreateNode: GatsbyOnCreateNode = ({
@@ -20,7 +19,7 @@ export const onCreateNode: GatsbyOnCreateNode = ({
   if (node.internal.type === `Mdx`) {
     // Get source instance name so we can filter on it in queries
     const parent = getNode(node.parent);
-    const sourceInstanceName = parent.sourceInstanceName;
+    const sourceInstanceName = parent.sourceInstanceName as string;
 
     createNodeField({
       node,
@@ -29,7 +28,7 @@ export const onCreateNode: GatsbyOnCreateNode = ({
     });
 
     // Build slug
-    const filePath = createFilePath({ node, getNode });
+    const filePath = createFilePath({ node, getNode }) as string;
     const slug =
       sourceInstanceName === "pages"
         ? filePath
@@ -64,6 +63,7 @@ interface PostNodes {
   };
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 async function getPostsForSourceName(
   graphql: any,
   sourceName: string

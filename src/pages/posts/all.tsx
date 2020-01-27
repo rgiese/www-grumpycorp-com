@@ -1,10 +1,9 @@
-import { graphql } from "gatsby";
-import React from "react";
+import { PostIndex, PostIndexPosts } from "../../components/postIndex";
 
 import Layout from "../../components/layout";
-import SEO from "../../components/seo";
-
-import { PostIndexPosts, PostIndex } from "../../components/postIndex";
+import React from "react";
+import Seo from "../../components/seo";
+import { graphql } from "gatsby";
 
 // Automatic (exported) GraphQL query
 export const postIndexAndTagsQuery = graphql`
@@ -28,7 +27,7 @@ const IndexPage: React.FunctionComponent<{
 }> = ({ data }) => {
   return (
     <Layout>
-      <SEO title="All posts" />
+      <Seo title="All posts" />
       <PostIndex posts={data.posts} />
     </Layout>
   );

@@ -1,9 +1,9 @@
-import { graphql } from "gatsby";
-import React from "react";
+import { PostIndex, PostIndexPosts } from "../components/postIndex";
 
 import Layout from "../components/layout";
-import { PostIndexPosts, PostIndex } from "../components/postIndex";
-import SEO from "../components/seo";
+import React from "react";
+import Seo from "../components/seo";
+import { graphql } from "gatsby";
 
 // Page context to be provided from ../gatsby/createPages.ts
 export interface TagIndexPageContext {
@@ -40,7 +40,7 @@ const TagIndexPage: React.FunctionComponent<{
 
   return (
     <Layout>
-      <SEO title={tag} />
+      <Seo title={tag} />
       <PostIndex posts={data.posts} />
     </Layout>
   );

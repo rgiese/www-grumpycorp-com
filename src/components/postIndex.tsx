@@ -1,7 +1,7 @@
-import { graphql, Link } from "gatsby";
-import React from "react";
+import { Link, graphql } from "gatsby";
 
 import Icon from "./icon";
+import React from "react";
 import TagIcon from "../assets/icons/tag.svg";
 
 // GraphQL fragment to be used by caller
@@ -65,7 +65,7 @@ export const PostIndex: React.FunctionComponent<PostIndexProps> = ({
                   key={tag}
                   to={`/tags/${node.fields.sourceInstanceName}/${tag}`}
                 >
-                  <Icon sprite={TagIcon} className="w1 h1 v-mid" />
+                  <Icon className="w1 h1 v-mid" sprite={TagIcon} />
                   {` `}
                   {tag}
                 </Link>

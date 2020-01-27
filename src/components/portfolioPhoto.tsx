@@ -1,4 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
+
 import Img from "gatsby-image";
 import React from "react";
 
@@ -50,7 +51,7 @@ const PortfolioPhoto: React.FunctionComponent<{
 
   const innerHtml =
     thisPhotoNodes.length > 0 ? (
-      <Img fluid={thisPhotoNodes[0].node.childImageSharp.fluid} alt={alt} />
+      <Img alt={alt} fluid={thisPhotoNodes[0].node.childImageSharp.fluid} />
     ) : (
       <>Photo {src} not found.</>
     );

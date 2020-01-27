@@ -1,11 +1,10 @@
-import { graphql, Link } from "gatsby";
-import React from "react";
+import { Link, graphql } from "gatsby";
 
 import Icon from "../components/icon";
 import Layout from "../components/layout";
 import MDXPresenter from "../components/mdxPresenter";
-import SEO from "../components/seo";
-
+import React from "react";
+import Seo from "../components/seo";
 import TagIcon from "../assets/icons/tag.svg";
 
 // Page context to be provided from ../gatsby/createPages.ts
@@ -76,6 +75,8 @@ interface PostContentData {
   nextPost?: PreviousOrNextPostData;
 }
 
+/* eslint-disable react/no-multi-comp */
+
 // Internal components
 const PreviousNextLinks: React.FunctionComponent<{
   data: PostContentData;
@@ -122,7 +123,7 @@ const PostPage: React.FunctionComponent<{
 
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} />
+      <Seo title={post.frontmatter.title} />
 
       {/* Post title */}
       <Link className="link f2 fw2 accent sans" to={post.fields.slug}>
@@ -136,10 +137,10 @@ const PostPage: React.FunctionComponent<{
         {post.frontmatter.tags.map(tag => (
           <Link
             className="link accent-mono"
-            to={`/tags/${post.fields.sourceInstanceName}/${tag}`}
             key={tag}
+            to={`/tags/${post.fields.sourceInstanceName}/${tag}`}
           >
-            <Icon sprite={TagIcon} className="w1 h1 v-mid" />
+            <Icon className="w1 h1 v-mid" sprite={TagIcon} />
             {` `}
             {tag}
           </Link>

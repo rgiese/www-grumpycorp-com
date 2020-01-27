@@ -1,9 +1,9 @@
-import { graphql, Link } from "gatsby";
-import React from "react";
+import { Link, graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import MDXPresenter from "../components/mdxPresenter";
-import SEO from "../components/seo";
+import React from "react";
+import Seo from "../components/seo";
 
 // Page context to be provided from ../gatsby/createPages.ts
 export interface PagePageContext {
@@ -42,7 +42,7 @@ const PagePage: React.FunctionComponent<{
 
   return (
     <Layout>
-      <SEO title={page.frontmatter.title} />
+      <Seo title={page.frontmatter.title} />
 
       <div className="pt3 pb1">
         <Link className="link f2 fw2 accent sans" to={pageContext.slug}>

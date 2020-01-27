@@ -7,10 +7,10 @@ const Vimeo: React.FunctionComponent<{ videoId: string }> = ({ videoId }) => (
       style={{ paddingBottom: "60%", paddingTop: "30px" }}
     >
       <iframe
-        src={"https://player.vimeo.com/video/" + videoId}
+        allowFullScreen
         className="aspect-ratio--object"
         frameBorder="0"
-        allowFullScreen={true}
+        src={"https://player.vimeo.com/video/" + videoId}
       />
     </div>
   </p>

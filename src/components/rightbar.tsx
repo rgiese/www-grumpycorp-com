@@ -1,14 +1,12 @@
-import { graphql, Link, useStaticQuery } from "gatsby";
-import React from "react";
-
 import Icon, { Sprite } from "./icon";
+import { Link, graphql, useStaticQuery } from "gatsby";
 
 import Heart from "../assets/icons/heart.svg";
-
-import LogoGitHub from "../assets/icons/logo-github.svg";
 import LogoGMail from "../assets/icons/logo-gmail.svg";
+import LogoGitHub from "../assets/icons/logo-github.svg";
 import LogoIMDB from "../assets/icons/logo-imdb.svg";
 import LogoLinkedIn from "../assets/icons/logo-linkedin.svg";
+import React from "react";
 
 // Static GraphQL query
 const rightBarStaticQuery = graphql`
@@ -68,6 +66,8 @@ interface HeaderData {
   };
 }
 
+/* eslint-disable react/no-multi-comp */
+
 // Interior components
 const SocialLink: React.FunctionComponent<{ uri: string; sprite: Sprite }> = ({
   uri,
@@ -76,20 +76,20 @@ const SocialLink: React.FunctionComponent<{ uri: string; sprite: Sprite }> = ({
   <span className="pr1 pr2-ns">
     <a
       className="link dim"
-      target="_blank"
-      rel="noopener noreferrer"
       href={uri}
+      rel="noopener noreferrer"
+      target="_blank"
     >
       <Icon
-        sprite={sprite}
         className="w1 h1 v-base black-40 svg-fill-current-color"
+        sprite={sprite}
       />
     </a>
   </span>
 );
 
 // Component definition
-const RightBar: React.FunctionComponent<{}> = () => {
+const RightBar: React.FunctionComponent = () => {
   const data: HeaderData = useStaticQuery(rightBarStaticQuery);
 
   const firstSectionClassName = "b";
@@ -127,8 +127,8 @@ const RightBar: React.FunctionComponent<{}> = () => {
         {data.tagList.distinctTags.map(tag => (
           <Link
             className={`${linkDefaultClassName} pr2`}
-            to={`/tags/posts/${tag}`}
             key={tag}
+            to={`/tags/posts/${tag}`}
           >
             {tag}
           </Link>
@@ -144,17 +144,17 @@ const RightBar: React.FunctionComponent<{}> = () => {
       <div className={laterSectionClassName}>Elsewhere</div>
       <div>
         {/* Drop on small screens: "dn" - don't display by default, "dib-ns" - display on non-small screens */}
-        <SocialLink uri="mailto:robin@grumpycorp.com" sprite={LogoGMail} />
+        <SocialLink sprite={LogoGMail} uri="mailto:robin@grumpycorp.com" />
         <SocialLink
-          uri="https://www.linkedin.com/in/robingiese"
           sprite={LogoLinkedIn}
+          uri="https://www.linkedin.com/in/robingiese"
         />
 
         <SocialLink
-          uri="https://www.imdb.com/name/nm8515322/"
           sprite={LogoIMDB}
+          uri="https://www.imdb.com/name/nm8515322/"
         />
-        <SocialLink uri="https://github.com/rgiese/" sprite={LogoGitHub} />
+        <SocialLink sprite={LogoGitHub} uri="https://github.com/rgiese/" />
       </div>
 
       {/*** Footer-type items ***/}
@@ -165,15 +165,15 @@ const RightBar: React.FunctionComponent<{}> = () => {
         {` `}
         <a
           className={linkDefaultClassName}
-          rel="license"
           href="http://creativecommons.org/licenses/by-sa/4.0/"
+          rel="license"
         >
           CC-BY-SA-4.0
         </a>
       </div>
 
       <div className={footerSectionClassName}>
-        Made with <Icon sprite={Heart} className="v-mid w1 h1" /> in Seattle.
+        Made with <Icon className="v-mid w1 h1" sprite={Heart} /> in Seattle.
       </div>
 
       <div className={footerSectionClassName}>
@@ -194,8 +194,8 @@ const RightBar: React.FunctionComponent<{}> = () => {
 
       <div className={footerSectionClassName}>
         <Link
-          to="/posts/code/improving-site-visitor-privacy/"
           className={linkDefaultClassName}
+          to="/posts/code/improving-site-visitor-privacy/"
         >
           Privacy notice.
         </Link>

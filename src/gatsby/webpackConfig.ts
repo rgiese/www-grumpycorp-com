@@ -1,6 +1,6 @@
 import { GatsbyOnCreateWebpackConfig } from "./gatsby-node";
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+// eslint-disable-next-line @typescript-eslint/no-require-imports,@typescript-eslint/no-var-requires
 const SpriteLoaderPlugin = require("svg-sprite-loader/plugin"); // Won't convert to import presumably due to svg-sprite-loader craziness.
 
 export const onCreateWebpackConfig: GatsbyOnCreateWebpackConfig = ({
@@ -29,7 +29,7 @@ export const onCreateWebpackConfig: GatsbyOnCreateWebpackConfig = ({
 
       const svgCheck = /\|svg/;
 
-      if (test && svgCheck.test(test.toString())) {
+      if (test?.toString().includes("|svg")) {
         const revisedTestString = test.toString().replace(svgCheck, "");
 
         return {

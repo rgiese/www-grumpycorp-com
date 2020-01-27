@@ -66,14 +66,14 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "ts:check": "tsc --noEmit",
-    "ts:lint": "eslint \"./src/**/*.{js,ts,tsx}\"",
-    "ts:fix": "eslint --fix \"./src/**/*.{js,ts,tsx}\"",
+    "lint": "eslint \"./src/**/*.{js,ts,tsx}\"",
+    "lint:fix": "eslint --fix \"./src/**/*.{js,ts,tsx}\"",
     "format:check": "cross-var prettier --check $npm_package_config_prettierglob",
     "format:fix": "cross-var prettier --write $npm_package_config_prettierglob"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run ts:check && npm run ts:lint"
+      "pre-commit": "lint-staged && npm run ts:check && npm run lint"
     }
   },
   "lint-staged": {

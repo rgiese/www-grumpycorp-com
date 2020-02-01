@@ -44,12 +44,13 @@ const PagePage: React.FunctionComponent<{
     <Layout>
       <Seo title={page.frontmatter.title} />
 
-      <div className="pt3 pb1">
-        <Link className="link f2 fw2 accent sans" to={pageContext.slug}>
-          {page.frontmatter.title}
-        </Link>
-      </div>
-      <div className="center mw7 tl lh-copy ph2 content">
+      {/* Page title */}
+      <Link className="link f2 fw2 accent sans" to={pageContext.slug}>
+        {page.frontmatter.title}
+      </Link>
+
+      {/* Page body */}
+      <div className="lh-copy content">
         <MDXPresenter data={page.body} />
       </div>
     </Layout>

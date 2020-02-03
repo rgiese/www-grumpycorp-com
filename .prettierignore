@@ -1,3 +1,5 @@
-# Prettier's MDX plugin is having a rough time in the current versions of Prettier...
+# Prettier's MDX plugin is having a rough time in the current versions of Prettier
+# dealing with embedded HTML spanning tags (e.g. <div>stuff</div>, but not <Vimeo/>)...
 cottage.mdx
 library.mdx
+webapp.mdx

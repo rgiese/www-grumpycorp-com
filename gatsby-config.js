@@ -2,6 +2,7 @@ siteMetadata = {
   title: `GrumpyCorp`,
   description: `Creative Industries`,
   author: `Robin Giese`,
+  authorEmail: `robin@grumpycorp.com`,
   siteUrl: `https://www.grumpycorp.com`,
 };
 
@@ -104,5 +105,66 @@ module.exports = {
 
     // Sitemap (c.f. static/robots.txt)
     `gatsby-plugin-sitemap`,
+
+    // RSS feed
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.edges.map(edge => {
+                return {
+                  categories: edge.node.frontmatter.tags,
+                  date: edge.node.frontmatter.date,
+                  description: edge.node.excerpt,
+                  title: edge.node.frontmatter.title,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [
+                    { "content:encoded": edge.node.html },
+                    {
+                      author: `${site.siteMetadata.authorEmail} (${site.siteMetadata.author})`,
+                    },
+                  ],
+                };
+              });
+            },
+            query: `
+              {
+                site {
+                  siteMetadata {
+                    author
+                    authorEmail
+                    siteUrl
+                  }
+                }
+                allMdx(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                  filter: { fields: { sourceInstanceName: { eq: "posts" } } }
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields {
+                        slug
+                      }
+                      frontmatter {
+                        date
+                        tags
+                        title
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "GrumpyCorp Creative Industries RSS Feed",
+          },
+        ],
+      },
+    },
   ],
 };

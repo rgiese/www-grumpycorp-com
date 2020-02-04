@@ -34,6 +34,7 @@
     "gatsby-plugin-react-helmet": "^3.1.21",
     "gatsby-plugin-sass": "^2.1.27",
     "gatsby-plugin-sharp": "^2.4.0",
+    "gatsby-plugin-sitemap": "^2.2.27",
     "gatsby-plugin-typescript": "^2.1.26",
     "gatsby-plugin-typescript-checker": "^1.1.1",
     "gatsby-remark-images": "^3.1.42",

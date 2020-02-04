@@ -2,6 +2,7 @@ siteMetadata = {
   title: `GrumpyCorp`,
   description: `Creative Industries`,
   author: `Robin Giese`,
+  siteUrl: `https://www.grumpycorp.com`,
 };
 
 module.exports = {
@@ -100,5 +101,8 @@ module.exports = {
         include_favicon: true, // eslint-disable-line @typescript-eslint/camelcase
       },
     },
+
+    // Sitemap (c.f. static/robots.txt)
+    `gatsby-plugin-sitemap`,
   ],
 };

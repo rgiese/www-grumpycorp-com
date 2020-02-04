@@ -47,7 +47,6 @@ This felt like a more touch-friendly UX than porting the same concepts (and code
   </div>
 </div>
 
-
 ### Settings
 
 Touching any one setting opens up a dedicated screen for editing a given setting.
@@ -55,7 +54,7 @@ Touching any one setting opens up a dedicated screen for editing a given setting
 At the bottom of the screen for editing a setting is a _Remove_ and _Save_ button.
 When the setting is unchanged, the _Remove_ button is enabled and when clicked will remove the setting without any further confirmation.
 Once the setting has been changed, the _Save_ button is enabled and will similarly save the setting without any further confirmation;
-the _Remove_ button becomes _dis_abled when the setting is changed to avoid letting a user accidentally delete a setting when they meant to save it.
+the _Remove_ button becomes disabled when the setting is changed to avoid letting a user accidentally delete a setting when they meant to save it.
 Navigating back before saving just discards the edits.
 
 <div className="cf">
@@ -100,7 +99,7 @@ The data and state management is the same as for the web app and the level of co
 ### In-app navigation
 
 I use [`react-navigation`](https://reactnavigation.org/) for managing in-app navigation.
-It's ... a bit of a trip. 
+It's ... a bit of a trip.
 It all makes good sense until you want to configure the navigation options per screen and then things go a bit weird.
 
 After much back-and-forth, the best approach seems to be to articulate a screen as implementing `NavigationStackScreenComponent<>`
@@ -140,7 +139,7 @@ and my brain melted a bit thinking about how implementing something like a _Save
 could be implemented. Ah well.
 
 A nicer model might be to have the rendered elements include an element that defines non-static navigation options,
-but that may just violate the top-down flow paradigm in React. 
+but that may just violate the top-down flow paradigm in React.
 I don't know what the right thing to do here is but it feels like dogma is taking precedence over practicality a little.
 
 Also don't get me started on passing parameters to screens (note also that _parameters_ and _options_ are different things).
@@ -252,10 +251,9 @@ to generate release notes for local and CI builds so the whole thing just runs a
 
 ...and Bob's your uncle.
 
-
 ### Other tips and tricks
 
-The [`Auth`](https://github.com/rgiese/warm-and-fuzzy/blob/master/packages/mobile/src/services/Auth.ts) service 
+The [`Auth`](https://github.com/rgiese/warm-and-fuzzy/blob/master/packages/mobile/src/services/Auth.ts) service
 uses [`react-native-keychain`](https://github.com/oblador/react-native-keychain)
 to store ID and access tokens - not really what that library was intended for but it works well.
 
@@ -296,7 +294,7 @@ this.flatbuffers = flatbuffers;
 The whole module handling / exporting universe of JavaScript and TypeScript is just bananas, and for whatever reason,
 the approach taken above worked fine in my `shared-client` package and in my `webapp` package, but not in `mobile`.
 
-Hilariously (not), the `mobile` package built fine and deployed fine all the way through Google Play, 
+Hilariously (not), the `mobile` package built fine and deployed fine all the way through Google Play,
 except opening the app just got me this:
 
 <div class="mw55-ns center">
@@ -316,11 +314,12 @@ I ended up ["rewriting" Flatbuffers in TypeScript](https://github.com/rgiese/war
 by taking the TypeScript type definitions for Flatbuffers from `@types/flatbuffers`, fleshing them out with the Google-provided JavaScript code,
 and fixing up assorted TypeScript problems. I don't quite understand why Google doesn't do this but the project may just be too dead at this time.
 
-And while I'm complaining, 
+And while I'm complaining,
+
 - the Android toolchain is a pain in the ass to babysit (let alone update);
 - making an Android emulator work on modern Windows with Hyper-V is super-extra and requires clowning around with Visual Studio (come on, Google, get it together);
   - see my _Dev setup_ notes in my [`README.md`](https://github.com/rgiese/warm-and-fuzzy/blob/master/README.md)
-- and any environment changes (e.g. going from `npm run start-mobile:local:dev` to `npm run start-mobile:remote:prod`) 
+- and any environment changes (e.g. going from `npm run start-mobile:local:dev` to `npm run start-mobile:remote:prod`)
   require a deep clean (`lerna run clean-mobile`, i.e. `./gradlew clean`) for whatever reasons.
   For all the effort it takes to make gradle do its thing (and boy howdy is that thing extra), it feels like it should get that sort of dependency tracking right.
   It does not seem to.

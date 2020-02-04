@@ -189,3 +189,10 @@ figcaption {
   // as a complement to http://tachyons.io/docs/layout/heights/
   height: 0.75rem;
 }
+
+.mw55-ns {
+  // as a complement to http://tachyons.io/docs/layout/max-widths/
+  @include non-small {
+    max-width: 24rem;
+  }
+}

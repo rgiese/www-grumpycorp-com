@@ -57,7 +57,7 @@ const Seo: React.FunctionComponent<{
           property: `og:type`,
         },
       ].concat(
-        keywords.length > 0
+        keywords?.length > 0
           ? {
               content: keywords.join(`, `),
               name: `keywords`,

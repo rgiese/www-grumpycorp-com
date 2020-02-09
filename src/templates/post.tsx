@@ -36,6 +36,7 @@ export const postContentQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM Do, YYYY")
+        keywords
         tags
       }
     }
@@ -68,6 +69,7 @@ interface PostContentData {
     frontmatter: {
       title: string;
       date: string;
+      keywords?: string[];
       tags: string[];
     };
   };
@@ -123,7 +125,10 @@ const PostPage: React.FunctionComponent<{
 
   return (
     <Layout>
-      <Seo title={post.frontmatter.title} />
+      <Seo
+        keywords={post.frontmatter.keywords}
+        title={post.frontmatter.title}
+      />
 
       {/* Post title */}
       <Link className="link f2 fw2 accent sans" to={post.fields.slug}>

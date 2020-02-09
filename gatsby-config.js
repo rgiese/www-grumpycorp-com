@@ -27,10 +27,12 @@ module.exports = {
           {
             family: `Noto Serif`,
             subsets: [`latin`],
+            variants: [`400`, `400i`, `700`, `700i`],
           },
           {
             family: `Noto Sans`,
             subsets: [`latin`],
+            variants: [`400`, `400i`, `700`, `700i`],
           },
         ],
       },

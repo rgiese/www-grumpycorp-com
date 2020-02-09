@@ -55,7 +55,7 @@ Except, of course, access to data in Hugo is managed through its [data templates
 While an existing "data-driven content" feature could have allowed my shortcode code to make a direct JSON query as well, I'd have then had to spend even more time with Hugo's bizarre templating language
 which looks like some bastardized form of Go that I cannot wrap my head around. For example, take:
 
-```
+```Go
 {{ $.Scratch.Delete "cardIcon" }}
 {{ if and (isset .Params "icon") (.Params.Icon) }}
   {{ $.Scratch.Set "cardIcon" .Params.Icon }}
@@ -121,7 +121,7 @@ While Hugo recently built its own asset pipeline, Gatsby just calls out to `webp
 The specifics of [using `webpack` and `svg-sprite-loader` to bundle SVGs](https://github.com/rgiese/www-grumpycorp-com/commit/6437be9e869cd18c67d13d28f9a50e607da88732) were immensely gnarly, in part because Gatsby forcibly injects
 a default configuration into `webpack` that needs to be carefully reworked to process SVGs the way I want to (for bundling purposes), instead of just snarfing them up in a file copy. This led to the following piece of insanity:
 
-```
+```JavaScript
 //
 // Gatsby injects a url-loader rule for SVGs
 // (see https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/utils/webpack-utils.js)
@@ -180,7 +180,7 @@ the most sense to me.
 
 It's a bit unfortunate that I need to effectively define the shape of the data I want to retrieve (GraphQL) and its typing (TypeScript) in duplicate, e.g.:
 
-```
+```TypeScript
 // GraphQL fragment to be used by caller
 export const tagsQueryFragment = graphql`
 fragment TagListTags on MdxConnection {
@@ -217,5 +217,5 @@ makes me fear for our collective future (hyperbolically speaking).
 Of course I recognize the irony of advocating for slowly increasing complexity in engineering environments while also waxing poetic about C++,
 but surely there has to be some compromise between scaling complexity and discipline/safety/etc.
 
-In closing, as the old joke goes (internet traffic is evenly composed of Netflix streams and `npm` fetches), my `node_modules` directory for this site is **293MB**.
+In closing, as the old joke goes (internet traffic is evenly composed of Netflix streams and `npm` fetches), my `node_modules` directory for this site is **325MB**.
 What even is this. The future is bright and terrifying.

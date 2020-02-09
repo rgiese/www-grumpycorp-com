@@ -8,6 +8,9 @@ _**Updated** November 2019_: Adding some "helpful" links to
 [a TV interview about the creation of JavaScript](https://www.youtube.com/watch?feature=youtu.be&v=MBmmZADfVSQ) and
 a talk about [the history of JavaScript from 1995 to 2035](https://www.destroyallsoftware.com/talks/the-birth-and-death-of-javascript).
 
+_**Updating** February 2020_: Adding a few proposed **Answers** throughout the post, based in part on conversations
+with a Microsoft architect for TypeScript and Azure who kindly read over my post, and adding a new "lessons learned" section.
+
 Having been a C++ guy for most of my life (and generally working on dank and musty OS stuff),
 I've rather enjoyed my recent journey into learning JavaScript.
 
@@ -43,6 +46,10 @@ I believe for JavaScript this means:
 
 Baseline expectation: `clang -Weverything`, `clang-format`.
 
+**Answer**: Yes, pretty much. I recently tightened up [the `eslint` rules for WarmAndFuzzy](https://github.com/rgiese/warm-and-fuzzy/blob/master/packages/.eslintrc.js)
+and that finally seems like a good starter kit.
+I find `eslint` most useful for enforcing consistency; pretty much all the correctness stuff is caught with TypeScript proper.
+
 ## Parameter validation
 
 TypeScript gets me build-time validation of parameters that can be validated at build-time. Yay.
@@ -58,6 +65,10 @@ Is this the right thing to do?
 having already specified parameter types in TypeScript?
 
 Baseline expectations: C++ and templates.
+
+**Answer**: I've now settled on using [`yup`](https://github.com/jquense/yup) which allows you extract a TypeScript `type` from a `yup` schema.
+However, I also need to decorate my types for [`dynamodb-data-mapper-js`](https://github.com/awslabs/dynamodb-data-mapper-js)
+so I can't use that `yup` capability. Close enough.
 
 ## Immutable source trees
 
@@ -84,12 +95,18 @@ the `node_modules` directory be yanked from `dev` mode to `production` mode with
 
 **Question**: This is nuts, right?
 
+**Answers**: Yes. I now manage this pretty carefully with a `generated` directory for codegen'd stuff needed during the build,
+and a `build` directory for build outputs, and it works for the [WarmAndFuzzy engineering system](/posts/warm-and-fuzzy/engineering-system/).
+
 **Question**: What build tools would be the right tools to add into my build chain to fix this,
 e.g. to project the right outputs including a `prod`-filtered `node_modules` tree?
 [Gulp](https://gulpjs.com/)? [Grunt](https://gruntjs.com/)? [Webpack](https://webpack.js.org/)? Plain JavaScript build scripts?
 
 I don't mind doing the work but it feels like every small-n months there's a new shiny way to build a build chain,
 write a command-line app, or whatever else. Help!
+
+**Answer**: `gulp` and `grunt` are old and should no longer be used in new projects (I am told).
+For WarmAndFuzzy, Serverless and `react-scripts`/`react-native-scripts` did the trick, with a few specialized JavaScript-based build scripts thrown in.
 
 ## Deploying to prod from my laptop
 
@@ -107,6 +124,11 @@ Whether it's a question of functional correctness, security, or debug-ability, i
 **Question**: Why is the difficulty of doing this _right_ (e.g. Terraform, CloudFormation, ARM templates)
 vastly greater than doing it wrong (e.g. jumbles of imperative scripts, or even scarier, deploy-from-VSCode)?
 
+**Answer**: Because this -- doing it the shoddy way -- is how we attract people to new tech, sadly.
+The right way would just be intimidating and off-putting.
+Also, it's a bit of a choice matrix problem since there are large-N technologies to build starter projects for and medium-N ways of doing CI/CD
+so the matrix would just explode.
+
 **Question**: Why do we (as an industry) send a siren call to engineers to use our "super-easy-to-use" platform
 and point them to tools and samples that we (should) know have no relation to best operational practices
 and just leave them with "look how shiny, now good luck with that"?
@@ -114,11 +136,16 @@ and just leave them with "look how shiny, now good luck with that"?
 In Amplify's partial defense, they do at least seem to generate CloudFormation goop from ad-hoc CLI invocations
 and you _can_ source-control that instead, but it's not exactly their elevator pitch.
 
+**Answers**: Yep. It's an industry-wide problem so nobody is compelled to do better.
+
 ## Deploying per branch
 
 **Question**: I can have a million cheap branches with `git` so why is it so hard to get a per-branch cloud environment stood up?
 (I got it working for a simple SPA with a bunch of Terraforming and some CloudFlare worker magic but that took me a week.)
 It feels like we're clapping with one hand.
+
+**Answer**: We are, and there's a significant gap between what you see in starter projects and what big players actually do in practice.
+It's too bad that this leaves smaller players with mostly anti-patterns.
 
 **Question**: In Amplify's partial defense they support [environments](https://aws-amplify.github.io/docs/cli/multienv?sdk=js)
 and that's finally out of beta. Is there an Azure equivalent, not that I'm dogmatically attached to Azure?
@@ -144,4 +171,19 @@ making it a runner-up by getting one step down the list.
 If you're advertising using TypeScript with service X (e.g. Azure Functions),
 shouldn't you showcase the best practices of TypeScript for using X?
 
+**Answer**: See above, basically.
+
 Them's the questions for now - I'm sure there'll be more in the future.
+
+## Lessons learned: Reflecting on JavaScript many thousands of lines of code later
+
+**Added**: I'm glad I chose JavaScript for the WarmAndFuzzy project because it allowed for one consistent language
+and loads of shared code between the backend and the frontend.
+
+That said, I'd drop it in a heartbeat if there were a better language available that worked for both backend and frontend code.
+Basic stuff like not being able to use anything other than strings as dictionary keys is just goofy.
+
+JavaScript is coincident with advances in Functional-ish UI frameworks like React (which I love)
+but there's no reason why those couldn't be (and are) built in other languages
+(c.f. [Litho](https://github.com/facebook/litho) for Java and [ComponentKit](https://componentkit.org/) for Objective-C).
+I look forward to something better taking JavaScript's place in the next few years and I think we'll all be better off for it.

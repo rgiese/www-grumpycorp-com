@@ -18,8 +18,17 @@ const TagIcon: React.FunctionComponent<{ className: string }> = ({
 const MDXPresenter: React.FunctionComponent<{
   data: string;
 }> = ({ data }) => {
+  // Replace paragraphs with divs so we can nest things like figcaption in them.
+  const paragraphAsDiv = (
+    props: React.HTMLAttributes<HTMLDivElement>
+  ): React.ReactElement => {
+    return <div className="mv3" {...props} />;
+  };
+
   return (
-    <MDXProvider components={{ Icon, TagIcon, PortfolioPhoto, Vimeo }}>
+    <MDXProvider
+      components={{ Icon, TagIcon, PortfolioPhoto, Vimeo, p: paragraphAsDiv }}
+    >
       <MDXRenderer>{data}</MDXRenderer>
     </MDXProvider>
   );

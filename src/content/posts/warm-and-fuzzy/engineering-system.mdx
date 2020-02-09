@@ -67,6 +67,8 @@ The following is what I found useful:
 
 I'm not using [`husky`](https://github.com/typicode/husky) pre-commit hooks in this repo (it just feels a tad slow on commits)
 though I do use them in other projects; linting at least is enforced in CI.
+Using `husky` would be better on paper but I hate having to make everything `lint` perfectly for each commit
+so it would really just cause me to make fewer commits with more steps in them, and that's not good for anyone.
 
 Managing `lerna`-based packages can be a bit extra when it comes to updating packages and re-linking them.
 When in doubt, run `lerna bootstrap`. When still in doubt, do what everyone else in the JavaScript yoloverse

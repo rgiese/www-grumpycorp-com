@@ -8,9 +8,6 @@
     "type": "git",
     "url": "https://github.com/rgiese/www-grumpycorp-com"
   },
-  "commentsAboutDependencies": {
-    "prettier": "Of late prettier has been having some issues with its MDX support. Update carefully (or not at all)."
-  },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.16",
     "@mdx-js/react": "^1.6.16",
@@ -47,7 +44,7 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "node-sass": "^4.14.1",
-    "prettier": "prettier/prettier",
+    "prettier": "^2.0.5",
     "prismjs": "^1.21.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
@@ -61,7 +58,8 @@
     "typescript": "^3.9.7"
   },
   "config": {
-    "prettierglob": "{.,./src/**}/*.{css,js,jsx,json,mdx,scss,ts,tsx}"
+    "prettierglob_1": "./*.{js,json}",
+    "prettierglob_2": "./src/**/*.{css,js,jsx,json,mdx,scss,ts,tsx}"
   },
   "scripts": {
     "clean": "gatsby clean",
@@ -72,8 +70,8 @@
     "ts:check": "tsc --noEmit",
     "lint": "eslint \"./src/**/*.{js,ts,tsx}\"",
     "lint:fix": "eslint --fix \"./src/**/*.{js,ts,tsx}\"",
-    "format:check": "cross-var prettier --check $npm_package_config_prettierglob",
-    "format:fix": "cross-var prettier --write $npm_package_config_prettierglob"
+    "format:check": "cross-var prettier --check $npm_package_config_prettierglob_1 --check $npm_package_config_prettierglob_2",
+    "format:fix": "cross-var prettier --write $npm_package_config_prettierglob_1 --write $npm_package_config_prettierglob_2"
   },
   "husky": {
     "hooks": {

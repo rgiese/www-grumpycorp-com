@@ -19,6 +19,13 @@ module.exports = {
     project: "./tsconfig.json",
   },
   rules: {
+    // Temporary (ESlint upgrade)
+    "@typescript-eslint/naming-convention": "off",
+    "@typescript-eslint/prefer-readonly-parameter-types": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-unsafe-return": "off",
     // JavaScript
     "sort-imports": "error", // Use `sort-imports` VSCode extension to auto-fix
     // TypeScript

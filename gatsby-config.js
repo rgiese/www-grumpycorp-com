@@ -115,7 +115,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.edges.map(edge => {
+              return allMdx.edges.map((edge) => {
                 return {
                   categories: edge.node.frontmatter.tags,
                   date: edge.node.frontmatter.date,

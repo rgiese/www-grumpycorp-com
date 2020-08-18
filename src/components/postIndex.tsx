@@ -59,7 +59,7 @@ export const PostIndex: React.FunctionComponent<PostIndexProps> = ({
         {posts.edges.map(({ node }) => (
           <tr key={node.id}>
             <td>
-              {node.frontmatter.tags.map(tag => (
+              {node.frontmatter.tags.map((tag) => (
                 <Link
                   className="link accent-mono"
                   key={tag}

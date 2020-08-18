@@ -124,7 +124,7 @@ const RightBar: React.FunctionComponent = () => {
       {/*** Topics ***/}
       <div className={laterSectionClassName}>Topics</div>
       <div>
-        {data.tagList.distinctTags.map(tag => (
+        {data.tagList.distinctTags.map((tag) => (
           <Link
             className={`${linkDefaultClassName} pr2`}
             key={tag}

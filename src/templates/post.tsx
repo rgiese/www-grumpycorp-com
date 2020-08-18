@@ -139,7 +139,7 @@ const PostPage: React.FunctionComponent<{
       <div className="pv2 f5 black-60">
         {post.frontmatter.date}
         <span className="ph2 black-40">in</span>
-        {post.frontmatter.tags.map(tag => (
+        {post.frontmatter.tags.map((tag) => (
           <Link
             className="link accent-mono"
             key={tag}

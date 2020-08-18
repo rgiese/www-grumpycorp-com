@@ -139,7 +139,7 @@ export const createPages: GatsbyCreatePages = async ({
     }
 
     // Accumulate tags
-    post.frontmatter.tags.forEach(tag => {
+    post.frontmatter.tags.forEach((tag) => {
       // Since JavaScript doesn't have a proper std::set<T>,
       // we'll just cram our two values into a delimited string.
       // Sadness.
@@ -152,7 +152,7 @@ export const createPages: GatsbyCreatePages = async ({
   // Build pages for standalone pages
   const pages = await getPostsForSourceName(graphql, "pages");
 
-  pages.forEach(page => {
+  pages.forEach((page) => {
     const slug = page.fields.slug;
     const sourceInstanceName = page.fields.sourceInstanceName;
 
@@ -171,7 +171,7 @@ export const createPages: GatsbyCreatePages = async ({
   // Build pages for portfolio pages
   const portfolio = await getPostsForSourceName(graphql, "portfolio");
 
-  portfolio.forEach(page => {
+  portfolio.forEach((page) => {
     const slug = page.fields.slug;
     const sourceInstanceName = page.fields.sourceInstanceName;
 

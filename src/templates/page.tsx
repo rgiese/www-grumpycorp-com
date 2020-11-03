@@ -45,9 +45,11 @@ const PagePage: React.FunctionComponent<{
       <Seo title={page.frontmatter.title} />
 
       {/* Page title */}
-      <Link className="link f2 fw2 accent sans" to={pageContext.slug}>
-        {page.frontmatter.title}
-      </Link>
+      <h1>
+        <Link className="link accent" to={pageContext.slug}>
+          {page.frontmatter.title}
+        </Link>
+      </h1>
 
       {/* Page body */}
       <div className="lh-copy content">

@@ -43,7 +43,7 @@ const PortfolioPage: React.FunctionComponent<{
   return (
     <Layout bodyMaxWidth="mw8">
       <Seo title={page.frontmatter.title} />
-      <div className="lh-copy content portfolio-container sans">
+      <div className="lh-copy content portfolio-container">
         <MDXPresenter data={page.body} />
       </div>
     </Layout>

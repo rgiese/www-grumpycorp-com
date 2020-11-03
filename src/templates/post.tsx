@@ -131,12 +131,14 @@ const PostPage: React.FunctionComponent<{
       />
 
       {/* Post title */}
-      <Link className="link f2 fw2 accent sans" to={post.fields.slug}>
-        {post.frontmatter.title}
-      </Link>
+      <h1 className="mb1">
+        <Link className="link accent" to={post.fields.slug}>
+          {post.frontmatter.title}
+        </Link>
+      </h1>
 
       {/* Post date and tags */}
-      <div className="pv2 f5 black-60">
+      <div className="f5 black-60">
         {post.frontmatter.date}
         <span className="ph2 black-40">in</span>
         {post.frontmatter.tags.map((tag) => (

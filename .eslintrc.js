@@ -1,6 +1,6 @@
 module.exports = {
   parser: "@typescript-eslint/parser", // Specifies the ESLint parser
-  plugins: ["react"],
+  plugins: ["react", "simple-import-sort"],
   extends: [
     "plugin:@typescript-eslint/all", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
     "plugin:react/all",
@@ -19,6 +19,8 @@ module.exports = {
     project: "./tsconfig.json",
   },
   rules: {
+    // Activate imports auto-fixes
+    "simple-import-sort/sort": "error",
     // Temporary (ESlint upgrade)
     "@typescript-eslint/naming-convention": "off",
     "@typescript-eslint/prefer-readonly-parameter-types": "off",
@@ -27,7 +29,8 @@ module.exports = {
     "@typescript-eslint/no-unsafe-member-access": "off",
     "@typescript-eslint/no-unsafe-return": "off",
     // JavaScript
-    "sort-imports": "error", // Use `sort-imports` VSCode extension to auto-fix
+    "sort-imports": "off", // Use "simple-import-sort/sort" to auto-fix
+    "import/order": "off",
     // TypeScript
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-magic-numbers": "off", // More trouble than it's worth (e.g. returning -1/0/1 in comparison functions)

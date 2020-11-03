@@ -1,6 +1,7 @@
 import "tachyons";
 import "./layout.scss";
 
+import { Link } from "gatsby";
 import React from "react";
 
 import StudiosLogo from "../assets/icons/studiosLogo.svg";
@@ -18,7 +19,9 @@ const Layout: React.FunctionComponent<{
         <>
           {/*** Logo on top for small screens ***/}
           <div className="mb4 dn-ns">
-            <Icon className="w5" sprite={StudiosLogo} />
+            <Link to="/">
+              <Icon className="w5" sprite={StudiosLogo} />
+            </Link>
           </div>
 
           {children}
@@ -28,7 +31,9 @@ const Layout: React.FunctionComponent<{
         <>
           {/*** Logo on the side for not-small screens ***/}
           <div className="mb4 dn db-ns">
-            <Icon className="w5" sprite={StudiosLogo} />
+            <Link to="/">
+              <Icon className="w5" sprite={StudiosLogo} />
+            </Link>
           </div>
 
           <RightBar />

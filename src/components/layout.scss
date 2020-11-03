@@ -1,31 +1,13 @@
 //
-// Typefaces
-// -  Note: external typefaces are managed by gatsby-plugin-web-font-loader through gatsby-config.js.
-//
-
-html {
-  font-family: "Noto Serif", "serif";
-}
-
-h1,
-h2,
-h3,
-.sans {
-  font-family: "Noto Sans", "sans-serif";
-}
-
-.serif {
-  font-family: "Noto Serif";
-}
-
-//
 // Global
 //
 
 :root {
-  --accent: #f26739;
-  --accent-mono: #999;
-  --accent-mono-light: #ddd;
+  --accent: #dc6c40;
+  --accent-light: #f79a5e;
+  --accent-dark: #0d5258;
+  --accent-mono: #03061f;
+  --accent-mono-light: #a0cab3;
 }
 
 html,
@@ -42,6 +24,8 @@ img {
 }
 
 .content {
+  font-size: 1.05em;
+
   a:link {
     color: var(--accent);
   }
@@ -50,6 +34,47 @@ img {
   a:visited {
     color: var(--accent-mono);
   }
+}
+
+//
+// Typefaces
+// -  Note: external typefaces are managed as fontsource-* npm packages.
+//
+
+@import "~fontsource-questrial/index.css";
+@import "~fontsource-quicksand/index.css";
+@import "~fontsource-dosis/index.css";
+
+html {
+  font-family: "Questrial", "sans-serif";
+}
+
+h1 {
+  font-family: "Quicksand", "sans-serif";
+  font-weight: 500;
+  color: var(--accent);
+}
+
+h2 {
+  font-family: "Quicksand", "sans-serif";
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+h3 {
+  font-family: "Quicksand", "sans-serif";
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--accent-light);
+}
+
+h4 {
+  font-family: "Dosis", "sans-serif";
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent-mono);
+  margin-block-end: 0;
 }
 
 //
@@ -80,8 +105,9 @@ figcaption {
   display: table-caption;
   caption-side: top;
 
+  font-family: "Quicksand", "sans-serif";
   font-size: 0.875rem;
-  padding-left: 1rem;
+  padding-left: 0.5rem;
   padding-right: 1rem;
 
   padding-top: 0.25rem;

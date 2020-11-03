@@ -18,25 +18,6 @@ module.exports = {
     // SCSS
     `gatsby-plugin-sass`,
 
-    // Typefaces
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Noto Serif`,
-            subsets: [`latin`],
-            variants: [`400`, `400i`, `700`, `700i`],
-          },
-          {
-            family: `Noto Sans`,
-            subsets: [`latin`],
-            variants: [`400`, `400i`, `700`, `700i`],
-          },
-        ],
-      },
-    },
-
     // Markdown processing
     {
       resolve: `gatsby-source-filesystem`,

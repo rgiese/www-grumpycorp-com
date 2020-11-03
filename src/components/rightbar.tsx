@@ -93,9 +93,6 @@ const SocialLink: React.FunctionComponent<{ uri: string; sprite: Sprite }> = ({
 const RightBar: React.FunctionComponent = () => {
   const data: HeaderData = useStaticQuery(rightBarStaticQuery);
 
-  const firstSectionClassName = "b";
-  const laterSectionClassName = "b pt4";
-
   const footerSectionClassName = "f6 pt1";
 
   const linkDefaultClassName = "link dim black-80";
@@ -103,7 +100,7 @@ const RightBar: React.FunctionComponent = () => {
   return (
     <div className="f5 lh-copy center">
       {/*** Pinned ***/}
-      <div className={firstSectionClassName}>Pinned</div>
+      <h4>Pinned</h4>
       {data.pages.edges.map(({ node }) => (
         <div key={node.fields.slug}>
           <Link className={linkDefaultClassName} to={node.fields.slug}>
@@ -113,7 +110,7 @@ const RightBar: React.FunctionComponent = () => {
       ))}
 
       {/*** Portfolio ***/}
-      <div className={laterSectionClassName}>Portfolio</div>
+      <h4>Portfolio</h4>
       {data.portfolio.edges.map(({ node }) => (
         <div key={node.fields.slug}>
           <Link className={linkDefaultClassName} to={node.fields.slug}>
@@ -123,7 +120,7 @@ const RightBar: React.FunctionComponent = () => {
       ))}
 
       {/*** Topics ***/}
-      <div className={laterSectionClassName}>Topics</div>
+      <h4>Topics</h4>
       <div>
         {data.tagList.distinctTags.map((tag) => (
           <Link
@@ -142,7 +139,7 @@ const RightBar: React.FunctionComponent = () => {
       </div>
 
       {/*** "Social" links (as it were) ***/}
-      <div className={laterSectionClassName}>Elsewhere</div>
+      <h4>Elsewhere</h4>
       <div>
         {/* Drop on small screens: "dn" - don't display by default, "dib-ns" - display on non-small screens */}
         <SocialLink sprite={LogoGMail} uri="mailto:robin@grumpycorp.com" />
@@ -159,7 +156,7 @@ const RightBar: React.FunctionComponent = () => {
       </div>
 
       {/*** Footer-type items ***/}
-      <div className={laterSectionClassName}>Not a colophon</div>
+      <h4>Not a colophon</h4>
 
       <div className={footerSectionClassName}>
         ©{new Date().getFullYear()}

@@ -1,11 +1,12 @@
 import "tachyons";
 import "./layout.scss";
 
-import GrumpyCorpName from "../assets/icons/grumpycorp-name.svg";
-import GrumpyRobin from "../assets/icons/grumpy-robin.svg";
-import Icon from "../components/icon";
 import { Link } from "gatsby";
 import React from "react";
+
+import GrumpyRobin from "../assets/icons/grumpy-robin.svg";
+import GrumpyCorpName from "../assets/icons/grumpycorp-name.svg";
+import Icon from "../components/icon";
 import RightBar from "../components/rightbar";
 import TwoColumnLayout from "./twoColumnLayout";
 

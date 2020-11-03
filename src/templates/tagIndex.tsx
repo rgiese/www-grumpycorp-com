@@ -1,9 +1,10 @@
-import { PostIndex, PostIndexPosts } from "../components/postIndex";
+import { graphql } from "gatsby";
+import React from "react";
 
 import Layout from "../components/layout";
-import React from "react";
+import type { PostIndexPosts } from "../components/postIndex";
+import { PostIndex } from "../components/postIndex";
 import Seo from "../components/seo";
-import { graphql } from "gatsby";
 
 // Page context to be provided from ../gatsby/createPages.ts
 export interface TagIndexPageContext {

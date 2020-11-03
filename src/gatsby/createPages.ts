@@ -1,11 +1,11 @@
-import { GatsbyCreatePages, GatsbyOnCreateNode } from "./gatsby-node";
-
-import { PagePageContext } from "../templates/page";
-import { PortfolioPageContext } from "../templates/portfolio";
-import { PostPageContext } from "../templates/post";
-import { TagIndexPageContext } from "../templates/tagIndex";
 import { createFilePath } from "gatsby-source-filesystem";
 import { resolve } from "path";
+
+import type { PagePageContext } from "../templates/page";
+import type { PortfolioPageContext } from "../templates/portfolio";
+import type { PostPageContext } from "../templates/post";
+import type { TagIndexPageContext } from "../templates/tagIndex";
+import type { GatsbyCreatePages, GatsbyOnCreateNode } from "./gatsby-node";
 
 // onCreateNode
 export const onCreateNode: GatsbyOnCreateNode = ({

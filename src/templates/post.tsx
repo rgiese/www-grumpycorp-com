@@ -1,11 +1,11 @@
-import { Link, graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
+import React from "react";
 
+import TagIcon from "../assets/icons/tag.svg";
 import Icon from "../components/icon";
 import Layout from "../components/layout";
 import MDXPresenter from "../components/mdxPresenter";
-import React from "react";
 import Seo from "../components/seo";
-import TagIcon from "../assets/icons/tag.svg";
 
 // Page context to be provided from ../gatsby/createPages.ts
 export interface PostPageContext {

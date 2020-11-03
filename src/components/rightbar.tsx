@@ -1,12 +1,13 @@
-import Icon, { Sprite } from "./icon";
-import { Link, graphql, useStaticQuery } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
+import React from "react";
 
 import Heart from "../assets/icons/heart.svg";
-import LogoGMail from "../assets/icons/logo-gmail.svg";
 import LogoGitHub from "../assets/icons/logo-github.svg";
+import LogoGMail from "../assets/icons/logo-gmail.svg";
 import LogoIMDB from "../assets/icons/logo-imdb.svg";
 import LogoLinkedIn from "../assets/icons/logo-linkedin.svg";
-import React from "react";
+import type { Sprite } from "./icon";
+import Icon from "./icon";
 
 // Static GraphQL query
 const rightBarStaticQuery = graphql`

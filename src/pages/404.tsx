@@ -1,8 +1,9 @@
-import Icon from "../components/icon";
-import Layout from "../components/layout";
 import { Link } from "gatsby";
 import React from "react";
+
 import SadTurnip from "../assets/icons/sad-turnip.svg";
+import Icon from "../components/icon";
+import Layout from "../components/layout";
 import Seo from "../components/seo";
 
 function NotFoundPage(): React.ReactElement {

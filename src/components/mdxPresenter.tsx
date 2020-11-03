@@ -1,9 +1,10 @@
-import Icon from "../components/icon";
-import IconTag from "../assets/icons/tag.svg";
 import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import PortfolioPhoto from "../components/portfolioPhoto";
 import React from "react";
+
+import IconTag from "../assets/icons/tag.svg";
+import Icon from "../components/icon";
+import PortfolioPhoto from "../components/portfolioPhoto";
 import Vimeo from "../components/vimeo";
 
 /* eslint-disable react/no-multi-comp */

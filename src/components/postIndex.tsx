@@ -1,8 +1,8 @@
-import { Link, graphql } from "gatsby";
-
-import Icon from "./icon";
+import { graphql, Link } from "gatsby";
 import React from "react";
+
 import TagIcon from "../assets/icons/tag.svg";
+import Icon from "./icon";
 
 // GraphQL fragment to be used by caller
 export const postsQueryFragment = graphql`

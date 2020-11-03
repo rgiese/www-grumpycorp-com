@@ -1,8 +1,8 @@
-import { Link, graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
+import React from "react";
 
 import Layout from "../components/layout";
 import MDXPresenter from "../components/mdxPresenter";
-import React from "react";
 import Seo from "../components/seo";
 
 // Page context to be provided from ../gatsby/createPages.ts

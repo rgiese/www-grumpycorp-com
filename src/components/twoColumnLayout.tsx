@@ -30,7 +30,9 @@ const TwoColumnLayout: React.FunctionComponent<{
     <div className="fl-ns fn w-10-m w-20-l">&nbsp;</div>
 
     <div className="fl-ns fn w-50-ns">
-      <main className={`${bodyMaxWidth ?? "mw7"} center`}>{mainColumn}</main>
+      <main className={`${bodyMaxWidth ?? "mw7"} center pt2`}>
+        {mainColumn}
+      </main>
     </div>
 
     <div className="fl-ns fn w-30-ns">

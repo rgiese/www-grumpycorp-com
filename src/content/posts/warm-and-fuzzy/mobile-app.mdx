@@ -17,18 +17,15 @@ the otherwise dark mode-ish app, but whatever.
 <div className="cf">
   <div className="fl-ns fn w-10-m w-50-ns pa1">
 
-
 ![](images/mobile-login.png "Waiting to log in")
 
   </div>
   <div className="fl-ns fn w-10-m w-50-ns pa1">
 
-
 ![](images/mobile-login-auth0.png "Logging in with Auth0")
 
   </div>
 </div>
-
 
 ### Status
 
@@ -41,18 +38,15 @@ This felt like a more touch-friendly UX than porting the same concepts (and code
 <div className="cf">
   <div className="fl-ns fn w-10-m w-50-ns pa1">
 
-
 ![](images/mobile-home.png "Thermostats' latest values, actions, and setpoints")
 
   </div>
   <div className="fl-ns fn w-10-m w-50-ns pa1">
 
-
 ![](images/mobile-settings.png "Settings for a single thermostat")
 
   </div>
 </div>
-
 
 ### Settings
 
@@ -67,29 +61,24 @@ Navigating back before saving just discards the edits.
 <div className="cf">
   <div className="fl-ns fn w-10-m w-50-ns pa1">
 
-
 ![](images/mobile-setting-scheduled.png "Editing a scheduled setting")
 
   </div>
   <div className="fl-ns fn w-10-m w-50-ns pa1">
-
 
 ![](images/mobile-setting-scheduled-modified.png "Save button enabled for a modified setting")
 
   </div>
 </div>
 
-
 Changing the time of day for a scheduled setting is nice and Android-ish courtesy of
 [`@react-native-community/datetimepicker`](https://github.com/react-native-community/react-native-datetimepicker):
 
 <div class="mw55-ns center">
 
-
 ![](images/mobile-setting-scheduled-time-of-day.png "Editing a setting's time of day")
 
 </div>
-
 
 ### Preferences
 
@@ -98,11 +87,9 @@ effectively a mix of account information, account preferences, and various debug
 
 <div class="mw55-ns center">
 
-
 ![](images/mobile-preferences.png "The Account screen")
 
 </div>
-
 
 ## How it's built
 
@@ -313,11 +300,9 @@ except opening the app just got me this:
 
 <div class="mw55-ns center">
 
-
 ![](images/mobile-flatbuffers-wtf.png "ReactNative shits the bed")
 
 </div>
-
 
 And of course I can't be bothered to have any actual UI tests (preferring to invest my time in compile-time type safety instead),
 so I managed to break an actual deploy to the Play Store without noticing that the app was completely dead in the water.

@@ -20,7 +20,8 @@ module.exports = {
   },
   rules: {
     // Activate imports auto-fixes
-    "simple-import-sort/sort": "error",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
     // Temporary (ESlint upgrade)
     "@typescript-eslint/naming-convention": "off",
     "@typescript-eslint/prefer-readonly-parameter-types": "off",

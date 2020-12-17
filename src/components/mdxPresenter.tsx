@@ -6,6 +6,7 @@ import IconTag from "../assets/icons/tag.svg";
 import Icon from "../components/icon";
 import PortfolioPhoto from "../components/portfolioPhoto";
 import Vimeo from "../components/vimeo";
+import YouTube from "../components/youtube";
 
 /* eslint-disable react/no-multi-comp */
 
@@ -28,7 +29,14 @@ const MDXPresenter: React.FunctionComponent<{
 
   return (
     <MDXProvider
-      components={{ Icon, TagIcon, PortfolioPhoto, Vimeo, p: paragraphAsDiv }}
+      components={{
+        Icon,
+        TagIcon,
+        PortfolioPhoto,
+        Vimeo,
+        YouTube,
+        p: paragraphAsDiv,
+      }}
     >
       <MDXRenderer>{data}</MDXRenderer>
     </MDXProvider>

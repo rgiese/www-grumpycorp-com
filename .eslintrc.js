@@ -61,6 +61,7 @@ module.exports = {
       },
     ],
     "@typescript-eslint/typedef": "off", // Prettier tends to remove trivially inferred ones
+    "@typescript-eslint/no-confusing-void-expression": "off", // ESLint conflicting with the Gatsby style of naming inline GraphQL expressions
     // TypeScript - temporary?
     "@typescript-eslint/strict-boolean-expressions": "off", // Seems to work poorly with optional chaining
     "@typescript-eslint/no-unnecessary-condition": "off", // Seems to work poorly with optional chaining

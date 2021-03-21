@@ -3,9 +3,9 @@ import React from "react";
 function getAnalyticsCode() {
   return (
     <React.Fragment key="simpleanalytics">
-      <script async defer src="https://sa.grumpycorp.com/hello.js" />
+      <script async defer src="https://sa.grumpycorp.com/latest.js" />
       <noscript>
-        <img src="https://sa.grumpycorp.com/hello.gif" alt="" />
+        <img src="https://sa.grumpycorp.com/noscript.gif" alt="" />
       </noscript>
     </React.Fragment>
   );

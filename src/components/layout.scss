@@ -41,9 +41,9 @@ img {
 // -  Note: external typefaces are managed as fontsource-* npm packages.
 //
 
-@import "~fontsource-questrial/index.css";
-@import "~fontsource-quicksand/index.css";
-@import "~fontsource-dosis/index.css";
+@import "~@fontsource/questrial/index.css";
+@import "~@fontsource/quicksand/index.css";
+@import "~@fontsource/dosis/index.css";
 
 html {
   font-family: "Questrial", "sans-serif";

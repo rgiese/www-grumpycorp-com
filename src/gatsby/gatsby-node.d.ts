@@ -1,12 +1,12 @@
 // onCreateNode
-interface OnCreateNodeActionCreators {
+interface OnCreateNodeActions {
   createNodeField: (opts: { node: any; name: string; value: string }) => void;
 }
 
 export type GatsbyOnCreateNode = (fns: {
   node: any;
-  getNode: any;
-  boundActionCreators: OnCreateNodeActionCreators;
+  actions: OnCreateNodeActions;
+  getNode: (ID: string) => Node;
 }) => void;
 
 // CreatePages
@@ -17,7 +17,7 @@ interface PageInput {
   context?: any;
 }
 
-interface CreatePageActionCreators {
+interface CreatePageActions {
   createPage: (page: PageInput) => void;
   deletePage: (page: PageInput) => void;
   createRedirect: (opts: {
@@ -30,16 +30,16 @@ interface CreatePageActionCreators {
 
 export type GatsbyCreatePages = (fns: {
   graphql: any;
-  boundActionCreators: CreatePageActionCreators;
+  actions: CreatePageActions;
 }) => void;
 
 // onCreateWebpackConfig
-interface OnCreateWebpackConfigActionCreators {
-  replaceWebpackConfig: (opts: { config: any }) => void;
+interface OnCreateWebpackConfigActions {
+  replaceWebpackConfig: (config: any) => void;
 }
 
 export type GatsbyOnCreateWebpackConfig = (fns: {
   stage: string;
-  boundActionCreators: OnCreateWebpackConfigActionCreators;
   getConfig: () => any;
+  actions: OnCreateWebpackConfigActions;
 }) => void;

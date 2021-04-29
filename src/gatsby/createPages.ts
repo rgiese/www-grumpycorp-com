@@ -10,16 +10,16 @@ import type { GatsbyCreatePages, GatsbyOnCreateNode } from "./gatsby-node";
 // onCreateNode
 export const onCreateNode: GatsbyOnCreateNode = ({
   node,
+  actions,
   getNode,
-  boundActionCreators,
 }) => {
-  const { createNodeField } = boundActionCreators;
+  const { createNodeField } = actions;
 
   // Create slugs and attach source instance names for Markdown content
   if (node.internal.type === `Mdx`) {
     // Get source instance name so we can filter on it in queries
-    const parent = getNode(node.parent);
-    const sourceInstanceName = parent.sourceInstanceName as string;
+    const parent = getNode(node.parent as string);
+    const sourceInstanceName = (parent as any).sourceInstanceName as string;
 
     createNodeField({
       node,
@@ -94,11 +94,8 @@ async function getPostsForSourceName(
   return posts;
 }
 
-export const createPages: GatsbyCreatePages = async ({
-  graphql,
-  boundActionCreators,
-}) => {
-  const { createPage } = boundActionCreators;
+export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
 
   const tagsWithSourceInstanceName = new Set<string>();
   const tagSeparator = `/`;

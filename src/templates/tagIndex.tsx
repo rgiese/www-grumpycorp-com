@@ -14,7 +14,7 @@ export interface TagIndexPageContext {
 
 // Automatic (exported) GraphQL query
 export const tagIndexQuery = graphql`
-  query($sourceInstanceName: String, $tag: String) {
+  query ($sourceInstanceName: String, $tag: String) {
     posts: allMdx(
       sort: { fields: [frontmatter___date], order: ASC }
       filter: {

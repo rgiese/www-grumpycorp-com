@@ -13,7 +13,7 @@ export interface PagePageContext {
 
 // Page-level GraphQL query
 export const pageContentQuery = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     page: mdx(fields: { slug: { eq: $slug } }) {
       body
       frontmatter {

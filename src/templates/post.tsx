@@ -26,7 +26,7 @@ export const postContentQuery = graphql`
     }
   }
 
-  query($slug: String!, $previousPostSlug: String, $nextPostSlug: String) {
+  query ($slug: String!, $previousPostSlug: String, $nextPostSlug: String) {
     post: mdx(fields: { slug: { eq: $slug } }) {
       body
       fields {

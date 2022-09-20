@@ -189,9 +189,8 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
   //
 
   for (const sourceInstanceNameAndTag of tagsWithSourceInstanceName) {
-    const [sourceInstanceName, tag] = sourceInstanceNameAndTag.split(
-      tagSeparator
-    );
+    const [sourceInstanceName, tag] =
+      sourceInstanceNameAndTag.split(tagSeparator);
 
     const tagPageContext: TagIndexPageContext = { sourceInstanceName, tag };
 

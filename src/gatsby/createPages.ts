@@ -1,14 +1,14 @@
 import { createFilePath } from "gatsby-source-filesystem";
 import { resolve } from "path";
+import type { GatsbyNode } from "gatsby";
 
 import type { PagePageContext } from "../templates/page";
 import type { PortfolioPageContext } from "../templates/portfolio";
 import type { PostPageContext } from "../templates/post";
 import type { TagIndexPageContext } from "../templates/tagIndex";
-import type { GatsbyCreatePages, GatsbyOnCreateNode } from "./gatsby-node";
 
 // onCreateNode
-export const onCreateNode: GatsbyOnCreateNode = ({
+export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   node,
   actions,
   getNode,
@@ -94,7 +94,7 @@ async function getPostsForSourceName(
   return posts;
 }
 
-export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
+export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   const tagsWithSourceInstanceName = new Set<string>();
@@ -189,8 +189,9 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
   //
 
   for (const sourceInstanceNameAndTag of tagsWithSourceInstanceName) {
+    const wtf = sourceInstanceNameAndTag as string;
     const [sourceInstanceName, tag] =
-      sourceInstanceNameAndTag.split(tagSeparator);
+      wtf.split(tagSeparator);
 
     const tagPageContext: TagIndexPageContext = { sourceInstanceName, tag };
 

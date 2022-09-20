@@ -4,20 +4,23 @@ import React from "react";
 
 // GraphQL query to retrieve all Portfolio photos
 const allPhotosQuery = graphql`
-query PortfolioPhotos {
-  allPhotos: allFile(
-    filter: {sourceInstanceName: {eq: "portfolio"}, extension: {in: ["jpg", "png"]}}
-  ) {
-    edges {
-      node {
-        relativePath
-        childImageSharp {
-          gatsbyImageData(layout: FULL_WIDTH)
+  query PortfolioPhotos {
+    allPhotos: allFile(
+      filter: {
+        sourceInstanceName: { eq: "portfolio" }
+        extension: { in: ["jpg", "png"] }
+      }
+    ) {
+      edges {
+        node {
+          relativePath
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
         }
       }
     }
   }
-}
 `;
 
 // TypeScript-typed fields corresponding to GraphQL query
@@ -45,7 +48,10 @@ const PortfolioPhoto: React.FunctionComponent<{
 
   const innerHtml =
     thisPhotoNodes.length > 0 ? (
-      <GatsbyImage image={thisPhotoNodes[0].node.childImageSharp.gatsbyImageData} alt={alt || ""} />
+      <GatsbyImage
+        image={thisPhotoNodes[0].node.childImageSharp.gatsbyImageData}
+        alt={alt || ""}
+      />
     ) : (
       <>Photo {src} not found.</>
     );

@@ -11,6 +11,7 @@ import TwoColumnLayout from "./twoColumnLayout";
 
 const Layout: React.FunctionComponent<{
   bodyMaxWidth?: string;
+  children?: React.ReactNode;
 }> = ({ children, bodyMaxWidth }) => (
   <div className="ph3 pt4-ns tl bg-white">
     <TwoColumnLayout

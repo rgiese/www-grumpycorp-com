@@ -1,28 +1,23 @@
 import { graphql, useStaticQuery } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
 
 // GraphQL query to retrieve all Portfolio photos
 const allPhotosQuery = graphql`
-  query PortfolioPhotos {
-    allPhotos: allFile(
-      filter: {
-        sourceInstanceName: { eq: "portfolio" }
-        extension: { in: ["jpg", "png"] }
-      }
-    ) {
-      edges {
-        node {
-          relativePath
-          childImageSharp {
-            fluid(maxWidth: 1500) {
-              ...GatsbyImageSharpFluid
-            }
-          }
+query PortfolioPhotos {
+  allPhotos: allFile(
+    filter: {sourceInstanceName: {eq: "portfolio"}, extension: {in: ["jpg", "png"]}}
+  ) {
+    edges {
+      node {
+        relativePath
+        childImageSharp {
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
     }
   }
+}
 `;
 
 // TypeScript-typed fields corresponding to GraphQL query
@@ -50,7 +45,7 @@ const PortfolioPhoto: React.FunctionComponent<{
 
   const innerHtml =
     thisPhotoNodes.length > 0 ? (
-      <Img alt={alt} fluid={thisPhotoNodes[0].node.childImageSharp.fluid} />
+      <GatsbyImage image={thisPhotoNodes[0].node.childImageSharp.gatsbyImageData} alt={alt || ""} />
     ) : (
       <>Photo {src} not found.</>
     );

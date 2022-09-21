@@ -12,6 +12,7 @@ const siteMetadata = {
 
 const config: GatsbyConfig = {
   siteMetadata,
+  graphqlTypegen: true,
   plugins: [
     // TypeScript
     `gatsby-plugin-typescript`,

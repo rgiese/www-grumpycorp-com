@@ -9,10 +9,7 @@ import Seo from "../../components/seo";
 // Automatic (exported) GraphQL query
 export const postIndexAndTagsQuery = graphql`
   query {
-    posts: allMdx(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { sourceInstanceName: { eq: "posts" } } }
-    ) {
+    posts: allMdx(filter: { fields: { sourceInstanceName: { eq: "posts" } } }) {
       ...PostIndexPosts
     }
   }
@@ -26,10 +23,16 @@ interface PostIndexData {
 const IndexPage: React.FunctionComponent<{
   data: PostIndexData;
 }> = ({ data }) => {
+  // Sort posts in descending (most recent first) order
+  const posts = data.posts.nodes.sort(
+    (lhs, rhs) =>
+      Date.parse(rhs.frontmatter.date) - Date.parse(lhs.frontmatter.date)
+  );
+
   return (
     <Layout>
       <Seo title="All posts" />
-      <PostIndex posts={data.posts} />
+      <PostIndex posts={data.posts.nodes} />
     </Layout>
   );
 };

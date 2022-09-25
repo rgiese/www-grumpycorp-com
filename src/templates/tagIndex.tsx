@@ -16,7 +16,6 @@ export interface TagIndexPageContext {
 export const tagIndexQuery = graphql`
   query ($sourceInstanceName: String, $tag: String) {
     posts: allMdx(
-      sort: { fields: [frontmatter___date], order: ASC }
       filter: {
         frontmatter: { tags: { in: [$tag] } }
         fields: { sourceInstanceName: { eq: $sourceInstanceName } }
@@ -39,10 +38,16 @@ const TagIndexPage: React.FunctionComponent<{
 }> = ({ pageContext, data }) => {
   const tag = pageContext.tag;
 
+  // Sort posts in assending (oldest first) order
+  const posts = data.posts.nodes.sort(
+    (lhs, rhs) =>
+      Date.parse(lhs.frontmatter.date) - Date.parse(rhs.frontmatter.date)
+  );
+
   return (
     <Layout>
       <Seo title={tag} />
-      <PostIndex posts={data.posts} />
+      <PostIndex posts={posts} />
     </Layout>
   );
 };

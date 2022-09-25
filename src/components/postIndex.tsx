@@ -4,18 +4,16 @@ import React from "react";
 // GraphQL fragment to be used by caller
 export const postsQueryFragment = graphql`
   fragment PostIndexPosts on MdxConnection {
-    edges {
-      node {
-        id
-        fields {
-          slug
-          sourceInstanceName
-        }
-        frontmatter {
-          date(formatString: "MMMM Do, YYYY")
-          tags
-          title
-        }
+    nodes {
+      id
+      fields {
+        slug
+        sourceInstanceName
+      }
+      frontmatter {
+        date
+        tags
+        title
       }
     }
   }
@@ -34,16 +32,13 @@ export interface Post {
     title: string;
   };
 }
-
 export interface PostIndexPosts {
-  edges: {
-    node: Post;
-  }[];
+  nodes: Post[];
 }
 
 // Component properties including GraphQL data
 export interface PostIndexProps {
-  posts: PostIndexPosts;
+  posts: Post[];
 }
 
 // Component definition
@@ -53,7 +48,7 @@ export const PostIndex: React.FunctionComponent<PostIndexProps> = ({
   return (
     <table>
       <tbody className="lh-copy v-top">
-        {posts.edges.map(({ node }) => (
+        {posts.map((node) => (
           <tr key={node.id}>
             <td>
               {node.frontmatter.tags.map((tag) => (
@@ -66,7 +61,13 @@ export const PostIndex: React.FunctionComponent<PostIndexProps> = ({
                 </Link>
               ))}
             </td>
-            <td className="b ph3">{node.frontmatter.date}</td>
+            <td className="b ph3">
+              {new Date(node.frontmatter.date).toLocaleDateString("en-us", {
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+              })}
+            </td>
             <td>
               <Link className="link accent" to={node.fields.slug}>
                 {node.frontmatter.title}

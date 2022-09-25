@@ -28,7 +28,6 @@ export const postContentQuery = graphql`
 
   query ($slug: String!, $previousPostSlug: String, $nextPostSlug: String) {
     post: mdx(fields: { slug: { eq: $slug } }) {
-      body
       fields {
         slug
         sourceInstanceName
@@ -118,9 +117,10 @@ const PreviousNextLinks: React.FunctionComponent<{
 
 // Component definition
 const PostPage: React.FunctionComponent<{
+  children: React.ReactNode,
   data: PostContentData;
   pageContext: PostPageContext; // used in GraphQL query
-}> = ({ data }) => {
+}> = ({ children, data }) => {
   const post = data.post;
 
   return (
@@ -159,7 +159,7 @@ const PostPage: React.FunctionComponent<{
 
       {/* Post body */}
       <div className="lh-copy content">
-        <MDXPresenter data={post.body} />
+        <MDXPresenter data={children} />
       </div>
 
       {/* Previous/next navigation (bottom) */}

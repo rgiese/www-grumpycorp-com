@@ -15,7 +15,6 @@ export interface PortfolioPageContext {
 export const pageContentQuery = graphql`
   query ($slug: String!) {
     page: mdx(fields: { slug: { eq: $slug } }) {
-      body
       frontmatter {
         title
       }
@@ -26,7 +25,6 @@ export const pageContentQuery = graphql`
 // TypeScript-typed fields corresponding to automatic (exported) GraphQL query
 interface PageContentData {
   page: {
-    body: string;
     frontmatter: {
       title: string;
     };
@@ -35,16 +33,17 @@ interface PageContentData {
 
 // Component definition
 const PortfolioPage: React.FunctionComponent<{
+  children: React.ReactNode,
   data: PageContentData;
   pageContext: PortfolioPageContext; // used in GraphQL query
-}> = ({ data }) => {
+}> = ({ children, data }) => {
   const page = data.page;
 
   return (
     <Layout bodyMaxWidth="mw8">
       <Seo title={page.frontmatter.title} />
       <div className="lh-copy content portfolio-container">
-        <MDXPresenter data={page.body} />
+        <MDXPresenter data={children} />
       </div>
     </Layout>
   );

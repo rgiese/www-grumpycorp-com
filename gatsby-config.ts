@@ -14,9 +14,6 @@ const config: GatsbyConfig = {
   siteMetadata,
   graphqlTypegen: true,
   plugins: [
-    // TypeScript
-    `gatsby-plugin-typescript`,
-
     // HTML headers management
     `gatsby-plugin-react-helmet`,
 
@@ -94,6 +91,7 @@ const config: GatsbyConfig = {
     `gatsby-plugin-sitemap`,
 
     // RSS feed
+    /*
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -157,6 +155,7 @@ const config: GatsbyConfig = {
         ],
       },
     },
+    */
   ],
 };
 

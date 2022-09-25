@@ -1,5 +1,4 @@
 import { MDXProvider } from "@mdx-js/react";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import React from "react";
 
 import IconTag from "../assets/icons/tag.svg";
@@ -18,7 +17,7 @@ const TagIcon: React.FunctionComponent<{ className: string }> = ({
 
 // Component definition
 const MDXPresenter: React.FunctionComponent<{
-  data: string;
+  data: React.ReactNode;
 }> = ({ data }) => {
   // Replace paragraphs with divs so we can nest things like figcaption in them.
   const paragraphAsDiv = (
@@ -38,7 +37,7 @@ const MDXPresenter: React.FunctionComponent<{
         p: paragraphAsDiv,
       }}
     >
-      <MDXRenderer>{data}</MDXRenderer>
+      {data}
     </MDXProvider>
   );
 };

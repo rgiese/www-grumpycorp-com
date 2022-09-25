@@ -15,7 +15,6 @@ export interface PagePageContext {
 export const pageContentQuery = graphql`
   query ($slug: String!) {
     page: mdx(fields: { slug: { eq: $slug } }) {
-      body
       frontmatter {
         title
       }
@@ -26,7 +25,6 @@ export const pageContentQuery = graphql`
 // TypeScript-typed fields corresponding to automatic (exported) GraphQL query
 interface PageContentData {
   page: {
-    body: string;
     frontmatter: {
       title: string;
     };
@@ -35,9 +33,10 @@ interface PageContentData {
 
 // Component definition
 const PagePage: React.FunctionComponent<{
+  children: React.ReactNode,
   data: PageContentData;
   pageContext: PagePageContext;
-}> = ({ data, pageContext }) => {
+}> = ({ children, data, pageContext }) => {
   const page = data.page;
 
   return (
@@ -53,7 +52,7 @@ const PagePage: React.FunctionComponent<{
 
       {/* Page body */}
       <div className="lh-copy content">
-        <MDXPresenter data={page.body} />
+        <MDXPresenter data={children} />
       </div>
     </Layout>
   );

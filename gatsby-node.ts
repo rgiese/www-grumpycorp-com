@@ -10,7 +10,8 @@ import type { PortfolioPageContext } from "./src/templates/portfolio";
 import type { PostPageContext } from "./src/templates/post";
 import type { TagIndexPageContext } from "./src/templates/tagIndex";
 
-// onCreateNode
+// onCreateNode:
+// - inject sourceInstanceName and slug fields into MDX nodes
 export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   node,
   actions,
@@ -54,6 +55,9 @@ interface Post {
   frontmatter: {
     tags: string[];
   };
+  internal: {
+    contentFilePath: string;
+  }
 }
 
 interface PostNodes {
@@ -86,6 +90,9 @@ async function getPostsForSourceName(
             frontmatter {
               tags
             }
+            internal {
+              contentFilePath
+            }
           }
         }
       }
@@ -112,6 +119,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   // Build pages for posts (sort ascending for get[Next,Previous]Posts)
   const posts = await getPostsForSourceName(graphql, "posts");
+  const postTemplate = resolve(`./src/templates/post.tsx`)
 
   posts.forEach((post, index) => {
     const slug = post.fields.slug;
@@ -126,9 +134,11 @@ export const createPages: GatsbyNode["createPages"] = async ({
       nextPostSlug: !isLastPost ? posts[index + 1].fields.slug : undefined,
     };
 
+    const component = `${postTemplate}?__contentFilePath=${post.internal.contentFilePath}`;
+    
     createPage({
       path: slug,
-      component: resolve(`./src/templates/post.tsx`),
+      component,
       context: postPageContext,
     });
 
@@ -136,7 +146,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
       // Generate site index page from most recent post
       createPage({
         path: `/`,
-        component: resolve(`./src/templates/post.tsx`),
+        component,
         context: postPageContext,
       });
     }
@@ -154,6 +164,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   // Build pages for standalone pages
   const pages = await getPostsForSourceName(graphql, "pages");
+  const pageTemplate = resolve(`./src/templates/page.tsx`)
 
   pages.forEach((page) => {
     const slug = page.fields.slug;
@@ -164,15 +175,18 @@ export const createPages: GatsbyNode["createPages"] = async ({
       sourceInstanceName,
     };
 
+    const component = `${pageTemplate}?__contentFilePath=${page.internal.contentFilePath}`;
+
     createPage({
       path: slug,
-      component: resolve(`./src/templates/page.tsx`),
+      component,
       context: pagePageContext,
     });
   });
 
   // Build pages for portfolio pages
   const portfolio = await getPostsForSourceName(graphql, "portfolio");
+  const portfolioTemplate = resolve(`./src/templates/portfolio.tsx`)
 
   portfolio.forEach((page) => {
     const slug = page.fields.slug;
@@ -183,9 +197,11 @@ export const createPages: GatsbyNode["createPages"] = async ({
       sourceInstanceName,
     };
 
+    const component = `${portfolioTemplate}?__contentFilePath=${page.internal.contentFilePath}`;
+    
     createPage({
       path: slug,
-      component: resolve(`./src/templates/portfolio.tsx`),
+      component,
       context: portfolioPageContext,
     });
   });

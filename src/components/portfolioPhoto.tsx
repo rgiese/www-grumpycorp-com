@@ -23,38 +23,27 @@ const allPhotosQuery = graphql`
   }
 `;
 
-// TypeScript-typed fields corresponding to GraphQL query
-interface AllPhotos {
-  allPhotos: {
-    edges: {
-      node: {
-        relativePath: string;
-        childImageSharp: any;
-      };
-    }[];
-  };
-}
-
 const PortfolioPhoto: React.FunctionComponent<{
   src: string;
   alt?: string;
   className?: string;
 }> = ({ src, alt, className }) => {
-  const allPhotos: AllPhotos = useStaticQuery(allPhotosQuery);
+  const allPhotos: Queries.PortfolioPhotosQuery =
+    useStaticQuery(allPhotosQuery);
 
   const thisPhotoNodes = allPhotos.allPhotos.edges.filter(
     ({ node }) => node.relativePath === src
   );
 
-  const innerHtml =
-    thisPhotoNodes.length > 0 ? (
-      <GatsbyImage
-        image={thisPhotoNodes[0].node.childImageSharp.gatsbyImageData}
-        alt={alt || ""}
-      />
-    ) : (
-      <>Photo {src} not found.</>
-    );
+  const imageData = thisPhotoNodes.length
+    ? thisPhotoNodes[0]?.node?.childImageSharp?.gatsbyImageData
+    : undefined;
+
+  const innerHtml = imageData ? (
+    <GatsbyImage image={imageData} alt={alt || ""} />
+  ) : (
+    <>Photo {src} not found.</>
+  );
 
   // The positioning magic we're doing with CSS doesn't work if we just forward it to the Img's className
   // so we have to further the <div> forest spectacle, regrettably.

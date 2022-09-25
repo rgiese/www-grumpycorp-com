@@ -26,18 +26,22 @@ export const postContentQuery = graphql`
     }
   }
 
+  fragment PostTemplateFragment on Mdx {
+    fields {
+      slug
+      sourceInstanceName
+    }
+    frontmatter {
+      title
+      date(formatString: "MMMM Do, YYYY")
+      keywords
+      tags
+    }
+  }
+
   query ($slug: String!, $previousPostSlug: String, $nextPostSlug: String) {
     post: mdx(fields: { slug: { eq: $slug } }) {
-      fields {
-        slug
-        sourceInstanceName
-      }
-      frontmatter {
-        title
-        date(formatString: "MMMM Do, YYYY")
-        keywords
-        tags
-      }
+      ...PostTemplateFragment
     }
     previousPost: mdx(fields: { slug: { eq: $previousPostSlug } }) {
       ...PreviousOrNextPostFragment
@@ -49,31 +53,10 @@ export const postContentQuery = graphql`
 `;
 
 // TypeScript-typed fields corresponding to automatic (exported) GraphQL query
-interface PreviousOrNextPostData {
-  fields: {
-    slug: string;
-  };
-  frontmatter: {
-    title: string;
-  };
-}
-
 interface PostContentData {
-  post: {
-    body: string;
-    fields: {
-      slug: string;
-      sourceInstanceName: string;
-    };
-    frontmatter: {
-      title: string;
-      date: string;
-      keywords?: string[];
-      tags: string[];
-    };
-  };
-  previousPost?: PreviousOrNextPostData;
-  nextPost?: PreviousOrNextPostData;
+  post: Queries.PostTemplateFragmentFragment;
+  previousPost?: Queries.PreviousOrNextPostFragmentFragment;
+  nextPost?: Queries.PreviousOrNextPostFragmentFragment;
 }
 
 /* eslint-disable react/no-multi-comp */
@@ -91,10 +74,10 @@ const PreviousNextLinks: React.FunctionComponent<{
             {data.previousPost && (
               <Link
                 className={`link ${linkClass}`}
-                to={data.previousPost.fields.slug}
+                to={data.previousPost?.fields?.slug || ""}
               >
                 &laquo;{` `}
-                {data.previousPost.frontmatter.title}
+                {data.previousPost?.frontmatter?.title}
               </Link>
             )}
           </td>
@@ -102,9 +85,9 @@ const PreviousNextLinks: React.FunctionComponent<{
             {data.nextPost && (
               <Link
                 className={`link ${linkClass}`}
-                to={data.nextPost.fields.slug}
+                to={data.nextPost?.fields?.slug || ""}
               >
-                {data.nextPost.frontmatter.title}
+                {data.nextPost?.frontmatter?.title}
                 {` `}&raquo;
               </Link>
             )}
@@ -126,32 +109,33 @@ const PostPage: React.FunctionComponent<{
   return (
     <Layout>
       <Seo
-        keywords={post.frontmatter.keywords}
-        title={post.frontmatter.title}
+        keywords={post?.frontmatter?.keywords}
+        title={post?.frontmatter?.title}
       />
 
       {/* Post title */}
       <h1 className="mb1">
-        <Link className="link accent" to={post.fields.slug}>
-          {post.frontmatter.title}
+        <Link className="link accent" to={post?.fields?.slug || ""}>
+          {post?.frontmatter?.title}
         </Link>
       </h1>
 
       {/* Post date and tags */}
       <div className="f5 black-60">
-        {post.frontmatter.date}
+        {post?.frontmatter?.date}
         <span className="ph2 black-40">in</span>
-        {post.frontmatter.tags.map((tag) => (
-          <Link
-            className="link accent-mono"
-            key={tag}
-            to={`/tags/${post.fields.sourceInstanceName}/${tag}`}
-          >
-            <Icon className="w1 h1 v-mid" sprite={TagIcon} />
-            {` `}
-            {tag}
-          </Link>
-        ))}
+        {post?.frontmatter?.tags &&
+          post.frontmatter.tags.map((tag) => (
+            <Link
+              className="link accent-mono"
+              key={tag}
+              to={`/tags/${post?.fields?.sourceInstanceName}/${tag}`}
+            >
+              <Icon className="w1 h1 v-mid" sprite={TagIcon} />
+              {` `}
+              {tag}
+            </Link>
+          ))}
       </div>
 
       {/* Previous/next navigation (top) */}

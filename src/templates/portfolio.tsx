@@ -13,22 +13,22 @@ export interface PortfolioPageContext {
 
 // Page-level GraphQL query
 export const pageContentQuery = graphql`
+  fragment PortfolioTemplateFragment on Mdx {
+    frontmatter {
+      title
+    }
+  }
+
   query ($slug: String!) {
     page: mdx(fields: { slug: { eq: $slug } }) {
-      frontmatter {
-        title
-      }
+      ...PortfolioTemplateFragment
     }
   }
 `;
 
 // TypeScript-typed fields corresponding to automatic (exported) GraphQL query
 interface PageContentData {
-  page: {
-    frontmatter: {
-      title: string;
-    };
-  };
+  page: Queries.PortfolioTemplateFragmentFragment;
 }
 
 // Component definition
@@ -41,7 +41,7 @@ const PortfolioPage: React.FunctionComponent<{
 
   return (
     <Layout bodyMaxWidth="mw8">
-      <Seo title={page.frontmatter.title} />
+      <Seo title={page?.frontmatter?.title} />
       <div className="lh-copy content portfolio-container">
         <MDXPresenter data={children} />
       </div>

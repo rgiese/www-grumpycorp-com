@@ -117,7 +117,7 @@ const PreviousNextLinks: React.FunctionComponent<{
 
 // Component definition
 const PostPage: React.FunctionComponent<{
-  children: React.ReactNode,
+  children: React.ReactNode;
   data: PostContentData;
   pageContext: PostPageContext; // used in GraphQL query
 }> = ({ children, data }) => {

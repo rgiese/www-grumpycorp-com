@@ -57,7 +57,7 @@ interface Post {
   };
   internal: {
     contentFilePath: string;
-  }
+  };
 }
 
 interface PostNodes {
@@ -119,7 +119,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   // Build pages for posts (sort ascending for get[Next,Previous]Posts)
   const posts = await getPostsForSourceName(graphql, "posts");
-  const postTemplate = resolve(`./src/templates/post.tsx`)
+  const postTemplate = resolve(`./src/templates/post.tsx`);
 
   posts.forEach((post, index) => {
     const slug = post.fields.slug;
@@ -135,7 +135,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
     };
 
     const component = `${postTemplate}?__contentFilePath=${post.internal.contentFilePath}`;
-    
+
     createPage({
       path: slug,
       component,
@@ -164,7 +164,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   // Build pages for standalone pages
   const pages = await getPostsForSourceName(graphql, "pages");
-  const pageTemplate = resolve(`./src/templates/page.tsx`)
+  const pageTemplate = resolve(`./src/templates/page.tsx`);
 
   pages.forEach((page) => {
     const slug = page.fields.slug;
@@ -186,7 +186,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   // Build pages for portfolio pages
   const portfolio = await getPostsForSourceName(graphql, "portfolio");
-  const portfolioTemplate = resolve(`./src/templates/portfolio.tsx`)
+  const portfolioTemplate = resolve(`./src/templates/portfolio.tsx`);
 
   portfolio.forEach((page) => {
     const slug = page.fields.slug;
@@ -198,7 +198,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
     };
 
     const component = `${portfolioTemplate}?__contentFilePath=${page.internal.contentFilePath}`;
-    
+
     createPage({
       path: slug,
       component,

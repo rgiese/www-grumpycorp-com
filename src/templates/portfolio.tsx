@@ -33,7 +33,7 @@ interface PageContentData {
 
 // Component definition
 const PortfolioPage: React.FunctionComponent<{
-  children: React.ReactNode,
+  children: React.ReactNode;
   data: PageContentData;
   pageContext: PortfolioPageContext; // used in GraphQL query
 }> = ({ children, data }) => {

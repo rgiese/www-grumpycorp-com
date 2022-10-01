@@ -94,7 +94,6 @@ const config: GatsbyConfig = {
     `gatsby-plugin-sitemap`,
 
     // RSS feed
-    /*
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -114,7 +113,7 @@ const config: GatsbyConfig = {
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   custom_elements: [
-                    { "content:encoded": edge.node.html },
+                    { "content:encoded": edge.node.excerpt },
                     {
                       author: `${site.siteMetadata.authorEmail} (${site.siteMetadata.author})`,
                     },
@@ -138,7 +137,6 @@ const config: GatsbyConfig = {
                       edges {
                         node {
                           excerpt
-                          html
                           fields {
                             slug
                           }
@@ -153,12 +151,11 @@ const config: GatsbyConfig = {
                   }
                 `,
             output: "/rss.xml",
-            title: "GrumpyCorp Creative Industries RSS Feed",
+            title: "GrumpyCorp Studios RSS Feed",
           },
         ],
       },
     },
-    */
   ],
 };
 

@@ -71,7 +71,7 @@ const PreviousNextLinks: React.FunctionComponent<{
       <tbody>
         <tr>
           <td className="w-50">
-            {data.previousPost && (
+            {data.previousPost ? (
               <Link
                 className={`link ${linkClass}`}
                 to={data.previousPost?.fields?.slug || ""}
@@ -79,10 +79,10 @@ const PreviousNextLinks: React.FunctionComponent<{
                 &laquo;{` `}
                 {data.previousPost?.frontmatter?.title}
               </Link>
-            )}
+            ) : null}
           </td>
           <td className="w-50 tr">
-            {data.nextPost && (
+            {data.nextPost ? (
               <Link
                 className={`link ${linkClass}`}
                 to={data.nextPost?.fields?.slug || ""}
@@ -90,7 +90,7 @@ const PreviousNextLinks: React.FunctionComponent<{
                 {data.nextPost?.frontmatter?.title}
                 {` `}&raquo;
               </Link>
-            )}
+            ) : null}
           </td>
         </tr>
       </tbody>
@@ -124,18 +124,19 @@ const PostPage: React.FunctionComponent<{
       <div className="f5 black-60">
         {post?.frontmatter?.date}
         <span className="ph2 black-40">in</span>
-        {post?.frontmatter?.tags &&
-          post.frontmatter.tags.map((tag) => (
-            <Link
-              className="link accent-mono"
-              key={tag}
-              to={`/tags/${post?.fields?.sourceInstanceName}/${tag}`}
-            >
-              <Icon className="w1 h1 v-mid" sprite={TagIcon} />
-              {` `}
-              {tag}
-            </Link>
-          ))}
+        {post?.frontmatter?.tags
+          ? post.frontmatter.tags.map((tag) => (
+              <Link
+                className="link accent-mono"
+                key={tag}
+                to={`/tags/${post?.fields?.sourceInstanceName}/${tag}`}
+              >
+                <Icon className="w1 h1 v-mid" sprite={TagIcon} />
+                {` `}
+                {tag}
+              </Link>
+            ))
+          : null}
       </div>
 
       {/* Previous/next navigation (top) */}

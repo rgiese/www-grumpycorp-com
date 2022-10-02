@@ -34,16 +34,17 @@ export const PostIndex: React.FunctionComponent<PostIndexProps> = ({
         {posts.map((node) => (
           <tr key={node.id}>
             <td>
-              {node?.frontmatter?.tags &&
-                node.frontmatter.tags.map((tag) => (
-                  <Link
-                    className="link accent-mono"
-                    key={tag}
-                    to={`/tags/${node.fields?.sourceInstanceName}/${tag}`}
-                  >
-                    {tag}
-                  </Link>
-                ))}
+              {node?.frontmatter?.tags
+                ? node.frontmatter.tags.map((tag) => (
+                    <Link
+                      className="link accent-mono"
+                      key={tag}
+                      to={`/tags/${node.fields?.sourceInstanceName}/${tag}`}
+                    >
+                      {tag}
+                    </Link>
+                  ))
+                : null}
             </td>
             <td className="b ph3">
               {new Date(node?.frontmatter?.date || "").toLocaleDateString(

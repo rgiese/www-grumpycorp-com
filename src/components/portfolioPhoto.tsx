@@ -44,7 +44,7 @@ const PortfolioPhoto: React.FunctionComponent<{
 
   const innerHtml = imageData ? (
     <a href={thisPhotoNode?.publicURL || ""}>
-      <GatsbyImage image={imageData} alt={alt || ""} />
+      <GatsbyImage alt={alt || ""} image={imageData} />
     </a>
   ) : (
     <>Photo {src} not found.</>

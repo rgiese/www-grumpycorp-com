@@ -17,7 +17,7 @@ const detailsQuery = graphql`
 const Seo: React.FunctionComponent<{
   description?: string;
   lang?: string;
-  keywords?: ReadonlyArray<string | null> | null;
+  keywords?: readonly (string | null)[] | null;
   title?: string | null;
 }> = ({ description, lang = "en", keywords = [], title }) => {
   const data: Queries.DefaultSEOQueryQuery = useStaticQuery(detailsQuery);

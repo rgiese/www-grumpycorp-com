@@ -47,36 +47,13 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
 };
 
 // createPages
-interface Post {
-  fields: {
-    slug: string;
-    sourceInstanceName: string;
-  };
-  frontmatter: {
-    date: string;
-    tags: string[];
-  };
-  internal: {
-    contentFilePath: string;
-  };
-}
-
-interface PostNodes {
-  data: {
-    posts: {
-      edges: {
-        node: Post;
-      }[];
-    };
-  };
-}
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 async function getPostsForSourceName(
   graphql: any,
   sourceName: string
-): Promise<Post[]> {
-  const postNodes: PostNodes = await graphql(`
+): Promise<Queries.PostsForSourceNameQuery["posts"]["edges"][0]["node"][]> {
+  const postNodes: Queries.PostsForSourceNameQuery = await graphql(`
     query PostsForSourceName {
       posts: allMdx(
         filter: { fields: { sourceInstanceName: { eq: "${sourceName}" } } }
@@ -101,7 +78,7 @@ async function getPostsForSourceName(
   `);
 
   // Sort posts in ascending (oldest first) order
-  const posts = postNodes.data.posts.edges
+  const posts = postNodes.posts.edges
     .map(({ node }) => node)
     .sort(
       (lhs, rhs) =>
@@ -130,16 +107,23 @@ export const createPages: GatsbyNode["createPages"] = async ({
   const postTemplate = resolve(`./src/templates/post.tsx`);
 
   posts.forEach((post, index) => {
-    const slug = post.fields.slug;
-    const sourceInstanceName = post.fields.sourceInstanceName;
+    const slug = post.fields?.slug;
+    const sourceInstanceName = post.fields?.sourceInstanceName;
+
+    if (!slug || !sourceInstanceName) {
+      return;
+    }
 
     const isLastPost = index === posts.length - 1;
 
     const postPageContext: PostPageContext = {
       slug,
       sourceInstanceName,
-      previousPostSlug: index > 0 ? posts[index - 1].fields.slug : undefined,
-      nextPostSlug: !isLastPost ? posts[index + 1].fields.slug : undefined,
+      previousPostSlug:
+        index > 0 ? posts[index - 1].fields?.slug ?? "" : undefined,
+      nextPostSlug: !isLastPost
+        ? posts[index + 1].fields?.slug ?? ""
+        : undefined,
     };
 
     const component = `${postTemplate}?__contentFilePath=${post.internal.contentFilePath}`;
@@ -160,7 +144,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
     }
 
     // Accumulate tags
-    post.frontmatter.tags.forEach((tag) => {
+    post.frontmatter?.tags?.forEach((tag) => {
       // Since JavaScript doesn't have a proper std::set<T>,
       // we'll just cram our two values into a delimited string.
       // Sadness.
@@ -175,8 +159,12 @@ export const createPages: GatsbyNode["createPages"] = async ({
   const pageTemplate = resolve(`./src/templates/page.tsx`);
 
   pages.forEach((page) => {
-    const slug = page.fields.slug;
-    const sourceInstanceName = page.fields.sourceInstanceName;
+    const slug = page.fields?.slug;
+    const sourceInstanceName = page.fields?.sourceInstanceName;
+
+    if (!slug || !sourceInstanceName) {
+      return;
+    }
 
     const pagePageContext: PagePageContext = {
       slug,
@@ -197,8 +185,12 @@ export const createPages: GatsbyNode["createPages"] = async ({
   const portfolioTemplate = resolve(`./src/templates/portfolio.tsx`);
 
   portfolio.forEach((page) => {
-    const slug = page.fields.slug;
-    const sourceInstanceName = page.fields.sourceInstanceName;
+    const slug = page.fields?.slug;
+    const sourceInstanceName = page.fields?.sourceInstanceName;
+
+    if (!slug || !sourceInstanceName) {
+      return;
+    }
 
     const portfolioPageContext: PortfolioPageContext = {
       slug,

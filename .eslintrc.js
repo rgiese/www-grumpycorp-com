@@ -96,5 +96,7 @@ module.exports = {
     "react/prop-types": "off", // Not investing in PropTypes at this time
     // React - temporary (eslint is still sorting these out it seems...)
     "react/function-component-definition": "off",
+    // React - can't be bothered
+    "react/iframe-missing-sandbox": "off",
   },
 };

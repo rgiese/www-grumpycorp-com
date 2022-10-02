@@ -6,6 +6,7 @@ import Icon from "../components/icon";
 import Layout from "../components/layout";
 import MDXPresenter from "../components/mdxPresenter";
 import Seo from "../components/seo";
+import notEmpty from "../utilities/notEmpty";
 
 // Page context to be provided from ../gatsby/createPages.ts
 export interface PostPageContext {
@@ -18,27 +19,27 @@ export interface PostPageContext {
 // Page-level GraphQL query
 export const postContentQuery = graphql`
   fragment PreviousOrNextPostFragment on Mdx {
-    fields {
-      slug
-    }
     frontmatter {
       title
     }
   }
 
-  query($slug: String!, $previousPostSlug: String, $nextPostSlug: String) {
+  fragment PostTemplateFragment on Mdx {
+    fields {
+      slug
+      sourceInstanceName
+    }
+    frontmatter {
+      title
+      date(formatString: "MMMM Do, YYYY")
+      keywords
+      tags
+    }
+  }
+
+  query ($slug: String!, $previousPostSlug: String, $nextPostSlug: String) {
     post: mdx(fields: { slug: { eq: $slug } }) {
-      body
-      fields {
-        slug
-        sourceInstanceName
-      }
-      frontmatter {
-        title
-        date(formatString: "MMMM Do, YYYY")
-        keywords
-        tags
-      }
+      ...PostTemplateFragment
     }
     previousPost: mdx(fields: { slug: { eq: $previousPostSlug } }) {
       ...PreviousOrNextPostFragment
@@ -50,65 +51,50 @@ export const postContentQuery = graphql`
 `;
 
 // TypeScript-typed fields corresponding to automatic (exported) GraphQL query
-interface PreviousOrNextPostData {
-  fields: {
-    slug: string;
-  };
-  frontmatter: {
-    title: string;
-  };
-}
-
 interface PostContentData {
-  post: {
-    body: string;
-    fields: {
-      slug: string;
-      sourceInstanceName: string;
-    };
-    frontmatter: {
-      title: string;
-      date: string;
-      keywords?: string[];
-      tags: string[];
-    };
-  };
-  previousPost?: PreviousOrNextPostData;
-  nextPost?: PreviousOrNextPostData;
+  post: Queries.PostTemplateFragmentFragment;
+  previousPost?: Queries.PreviousOrNextPostFragmentFragment;
+  nextPost?: Queries.PreviousOrNextPostFragmentFragment;
 }
 
 /* eslint-disable react/no-multi-comp */
 
 // Internal components
-const PreviousNextLinks: React.FunctionComponent<{
+const PreviousNextLinks = ({
+  data,
+  linkClass,
+  pageContext,
+}: {
   data: PostContentData;
   linkClass: string;
-}> = ({ data, linkClass }) => {
+  pageContext: PostPageContext;
+}): JSX.Element => {
   return (
     <table className="w-100 pv3">
       <tbody>
         <tr>
           <td className="w-50">
-            {data.previousPost && (
+            {pageContext.previousPostSlug &&
+            data.previousPost?.frontmatter?.title ? (
               <Link
                 className={`link ${linkClass}`}
-                to={data.previousPost.fields.slug}
+                to={pageContext.previousPostSlug}
               >
                 &laquo;{` `}
                 {data.previousPost.frontmatter.title}
               </Link>
-            )}
+            ) : null}
           </td>
           <td className="w-50 tr">
-            {data.nextPost && (
+            {pageContext.nextPostSlug && data.nextPost?.frontmatter?.title ? (
               <Link
                 className={`link ${linkClass}`}
-                to={data.nextPost.fields.slug}
+                to={pageContext.nextPostSlug}
               >
                 {data.nextPost.frontmatter.title}
                 {` `}&raquo;
               </Link>
-            )}
+            ) : null}
           </td>
         </tr>
       </tbody>
@@ -117,55 +103,70 @@ const PreviousNextLinks: React.FunctionComponent<{
 };
 
 // Component definition
-const PostPage: React.FunctionComponent<{
+const PostPage = ({
+  children,
+  data,
+  pageContext,
+}: {
+  children: React.ReactNode;
   data: PostContentData;
-  pageContext: PostPageContext; // used in GraphQL query
-}> = ({ data }) => {
+  pageContext: PostPageContext;
+}): React.ReactNode => {
   const post = data.post;
 
-  return (
+  return post ? (
     <Layout>
       <Seo
-        keywords={post.frontmatter.keywords}
-        title={post.frontmatter.title}
+        keywords={post.frontmatter?.keywords}
+        title={post.frontmatter?.title}
       />
 
       {/* Post title */}
       <h1 className="mb1">
-        <Link className="link accent" to={post.fields.slug}>
-          {post.frontmatter.title}
+        <Link className="link accent" to={post.fields?.slug ?? ""}>
+          {post.frontmatter?.title}
         </Link>
       </h1>
 
       {/* Post date and tags */}
       <div className="f5 black-60">
-        {post.frontmatter.date}
+        {post.frontmatter?.date}
         <span className="ph2 black-40">in</span>
-        {post.frontmatter.tags.map((tag) => (
-          <Link
-            className="link accent-mono"
-            key={tag}
-            to={`/tags/${post.fields.sourceInstanceName}/${tag}`}
-          >
-            <Icon className="w1 h1 v-mid" sprite={TagIcon} />
-            {` `}
-            {tag}
-          </Link>
-        ))}
+        {post.frontmatter?.tags
+          ? post.frontmatter.tags.filter(notEmpty).map((tag) => (
+              <Link
+                className="link accent-mono"
+                key={tag}
+                to={`/tags/${post.fields?.sourceInstanceName ?? ""}/${tag}`}
+              >
+                <Icon className="w1 h1 v-mid" sprite={TagIcon} />
+                {` `}
+                {tag}
+              </Link>
+            ))
+          : null}
       </div>
 
       {/* Previous/next navigation (top) */}
-      <PreviousNextLinks data={data} linkClass="black-40" />
+      <PreviousNextLinks
+        data={data}
+        linkClass="black-40"
+        pageContext={pageContext}
+      />
 
       {/* Post body */}
       <div className="lh-copy content">
-        <MDXPresenter data={post.body} />
+        <MDXPresenter data={children} />
       </div>
 
       {/* Previous/next navigation (bottom) */}
-      <PreviousNextLinks data={data} linkClass="accent" />
+      <PreviousNextLinks
+        data={data}
+        linkClass="accent"
+        pageContext={pageContext}
+      />
     </Layout>
-  );
+  ) : null;
 };
 
 export default PostPage;

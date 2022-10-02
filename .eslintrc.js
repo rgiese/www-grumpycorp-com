@@ -79,6 +79,13 @@ module.exports = {
     // React - TypeScript compatibility
     "react/jsx-filename-extension": "off", // Since we have .tsx files, obviously
     "react/sort-comp": "off", // Use @typescript-eslint/member-ordering instead
+    // React - policies
+    "react/require-default-props": [
+      "error",
+      {
+        functions: "defaultArguments",
+      },
+    ],
     // React - other
     "react/destructuring-assignment": "off", // Doesn't actually improve readability
     "react/display-name": "off", // Generally not a problem, just for assorted short-hands where it doesn't matter
@@ -89,5 +96,7 @@ module.exports = {
     "react/prop-types": "off", // Not investing in PropTypes at this time
     // React - temporary (eslint is still sorting these out it seems...)
     "react/function-component-definition": "off",
+    // React - can't be bothered
+    "react/iframe-missing-sandbox": "off",
   },
 };

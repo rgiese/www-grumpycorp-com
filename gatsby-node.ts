@@ -1,14 +1,18 @@
 import { createFilePath } from "gatsby-source-filesystem";
 import { resolve } from "path";
+import type { GatsbyNode } from "gatsby";
 
-import type { PagePageContext } from "../templates/page";
-import type { PortfolioPageContext } from "../templates/portfolio";
-import type { PostPageContext } from "../templates/post";
-import type { TagIndexPageContext } from "../templates/tagIndex";
-import type { GatsbyCreatePages, GatsbyOnCreateNode } from "./gatsby-node";
+// eslint-disable-next-line @typescript-eslint/no-require-imports,@typescript-eslint/no-var-requires
+const SpriteLoaderPlugin = require("svg-sprite-loader/plugin"); // Won't convert to import presumably due to svg-sprite-loader craziness.
 
-// onCreateNode
-export const onCreateNode: GatsbyOnCreateNode = ({
+import type { PagePageContext } from "./src/templates/page";
+import type { PortfolioPageContext } from "./src/templates/portfolio";
+import type { PostPageContext } from "./src/templates/post";
+import type { TagIndexPageContext } from "./src/templates/tagIndex";
+
+// onCreateNode:
+// - inject sourceInstanceName and slug fields into MDX nodes
+export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   node,
   actions,
   getNode,
@@ -49,7 +53,11 @@ interface Post {
     sourceInstanceName: string;
   };
   frontmatter: {
+    date: string;
     tags: string[];
+  };
+  internal: {
+    contentFilePath: string;
   };
 }
 
@@ -69,9 +77,8 @@ async function getPostsForSourceName(
   sourceName: string
 ): Promise<Post[]> {
   const postNodes: PostNodes = await graphql(`
-    {
+    query PostsForSourceName {
       posts: allMdx(
-        sort: { fields: [frontmatter___date], order: ASC }
         filter: { fields: { sourceInstanceName: { eq: "${sourceName}" } } }
       ) {
         edges {
@@ -81,7 +88,11 @@ async function getPostsForSourceName(
               sourceInstanceName
             }
             frontmatter {
+              date
               tags
+            }
+            internal {
+              contentFilePath
             }
           }
         }
@@ -89,12 +100,22 @@ async function getPostsForSourceName(
     }
   `);
 
-  const posts = postNodes.data.posts.edges.map(({ node }) => node);
+  // Sort posts in ascending (oldest first) order
+  const posts = postNodes.data.posts.edges
+    .map(({ node }) => node)
+    .sort(
+      (lhs, rhs) =>
+        Date.parse(lhs?.frontmatter?.date ?? "") -
+        Date.parse(rhs?.frontmatter?.date ?? "")
+    );
 
   return posts;
 }
 
-export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
+export const createPages: GatsbyNode["createPages"] = async ({
+  graphql,
+  actions,
+}) => {
   const { createPage } = actions;
 
   const tagsWithSourceInstanceName = new Set<string>();
@@ -106,6 +127,7 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
 
   // Build pages for posts (sort ascending for get[Next,Previous]Posts)
   const posts = await getPostsForSourceName(graphql, "posts");
+  const postTemplate = resolve(`./src/templates/post.tsx`);
 
   posts.forEach((post, index) => {
     const slug = post.fields.slug;
@@ -120,9 +142,11 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
       nextPostSlug: !isLastPost ? posts[index + 1].fields.slug : undefined,
     };
 
+    const component = `${postTemplate}?__contentFilePath=${post.internal.contentFilePath}`;
+
     createPage({
       path: slug,
-      component: resolve(`./src/templates/post.tsx`),
+      component,
       context: postPageContext,
     });
 
@@ -130,7 +154,7 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
       // Generate site index page from most recent post
       createPage({
         path: `/`,
-        component: resolve(`./src/templates/post.tsx`),
+        component,
         context: postPageContext,
       });
     }
@@ -148,6 +172,7 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
 
   // Build pages for standalone pages
   const pages = await getPostsForSourceName(graphql, "pages");
+  const pageTemplate = resolve(`./src/templates/page.tsx`);
 
   pages.forEach((page) => {
     const slug = page.fields.slug;
@@ -158,15 +183,18 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
       sourceInstanceName,
     };
 
+    const component = `${pageTemplate}?__contentFilePath=${page.internal.contentFilePath}`;
+
     createPage({
       path: slug,
-      component: resolve(`./src/templates/page.tsx`),
+      component,
       context: pagePageContext,
     });
   });
 
   // Build pages for portfolio pages
   const portfolio = await getPostsForSourceName(graphql, "portfolio");
+  const portfolioTemplate = resolve(`./src/templates/portfolio.tsx`);
 
   portfolio.forEach((page) => {
     const slug = page.fields.slug;
@@ -177,9 +205,11 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
       sourceInstanceName,
     };
 
+    const component = `${portfolioTemplate}?__contentFilePath=${page.internal.contentFilePath}`;
+
     createPage({
       path: slug,
-      component: resolve(`./src/templates/portfolio.tsx`),
+      component,
       context: portfolioPageContext,
     });
   });
@@ -189,9 +219,8 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
   //
 
   for (const sourceInstanceNameAndTag of tagsWithSourceInstanceName) {
-    const [sourceInstanceName, tag] = sourceInstanceNameAndTag.split(
-      tagSeparator
-    );
+    const wtf = sourceInstanceNameAndTag as string;
+    const [sourceInstanceName, tag] = wtf.split(tagSeparator);
 
     const tagPageContext: TagIndexPageContext = { sourceInstanceName, tag };
 
@@ -201,4 +230,70 @@ export const createPages: GatsbyCreatePages = async ({ graphql, actions }) => {
       context: tagPageContext,
     });
   }
+};
+
+export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({
+  stage,
+  getConfig,
+  actions,
+}) => {
+  const { replaceWebpackConfig } = actions;
+  const config = getConfig();
+
+  //
+  // Gatsby injects a url-loader rule for SVGs (see https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/utils/webpack-utils.js)
+  // that we need to remove in order to allow the svg-sprite-loader plugin to process SVGs instead.
+  //
+  // Gatsby creates the rule with a test of /\.(ico|svg|jpg|jpeg|png|gif|webp)(\?.*)?$/.
+  //
+  // This code is based on https://github.com/marcobiedermann/gatsby-plugin-svg-sprite/blob/master/gatsby-node.js
+  // which checks for the precise text of the test expression and if found, replaces it with its own definition which simply has the svg extension removed.
+  //
+  // However, checking on the full text of the test and replacing it with a corrected full text feels sketchy; as such,
+  // we'll just check on the |svg| sub-portion of the test regular expression and remove only that sub-portion.
+  //
+  config.module.rules = [
+    ...config.module.rules.map((item: any) => {
+      const { test } = item;
+
+      const svgCheck = /\|svg/;
+
+      if (test?.toString().includes("|svg")) {
+        const revisedTestString = (test.toString() as string).replace(
+          svgCheck,
+          ""
+        );
+
+        return {
+          ...item,
+          test: new RegExp(revisedTestString),
+        };
+      }
+
+      return { ...item };
+    }),
+  ];
+
+  // Add rule for svg-sprite-loader
+  config.module.rules = [
+    ...config.module.rules,
+    {
+      test: /\.svg$/,
+      use: [
+        {
+          loader: "svg-sprite-loader",
+          options: {
+            extract: true,
+            publicPath: `/assets/`,
+            spriteFilename: `icons.svg`,
+          },
+        },
+      ],
+    },
+  ];
+
+  // Instantiate SpriteLoaderPlugin
+  config.plugins = [...config.plugins, new SpriteLoaderPlugin()];
+
+  replaceWebpackConfig(config);
 };

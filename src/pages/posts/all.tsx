@@ -2,17 +2,13 @@ import { graphql } from "gatsby";
 import React from "react";
 
 import Layout from "../../components/layout";
-import type { PostIndexPosts } from "../../components/postIndex";
 import { PostIndex } from "../../components/postIndex";
 import Seo from "../../components/seo";
 
 // Automatic (exported) GraphQL query
 export const postIndexAndTagsQuery = graphql`
   query {
-    posts: allMdx(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { sourceInstanceName: { eq: "posts" } } }
-    ) {
+    posts: allMdx(filter: { fields: { sourceInstanceName: { eq: "posts" } } }) {
       ...PostIndexPosts
     }
   }
@@ -20,16 +16,21 @@ export const postIndexAndTagsQuery = graphql`
 
 // TypeScript-typed fields corresponding to automatic (exported) GraphQL query
 interface PostIndexData {
-  posts: PostIndexPosts;
+  posts: Queries.PostIndexPostsFragment;
 }
 
-const IndexPage: React.FunctionComponent<{
-  data: PostIndexData;
-}> = ({ data }) => {
+const IndexPage = ({ data }: { data: PostIndexData }): React.ReactNode => {
+  // Sort posts in descending (most recent first) order
+  const posts = [...data.posts.nodes].sort(
+    (lhs, rhs) =>
+      Date.parse(rhs?.frontmatter?.date ?? "") -
+      Date.parse(lhs?.frontmatter?.date ?? "")
+  );
+
   return (
     <Layout>
       <Seo title="All posts" />
-      <PostIndex posts={data.posts} />
+      <PostIndex posts={posts} />
     </Layout>
   );
 };

@@ -6,7 +6,7 @@ import Icon from "../components/icon";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 
-function NotFoundPage(): React.ReactElement {
+function NotFoundPage(): React.ReactNode {
   return (
     <Layout>
       <Seo title="404: Not found" />

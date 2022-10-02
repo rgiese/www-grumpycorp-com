@@ -1,21 +1,19 @@
 {
-  "include": ["./src/**/*"],
+  "include": ["./src/**/*", "./gatsby-node.ts", "./gatsby-config.ts"],
   "compilerOptions": {
-    "strict": true,
-    "target": "es6",
-    "lib": ["es6", "dom"],
-
-    "module": "commonjs",
-    "allowSyntheticDefaultImports": true, // allows for `import React from "react"` vs. `import * as React from "react"`
-
+    "target": "esnext",
+    "lib": ["dom", "esnext"],
     "jsx": "react",
 
-    "forceConsistentCasingInFileNames": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitAny": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
 
-    "noEmit": true,
+    "strict": true,
+
+    "forceConsistentCasingInFileNames": true,
+
+    "skipLibCheck": true,
 
     "typeRoots": ["./node_modules/@types", "./src/@types"]
   }

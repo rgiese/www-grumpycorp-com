@@ -14,24 +14,20 @@ const detailsQuery = graphql`
   }
 `;
 
-interface DetailsData {
-  site: {
-    siteMetadata: {
-      title: string;
-      description: string;
-      author: string;
-    };
-  };
-}
-
-const Seo: React.FunctionComponent<{
+const Seo = ({
+  description = undefined,
+  lang = "en",
+  keywords = [],
+  title = null,
+}: {
   description?: string;
   lang?: string;
-  keywords?: string[];
-  title: string;
-}> = ({ description, lang = "en", keywords = [], title }) => {
-  const data: DetailsData = useStaticQuery(detailsQuery);
-  const metaDescription = description ?? data.site.siteMetadata.description;
+  keywords?: readonly (string | null)[] | null;
+  title?: string | null;
+}): JSX.Element => {
+  const data: Queries.DefaultSEOQueryQuery = useStaticQuery(detailsQuery);
+  const metaDescription =
+    description ?? data?.site?.siteMetadata?.description ?? "";
 
   return (
     <Helmet
@@ -44,7 +40,7 @@ const Seo: React.FunctionComponent<{
           name: `description`,
         },
         {
-          content: title,
+          content: title ?? "",
           property: `og:title`,
         },
         {
@@ -56,15 +52,15 @@ const Seo: React.FunctionComponent<{
           property: `og:type`,
         },
       ].concat(
-        keywords?.length > 0
+        keywords && keywords?.length > 0
           ? {
               content: keywords.join(`, `),
               name: `keywords`,
             }
           : []
       )}
-      title={title}
-      titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+      title={title ?? ""}
+      titleTemplate={`%s | ${data?.site?.siteMetadata?.title ?? ""}`}
     />
   );
 };

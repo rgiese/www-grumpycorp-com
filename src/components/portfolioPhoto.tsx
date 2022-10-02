@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
 
 // GraphQL query to retrieve all Portfolio photos
@@ -13,11 +13,10 @@ const allPhotosQuery = graphql`
     ) {
       edges {
         node {
+          publicURL
           relativePath
           childImageSharp {
-            fluid(maxWidth: 1500) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }
@@ -25,35 +24,35 @@ const allPhotosQuery = graphql`
   }
 `;
 
-// TypeScript-typed fields corresponding to GraphQL query
-interface AllPhotos {
-  allPhotos: {
-    edges: {
-      node: {
-        relativePath: string;
-        childImageSharp: any;
-      };
-    }[];
-  };
-}
-
-const PortfolioPhoto: React.FunctionComponent<{
+const PortfolioPhoto = ({
+  src,
+  alt = undefined,
+  className = undefined,
+}: {
   src: string;
   alt?: string;
   className?: string;
-}> = ({ src, alt, className }) => {
-  const allPhotos: AllPhotos = useStaticQuery(allPhotosQuery);
+}): JSX.Element => {
+  const allPhotos: Queries.PortfolioPhotosQuery =
+    useStaticQuery(allPhotosQuery);
 
   const thisPhotoNodes = allPhotos.allPhotos.edges.filter(
     ({ node }) => node.relativePath === src
   );
 
-  const innerHtml =
-    thisPhotoNodes.length > 0 ? (
-      <Img alt={alt} fluid={thisPhotoNodes[0].node.childImageSharp.fluid} />
-    ) : (
-      <>Photo {src} not found.</>
-    );
+  const thisPhotoNode = thisPhotoNodes.length
+    ? thisPhotoNodes[0]?.node
+    : undefined;
+
+  const imageData = thisPhotoNode?.childImageSharp?.gatsbyImageData;
+
+  const innerHtml = imageData ? (
+    <a href={thisPhotoNode?.publicURL ?? ""}>
+      <GatsbyImage alt={alt ?? ""} image={imageData} />
+    </a>
+  ) : (
+    <>Photo {src} not found.</>
+  );
 
   // The positioning magic we're doing with CSS doesn't work if we just forward it to the Img's className
   // so we have to further the <div> forest spectacle, regrettably.

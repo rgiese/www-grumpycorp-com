@@ -1,4 +1,8 @@
-siteMetadata = {
+import type { GatsbyConfig } from "gatsby";
+
+const sourceRoot = `${__dirname}/src`;
+
+const siteMetadata = {
   title: `GrumpyCorp`,
   description: `Creative Industries`,
   author: `Robin Giese`,
@@ -6,12 +10,10 @@ siteMetadata = {
   siteUrl: `https://www.grumpycorp.com`,
 };
 
-module.exports = {
-  siteMetadata: siteMetadata,
+const config: GatsbyConfig = {
+  siteMetadata,
+  graphqlTypegen: true,
   plugins: [
-    // TypeScript
-    `gatsby-plugin-typescript`,
-
     // HTML headers management
     `gatsby-plugin-react-helmet`,
 
@@ -23,21 +25,21 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
-        path: `${__dirname}/src/content/posts`,
+        path: `${sourceRoot}/content/posts`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
-        path: `${__dirname}/src/content/pages`,
+        path: `${sourceRoot}/content/pages`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `portfolio`,
-        path: `${__dirname}/src/content/portfolio`,
+        path: `${sourceRoot}/content/portfolio`,
       },
     },
     {
@@ -45,6 +47,9 @@ module.exports = {
       options: {
         // See https://github.com/ChristopherBiscardi/gatsby-mdx/blob/master/examples/custom-remark-plugins/gatsby-config.js for further examples
         extensions: [`.md`, `.mdx`],
+        mdxOptions: {
+          remarkPlugins: [require("remark-gfm")],
+        },
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -80,7 +85,7 @@ module.exports = {
         start_url: `/`, // eslint-disable-line @typescript-eslint/camelcase
         background_color: `#000000`, // eslint-disable-line @typescript-eslint/camelcase
         theme_color: `#f26739`, // eslint-disable-line @typescript-eslint/camelcase
-        icon: `${__dirname}/src/assets/icons/grumpy-robin.svg`,
+        icon: `${sourceRoot}/assets/icons/grumpy-robin.svg`,
         include_favicon: true, // eslint-disable-line @typescript-eslint/camelcase
       },
     },
@@ -94,8 +99,12 @@ module.exports = {
       options: {
         feeds: [
           {
-            serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.edges.map((edge) => {
+            serialize: ({
+              query: { site, allMdx },
+            }: {
+              query: { site: any; allMdx: any };
+            }) => {
+              return allMdx.edges.map((edge: any) => {
                 return {
                   categories: edge.node.frontmatter.tags,
                   date: edge.node.frontmatter.date,
@@ -104,7 +113,7 @@ module.exports = {
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   custom_elements: [
-                    { "content:encoded": edge.node.html },
+                    { "content:encoded": edge.node.excerpt },
                     {
                       author: `${site.siteMetadata.authorEmail} (${site.siteMetadata.author})`,
                     },
@@ -113,40 +122,41 @@ module.exports = {
               });
             },
             query: `
-              {
-                site {
-                  siteMetadata {
-                    author
-                    authorEmail
-                    siteUrl
-                  }
-                }
-                allMdx(
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                  filter: { fields: { sourceInstanceName: { eq: "posts" } } }
-                ) {
-                  edges {
-                    node {
-                      excerpt
-                      html
-                      fields {
-                        slug
+                  {
+                    site {
+                      siteMetadata {
+                        author
+                        authorEmail
+                        siteUrl
                       }
-                      frontmatter {
-                        date
-                        tags
-                        title
+                    }
+                    allMdx(
+                      sort: { order: DESC, fields: [frontmatter___date] },
+                      filter: { fields: { sourceInstanceName: { eq: "posts" } } }
+                    ) {
+                      edges {
+                        node {
+                          excerpt
+                          fields {
+                            slug
+                          }
+                          frontmatter {
+                            date
+                            tags
+                            title
+                          }
+                        }
                       }
                     }
                   }
-                }
-              }
-            `,
+                `,
             output: "/rss.xml",
-            title: "GrumpyCorp Creative Industries RSS Feed",
+            title: "GrumpyCorp Studios RSS Feed",
           },
         ],
       },
     },
   ],
 };
+
+export default config;

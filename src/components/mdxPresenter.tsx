@@ -1,5 +1,4 @@
 import { MDXProvider } from "@mdx-js/react";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import React from "react";
 
 import IconTag from "../assets/icons/tag.svg";
@@ -10,16 +9,12 @@ import YouTube from "../components/youtube";
 
 /* eslint-disable react/no-multi-comp */
 
-const TagIcon: React.FunctionComponent<{ className: string }> = ({
-  className,
-}) => {
+const TagIcon = ({ className }: { className: string }): JSX.Element => {
   return <Icon className={className} sprite={IconTag} />;
 };
 
 // Component definition
-const MDXPresenter: React.FunctionComponent<{
-  data: string;
-}> = ({ data }) => {
+const MDXPresenter = ({ data }: { data: React.ReactNode }): JSX.Element => {
   // Replace paragraphs with divs so we can nest things like figcaption in them.
   const paragraphAsDiv = (
     props: React.HTMLAttributes<HTMLDivElement>
@@ -38,7 +33,7 @@ const MDXPresenter: React.FunctionComponent<{
         p: paragraphAsDiv,
       }}
     >
-      <MDXRenderer>{data}</MDXRenderer>
+      {data}
     </MDXProvider>
   );
 };

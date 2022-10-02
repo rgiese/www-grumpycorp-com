@@ -45,34 +45,15 @@ const rightBarStaticQuery = graphql`
   }
 `;
 
-// TypeScript-typed fields corresponding to automatic (exported) GraphQL query
-interface PostList {
-  edges: {
-    node: {
-      fields: {
-        slug: string;
-      };
-      frontmatter: {
-        title: string;
-      };
-    };
-  }[];
-}
-
-interface HeaderData {
-  pages: PostList;
-  portfolio: PostList;
-  tagList: {
-    distinctTags: string[];
-  };
-}
-
 /* eslint-disable react/no-multi-comp */
 
 // Interior components
-const SocialLink: React.FunctionComponent<{ uri: string; sprite: Sprite }> = ({
+const SocialLink = ({
   uri,
   sprite,
+}: {
+  uri: string;
+  sprite: Sprite;
 }): JSX.Element => (
   <span className="pr1 pr2-ns">
     <a
@@ -90,8 +71,9 @@ const SocialLink: React.FunctionComponent<{ uri: string; sprite: Sprite }> = ({
 );
 
 // Component definition
-const RightBar: React.FunctionComponent = () => {
-  const data: HeaderData = useStaticQuery(rightBarStaticQuery);
+const RightBar = (): JSX.Element => {
+  const data: Queries.rightBarStaticQueryQuery =
+    useStaticQuery(rightBarStaticQuery);
 
   const footerSectionClassName = "f6 pt1";
 
@@ -102,9 +84,9 @@ const RightBar: React.FunctionComponent = () => {
       {/*** Pinned ***/}
       <h4>Pinned</h4>
       {data.pages.edges.map(({ node }) => (
-        <div key={node.fields.slug}>
-          <Link className={linkDefaultClassName} to={node.fields.slug}>
-            {node.frontmatter.title}
+        <div key={node.fields?.slug}>
+          <Link className={linkDefaultClassName} to={node.fields?.slug ?? ""}>
+            {node?.frontmatter?.title}
           </Link>
         </div>
       ))}
@@ -112,9 +94,9 @@ const RightBar: React.FunctionComponent = () => {
       {/*** Portfolio ***/}
       <h4>Portfolio</h4>
       {data.portfolio.edges.map(({ node }) => (
-        <div key={node.fields.slug}>
-          <Link className={linkDefaultClassName} to={node.fields.slug}>
-            {node.frontmatter.title}
+        <div key={node.fields?.slug}>
+          <Link className={linkDefaultClassName} to={node.fields?.slug ?? ""}>
+            {node?.frontmatter?.title}
           </Link>
         </div>
       ))}

@@ -13,47 +13,50 @@ export interface PagePageContext {
 
 // Page-level GraphQL query
 export const pageContentQuery = graphql`
-  query($slug: String!) {
+  fragment PageTemplateFragment on Mdx {
+    frontmatter {
+      title
+    }
+  }
+
+  query ($slug: String!) {
     page: mdx(fields: { slug: { eq: $slug } }) {
-      body
-      frontmatter {
-        title
-      }
+      ...PageTemplateFragment
     }
   }
 `;
 
 // TypeScript-typed fields corresponding to automatic (exported) GraphQL query
 interface PageContentData {
-  page: {
-    body: string;
-    frontmatter: {
-      title: string;
-    };
-  };
+  page: Queries.PageTemplateFragmentFragment;
 }
 
 // Component definition
-const PagePage: React.FunctionComponent<{
+const PagePage = ({
+  children,
+  data,
+  pageContext,
+}: {
+  children: React.ReactNode;
   data: PageContentData;
   pageContext: PagePageContext;
-}> = ({ data, pageContext }) => {
+}): React.ReactNode => {
   const page = data.page;
 
   return (
     <Layout>
-      <Seo title={page.frontmatter.title} />
+      <Seo title={page?.frontmatter?.title} />
 
       {/* Page title */}
       <h1>
         <Link className="link accent" to={pageContext.slug}>
-          {page.frontmatter.title}
+          {page?.frontmatter?.title}
         </Link>
       </h1>
 
       {/* Page body */}
       <div className="lh-copy content">
-        <MDXPresenter data={page.body} />
+        <MDXPresenter data={children} />
       </div>
     </Layout>
   );

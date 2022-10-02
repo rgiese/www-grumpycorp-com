@@ -13,6 +13,7 @@ const allPhotosQuery = graphql`
     ) {
       edges {
         node {
+          publicURL
           relativePath
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
@@ -35,12 +36,16 @@ const PortfolioPhoto: React.FunctionComponent<{
     ({ node }) => node.relativePath === src
   );
 
-  const imageData = thisPhotoNodes.length
-    ? thisPhotoNodes[0]?.node?.childImageSharp?.gatsbyImageData
+  const thisPhotoNode = thisPhotoNodes.length
+    ? thisPhotoNodes[0]?.node
     : undefined;
 
+  const imageData = thisPhotoNode?.childImageSharp?.gatsbyImageData;
+
   const innerHtml = imageData ? (
-    <GatsbyImage image={imageData} alt={alt || ""} />
+    <a href={thisPhotoNode?.publicURL || ""}>
+      <GatsbyImage image={imageData} alt={alt || ""} />
+    </a>
   ) : (
     <>Photo {src} not found.</>
   );

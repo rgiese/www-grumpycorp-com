@@ -47,8 +47,8 @@ const PortfolioPhoto = ({
   const imageData = thisPhotoNode?.childImageSharp?.gatsbyImageData;
 
   const innerHtml = imageData ? (
-    <a href={thisPhotoNode?.publicURL || ""}>
-      <GatsbyImage alt={alt || ""} image={imageData} />
+    <a href={thisPhotoNode?.publicURL ?? ""}>
+      <GatsbyImage alt={alt ?? ""} image={imageData} />
     </a>
   ) : (
     <>Photo {src} not found.</>

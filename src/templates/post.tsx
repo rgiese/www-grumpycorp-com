@@ -6,6 +6,7 @@ import Icon from "../components/icon";
 import Layout from "../components/layout";
 import MDXPresenter from "../components/mdxPresenter";
 import Seo from "../components/seo";
+import notEmpty from "../utilities/notEmpty";
 
 // Page context to be provided from ../gatsby/createPages.ts
 export interface PostPageContext {
@@ -77,7 +78,7 @@ const PreviousNextLinks = ({
             {data.previousPost ? (
               <Link
                 className={`link ${linkClass}`}
-                to={data.previousPost?.fields?.slug || ""}
+                to={data.previousPost?.fields?.slug ?? ""}
               >
                 &laquo;{` `}
                 {data.previousPost?.frontmatter?.title}
@@ -88,7 +89,7 @@ const PreviousNextLinks = ({
             {data.nextPost ? (
               <Link
                 className={`link ${linkClass}`}
-                to={data.nextPost?.fields?.slug || ""}
+                to={data.nextPost?.fields?.slug ?? ""}
               >
                 {data.nextPost?.frontmatter?.title}
                 {` `}&raquo;
@@ -113,30 +114,30 @@ const PostPage = ({
 }): React.ReactNode => {
   const post = data.post;
 
-  return (
+  return post ? (
     <Layout>
       <Seo
-        keywords={post?.frontmatter?.keywords}
-        title={post?.frontmatter?.title}
+        keywords={post.frontmatter?.keywords}
+        title={post.frontmatter?.title}
       />
 
       {/* Post title */}
       <h1 className="mb1">
-        <Link className="link accent" to={post?.fields?.slug || ""}>
-          {post?.frontmatter?.title}
+        <Link className="link accent" to={post.fields?.slug ?? ""}>
+          {post.frontmatter?.title}
         </Link>
       </h1>
 
       {/* Post date and tags */}
       <div className="f5 black-60">
-        {post?.frontmatter?.date}
+        {post.frontmatter?.date}
         <span className="ph2 black-40">in</span>
-        {post?.frontmatter?.tags
-          ? post.frontmatter.tags.map((tag) => (
+        {post.frontmatter?.tags
+          ? post.frontmatter.tags.filter(notEmpty).map((tag) => (
               <Link
                 className="link accent-mono"
                 key={tag}
-                to={`/tags/${post?.fields?.sourceInstanceName}/${tag}`}
+                to={`/tags/${post.fields?.sourceInstanceName ?? ""}/${tag}`}
               >
                 <Icon className="w1 h1 v-mid" sprite={TagIcon} />
                 {` `}
@@ -157,7 +158,7 @@ const PostPage = ({
       {/* Previous/next navigation (bottom) */}
       <PreviousNextLinks data={data} linkClass="accent" />
     </Layout>
-  );
+  ) : null;
 };
 
 export default PostPage;

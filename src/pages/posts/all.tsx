@@ -23,8 +23,8 @@ const IndexPage = ({ data }: { data: PostIndexData }): React.ReactNode => {
   // Sort posts in descending (most recent first) order
   const posts = [...data.posts.nodes].sort(
     (lhs, rhs) =>
-      Date.parse(rhs?.frontmatter?.date || "") -
-      Date.parse(lhs?.frontmatter?.date || "")
+      Date.parse(rhs?.frontmatter?.date ?? "") -
+      Date.parse(lhs?.frontmatter?.date ?? "")
   );
 
   return (

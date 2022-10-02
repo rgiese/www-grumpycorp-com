@@ -43,8 +43,8 @@ const TagIndexPage = ({
   // Sort posts in assending (oldest first) order
   const posts = [...data.posts.nodes].sort(
     (lhs, rhs) =>
-      Date.parse(lhs?.frontmatter?.date || "") -
-      Date.parse(rhs?.frontmatter?.date || "")
+      Date.parse(lhs?.frontmatter?.date ?? "") -
+      Date.parse(rhs?.frontmatter?.date ?? "")
   );
 
   return (

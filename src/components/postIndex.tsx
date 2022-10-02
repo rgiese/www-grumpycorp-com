@@ -1,6 +1,8 @@
 import { graphql, Link } from "gatsby";
 import React from "react";
 
+import notEmpty from "../utilities/notEmpty";
+
 // GraphQL fragment to be used by caller
 export const postsQueryFragment = graphql`
   fragment PostIndexPosts on MdxConnection {
@@ -32,12 +34,14 @@ export const PostIndex = ({ posts }: PostIndexProps): JSX.Element => {
         {posts.map((node) => (
           <tr key={node.id}>
             <td>
-              {node?.frontmatter?.tags
-                ? node.frontmatter.tags.map((tag) => (
+              {node.frontmatter?.tags
+                ? node.frontmatter.tags.filter(notEmpty).map((tag) => (
                     <Link
                       className="link accent-mono"
                       key={tag}
-                      to={`/tags/${node.fields?.sourceInstanceName}/${tag}`}
+                      to={`/tags/${
+                        node.fields?.sourceInstanceName ?? ""
+                      }/${tag}`}
                     >
                       {tag}
                     </Link>
@@ -45,7 +49,7 @@ export const PostIndex = ({ posts }: PostIndexProps): JSX.Element => {
                 : null}
             </td>
             <td className="b ph3">
-              {new Date(node?.frontmatter?.date || "").toLocaleDateString(
+              {new Date(node?.frontmatter?.date ?? "").toLocaleDateString(
                 "en-us",
                 {
                   month: "long",
@@ -55,7 +59,7 @@ export const PostIndex = ({ posts }: PostIndexProps): JSX.Element => {
               )}
             </td>
             <td>
-              <Link className="link accent" to={node?.fields?.slug || ""}>
+              <Link className="link accent" to={node?.fields?.slug ?? ""}>
                 {node?.frontmatter?.title}
               </Link>
             </td>

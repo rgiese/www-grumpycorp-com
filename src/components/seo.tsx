@@ -27,7 +27,7 @@ const Seo = ({
 }): JSX.Element => {
   const data: Queries.DefaultSEOQueryQuery = useStaticQuery(detailsQuery);
   const metaDescription =
-    (description ?? data?.site?.siteMetadata?.description) || "";
+    description ?? data?.site?.siteMetadata?.description ?? "";
 
   return (
     <Helmet
@@ -40,7 +40,7 @@ const Seo = ({
           name: `description`,
         },
         {
-          content: title || "",
+          content: title ?? "",
           property: `og:title`,
         },
         {
@@ -59,8 +59,8 @@ const Seo = ({
             }
           : []
       )}
-      title={title || ""}
-      titleTemplate={`%s | ${data?.site?.siteMetadata?.title}`}
+      title={title ?? ""}
+      titleTemplate={`%s | ${data?.site?.siteMetadata?.title ?? ""}`}
     />
   );
 };

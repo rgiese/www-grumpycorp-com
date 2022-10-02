@@ -84,8 +84,8 @@ const RightBar = (): JSX.Element => {
       {/*** Pinned ***/}
       <h4>Pinned</h4>
       {data.pages.edges.map(({ node }) => (
-        <div key={node?.fields?.slug}>
-          <Link className={linkDefaultClassName} to={node?.fields?.slug || ""}>
+        <div key={node.fields?.slug}>
+          <Link className={linkDefaultClassName} to={node.fields?.slug ?? ""}>
             {node?.frontmatter?.title}
           </Link>
         </div>
@@ -94,8 +94,8 @@ const RightBar = (): JSX.Element => {
       {/*** Portfolio ***/}
       <h4>Portfolio</h4>
       {data.portfolio.edges.map(({ node }) => (
-        <div key={node?.fields?.slug}>
-          <Link className={linkDefaultClassName} to={node?.fields?.slug || ""}>
+        <div key={node.fields?.slug}>
+          <Link className={linkDefaultClassName} to={node.fields?.slug ?? ""}>
             {node?.frontmatter?.title}
           </Link>
         </div>

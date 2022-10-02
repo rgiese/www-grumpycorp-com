@@ -19,9 +19,6 @@ export interface PostPageContext {
 // Page-level GraphQL query
 export const postContentQuery = graphql`
   fragment PreviousOrNextPostFragment on Mdx {
-    fields {
-      slug
-    }
     frontmatter {
       title
     }
@@ -66,32 +63,35 @@ interface PostContentData {
 const PreviousNextLinks = ({
   data,
   linkClass,
+  pageContext,
 }: {
   data: PostContentData;
   linkClass: string;
+  pageContext: PostPageContext;
 }): JSX.Element => {
   return (
     <table className="w-100 pv3">
       <tbody>
         <tr>
           <td className="w-50">
-            {data.previousPost ? (
+            {pageContext.previousPostSlug &&
+            data.previousPost?.frontmatter?.title ? (
               <Link
                 className={`link ${linkClass}`}
-                to={data.previousPost?.fields?.slug ?? ""}
+                to={pageContext.previousPostSlug}
               >
                 &laquo;{` `}
-                {data.previousPost?.frontmatter?.title}
+                {data.previousPost.frontmatter.title}
               </Link>
             ) : null}
           </td>
           <td className="w-50 tr">
-            {data.nextPost ? (
+            {pageContext.nextPostSlug && data.nextPost?.frontmatter?.title ? (
               <Link
                 className={`link ${linkClass}`}
-                to={data.nextPost?.fields?.slug ?? ""}
+                to={pageContext.nextPostSlug}
               >
-                {data.nextPost?.frontmatter?.title}
+                {data.nextPost.frontmatter.title}
                 {` `}&raquo;
               </Link>
             ) : null}
@@ -106,11 +106,11 @@ const PreviousNextLinks = ({
 const PostPage = ({
   children,
   data,
+  pageContext,
 }: {
   children: React.ReactNode;
   data: PostContentData;
-  // eslint-disable-next-line react/no-unused-prop-types
-  pageContext: PostPageContext; // used in GraphQL query
+  pageContext: PostPageContext;
 }): React.ReactNode => {
   const post = data.post;
 
@@ -148,7 +148,11 @@ const PostPage = ({
       </div>
 
       {/* Previous/next navigation (top) */}
-      <PreviousNextLinks data={data} linkClass="black-40" />
+      <PreviousNextLinks
+        data={data}
+        linkClass="black-40"
+        pageContext={pageContext}
+      />
 
       {/* Post body */}
       <div className="lh-copy content">
@@ -156,7 +160,11 @@ const PostPage = ({
       </div>
 
       {/* Previous/next navigation (bottom) */}
-      <PreviousNextLinks data={data} linkClass="accent" />
+      <PreviousNextLinks
+        data={data}
+        linkClass="accent"
+        pageContext={pageContext}
+      />
     </Layout>
   ) : null;
 };

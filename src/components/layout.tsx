@@ -9,10 +9,13 @@ import RightBar from "../components/rightbar";
 import Icon from "./icon";
 import TwoColumnLayout from "./twoColumnLayout";
 
-const Layout: React.FunctionComponent<{
+const Layout = ({
+  children = undefined,
+  bodyMaxWidth = undefined,
+}: {
   bodyMaxWidth?: string;
   children?: React.ReactNode;
-}> = ({ children, bodyMaxWidth }) => (
+}): JSX.Element => (
   <div className="ph3 pt4-ns tl bg-white">
     <TwoColumnLayout
       bodyMaxWidth={bodyMaxWidth}

@@ -24,11 +24,15 @@ const allPhotosQuery = graphql`
   }
 `;
 
-const PortfolioPhoto: React.FunctionComponent<{
+const PortfolioPhoto = ({
+  src,
+  alt = undefined,
+  className = undefined,
+}: {
   src: string;
   alt?: string;
   className?: string;
-}> = ({ src, alt, className }) => {
+}): JSX.Element => {
   const allPhotos: Queries.PortfolioPhotosQuery =
     useStaticQuery(allPhotosQuery);
 

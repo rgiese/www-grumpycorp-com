@@ -19,9 +19,7 @@ interface PostIndexData {
   posts: Queries.PostIndexPostsFragment;
 }
 
-const IndexPage: React.FunctionComponent<{
-  data: PostIndexData;
-}> = ({ data }) => {
+const IndexPage = ({ data }: { data: PostIndexData }): React.ReactNode => {
   // Sort posts in descending (most recent first) order
   const posts = [...data.posts.nodes].sort(
     (lhs, rhs) =>

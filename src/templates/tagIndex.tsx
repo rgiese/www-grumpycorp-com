@@ -31,10 +31,13 @@ interface TagIndexData {
 }
 
 // Component definition
-const TagIndexPage: React.FunctionComponent<{
+const TagIndexPage = ({
+  pageContext,
+  data,
+}: {
   pageContext: TagIndexPageContext;
   data: TagIndexData;
-}> = ({ pageContext, data }) => {
+}): React.ReactNode => {
   const tag = pageContext.tag;
 
   // Sort posts in assending (oldest first) order

@@ -32,11 +32,15 @@ interface PageContentData {
 }
 
 // Component definition
-const PortfolioPage: React.FunctionComponent<{
+const PortfolioPage = ({
+  children,
+  data,
+}: {
   children: React.ReactNode;
   data: PageContentData;
+  // eslint-disable-next-line react/no-unused-prop-types
   pageContext: PortfolioPageContext; // used in GraphQL query
-}> = ({ children, data }) => {
+}): React.ReactNode => {
   const page = data.page;
 
   return (

@@ -62,10 +62,13 @@ interface PostContentData {
 /* eslint-disable react/no-multi-comp */
 
 // Internal components
-const PreviousNextLinks: React.FunctionComponent<{
+const PreviousNextLinks = ({
+  data,
+  linkClass,
+}: {
   data: PostContentData;
   linkClass: string;
-}> = ({ data, linkClass }) => {
+}): JSX.Element => {
   return (
     <table className="w-100 pv3">
       <tbody>
@@ -99,11 +102,15 @@ const PreviousNextLinks: React.FunctionComponent<{
 };
 
 // Component definition
-const PostPage: React.FunctionComponent<{
+const PostPage = ({
+  children,
+  data,
+}: {
   children: React.ReactNode;
   data: PostContentData;
+  // eslint-disable-next-line react/no-unused-prop-types
   pageContext: PostPageContext; // used in GraphQL query
-}> = ({ children, data }) => {
+}): React.ReactNode => {
   const post = data.post;
 
   return (

@@ -12,10 +12,13 @@ export interface Sprite {
   url: string;
 }
 
-const Icon: React.FunctionComponent<{
+const Icon = ({
+  sprite,
+  className = undefined,
+}: {
   sprite: Sprite;
   className?: string;
-}> = ({ sprite, className }) => (
+}): JSX.Element => (
   <svg className={className} viewBox={sprite.viewBox}>
     <use href={sprite.url} xlinkHref={sprite.url} />
   </svg>

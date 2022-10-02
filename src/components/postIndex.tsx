@@ -25,9 +25,7 @@ export interface PostIndexProps {
 }
 
 // Component definition
-export const PostIndex: React.FunctionComponent<PostIndexProps> = ({
-  posts,
-}) => {
+export const PostIndex = ({ posts }: PostIndexProps): JSX.Element => {
   return (
     <table>
       <tbody className="lh-copy v-top">

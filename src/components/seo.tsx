@@ -14,12 +14,17 @@ const detailsQuery = graphql`
   }
 `;
 
-const Seo: React.FunctionComponent<{
+const Seo = ({
+  description = undefined,
+  lang = "en",
+  keywords = [],
+  title = null,
+}: {
   description?: string;
   lang?: string;
   keywords?: readonly (string | null)[] | null;
   title?: string | null;
-}> = ({ description, lang = "en", keywords = [], title }) => {
+}): JSX.Element => {
   const data: Queries.DefaultSEOQueryQuery = useStaticQuery(detailsQuery);
   const metaDescription =
     (description ?? data?.site?.siteMetadata?.description) || "";

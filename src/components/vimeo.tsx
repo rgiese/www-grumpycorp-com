@@ -1,6 +1,6 @@
 import React from "react";
 
-const Vimeo: React.FunctionComponent<{ videoId: string }> = ({ videoId }) => (
+const Vimeo = ({ videoId }: { videoId: string }): JSX.Element => (
   <p>
     <div
       className="aspect-ratio overflow-hidden"

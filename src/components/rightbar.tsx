@@ -48,9 +48,12 @@ const rightBarStaticQuery = graphql`
 /* eslint-disable react/no-multi-comp */
 
 // Interior components
-const SocialLink: React.FunctionComponent<{ uri: string; sprite: Sprite }> = ({
+const SocialLink = ({
   uri,
   sprite,
+}: {
+  uri: string;
+  sprite: Sprite;
 }): JSX.Element => (
   <span className="pr1 pr2-ns">
     <a
@@ -68,7 +71,7 @@ const SocialLink: React.FunctionComponent<{ uri: string; sprite: Sprite }> = ({
 );
 
 // Component definition
-const RightBar: React.FunctionComponent = () => {
+const RightBar = (): JSX.Element => {
   const data: Queries.rightBarStaticQueryQuery =
     useStaticQuery(rightBarStaticQuery);
 

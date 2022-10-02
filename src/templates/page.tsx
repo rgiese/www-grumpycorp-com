@@ -32,11 +32,15 @@ interface PageContentData {
 }
 
 // Component definition
-const PagePage: React.FunctionComponent<{
+const PagePage = ({
+  children,
+  data,
+  pageContext,
+}: {
   children: React.ReactNode;
   data: PageContentData;
   pageContext: PagePageContext;
-}> = ({ children, data, pageContext }) => {
+}): React.ReactNode => {
   const page = data.page;
 
   return (

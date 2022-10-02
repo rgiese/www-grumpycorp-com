@@ -9,16 +9,12 @@ import YouTube from "../components/youtube";
 
 /* eslint-disable react/no-multi-comp */
 
-const TagIcon: React.FunctionComponent<{ className: string }> = ({
-  className,
-}) => {
+const TagIcon = ({ className }: { className: string }): JSX.Element => {
   return <Icon className={className} sprite={IconTag} />;
 };
 
 // Component definition
-const MDXPresenter: React.FunctionComponent<{
-  data: React.ReactNode;
-}> = ({ data }) => {
+const MDXPresenter = ({ data }: { data: React.ReactNode }): JSX.Element => {
   // Replace paragraphs with divs so we can nest things like figcaption in them.
   const paragraphAsDiv = (
     props: React.HTMLAttributes<HTMLDivElement>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const YouTube: React.FunctionComponent<{ videoId: string }> = ({ videoId }) => (
+const YouTube = ({ videoId }: { videoId: string }): JSX.Element => (
   <div
     className="aspect-ratio overflow-hidden"
     style={{ paddingBottom: "60%", paddingTop: "30px" }}

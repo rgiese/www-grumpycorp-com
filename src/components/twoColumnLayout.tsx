@@ -4,11 +4,15 @@ import "./layout.scss";
 import React from "react";
 
 // Interior components
-const TwoColumnLayout: React.FunctionComponent<{
+const TwoColumnLayout = ({
+  mainColumn,
+  rightColumn = undefined,
+  bodyMaxWidth = undefined,
+}: {
   mainColumn: React.ReactNode;
   rightColumn?: React.ReactNode;
   bodyMaxWidth?: string;
-}> = ({ mainColumn, rightColumn, bodyMaxWidth }): React.ReactElement => (
+}): JSX.Element => (
   <div className="cf">
     {/**
      * Top-level layout: three divs (left = empty, main, and right)

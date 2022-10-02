@@ -79,6 +79,13 @@ module.exports = {
     // React - TypeScript compatibility
     "react/jsx-filename-extension": "off", // Since we have .tsx files, obviously
     "react/sort-comp": "off", // Use @typescript-eslint/member-ordering instead
+    // React - policies
+    "react/require-default-props": [
+      "error",
+      {
+        functions: "defaultArguments",
+      },
+    ],
     // React - other
     "react/destructuring-assignment": "off", // Doesn't actually improve readability
     "react/display-name": "off", // Generally not a problem, just for assorted short-hands where it doesn't matter

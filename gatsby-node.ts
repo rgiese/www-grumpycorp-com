@@ -53,6 +53,7 @@ interface Post {
     sourceInstanceName: string;
   };
   frontmatter: {
+    date: string;
     tags: string[];
   };
   internal: {
@@ -76,9 +77,8 @@ async function getPostsForSourceName(
   sourceName: string
 ): Promise<Post[]> {
   const postNodes: PostNodes = await graphql(`
-    {
+    query PostsForSourceName {
       posts: allMdx(
-        sort: { fields: [frontmatter___date], order: ASC }
         filter: { fields: { sourceInstanceName: { eq: "${sourceName}" } } }
       ) {
         edges {
@@ -88,6 +88,7 @@ async function getPostsForSourceName(
               sourceInstanceName
             }
             frontmatter {
+              date
               tags
             }
             internal {
@@ -99,7 +100,14 @@ async function getPostsForSourceName(
     }
   `);
 
-  const posts = postNodes.data.posts.edges.map(({ node }) => node);
+  // Sort posts in ascending (oldest first) order
+  const posts = postNodes.data.posts.edges
+    .map(({ node }) => node)
+    .sort(
+      (lhs, rhs) =>
+        Date.parse(lhs?.frontmatter?.date ?? "") -
+        Date.parse(rhs?.frontmatter?.date ?? "")
+    );
 
   return posts;
 }

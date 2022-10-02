@@ -40,7 +40,7 @@ const TagIndexPage = ({
 }): React.ReactNode => {
   const tag = pageContext.tag;
 
-  // Sort posts in assending (oldest first) order
+  // Sort posts in ascending (oldest first) order
   const posts = [...data.posts.nodes].sort(
     (lhs, rhs) =>
       Date.parse(lhs?.frontmatter?.date ?? "") -

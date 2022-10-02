@@ -143,6 +143,15 @@ const RightBar = (): JSX.Element => {
       <div className={footerSectionClassName}>
         ©{new Date().getFullYear()}
         {` `}
+        Grumpy Company Studios LLC.
+      </div>
+
+      <div className={footerSectionClassName}>
+        Made with <Icon className="v-mid w1 h1" sprite={Heart} /> in Seattle.
+      </div>
+
+      <div className={footerSectionClassName}>
+        Licensed under{` `}
         <a
           className={linkDefaultClassName}
           href="http://creativecommons.org/licenses/by-sa/4.0/"
@@ -150,10 +159,7 @@ const RightBar = (): JSX.Element => {
         >
           CC-BY-SA-4.0
         </a>
-      </div>
-
-      <div className={footerSectionClassName}>
-        Made with <Icon className="v-mid w1 h1" sprite={Heart} /> in Seattle.
+        .
       </div>
 
       <div className={footerSectionClassName}>

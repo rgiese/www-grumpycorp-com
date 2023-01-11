@@ -38,7 +38,7 @@
     "gatsby-remark-prismjs": "^6.23.0",
     "gatsby-remark-smartypants": "^5.23.0",
     "gatsby-source-filesystem": "^4.23.0",
-    "gatsby-transformer-remark": "^5.23.0",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^4.23.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",

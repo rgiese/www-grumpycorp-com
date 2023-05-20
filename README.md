@@ -15,3 +15,5 @@ See [The Noun Project](https://thenounproject.com/).
 
 ## Links
 - Markdown parsing provided by [Markdig](https://github.com/xoofx/markdig/blob/master/readme.md)
+- [Cross-references](https://www.statiq.dev/guide/web/content-files/links-and-cross-references) are possible inside Markdown (etc.) files to other pages
+- [CleanBlog](https://github.com/statiqdev/CleanBlog) is the foundation for our theme

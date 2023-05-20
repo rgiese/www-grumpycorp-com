@@ -1,5 +1,9 @@
 node_modules/
 
+# .Net artifacts
+bin/
+obj/
+
 # Gatsby files
 .cache/
 public/

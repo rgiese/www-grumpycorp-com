@@ -13,3 +13,5 @@ Website for GrumpyCorp Creative Industries (via [Statiq](https://statiq.dev)).
 ## Icons
 See [The Noun Project](https://thenounproject.com/).
 
+## Links
+- Markdown parsing provided by [Markdig](https://github.com/xoofx/markdig/blob/master/readme.md)

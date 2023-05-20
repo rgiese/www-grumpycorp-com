@@ -1,2 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, Grumpycorp!");
+﻿return await Bootstrapper
+  .Factory
+  .CreateWeb(args)
+  // Output settings
+  .AddSetting(Keys.Host, new Uri("https://grumpycorp.com").Host)
+  .AddSetting(Keys.LinksUseHttps, true)
+  // Run
+  .RunAsync();

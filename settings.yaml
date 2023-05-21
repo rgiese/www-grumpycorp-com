@@ -1,0 +1,17 @@
+MinimumStatiqWebVersion-CleanBlog: "1.0.0-beta.54"
+
+SiteTitle: Grumpycorp Studios
+Host: grumpycorp.com
+Author: Robin Giese
+
+PageTitle: => GetString("Title") ?? Context.GetString("SiteTitle")
+
+Copyright: => $"Copyright © {DateTime.Now.Year}"
+
+PostSources: posts/**/*
+IsPost: => Context.Outputs.FilterSources(Context.GetString("PostSources")).ContainsById(Document)
+
+PageSources: pages/**/*
+IsPage: => Context.Outputs.FilterSources(Context.GetString("PageSources")).ContainsById(Document)
+
+Layout: /_layout.cshtml

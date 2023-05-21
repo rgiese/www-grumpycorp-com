@@ -2,8 +2,9 @@
     .CreateWeb(args)
     // Input settings
     .AddSetting(WebKeys.InputPaths, "content")
+    // Caching
+    .AddSetting(Keys.CleanMode, true)
     // Output settings
-    .AddSetting(Keys.Host, new Uri("https://grumpycorp.com").Host)
     .AddSetting(Keys.LinksUseHttps, true)
     // Run
     .RunAsync();

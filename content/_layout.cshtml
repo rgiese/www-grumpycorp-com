@@ -76,6 +76,7 @@
       <div class="fl-ns fn w-10-m w-20-l">&nbsp;</div>
 
       <div class="fl-ns fn w-50-ns">
+        @* Main div *@
         <main class="mw7 center pt2">
           @* Logo on top for small screens *@
           <div class="mb4 dn-ns">
@@ -84,6 +85,11 @@
             </a>
           </div>
 
+          @if (isPost)
+          {
+            @Html.Partial("posts/_header")
+          }
+
           <div class="lh-copy content">
             @RenderBody()
           </div>
@@ -91,6 +97,7 @@
       </div>
 
       <div class="fl-ns fn w-30-ns">
+        @* Right div *@
         <nav class="mw5 pl2 pl5-ns pb3">
           @* Logo on the side for not-small screens *@
           <div class="mb4 dn db-ns">
@@ -99,7 +106,7 @@
             </a>
           </div>
 
-          @RenderSectionOrPartial("RightBar", "_rightbar")
+          @Html.Partial("_rightbar")
         </nav>
       </div>
     </div>

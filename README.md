@@ -10,8 +10,10 @@ Website for GrumpyCorp Creative Industries (via [Statiq](https://statiq.dev)).
 - `dotnet run` to build site
 - `dotnet run -- serve` to build and serve site while watching for updates to the input
 
-## Icons
+## Icons and Fonts
 See [The Noun Project](https://thenounproject.com/).
+
+Using [google-webfonts-helper](https://gwfh.mranftl.com/fonts) to download Google fonts (Dosis, Questrial, Quicksand).
 
 ## Links
 - Markdown parsing provided by [Markdig](https://github.com/xoofx/markdig/blob/master/readme.md)

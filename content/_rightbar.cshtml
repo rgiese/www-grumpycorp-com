@@ -1,0 +1,89 @@
+@{
+    const string footerSectionClassName = "f6 pt1";
+    const string linkDefaultClassName = "link dim black-80";
+}
+
+<div class="f5 lh-copy center">
+    <h4>Pinned</h4>
+    Stuff
+    @* TODO
+    {data.pages.edges.map(({ node }) => (
+    <div key={node.fields?.slug}>
+    <Link className={linkDefaultClassName} to={node.fields?.slug ?? "" }>
+    {node?.frontmatter?.title}
+    </Link>
+    </div>
+    ))}
+    *@
+
+    <h4>Portfolio</h4>
+    Stuff
+    @* TODO
+    {data.portfolio.edges.map(({ node }) => (
+    <div key={node.fields?.slug}>
+    <Link className={linkDefaultClassName} to={node.fields?.slug ?? "" }>
+    {node?.frontmatter?.title}
+    </Link>
+    </div>
+    ))}
+    *@
+
+    <h4>Topics</h4>
+    Topics go here
+    @* TODO
+    <div>
+    {data.tagList.distinctTags.map((tag) => (
+    <Link className={`${linkDefaultClassName} pr2`} key={tag} to={`/tags/posts/${tag}`}>
+    {tag}
+    </Link>
+    ))}
+    </div>
+    <div className="pt3">
+    <Link className={linkDefaultClassName} to="/posts/all">
+    every damn thing
+    </Link>
+    </div>
+    *@
+
+    <h4>Elsewhere</h4>
+    <div>
+        @* Drop on small screens: "dn" - don't display by default, "dib-ns" - display on non-small screens *@
+        @* TODO
+        <SocialLink sprite={LogoGMail} uri="mailto:robin@grumpycorp.com" />
+        <SocialLink sprite={LogoLinkedIn} uri="https://www.linkedin.com/in/robingiese" />
+
+        <SocialLink sprite={LogoIMDB} uri="https://www.imdb.com/name/nm8515322/" />
+        <SocialLink sprite={LogoGitHub} uri="https://github.com/rgiese/" />
+        *@
+    </div>
+
+    <h4>Not a colophon</h4>
+
+    <div class="@footerSectionClassName">
+        @Document.GetString(WebKeys.Copyright).
+    </div>
+
+    <div class="@footerSectionClassName">
+        Made with
+        @* TODO <Icon className="v-mid w1 h1" sprite={Heart} /> *@
+        in Seattle.
+    </div>
+
+    <div class="@footerSectionClassName">
+        Licensed under
+        <a class="@linkDefaultClassName" href="http://creativecommons.org/licenses/by-sa/4.0/"
+            rel="license">CC-BY-SA-4.0</a>.
+    </div>
+
+    <div class="@footerSectionClassName">
+        Powered by <a class="@linkDefaultClassName" href="https://statiq.dev">Statiq</a>,
+        <a class="@linkDefaultClassName" href="https://tachyons.io">Tachyions</a>, and
+        <a class="@linkDefaultClassName" href="https://netlify.com">Netlify</a>.
+    </div>
+
+    <div class="@footerSectionClassName">
+        <a class="@linkDefaultClassName" href='@Context.GetLink("/posts/code/improving-site-visitor-privacy/")'>
+            Privacy notice.
+        </a>
+    </div>
+</div>

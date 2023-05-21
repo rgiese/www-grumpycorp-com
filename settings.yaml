@@ -6,7 +6,7 @@ Author: Robin Giese
 
 PageTitle: => GetString("Title") ?? Context.GetString("SiteTitle")
 
-Copyright: => $"Copyright © {DateTime.Now.Year}"
+Copyright: => $"©{DateTime.Now.Year} Grumpy Company Studios LLC"
 
 PostSources: posts/**/*
 IsPost: => Context.Outputs.FilterSources(Context.GetString("PostSources")).ContainsById(Document)

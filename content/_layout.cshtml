@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+@{
+  bool isPost = Document.GetBool("IsPost") && !Document.GetBool("IsPostArchive");
+  bool isPage = Document.GetBool("IsPage");
+}
+
+<head>
+  @* -- `meta` configuration: basics -- *@
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  @* -- `meta` configuration: metadata -- *@
+  @if (Document.ContainsKey(WebKeys.Description))
+  {
+    <meta name="description" content="@Document.GetString(WebKeys.Description)">
+  }
+
+  @if (Document.ContainsKey(WebKeys.Author))
+  {
+    <meta name="author" content="@Document.GetString(WebKeys.Author)">
+  }
+
+  @* -- `meta` configuration: OpenGraph (or whatever) goop -- *@
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content='@Document.GetLink(true)' />
+
+  @* -- Document title and link -- *@
+  <title>@Document.GetString("PageTitle")</title>
+  <meta property="og:title" content='@Document.GetString("PageTitle")' />
+
+  <link rel="canonical" href='@(Document.GetString("Canonical") ?? Document.GetLink(true))'>
+
+  @* -- RSS -- *@
+  @{
+    @foreach (IDocument rssFeed in Outputs["**/*.rss"])
+    {
+      <link type="application/rss+xml" rel="alternate" title="@rssFeed.GetString(WebKeys.Title)"
+        href="@rssFeed.GetLink()" />
+    }
+    @foreach (IDocument atomFeed in Outputs["**/*.atom"])
+    {
+      <link type="application/atom+xml" rel="alternate" title="@atomFeed.GetString(WebKeys.Title)"
+        href="@atomFeed.GetLink()" />
+    }
+  }
+
+  @* -- FavIcon -- *@
+  @* <link rel="icon" href='@Context.GetLink("/favicon.ico")'> *@
+
+  @* -- Style sheets -- *@
+  <link href='@Context.GetLink("/scss/external/tachyons.css")' rel="stylesheet">
+  <link href='@Context.GetLink("/scss/site.css")' rel="stylesheet">
+</head>
+
+<body>
+  <div class="ph3 pt4-ns tl bg-white">
+    <div class="cf">
+      @*
+      * Top-level layout: three divs (left = empty, main, and right)
+      * - fl-ns: float-left the for non-small (-ns) screens at [10 @ medium / 20 @ large] / 50 / 30 percent widths
+      * - fn: don't float (== stack) the divs on small screens
+      *
+      * Main div layout:
+      * - mw7: constrain width for readability
+      * - center: center content box
+      *
+      * Right div layout:
+      * - mw5: constrain width for readability
+      * - device-dependent left padding
+      * - a hint of bottom-padding for small screens
+      *
+      * Containing div (see above) clears floats.
+      *@
+
+      <div class="fl-ns fn w-10-m w-20-l">&nbsp;</div>
+
+      <div class="fl-ns fn w-50-ns">
+        <main class="mw7 center pt2">
+          @* Logo on top for small screens *@
+          <div class="mb4 dn-ns">
+            <a href='@Context.GetLink("/")'>
+              GRUMPYBIRD @* TODO: <Icon class="w5" sprite={StudiosLogo} /> *@
+            </a>
+          </div>
+
+          <div class="lh-copy content">
+            @RenderBody()
+          </div>
+        </main>
+      </div>
+
+      <div class="fl-ns fn w-30-ns">
+        <nav class="mw5 pl2 pl5-ns pb3">
+          @* Logo on the side for not-small screens *@
+          <div class="mb4 dn db-ns">
+            <a href='@Context.GetLink("/")'>
+              GRUMPYBIRD @* TODO: <Icon class="w5" sprite={StudiosLogo} /> *@
+            </a>
+          </div>
+
+          @RenderSectionOrPartial("RightBar", "_rightbar")
+        </nav>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

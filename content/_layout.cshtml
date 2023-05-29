@@ -26,7 +26,7 @@
   <meta property="og:url" content='@Document.GetLink(true)' />
 
   @* -- Document title and link -- *@
-  <title>@Document.GetString("PageTitle")</title>
+  <title>@Document.GetString("PageTitle") | @Context.GetString("SiteTitle")</title>
   <meta property="og:title" content='@Document.GetString("PageTitle")' />
 
   <link rel="canonical" href='@(Document.GetString("Canonical") ?? Document.GetLink(true))'>

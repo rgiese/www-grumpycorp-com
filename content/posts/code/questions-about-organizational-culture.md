@@ -1,6 +1,6 @@
 ---
 title: Questions about organizational culture
-date: 2021-03-29
+published: 2021-03-29
 tags: ["code"]
 ---
 

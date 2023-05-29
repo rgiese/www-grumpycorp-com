@@ -1,6 +1,6 @@
 ---
 title: From Hugo to Gatsby
-date: 2019-02-06
+published: 2019-02-06
 tags: ["code"]
 ---
 

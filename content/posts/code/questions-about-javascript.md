@@ -1,6 +1,6 @@
 ---
 title: Questions about JavaScript-based development
-date: 2019-04-11
+published: 2019-04-11
 tags: ["code"]
 ---
 

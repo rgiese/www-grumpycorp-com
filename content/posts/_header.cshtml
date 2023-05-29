@@ -1,28 +1,28 @@
 <h1 class="mb1">@(Document.GetString("Title") ?? Document.GetString("SiteTitle"))</h1>
 
 <div class="f5 black-60">
-@(Document.GetString("Date")) 
+  @(Document.GetString("Date"))
 
-<span class="ph2 black-40">in</span>
+  <span class="ph2 black-40">in</span>
 
-@foreach (string tag in Document.GetList<string>("tags").Where(x => x != null))
-{
-  <a href="" class="link accent-mono"> @tag</a>
-}
+  @foreach (string tag in Document.GetList<string>("tags").Where(x => x != null))
+  {
+    <a href="" class="link accent-mono"> @tag</a>
+  }
 
-@* TODO: TAGS
-{post.frontmatter?.tags
-    ? post.frontmatter.tags.filter(notEmpty).map((tag) => (
-        <Link
-        className="link accent-mono"
-        key={tag}
-        to={`/tags/${post.fields?.sourceInstanceName ?? ""}/${tag}`}
-        >
-        <Icon className="w1 h1 v-mid" sprite={TagIcon} />
-        {` `}
-        {tag}
-        </Link>
-    ))
-    : null}
-*@    
+  @* TODO: TAGS
+  {post.frontmatter?.tags
+  ? post.frontmatter.tags.filter(notEmpty).map((tag) => (
+  <Link
+  className="link accent-mono"
+  key={tag}
+  to={`/tags/${post.fields?.sourceInstanceName ?? ""}/${tag}`}
+  >
+  <Icon className="w1 h1 v-mid" sprite={TagIcon} />
+  {` `}
+  {tag}
+  </Link>
+  ))
+  : null}
+  *@
 </div>

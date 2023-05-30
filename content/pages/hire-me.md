@@ -1,5 +1,6 @@
 ---
 title: Hire me (maybe)
+DestinationPath: hire-me/index.html
 ---
 
 I promised myself I'd get better at identifying and contributing to healthy work environments.

@@ -1,5 +1,6 @@
 ---
 title: About
+DestinationPath: about/index.html
 ---
 
 import GrumpyRobin from "../../assets/icons/grumpy-robin.svg";

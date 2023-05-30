@@ -5,16 +5,17 @@
 
 <div class="f5 lh-copy center">
     <h4>Pinned</h4>
-    Stuff
-    @* TODO
-    {data.pages.edges.map(({ node }) => (
-    <div key={node.fields?.slug}>
-    <Link className={linkDefaultClassName} to={node.fields?.slug ?? "" }>
-    {node?.frontmatter?.title}
-    </Link>
-    </div>
-    ))}
-    *@
+    @{
+        var pinnedPages = Outputs
+        .FromPipeline("Content")
+        .FilterSources(Document.GetString("PageSources"))
+        .OrderBy(doc => doc.GetTitle())
+        .ToList();
+    }
+    @foreach (IDocument doc in pinnedPages)
+    {
+        <div><a class="@linkDefaultClassName" href="@doc.GetLink()">@doc.GetTitle()</a></div>
+    }
 
     <h4>Portfolio</h4>
     Stuff

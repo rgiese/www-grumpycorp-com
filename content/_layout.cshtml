@@ -91,6 +91,11 @@
             @Html.Partial("posts/_prevnext")
           }
 
+          @if (isPage)
+          {
+            @Html.Partial("pages/_header")
+          }
+
           <div class="lh-copy content">
             @RenderBody()
           </div>

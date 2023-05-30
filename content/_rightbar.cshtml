@@ -29,21 +29,24 @@
     *@
 
     <h4>Topics</h4>
-    Topics go here
-    @* TODO
+    @{
+        var postTags = Outputs
+        .FromPipeline("Content")
+        .FilterSources(Document.GetString("PostSources"))
+        .Select(doc => doc.GetList<string>("tags") ?? new List<string>())
+        .SelectMany(x => x) // flatten list-of-lists
+        .Distinct()
+        .ToList();
+    }
     <div>
-    {data.tagList.distinctTags.map((tag) => (
-    <Link className={`${linkDefaultClassName} pr2`} key={tag} to={`/tags/posts/${tag}`}>
-    {tag}
-    </Link>
-    ))}
+        @foreach (string tag in postTags)
+        {
+            <a class="@linkDefaultClassName" href='@Context.GetLink($"/tags/posts/{tag}")'>@tag</a>
+        }
     </div>
-    <div className="pt3">
-    <Link className={linkDefaultClassName} to="/posts/all">
-    every damn thing
-    </Link>
+    <div class="pt3">
+        <a class="@linkDefaultClassName" href='@Context.GetLink("/posts/all")'>every damn thing</a>
     </div>
-    *@
 
     <h4>Elsewhere</h4>
     <div>

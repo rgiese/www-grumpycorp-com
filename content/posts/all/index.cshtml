@@ -1,0 +1,9 @@
+Description: "All posts"
+ArchiveSources: => GetString("PostSources")
+ArchiveFilter: => GetBool("IsPost")
+ArchiveOrderKey: Published
+ArchiveOrderDescending: true
+ArchiveTitle: "All posts"
+---
+@Html.Partial("/_post_index.cshtml", Document)
+

@@ -8,10 +8,10 @@ PageTitle: => GetString("Title") ?? Context.GetString("SiteTitle")
 
 Copyright: => $"©{DateTime.Now.Year} Grumpy Company Studios LLC"
 
-PostSources: posts/**/*
+PostSources: posts/**/*.md
 IsPost: => Context.Outputs.FilterSources(Context.GetString("PostSources")).ContainsById(Document)
 
-PageSources: pages/**/*
+PageSources: pages/**/*.md
 IsPage: => Context.Outputs.FilterSources(Context.GetString("PageSources")).ContainsById(Document)
 
 Layout: /_layout.cshtml

@@ -9,20 +9,4 @@
   {
     <a href="" class="link accent-mono"> @tag</a>
   }
-
-  @* TODO: TAGS
-  {post.frontmatter?.tags
-  ? post.frontmatter.tags.filter(notEmpty).map((tag) => (
-  <Link
-  className="link accent-mono"
-  key={tag}
-  to={`/tags/${post.fields?.sourceInstanceName ?? ""}/${tag}`}
-  >
-  <Icon className="w1 h1 v-mid" sprite={TagIcon} />
-  {` `}
-  {tag}
-  </Link>
-  ))
-  : null}
-  *@
 </div>

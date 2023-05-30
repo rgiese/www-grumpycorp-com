@@ -1,0 +1,37 @@
+@{
+    var thisPostTag = Document.GetList<string>("tags").First();
+
+    var allPostsMatchingTag = Outputs
+    .FromPipeline("Content")
+    .FilterSources(Document.GetString("PostSources"))
+    .Where(doc => doc.GetList<string>("tags").Contains(thisPostTag))
+    .OrderBy(doc => doc.GetPublishedDate())
+    .ToList();
+
+    var thisPostIndex = allPostsMatchingTag.FindIndex(post => post.GetLink() == Document.GetLink());
+
+    var foundThisPost = thisPostIndex != -1;
+
+    var previousPost = foundThisPost && (thisPostIndex - 1) >= 0 ? allPostsMatchingTag[thisPostIndex - 1] : null;
+
+    var nextPost = foundThisPost && (thisPostIndex + 1) < allPostsMatchingTag.Count ? allPostsMatchingTag[thisPostIndex + 1]
+    : null;
+}
+<table class="w-100 pv3">
+    <tbody>
+        <tr>
+            <td class="w-50">
+                @if (previousPost != null)
+                {
+                    <a class="black-40" href="@previousPost.GetLink()">&laquo; @previousPost.GetTitle()</a>
+                }
+            </td>
+            <td class="w-50 tr">
+                @if (nextPost != null)
+                {
+                    <a class="black-40" href="@nextPost.GetLink()">@nextPost.GetTitle() &raquo;</a>
+                }
+            </td>
+        </tr>
+    </tbody>
+</table>

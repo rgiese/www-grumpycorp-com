@@ -88,11 +88,17 @@
           @if (isPost)
           {
             @Html.Partial("posts/_header")
+            @Html.Partial("posts/_prevnext")
           }
 
           <div class="lh-copy content">
             @RenderBody()
           </div>
+
+          @if (isPost)
+          {
+            @Html.Partial("posts/_prevnext")
+          }
         </main>
       </div>
 

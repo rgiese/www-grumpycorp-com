@@ -7,7 +7,8 @@
 
   @foreach (string tag in Document.GetList<string>("tags").Where(x => x != null))
   {
-    <a href="" class="link accent-mono"><img class="w1 h1 v-mid" src='@Context.GetLink("/assets/icons/tag.svg")' />
+    <a href="" class="link accent-mono">
+      <img class="w1 h1 v-mid" src='@Context.GetLink("/assets/icons/tag.svg")' alt="tag" />
       @tag
     </a>
   }

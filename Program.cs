@@ -12,7 +12,7 @@ return await Bootstrapper.Factory
         "ResizePostImages",
         builder =>
             builder
-                .WithInputReadFiles("**/*.jpg")
+                .WithInputReadFiles("**/*.{jpg,png}")
                 .WithInputModules(SimpleFigureShortcode.BootstrapImageMutator())
                 .WithOutputWriteFiles()
     )

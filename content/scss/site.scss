@@ -32,7 +32,7 @@ img {
 
     a:hover,
     a:visited {
-        color: var(--accent-mono);
+        color: #ae4820; // Can't use var() here for security reasons
     }
 }
 

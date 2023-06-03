@@ -1,6 +1,6 @@
 ---
 title: "The WarmAndFuzzy web app"
-date: 2020-02-02 01:00
+published: 2020-02-02 01:00
 tags: ["warm-and-fuzzy"]
 keywords: ["IoT", "AWS", "TypeScript", "React", "GraphQL"]
 ---
@@ -11,13 +11,13 @@ keywords: ["IoT", "AWS", "TypeScript", "React", "GraphQL"]
 
 The main page gives a quick run-down of what everything is up to (yeah, it's basically a database dump):
 
-![](images/webapp-home.png "Home page: list of thermostats' and sensors' latest values")
+<?# SimpleFigure src="images/webapp-home.png" caption="Home page: list of thermostats' and sensors' latest values" /?>
 
 ### Settings
 
 The other page any actual human might want to interact with is the thermostat settings page:
 
-![](images/webapp-settings.png "Thermostat settings")
+<?# SimpleFigure src="images/webapp-settings.png" caption="Thermostat settings" /?>
 
 Each thermostat first lists its holds followed by its schedule steps (sorted by time-of-day).
 
@@ -32,7 +32,7 @@ since I think it's easier to parse visually and it takes up less space (and it s
 
 <div class="mw6-ns center">
 
-![](images/webapp-settings-days.png "Changing the days on a scheduled setting")
+<?# SimpleFigure src="images/webapp-settings-days.png" caption="Changing the days on a scheduled setting" /?>
 
 </div>
 
@@ -41,7 +41,7 @@ but it's also smart enough to collapse the obvious combinations of days into "we
 
 <div class="mw6-ns center">
 
-![](images/webapp-settings-setpoint.png "Changing the setpoint on a scheduled setting")
+<?# SimpleFigure src="images/webapp-settings-setpoint.png" caption="Changing the setpoint on a scheduled setting" /?>
 
 </div>
 
@@ -49,7 +49,7 @@ Once a setting is changed, an undo and save button are injected into the setting
 
 <div class="mw6-ns center">
 
-![](images/webapp-settings-setpoint-modified.png "After starting to change a setpoint")
+<?# SimpleFigure src="images/webapp-settings-setpoint-modified.png" caption="After starting to change a setpoint" /?>
 
 </div>
 
@@ -59,20 +59,20 @@ There's not a lot that folks can adjust about how they experience the system ind
 I have begrudgingly added the ability to experience the system through irrational units (Fahrenheit)
 rather than the sane and reasonable system default of Celsius.
 
-![](images/webapp-preferences.png "You can use Celsius or you can be wrong")
+<?# SimpleFigure src="images/webapp-preferences.png" caption="You can use Celsius or you can be wrong" /?>
 
 ### Configuration
 
 All of the stuff that gets touched during system setup and then never again lives under the `System Configuration` tab
 and it looks basically like the database UI that it is, plus proper units annotations.
 
-![](images/webapp-configuration.png "One-time configuration magic")
+<?# SimpleFigure src="images/webapp-configuration.png" caption="One-time configuration magic" /?>
 
 This was the first editing UI I created so I'm just phoning it in with a Modal:
 
 <div class="mw6-ns center">
 
-![](images/webapp-configuration-modal.png "Modal for a single thermostat")
+<?# SimpleFigure src="images/webapp-configuration-modal.png" caption="Modal for a single thermostat" /?>
 
 </div>
 

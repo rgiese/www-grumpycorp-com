@@ -1,6 +1,6 @@
 ---
 title: IoT thermostat design part 1
-date: 2019-03-18
+published: 2019-03-18
 tags: ["warm-and-fuzzy"]
 keywords: ["IoT", "thermostat", "hardware", "firmware", "schematics", "PCB"]
 ---
@@ -101,11 +101,11 @@ I'm using the SP3485 3.3V-compatible RS485 transceiver and it's all pretty vanil
 
 Here's a breadboard version of _most_ of the components:
 
-![](images/IMG_20190317_143534.jpg "Breadboard with power, relays, on-board sensor, and core")
+<?# SimpleFigure src="images/IMG_20190317_143534.jpg" caption="Breadboard with power, relays, on-board sensor, and core" /?>
 
 Here's an action shot of the system successfully controlling my heat pump:
 
-![](images/IMG_20190303_100932.jpg "Heat pump control via laptop")
+<?# SimpleFigure src="images/IMG_20190303_100932.jpg" caption="Heat pump control via laptop" /?>
 
 ### The in-progress stuff
 
@@ -121,7 +121,7 @@ however, the darn thing is so darn tiny that I can't even get it connected.
 
 Here we are trying to attach leads to it so I can put it into a breadboard:
 
-![](images/IMG_20190308_151347.jpg "Attaching leads to an SOT-23-packed DS2484")
+<?# SimpleFigure src="images/IMG_20190308_151347.jpg" caption="Attaching leads to an SOT-23-packed DS2484" /?>
 
 Match provided for scale.
 
@@ -143,11 +143,11 @@ And when all else fails there's rework.
 
 Here's the current schematic (save any potential change-out in 1-Wire driver chips) created in [Altium CircuitMaker](https://circuitmaker.com):
 
-![](images/2019-03-17-110627.png "Preliminary schematic")
+<?# SimpleFigure src="images/2019-03-17-110627.png" caption="Preliminary schematic" /?>
 
 And I did a preliminary place and auto-route to see how small a board I could get away with:
 
-![](images/2019-03-17-110725.png "Preliminary place-and-route")
+<?# SimpleFigure src="images/2019-03-17-110725.png" caption="Preliminary place-and-route" /?>
 
 We're currently at 2.6" x 1.7" which will fit nicely inside the electrical boxes behind each of our in-wall thermostats.
 

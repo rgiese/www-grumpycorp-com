@@ -1,13 +1,13 @@
 ---
 title: "Details: A React-based sortable table"
-date: 2020-02-08 19:00
+published: 2020-02-08 19:00
 tags: ["warm-and-fuzzy"]
 keywords: ["IoT", "React", "TypeScript", "GraphQL", "Table"]
 ---
 
 To come back to the React-based web app again, note that every table's column headers are also a sort order affordance and indicator:
 
-![](images/webapp-home.png "Tables with headers and sorting indicators")
+<?# SimpleFigure src="images/webapp-home.png" caption="Tables with headers and sorting indicators" /?>
 
 Since we're getting all fancy up in here and have a few tables to show,
 I built a [`SortableTable`](https://github.com/rgiese/warm-and-fuzzy/blob/master/packages/webapp/src/components/SortableTable.tsx)

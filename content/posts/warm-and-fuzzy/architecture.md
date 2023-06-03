@@ -1,6 +1,6 @@
 ---
 title: Architecture for a buck
-date: 2020-02-01 02:00
+published: 2020-02-01 02:00
 tags: ["warm-and-fuzzy"]
 keywords:
   [
@@ -23,7 +23,7 @@ After all it's a completely needless side project and I didn't want to spend any
 
 My target cost was order-of-magnitude a buck a month, and we're doing pretty well:
 
-![](images/aws-costs.png "AWS billing: just under $1 a month")
+<?# SimpleFigure src="images/aws-costs.png" caption="AWS billing: just under $1 a month" /?>
 
 It's pretty miraculous what you can do with high-level PaaS cloud-hosted services that bill by use
 and have a pretty high free tier. At this point I cut could my costs in half by hosting my DNS elsewhere;

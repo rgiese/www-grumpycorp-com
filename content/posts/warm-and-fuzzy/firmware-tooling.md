@@ -1,6 +1,6 @@
 ---
 title: "Tooling and testing for Particle firmware"
-date: 2020-02-09 12:00
+published: 2020-02-09 12:00
 tags: ["warm-and-fuzzy"]
 keywords: ["IoT", "Particle", "C++"]
 ---

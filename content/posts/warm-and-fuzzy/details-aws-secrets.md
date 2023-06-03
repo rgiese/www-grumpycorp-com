@@ -1,6 +1,6 @@
 ---
 title: "Details: Managing runtime secrets in AWS"
-date: 2020-02-08 18:00
+published: 2020-02-08 18:00
 tags: ["warm-and-fuzzy"]
 keywords: ["IoT", "AWS", "Lambda", "SSM", "KMS", "Serverless", "TypeScript"]
 ---
@@ -38,7 +38,7 @@ You'll notice that AWS SSM used to stand for _Simple Systems Manager_ - looking 
 and dropped the _Simple_ from their name.
 At any rate, there seems to be just one SSM and KMS in any AWS account so there was nothing to be provisioned prior to doing this.
 
-![](images/api-ssm-overview.png "My lone parameter in SSM")
+<?# SimpleFigure src="images/api-ssm-overview.png" caption="My lone parameter in SSM" /?>
 
 In my case, the name of the parameter is `particleAPIKey`,
 brutally and mercilessly linebroken by the AWS UI above that refuses to allow for resizable columns using any of the mouse gestures I could imagine.

@@ -1,6 +1,6 @@
 ---
 title: "Details: Units of measurement"
-date: 2020-02-08 20:00
+published: 2020-02-08 20:00
 tags: ["warm-and-fuzzy"]
 keywords:
   [
@@ -19,7 +19,7 @@ keywords:
 One of us in the house (who is wrong) prefers to see temperatures in Fahrenheit (eww).
 With my (obviously boundless) empathy engaged, I put together a shwifty UI, as shown previously:
 
-![](images/webapp-preferences.png "You can have preferences and still be wrong")
+<?# SimpleFigure src="images/webapp-preferences.png" caption="You can have preferences and still be wrong" /?>
 
 Wowsers.
 
@@ -262,18 +262,18 @@ I don't bother converting the type of the underlying data and just use the stati
 The initial reason for building [`RelativeTemperature`](https://github.com/rgiese/warm-and-fuzzy/blob/master/packages/shared-client/src/RelativeTemperature.ts)
 was to be a bit completist and make the configuration table's temperature threshold (a delta value) display correctly:
 
-![](images/webapp-configuration.png "Behold the Threshold column")
+<?# SimpleFigure src="images/webapp-configuration.png" caption="Behold the Threshold column" /?>
 
 The edit modal is even so douchey as to say &#X0394;&#X00B0;C...
 
-![](images/webapp-configuration-modal.png "Gangster units on that Threshold")
+<?# SimpleFigure src="images/webapp-configuration-modal.png" caption="Gangster units on that Threshold" /?>
 
 Regardless, the place we _actually_ need `RelativeTemperature` is in the setpoint popup
 because the dang thing has a spinner that needs to be told how much it should spin up and down by:
 
 <div class="mw6-ns center">
 
-![](images/webapp-settings-setpoint.png "Changing the setpoint with a spinner")
+<?# SimpleFigure src="images/webapp-settings-setpoint.png" caption="Changing the setpoint with a spinner" /?>
 
 </div>
 

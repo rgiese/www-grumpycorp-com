@@ -1,6 +1,6 @@
 ---
 title: WarmAndFuzzy 101
-date: 2019-03-16
+published: 2019-03-16
 tags: ["warm-and-fuzzy"]
 keywords: ["IoT", "thermostat"]
 ---

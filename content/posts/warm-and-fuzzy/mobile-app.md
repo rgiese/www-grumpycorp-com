@@ -1,6 +1,6 @@
 ---
 title: "The WarmAndFuzzy mobile app"
-date: 2020-02-03 01:00
+published: 2020-02-03 01:00
 tags: ["warm-and-fuzzy"]
 keywords: ["IoT", "AWS", "TypeScript", "ReactNative", "GraphQL"]
 ---
@@ -17,12 +17,12 @@ the otherwise dark mode-ish app, but whatever.
 <div className="cf">
   <div className="fl-ns fn w-10-m w-50-ns pa1">
 
-![](images/mobile-login.png "Waiting to log in")
+<?# SimpleFigure src="images/mobile-login.png" caption="Waiting to log in" /?>
 
   </div>
   <div className="fl-ns fn w-10-m w-50-ns pa1">
 
-![](images/mobile-login-auth0.png "Logging in with Auth0")
+<?# SimpleFigure src="images/mobile-login-auth0.png" caption="Logging in with Auth0" /?>
 
   </div>
 </div>
@@ -38,12 +38,12 @@ This felt like a more touch-friendly UX than porting the same concepts (and code
 <div className="cf">
   <div className="fl-ns fn w-10-m w-50-ns pa1">
 
-![](images/mobile-home.png "Thermostats' latest values, actions, and setpoints")
+<?# SimpleFigure src="images/mobile-home.png" caption="Thermostats' latest values, actions, and setpoints" /?>
 
   </div>
   <div className="fl-ns fn w-10-m w-50-ns pa1">
 
-![](images/mobile-settings.png "Settings for a single thermostat")
+<?# SimpleFigure src="images/mobile-settings.png" caption="Settings for a single thermostat" /?>
 
   </div>
 </div>
@@ -61,12 +61,12 @@ Navigating back before saving just discards the edits.
 <div className="cf">
   <div className="fl-ns fn w-10-m w-50-ns pa1">
 
-![](images/mobile-setting-scheduled.png "Editing a scheduled setting")
+<?# SimpleFigure src="images/mobile-setting-scheduled.png" caption="Editing a scheduled setting" /?>
 
   </div>
   <div className="fl-ns fn w-10-m w-50-ns pa1">
 
-![](images/mobile-setting-scheduled-modified.png "Save button enabled for a modified setting")
+<?# SimpleFigure src="images/mobile-setting-scheduled-modified.png" caption="Save button enabled for a modified setting" /?>
 
   </div>
 </div>
@@ -76,7 +76,7 @@ Changing the time of day for a scheduled setting is nice and Android-ish courtes
 
 <div class="mw55-ns center">
 
-![](images/mobile-setting-scheduled-time-of-day.png "Editing a setting's time of day")
+<?# SimpleFigure src="images/mobile-setting-scheduled-time-of-day.png" caption="Editing a setting's time of day" /?>
 
 </div>
 
@@ -87,7 +87,7 @@ effectively a mix of account information, account preferences, and various debug
 
 <div class="mw55-ns center">
 
-![](images/mobile-preferences.png "The Account screen")
+<?# SimpleFigure src="images/mobile-preferences.png" caption="The Account screen" /?>
 
 </div>
 
@@ -300,7 +300,7 @@ except opening the app just got me this:
 
 <div class="mw55-ns center">
 
-![](images/mobile-flatbuffers-wtf.png "ReactNative shits the bed")
+<?# SimpleFigure src="images/mobile-flatbuffers-wtf.png" caption="ReactNative shits the bed" /?>
 
 </div>
 

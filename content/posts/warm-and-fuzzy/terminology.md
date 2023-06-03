@@ -1,6 +1,6 @@
 ---
 title: The importance of terminology
-date: 2020-02-01 01:00
+published: 2020-02-01 01:00
 tags: ["warm-and-fuzzy"]
 keywords: ["IoT", "thermostat", "temperature", "monitoring"]
 ---

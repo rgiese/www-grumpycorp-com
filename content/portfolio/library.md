@@ -49,7 +49,7 @@ All images by Robin Giese / GRUMPYCORP.
 
   <?# SimpleFigure src="library/IMG_4089.jpg" alt="Corner detail with Harry upside down" class="portfolio-sxs-w50"/?>
   <?# SimpleFigure src="library/IMG_4091.jpg" alt="Corner detail with Harry's knees" class="portfolio-sxs-w50"/?>
-  
+
   <?# SimpleFigure src="library/IMG_4097.jpg" alt="View towards TV" class="portfolio-sxs-w50"/?>
   <?# SimpleFigure src="library/IMG_4098.jpg" alt="TV detail" class="portfolio-sxs-w50"/?>
 </div>

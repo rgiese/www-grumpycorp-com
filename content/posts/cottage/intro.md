@@ -21,12 +21,15 @@ The roof is a simple shed roof at the same angle as the existing house's roof, w
 The roof also has a 3' overhang over the door, with a small deck underneath that.
 
 Off to AutoCAD I went...
+
 <?# SimpleFigure src="images/autocad-top.png" caption="8'x12' cottage footprint" /?>
 
 And a sketchy-looking perspective rendering showing the back elevation and the entry door.
+
 <?# SimpleFigure src="images/autocad-3d-back.png" caption="Back elevation" /?>
 
 I wanted to get power and internet to the cottage so we ran some trenches last year while our landscapers were still around.
+
 <?# SimpleFigure src="images/IMG_20170129_151022.jpg" caption="Trenches" /?>
 
 We also poured some footings at the time in holes generously dug by our landscaping crew.

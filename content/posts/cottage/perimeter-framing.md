@@ -20,6 +20,7 @@ that were holding the beam hangers on the long side LVLs so that the core of the
 long HeadLok screws to get the long side LVLs pulled tight to the short side LVLs when they needed some convincing.
 
 I also rolled out some landscaping fabric and covered it with gravel to keep any bio-misadventures from getting into my insulation.
+
 <?# SimpleFigure src="images/IMG_20180626_161442.jpg" caption="Perimeter LVLs - all sides" /?>
 
 ### Lessons learned

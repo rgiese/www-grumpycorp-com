@@ -8,7 +8,7 @@ This site is about stuff I've explored and learned about starting from when I to
 
 GRUMPYCORP STUDIOS is the name of my movie studio
 / consulting company / record label / construction outfit, whatever I need it to
-be at any given time. 
+be at any given time.
 
 It actually is a real company at this point: Grumpy Company Studios LLC d/b/a Grumpycorp Studios!
 I wasn't allowed to call it "Grumpycorp Studios LLC" off the bat because you cannot have "corp" in the name of an LLC

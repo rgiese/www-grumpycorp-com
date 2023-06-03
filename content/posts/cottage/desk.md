@@ -14,7 +14,7 @@ The rails are cutoffs from an old LVL left over from building the house so they'
 the sawhorses were carefully leveled out with shims and my big door hanging level to provide as flat a surface as possible without drastically more effort.
 The original slab was 3" thick and needed to be planed down to 2-&frac12;" after warping during its roughly four year drying time.
 
-<?# SimpleFigure Src="images/IMG_20190303_145935.jpg" Alt="Rail-and-sled setup" /?>
+<?# SimpleFigure src="images/IMG_20190303_145935.jpg" caption="Rail-and-sled setup" /?>
 
 Of course I managed to get the power cord of the router stuck in the sled's slot on one of the passes and moved through it.
 Thankfully it just ate through the neutral wire and it was an easy repair.
@@ -22,7 +22,7 @@ To prevent this in the future and also to just generally make my life easier,
 I spanned some tie line between the garage door rails and suspended my power cord from that with some pulleys and shackles.
 It worked a lot better than just slinging it over my shoulder.
 
-<?# SimpleFigure Src="images/IMG_20190304_144747.jpg" Alt="Fancy power cable setup" /?>
+<?# SimpleFigure src="images/IMG_20190304_144747.jpg" caption="Fancy power cable setup" /?>
 
 After a bunch of planing and sanding I filled the holes with a bunch of [System 3 General Purpose Epoxy](https://www.systemthree.com/products/general-purpose-epoxy-resin)
 I had left over from the dining table project.
@@ -34,9 +34,9 @@ I'll try a different system for the next project just to see what else is out th
 
 It looked pretty narsty after curing but (as always) sanded up quite well with a hand-held belt sander.
 
-<?# SimpleFigure Src="images/IMG_20190309_095901.jpg" Alt="Epoxy prior to sanding" /?>
-<?# SimpleFigure Src="images/IMG_20190309_100339.jpg" Alt="Partway through sanding" /?>
-<?# SimpleFigure Src="images/IMG_20190309_102001.jpg" Alt="After 60-grit belt sanding" /?>
+<?# SimpleFigure src="images/IMG_20190309_095901.jpg" caption="Epoxy prior to sanding" /?>
+<?# SimpleFigure src="images/IMG_20190309_100339.jpg" caption="Partway through sanding" /?>
+<?# SimpleFigure src="images/IMG_20190309_102001.jpg" caption="After 60-grit belt sanding" /?>
 
 From there I used a random orbital sander at 60, 100, 150, and 220 grit.
 
@@ -55,8 +55,8 @@ I welded up an angle bracket to hold the far side of the desk using some left-ov
 spray-painted it with automotive paint, and attached it with
 my favorite [HeadLok](https://www.fastenmaster.com/products/headlok-heavy-duty-flathead-fastener.html) high-load screws.
 
-<?# SimpleFigure Src="images/IMG_20190313_121020.jpg" Alt="The finished product" /?>
-<?# SimpleFigure Src="images/IMG_20190313_121055.jpg" Alt="The finished product" /?>
+<?# SimpleFigure src="images/IMG_20190313_121020.jpg" caption="The finished product" /?>
+<?# SimpleFigure src="images/IMG_20190313_121055.jpg" caption="The finished product" /?>
 
 ## Lessons learned
 

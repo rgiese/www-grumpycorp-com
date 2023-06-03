@@ -5,7 +5,7 @@ icon: cottage
 
 <!-- Opener -->
 
-<?# Picture src="cottage/IMG_3758.jpg" alt="Evening exterior with Felix" class="portfolio-w100" /?>
+<?# SimplePicture src="cottage/IMG_3758.jpg" alt="Evening exterior with Felix" class="portfolio-w100" /?>
 
 <!-- Intro -->
 
@@ -26,28 +26,28 @@ All images by Robin Giese / GRUMPYCORP.
 
   </div>
   </div>
-  <?# Picture src="cottage/IMG_3892.jpg" alt="Exterior positioning relative to backyard" class="portfolio-sxs-w50" /?>
+  <?# SimplePicture src="cottage/IMG_3892.jpg" alt="Exterior positioning relative to backyard" class="portfolio-sxs-w50" /?>
 </div>
 
 <!-- Interior shots -->
 
 <div class="portfolio-sxs-container">
-  <?# Picture src="cottage/IMG_3911.jpg" alt="Interior from front door" class="portfolio-sxs-w50" /?>
-  <?# Picture src="cottage/IMG_3846.jpg" alt="Interior from opposite wall" class="portfolio-sxs-w50" /?>
+  <?# SimplePicture src="cottage/IMG_3911.jpg" alt="Interior from front door" class="portfolio-sxs-w50" /?>
+  <?# SimplePicture src="cottage/IMG_3846.jpg" alt="Interior from opposite wall" class="portfolio-sxs-w50" /?>
   
-  <?# Picture src="cottage/IMG_3889.jpg" alt="Exterior siting" class="portfolio-sxs-w50" /?>
-  <?# Picture src="cottage/IMG_3904.jpg" alt="Exterior positioning relative to house" class="portfolio-sxs-w50" /?>
+  <?# SimplePicture src="cottage/IMG_3889.jpg" alt="Exterior siting" class="portfolio-sxs-w50" /?>
+  <?# SimplePicture src="cottage/IMG_3904.jpg" alt="Exterior positioning relative to house" class="portfolio-sxs-w50" /?>
 
-  <?# Picture src="cottage/IMG_4007.jpg" alt="Artsy light" class="portfolio-sxs-w50" /?>
-  <?# Picture src="cottage/IMG_4026.jpg" alt="Looking up" class="portfolio-sxs-w50" /?>
+  <?# SimplePicture src="cottage/IMG_4007.jpg" alt="Artsy light" class="portfolio-sxs-w50" /?>
+  <?# SimplePicture src="cottage/IMG_4026.jpg" alt="Looking up" class="portfolio-sxs-w50" /?>
 
-  <?# Picture src="cottage/IMG_3962.jpg" alt="Trim detail" class="portfolio-sxs-w50" /?>
-  <?# Picture src="cottage/IMG_3609.jpg" alt="Winter" class="portfolio-sxs-w50" /?>
+  <?# SimplePicture src="cottage/IMG_3962.jpg" alt="Trim detail" class="portfolio-sxs-w50" /?>
+  <?# SimplePicture src="cottage/IMG_3609.jpg" alt="Winter" class="portfolio-sxs-w50" /?>
 </div>
 
 <!-- Closing shots -->
 
-<?# Picture src="cottage/IMG_3932.jpg" alt="Artsy desk+chair shot" class="portfolio-w100" /?>
+<?# SimplePicture src="cottage/IMG_3932.jpg" alt="Artsy desk+chair shot" class="portfolio-w100" /?>
 
 <!-- Closing para -->
 
@@ -62,5 +62,5 @@ For more about the design and construction process,
 see the [<TagIcon className="h075" /> cottage](/tags/posts/cottage) post series.
 
   </div>
-  <?# Picture src="cottage/autocad.png" alt="AutoCAD rendering" className="portfolio-sxs-w40" /?>
+  <?# SimplePicture src="cottage/autocad.png" alt="AutoCAD rendering" className="portfolio-sxs-w40" /?>
 </div>

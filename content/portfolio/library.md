@@ -5,7 +5,7 @@ icon: cottage
 
 <!--  Opener -->
 
-<?# Picture src="library/IMG_4059.jpg" alt="Close-up of graphic novels" class="portfolio-w100" /?>
+<?# SimplePicture src="library/IMG_4059.jpg" alt="Close-up of graphic novels" class="portfolio-w100" /?>
 
 <!-- Intro -->
 
@@ -28,35 +28,35 @@ All images by Robin Giese / GRUMPYCORP.
 
   </div>
   </div>
-  <?# Picture src="library/IMG_4085.jpg" alt="Corner detail with Harry reading" class="portfolio-sxs-w50" /?>
+  <?# SimplePicture src="library/IMG_4085.jpg" alt="Corner detail with Harry reading" class="portfolio-sxs-w50" /?>
 </div>
 
 <div class="portfolio-sxs-container">
-  <?# Picture src="library/IMG_4044.jpg" alt="Overview shot from right" class="portfolio-sxs-w50" /?>
-  <?# Picture src="library/IMG_4042.jpg" alt="Overview shot from left" class="portfolio-sxs-w50" /?>
+  <?# SimplePicture src="library/IMG_4044.jpg" alt="Overview shot from right" class="portfolio-sxs-w50" /?>
+  <?# SimplePicture src="library/IMG_4042.jpg" alt="Overview shot from left" class="portfolio-sxs-w50" /?>
 
-  <?# Picture src="library/DSC04689.jpg" alt="Detail shot without books" class="portfolio-sxs-w50" /?>
-  <?# Picture src="library/DSC04688.jpg" alt="Overview shot without books" class="portfolio-sxs-w50" /?>
+  <?# SimplePicture src="library/DSC04689.jpg" alt="Detail shot without books" class="portfolio-sxs-w50" /?>
+  <?# SimplePicture src="library/DSC04688.jpg" alt="Overview shot without books" class="portfolio-sxs-w50" /?>
 
-  <?# Picture src="library/IMG_4094.jpg" alt="View from TV" class="portfolio-sxs-w50"/?>
-  <?# Picture src="library/IMG_4050.jpg" alt="Close-up of lower shelves" class="portfolio-sxs-w50"/?>
+  <?# SimplePicture src="library/IMG_4094.jpg" alt="View from TV" class="portfolio-sxs-w50"/?>
+  <?# SimplePicture src="library/IMG_4050.jpg" alt="Close-up of lower shelves" class="portfolio-sxs-w50"/?>
 
-  <?# Picture src="library/IMG_4066.jpg" alt="Detail shot of corner" class="portfolio-sxs-w50"/?>
-  <?# Picture src="library/IMG_4081.jpg" alt="Corner with Ollie's eyes" class="portfolio-sxs-w50"/?>
+  <?# SimplePicture src="library/IMG_4066.jpg" alt="Detail shot of corner" class="portfolio-sxs-w50"/?>
+  <?# SimplePicture src="library/IMG_4081.jpg" alt="Corner with Ollie's eyes" class="portfolio-sxs-w50"/?>
 
-  <?# Picture src="library/IMG_4071.jpg" alt="Corner with Ollie's head" class="portfolio-sxs-w50"/?>
-  <?# Picture src="library/IMG_4075.jpg" alt="Corner with Ollie popping out" class="portfolio-sxs-w50"/?>
+  <?# SimplePicture src="library/IMG_4071.jpg" alt="Corner with Ollie's head" class="portfolio-sxs-w50"/?>
+  <?# SimplePicture src="library/IMG_4075.jpg" alt="Corner with Ollie popping out" class="portfolio-sxs-w50"/?>
 
-  <?# Picture src="library/IMG_4089.jpg" alt="Corner detail with Harry upside down" class="portfolio-sxs-w50"/?>
-  <?# Picture src="library/IMG_4091.jpg" alt="Corner detail with Harry's knees" class="portfolio-sxs-w50"/?>
+  <?# SimplePicture src="library/IMG_4089.jpg" alt="Corner detail with Harry upside down" class="portfolio-sxs-w50"/?>
+  <?# SimplePicture src="library/IMG_4091.jpg" alt="Corner detail with Harry's knees" class="portfolio-sxs-w50"/?>
   
-  <?# Picture src="library/IMG_4097.jpg" alt="View towards TV" class="portfolio-sxs-w50"/?>
-  <?# Picture src="library/IMG_4098.jpg" alt="TV detail" class="portfolio-sxs-w50"/?>
+  <?# SimplePicture src="library/IMG_4097.jpg" alt="View towards TV" class="portfolio-sxs-w50"/?>
+  <?# SimplePicture src="library/IMG_4098.jpg" alt="TV detail" class="portfolio-sxs-w50"/?>
 </div>
 
 <!-- Closing shots -->
 
-<?# Picture src="library/IMG_4082.jpg" alt="Corner with Harry reading" class="portfolio-w100" /?>
+<?# SimplePicture src="library/IMG_4082.jpg" alt="Corner with Harry reading" class="portfolio-w100" /?>
 
 <!-- Closing para -->
 
@@ -70,5 +70,5 @@ _except_ shelves, bench tops, and edge banding fabricated by Ramon Rivera / Rive
 House design and architecture by [BUILD LLC](https://www.buildllc.com).
 
   </div>
-  <?# Picture src="library/rendering.png" alt="AutoCAD rendering" class="portfolio-sxs-w40" /?>
+  <?# SimplePicture src="library/rendering.png" alt="AutoCAD rendering" class="portfolio-sxs-w40" /?>
 </div>

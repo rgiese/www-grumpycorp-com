@@ -2,7 +2,7 @@ using System.Xml.Linq;
 
 namespace Statiq.Web.Shortcodes
 {
-    public class PictureShortcode : SyncShortcode
+    public class SimplePictureShortcode : SyncShortcode
     {
         private const string Src = nameof(Src);
         private const string Alt = nameof(Alt);

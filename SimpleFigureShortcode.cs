@@ -34,30 +34,33 @@ public class SimpleFigureShortcode : SyncShortcode
             width => $"{srcWithoutExtension}-w{width}-h0.{srcExtension} {width}w"
         );
 
+        // - This is a rather shlocky and generic calculation given that we're doing this site-wide
+        //   instead of performing it on an image-by-image basis with awareness of how it's being laid out.
+        //   We're assuming that our image content in the main content area is generally no wider than 50% of the screen
+        //   so we're spec'ing an image resolution half as wide as the viewport.
+        //   Close enough.
+        var srcSizes = ImageWidths.Select(width => $"(max-width: {2 * width}px) {width}px");
+
         // Generate HTML
         return $"""
           <figure class="{@class}">
-            <a href="{@src}">
-              <img src="{@src}" srcset="{String.Join(", ", srcSets)}" sizes="{ImageSizes}" alt="{caption ?? alt}"/>
+            <a href="{src}">
+              <img src="{src}" srcset="{String.Join(", ", srcSets)}" sizes="{String.Join(", ", srcSizes)}" alt="{caption ?? alt}"/>
             </a>
             {(!caption.IsNullOrWhiteSpace() ? $"<figcaption>{caption}</figcaption>" : "")}
           </figure>
           """;
     }
 
-    // Configuration for our image pipeline, as recommended by https://ausi.github.io/respimagelint/linter.html
+    // Configuration for our image pipeline, more or less as recommended by https://ausi.github.io/respimagelint/linter.html
     private static int[] ImageWidths = new int[]
     {
-        256,
         570, // for vertical images
         768,
         970, // for vertical images
         1210,
         1536
     };
-
-    private static string ImageSizes =
-        "(min-width: 1660px) 768px, (min-width: 480px) 46.9vw, calc(100vw - 32px)";
 
     public static MutateImage BootstrapImageMutator()
     {

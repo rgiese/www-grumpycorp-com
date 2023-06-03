@@ -7,6 +7,15 @@ return await Bootstrapper.Factory
     .AddSetting(WebKeys.InputPaths, "content")
     // Caching
     .AddSetting(Keys.CleanMode, true)
+    // Image processing
+    .BuildPipeline(
+        "ResizePostImages",
+        builder =>
+            builder
+                .WithInputReadFiles("**/*.jpg")
+                .WithInputModules(SimpleFigureShortcode.BootstrapImageMutator())
+                .WithOutputWriteFiles()
+    )
     // Configure front page (/index.html) to be the latest post from our Posts archive
     // c.f. https://github.com/orgs/statiqdev/discussions/200
     .BuildPipeline(

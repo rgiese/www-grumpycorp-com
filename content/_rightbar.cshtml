@@ -38,12 +38,14 @@
         .Select(doc => doc.GetList<string>("tags") ?? new List<string>())
         .SelectMany(x => x) // flatten list-of-lists
         .Distinct()
+        .OrderBy(x => x)
         .ToList();
     }
     <div>
         @foreach (string tag in postTags)
         {
-            <a class="@linkDefaultClassName" href='@Context.GetLink($"/tags/posts/{Uri.EscapeDataString(tag)}")'>@tag</a>
+            <a class="@linkDefaultClassName pr2"
+                href='@Context.GetLink($"/tags/posts/{Uri.EscapeDataString(tag)}")'>@tag</a>
         }
     </div>
     <div class="pt3">

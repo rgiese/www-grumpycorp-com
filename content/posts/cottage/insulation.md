@@ -13,6 +13,6 @@ but I was also confident that it was actually fully filling up the space around 
 And since it holds its shape so well and I don't need any real vapor barrier in this climate, I could save myself the frustration
 of having to staple up the kraft paper facing of traditional fiberglass.
 
-![](images/IMG_20181108_145409.jpg "Completed insulation")
+<?# SimpleFigure Src="images/IMG_20181108_145409.jpg" Alt="Completed insulation" /?>
 
 And then I showered. A lot.

@@ -24,8 +24,8 @@ The installation itself wasn't too bad: We got the windows tilted into place; th
 I looped ratchet straps through the openings of the awnings up to the roof beam and cranked them up, adjusted the shims underneath, then lowered them back down.
 Once I was happy with their Y-offset and square-ness, I nailed off the outside (technically, screwed), and off we went.
 
-![](images/IMG_20180725_131107.jpg "The 'smaller' window")
-![](images/IMG_20180725_131202.jpg "The larger window (crap picture)")
+<?# SimpleFigure Src="images/IMG_20180725_131107.jpg" Alt="The 'smaller' window" /?>
+<?# SimpleFigure Src="images/IMG_20180725_131202.jpg" Alt="The larger window (crap picture)" /?>
 
 There's also a small clerestory window next to the larger one but that was an easy one to do by myself.
 

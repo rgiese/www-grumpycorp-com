@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "format:check": "prettier --check $npm_package_config_prettierglob_1 --check $npm_package_config_prettierglob_2",
+    "format:fix": "prettier --write $npm_package_config_prettierglob_1 --write $npm_package_config_prettierglob_2"
+  },
+  "config": {
+    "prettierglob_1": "./*.{js,json,ts}",
+    "prettierglob_2": "./content/**/*.{css,js,jsx,json,md,scss,ts,tsx}"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8"
+  }
+}

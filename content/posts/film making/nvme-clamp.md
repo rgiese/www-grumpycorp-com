@@ -1,6 +1,6 @@
 ---
 title: NVMe clamp for camera rig
-date: 2020-08-17
+published: 2020-08-17
 tags: ["film making"]
 ---
 
@@ -15,19 +15,19 @@ so I whipped something up in Fusion 360 ([F3D](https://github.com/rgiese/www-gru
 <div className="cf">
   <div className="fl-ns fn w-10-m w-50-ns pa1">
 
-![](images/NVMeClampRender.png "Clamp render from Fusion 360")
+<?# SimpleFigure src="images/NVMeClampRender.png" caption="Clamp render from Fusion 360" /?>
 
   </div>
   <div className="fl-ns fn w-10-m w-50-ns pa1">
 
-![](images/NVMeClampPrinted.png "Clamp fresh off the printer")
+<?# SimpleFigure src="images/NVMeClampPrinted.png" caption="Clamp fresh off the printer" /?>
 
   </div>
 </div>
 
-![](images/NVMeClampTest.jpg "Test fit with enclosure")
+<?# SimpleFigure src="images/NVMeClampTest.jpg" caption="Test fit with enclosure" /?>
 
-![](images/NVMeClampInstalled.jpg "Installed on the camera")
+<?# SimpleFigure src="images/NVMeClampInstalled.jpg" caption="Installed on the camera" /?>
 
 The material is perhaps a bit thick but I keyed the shell thickness to a design parameter so it's easy to change.
 

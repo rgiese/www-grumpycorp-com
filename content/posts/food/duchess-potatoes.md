@@ -1,7 +1,6 @@
 ---
 title: Duchess potatoes
 published: 2018-06-06
-tags: ["food"]
 ---
 
 I had picked up asparagus for dinner yet again since it's fun, easy, and in season.

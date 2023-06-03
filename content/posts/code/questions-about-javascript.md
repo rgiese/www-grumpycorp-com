@@ -1,7 +1,6 @@
 ---
 title: Questions about JavaScript-based development
 published: 2019-04-11
-tags: ["code"]
 ---
 
 _**Updated** November 2019_: Adding some "helpful" links to

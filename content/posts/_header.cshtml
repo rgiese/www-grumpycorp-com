@@ -5,11 +5,8 @@
 
   <span class="ph2 black-40">in</span>
 
-  @foreach (string tag in Document.GetList<string>("tags").Where(x => x != null))
-  {
-    <a href="" class="link accent-mono">
-      <img class="w1 h1 v-mid" src='@Context.GetLink("/assets/icons/tag.svg")' alt="tag" />
-      @tag
-    </a>
-  }
+  <a href="/tags/posts/@Site.GetTagForPost(Document)" class="link accent-mono">
+    <img class="w1 h1 v-mid" src='@Context.GetLink("/assets/icons/tag.svg")' alt="tag" />
+    @Site.GetTagForPost(Document)
+  </a>
 </div>

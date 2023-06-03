@@ -1,7 +1,6 @@
 ---
 title: IoT thermostat design part 1
 published: 2019-03-18
-tags: ["warm-and-fuzzy"]
 keywords: ["IoT", "thermostat", "hardware", "firmware", "schematics", "PCB"]
 ---
 

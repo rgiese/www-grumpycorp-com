@@ -1,7 +1,6 @@
 ---
 title: "Details: Units of measurement"
 published: 2020-02-08 20:00
-tags: ["warm-and-fuzzy"]
 keywords:
   [
     "IoT",

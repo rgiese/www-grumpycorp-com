@@ -1,7 +1,6 @@
 ---
 title: "The WarmAndFuzzy mobile app"
 published: 2020-02-03 01:00
-tags: ["warm-and-fuzzy"]
 keywords: ["IoT", "AWS", "TypeScript", "ReactNative", "GraphQL"]
 ---
 

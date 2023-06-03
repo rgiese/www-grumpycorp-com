@@ -1,7 +1,6 @@
 ---
 title: "The WarmAndFuzzy web app"
 published: 2020-02-02 01:00
-tags: ["warm-and-fuzzy"]
 keywords: ["IoT", "AWS", "TypeScript", "React", "GraphQL"]
 ---
 

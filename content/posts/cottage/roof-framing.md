@@ -1,7 +1,6 @@
 ---
 title: Cottage roof
 published: 2018-07-17
-tags: ["cottage"]
 ---
 
 The roof framing was again a bit precious due to the nature of the floor-to-ceiling windows. Rather than having simple-ish roof rafters between the beams and then separate short extensions for the overhangs, I decided to notch the beams into full-length solid-sawn 2x10 rafters.

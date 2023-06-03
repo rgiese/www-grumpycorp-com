@@ -1,7 +1,6 @@
 ---
 title: Questions about organizational culture
 published: 2021-03-29
-tags: ["code"]
 ---
 
 _The following is extracted from my [Hire me](/hire-me/) page -

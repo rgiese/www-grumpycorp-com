@@ -1,7 +1,6 @@
 ---
 title: Family RV Trip
 published: 2018-08-30
-tags: ["travel"]
 ---
 
 We just returned from a week-ish-long RV trip with the family that (to me at least) was some form of love song to my parents:

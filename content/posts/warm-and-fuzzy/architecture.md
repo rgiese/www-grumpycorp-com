@@ -1,7 +1,6 @@
 ---
 title: Architecture for a buck
 published: 2020-02-01 02:00
-tags: ["warm-and-fuzzy"]
 keywords:
   [
     "IoT",

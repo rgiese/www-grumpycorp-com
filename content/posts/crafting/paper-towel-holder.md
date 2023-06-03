@@ -1,7 +1,6 @@
 ---
 title: Modern kitchen paper towel holder
 published: 2018-08-16
-tags: ["crafting"]
 ---
 
 I'd been meaning to get a second roll of paper towels for the other end of our kitchen.

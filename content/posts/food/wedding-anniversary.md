@@ -1,7 +1,6 @@
 ---
 title: From the U.S. to Germany to China with love
 published: 2019-01-02
-tags: ["food"]
 ---
 
 We recently traveled to Germany to throw a party for my parents and their friends to celebrate my parents' fiftieth wedding anniversary.

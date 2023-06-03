@@ -1,7 +1,6 @@
 ---
 title: From Hugo to Gatsby
 published: 2019-02-06
-tags: ["code"]
 ---
 
 When I started this site I was certain that I wanted to use a static site generator -

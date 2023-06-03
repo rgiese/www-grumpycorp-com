@@ -1,7 +1,6 @@
 ---
 title: Radiant heating rework
 published: 2018-11-17
-tags: ["crafting"]
 ---
 
 ### The problem

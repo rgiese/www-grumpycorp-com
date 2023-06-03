@@ -1,7 +1,6 @@
 ---
 title: "Details: API implementation"
 published: 2020-02-01 02:40
-tags: ["warm-and-fuzzy"]
 keywords:
   ["IoT", "AWS", "Lambda", "DynamoDB", "Serverless", "TypeScript", "GraphQL"]
 ---

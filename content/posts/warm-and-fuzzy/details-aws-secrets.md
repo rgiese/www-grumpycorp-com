@@ -1,7 +1,6 @@
 ---
 title: "Details: Managing runtime secrets in AWS"
 published: 2020-02-08 18:00
-tags: ["warm-and-fuzzy"]
 keywords: ["IoT", "AWS", "Lambda", "SSM", "KMS", "Serverless", "TypeScript"]
 ---
 

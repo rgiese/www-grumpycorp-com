@@ -1,7 +1,6 @@
 ---
 title: Windows
 published: 2018-07-25
-tags: ["cottage"]
 ---
 
 The windows on our main house are aluminum frame units made by Marlin and they're visually stunning: the frames are simple but robust-looking and hardly impinge on the vast amounts of glass they hold.

@@ -1,7 +1,6 @@
 ---
 title: "Details: A React-based sortable table"
 published: 2020-02-08 19:00
-tags: ["warm-and-fuzzy"]
 keywords: ["IoT", "React", "TypeScript", "GraphQL", "Table"]
 ---
 

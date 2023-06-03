@@ -1,7 +1,6 @@
 ---
 title: Cottage walls
 published: 2018-07-10
-tags: ["cottage"]
 ---
 
 The wall framing is surprisingly cooky because of the nature of the floor-to-ceiling windows.

@@ -1,7 +1,7 @@
 Title: Tags
 ArchiveSources: => GetString("PostSources")
 ArchiveFilter: => GetBool("IsPost")
-ArchiveKey: Tags
+ArchiveKey: => Site.GetTagForPost(Document)
 ArchiveKeyComparer: => StringComparer.OrdinalIgnoreCase.ToConvertingEqualityComparer()
 ArchiveDestination: => $"tags/posts/{GetString("GroupKey")}/index.html"
 ArchiveOrderKey: Published

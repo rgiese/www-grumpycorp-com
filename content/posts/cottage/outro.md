@@ -1,7 +1,6 @@
 ---
 title: Cottage wrap-up
 published: 2019-03-31
-tags: ["cottage"]
 ---
 
 After nine months of on-again, off-again work, the cottage project is finally done!

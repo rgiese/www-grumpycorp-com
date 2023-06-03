@@ -35,8 +35,7 @@
         var postTags = Outputs
         .FromPipeline("Content")
         .FilterSources(Document.GetString("PostSources"))
-        .Select(doc => doc.GetList<string>("tags") ?? new List<string>())
-        .SelectMany(x => x) // flatten list-of-lists
+        .Select(doc => Site.GetTagForPost(doc))
         .Distinct()
         .OrderBy(x => x)
         .ToList();

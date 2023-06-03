@@ -1,7 +1,6 @@
 ---
 title: Ceiling
 published: 2018-12-15
-tags: ["cottage"]
 ---
 
 The ceiling was intended to match one of my favorite features of our main house:

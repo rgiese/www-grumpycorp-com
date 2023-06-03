@@ -1,7 +1,6 @@
 ---
 title: Vegetarian food hacks
 published: 2019-02-24
-tags: ["food"]
 ---
 
 A few trivial techniques to make it easier to enjoy a vegetable-centric diet.

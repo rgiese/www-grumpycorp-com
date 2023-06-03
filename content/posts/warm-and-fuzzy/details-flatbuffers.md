@@ -1,7 +1,6 @@
 ---
 title: "Details: Why Flatbuffers?"
 published: 2020-02-09 10:00
-tags: ["warm-and-fuzzy"]
 keywords:
   [
     "IoT",

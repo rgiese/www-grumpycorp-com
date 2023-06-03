@@ -1,7 +1,6 @@
 ---
 title: Cottage 101
 published: 2018-06-12
-tags: ["cottage"]
 ---
 
 A few years ago we were tremendously fortunate to get to build our dream house with the amazing folks at [Build LLC](https://www.buildllc.com/).

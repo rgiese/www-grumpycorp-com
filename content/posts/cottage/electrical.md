@@ -1,7 +1,6 @@
 ---
 title: Electrical work
 published: 2018-11-05
-tags: ["cottage"]
 ---
 
 The electrical work for once was straight-forward.

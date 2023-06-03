@@ -1,7 +1,6 @@
 ---
 title: Live edge wood slab desk
 published: 2019-03-13
-tags: ["cottage"]
 ---
 
 Being a _writer's_ cottage, there of course needed to be a desk.

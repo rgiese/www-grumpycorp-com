@@ -1,7 +1,6 @@
 ---
 title: Engineering the perfect rouladen
 published: 2018-10-25
-tags: ["food"]
 ---
 
 I'd gotten it into my head that I was going to make the perfect _rouladen_ -

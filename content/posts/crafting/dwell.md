@@ -1,7 +1,6 @@
 ---
 title: DWELL on your anxieties
 published: 2021-02-15
-tags: ["crafting"]
 ---
 
 I crafted these fake DWELL covers based on my personal journey of dealing with lots of things. Enjoy.

@@ -1,7 +1,6 @@
 ---
 title: Drywall
 published: 2018-12-10
-tags: ["cottage"]
 ---
 
 While time-consuming, the process of getting drywall installed, mudded, and sanded was surprisingly pleasant.

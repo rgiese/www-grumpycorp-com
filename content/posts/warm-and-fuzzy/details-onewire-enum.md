@@ -1,7 +1,6 @@
 ---
 title: "Details: OneWire bus enumeration"
 published: 2020-02-01 02:30
-tags: ["warm-and-fuzzy"]
 keywords: ["IoT", "Particle", "OneWire", "enumerate", "search"]
 ---
 

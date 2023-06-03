@@ -1,7 +1,6 @@
 ---
 title: Home Body
 published: 2020-12-16
-tags: ["film making"]
 ---
 
 Our first-ever real (more than a minute long) short film is here!

@@ -1,7 +1,6 @@
 ---
 title: Front stoop
 published: 2018-10-24
-tags: ["cottage"]
 ---
 
 I needed to build a stoop in front of the door. Thankfully we had one on the main house for a back door so I had a design to steal ("model after").

@@ -1,7 +1,6 @@
 ---
 title: Replicating Momofuku and Ivan Ramen
 published: 2018-08-05
-tags: ["food"]
 ---
 
 ## Ivan Ramen corn

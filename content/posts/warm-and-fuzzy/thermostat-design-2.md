@@ -1,7 +1,6 @@
 ---
 title: IoT thermostat design part 2
 published: 2020-02-09 13:00
-tags: ["warm-and-fuzzy"]
 keywords:
   [
     "IoT",

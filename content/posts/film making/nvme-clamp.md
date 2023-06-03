@@ -1,7 +1,6 @@
 ---
 title: NVMe clamp for camera rig
 published: 2020-08-17
-tags: ["film making"]
 ---
 
 I bought a new camera and needed a way to mount my external storage, a [Plugable USB-C NVMe enclosure](https://plugable.com/products/usbc-nvme).

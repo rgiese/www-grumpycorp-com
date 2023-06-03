@@ -1,7 +1,6 @@
 ---
 title: Cottage perimeter
 published: 2018-06-26
-tags: ["cottage"]
 ---
 
 I spent a lot of effort getting a perfectly leveled perimeter frame in place so that from that point forward,

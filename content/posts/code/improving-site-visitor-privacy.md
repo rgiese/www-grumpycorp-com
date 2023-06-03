@@ -1,7 +1,6 @@
 ---
 title: Improving site visitor privacy
 published: 2019-03-16
-tags: ["code"]
 ---
 
 ## Analytics

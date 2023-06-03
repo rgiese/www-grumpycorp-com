@@ -1,7 +1,6 @@
 ---
 title: "Building a full-stack monorepo engineering system"
 published: 2020-02-05
-tags: ["warm-and-fuzzy"]
 keywords:
   [
     "IoT",

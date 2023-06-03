@@ -1,10 +1,10 @@
 @{
-    var thisPostTag = Document.GetList<string>("tags").First();
+    var thisPostTag = Site.GetTagForPost(Document);
 
     var allPostsMatchingTag = Outputs
     .FromPipeline("Content")
     .FilterSources(Document.GetString("PostSources"))
-    .Where(doc => doc.GetList<string>("tags").Contains(thisPostTag))
+    .Where(doc => Site.GetTagForPost(doc).Equals(thisPostTag))
     .OrderBy(doc => doc.GetPublishedDate())
     .ToList();
 

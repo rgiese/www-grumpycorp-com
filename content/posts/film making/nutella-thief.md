@@ -1,7 +1,6 @@
 ---
 title: The Nutella Thief
 published: 2018-04-23
-tags: ["film making"]
 ---
 
 _The Nutella Thief_ is my first micro-short film, conceived on a Saturday over a late breakfast, filmed that afternoon, and edited and scored the next day.

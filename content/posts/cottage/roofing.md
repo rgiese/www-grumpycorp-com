@@ -1,7 +1,6 @@
 ---
 title: Roofing
 published: 2018-07-24
-tags: ["cottage"]
 ---
 
 As discussed previously, I already don't enjoy heights, so spending a lot of time on a roof is just about the last thing I want to do, but it's what the project needed...

@@ -1,7 +1,6 @@
 ---
 title: Flooring
 published: 2019-01-25
-tags: ["cottage"]
 ---
 
 With everything in the cottage matching the design details of our main house, why stop with the floor?

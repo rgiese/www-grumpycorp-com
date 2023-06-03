@@ -1,7 +1,6 @@
 ---
 title: Insulation
 published: 2018-11-08
-tags: ["cottage"]
 ---
 
 Putting in insulation was perhaps the only single-day step of this entire project, and it was oddly fun.

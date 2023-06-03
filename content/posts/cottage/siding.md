@@ -1,7 +1,6 @@
 ---
 title: Siding
 published: 2018-10-14
-tags: ["cottage"]
 ---
 
 The siding of our main house is a mix of ultra-fancy composite aluminum panels (in silver and blue) and vertical tongue-and-groove cedar, all applied as a rain screen setup.

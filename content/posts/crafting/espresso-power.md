@@ -1,7 +1,6 @@
 ---
 title: Turning on my espresso machine from bed
 published: 2021-03-27
-tags: ["crafting"]
 ---
 
 This project is a quick hack to allow me to turn on my Breville Oracle from bed.

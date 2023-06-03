@@ -1,7 +1,6 @@
 ---
 title: Cottage floor
 published: 2018-06-28
-tags: ["cottage"]
 ---
 
 It was surprisingly fast getting the I-joists in place.

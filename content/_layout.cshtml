@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 @{
+  // Determine which type of page this is
   bool isPost = Document.GetBool("IsPost") && !Document.GetBool("IsPostArchive");
   bool isPage = Document.GetBool("IsPage");
+  bool isPortfolio = Document.GetBool("IsPortfolio");
 }
 
 <head>
@@ -97,7 +99,7 @@
             @Html.Partial("pages/_header")
           }
 
-          <div class="lh-copy content">
+          <div class='lh-copy content @(isPortfolio ? "portfolio-container" : "")'>
             @RenderBody()
           </div>
 

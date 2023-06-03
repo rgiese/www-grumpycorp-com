@@ -14,4 +14,7 @@ IsPost: => Context.Outputs.FilterSources(Context.GetString("PostSources")).Conta
 PageSources: pages/**/*.md
 IsPage: => Context.Outputs.FilterSources(Context.GetString("PageSources")).ContainsById(Document)
 
+PortfolioSources: portfolio/**/*.md
+IsPortfolio: => Context.Outputs.FilterSources(Context.GetString("PortfolioSources")).ContainsById(Document)
+
 Layout: /_layout.cshtml

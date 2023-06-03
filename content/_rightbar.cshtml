@@ -18,16 +18,17 @@
     }
 
     <h4>Portfolio</h4>
-    Stuff
-    @* TODO
-    {data.portfolio.edges.map(({ node }) => (
-    <div key={node.fields?.slug}>
-    <Link className={linkDefaultClassName} to={node.fields?.slug ?? "" }>
-    {node?.frontmatter?.title}
-    </Link>
-    </div>
-    ))}
-    *@
+    @{
+        var portfolioPages = Outputs
+        .FromPipeline("Content")
+        .FilterSources(Document.GetString("PortfolioSources"))
+        .OrderBy(doc => doc.GetTitle())
+        .ToList();
+    }
+    @foreach (IDocument doc in portfolioPages)
+    {
+        <div><a class="@linkDefaultClassName" href="@doc.GetLink()">@doc.GetTitle()</a></div>
+    }
 
     <h4>Topics</h4>
     @{

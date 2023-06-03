@@ -20,3 +20,6 @@ Using [google-webfonts-helper](https://gwfh.mranftl.com/fonts) to download Googl
 - [Cross-references](https://www.statiq.dev/guide/web/content-files/links-and-cross-references) are possible inside Markdown (etc.) files to other pages
 - [CleanBlog](https://github.com/statiqdev/CleanBlog) is the foundation for our theme
 - [Razor syntax reference](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-7.0), [intro posts](https://weblogs.asp.net/scottgu/asp-net-mvc-3-layouts-and-sections-with-razor)
+
+### Elsewhere
+- [Some opinionated Statiq helpers](https://github.com/AnkurSheel/StatiqHelpers)

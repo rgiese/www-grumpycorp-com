@@ -1,6 +1,6 @@
 @{
-    const string footerSectionClassName = "f6 pt1";
-    const string linkDefaultClassName = "link dim black-80";
+    const string footerSectionClass = "f6 pt1";
+    const string linkDefaultClass = "link dim black-80";
 }
 
 <div class="f5 lh-copy center">
@@ -14,7 +14,7 @@
     }
     @foreach (IDocument doc in pinnedPages)
     {
-        <div><a class="@linkDefaultClassName" href="@doc.GetLink()">@doc.GetTitle()</a></div>
+        <div><a class="@linkDefaultClass" href="@doc.GetLink()">@doc.GetTitle()</a></div>
     }
 
     <h4>Portfolio</h4>
@@ -27,7 +27,7 @@
     }
     @foreach (IDocument doc in portfolioPages)
     {
-        <div><a class="@linkDefaultClassName" href="@doc.GetLink()">@doc.GetTitle()</a></div>
+        <div><a class="@linkDefaultClass" href="@doc.GetLink()">@doc.GetTitle()</a></div>
     }
 
     <h4>Topics</h4>
@@ -44,12 +44,11 @@
     <div>
         @foreach (string tag in postTags)
         {
-            <a class="@linkDefaultClassName pr2"
-                href='@Context.GetLink($"/tags/posts/{Uri.EscapeDataString(tag)}")'>@tag</a>
+            <a class="@linkDefaultClass pr2" href='@Context.GetLink($"/tags/posts/{Uri.EscapeDataString(tag)}")'>@tag</a>
         }
     </div>
     <div class="pt3">
-        <a class="@linkDefaultClassName" href='@Context.GetLink("/posts/all")'>every damn thing</a>
+        <a class="@linkDefaultClass" href='@Context.GetLink("/posts/all")'>every damn thing</a>
     </div>
 
     <h4>Elsewhere</h4>
@@ -85,28 +84,28 @@
 
     <h4>Not a colophon</h4>
 
-    <div class="@footerSectionClassName">
+    <div class="@footerSectionClass">
         @Document.GetString(WebKeys.Copyright).
     </div>
 
-    <div class="@footerSectionClassName">
+    <div class="@footerSectionClass">
         Made with <img class="v-mid w1 h1" src='@Context.GetLink("/assets/icons/heart.svg")' alt="love" /> in Seattle.
     </div>
 
-    <div class="@footerSectionClassName">
+    <div class="@footerSectionClass">
         Licensed under
-        <a class="@linkDefaultClassName" href="http://creativecommons.org/licenses/by-sa/4.0/"
+        <a class="@linkDefaultClass" href="http://creativecommons.org/licenses/by-sa/4.0/"
             rel="license">CC-BY-SA-4.0</a>.
     </div>
 
-    <div class="@footerSectionClassName">
-        Powered by <a class="@linkDefaultClassName" href="https://statiq.dev">Statiq</a>,
-        <a class="@linkDefaultClassName" href="https://tachyons.io">Tachyions</a>, and
-        <a class="@linkDefaultClassName" href="https://netlify.com">Netlify</a>.
+    <div class="@footerSectionClass">
+        Powered by <a class="@linkDefaultClass" href="https://statiq.dev">Statiq</a>,
+        <a class="@linkDefaultClass" href="https://tachyons.io">Tachyions</a>, and
+        <a class="@linkDefaultClass" href="https://netlify.com">Netlify</a>.
     </div>
 
-    <div class="@footerSectionClassName">
-        <a class="@linkDefaultClassName" href='@Context.GetLink("/posts/code/improving-site-visitor-privacy/")'>
+    <div class="@footerSectionClass">
+        <a class="@linkDefaultClass" href='@Context.GetLink("/posts/code/improving-site-visitor-privacy/")'>
             Privacy notice.
         </a>
     </div>

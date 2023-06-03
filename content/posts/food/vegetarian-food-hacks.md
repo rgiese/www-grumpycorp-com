@@ -1,6 +1,6 @@
 ---
 title: Vegetarian food hacks
-date: 2019-02-24
+published: 2019-02-24
 tags: ["food"]
 ---
 
@@ -26,7 +26,7 @@ My lazy bastard hack on carrots is to just buy them as matchsticks straight from
 - They look and taste better cut into matchsticks rather than grated and I'm most definitely not taking this as an opportunity
   to showcase any knife work with hand-made matchsticks.
 
-![](images/IMG_20190224_101951.jpg "Matchstick carrots")
+<?# SimpleFigure src="images/IMG_20190224_101951.jpg" caption="Matchstick carrots" /?>
 
 ## Broccoli, cauliflower, &amp;c.
 
@@ -34,7 +34,7 @@ Broccoli is really the mainstay of our roasting operation here but cauliflower m
 If I feel like punishing future-me as the dishwasher I'll also toss them in some turmeric for added color
 and some minor flavor improvement.
 
-![](images/IMG_20190224_101944.jpg "Broccoli and cauliflower")
+<?# SimpleFigure src="images/IMG_20190224_101944.jpg" caption="Broccoli and cauliflower" /?>
 
 ## On-the-fly aioli
 
@@ -47,7 +47,7 @@ I simply toss some mayo into a small blender along with some garlic, lemon juice
 and spices from whatever direction of food I may to jibe with on a given day (za'atar, coriander, paprika, whatever).
 Control viscosity with cream (one should always have cream).
 
-![](images/IMG_20190224_102020.jpg "Cheap-ass aioli in cheap-ass squeezy bottle")
+<?# SimpleFigure src="images/IMG_20190224_102020.jpg" caption="Cheap-ass aioli in cheap-ass squeezy bottle" /?>
 
 One of several reasons why we buy mayo from Costco.
 

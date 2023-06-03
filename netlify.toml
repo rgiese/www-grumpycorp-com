@@ -1,3 +1,8 @@
 [build]
   command = "./netlify.build.sh"
   publish = "output"
+
+[[redirects]]
+from = "*"
+to = "/404.html"
+status = 404

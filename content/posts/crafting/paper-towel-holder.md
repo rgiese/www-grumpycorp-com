@@ -1,6 +1,6 @@
 ---
 title: Modern kitchen paper towel holder
-date: 2018-08-16
+published: 2018-08-16
 tags: ["crafting"]
 ---
 
@@ -10,27 +10,27 @@ We had a nice space available on the underside of a cabinet in the ideal locatio
 I also wanted the gizmo to vibe with other interior details of our Danish Modern house;
 for reference, here's a close-up of our stair railings fabricated by Bart at [Build LLC](http://www.buildllc.com/):
 
-![](images/IMG_20180816_133549_Bokeh.jpg "Stair railing detail")
+<?# SimpleFigure src="images/IMG_20180816_133549_Bokeh.jpg" caption="Stair railing detail" /?>
 
 After a half hour of internet shopping I gave up and decided to just make the dang thing myself. If nothing else, this would be a nice diversion from all the woodworking on the cottage.
 
 I got some square stock and some round from Home Depot (sigh):
 
-![](images/IMG_20180813_092616.jpg "Steel stock")
+<?# SimpleFigure src="images/IMG_20180813_092616.jpg" caption="Steel stock" /?>
 
 I then cut them to length, drilled holes into the square stock to receive the round, and also fabbed up some bar stock I had floating around to become a mounting plate:
 
-![](images/IMG_20180813_103403.jpg "Fabricated pieces")
+<?# SimpleFigure src="images/IMG_20180813_103403.jpg" caption="Fabricated pieces" /?>
 
 Time to weld and grind (I just flat welded the ends of the square stock where it had received the round and that turned out to be perfectly sufficient):
 
-![](images/IMG_20180813_105927.jpg "Welding time")
-![](images/IMG_20180813_111823.jpg "Post-grinding")
+<?# SimpleFigure src="images/IMG_20180813_105927.jpg" caption="Welding time" /?>
+<?# SimpleFigure src="images/IMG_20180813_111823.jpg" caption="Post-grinding" /?>
 
 Then I primed and painted the thing with flat black automotive spray paint and installed it a day later. For the record, it's perfectly even and level,
 it just looks a bit off due to the perspective in the photo...
 
-![](images/IMG_20180816_121344.jpg "Finished and installed end product")
+<?# SimpleFigure src="images/IMG_20180816_121344.jpg" caption="Finished and installed end product" /?>
 
 ### Lessons learned
 

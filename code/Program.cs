@@ -5,6 +5,16 @@ return await Bootstrapper.Factory
     .CreateWeb(args)
     // Input settings
     .AddSetting(WebKeys.InputPaths, "content")
+    // Markdown processing
+    .ModifyTemplate(
+        MediaTypes.Markdown,
+        x =>
+            ((Statiq.Markdown.RenderMarkdown)x).UseExtension(
+                new Markdown.ColorCode.ColorCodeExtension(
+                    ColorCode.Styling.StyleDictionary.DefaultLight
+                )
+            )
+    )
     // Image processing
     .BuildPipeline(
         "ResizePostImages",

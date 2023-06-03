@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Markdown.ColorCode" Version="1.0.2" />
     <PackageReference Include="Statiq.Images" Version="1.0.0-beta.67" />
     <PackageReference Include="Statiq.Web" Version="1.0.0-beta.55" />
   </ItemGroup>

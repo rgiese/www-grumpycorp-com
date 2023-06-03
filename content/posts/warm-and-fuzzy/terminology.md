@@ -113,7 +113,7 @@ Making the stream name configurable independent of the device name and/or ID all
 ### Who are you?
 
 Every device has an **id**, a string assigned by whatever manufactured the device
-([Particle](particle.io) for thermostats, [DalSemi/Maxim](https://www.maximintegrated.com/) for temperature sensors).
+([Particle](https://particle.io) for thermostats, [DalSemi/Maxim](https://www.maximintegrated.com/) for temperature sensors).
 
 ### Where do you live?
 

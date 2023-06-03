@@ -7,8 +7,5 @@ obj/
 # Statiq artifacts
 cache/
 output/
-
-# Gatsby files
-.cache/
-public/
-src/gatsby-types.d.ts
+temp/
+wwwroot/

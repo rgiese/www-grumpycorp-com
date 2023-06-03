@@ -3,9 +3,7 @@ title: About
 DestinationPath: about/index.html
 ---
 
-import GrumpyRobin from "../../assets/icons/grumpy-robin.svg";
-
-Hi, I'm Robin (thus <Icon sprite={GrumpyRobin} className="h2" />).
+Hi, I'm Robin (thus <img class="h2" src="/assets/icons/grumpy-robin.svg"/>).
 This site is about stuff I've explored and learned about starting from when I took a year off work to sort some things out.
 
 GRUMPYCORP STUDIOS is the name of my movie studio

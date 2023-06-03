@@ -79,13 +79,9 @@ h4 {
 // SVG madness
 //
 
-.svg-fill-current-color {
-    // Assign to an SVG element to inherit fill color
-    fill: currentColor;
-}
-
-.svg-h-mirror {
-    transform: scale(-1, 1);
+.social-svg-gray {
+    // c.f. https://blog.union.io/code/2017/08/10/img-svg-fill/
+    filter: invert(0.5);
 }
 
 //

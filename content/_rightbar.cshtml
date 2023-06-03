@@ -52,14 +52,29 @@
 
     <h4>Elsewhere</h4>
     <div>
-        @* Drop on small screens: "dn" - don't display by default, "dib-ns" - display on non-small screens *@
-        @* TODO
-        <SocialLink sprite={LogoGMail} uri="mailto:robin@grumpycorp.com" />
-        <SocialLink sprite={LogoLinkedIn} uri="https://www.linkedin.com/in/robingiese" />
+        <span class="pr1 pr2-ns">
+            <a class="link dim" href="mailto:robin@grumpycorp.com" rel="noopener noreferrer" target="_blank">
+                <img class="w1 h1 v-base social-svg-gray" src='@Context.GetLink("/assets/icons/logo-gmail.svg")' />
+            </a>
+        </span>
 
-        <SocialLink sprite={LogoIMDB} uri="https://www.imdb.com/name/nm8515322/" />
-        <SocialLink sprite={LogoGitHub} uri="https://github.com/rgiese/" />
-        *@
+        <span class="pr1 pr2-ns">
+            <a class="link dim" href="https://www.linkedin.com/in/robingiese" rel="noopener noreferrer" target="_blank">
+                <img class="w1 h1 v-base social-svg-gray" src='@Context.GetLink("/assets/icons/logo-linkedin.svg")' />
+            </a>
+        </span>
+
+        <span class="pr1 pr2-ns">
+            <a class="link dim" href="https://www.imdb.com/name/nm8515322/" rel="noopener noreferrer" target="_blank">
+                <img class="w1 h1 v-base social-svg-gray" src='@Context.GetLink("/assets/icons/logo-imdb.svg")' />
+            </a>
+        </span>
+
+        <span class="pr1 pr2-ns">
+            <a class="link dim" href="https://github.com/rgiese/" rel="noopener noreferrer" target="_blank">
+                <img class="w1 h1 v-base social-svg-gray" src='@Context.GetLink("/assets/icons/logo-github.svg")' />
+            </a>
+        </span>
     </div>
 
     <h4>Not a colophon</h4>
@@ -69,9 +84,7 @@
     </div>
 
     <div class="@footerSectionClassName">
-        Made with
-        @* TODO <Icon className="v-mid w1 h1" sprite={Heart} /> *@
-        in Seattle.
+        Made with <img class="v-mid w1 h1" src='@Context.GetLink("/assets/icons/heart.svg")' /> in Seattle.
     </div>
 
     <div class="@footerSectionClassName">

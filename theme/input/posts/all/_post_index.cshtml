@@ -1,0 +1,17 @@
+<table>
+    <tbody class="lh-copy v-top">
+        @foreach (IDocument post in Model.GetChildren())
+        {
+            <tr>
+                <td>
+                    <a href='@Context.GetLink($"/tags/posts/{Site.GetTagForPost(post)}")'
+                        class="link accent-mono">@Site.GetTagForPost(post)</a>
+                </td>
+                <td class="b ph3">@post.GetPublishedDate().ToString("MMMM d, yyyy")</td>
+                <td>
+                    <a class="link accent" href="@post.GetLink()">@post.GetTitle()</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

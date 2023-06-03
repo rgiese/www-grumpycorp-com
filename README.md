@@ -1,24 +1,25 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/63595710-a86c-48c9-a3e2-5a2f4e4bdadc/deploy-status)](https://app.netlify.com/sites/grumpycorp/deploys)
 
 # www-grumpycorp-com
-Website for GrumpyCorp Creative Industries (via Gatsby).
+Website for GrumpyCorp Creative Industries (via [Statiq](https://statiq.dev)).
 
 ## Setup
-*Probably no longer needed:* System prep for Windows: `choco install visualstudio2017-workload-vctools` or just install Visual Studio with native tools. May also need to `set PYTHON=3.7` as appropriate.
+- Install .Net Core (e.g. by installing Visual Studio)
 
-`npm install`, `npm start`, then open `http://localhost:8000` (for graphIQL, see `http://localhost:8000/___graphql`).
+## Running
+- `dotnet run` to build site
+- `dotnet run -- serve` to build and serve site while watching for updates to the input
 
-## Icons
+## Icons and Fonts
 See [The Noun Project](https://thenounproject.com/).
 
-## Fonts
-The GrumpyCorp logo text is set in Clone Rounded Latin (Medium weight) from TypeKit.
+Using [google-webfonts-helper](https://gwfh.mranftl.com/fonts) to download Google fonts (Dosis, Questrial, Quicksand).
 
 ## Links
-- [Gatsby](https://www.gatsbyjs.org)
-- [TypeScript guide](http://2ality.com/2018/04/type-notation-typescript.html)
-- [React/TypeScript cheatsheet](https://github.com/sw-yx/react-typescript-cheatsheet)
+- Markdown parsing provided by [Markdig](https://github.com/xoofx/markdig/blob/master/readme.md)
+- [Cross-references](https://www.statiq.dev/guide/web/content-files/links-and-cross-references) are possible inside Markdown (etc.) files to other pages
+- [CleanBlog](https://github.com/statiqdev/CleanBlog) is the foundation for our theme
+- [Razor syntax reference](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-7.0), [intro posts](https://weblogs.asp.net/scottgu/asp-net-mvc-3-layouts-and-sections-with-razor)
 
-## Breadcrumbs for future things to consider
-- [CSS class name spec management based on state](https://www.npmjs.com/package/classnames#usage-with-reactjs)
-- [Code syntax highlighting from Markdown](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/)
+### Elsewhere
+- [Some opinionated Statiq helpers](https://github.com/AnkurSheel/StatiqHelpers)

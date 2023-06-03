@@ -1,6 +1,11 @@
 node_modules/
 
-# Gatsby files
-.cache/
-public/
-src/gatsby-types.d.ts
+# .Net artifacts
+bin/
+obj/
+
+# Statiq artifacts
+cache/
+output/
+temp/
+wwwroot/

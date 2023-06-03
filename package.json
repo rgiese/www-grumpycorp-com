@@ -1,82 +1,13 @@
 {
-  "name": "www-grumpycorp-com",
-  "private": true,
-  "description": "GrumpyCorp Creative Industries",
-  "version": "0.1.0",
-  "author": "Robin Giese <robin@grumpycorp.com>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rgiese/www-grumpycorp-com"
-  },
-  "dependencies": {
-    "@fontsource/dosis": "^4.5.9",
-    "@fontsource/questrial": "^4.5.9",
-    "@fontsource/quicksand": "^4.5.10",
-    "@mdx-js/react": "^2.1.3",
-    "@types/node": "^18.7.18",
-    "@types/react": "^18.0.20",
-    "@types/react-dom": "^18.0.6",
-    "@types/react-helmet": "^6.1.5",
-    "@typescript-eslint/eslint-plugin": "^5.38.0",
-    "@typescript-eslint/parser": "^5.38.0",
-    "cross-var-no-babel": "^1.2.0",
-    "eslint": "^8.23.1",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.31.8",
-    "eslint-plugin-simple-import-sort": "^8.0.0",
-    "gatsby": "^4.23.0",
-    "gatsby-plugin-feed": "^4.23.0",
-    "gatsby-plugin-image": "^2.23.0",
-    "gatsby-plugin-manifest": "^4.23.0",
-    "gatsby-plugin-mdx": "^4.2.0",
-    "gatsby-plugin-react-helmet": "^5.23.0",
-    "gatsby-plugin-sass": "^5.23.0",
-    "gatsby-plugin-sharp": "^4.23.0",
-    "gatsby-plugin-sitemap": "^5.23.0",
-    "gatsby-remark-images": "^6.23.0",
-    "gatsby-remark-prismjs": "^6.23.0",
-    "gatsby-remark-smartypants": "^5.23.0",
-    "gatsby-source-filesystem": "^4.23.0",
-    "gatsby-transformer-remark": "^5.23.0",
-    "gatsby-transformer-sharp": "^4.23.0",
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1",
-    "prismjs": "^1.29.0",
-    "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0",
-    "remark-gfm": "^1.0.0",
-    "sass": "^1.55.0",
-    "sharp": "^0.31.0",
-    "svg-sprite-loader": "^6.0.11",
-    "tachyons": "^4.12.0",
-    "typescript": "^4.8.3"
+  "scripts": {
+    "format:check": "prettier --check $npm_package_config_prettierglob_1 --check $npm_package_config_prettierglob_2",
+    "format:fix": "prettier --write $npm_package_config_prettierglob_1 --write $npm_package_config_prettierglob_2"
   },
   "config": {
     "prettierglob_1": "./*.{js,json,ts}",
-    "prettierglob_2": "./src/**/*.{css,js,jsx,json,mdx,scss,ts,tsx}"
+    "prettierglob_2": "./content/**/*.{css,js,jsx,json,md,scss,ts,tsx}"
   },
-  "scripts": {
-    "clean": "gatsby clean",
-    "build": "gatsby build",
-    "develop": "gatsby develop --host 0.0.0.0",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "ts:check": "tsc --noEmit",
-    "lint": "eslint \"./src/**/*.{js,ts,tsx}\"",
-    "lint:fix": "eslint --fix \"./src/**/*.{js,ts,tsx}\"",
-    "format:check": "cross-var prettier --check $npm_package_config_prettierglob_1 --check $npm_package_config_prettierglob_2",
-    "format:fix": "cross-var prettier --write $npm_package_config_prettierglob_1 --write $npm_package_config_prettierglob_2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && npm run ts:check && npm run lint"
-    }
-  },
-  "lint-staged": {
-    "*.{css,js,jsx,json,mdx,scss,ts,tsx}": "prettier --check"
+  "devDependencies": {
+    "prettier": "^2.8.8"
   }
 }

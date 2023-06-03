@@ -1,0 +1,14 @@
+Title: Tags
+ArchiveSources: => GetString("PostSources")
+ArchiveFilter: => GetBool("IsPost")
+ArchiveKey: => Site.GetTagForPost(Document)
+ArchiveKeyComparer: => StringComparer.OrdinalIgnoreCase.ToConvertingEqualityComparer()
+ArchiveDestination: => $"tags/posts/{GetString("GroupKey")}/index.html"
+ArchiveOrderKey: Published
+ArchiveOrderDescending: false
+ArchiveTitle: => GetString("GroupKey")
+---
+@if (Document.ContainsKey(Keys.GroupKey))
+{
+    @Html.Partial("_post_index.cshtml", Document)
+}

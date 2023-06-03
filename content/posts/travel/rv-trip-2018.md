@@ -1,6 +1,6 @@
 ---
 title: Family RV Trip
-date: 2018-08-30
+published: 2018-08-30
 tags: ["travel"]
 ---
 

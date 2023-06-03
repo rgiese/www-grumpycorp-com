@@ -3,7 +3,7 @@ ArchiveSources: => GetString("PostSources")
 ArchiveFilter: => GetBool("IsPost")
 ArchiveKey: Tags
 ArchiveKeyComparer: => StringComparer.OrdinalIgnoreCase.ToConvertingEqualityComparer()
-ArchiveDestination: => $"tags/posts/{NormalizedPath.OptimizeFileName(GetString("GroupKey"))}/index.html"
+ArchiveDestination: => $"tags/posts/{GetString("GroupKey")}/index.html"
 ArchiveOrderKey: Published
 ArchiveOrderDescending: false
 ArchiveTitle: => GetString("GroupKey")

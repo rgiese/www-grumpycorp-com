@@ -43,7 +43,7 @@
     <div>
         @foreach (string tag in postTags)
         {
-            <a class="@linkDefaultClassName" href='@Context.GetLink($"/tags/posts/{tag}")'>@tag</a>
+            <a class="@linkDefaultClassName" href='@Context.GetLink($"/tags/posts/{Uri.EscapeDataString(tag)}")'>@tag</a>
         }
     </div>
     <div class="pt3">

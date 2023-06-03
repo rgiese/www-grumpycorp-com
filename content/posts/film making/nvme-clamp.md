@@ -12,13 +12,13 @@ I realized I could just make something on my 3D printer, particularly since I'd 
 so I whipped something up in Fusion 360 ([F3D](https://github.com/rgiese/www-grumpycorp-com/tree/master/src/content/posts/film%20making/images/NVMeClamp.f3d),
 [STL](https://github.com/rgiese/www-grumpycorp-com/tree/master/src/content/posts/film%20making/images/NVMeClamp.stl)) and an hour of printing later we're done!
 
-<div className="cf">
-  <div className="fl-ns fn w-10-m w-50-ns pa1">
+<div class="cf">
+  <div class="fl-ns fn w-10-m w-50-ns pa1">
 
 <?# SimpleFigure src="images/NVMeClampRender.png" caption="Clamp render from Fusion 360" /?>
 
   </div>
-  <div className="fl-ns fn w-10-m w-50-ns pa1">
+  <div class="fl-ns fn w-10-m w-50-ns pa1">
 
 <?# SimpleFigure src="images/NVMeClampPrinted.png" caption="Clamp fresh off the printer" /?>
 

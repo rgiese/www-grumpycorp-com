@@ -14,13 +14,13 @@ Prior to authenticating I take the opportunity to display my "fancy" "brand" ima
 The login happens on an Auth0 web page hosted in an in-app browser - it's a bit jarring transitioning into this from
 the otherwise dark mode-ish app, but whatever.
 
-<div className="cf">
-  <div className="fl-ns fn w-10-m w-50-ns pa1">
+<div class="cf">
+  <div class="fl-ns fn w-10-m w-50-ns pa1">
 
 <?# SimpleFigure src="images/mobile-login.png" caption="Waiting to log in" /?>
 
   </div>
-  <div className="fl-ns fn w-10-m w-50-ns pa1">
+  <div class="fl-ns fn w-10-m w-50-ns pa1">
 
 <?# SimpleFigure src="images/mobile-login-auth0.png" caption="Logging in with Auth0" /?>
 
@@ -35,13 +35,13 @@ including a description of what setpoints they're chasing and what actions they'
 Unlike the webapp, settings for each thermostat can be changed by clicking on any thermostat from the home page.
 This felt like a more touch-friendly UX than porting the same concepts (and code, perhaps) from the web version.
 
-<div className="cf">
-  <div className="fl-ns fn w-10-m w-50-ns pa1">
+<div class="cf">
+  <div class="fl-ns fn w-10-m w-50-ns pa1">
 
 <?# SimpleFigure src="images/mobile-home.png" caption="Thermostats' latest values, actions, and setpoints" /?>
 
   </div>
-  <div className="fl-ns fn w-10-m w-50-ns pa1">
+  <div class="fl-ns fn w-10-m w-50-ns pa1">
 
 <?# SimpleFigure src="images/mobile-settings.png" caption="Settings for a single thermostat" /?>
 
@@ -58,13 +58,13 @@ Once the setting has been changed, the _Save_ button is enabled and will similar
 the _Remove_ button becomes disabled when the setting is changed to avoid letting a user accidentally delete a setting when they meant to save it.
 Navigating back before saving just discards the edits.
 
-<div className="cf">
-  <div className="fl-ns fn w-10-m w-50-ns pa1">
+<div class="cf">
+  <div class="fl-ns fn w-10-m w-50-ns pa1">
 
 <?# SimpleFigure src="images/mobile-setting-scheduled.png" caption="Editing a scheduled setting" /?>
 
   </div>
-  <div className="fl-ns fn w-10-m w-50-ns pa1">
+  <div class="fl-ns fn w-10-m w-50-ns pa1">
 
 <?# SimpleFigure src="images/mobile-setting-scheduled-modified.png" caption="Save button enabled for a modified setting" /?>
 

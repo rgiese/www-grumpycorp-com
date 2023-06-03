@@ -31,7 +31,7 @@ and dips to ~9V when the LEDs turn on.
 Then build and flash [the code](https://github.com/rgiese/espresso-power/blob/main/src/espresso-power.ino) to the Particle Argon,
 configure it with a static DHCP lease, and boom you're done:
 
-<div className="center w-10-m w-50-ns">
+<div class="center w-10-m w-50-ns">
 
 <?# SimpleFigure src="images/espressoPowerPage.jpg" caption="Espresso Power page" /?>
 

@@ -52,11 +52,11 @@ So that kinda makes you wonder about what you're getting into when you're using 
 I designed a lovely insert for a Decora wallplate that stacked the big components in the back
 and exposed the DHT22 temperature and humidity sensor through a nice grille in the front.
 
-<div className="cf">
-  <div className="fl-ns fn w-10-m w-50-ns pa1">
+<div class="cf">
+  <div class="fl-ns fn w-10-m w-50-ns pa1">
     <?# SimpleFigure src="images/thermostatCoverFront.png" caption="In-wall cover, front" /?>
   </div>
-  <div className="fl-ns fn w-10-m w-50-ns pa1">
+  <div class="fl-ns fn w-10-m w-50-ns pa1">
     <?# SimpleFigure src="images/thermostatCoverBack.png" caption="In-wall cover, back" /?>
   </div>
 </div>
@@ -152,11 +152,11 @@ I designed a body that would carry the PCB in the back and have sides open to th
 This made the body easy to print (the big flat surface got to be on the bottom)
 and it made the cover easy-ish to print as well (by printing it upside down, with its "user-facing" flat surface face down on the build plate).
 
-<div className="cf">
-  <div className="fl-ns fn w-10-m w-50-ns pa1">
+<div class="cf">
+  <div class="fl-ns fn w-10-m w-50-ns pa1">
     <?# SimpleFigure src="images/thermostat-housing.png" caption="Two-part thermostat housing, with cover" /?>
   </div>
-  <div className="fl-ns fn w-10-m w-50-ns pa1">
+  <div class="fl-ns fn w-10-m w-50-ns pa1">
     <?# SimpleFigure src="images/thermostat-housing-base.png" caption="Two-part thermostat housing, just the base" /?>
   </div>
 </div>

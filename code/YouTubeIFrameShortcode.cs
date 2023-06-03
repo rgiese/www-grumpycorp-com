@@ -1,22 +1,18 @@
-using System.Xml.Linq;
-
-namespace Statiq.Web.Shortcodes
+public class YouTubeIFrameShortcode : SyncShortcode
 {
-    public class YouTubeIFrameShortcode : SyncShortcode
+    private const string Id = nameof(Id);
+
+    public override ShortcodeResult Execute(
+        KeyValuePair<string, string>[] args,
+        string content,
+        IDocument document,
+        IExecutionContext context
+    )
     {
-        private const string Id = nameof(Id);
+        IMetadataDictionary arguments = args.ToDictionary(Id);
+        arguments.RequireKeys(Id);
 
-        public override ShortcodeResult Execute(
-            KeyValuePair<string, string>[] args,
-            string content,
-            IDocument document,
-            IExecutionContext context
-        )
-        {
-            IMetadataDictionary arguments = args.ToDictionary(Id);
-            arguments.RequireKeys(Id);
-
-            return $"""
+        return $"""
             <div class="aspect-ratio overflow-hidden" style="padding-bottom: 60%; padding-top: 30px">
               <iframe
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -29,6 +25,5 @@ namespace Statiq.Web.Shortcodes
               ></iframe>
             </div>            
             """;
-        }
     }
 }

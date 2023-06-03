@@ -1,22 +1,18 @@
-using System.Xml.Linq;
-
-namespace Statiq.Web.Shortcodes
+public class VimeoIFrameShortcode : SyncShortcode
 {
-    public class VimeoIFrameShortcode : SyncShortcode
+    private const string Id = nameof(Id);
+
+    public override ShortcodeResult Execute(
+        KeyValuePair<string, string>[] args,
+        string content,
+        IDocument document,
+        IExecutionContext context
+    )
     {
-        private const string Id = nameof(Id);
+        IMetadataDictionary arguments = args.ToDictionary(Id);
+        arguments.RequireKeys(Id);
 
-        public override ShortcodeResult Execute(
-            KeyValuePair<string, string>[] args,
-            string content,
-            IDocument document,
-            IExecutionContext context
-        )
-        {
-            IMetadataDictionary arguments = args.ToDictionary(Id);
-            arguments.RequireKeys(Id);
-
-            return $"""
+        return $"""
             <p>
               <div class="aspect-ratio overflow-hidden" style="padding-bottom: 60%; padding-top: 30px;">
                 <iframe
@@ -29,6 +25,5 @@ namespace Statiq.Web.Shortcodes
               </div>
             </p>
             """;
-        }
     }
 }

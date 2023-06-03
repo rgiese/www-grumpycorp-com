@@ -23,6 +23,11 @@
     <meta name="author" content="@Document.GetString(WebKeys.Author)">
   }
 
+  @if (Document.ContainsKey("keywords"))
+  {
+    <meta name="keywords" content='@String.Join(", ", Document.GetList<string>("keywords"))'>
+  }
+
   @* -- `meta` configuration: OpenGraph (or whatever) goop -- *@
   <meta property="og:type" content="website" />
   <meta property="og:url" content='@Document.GetLink(true)' />

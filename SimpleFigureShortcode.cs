@@ -1,4 +1,5 @@
 using Statiq.Images;
+using SixLabors.ImageSharp.Processing;
 
 public class SimpleFigureShortcode : SyncShortcode
 {
@@ -68,7 +69,14 @@ public class SimpleFigureShortcode : SyncShortcode
 
         foreach (int imageWidth in ImageWidths)
         {
-            imageResizer.Resize(imageWidth, 0).And();
+            imageResizer
+                .Resize(
+                    imageWidth,
+                    0, // Let aspect ratio dictate the height
+                    AnchorPositionMode.Center, // Default
+                    ResizeMode.Min // Resizes the image until the shortest side reaches the set given dimension. Upscaling is disabled in this mode and the original image will be returned if attempted.
+                )
+                .And();
         }
 
         return imageResizer;

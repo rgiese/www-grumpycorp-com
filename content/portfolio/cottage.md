@@ -62,5 +62,5 @@ For more about the design and construction process,
 see the [<TagIcon className="h075" /> cottage](/tags/posts/cottage) post series.
 
   </div>
-  <?# SimpleFigure src="cottage/autocad.png" alt="AutoCAD rendering" className="portfolio-sxs-w40" /?>
+  <?# SimpleFigure src="cottage/autocad.png" alt="AutoCAD rendering" class="portfolio-sxs-w40" /?>
 </div>

@@ -44,7 +44,7 @@ I just don't have time to put up with its ecosystem.
 
 It took me less time to migrate this entire site to Statiq than it took me to migrate Gatsby from v3 to v4.
 
-Lines of actual (`.cs`/`.cshtml` and `.ts*`) code required to pull this site together:
+Lines of actual (`.ts*` and `.cs`/`.cshtml`, respectively) code required to pull this site together:
 
 - Gatsby: 1494
 - Statiq: 576

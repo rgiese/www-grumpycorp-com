@@ -82,7 +82,7 @@ on the downstage two-thirds of the rake to look like stone tile.
 
 <?# SimpleFigure src="the-odyssey/IMG_0211.jpg" caption="Mostly complete set" /?>
 
-To our eternal chagrin, our attempts to use gaff tape to cover the seams doesn't work and I reach for left-over floor patch compound from the [cottage](/tags/posts/cottage) project.
+To our eternal chagrin, our attempts to use gaff tape to cover the seams don't work and I reach for left-over floor patch compound from the [cottage](/tags/posts/cottage) project.
 It works, but we don't get around to painting it until just before opening night, so all the photos taken of the production show a big shit-colored streak up the wave from the unpainted compound.
 Lovely.
 

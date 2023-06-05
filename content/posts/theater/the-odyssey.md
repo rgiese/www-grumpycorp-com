@@ -42,7 +42,7 @@ against walkability/safety, and also just the money we need to spend on legs for
 <?# SimpleFigure src="the-odyssey/rake_elevation.png" caption="Elevation of rake with wave" /?>
 
 I then spend a few hours watching YouTube videos to learn how skater ramps are built and settle on using plywood ribs every 4' with 2x4's spanning them every ~12",
-skinned with two layers of 3/8" plywood, which is just bendable enough. 
+skinned with two layers of 3/8" plywood, which is just bendable enough.
 I tune the shape of the wave so that I can cut three ribs out of each sheet of 3/4" plywood.
 
 <?# SimpleFigure src="the-odyssey/rake_framing.png" caption="Detailed elevation of wave rib" /?>
@@ -88,7 +88,6 @@ Lovely.
 
 <?# SimpleFigure src="the-odyssey/415A.jpg" caption="The wave shart ugh ugh" /?>
 
-
 ## The lights
 
 ### Earlier October, 2021 - T minus 5-ish weeks
@@ -123,7 +122,7 @@ The cue list sheet pulls the scene location and description text from the scene 
 
 With a firm idea of what things ought to look like and what the lights need to be able to do, I can turn back towards the engineering side of lighting design.
 
-My light plot establishes a grid of 4 rows of 5 columns of side/side/front/back light. 
+My light plot establishes a grid of 4 rows of 5 columns of side/side/front/back light.
 I use Source4's for the side light so I can stuff templates in them - this is going to be a dark show so there best be lots of pretty texture.
 
 <?# SimpleFigure src="the-odyssey/IMG_0213.jpg" caption="Hand-drafted light plot, no wiggles yet" /?>
@@ -147,18 +146,18 @@ That said, this is a bit of a high-risk proposition so I've developed some techn
 
 The first show I ever used moving lights on, I had essentially zero focus points programmed when we started tech;
 in part because I didn't know any better, and in part because I just hadn't had the time because load-in had been a shit show.
-I had a near-panic attack and was only able to get through the evening with the help of a whole lot of cheap boxed wine, 
-which I don't really recommend as a regular coping mechanism. 
+I had a near-panic attack and was only able to get through the evening with the help of a whole lot of cheap boxed wine,
+which I don't really recommend as a regular coping mechanism.
 As a result, I nowadays program a stupendous amount of focus points before the cue writing process begins.
 I suspect the high school would frown upon boxed wine.
 
-I also take some time with the lights before tech and see how the set responds to being lit. 
+I also take some time with the lights before tech and see how the set responds to being lit.
 How do the colors and textures interact? How do different directions of light reflect off different floors, walls, and everything in between?
 
 This is also a great time to memorize what all the 100+ lights do so that by the time I'm writing cues, I can look at any piece of the stage
 and immediately know what channels control the lights from each direction without having to think about it.
 
-With all this prep, tech blessedly goes very well. Every cue gets written. The director is very happy. 
+With all this prep, tech blessedly goes very well. Every cue gets written. The director is very happy.
 Most importantly, I get to be the kind of person I want to be: calm, focused, friendly.
 
 ## November 11th, 2021 - Opening night
@@ -214,11 +213,11 @@ We're very happy with the outcome, though rather exhausted.
 
 Since I'm _actually_ writing this from the future, the year 2023, here's what happens next:
 
-- Lydia, my lightboard operator, grows into being a full-fledged designer faster than I could have ever imagined. 
+- Lydia, my lightboard operator, grows into being a full-fledged designer faster than I could have ever imagined.
   - She and I co-design the next show (_Peter and the Starcatcher_). I bring in my light board and network it with the school's board (both ETC Elements) so she can see what I'm doing close-up while I write cues, and I can help her with hers, all without having to be on top of one another in a time of COVID peaking in the schools.
   - She designs the third show of the season all on her own (I just design the rep plot) and she wins an award from Seattle's 5th Ave Theater for best student lighting design.
-- Sarah and I continue working on the next two shows, spending a bit over 500 volunteer hours in the process. This gets us a gold medal and signed letter from US President Biden, 
-the [President's Volunteer Service Award](https://en.wikipedia.org/wiki/President%27s_Volunteer_Service_Award). Completely unexpected, and not something I'd ever imagined doing in my life.
+- Sarah and I continue working on the next two shows, spending a bit over 500 volunteer hours in the process. This gets us a gold medal and signed letter from US President Biden,
+  the [President's Volunteer Service Award](https://en.wikipedia.org/wiki/President%27s_Volunteer_Service_Award). Completely unexpected, and not something I'd ever imagined doing in my life.
 - Sarah becomes the teacher of the school's Theater Tech class and goes on to design and run more and more shows for them.
 - The school administration somehow finds ~$50K to buy the theater an inventory of both fixed and moving LED lights based on a permanent rep plot I design for them, and I get to take my little MAC Auras home.
 
@@ -226,4 +225,3 @@ As much as this has set my filmmaking adventures back by over a year, this has b
 I came in to slap together yet another show and came out a changed person.
 I've discovered just how much I love teaching, and I've even gotten to teach a few stage design classes since (more on that later).
 +++ would buy again.
-

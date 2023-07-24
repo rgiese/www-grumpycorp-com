@@ -9,3 +9,6 @@ cache/
 output/
 temp/
 wwwroot/
+
+# macOS madness
+.DS_Store

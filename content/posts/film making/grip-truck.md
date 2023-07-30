@@ -101,7 +101,7 @@ The shelves on the left side of the truck are all on full extension slides so I 
 Aluminum bars keep anything from falling off the shelves ever again:
 
 <?# SimpleFigure src="grip-truck/IMG_0477.jpg" caption="Guard bar latched shut" /?>
-<?# SimpleFigure src="grip-truck/IMG_0477.jpg" caption="Guard bar latch open" /?>
+<?# SimpleFigure src="grip-truck/IMG_0479.jpg" caption="Guard bar latch open" /?>
 
 Little baby latches make sure that the sliding shelves don't get any ideas while driving:
 

@@ -19,7 +19,10 @@ public class SimpleFigureShortcode : SyncShortcode
         IMetadataDictionary arguments = args.ToDictionary(Src, Alt, Caption, Class);
         arguments.RequireKeys(Src);
 
-        string src = arguments.GetString(Src);
+        string documentRelativeSrc = arguments.GetString(Src);
+        NormalizedPath documentDirectory = document.Destination.Parent;
+
+        string src = context.GetLink(documentDirectory.Combine(documentRelativeSrc));
 
         string? alt = arguments.GetString(Alt);
         string? caption = arguments.GetString(Caption);

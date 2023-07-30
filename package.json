@@ -1,6 +1,8 @@
 {
   "scripts": {
     "clean": "rimraf bin cache obj output temp wwwroot",
+    "build": "dotnet run",
+    "serve": "dotnet run -- preview",
     "format:check": "prettier --check $npm_package_config_prettierglob_1 --check $npm_package_config_prettierglob_2",
     "format:fix": "prettier --write $npm_package_config_prettierglob_1 --write $npm_package_config_prettierglob_2"
   },

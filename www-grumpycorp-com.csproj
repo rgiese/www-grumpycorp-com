@@ -10,8 +10,8 @@
 
   <ItemGroup>
     <PackageReference Include="Markdown.ColorCode" Version="1.0.4" />
-    <PackageReference Include="Statiq.Images" Version="1.0.0-beta.70" />
-    <PackageReference Include="Statiq.Web" Version="1.0.0-beta.58" />
+    <PackageReference Include="Statiq.Images" Version="1.0.0-beta.71" />
+    <PackageReference Include="Statiq.Web" Version="1.0.0-beta.59" />
   </ItemGroup>
 
 </Project>

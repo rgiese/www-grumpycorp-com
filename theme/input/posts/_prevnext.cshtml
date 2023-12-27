@@ -1,20 +1,19 @@
 @{
     var thisPostTag = Site.GetTagForPost(Document);
 
-    var allPostsMatchingTag = Outputs
+    var allPostsInTimeOrder = Outputs
     .FromPipeline("Content")
     .FilterSources(Document.GetString("PostSources"))
-    .Where(doc => Site.GetTagForPost(doc).Equals(thisPostTag))
     .OrderBy(doc => doc.GetPublishedDate())
     .ToList();
 
-    var thisPostIndex = allPostsMatchingTag.FindIndex(post => post.GetLink() == Document.GetLink());
+    var thisPostIndex = allPostsInTimeOrder.FindIndex(post => post.GetLink() == Document.GetLink());
 
     var foundThisPost = thisPostIndex != -1;
 
-    var previousPost = foundThisPost && (thisPostIndex - 1) >= 0 ? allPostsMatchingTag[thisPostIndex - 1] : null;
+    var previousPost = foundThisPost && (thisPostIndex - 1) >= 0 ? allPostsInTimeOrder[thisPostIndex - 1] : null;
 
-    var nextPost = foundThisPost && (thisPostIndex + 1) < allPostsMatchingTag.Count ? allPostsMatchingTag[thisPostIndex + 1]
+    var nextPost = foundThisPost && (thisPostIndex + 1) < allPostsInTimeOrder.Count ? allPostsInTimeOrder[thisPostIndex + 1]
     : null;
 }
 <table class="w-100 pv3">

@@ -1,4 +1,4 @@
-<h1 class="mb1">@(Document.GetString("Title") ?? Document.GetString("SiteTitle"))</h1>
+<h1 class="mb1"><a href='@Document.GetLink()'>@(Document.GetString("Title") ?? Document.GetString("SiteTitle"))</a></h1>
 
 <div class="f5 black-60">
   @(Document.GetString("published"))

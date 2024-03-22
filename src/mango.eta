@@ -1,0 +1,11 @@
+<% const stuff = "Stuff"; %>
+
+<%= stuff %>.
+
+<%
+  function doThing() {
+    return "mango";
+  }
+%>
+
+<%= doThing() %>

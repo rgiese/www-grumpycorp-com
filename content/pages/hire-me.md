@@ -3,13 +3,14 @@ title: Hire me (maybe)
 DestinationPath: hire-me/index.html
 ---
 
+_Note_: I am not currently on the job market in my capacity as a software engineer.
+For filmmaking and other creative adventures, [hit me up](mailto:robin@grumpycorp.com) anytime!
+
 I promised myself I'd get better at identifying and contributing to healthy work environments.
 
 I believe the thoughts and feelings presented here aren't singular or disruptive
 but I am publishing them because I think they are at least _underrepresented_ in the tech sector
 and I want to do my small part to help change that.
-
-_Note_: I am not currently on the job market.
 
 ## What excites me
 

@@ -4,6 +4,9 @@ node_modules/
 bin/
 obj/
 
+# Webpack artifacts
+dist/
+
 # Statiq artifacts
 cache/
 output/

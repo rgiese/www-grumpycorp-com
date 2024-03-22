@@ -7,6 +7,9 @@ Website for GrumpyCorp Creative Industries (via [Statiq](https://statiq.dev)).
 ## Setup
 
 - Install .Net Core (e.g. by installing Visual Studio)
+- M1 devices: might need to:
+  - `brew install libsass`
+  - `sudo ln -s /opt/homebrew/lib/libsass.dylib /usr/local/lib`
 
 ## Running
 

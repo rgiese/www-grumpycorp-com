@@ -3,46 +3,26 @@ title: About
 DestinationPath: about/index.html
 ---
 
+<img src="/pages/about/profile.jpg" alt="Robin and Chester" style="float: left; max-width: 30%; margin-right: 1em; margin-bottom: 1em;">
+
 Hi, I'm Robin (thus <img class="h2" src="/assets/icons/grumpy-robin.svg"/>).
-This site is about stuff I've explored and learned about starting from when I took a year off work to sort some things out.
+I'm an engineer, artist, and fabricator driven by a compulsion to learn, teach, and make.
 
-GRUMPYCORP STUDIOS is the name of my movie studio
-/ consulting company / record label / construction outfit, whatever I need it to
-be at any given time.
+My engineering work includes [software](https://www.linkedin.com/in/robingiese/),
+[hardware](/posts/warm-and-fuzzy/thermostat-design-2), and [structural engineering / architecture](/portfolio/cottage).
 
-It actually is a real company at this point: Grumpy Company Studios LLC d/b/a Grumpycorp Studios!
-I wasn't allowed to call it "Grumpycorp Studios LLC" off the bat because you cannot have "corp" in the name of an LLC
-so here we are with this registered and licensed "doing business as" life hack.
+My art includes [film](/posts/film%20making/home-body), [theater design](/posts/theater/the-odyssey), and music.
 
-If you want my help on anything - a project, a problem, an opportunity - don't hesitate to [ask](mailto:robin@grumpycorp.com).
-
-### Ambitions
-
-- In progress
-  - Needlessly geek out with current technology
-    - Automate my house's heating system into [IoT nirvana](/tags/posts/warm-and-fuzzy/)
-  - Cook all the things _[(working on it)](/tags/posts/food/)_
-- On ice
-  - Become ~~a credible~~ any kind of film editor
-    - ~~Make a~~ [short film](/posts/film%20making/home-body/) ([proof of concept](/posts/film%20making/nutella-thief/))
-    - ~~Make the soundtrack for said short film~~
-    - Help friends make and edit films &rarr; working on it right now!
-- Completed
-  - ~~Complete a major labor-of-love project~~ _[done](/portfolio/cottage/)_
-    - ~~Design and build a~~ [writer's cottage](/tags/posts/cottage/) ~~in the back yard~~
-  - ~~Figure out whether food could be a livelihood~~ been there, done it, doesn't pay
-
-### Lessons learned
-
-- _Just do it right the first time_ is the constant refrain from the [cottage](/tags/posts/cottage/) project, my primary occupation over the last eight months.
-- Food is wonderful but don't make it a livelihood unless you enjoy it so much that you don't mind 60+ hour work weeks for minimum wage pay. Duh.
+If there's anything you want made, [come find me](mailto:robin@grumpycorp.com).
+My [grip truck](/posts/film%20making/grip-truck) is ready to roll anytime day or night.
 
 ### Resume
 
 - As a software engineer and engineering manager: see [LinkedIn](https://www.linkedin.com/in/robingiese)
 - As a film maker: see [IMDB](https://www.imdb.com/name/nm8515322/)
-- As a stage and lighting designer: some 30+ productions, including at:
+- As a stage and lighting designer: some 40+ productions, including at:
   - [ACT Theatre](http://www.acttheatre.org/) (Seattle)
   - [McCarter Theater](https://www.mccarter.org/) (Princeton, NJ)
   - [Microsoft Theater Troupe](https://www.facebook.com/MicrosoftTheaterTroupe/) (Redmond, WA)
-  - [Theatre Intime](https://www.theatreintime.org/) (Princeton, NJ).
+  - [Theatre Intime](https://www.theatreintime.org/) (Princeton, NJ)
+  - [Mercer Island High School](/posts/theater/the-odyssey) (Mercer Island, WA)

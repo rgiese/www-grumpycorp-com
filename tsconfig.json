@@ -1,4 +1,8 @@
 {
+  "compilerOptions": {
+    "moduleResolution": "NodeNext",
+    "target": "es2022"
+  },
   // Courtesy https://stackoverflow.com/questions/51610583/ts-node-ignores-d-ts-files-while-tsc-successfully-compiles-the-project
   "ts-node": {
     "files": true

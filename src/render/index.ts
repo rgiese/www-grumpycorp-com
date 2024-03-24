@@ -12,15 +12,7 @@ function renderDocument(
   marked: Marked,
 ) {
   // Compute output path
-  const inputDocumentRelativePath = path.parse(inputDocument.relativePath);
-
-  const siteRelativeOutputPath = path.join(
-    documentGroupConfig.documentGroupName,
-    inputDocumentRelativePath.dir,
-    inputDocumentRelativePath.name,
-    "index.html",
-  );
-
+  const siteRelativeOutputPath = documentGroupConfig.ouputPathFromDocumentPath(inputDocument);
   const outputPath = path.join(config.outputRootPath, siteRelativeOutputPath);
 
   console.log(`${inputDocument.relativePath} -> ${siteRelativeOutputPath} -> ${outputPath}`);

@@ -1,14 +1,7 @@
-node_modules/
+/node_modules/
 
-# .Net artifacts
-bin/
-obj/
-
-# Statiq artifacts
-cache/
-output/
-temp/
-wwwroot/
+# Output artifacts
+/output/
 
 # macOS madness
 .DS_Store

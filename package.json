@@ -1,17 +1,12 @@
 {
   "scripts": {
     "clean": "rimraf bin cache obj output temp wwwroot",
-    "build": "dotnet run",
-    "serve": "dotnet run -- preview",
-    "format:check": "prettier --check $npm_package_config_prettierglob_1 --check $npm_package_config_prettierglob_2",
-    "format:fix": "prettier --write $npm_package_config_prettierglob_1 --write $npm_package_config_prettierglob_2"
-  },
-  "config": {
-    "prettierglob_1": "./*.{js,json,ts}",
-    "prettierglob_2": "./content/**/*.{css,js,jsx,json,md,scss,ts,tsx}"
+    "build": "ts-node ./src/build.ts",
+    "format:fix": "prettier --write ./**/*.{css,md,json,scss,ts}"
   },
   "devDependencies": {
-    "prettier": "^2.8.8",
-    "rimraf": "^5.0.1"
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.2"
   }
 }

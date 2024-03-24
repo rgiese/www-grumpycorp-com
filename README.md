@@ -6,30 +6,16 @@ Website for GrumpyCorp Creative Industries (via [Statiq](https://statiq.dev)).
 
 ## Setup
 
-- Install .Net Core (e.g. by installing Visual Studio)
-- M1 devices: might need to:
-  - `brew install libsass`
-  - `sudo ln -s /opt/homebrew/lib/libsass.dylib /usr/local/lib`
+- `npm install`
 
 ## Running
 
-- `dotnet run` to build site
-- `dotnet run -- preview` to build and [serve](http://localhost:5080) site while watching for updates to the input
-- `dotnet run -- serve` to serve a separately built version of the site
+- `npm run build` to build site
+- <TBD> to build and [serve](http://localhost:5080) site while watching for updates to the input
+- <TBD> to serve a separately built version of the site
 
 ## Icons and Fonts
 
 See [The Noun Project](https://thenounproject.com/).
 
 Using [google-webfonts-helper](https://gwfh.mranftl.com/fonts) to download Google fonts (Dosis, Questrial, Quicksand).
-
-## Links
-
-- Markdown parsing provided by [Markdig](https://github.com/xoofx/markdig/blob/master/readme.md)
-- [Cross-references](https://www.statiq.dev/guide/web/content-files/links-and-cross-references) are possible inside Markdown (etc.) files to other pages
-- [CleanBlog](https://github.com/statiqdev/CleanBlog) is the foundation for our theme
-- [Razor syntax reference](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-7.0), [intro posts](https://weblogs.asp.net/scottgu/asp-net-mvc-3-layouts-and-sections-with-razor)
-
-### Elsewhere
-
-- [Some opinionated Statiq helpers](https://github.com/AnkurSheel/StatiqHelpers)

@@ -2,12 +2,27 @@
   "scripts": {
     "clean": "rimraf bin cache obj output temp wwwroot",
     "build": "ts-node ./src/build.ts",
-    "format:fix": "prettier --write ."
+    "format:fix": "prettier --write .",
+    "lint": "eslint ."
   },
   "devDependencies": {
     "@types/node": "^20.11.30",
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "eslint": "^8.57.0",
+    "eta": "^3.4.0",
     "prettier": "^3.2.5",
     "rimraf": "^5.0.5",
     "ts-node": "^10.9.2"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "overrides": [
+      {
+        "files": "*.eta",
+        "options": {
+          "parser": "html"
+        }
+      }
+    ]
   }
 }

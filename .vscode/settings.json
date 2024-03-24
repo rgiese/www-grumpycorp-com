@@ -27,5 +27,8 @@
     "typescript",
     "typescriptreact",
     "yml"
-  ]
+  ],
+  "files.associations": {
+    "*.eta": "html"
+  }
 }

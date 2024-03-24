@@ -5,9 +5,9 @@ module.exports = {
   plugins: ["@typescript-eslint"],
   root: true,
   env: {
-    browser: true,
+    node: true,
   },
-  ignorePatterns: [".eslintrc.js", "prettier.config.js", "dist/**"],
+  ignorePatterns: [".eslintrc.js", "output/**"],
   rules: {
     "no-inner-declarations": "off", // I like inner declarations. Deal with it.
   },

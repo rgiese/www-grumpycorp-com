@@ -7,6 +7,7 @@ Website for GrumpyCorp Creative Industries (via [Statiq](https://statiq.dev)).
 ## Setup
 
 - `npm install`
+- Consider installing the [ETA VSCode extension](https://marketplace.visualstudio.com/items?itemName=shadowtime2000.eta-vscode)
 
 ## Running
 

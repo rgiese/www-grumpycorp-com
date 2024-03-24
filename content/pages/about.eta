@@ -1,0 +1,45 @@
+<% data.setDocumentInfo("About") %>
+
+<img
+  src="/pages/about/profile.jpg"
+  alt="Robin and Chester"
+  style="float: left; max-width: 30%; margin-right: 1em; margin-bottom: 1em"
+/>
+
+<p>Hi, I'm Robin (thus <img class="h2" src="/assets/icons/grumpy-robin.svg" />).</p>
+
+<p>
+  I'm an engineer, artist, and fabricator driven by a compulsion to learn, teach, and make. My engineering work includes
+  <a href="https://www.linkedin.com/in/robingiese/">software</a>,
+  <a href="/posts/warm-and-fuzzy/thermostat-design-2">hardware</a>, and
+  <a href="/portfolio/cottage">structural engineering / architecture</a>. My art includes
+  <a href="/posts/film%20making/home-body">film</a>, <a href="/posts/theater/the-odyssey">theater design</a>, and music.
+  If there's anything you want made, <a href="mailto:robin@grumpycorp.com">come find me</a>. My
+  <a href="/posts/film%20making/grip-truck">grip truck</a> is ready to roll anytime day or night.
+</p>
+
+<h3>Resume</h3>
+
+<ul>
+  <li>
+    As a software engineer and engineering manager: see
+    <a href="https://www.linkedin.com/in/robingiese">LinkedIn</a>
+  </li>
+  <li>As a film maker: see <a href="https://www.imdb.com/name/nm8515322/">IMDB</a></li>
+  <li>
+    As a stage and lighting designer: some 40+ productions, including at:
+    <ul>
+      <li><a href="http://www.acttheatre.org/">ACT Theatre</a> (Seattle)</li>
+      <li><a href="https://www.mccarter.org/">McCarter Theater</a> (Princeton, NJ)</li>
+      <li>
+        <a href="https://www.facebook.com/MicrosoftTheaterTroupe/">Microsoft Theater Troupe</a>
+        (Redmond, WA)
+      </li>
+      <li><a href="https://www.theatreintime.org/">Theatre Intime</a> (Princeton, NJ)</li>
+      <li>
+        <a href="/posts/theater/the-odyssey">Mercer Island High School</a>
+        (Mercer Island, WA)
+      </li>
+    </ul>
+  </li>
+</ul>

@@ -1,18 +1,25 @@
 import * as path from "path";
 import * as fs from "fs";
+import { Marked } from "marked";
 
 import { RootConfig, DocumentGroupConfig } from "../config";
 import { InputDocument, InputDocumentGroup } from "../input";
 
-function renderDocument(config: RootConfig, documentGroupConfig: DocumentGroupConfig, inputDocument: InputDocument) {
+function renderDocument(
+  config: RootConfig,
+  documentGroupConfig: DocumentGroupConfig,
+  inputDocument: InputDocument,
+  marked: Marked,
+) {
   // Compute output path
-  const siteRelativeOutputPath = documentGroupConfig.ouputPathFromDocumentPath(inputDocument);
+  const inputDocumentRelativePath = path.parse(inputDocument.relativePath);
 
-  if (!siteRelativeOutputPath.startsWith("/")) {
-    throw new Error(
-      `Output path ${siteRelativeOutputPath} for document ${inputDocument.relativePath} should start with '/'`,
-    );
-  }
+  const siteRelativeOutputPath = path.join(
+    documentGroupConfig.documentGroupName,
+    inputDocumentRelativePath.dir,
+    inputDocumentRelativePath.name,
+    "index.html",
+  );
 
   const outputPath = path.join(config.outputRootPath, siteRelativeOutputPath);
 
@@ -25,16 +32,21 @@ function renderDocument(config: RootConfig, documentGroupConfig: DocumentGroupCo
     fs.mkdirSync(outputDirectory, { recursive: true });
   }
 
-  // TODO: Render
+  // Render
+  const contentHtml = marked.parse(inputDocument.content) as string;
 
   // Output
-  fs.writeFileSync(outputPath, inputDocument.content);
+  fs.writeFileSync(outputPath, contentHtml);
 }
 
-function renderDocumentGroup(rootConfig: RootConfig, inputDocumentGroup: InputDocumentGroup) {
-  inputDocumentGroup.documents.forEach((d) => renderDocument(rootConfig, inputDocumentGroup.documentGroupConfig, d));
+function renderDocumentGroup(rootConfig: RootConfig, inputDocumentGroup: InputDocumentGroup, marked: Marked) {
+  inputDocumentGroup.documents.forEach((d) =>
+    renderDocument(rootConfig, inputDocumentGroup.documentGroupConfig, d, marked),
+  );
 }
 
 export function renderSite(config: RootConfig, inputDocumentGroups: InputDocumentGroup[]) {
-  inputDocumentGroups.forEach((g) => renderDocumentGroup(config, g));
+  const marked = new Marked({ pedantic: true });
+
+  inputDocumentGroups.forEach((g) => renderDocumentGroup(config, g, marked));
 }

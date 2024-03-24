@@ -2,9 +2,10 @@
   "scripts": {
     "clean": "rimraf bin cache obj output temp wwwroot",
     "build": "ts-node ./src/build.ts",
-    "format:fix": "prettier --write ./**/*.{css,md,json,scss,ts}"
+    "format:fix": "prettier --write ."
   },
   "devDependencies": {
+    "@types/node": "^20.11.30",
     "prettier": "^3.2.5",
     "rimraf": "^5.0.5",
     "ts-node": "^10.9.2"

@@ -10,8 +10,7 @@ const rootConfig: RootConfig = {
     {
       documentGroupName: "pages",
       inputRelativePath: "pages",
-      ouputPathFromDocumentPath: (inputDocument) =>
-        `/pages/${path.parse(inputDocument.documentRelativePath).name}/index.html`,
+      ouputPathFromDocumentPath: (inputDocument) => `/pages/${path.parse(inputDocument.relativePath).name}/index.html`,
     },
     //{ documentGroupName: "portfolio", inputRelativePath: "portfolio" },
     //{ documentGroupName: "posts", inputRelativePath: "posts" },

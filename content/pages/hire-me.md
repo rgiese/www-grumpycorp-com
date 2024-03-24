@@ -1,6 +1,5 @@
 ---
 title: Hire me (maybe)
-DestinationPath: hire-me/index.html
 ---
 
 _Note_: I am not currently on the job market in my capacity as a software engineer.

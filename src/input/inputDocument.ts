@@ -1,8 +1,14 @@
+import * as yup from "yup";
+
+export const FrontMatterSchema = yup.object({
+  title: yup.string().required(),
+  published: yup.date(),
+});
+
+export type InputFrontmatter = yup.InferType<typeof FrontMatterSchema>;
+
 export type InputDocument = {
-  documentRelativePath: string;
-
-  documentTitle: string;
-  documentDate?: Date;
-
-  documentContent: string;
+  relativePath: string;
+  frontMatter: InputFrontmatter;
+  content: string;
 };

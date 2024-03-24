@@ -10,13 +10,13 @@ function renderDocument(config: RootConfig, documentGroupConfig: DocumentGroupCo
 
   if (!siteRelativeOutputPath.startsWith("/")) {
     throw new Error(
-      `Output path ${siteRelativeOutputPath} for document ${inputDocument.documentRelativePath} should start with '/'`,
+      `Output path ${siteRelativeOutputPath} for document ${inputDocument.relativePath} should start with '/'`,
     );
   }
 
   const outputPath = path.join(config.outputRootPath, siteRelativeOutputPath);
 
-  console.log(`${inputDocument.documentRelativePath} -> ${siteRelativeOutputPath} -> ${outputPath}`);
+  console.log(`${inputDocument.relativePath} -> ${siteRelativeOutputPath} -> ${outputPath}`);
 
   // Ensure output directory exists
   const outputDirectory = path.dirname(outputPath);
@@ -28,7 +28,7 @@ function renderDocument(config: RootConfig, documentGroupConfig: DocumentGroupCo
   // TODO: Render
 
   // Output
-  fs.writeFileSync(outputPath, inputDocument.documentContent);
+  fs.writeFileSync(outputPath, inputDocument.content);
 }
 
 function renderDocumentGroup(rootConfig: RootConfig, inputDocumentGroup: InputDocumentGroup) {

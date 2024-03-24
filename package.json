@@ -2,6 +2,7 @@
   "scripts": {
     "clean": "rimraf bin cache obj output temp wwwroot",
     "build": "ts-node ./src/build.ts",
+    "serve": "http-server output --port 5080 -c-1",
     "format:fix": "prettier --write .",
     "lint": "eslint ."
   },
@@ -11,6 +12,7 @@
     "eslint": "^8.57.0",
     "eta": "^3.4.0",
     "gray-matter": "^4.0.3",
+    "http-server": "^14.1.1",
     "marked": "^12.0.1",
     "prettier": "^3.2.5",
     "rimraf": "^5.0.5",

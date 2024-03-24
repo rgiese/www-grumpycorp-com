@@ -13,7 +13,7 @@ Website for GrumpyCorp Creative Industries (via [Statiq](https://statiq.dev)).
 
 - `npm run build` to build site
 - <TBD> to build and [serve](http://localhost:5080) site while watching for updates to the input
-- <TBD> to serve a separately built version of the site
+- `npm serve` to [serve](http://localhost:5080) a separately built version of the site
 
 ## Icons and Fonts
 

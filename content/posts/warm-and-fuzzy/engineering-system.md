@@ -2,19 +2,7 @@
 title: "Building a full-stack monorepo engineering system"
 published: 2020-02-05
 keywords:
-  [
-    "IoT",
-    "AWS",
-    "Lambda",
-    "DynamoDB",
-    "Serverless",
-    "TypeScript",
-    "React",
-    "ReactNative",
-    "GraphQL",
-    "Particle",
-    "C++",
-  ]
+  ["IoT", "AWS", "Lambda", "DynamoDB", "Serverless", "TypeScript", "React", "ReactNative", "GraphQL", "Particle", "C++"]
 ---
 
 ## Monorepo or bust

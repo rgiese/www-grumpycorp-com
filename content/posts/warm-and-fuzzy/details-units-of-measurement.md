@@ -1,16 +1,7 @@
 ---
 title: "Details: Units of measurement"
 published: 2020-02-08 20:00
-keywords:
-  [
-    "IoT",
-    "React",
-    "ReactNative",
-    "TypeScript",
-    "GraphQL",
-    "Units",
-    "Temperature",
-  ]
+keywords: ["IoT", "React", "ReactNative", "TypeScript", "GraphQL", "Units", "Temperature"]
 ---
 
 #### Experience the experience

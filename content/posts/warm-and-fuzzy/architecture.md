@@ -2,19 +2,7 @@
 title: Architecture for a buck
 published: 2020-02-01 02:00
 keywords:
-  [
-    "IoT",
-    "AWS",
-    "Lambda",
-    "DynamoDB",
-    "Serverless",
-    "TypeScript",
-    "React",
-    "ReactNative",
-    "GraphQL",
-    "Particle",
-    "C++",
-  ]
+  ["IoT", "AWS", "Lambda", "DynamoDB", "Serverless", "TypeScript", "React", "ReactNative", "GraphQL", "Particle", "C++"]
 ---
 
 My primary architectural goal for this system was simplicity, followed by cost.

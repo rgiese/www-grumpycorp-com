@@ -6,4 +6,5 @@ import rootConfig from "./siteConfig";
 
 const inputDocumentGroups = ingestInput(rootConfig);
 renderSite(rootConfig, inputDocumentGroups);
-processAssets(rootConfig);
+processAssets(rootConfig, rootConfig.inputRootPath);
+processAssets(rootConfig, rootConfig.themeRootPath);

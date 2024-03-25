@@ -12,7 +12,7 @@ const rootConfig: RootConfig = {
   // Paths are relative to repo root (by virtue of being invoked from the repo root)
   inputRootPath: path.resolve("content"),
   outputRootPath: path.resolve("output"),
-  templateRootPath: path.resolve("templates"),
+  themeRootPath: path.resolve("theme"),
   documentGroups: [
     {
       documentGroupName: "pages",

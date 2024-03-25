@@ -10,6 +10,6 @@ export type DocumentGroupConfig = {
 export type RootConfig = {
   inputRootPath: string;
   outputRootPath: string;
-  templateRootPath: string;
+  themeRootPath: string;
   documentGroups: DocumentGroupConfig[];
 };

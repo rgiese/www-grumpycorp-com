@@ -50,7 +50,7 @@ function renderDocument(
 }
 
 function renderDocumentGroup(rootConfig: RootConfig, inputDocumentGroup: InputDocumentGroup, marked: Marked) {
-  const eta = new Eta({ views: rootConfig.templateRootPath, varName: "data", debug: true });
+  const eta = new Eta({ views: rootConfig.themeRootPath, varName: "data", debug: true });
 
   inputDocumentGroup.documents.forEach((d) =>
     renderDocument(rootConfig, inputDocumentGroup.documentGroupConfig, d, marked, eta),

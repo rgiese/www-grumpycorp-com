@@ -3,13 +3,14 @@ import { renderSite } from "./render";
 import { processAssets } from "./assets";
 
 import rootConfig from "./siteConfig";
-import { createSourceFileSystem } from "./fileSystem";
+import { createSourceFileSystem, OutputFileSystem } from "./fileSystem";
 
 const sourceFileSystem = createSourceFileSystem(rootConfig);
+const outputFileSystem = new OutputFileSystem(rootConfig.outputRootPath);
 
 const inputDocumentGroups = ingestInput(rootConfig, sourceFileSystem);
 
-processAssets(rootConfig, sourceFileSystem.inputFiles);
-processAssets(rootConfig, sourceFileSystem.themeFiles);
+processAssets(sourceFileSystem.inputFiles, outputFileSystem);
+processAssets(sourceFileSystem.themeFiles, outputFileSystem);
 
-renderSite(rootConfig, inputDocumentGroups);
+renderSite(rootConfig, inputDocumentGroups, outputFileSystem);

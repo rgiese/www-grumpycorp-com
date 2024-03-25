@@ -5,26 +5,22 @@ import { Marked } from "marked";
 
 import { RootConfig, DocumentGroupConfig } from "../config";
 import { InputDocument, InputDocumentGroup } from "../input";
+import { OutputFileSystem } from "../fileSystem";
 
 function renderDocument(
-  config: RootConfig,
   documentGroupConfig: DocumentGroupConfig,
   inputDocument: InputDocument,
   marked: Marked,
   eta: Eta,
+  outputFileSystem: OutputFileSystem,
 ) {
   // Compute output path
   const siteRelativeOutputPath = documentGroupConfig.outputPathFromDocumentPath(inputDocument);
-  const outputPath = path.join(config.outputRootPath, siteRelativeOutputPath);
+  const outputPath = outputFileSystem.getAbsolutePath(siteRelativeOutputPath);
 
   console.log(`${inputDocument.documentGroupRelativePath} -> ${siteRelativeOutputPath} -> ${outputPath}`);
 
-  // Ensure output directory exists
-  const outputDirectory = path.dirname(outputPath);
-
-  if (!fs.existsSync(outputDirectory)) {
-    fs.mkdirSync(outputDirectory, { recursive: true });
-  }
+  outputFileSystem.ensureOutputPathExists(outputPath);
 
   try {
     // Render content
@@ -48,16 +44,25 @@ function renderDocument(
   }
 }
 
-function renderDocumentGroup(rootConfig: RootConfig, inputDocumentGroup: InputDocumentGroup, marked: Marked) {
+function renderDocumentGroup(
+  rootConfig: RootConfig,
+  inputDocumentGroup: InputDocumentGroup,
+  marked: Marked,
+  outputFileSystem: OutputFileSystem,
+) {
   const eta = new Eta({ views: rootConfig.themeRootPath, varName: "data", debug: true });
 
   inputDocumentGroup.documents.forEach((d) =>
-    renderDocument(rootConfig, inputDocumentGroup.documentGroupConfig, d, marked, eta),
+    renderDocument(inputDocumentGroup.documentGroupConfig, d, marked, eta, outputFileSystem),
   );
 }
 
-export function renderSite(rootConfig: RootConfig, inputDocumentGroups: InputDocumentGroup[]) {
+export function renderSite(
+  rootConfig: RootConfig,
+  inputDocumentGroups: InputDocumentGroup[],
+  outputFileSystem: OutputFileSystem,
+) {
   const marked = new Marked({ pedantic: false });
 
-  inputDocumentGroups.forEach((g) => renderDocumentGroup(rootConfig, g, marked));
+  inputDocumentGroups.forEach((g) => renderDocumentGroup(rootConfig, g, marked, outputFileSystem));
 }

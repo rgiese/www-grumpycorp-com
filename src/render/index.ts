@@ -1,5 +1,6 @@
 import * as path from "path";
 import * as fs from "fs";
+import { Eta } from "eta";
 import { Marked } from "marked";
 
 import { RootConfig, DocumentGroupConfig } from "../config";
@@ -10,6 +11,7 @@ function renderDocument(
   documentGroupConfig: DocumentGroupConfig,
   inputDocument: InputDocument,
   marked: Marked,
+  eta: Eta,
 ) {
   // Compute output path
   const siteRelativeOutputPath = documentGroupConfig.ouputPathFromDocumentPath(inputDocument);
@@ -24,16 +26,34 @@ function renderDocument(
     fs.mkdirSync(outputDirectory, { recursive: true });
   }
 
-  // Render
-  const contentHtml = marked.parse(inputDocument.content) as string;
+  try {
+    // Render content
+    const contentHtml = marked.parse(inputDocument.content) as string;
 
-  // Output
-  fs.writeFileSync(outputPath, contentHtml);
+    // Render template
+    const pageHtml = eta.render(documentGroupConfig.templateName, {
+      inputDocument: {
+        documentGroupName: documentGroupConfig.documentGroupName,
+        relativePath: inputDocument.relativePath,
+        frontMatter: inputDocument.frontMatter,
+      },
+      content: contentHtml,
+    });
+
+    // Output
+    fs.writeFileSync(outputPath, pageHtml);
+  } catch (error) {
+    console.error(`While creating ${outputPath} from ${inputDocument.relativePath}:`);
+    console.error(`with frontmatter: ${JSON.stringify(inputDocument.frontMatter)}`);
+    throw error;
+  }
 }
 
 function renderDocumentGroup(rootConfig: RootConfig, inputDocumentGroup: InputDocumentGroup, marked: Marked) {
+  const eta = new Eta({ views: rootConfig.templateRootPath, varName: "data", debug: true });
+
   inputDocumentGroup.documents.forEach((d) =>
-    renderDocument(rootConfig, inputDocumentGroup.documentGroupConfig, d, marked),
+    renderDocument(rootConfig, inputDocumentGroup.documentGroupConfig, d, marked, eta),
   );
 }
 

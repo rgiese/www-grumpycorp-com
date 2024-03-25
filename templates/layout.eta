@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <!-- prettier-ignore -->
+  <% 
+    const documentGroupName = data.inputDocument.documentGroupName; 
+    const frontMatter = data.inputDocument.frontMatter;
+  %>
+
+  <head>
+    <!-- `meta` configuration: basics -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- `meta` configuration: metadata -->
+    <meta name="author" content="Robin Giese" />
+
+    <% if (frontMatter.keywords) { %>
+    <meta name="keywords" content="<%= frontMatter.keywords.join(', ') %>" />
+    <% } %>
+
+    <!-- Document title and link -->
+    <title><%= frontMatter.title %></title>
+    <meta property="og:title" content="<%= frontMatter.title %>" />
+
+    <!-- FavIcon and other theming -->
+    <link rel="icon" href="/assets/icons/grumpy-robin.svg" />
+    <meta name="theme-color" content="#f26739" />
+
+    <!-- Style sheets -->
+    <link href="/scss/external/tachyons.css" rel="stylesheet" />
+    <link href="/scss/site.css" rel="stylesheet" />
+
+    <!-- SimpleAnalytics -->
+    <script async defer src="https://sa.grumpycorp.com/latest.js"></script>
+    <noscript>
+      <img src="https://sa.grumpycorp.com/noscript.gif" alt="" />
+    </noscript>
+  </head>
+
+  <body>
+    <div class="ph3 pt4-ns tl bg-white">
+      <div class="cf">
+        <!--
+        * Top-level layout: three divs (left = empty, main, and right)
+        * - fl-ns: float-left the for non-small (-ns) screens at [10 @ medium / 20 @ large] / 50 / 30 percent widths
+        * - fn: don't float (== stack) the divs on small screens
+        *
+        * Main div layout:
+        * - mw7: constrain width for readability
+        * - center: center content box
+        *
+        * Right div layout:
+        * - mw5: constrain width for readability
+        * - device-dependent left padding
+        * - a hint of bottom-padding for small screens
+        *
+        * Containing div (see above) clears floats.
+        -->
+
+        <div class="fl-ns fn w-10-m w-20-l">&nbsp;</div>
+
+        <div class="fl-ns fn w-50-ns">
+          <!-- Main div -->
+          <main class="<%= documentGroupName === 'portfolio' ? 'mw8' : 'mw7' %> center pt2">
+            <!-- Logo on top for small screens -->
+            <div class="mb4 dn-ns">
+              <a href="/">
+                <img class="w5" src="/assets/icons/studiosLogo.svg" alt="Grumpycorp logo" />
+              </a>
+            </div>
+
+            <!-- prettier-ignore -->
+            <% if (documentGroupName === "posts") { %> 
+                <%~ include("posts/header", data) %> 
+                <%~ include("posts/prevnext", data) %> 
+            <% } else if (documentGroupName === "pages") { %> 
+                <%~ include("pages/header", data) %>
+            <% } %>
+
+            <div class="lh-copy content <%= documentGroupName === 'portfolio' ? 'portfolio-container' : '' %>">
+              <%~ data.content %>
+            </div>
+
+            <!-- prettier-ignore -->
+            <% if (documentGroupName === "posts") { %> 
+                <%~ include("posts/prevnext", data) %>
+            <% } %>
+          </main>
+        </div>
+
+        <div class="fl-ns fn w-30-ns">
+          <!-- Right div -->
+          <nav class="mw5 pl2 pl5-ns pb3">
+            <!-- Logo on the side for not-small screens -->
+            <div class="mb4 dn db-ns">
+              <a href="/">
+                <img class="w5" src="/assets/icons/studiosLogo.svg" alt="Grumpycorp logo" />
+              </a>
+            </div>
+
+            <%~ include("rightbar", data) %>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!-- prettier-ignore -->
+<% 
+    const footerSectionClass = "f6 pt1"; 
+    const linkDefaultClass = "link dim black-80"; 
+%>
+
+<div class="f5 lh-copy center">
+  <h4>Pinned</h4>
+
+  <div class="pt3">
+    <a class="<%= linkDefaultClass%>" href="/posts/all">every damn thing</a>
+  </div>
+
+  <h4>Elsewhere</h4>
+  <div>
+    <span class="pr1 pr2-ns">
+      <a class="link dim" href="mailto:robin@grumpycorp.com" rel="noopener noreferrer" target="_blank">
+        <img class="w1 h1 v-base social-svg-gray" src="/assets/icons/logo-gmail.svg" alt="Gmail logo" />
+      </a>
+    </span>
+
+    <span class="pr1 pr2-ns">
+      <a class="link dim" href="https://www.linkedin.com/in/robingiese" rel="noopener noreferrer" target="_blank">
+        <img class="w1 h1 v-base social-svg-gray" src="/assets/icons/logo-linkedin.svg" alt="LinkedIn logo" />
+      </a>
+    </span>
+
+    <span class="pr1 pr2-ns">
+      <a class="link dim" href="https://www.imdb.com/name/nm8515322/" rel="noopener noreferrer" target="_blank">
+        <img class="w1 h1 v-base social-svg-gray" src="/assets/icons/logo-imdb.svg" alt="IMDb logo" />
+      </a>
+    </span>
+
+    <span class="pr1 pr2-ns">
+      <a class="link dim" href="https://github.com/rgiese/" rel="noopener noreferrer" target="_blank">
+        <img class="w1 h1 v-base social-svg-gray" src="/assets/icons/logo-github.svg" alt="GitHub logo" />
+      </a>
+    </span>
+  </div>
+
+  <h4>Not a colophon</h4>
+
+  <div class="<%= footerSectionClass %>">&copy;2024 Grumpy Company Studios LLC.</div>
+
+  <div class="<%= footerSectionClass %>">
+    Made with <img class="v-mid w1 h1" src="/assets/icons/heart.svg" alt="love" /> in Seattle.
+  </div>
+
+  <div class="<%= footerSectionClass %>">
+    Licensed under
+    <a class="<%= linkDefaultClass%>" href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license"
+      >CC-BY-SA-4.0</a
+    >.
+  </div>
+
+  <div class="<%= footerSectionClass %>">
+    Powered by
+    <a class="<%= linkDefaultClass%>" href="https://tachyons.io">Tachyions</a>, and
+    <a class="<%= linkDefaultClass%>" href="https://netlify.com">Netlify</a>.
+  </div>
+
+  <div class="<%= footerSectionClass %>">
+    <a class="<%= linkDefaultClass%>" href="/posts/code/improving-site-visitor-privacy/"> Privacy notice. </a>
+  </div>
+</div>

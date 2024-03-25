@@ -3,45 +3,38 @@ import * as path from "path";
 import * as sass from "sass";
 
 import { RootConfig } from "../config";
-import { enumerateFilesRecursive } from "../tools";
+import { SourceFile } from "../fileSystem";
 
-function replaceFileExtension(outputPath: string, revisedExtension: string): string {
-  return path.format({ ...path.parse(outputPath), base: "", ext: revisedExtension });
-}
-
-export function processAssets(rootConfig: RootConfig, inputRootPath: string) {
-  const themeFiles = Array.from(enumerateFilesRecursive(inputRootPath));
-
-  const outputPathFromSourcePath = (sourcePath: string) => {
-    return path.join(rootConfig.outputRootPath, path.relative(inputRootPath, sourcePath));
-  };
-
+export function processAssets(rootConfig: RootConfig, sourceFiles: SourceFile[]) {
   // Copy simple assets
   const simpleAssetExtensions = [".css", ".jpg", ".png", ".svg", ".eot", ".ttf", ".woff", ".woff2"];
 
-  themeFiles
-    .filter((x) => !path.basename(x).startsWith("_"))
-    .filter((x) => simpleAssetExtensions.includes(path.extname(x)))
-    .forEach((sourcePath) => {
-      const outputPath = outputPathFromSourcePath(sourcePath);
+  sourceFiles
+    .filter((f) => !f.parsedRootRelativePath.base.startsWith("_"))
+    .filter((f) => simpleAssetExtensions.includes(f.parsedRootRelativePath.ext))
+    .forEach((sourceFile) => {
+      const outputPath = path.join(rootConfig.outputRootPath, sourceFile.rootRelativePath);
       fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-      fs.copyFileSync(sourcePath, outputPath);
+      fs.copyFileSync(sourceFile.absolutePath, outputPath);
     });
 
   // Process SCSS
-  themeFiles
-    .filter((x) => !path.basename(x).startsWith("_"))
-    .filter((x) => path.extname(x) === ".scss")
-    .forEach((sourcePath) => {
+  sourceFiles
+    .filter((f) => !f.parsedRootRelativePath.base.startsWith("_"))
+    .filter((f) => f.parsedRootRelativePath.ext === ".scss")
+    .forEach((sourceFile) => {
       try {
-        const compiledScss = sass.compile(sourcePath);
+        const compiledScss = sass.compile(sourceFile.absolutePath);
 
-        const outputPath = replaceFileExtension(outputPathFromSourcePath(sourcePath), ".css");
+        const outputPath = path.join(
+          rootConfig.outputRootPath,
+          path.format({ ...sourceFile.parsedRootRelativePath, ext: ".css" }),
+        );
+
         fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-
         fs.writeFileSync(outputPath, compiledScss.css);
       } catch (error) {
-        console.error(`While processing ${sourcePath}:`);
+        console.error(`While processing ${sourceFile.absolutePath}:`);
         throw error;
       }
     });

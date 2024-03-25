@@ -14,10 +14,10 @@ function renderDocument(
   eta: Eta,
 ) {
   // Compute output path
-  const siteRelativeOutputPath = documentGroupConfig.ouputPathFromDocumentPath(inputDocument);
+  const siteRelativeOutputPath = documentGroupConfig.outputPathFromDocumentPath(inputDocument);
   const outputPath = path.join(config.outputRootPath, siteRelativeOutputPath);
 
-  console.log(`${inputDocument.relativePath} -> ${siteRelativeOutputPath} -> ${outputPath}`);
+  console.log(`${inputDocument.documentGroupRelativePath} -> ${siteRelativeOutputPath} -> ${outputPath}`);
 
   // Ensure output directory exists
   const outputDirectory = path.dirname(outputPath);
@@ -34,7 +34,7 @@ function renderDocument(
     const pageHtml = eta.render(documentGroupConfig.templateName, {
       inputDocument: {
         documentGroupName: documentGroupConfig.documentGroupName,
-        relativePath: inputDocument.relativePath,
+        relativePath: inputDocument.documentGroupRelativePath,
         frontMatter: inputDocument.frontMatter,
       },
       content: contentHtml,
@@ -46,7 +46,7 @@ function renderDocument(
     // Output
     fs.writeFileSync(outputPath, pageHtml);
   } catch (error) {
-    console.error(`While creating ${outputPath} from ${inputDocument.relativePath}:`);
+    console.error(`While creating ${outputPath} from ${inputDocument.documentGroupRelativePath}:`);
     console.error(`with frontmatter: ${JSON.stringify(inputDocument.frontMatter)}`);
     throw error;
   }

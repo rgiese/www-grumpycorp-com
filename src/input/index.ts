@@ -19,6 +19,7 @@ function ingestInputDocument(documentGroupConfig: DocumentGroupConfig, sourceFil
 
     return {
       sourceFile,
+      documentGroupConfig,
       documentGroupRelativePath: path.relative(documentGroupConfig.inputRootRelativePath, sourceFile.rootRelativePath),
       frontMatter: FrontMatterSchema.validateSync(document.data, { stripUnknown: true }),
       content: document.content,

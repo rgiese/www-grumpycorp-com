@@ -32,12 +32,8 @@ function renderDocument(
 
     // Render template
     const pageHtml = eta.render(documentGroupConfig.templateName, {
-      inputDocument: {
-        documentGroupName: documentGroupConfig.documentGroupName,
-        relativePath: inputDocument.documentGroupRelativePath,
-        frontMatter: inputDocument.frontMatter,
-      },
-      content: contentHtml,
+      inputDocument,
+      contentHtml,
       api: {
         path,
       },

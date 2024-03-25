@@ -2,7 +2,7 @@
 <html lang="en">
   <!-- prettier-ignore -->
   <% 
-    const documentGroupName = data.inputDocument.documentGroupName; 
+    const documentGroupName = data.inputDocument.documentGroupConfig.documentGroupName; 
     const frontMatter = data.inputDocument.frontMatter;
   %>
 
@@ -78,7 +78,7 @@
             <% } %>
 
             <div class="lh-copy content <%= documentGroupName === 'portfolio' ? 'portfolio-container' : '' %>">
-              <%~ data.content %>
+              <%~ data.contentHtml %>
             </div>
 
             <!-- prettier-ignore -->

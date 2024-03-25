@@ -1,5 +1,6 @@
 import * as yup from "yup";
 
+import { DocumentGroupConfig } from "../config";
 import { SourceFile } from "../fileSystem";
 
 export const FrontMatterSchema = yup.object({
@@ -12,6 +13,7 @@ export type InputFrontmatter = yup.InferType<typeof FrontMatterSchema>;
 
 export type InputDocument = {
   sourceFile: SourceFile;
+  documentGroupConfig: DocumentGroupConfig;
   documentGroupRelativePath: string;
   frontMatter: InputFrontmatter;
   content: string;

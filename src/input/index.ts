@@ -4,7 +4,7 @@ import * as path from "path";
 import { RootConfig, DocumentGroupConfig } from "../config";
 
 import { InputDocument, FrontMatterSchema } from "./inputDocument";
-import { enumerateFilesRecursive } from "./tools";
+import { enumerateFilesRecursive } from "../tools";
 
 export { InputDocument };
 

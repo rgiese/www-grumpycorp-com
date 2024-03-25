@@ -5,6 +5,10 @@ import * as sass from "sass";
 import { RootConfig } from "../config";
 import { SourceFile } from "../fileSystem";
 
+function replaceFileExtension(originalPath: path.ParsedPath, revisedExtension: string): string {
+  return path.format({ ...originalPath, base: undefined /* so `ext` is used */, ext: revisedExtension });
+}
+
 export function processAssets(rootConfig: RootConfig, sourceFiles: SourceFile[]) {
   // Copy simple assets
   const simpleAssetExtensions = [".css", ".jpg", ".png", ".svg", ".eot", ".ttf", ".woff", ".woff2"];
@@ -28,7 +32,7 @@ export function processAssets(rootConfig: RootConfig, sourceFiles: SourceFile[])
 
         const outputPath = path.join(
           rootConfig.outputRootPath,
-          path.format({ ...sourceFile.parsedRootRelativePath, ext: ".css" }),
+          replaceFileExtension(sourceFile.parsedRootRelativePath, ".css"),
         );
 
         fs.mkdirSync(path.dirname(outputPath), { recursive: true });

@@ -57,8 +57,8 @@ function renderDocumentGroup(rootConfig: RootConfig, inputDocumentGroup: InputDo
   );
 }
 
-export function renderSite(config: RootConfig, inputDocumentGroups: InputDocumentGroup[]) {
+export function renderSite(rootConfig: RootConfig, inputDocumentGroups: InputDocumentGroup[]) {
   const marked = new Marked({ pedantic: false });
 
-  inputDocumentGroups.forEach((g) => renderDocumentGroup(config, g, marked));
+  inputDocumentGroups.forEach((g) => renderDocumentGroup(rootConfig, g, marked));
 }

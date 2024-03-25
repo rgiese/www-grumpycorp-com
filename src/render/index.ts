@@ -38,6 +38,9 @@ function renderDocument(
         frontMatter: inputDocument.frontMatter,
       },
       content: contentHtml,
+      api: {
+        path,
+      },
     });
 
     // Output

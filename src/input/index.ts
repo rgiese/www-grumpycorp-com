@@ -3,17 +3,10 @@ import * as path from "path";
 
 import { RootConfig, DocumentGroupConfig } from "../config";
 
-import { InputDocument, FrontMatterSchema } from "./inputDocument";
+import { InputDocument, InputDocumentInventory, FrontMatterSchema } from "./inputDocument";
 import { SourceFile, SourceFileSystem } from "../fileSystem";
 
-export { InputDocument };
-
-export type InputDocumentGroup = {
-  documentGroupConfig: DocumentGroupConfig;
-  documents: InputDocument[];
-};
-
-export type InputDocumentInventory = Map<string /* documentGroupName */, InputDocumentGroup>;
+export { InputDocument, InputDocumentInventory };
 
 function ingestInputDocument(documentGroupConfig: DocumentGroupConfig, sourceFile: SourceFile): InputDocument {
   try {
@@ -47,7 +40,7 @@ function ingestInputDocument(documentGroupConfig: DocumentGroupConfig, sourceFil
 function ingestDocumentGroup(
   sourceFileSystem: SourceFileSystem,
   documentGroupConfig: DocumentGroupConfig,
-): InputDocumentGroup {
+): InputDocument[] {
   const inputDocumentPaths = sourceFileSystem.inputFiles
     .filter((f) => f.rootRelativePath.startsWith(documentGroupConfig.inputRootRelativePath))
     .filter((f) => f.parsedRootRelativePath.ext === ".md");
@@ -58,18 +51,11 @@ function ingestDocumentGroup(
       return { ...d, siteRelativeOutputPath: documentGroupConfig.outputPathFromDocumentPath(d) };
     });
 
-  return {
-    documentGroupConfig: documentGroupConfig,
-    documents: documentGroupConfig.requirePublishDate
-      ? documents.sort((lhs, rhs) => +lhs.frontMatter.published - +rhs.frontMatter.published)
-      : documents,
-  };
+  return documentGroupConfig.requirePublishDate
+    ? documents.sort((lhs, rhs) => +lhs.frontMatter.published - +rhs.frontMatter.published)
+    : documents;
 }
 
 export function ingestInput(rootConfig: RootConfig, sourceFileSystem: SourceFileSystem): InputDocumentInventory {
-  return new Map(
-    rootConfig.documentGroups
-      .map((g) => ingestDocumentGroup(sourceFileSystem, g))
-      .map((dg) => [dg.documentGroupConfig.documentGroupName, dg] as const),
-  );
+  return new Map(rootConfig.documentGroups.map((g) => [g.documentGroupName, ingestDocumentGroup(sourceFileSystem, g)]));
 }

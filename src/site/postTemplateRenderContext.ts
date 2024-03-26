@@ -3,17 +3,19 @@ import * as path from "path";
 import { RenderContextGenerator } from "../config";
 import { InputDocument } from "../input";
 
-const generateDocumentTag: RenderContextGenerator = (inputDocument, _inputDocumentsInGroup) => {
+const generateDocumentTag: RenderContextGenerator = (inputDocument, _inputDocumentInventory) => {
   return { documentTag: path.dirname(inputDocument.documentGroupRelativePath) };
 };
 
 const generatePreviousNext: RenderContextGenerator = (
   inputDocument,
-  inputDocumentsInGroup,
+  inputDocumentInventory,
 ): {
   previousDocument?: InputDocument;
   nextDocument?: InputDocument;
 } => {
+  const inputDocumentsInGroup = inputDocumentInventory.get(inputDocument.documentGroupName);
+
   const thisDocumentIndex = inputDocumentsInGroup.findIndex(
     (d) => d.sourceFile.rootRelativePath === inputDocument.sourceFile.rootRelativePath,
   );
@@ -29,9 +31,9 @@ const generatePreviousNext: RenderContextGenerator = (
   };
 };
 
-export const generatePostTemplateRenderContext: RenderContextGenerator = (inputDocument, inputDocumentsInGroup) => {
+export const generatePostTemplateRenderContext: RenderContextGenerator = (inputDocument, inputDocumentInventory) => {
   return {
-    ...generateDocumentTag(inputDocument, inputDocumentsInGroup),
-    ...generatePreviousNext(inputDocument, inputDocumentsInGroup),
+    ...generateDocumentTag(inputDocument, inputDocumentInventory),
+    ...generatePreviousNext(inputDocument, inputDocumentInventory),
   };
 };

@@ -22,3 +22,5 @@ export type InputDocument = {
   frontMatter: InputFrontmatter;
   content: string;
 };
+
+export type InputDocumentInventory = Map<string /* documentGroupName */, InputDocument[]>;

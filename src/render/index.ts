@@ -2,8 +2,8 @@ import * as fs from "fs";
 import { Eta } from "eta";
 import { Marked } from "marked";
 
-import { RootConfig } from "../config";
-import { InputDocument, InputDocumentGroup, InputDocumentInventory } from "../input";
+import { DocumentGroupConfig, RootConfig } from "../config";
+import { InputDocument, InputDocumentInventory } from "../input";
 import { OutputFileSystem } from "../fileSystem";
 
 export class SiteRenderer {
@@ -11,7 +11,7 @@ export class SiteRenderer {
   private readonly eta: Eta;
 
   constructor(
-    rootConfig: RootConfig,
+    private readonly rootConfig: RootConfig,
     private readonly inputDocumentInventory: InputDocumentInventory,
     private readonly outputFileSystem: OutputFileSystem,
   ) {
@@ -19,12 +19,12 @@ export class SiteRenderer {
   }
 
   public render() {
-    this.inputDocumentInventory.forEach((g) => {
-      g.documents.forEach((d) => this.renderDocument(g, d));
+    this.rootConfig.documentGroups.forEach((g) => {
+      this.inputDocumentInventory.get(g.documentGroupName)?.forEach((d) => this.renderDocument(g, d));
     });
   }
 
-  private renderDocument(inputDocumentGroup: InputDocumentGroup, inputDocument: InputDocument) {
+  private renderDocument(documentGroupConfig: DocumentGroupConfig, inputDocument: InputDocument) {
     const outputPath = this.outputFileSystem.getAbsolutePath(inputDocument.siteRelativeOutputPath);
     this.outputFileSystem.ensureOutputPathExists(outputPath);
 
@@ -37,19 +37,17 @@ export class SiteRenderer {
       const contentHtml = this.marked.parse(inputDocument.content) as string;
 
       // Render template
-      const templateRenderContext = inputDocumentGroup.documentGroupConfig.templateRenderContext?.(
+      const templateRenderContext = documentGroupConfig.templateRenderContext?.(
         inputDocument,
-        inputDocumentGroup.documents,
+        this.inputDocumentInventory,
       );
 
-      const pageHtml = this.eta.render(inputDocumentGroup.documentGroupConfig.templateName, {
+      const pageHtml = this.eta.render(documentGroupConfig.templateName, {
         // Site-provided context (bring this in first so it can't override "official" fields)
         ...templateRenderContext,
         // This document
         inputDocument,
         contentHtml,
-        // All documents
-        inputDocumentGroup,
       });
 
       // Output

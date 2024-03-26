@@ -1,6 +1,9 @@
-import { InputDocument } from "../input/inputDocument";
+import { InputDocument, InputDocumentInventory } from "../input/inputDocument";
 
-export type RenderContextGenerator = (inputDocument: InputDocument, inputDocumentsInGroup: InputDocument[]) => object;
+export type RenderContextGenerator = (
+  inputDocument: InputDocument,
+  inputDocumentInventory: InputDocumentInventory,
+) => object;
 
 export type DocumentGroupConfig = {
   // About

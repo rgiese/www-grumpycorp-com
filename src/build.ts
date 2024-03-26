@@ -8,9 +8,9 @@ import rootConfig from "./site";
 const sourceFileSystem = createSourceFileSystem(rootConfig);
 const outputFileSystem = new OutputFileSystem(rootConfig.outputRootPath);
 
-const inputDocumentGroups = ingestInput(rootConfig, sourceFileSystem);
+const inputDocumentInventory = ingestInput(rootConfig, sourceFileSystem);
 
 processAssets(sourceFileSystem.inputFiles, outputFileSystem);
 processAssets(sourceFileSystem.themeFiles, outputFileSystem);
 
-renderSite(rootConfig, inputDocumentGroups, outputFileSystem);
+renderSite(rootConfig, inputDocumentInventory, outputFileSystem);

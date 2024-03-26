@@ -4,7 +4,7 @@ import { Eta } from "eta";
 import { Marked } from "marked";
 
 import { RootConfig } from "../config";
-import { InputDocument, InputDocumentGroup } from "../input";
+import { InputDocument, InputDocumentGroup, InputDocumentInventory } from "../input";
 import { OutputFileSystem } from "../fileSystem";
 
 function renderDocument(
@@ -61,10 +61,10 @@ function renderDocumentGroup(
 
 export function renderSite(
   rootConfig: RootConfig,
-  inputDocumentGroups: InputDocumentGroup[],
+  inputDocumentInventory: InputDocumentInventory,
   outputFileSystem: OutputFileSystem,
 ) {
   const marked = new Marked({ pedantic: false });
 
-  inputDocumentGroups.forEach((g) => renderDocumentGroup(rootConfig, g, marked, outputFileSystem));
+  inputDocumentInventory.forEach((g) => renderDocumentGroup(rootConfig, g, marked, outputFileSystem));
 }

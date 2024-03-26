@@ -13,6 +13,8 @@ export type InputDocumentGroup = {
   documents: InputDocument[];
 };
 
+export type InputDocumentInventory = Map<string /* documentGroupName */, InputDocumentGroup>;
+
 function ingestInputDocument(documentGroupConfig: DocumentGroupConfig, sourceFile: SourceFile): InputDocument {
   try {
     const document = matter.read(sourceFile.absolutePath);
@@ -64,6 +66,10 @@ function ingestDocumentGroup(
   };
 }
 
-export function ingestInput(rootConfig: RootConfig, sourceFileSystem: SourceFileSystem): InputDocumentGroup[] {
-  return rootConfig.documentGroups.map((g) => ingestDocumentGroup(sourceFileSystem, g));
+export function ingestInput(rootConfig: RootConfig, sourceFileSystem: SourceFileSystem): InputDocumentInventory {
+  return new Map(
+    rootConfig.documentGroups
+      .map((g) => ingestDocumentGroup(sourceFileSystem, g))
+      .map((dg) => [dg.documentGroupConfig.documentGroupName, dg] as const),
+  );
 }

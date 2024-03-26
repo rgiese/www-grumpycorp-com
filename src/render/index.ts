@@ -48,6 +48,8 @@ export class SiteRenderer {
         // This document
         inputDocument,
         contentHtml,
+        // Inventory
+        inputDocumentInventory: this.inputDocumentInventory,
       });
 
       // Output

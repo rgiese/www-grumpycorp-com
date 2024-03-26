@@ -6,9 +6,32 @@
 
 <div class="f5 lh-copy center">
   <h4>Pinned</h4>
+  <% data.inputDocumentInventory.get("pages").forEach(function(inputDocument) { %>
+  <div>
+    <a class="<%= linkDefaultClass %>" href="/<%= inputDocument.siteRelativeOutputPath %>"
+      ><%= inputDocument.frontMatter.title %></a
+    >
+  </div>
+  <% }) %>
+
+  <h4>Portfolio</h4>
+  <% data.inputDocumentInventory.get("portfolio").forEach(function(inputDocument) { %>
+  <div>
+    <a class="<%= linkDefaultClass %>" href="/<%= inputDocument.siteRelativeOutputPath %>"
+      ><%= inputDocument.frontMatter.title %></a
+    >
+  </div>
+  <% }) %>
+
+  <h4>Topics</h4>
+  <div>
+    <% data.postTags.forEach(function(postTag) { %>
+    <a class="<%= linkDefaultClass %>" href="/tags/posts/<%= encodeURIComponent(postTag) %>"><%= postTag %></a>
+    <% }) %>
+  </div>
 
   <div class="pt3">
-    <a class="<%= linkDefaultClass%>" href="/posts/all">every damn thing</a>
+    <a class="<%= linkDefaultClass %>" href="/posts/all">every damn thing</a>
   </div>
 
   <h4>Elsewhere</h4>

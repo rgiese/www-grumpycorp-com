@@ -3,6 +3,7 @@ import * as path from "path";
 import { RootConfig } from "../config";
 import { InputDocument } from "../input";
 
+import { generateLayoutTemplateRenderContext } from "./layoutTemplateRenderContext";
 import { generatePostTemplateRenderContext } from "./postTemplateRenderContext";
 
 function outputPath(inputDocument: InputDocument, prefix?: string): string {
@@ -22,7 +23,7 @@ const rootConfig: RootConfig = {
       inputRootRelativePath: "pages",
       requirePublishDate: false,
       templateName: "_layout.eta",
-      templateRenderContext: undefined,
+      templateRenderContext: generateLayoutTemplateRenderContext,
       outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument),
     },
     {
@@ -30,7 +31,7 @@ const rootConfig: RootConfig = {
       inputRootRelativePath: "portfolio",
       requirePublishDate: false,
       templateName: "_layout.eta",
-      templateRenderContext: undefined,
+      templateRenderContext: generateLayoutTemplateRenderContext,
       outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument, "portfolio"),
     },
     {

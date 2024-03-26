@@ -1,11 +1,8 @@
-import * as path from "path";
-
 import { RenderContextGenerator } from "../config";
 import { InputDocument } from "../input";
 
-const generateDocumentTag: RenderContextGenerator = (inputDocument, _inputDocumentInventory) => {
-  return { documentTag: path.dirname(inputDocument.documentGroupRelativePath) };
-};
+import { getDocumentTag } from "./documentTag";
+import { generateLayoutTemplateRenderContext } from "./layoutTemplateRenderContext";
 
 const generatePreviousNext: RenderContextGenerator = (
   inputDocument,
@@ -33,7 +30,8 @@ const generatePreviousNext: RenderContextGenerator = (
 
 export const generatePostTemplateRenderContext: RenderContextGenerator = (inputDocument, inputDocumentInventory) => {
   return {
-    ...generateDocumentTag(inputDocument, inputDocumentInventory),
+    documentTag: getDocumentTag(inputDocument),
     ...generatePreviousNext(inputDocument, inputDocumentInventory),
+    ...generateLayoutTemplateRenderContext(inputDocument, inputDocumentInventory),
   };
 };

@@ -71,10 +71,10 @@
 
             <!-- prettier-ignore -->
             <% if (documentGroupName === "posts") { %> 
-                <%~ include("posts/header", data) %> 
-                <%~ include("posts/prevnext", data) %> 
+                <%~ include("posts/_header", data) %> 
+                <%~ include("posts/_prevnext", data) %> 
             <% } else if (documentGroupName === "pages") { %> 
-                <%~ include("pages/header", data) %>
+                <%~ include("pages/_header", data) %>
             <% } %>
 
             <div class="lh-copy content <%= documentGroupName === 'portfolio' ? 'portfolio-container' : '' %>">
@@ -83,7 +83,7 @@
 
             <!-- prettier-ignore -->
             <% if (documentGroupName === "posts") { %> 
-                <%~ include("posts/prevnext", data) %>
+                <%~ include("posts/_prevnext", data) %>
             <% } %>
           </main>
         </div>
@@ -98,7 +98,7 @@
               </a>
             </div>
 
-            <%~ include("rightbar", data) %>
+            <%~ include("_rightbar", data) %>
           </nav>
         </div>
       </div>

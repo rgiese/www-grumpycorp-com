@@ -1,4 +1,3 @@
-import * as path from "path";
 import * as fs from "fs";
 import { Eta } from "eta";
 import { Marked } from "marked";
@@ -7,64 +6,58 @@ import { RootConfig } from "../config";
 import { InputDocument, InputDocumentGroup, InputDocumentInventory } from "../input";
 import { OutputFileSystem } from "../fileSystem";
 
-function renderDocument(
-  inputDocumentGroup: InputDocumentGroup,
-  inputDocument: InputDocument,
-  marked: Marked,
-  eta: Eta,
-  outputFileSystem: OutputFileSystem,
-) {
-  const outputPath = outputFileSystem.getAbsolutePath(inputDocument.siteRelativeOutputPath);
-  outputFileSystem.ensureOutputPathExists(outputPath);
+export class SiteRenderer {
+  private readonly marked = new Marked({ pedantic: false });
+  private readonly eta: Eta;
 
-  console.log(`${inputDocument.documentGroupRelativePath} -> ${inputDocument.siteRelativeOutputPath} -> ${outputPath}`);
+  constructor(
+    rootConfig: RootConfig,
+    private readonly inputDocumentInventory: InputDocumentInventory,
+    private readonly outputFileSystem: OutputFileSystem,
+  ) {
+    this.eta = new Eta({ views: rootConfig.themeRootPath, varName: "data", debug: true });
+  }
 
-  try {
-    // Render content
-    const contentHtml = marked.parse(inputDocument.content) as string;
+  public render() {
+    this.inputDocumentInventory.forEach((g) => {
+      g.documents.forEach((d) => this.renderDocument(g, d));
+    });
+  }
 
-    // Render template
-    const templateRenderContext = inputDocumentGroup.documentGroupConfig.templateRenderContext?.(
-      inputDocument,
-      inputDocumentGroup.documents,
+  private renderDocument(inputDocumentGroup: InputDocumentGroup, inputDocument: InputDocument) {
+    const outputPath = this.outputFileSystem.getAbsolutePath(inputDocument.siteRelativeOutputPath);
+    this.outputFileSystem.ensureOutputPathExists(outputPath);
+
+    console.log(
+      `${inputDocument.documentGroupRelativePath} -> ${inputDocument.siteRelativeOutputPath} -> ${outputPath}`,
     );
 
-    const pageHtml = eta.render(inputDocumentGroup.documentGroupConfig.templateName, {
-      // Site-provided context (bring this in first so it can't override "official" fields)
-      ...templateRenderContext,
-      // This document
-      inputDocument,
-      contentHtml,
-      // All documents
-      inputDocumentGroup,
-    });
+    try {
+      // Render content
+      const contentHtml = this.marked.parse(inputDocument.content) as string;
 
-    // Output
-    fs.writeFileSync(outputPath, pageHtml);
-  } catch (error) {
-    console.error(`While creating ${outputPath} from ${inputDocument.documentGroupRelativePath}:`);
-    console.error(`with frontmatter: ${JSON.stringify(inputDocument.frontMatter)}`);
-    throw error;
+      // Render template
+      const templateRenderContext = inputDocumentGroup.documentGroupConfig.templateRenderContext?.(
+        inputDocument,
+        inputDocumentGroup.documents,
+      );
+
+      const pageHtml = this.eta.render(inputDocumentGroup.documentGroupConfig.templateName, {
+        // Site-provided context (bring this in first so it can't override "official" fields)
+        ...templateRenderContext,
+        // This document
+        inputDocument,
+        contentHtml,
+        // All documents
+        inputDocumentGroup,
+      });
+
+      // Output
+      fs.writeFileSync(outputPath, pageHtml);
+    } catch (error) {
+      console.error(`While creating ${outputPath} from ${inputDocument.documentGroupRelativePath}:`);
+      console.error(`with frontmatter: ${JSON.stringify(inputDocument.frontMatter)}`);
+      throw error;
+    }
   }
-}
-
-function renderDocumentGroup(
-  rootConfig: RootConfig,
-  inputDocumentGroup: InputDocumentGroup,
-  marked: Marked,
-  outputFileSystem: OutputFileSystem,
-) {
-  const eta = new Eta({ views: rootConfig.themeRootPath, varName: "data", debug: true });
-
-  inputDocumentGroup.documents.forEach((d) => renderDocument(inputDocumentGroup, d, marked, eta, outputFileSystem));
-}
-
-export function renderSite(
-  rootConfig: RootConfig,
-  inputDocumentInventory: InputDocumentInventory,
-  outputFileSystem: OutputFileSystem,
-) {
-  const marked = new Marked({ pedantic: false });
-
-  inputDocumentInventory.forEach((g) => renderDocumentGroup(rootConfig, g, marked, outputFileSystem));
 }

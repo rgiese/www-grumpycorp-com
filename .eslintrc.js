@@ -10,5 +10,13 @@ module.exports = {
   ignorePatterns: [".eslintrc.js", "output/**"],
   rules: {
     "no-inner-declarations": "off", // I like inner declarations. Deal with it.
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        argsIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
+        caughtErrorsIgnorePattern: "^_",
+      },
+    ],
   },
 };

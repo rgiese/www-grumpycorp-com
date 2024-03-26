@@ -1,5 +1,7 @@
 import { InputDocument } from "../input/inputDocument";
 
+export type RenderContextGenerator = (inputDocument: InputDocument, inputDocumentsInGroup: InputDocument[]) => object;
+
 export type DocumentGroupConfig = {
   // About
   documentGroupName: string;
@@ -8,7 +10,7 @@ export type DocumentGroupConfig = {
   requirePublishDate: boolean;
   // Render
   templateName: string;
-  templateRenderContext: ((inputDocument: InputDocument, inputDocumentsInGroup: InputDocument[]) => object) | undefined;
+  templateRenderContext: RenderContextGenerator | undefined;
   // Output
   outputPathFromDocumentPath: (inputDocument: InputDocument) => string;
 };

@@ -3,28 +3,11 @@ import * as path from "path";
 import { RootConfig } from "../config";
 import { InputDocument } from "../input";
 
+import { generatePostTemplateRenderContext } from "./postTemplateRenderContext";
+
 function outputPath(inputDocument: InputDocument, prefix?: string): string {
   const relativePath = path.parse(inputDocument.documentGroupRelativePath);
   return path.join(prefix ?? "", relativePath.dir, relativePath.name, "index.html");
-}
-
-function postTemplateRenderContext(inputDocument: InputDocument, inputDocumentsInGroup: InputDocument[]) {
-  const thisDocumentIndex = inputDocumentsInGroup.findIndex(
-    (d) => d.sourceFile.rootRelativePath === inputDocument.sourceFile.rootRelativePath,
-  );
-
-  const previousDocument = thisDocumentIndex > 0 ? inputDocumentsInGroup[thisDocumentIndex - 1] : undefined;
-
-  const nextDocument =
-    thisDocumentIndex >= 0 && thisDocumentIndex < inputDocumentsInGroup.length - 1
-      ? inputDocumentsInGroup[thisDocumentIndex + 1]
-      : undefined;
-
-  return {
-    previousDocument,
-    nextDocument,
-    documentTag: path.dirname(inputDocument.documentGroupRelativePath),
-  };
 }
 
 const rootConfig: RootConfig = {
@@ -55,7 +38,7 @@ const rootConfig: RootConfig = {
       inputRootRelativePath: "posts",
       requirePublishDate: true,
       templateName: "_layout.eta",
-      templateRenderContext: postTemplateRenderContext,
+      templateRenderContext: generatePostTemplateRenderContext,
       outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument, "posts"),
     },
   ],

@@ -12,9 +12,14 @@ export const FrontMatterSchema = yup.object({
 export type InputFrontmatter = yup.InferType<typeof FrontMatterSchema>;
 
 export type InputDocument = {
+  // Source
   sourceFile: SourceFile;
+  // Grouping
   documentGroupConfig: DocumentGroupConfig;
   documentGroupRelativePath: string;
+  // Destination
+  siteRelativeOutputPath: string;
+  // Content
   frontMatter: InputFrontmatter;
   content: string;
 };

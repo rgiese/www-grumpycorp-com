@@ -18,9 +18,14 @@ function ingestInputDocument(documentGroupConfig: DocumentGroupConfig, sourceFil
     const document = matter.read(sourceFile.absolutePath);
 
     return {
+      // Source
       sourceFile,
+      // Grouping
       documentGroupConfig,
       documentGroupRelativePath: path.relative(documentGroupConfig.inputRootRelativePath, sourceFile.rootRelativePath),
+      // Destination
+      siteRelativeOutputPath: "", // computed after ingestion
+      // Content
       frontMatter: FrontMatterSchema.validateSync(document.data, { stripUnknown: true }),
       content: document.content,
     };
@@ -40,7 +45,11 @@ function ingestDocumentGroup(
 
   return {
     documentGroupConfig: documentGroupConfig,
-    documents: inputDocumentPaths.map((f) => ingestInputDocument(documentGroupConfig, f)),
+    documents: inputDocumentPaths
+      .map((f) => ingestInputDocument(documentGroupConfig, f))
+      .map((d) => {
+        return { ...d, siteRelativeOutputPath: documentGroupConfig.outputPathFromDocumentPath(d) };
+      }),
   };
 }
 

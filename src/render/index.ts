@@ -14,13 +14,10 @@ function renderDocument(
   eta: Eta,
   outputFileSystem: OutputFileSystem,
 ) {
-  // Compute output path
-  const siteRelativeOutputPath = documentGroupConfig.outputPathFromDocumentPath(inputDocument);
-  const outputPath = outputFileSystem.getAbsolutePath(siteRelativeOutputPath);
-
-  console.log(`${inputDocument.documentGroupRelativePath} -> ${siteRelativeOutputPath} -> ${outputPath}`);
-
+  const outputPath = outputFileSystem.getAbsolutePath(inputDocument.siteRelativeOutputPath);
   outputFileSystem.ensureOutputPathExists(outputPath);
+
+  console.log(`${inputDocument.documentGroupRelativePath} -> ${inputDocument.siteRelativeOutputPath} -> ${outputPath}`);
 
   try {
     // Render content

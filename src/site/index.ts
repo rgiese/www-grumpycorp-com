@@ -1,7 +1,7 @@
 import * as path from "path";
 
-import { RootConfig } from "./config";
-import { InputDocument } from "./input";
+import { RootConfig } from "../config";
+import { InputDocument } from "../input";
 
 function outputPath(inputDocument: InputDocument, prefix?: string): string {
   const relativePath = path.parse(inputDocument.documentGroupRelativePath);

@@ -1,9 +1,9 @@
+import { createSourceFileSystem, OutputFileSystem } from "./fileSystem";
 import { ingestInput } from "./input";
 import { renderSite } from "./render";
 import { processAssets } from "./assets";
 
-import rootConfig from "./siteConfig";
-import { createSourceFileSystem, OutputFileSystem } from "./fileSystem";
+import rootConfig from "./site";
 
 const sourceFileSystem = createSourceFileSystem(rootConfig);
 const outputFileSystem = new OutputFileSystem(rootConfig.outputRootPath);

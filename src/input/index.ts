@@ -49,7 +49,12 @@ function ingestDocumentGroup(
       .map((f) => ingestInputDocument(documentGroupConfig, f))
       .map((d) => {
         return { ...d, siteRelativeOutputPath: documentGroupConfig.outputPathFromDocumentPath(d) };
-      }),
+      })
+      .sort(
+        (lhs, rhs) =>
+          (lhs.frontMatter.published ? +lhs.frontMatter.published : 0) -
+          (rhs.frontMatter.published ? +rhs.frontMatter.published : 0),
+      ),
   };
 }
 

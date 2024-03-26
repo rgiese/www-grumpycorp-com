@@ -3,12 +3,12 @@ import * as fs from "fs";
 import { Eta } from "eta";
 import { Marked } from "marked";
 
-import { RootConfig, DocumentGroupConfig } from "../config";
+import { RootConfig } from "../config";
 import { InputDocument, InputDocumentGroup } from "../input";
 import { OutputFileSystem } from "../fileSystem";
 
 function renderDocument(
-  documentGroupConfig: DocumentGroupConfig,
+  inputDocumentGroup: InputDocumentGroup,
   inputDocument: InputDocument,
   marked: Marked,
   eta: Eta,
@@ -24,9 +24,20 @@ function renderDocument(
     const contentHtml = marked.parse(inputDocument.content) as string;
 
     // Render template
-    const pageHtml = eta.render(documentGroupConfig.templateName, {
+    const templateRenderContext = inputDocumentGroup.documentGroupConfig.templateRenderContext?.(
+      inputDocument,
+      inputDocumentGroup.documents,
+    );
+
+    const pageHtml = eta.render(inputDocumentGroup.documentGroupConfig.templateName, {
+      // Site-provided context (bring this in first so it can't override "official" fields)
+      ...templateRenderContext,
+      // This document
       inputDocument,
       contentHtml,
+      // All documents
+      inputDocumentGroup,
+      // API
       api: {
         path,
       },
@@ -49,9 +60,7 @@ function renderDocumentGroup(
 ) {
   const eta = new Eta({ views: rootConfig.themeRootPath, varName: "data", debug: true });
 
-  inputDocumentGroup.documents.forEach((d) =>
-    renderDocument(inputDocumentGroup.documentGroupConfig, d, marked, eta, outputFileSystem),
-  );
+  inputDocumentGroup.documents.forEach((d) => renderDocument(inputDocumentGroup, d, marked, eta, outputFileSystem));
 }
 
 export function renderSite(

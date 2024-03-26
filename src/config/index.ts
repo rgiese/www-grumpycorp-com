@@ -8,6 +8,7 @@ export type DocumentGroupConfig = {
   requirePublishDate: boolean;
   // Render
   templateName: string;
+  templateRenderContext: ((inputDocument: InputDocument, inputDocumentsInGroup: InputDocument[]) => object) | undefined;
   // Output
   outputPathFromDocumentPath: (inputDocument: InputDocument) => string;
 };

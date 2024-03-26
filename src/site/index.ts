@@ -23,6 +23,7 @@ function postTemplateRenderContext(inputDocument: InputDocument, inputDocumentsI
   return {
     previousDocument,
     nextDocument,
+    documentTag: path.dirname(inputDocument.documentGroupRelativePath),
   };
 }
 

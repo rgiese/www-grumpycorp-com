@@ -37,10 +37,6 @@ function renderDocument(
       contentHtml,
       // All documents
       inputDocumentGroup,
-      // API
-      api: {
-        path,
-      },
     });
 
     // Output

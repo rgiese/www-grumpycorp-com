@@ -1,6 +1,5 @@
 import * as yup from "yup";
 
-import { DocumentGroupConfig } from "../config";
 import { SourceFile } from "../fileSystem";
 
 export const FrontMatterSchema = yup.object({
@@ -15,7 +14,7 @@ export type InputDocument = {
   // Source
   sourceFile: SourceFile;
   // Grouping
-  documentGroupConfig: DocumentGroupConfig;
+  documentGroupName: string;
   documentGroupRelativePath: string;
   // Destination
   siteRelativeOutputPath: string;

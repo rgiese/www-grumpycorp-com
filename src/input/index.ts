@@ -30,7 +30,7 @@ function ingestInputDocument(documentGroupConfig: DocumentGroupConfig, sourceFil
       // Source
       sourceFile,
       // Grouping
-      documentGroupConfig,
+      documentGroupName: documentGroupConfig.documentGroupName,
       documentGroupRelativePath: path.relative(documentGroupConfig.inputRootRelativePath, sourceFile.rootRelativePath),
       // Destination
       siteRelativeOutputPath: "", // computed after ingestion

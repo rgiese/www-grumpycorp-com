@@ -1,12 +1,31 @@
 import * as matter from "gray-matter";
 import * as path from "path";
+import * as yup from "yup";
 
 import { RootConfig, DocumentGroupConfig } from "../config";
 
-import { InputDocument, FrontMatterSchema } from "./inputDocument";
 import { SourceFile, SourceFileSystem } from "../fileSystem";
 
-export { InputDocument };
+export const FrontMatterSchema = yup.object({
+  title: yup.string().required(),
+  published: yup.date(),
+  keywords: yup.array().of(yup.string()),
+});
+
+export type InputFrontmatter = yup.InferType<typeof FrontMatterSchema>;
+
+export type InputDocument = {
+  // Source
+  sourceFile: SourceFile;
+  // Grouping
+  documentGroupConfig: DocumentGroupConfig;
+  documentGroupRelativePath: string;
+  // Destination
+  siteRelativeOutputPath: string;
+  // Content
+  frontMatter: InputFrontmatter;
+  content: string;
+};
 
 export type InputDocumentGroup = {
   documentGroupConfig: DocumentGroupConfig;

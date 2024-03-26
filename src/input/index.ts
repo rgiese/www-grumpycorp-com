@@ -16,6 +16,13 @@ export type InputDocumentGroup = {
 function ingestInputDocument(documentGroupConfig: DocumentGroupConfig, sourceFile: SourceFile): InputDocument {
   try {
     const document = matter.read(sourceFile.absolutePath);
+    const frontMatter = FrontMatterSchema.validateSync(document.data, { stripUnknown: true });
+
+    if (documentGroupConfig.requirePublishDate && !frontMatter.published) {
+      throw new Error(
+        `No "published" value in frontmatter ${JSON.stringify(frontMatter)} (required by containing document group)`,
+      );
+    }
 
     return {
       // Source
@@ -26,7 +33,7 @@ function ingestInputDocument(documentGroupConfig: DocumentGroupConfig, sourceFil
       // Destination
       siteRelativeOutputPath: "", // computed after ingestion
       // Content
-      frontMatter: FrontMatterSchema.validateSync(document.data, { stripUnknown: true }),
+      frontMatter,
       content: document.content,
     };
   } catch (error) {
@@ -43,18 +50,17 @@ function ingestDocumentGroup(
     .filter((f) => f.rootRelativePath.startsWith(documentGroupConfig.inputRootRelativePath))
     .filter((f) => f.parsedRootRelativePath.ext === ".md");
 
+  const documents = inputDocumentPaths
+    .map((f) => ingestInputDocument(documentGroupConfig, f))
+    .map((d) => {
+      return { ...d, siteRelativeOutputPath: documentGroupConfig.outputPathFromDocumentPath(d) };
+    });
+
   return {
     documentGroupConfig: documentGroupConfig,
-    documents: inputDocumentPaths
-      .map((f) => ingestInputDocument(documentGroupConfig, f))
-      .map((d) => {
-        return { ...d, siteRelativeOutputPath: documentGroupConfig.outputPathFromDocumentPath(d) };
-      })
-      .sort(
-        (lhs, rhs) =>
-          (lhs.frontMatter.published ? +lhs.frontMatter.published : 0) -
-          (rhs.frontMatter.published ? +rhs.frontMatter.published : 0),
-      ),
+    documents: documentGroupConfig.requirePublishDate
+      ? documents.sort((lhs, rhs) => +lhs.frontMatter.published - +rhs.frontMatter.published)
+      : documents,
   };
 }
 

@@ -1,10 +1,15 @@
 import { InputDocument } from "../input/inputDocument";
 
 export type DocumentGroupConfig = {
+  // About
   documentGroupName: string;
+  // Input
   inputRootRelativePath: string;
-  outputPathFromDocumentPath: (inputDocument: InputDocument) => string;
+  requirePublishDate: boolean;
+  // Render
   templateName: string;
+  // Output
+  outputPathFromDocumentPath: (inputDocument: InputDocument) => string;
 };
 
 export type RootConfig = {

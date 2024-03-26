@@ -18,20 +18,23 @@ const rootConfig: RootConfig = {
     {
       documentGroupName: "pages",
       inputRootRelativePath: "pages",
-      outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument),
+      requirePublishDate: false,
       templateName: "layout.eta",
+      outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument),
     },
     {
       documentGroupName: "portfolio",
       inputRootRelativePath: "portfolio",
-      outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument, "portfolio"),
+      requirePublishDate: false,
       templateName: "layout.eta",
+      outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument, "portfolio"),
     },
     {
       documentGroupName: "posts",
       inputRootRelativePath: "posts",
-      outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument, "posts"),
+      requirePublishDate: true,
       templateName: "layout.eta",
+      outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument, "posts"),
     },
   ],
 };

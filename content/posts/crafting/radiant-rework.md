@@ -85,16 +85,16 @@ Key to making this work was realizing that
 
 I carefully constructed a wiring spreadsheet:
 
-<?# SimpleFigure src="images/radiant-controls.png" caption="Wiring spreadsheet from thermostats to local control boards" /?>
+::figure[Wiring spreadsheet from thermostats to local control boards]{src="radiant-controls.png"}
 
 Then I took a few warm-ish days in early November to tear the system apart and rebuild it.
 
-<?# SimpleFigure src="images/IMG_20181117_174657.jpg" caption="Central control wiring, covers removed" /?>
-<?# SimpleFigure src="images/IMG_20181117_193542.jpg" caption="Central control wiring, with covers and labels" /?>
+::figure[Central control wiring, covers removed]{src="IMG_20181117_174657.jpg"}
+::figure[Central control wiring, with covers and labels]{src="IMG_20181117_193542.jpg"}
 
 Here's what one of the local manifolds looks like:
 
-<?# SimpleFigure src="images/IMG_20181117_174723.jpg" caption="Local manifold <tt>BoilerRoom-7Header</tt>" /?>
+::figure[Local manifold <tt>BoilerRoom-7Header</tt>]{src="IMG_20181117_174723.jpg"}
 
 I also dealt with a number of sins of the past, including finally realizing that the reason the garage thermostat
 had never gotten hooked up was that our contractors burnt out the corresponding channel on the central control board

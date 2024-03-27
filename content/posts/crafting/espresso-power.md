@@ -7,7 +7,7 @@ This project is a quick hack to allow me to turn on my Breville Oracle from bed.
 
 ## Installation
 
-<?# SimpleFigure src="images/brevilleUIBoard.jpg" caption="Wires attached to UI board" /?>
+::figure[Wires attached to UI board]{src="brevilleUIBoard.jpg"}
 
 Solder three wires to the Breville UI board:
 
@@ -22,7 +22,7 @@ Then connect to a Particle Argon as follows:
 3. Connect SSR to output pin (e.g. D7 which also gives me a free on-board LED on the Argon)
 4. Connect the power LED sniffer to the top of a resistor bridge to reduce its voltage (I used a 220K / 47K since that's what I had floating around)
 
-<?# SimpleFigure src="images/espressoPowerBoard.jpg" caption="Espresso Power board" /?>
+::figure[Espresso Power board]{src="espressoPowerBoard.jpg"}
 
 The Breville control board is always powered at 12V; sniffing the power LEDs' midpoint generally runs at ~10V
 and dips to ~9V when the LEDs turn on.
@@ -32,7 +32,7 @@ configure it with a static DHCP lease, and boom you're done:
 
 <div class="center w-10-m w-50-ns">
 
-<?# SimpleFigure src="images/espressoPowerPage.jpg" caption="Espresso Power page" /?>
+::figure[Espresso Power page]{src="espressoPowerPage.jpg"}
 
 </div>
 
@@ -41,4 +41,4 @@ Since this runs on our local network only I'm kind of ok with it being an open p
 Also, while I was in there, it was quite charming to notice that the Breville engineering team put some artwork and credits
 on the inside of the machine:
 
-<?# SimpleFigure src="images/brevilleCredits.jpg" caption="The back of the UI board enclosure" /?>
+::figure[The back of the UI board enclosure]{src="brevilleCredits.jpg"}

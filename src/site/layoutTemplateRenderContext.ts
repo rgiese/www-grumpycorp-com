@@ -1,9 +1,9 @@
-import { RenderContextGenerator } from "../config";
+import { InputDocumentInventory } from "../input";
 
 import { getDocumentTagSet } from "./documentTag";
 
-export const generateLayoutTemplateRenderContext: RenderContextGenerator = (_inputDocument, inputDocumentInventory) => {
+export const generateLayoutTemplateRenderContext = (inputDocumentInventory: InputDocumentInventory): object => {
   return {
-    postTags: getDocumentTagSet(inputDocumentInventory.get("posts")),
+    postTags: getDocumentTagSet(inputDocumentInventory.get("posts") || []),
   };
 };

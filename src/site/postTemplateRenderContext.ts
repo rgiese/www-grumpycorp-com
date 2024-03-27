@@ -11,7 +11,7 @@ const generatePreviousNext: RenderContextGenerator = (
   previousDocument?: InputDocument;
   nextDocument?: InputDocument;
 } => {
-  const inputDocumentsInGroup = inputDocumentInventory.get(inputDocument.documentGroupName);
+  const inputDocumentsInGroup = inputDocumentInventory.get(inputDocument.documentGroupName) || [];
 
   const thisDocumentIndex = inputDocumentsInGroup.findIndex(
     (d) => d.sourceFile.rootRelativePath === inputDocument.sourceFile.rootRelativePath,
@@ -32,6 +32,6 @@ export const generatePostTemplateRenderContext: RenderContextGenerator = (inputD
   return {
     documentTag: getDocumentTag(inputDocument),
     ...generatePreviousNext(inputDocument, inputDocumentInventory),
-    ...generateLayoutTemplateRenderContext(inputDocument, inputDocumentInventory),
+    ...generateLayoutTemplateRenderContext(inputDocumentInventory),
   };
 };

@@ -8,11 +8,11 @@ export const postIndexPagesGenerator: GeneratedDocumentsGenerator = (inputDocume
   const generatedDocumentBase = {
     templateName: "_layout.eta",
     // We're relying on `generateLayoutTemplateRenderContext` not specializing on any given input document
-    templateRenderContext: generateLayoutTemplateRenderContext(undefined, inputDocumentInventory),
+    templateRenderContext: generateLayoutTemplateRenderContext(inputDocumentInventory),
   };
 
   // Find all posts and their tags
-  const postDocuments = inputDocumentInventory.get("posts");
+  const postDocuments = inputDocumentInventory.get("posts") || [];
   const postTags = getDocumentTagSet(postDocuments);
 
   return [
@@ -26,7 +26,8 @@ export const postIndexPagesGenerator: GeneratedDocumentsGenerator = (inputDocume
       contentTemplateContext: {
         postDocuments: [...postDocuments]
           // Show newest first (copy it with the ^spread we don't change the original array)
-          .sort((lhs, rhs) => +rhs.frontMatter.published - +lhs.frontMatter.published)
+          // - `.published` is guaranteed from input validation
+          .sort((lhs, rhs) => +rhs.frontMatter.published! - +lhs.frontMatter.published!)
           .map((d) => {
             return { ...d, documentTag: getDocumentTag(d) };
           }),

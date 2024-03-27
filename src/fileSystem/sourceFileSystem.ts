@@ -1,40 +1,14 @@
-import * as fs from "fs";
-import * as path from "path";
-
 import { RootConfig } from "../config";
+import { enumerateFilesRecursive, FileSpec } from "./enumerateFiles";
 
-export type SourceFile = {
-  rootRelativePath: string;
-  parsedRootRelativePath: path.ParsedPath;
-  absolutePath: string;
-};
+export { FileSpec };
 
 export type SourceFileSystem = {
-  inputFiles: SourceFile[];
-  themeFiles: SourceFile[];
+  inputFiles: FileSpec[];
+  themeFiles: FileSpec[];
 };
 
-function* enumerateFilesRecursive(rootPath: string, dir: string): Generator<SourceFile> {
-  const files = fs.readdirSync(dir, { withFileTypes: true });
-
-  for (const file of files) {
-    const absolutePath = path.join(file.path, file.name);
-
-    if (file.isDirectory()) {
-      yield* enumerateFilesRecursive(rootPath, absolutePath);
-    } else {
-      const rootRelativePath = path.relative(rootPath, absolutePath);
-
-      yield {
-        rootRelativePath,
-        parsedRootRelativePath: path.parse(rootRelativePath),
-        absolutePath,
-      };
-    }
-  }
-}
-
-function createSourceFiles(rootPath: string): SourceFile[] {
+function createSourceFiles(rootPath: string): FileSpec[] {
   return Array.from(enumerateFilesRecursive(rootPath, rootPath));
 }
 

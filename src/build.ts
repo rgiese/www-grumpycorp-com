@@ -2,6 +2,7 @@ import { createSourceFileSystem, OutputFileSystem } from "./fileSystem";
 import { ingestInput } from "./input";
 import { SiteRenderer } from "./render";
 import { processAssets } from "./assets";
+import { SiteValidator } from "./validate";
 
 import rootConfig from "./site";
 
@@ -15,3 +16,5 @@ processAssets(sourceFileSystem.themeFiles, outputFileSystem);
 
 const siteRenderer = new SiteRenderer(rootConfig, inputDocumentInventory, outputFileSystem);
 siteRenderer.render();
+
+new SiteValidator(rootConfig.outputRootPath).validate();

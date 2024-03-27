@@ -1,6 +1,8 @@
+import { Buffer } from "node:buffer";
 import * as fs from "fs";
 import * as path from "path";
 import * as sass from "sass";
+import minifyHtml from "@minify-html/node";
 
 import { OutputFileSystem, FileSpec } from "../fileSystem";
 
@@ -8,9 +10,9 @@ function replaceFileExtension(originalPath: path.ParsedPath, revisedExtension: s
   return path.format({ ...originalPath, base: undefined /* so `ext` is used */, ext: revisedExtension });
 }
 
-export function processAssets(sourceFiles: FileSpec[], outputFileSystem: OutputFileSystem) {
+export function processAssets(sourceFiles: FileSpec[], outputFileSystem: OutputFileSystem, minifyOutput: boolean) {
   // Copy simple assets
-  const simpleAssetExtensions = [".css", ".jpg", ".png", ".svg", ".eot", ".ttf", ".woff", ".woff2"];
+  const simpleAssetExtensions = [".jpg", ".png", ".svg", ".eot", ".ttf", ".woff", ".woff2"];
 
   sourceFiles
     .filter((f) => !f.parsedRootRelativePath.base.startsWith("_"))
@@ -22,6 +24,25 @@ export function processAssets(sourceFiles: FileSpec[], outputFileSystem: OutputF
       fs.copyFileSync(sourceFile.absolutePath, outputPath);
     });
 
+  // Process CSS
+  sourceFiles
+    .filter((f) => !f.parsedRootRelativePath.base.startsWith("_"))
+    .filter((f) => f.parsedRootRelativePath.ext === ".css")
+    .forEach((sourceFile) => {
+      try {
+        const inputCss = fs.readFileSync(sourceFile.absolutePath);
+        const outputCss = minifyOutput ? minifyHtml.minify(inputCss, { keep_comments: false }) : inputCss;
+
+        const outputPath = outputFileSystem.getAbsolutePath(sourceFile.rootRelativePath);
+
+        outputFileSystem.ensureOutputPathExists(outputPath);
+        fs.writeFileSync(outputPath, outputCss);
+      } catch (error) {
+        console.error(`While processing ${sourceFile.absolutePath}:`);
+        throw error;
+      }
+    });
+
   // Process SCSS
   sourceFiles
     .filter((f) => !f.parsedRootRelativePath.base.startsWith("_"))
@@ -29,13 +50,14 @@ export function processAssets(sourceFiles: FileSpec[], outputFileSystem: OutputF
     .forEach((sourceFile) => {
       try {
         const compiledScss = sass.compile(sourceFile.absolutePath);
+        const outputScss = minifyOutput ? minifyHtml.minify(Buffer.from(compiledScss.css), {}) : compiledScss.css;
 
         const outputPath = outputFileSystem.getAbsolutePath(
           replaceFileExtension(sourceFile.parsedRootRelativePath, ".css"),
         );
 
         outputFileSystem.ensureOutputPathExists(outputPath);
-        fs.writeFileSync(outputPath, compiledScss.css);
+        fs.writeFileSync(outputPath, outputScss);
       } catch (error) {
         console.error(`While processing ${sourceFile.absolutePath}:`);
         throw error;

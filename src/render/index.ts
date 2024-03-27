@@ -1,7 +1,9 @@
+import { Buffer } from "node:buffer";
 import * as fs from "fs";
 import { Eta } from "eta";
 import { Marked } from "marked";
 import { createDirectives } from "marked-directive";
+import minifyHtml from "@minify-html/node";
 
 import { DocumentGroupConfig, GeneratedDocument, RootConfig } from "../config";
 import { InputDocument, InputDocumentInventory } from "../input";
@@ -15,6 +17,7 @@ export class SiteRenderer {
     private readonly rootConfig: RootConfig,
     private readonly inputDocumentInventory: InputDocumentInventory,
     private readonly outputFileSystem: OutputFileSystem,
+    private readonly minifyOutput: boolean,
   ) {
     this.marked = new Marked({ pedantic: false }).use(createDirectives(rootConfig.customDirectives));
     this.eta = new Eta({ views: rootConfig.themeRootPath, varName: "data", debug: true });
@@ -58,8 +61,13 @@ export class SiteRenderer {
         inputDocumentInventory: this.inputDocumentInventory,
       });
 
+      // Minify
+      const outputHtml = this.minifyOutput
+        ? minifyHtml.minify(Buffer.from(pageHtml), { keep_spaces_between_attributes: true })
+        : pageHtml;
+
       // Output
-      fs.writeFileSync(outputPath, pageHtml);
+      fs.writeFileSync(outputPath, outputHtml);
     } catch (error) {
       console.error(`While creating ${outputPath} from ${inputDocument.documentGroupRelativePath}:`);
       console.error(`with frontmatter: ${JSON.stringify(inputDocument.frontMatter)}`);

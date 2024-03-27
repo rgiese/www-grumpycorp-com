@@ -8,25 +8,25 @@ I bought a new camera and needed a way to mount my external storage, a [Plugable
 After spending a bunch of time browsing [SmallRig](https://smallrig.com)'s site I couldn't find anything that made me happy.
 
 I realized I could just make something on my 3D printer, particularly since I'd been doing a bunch of CF-PETG prints of late,
-so I whipped something up in Fusion 360 ([F3D](https://github.com/rgiese/www-grumpycorp-com/tree/master/src/content/posts/film%20making/images/NVMeClamp.f3d),
-[STL](https://github.com/rgiese/www-grumpycorp-com/tree/master/src/content/posts/film%20making/images/NVMeClamp.stl)) and an hour of printing later we're done!
+so I whipped something up in Fusion 360 ([F3D](https://github.com/rgiese/www-grumpycorp-com/tree/master/src/content/posts/film%20making/nvme-clamp/NVMeClamp.f3d),
+[STL](https://github.com/rgiese/www-grumpycorp-com/tree/master/src/content/posts/film%20making/nvme-clamp/NVMeClamp.stl)) and an hour of printing later we're done!
 
 <div class="cf">
   <div class="fl-ns fn w-10-m w-50-ns pa1">
 
-<?# SimpleFigure src="images/NVMeClampRender.png" caption="Clamp render from Fusion 360" /?>
+::figure[Clamp render from Fusion 360]{src="NVMeClampRender.png"}
 
   </div>
   <div class="fl-ns fn w-10-m w-50-ns pa1">
 
-<?# SimpleFigure src="images/NVMeClampPrinted.png" caption="Clamp fresh off the printer" /?>
+::figure[Clamp fresh off the printer]{src="NVMeClampPrinted.png"}
 
   </div>
 </div>
 
-<?# SimpleFigure src="images/NVMeClampTest.jpg" caption="Test fit with enclosure" /?>
+::figure[Test fit with enclosure]{src="NVMeClampTest.jpg"}
 
-<?# SimpleFigure src="images/NVMeClampInstalled.jpg" caption="Installed on the camera" /?>
+::figure[Installed on the camera]{src="NVMeClampInstalled.jpg"}
 
 The material is perhaps a bit thick but I keyed the shell thickness to a design parameter so it's easy to change.
 

@@ -15,13 +15,13 @@ So crabby me wants the crabbing cart back and I investigate options. Upgrading t
 
 Some sleuthing on McMaster reveals that there is a [10" flat-free swivel caster](https://www.mcmaster.com/catalog/129/1633/22925T34) for ~$90 that should fit, and fit it does (mostly)!
 
-<?# SimpleFigure src="inovativ-wheels/PXL_20230723_202056519.jpg" caption="New swivel yoke on existing dovetail" /?>
+::figure[New swivel yoke on existing dovetail]{src="PXL_20230723_202056519.jpg"}
 
 The main challenge is that the swivel bearing of the McMaster caster is substantially larger than the one on the stock Voyager NXT caster so I have to grind down the washers until they're not blocking the rotation.
 
 The Inovativ and McMaster wheels have the same inner bore (which makes sense given they're both imperial 10" casters) so I can just swap the existing wheels into the new yokes.
 
-<?# SimpleFigure src="inovativ-wheels/PXL_20230723_202618889.PORTRAIT.jpg" caption="New swivel yoke, existing wheel" /?>
+::figure[New swivel yoke, existing wheel]{src="PXL_20230723_202618889.PORTRAIT.jpg"}
 
 I spraypainted the yokes before installing them to fit in with the overall Inovativ black look. Will that paint hold up? Probably not.
 

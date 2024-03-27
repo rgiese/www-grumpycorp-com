@@ -7,6 +7,8 @@ import { generateLayoutTemplateRenderContext } from "./layoutTemplateRenderConte
 import { generatePostTemplateRenderContext } from "./postTemplateRenderContext";
 import { postIndexPagesGenerator } from "./postIndexPagesGenerator";
 
+import { customDirectives } from "./customDirectives";
+
 function outputPath(inputDocument: InputDocument, prefix?: string): string {
   const relativePath = path.parse(inputDocument.documentGroupRelativePath);
   return path.join(prefix ?? "", relativePath.dir, relativePath.name, "index.html");
@@ -48,6 +50,8 @@ const rootConfig: RootConfig = {
     },
   ],
   generatedDocuments: postIndexPagesGenerator,
+  // Transform
+  customDirectives,
 };
 
 export default rootConfig;

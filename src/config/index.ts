@@ -1,3 +1,5 @@
+import { DirectiveConfig } from "marked-directive";
+
 import { InputDocument, InputDocumentInventory } from "../input/inputDocument";
 
 export type RenderContextGenerator = (
@@ -42,6 +44,9 @@ export type RootConfig = {
   // Input
   documentGroups: DocumentGroupConfig[];
   generatedDocuments: GeneratedDocumentsGenerator | undefined;
+
+  // Transform
+  customDirectives: DirectiveConfig[];
 
   // Destination
   outputRootPath: string;

@@ -5,7 +5,7 @@ published: 2018-04-23
 
 _The Nutella Thief_ is my first micro-short film, conceived on a Saturday over a late breakfast, filmed that afternoon, and edited and scored the next day.
 
-<?# VimeoIFrame Id="266134889" /?>
+::vimeo{videoId="266134889"}
 
 ### Motivation
 

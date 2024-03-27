@@ -1,13 +1,14 @@
 import * as fs from "fs";
 import { Eta } from "eta";
 import { Marked } from "marked";
+import { createDirectives } from "marked-directive";
 
 import { DocumentGroupConfig, GeneratedDocument, RootConfig } from "../config";
 import { InputDocument, InputDocumentInventory } from "../input";
 import { OutputFileSystem } from "../fileSystem";
 
 export class SiteRenderer {
-  private readonly marked = new Marked({ pedantic: false });
+  private readonly marked: Marked;
   private readonly eta: Eta;
 
   constructor(
@@ -15,6 +16,7 @@ export class SiteRenderer {
     private readonly inputDocumentInventory: InputDocumentInventory,
     private readonly outputFileSystem: OutputFileSystem,
   ) {
+    this.marked = new Marked({ pedantic: false }).use(createDirectives(rootConfig.customDirectives));
     this.eta = new Eta({ views: rootConfig.themeRootPath, varName: "data", debug: true });
   }
 

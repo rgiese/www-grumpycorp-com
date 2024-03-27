@@ -11,11 +11,12 @@ function replaceFileExtension(originalPath: path.ParsedPath, revisedExtension: s
 }
 
 export function processAssets(sourceFiles: FileSpec[], outputFileSystem: OutputFileSystem, minifyOutput: boolean) {
+  const explicitAssetSourceFiles = sourceFiles.filter((f) => !f.parsedRootRelativePath.base.startsWith("_"));
+
   // Copy simple assets
   const simpleAssetExtensions = [".jpg", ".png", ".svg", ".eot", ".ttf", ".woff", ".woff2"];
 
-  sourceFiles
-    .filter((f) => !f.parsedRootRelativePath.base.startsWith("_"))
+  explicitAssetSourceFiles
     .filter((f) => simpleAssetExtensions.includes(f.parsedRootRelativePath.ext))
     .forEach((sourceFile) => {
       const outputPath = outputFileSystem.getAbsolutePath(sourceFile.rootRelativePath);
@@ -25,8 +26,7 @@ export function processAssets(sourceFiles: FileSpec[], outputFileSystem: OutputF
     });
 
   // Process CSS
-  sourceFiles
-    .filter((f) => !f.parsedRootRelativePath.base.startsWith("_"))
+  explicitAssetSourceFiles
     .filter((f) => f.parsedRootRelativePath.ext === ".css")
     .forEach((sourceFile) => {
       try {
@@ -44,8 +44,7 @@ export function processAssets(sourceFiles: FileSpec[], outputFileSystem: OutputF
     });
 
   // Process SCSS
-  sourceFiles
-    .filter((f) => !f.parsedRootRelativePath.base.startsWith("_"))
+  explicitAssetSourceFiles
     .filter((f) => f.parsedRootRelativePath.ext === ".scss")
     .forEach((sourceFile) => {
       try {

@@ -27,7 +27,6 @@
     <meta name="theme-color" content="#f26739" />
 
     <!-- Style sheets -->
-    <link href="/scss/external/tachyons.css" rel="stylesheet" />
     <link href="/scss/site.css" rel="stylesheet" />
 
     <!-- SimpleAnalytics -->

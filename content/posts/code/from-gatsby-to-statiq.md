@@ -15,7 +15,7 @@ WarmAndFuzzy is now at least a week+ of effort away from even being able _build_
 
 ## How we got here
 
-I [moved this site to Gatsby](from-hugo-to-gatsby), a JavaScript and React-based static site generator, about four years ago.
+I [moved this site to Gatsby](../from-hugo-to-gatsby), a JavaScript and React-based static site generator, about four years ago.
 At the time I was about to start the [WarmAndFuzzy](/tags/posts/warm-and-fuzzy) project, which I knew would be a full-stack TypeScript + React(Native) project,
 so it made sense to invest in the JavaScript ecosystem across all my projects.
 

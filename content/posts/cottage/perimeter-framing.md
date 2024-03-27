@@ -21,7 +21,7 @@ long HeadLok screws to get the long side LVLs pulled tight to the short side LVL
 
 I also rolled out some landscaping fabric and covered it with gravel to keep any bio-misadventures from getting into my insulation.
 
-::figure[Perimeter LVLs - all sides]{src="images/IMG_20180626_161442.jpg"}
+::figure[Perimeter LVLs - all sides]{src="IMG_20180626_161442.jpg"}
 
 ### Lessons learned
 

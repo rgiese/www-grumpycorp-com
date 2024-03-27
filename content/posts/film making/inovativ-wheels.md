@@ -3,7 +3,7 @@ title: Inadvisable Inovativ hacking
 published: 2023-07-23
 ---
 
-As part of the [grip truck project](grip-truck/), I retired my homebrew gear carts and splurged on a beautiful [Inovativ Voyager EVO-X](https://www.inovativ.com/product/cart-workstations/the-voyager-evo-x/) cart.
+As part of the [grip truck project](../grip-truck/), I retired my homebrew gear carts and splurged on a beautiful [Inovativ Voyager EVO-X](https://www.inovativ.com/product/cart-workstations/the-voyager-evo-x/) cart.
 I love it madly, especially the fact that all four wheels can swivel and I can crab-walk (crab-wheel?) the thing through the small spaces I tend to work in.
 
 It's so useful that, well, I wanted a second one. I decided to "save" some money and targeted the slightly lower-featured [Voyager NXT](https://www.inovativ.com/product/cart-workstations/the-voyager-nxt/) line instead

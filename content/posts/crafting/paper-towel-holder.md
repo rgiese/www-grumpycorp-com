@@ -7,7 +7,7 @@ I'd been meaning to get a second roll of paper towels for the other end of our k
 We had a nice space available on the underside of a cabinet in the ideal location, and I wanted to permanently mount a paper towel holder there.
 
 I also wanted the gizmo to vibe with other interior details of our Danish Modern house;
-for reference, here's a close-up of our stair railings fabricated by Bart at [Build LLC](http://www.buildllc.com/):
+for reference, here's a close-up of our stair railings fabricated by Bart at [Build LLC](https://www.buildllc.com/):
 
 ::figure[Stair railing detail]{src="IMG_20180816_133549_Bokeh.jpg"}
 

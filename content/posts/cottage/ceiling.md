@@ -18,7 +18,7 @@ Much like with roofing, the original supplier wasn't interested in selling to me
 A key aspect of this material is that though it is tongue-and-groove, it is also square edged instead of V-grooved -
 after all, we're going for Danish Modern, not log cabin - and that's hard to find.
 
-Only by accident did I find out that the right material to use was [Dunn Lumber](http://www.dunnlumber.com/)'s
+Only by accident did I find out that the right material to use was [Dunn Lumber](https://www.dunnlumber.com/)'s
 `SDGA124RLTG`. While it's a clear, smooth-sanded, V-grooved T&G product, the _back side_ of it is square edged and rough sawn,
 precisely what I was looking for. I only figured this out because I was in the Dunn location in Ballard
 for an unrelated errand, noticed their wall of T&G samples, noticed an unlabeled one that was what I wanted,
@@ -27,7 +27,7 @@ It's pricey but they're nice enough to carry a 1/2" thick version instead of 3/4
 
 ### Staining
 
-I bought the same stain that had been used for the main house, [Daly's Semi-Transparent Exterior Stain](http://www.dalyswoodfinishes.com/store/index.php?main_page=product_info&cPath=2&products_id=9)
+I bought the same stain that had been used for the main house, [Daly's Semi-Transparent Exterior Stain](https://www.dalyswoodfinishes.com/store/index.php?main_page=product_info&cPath=2&products_id=9)
 in color `70909`. It's a fantastic product made with natural dyes from soil and some such and went on quite easily
 with a small fuzzy roller. It does need to be back-brushed as the instructions suggest but it's still a quick process.
 

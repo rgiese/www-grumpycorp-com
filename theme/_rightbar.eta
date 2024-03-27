@@ -71,7 +71,7 @@
 
   <div class="<%= footerSectionClass %>">
     Licensed under
-    <a class="<%= linkDefaultClass%>" href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license"
+    <a class="<%= linkDefaultClass%>" href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license"
       >CC-BY-SA-4.0</a
     >.
   </div>

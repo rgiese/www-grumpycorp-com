@@ -21,7 +21,7 @@ A few days later I end up parking this ridiculous new acquisition in front of my
 ## October 2021
 
 The truck gets a paint job to look more like an Amazon truck so it can blend in a bit better (the dude at Maaco kindly color-matched it for me).
-Of course it then gets roped into doing all sorts of [theater stuff](../theater/the-odyssey/) while I take about a year off from filmmaking.
+Of course it then gets roped into doing all sorts of [theater stuff](../../theater/the-odyssey/) while I take about a year off from filmmaking.
 
 ::figure[Brand new paint job]{src="IMG_0166.jpg"}
 

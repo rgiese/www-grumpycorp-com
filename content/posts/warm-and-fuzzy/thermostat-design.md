@@ -77,7 +77,7 @@ However, building power-efficient systems is the stuff of nightmares and again, 
 
 I'm using the venerable DHT22/AM2302 temperature/humidity sensor for the on-board sensor.
 It is the cheapest sensor that measures both temperature and humidity at okay-enough accuracy
-(see [this page](http://www.kandrsmith.org/RJS/Misc/Hygrometers/calib_many.html) for a great comparison).
+(see [this page](https://www.kandrsmith.org/RJS/Misc/Hygrometers/calib_many.html) for a great comparison).
 
 I'm using the equally venerable DS18B20 temperature sensor for off-board radiant loop sensing.
 Even though Dallas' 1-Wire protocol seems largely abandoned this component is still kicking around

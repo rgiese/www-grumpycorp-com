@@ -8,13 +8,13 @@ While time-consuming, the process of getting drywall installed, mudded, and sand
 ## Installation and trim
 
 The drywall details precisely follow the process laid out by [Build LLC](https://www.buildllc.com) in their blog posts on
-[door jambs](http://blog.buildllc.com/2011/03/the-modern-door-jamb/), [base trim](http://blog.buildllc.com/2010/10/3-modern-base-details/),
-and [general drywall guidance](http://blog.buildllc.com/2011/11/top-10-things-you-should-know-about-drywall/).
+[door jambs](https://blog.buildllc.com/2011/03/the-modern-door-jamb/), [base trim](https://blog.buildllc.com/2010/10/3-modern-base-details/),
+and [general drywall guidance](https://blog.buildllc.com/2011/11/top-10-things-you-should-know-about-drywall/).
 
 ### Base trim
 
 We follow the 3-1/2" flush base technique from Build's blog post. After mounting the wall board, I trimmed off the lower four inches and screwed on Z-metal
-to provide a reveal and gap above the 1x4 base stock. The Z-metal trim isn't easy to find but I managed to get it from [Steeler](http://www.steeler.com/).
+to provide a reveal and gap above the 1x4 base stock. The Z-metal trim isn't easy to find but I managed to get it from [Steeler](https://www.steeler.com/).
 
 ### Doors
 

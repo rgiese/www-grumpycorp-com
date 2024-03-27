@@ -11,8 +11,8 @@ Of course the siding is also the primary thing you see, both from our house and 
 The first step in the journey was weather-proofing. Since this is an open joint application, i.e. sunlight reaches the water-resistant membrane through the roughly 1/4" joints in the panels,
 the membrane needs to be designed for that.
 [Build LLC](https://www.buildllc.com) used VaproShield for this purpose, but it wasn't available in small-enough rolls (I didn't feel like using the first hundred bucks off a six hundred dollar roll).
-Instead I ordered [Benjamin Obdyke FlatWrap](http://www.benjaminobdyke.com/products/housewrap-flatwrap-uv) directly from the manufacturer and used about 70% of the roll.
-Since it came from the same manufacturer, I used [HydroFlash](http://www.benjaminobdyke.com/products/hydroflash-self-adhered-flashing) as the corresponding self-adhered flashing.
+Instead I ordered [Benjamin Obdyke FlatWrap](https://www.benjaminobdyke.com/products/housewrap-flatwrap-uv) directly from the manufacturer and used about 70% of the roll.
+Since it came from the same manufacturer, I used [HydroFlash](https://www.benjaminobdyke.com/products/hydroflash-self-adhered-flashing) as the corresponding self-adhered flashing.
 
 ::figure[House wrap and window flashing]{src="IMG_20180907_110201.jpg"}
 
@@ -35,7 +35,7 @@ The panel material is a thin layer of anodized aluminum over a roughly 1/8"-thic
 (forming a stress skin panel). In order to create a bend, I needed to route a V-groove into the material from the back that left a tiny sliver of the plastic core behind.
 I needed to use a blunt-tip groove bit with my router to give the outer aluminum sheet a somewhat gentle bend radius; with a 90-degree conventional tip bit, the aluminum just breaks.
 
-I obtained the bit from our super-friendly and supportive supplier and panel manufacturer [Northwest Green Building](http://www.northwestgreenbuilding.com/) who as it happens
+I obtained the bit from our super-friendly and supportive supplier and panel manufacturer [Northwest Green Building](https://www.northwestgreenbuilding.com/) who as it happens
 is also a former Microsoft employee. They manufacture these bits themselves by getting a commercially available sharp tip 135-degree bit and then blunting it to spec.
 
 ::figure[Specialized router bit]{src="IMG_20180907_085706.jpg"}

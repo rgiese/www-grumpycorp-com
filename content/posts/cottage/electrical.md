@@ -18,7 +18,7 @@ Unfortunately they don't seem to make any that accept 10ga wire so the first jun
 
 ::figure[The one and only switch box]{src="IMG_20181105_103420.jpg"}
 
-I pre-wired for a [wall-mounted ceramic panel cove heater](http://electricheat.com/products/coves/) (part `0632C-120-WT`) that matched
+I pre-wired for a [wall-mounted ceramic panel cove heater](https://electricheat.com/products/coves/) (part `0632C-120-WT`) that matched
 other ones that we already had in our main house and were quite happy with.
 
 I've ended up controlling it with a [Mysa smart thermostat](https://getmysa.com/) that I'm quite happy with.
@@ -31,5 +31,5 @@ It's also a delight to finally have high-fidelity internet in the cottage.
 The interior lighting consists of two cheap Halo `E5ICAT` fixtures from Home Depot.
 
 The exterior sconce as shown in the [post on siding](/posts/cottage/siding/)
-is a RAB Lighting `VXBR100DG`, one of Build LLC's [favorite lighting fixures](http://blog.buildllc.com/2008/02/lighting/).
+is a RAB Lighting `VXBR100DG`, one of Build LLC's [favorite lighting fixures](https://blog.buildllc.com/2008/02/lighting/).
 It's cute and _cheap_, around \$35.

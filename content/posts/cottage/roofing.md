@@ -7,7 +7,7 @@ As discussed previously, I already don't enjoy heights, so spending a lot of tim
 
 Our main house (which this cottage is intended to mirror) uses a dark brown standing seam metal roof with 1' rib spacing and flat metal fascia covering the roof framing.
 I wasn't able to source the same product (they don't sell non-wholesale) but I got close by using [Champion Metal Snap-Loc](https://championmetal.com/residential/snap-loc/)
-in Kodiak Brown sourced from my friends at [Dunn Lumber](http://www.dunnlumber.com/).
+in Kodiak Brown sourced from my friends at [Dunn Lumber](https://dunnlumber.com/).
 
 The hack job, however, started with the fascia. The supplier doesn't provide any dedicated fascia stock (i.e. just something flat with hemmed edges) but they _do_ offer
 a ridge cap with hemmed edges that they custom bend to the angle of your ridge. Great - let's just get that with a zero degree bend in it and we're off.

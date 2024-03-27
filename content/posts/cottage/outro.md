@@ -60,9 +60,9 @@ Plan everything as early as need be (lest you fuck it up) but no earlier (lest y
 ### What would [BUILD](https://www.buildllc.com/) do?
 
 When in doubt, strive to do the most BUILD-ish thing.
-Given their [amazing blog](http://blog.buildllc.com/) it's easy to take hero worship to the next level.
+Given their [amazing blog](https://blog.buildllc.com/) it's easy to take hero worship to the next level.
 
-The final example of this working out in my favor was following their guide on [architectural photography](http://blog.buildllc.com/2016/07/an-architects-guide-to-photography/)
+The final example of this working out in my favor was following their guide on [architectural photography](https://blog.buildllc.com/2016/07/an-architects-guide-to-photography/)
 for my [portfolio](/portfolio/cottage/) shots for this project.
 I rented a [Canon 16-35mm f/4 IS](https://www.borrowlenses.com/product/Canon-EF-1635mm-f4L-IS-USM-Lens) lens per their recommendation
 and it made for some awesome photos (as well as oodles of post in Adobe Lightroom).

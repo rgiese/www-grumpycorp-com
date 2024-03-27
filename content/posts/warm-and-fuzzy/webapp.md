@@ -21,7 +21,7 @@ The other page any actual human might want to interact with is the thermostat se
 Each thermostat first lists its holds followed by its schedule steps (sorted by time-of-day).
 
 The approach to editing a setting is heavily inspired by Bret Victor's manifesto
-[Magic Ink: Information Software and the Graphical Interface](http://worrydream.com/MagicInk/)
+[Magic Ink: Information Software and the Graphical Interface](https://worrydream.com/MagicInk/)
 from 2006. I've always wanted to build UI this way but repeatedly was dismissed for wanting to build some sort of "MadLibs" craziness.
 Well, for better or worse, there's nobody here to tell me what to do, so here we are.
 

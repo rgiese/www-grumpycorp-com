@@ -5,6 +5,7 @@ import { InputDocument } from "../input";
 
 import { generateLayoutTemplateRenderContext } from "./layoutTemplateRenderContext";
 import { generatePostTemplateRenderContext } from "./postTemplateRenderContext";
+import { postIndexPagesGenerator } from "./postIndexPagesGenerator";
 
 function outputPath(inputDocument: InputDocument, prefix?: string): string {
   const relativePath = path.parse(inputDocument.documentGroupRelativePath);
@@ -16,7 +17,7 @@ const rootConfig: RootConfig = {
   inputRootPath: path.resolve("content"),
   themeRootPath: path.resolve("theme"),
   outputRootPath: path.resolve("output"),
-  // Transformations
+  // Input
   documentGroups: [
     {
       documentGroupName: "pages",
@@ -43,6 +44,7 @@ const rootConfig: RootConfig = {
       outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument, "posts"),
     },
   ],
+  generatedDocuments: postIndexPagesGenerator,
 };
 
 export default rootConfig;

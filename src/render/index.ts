@@ -2,7 +2,7 @@ import * as fs from "fs";
 import { Eta } from "eta";
 import { Marked } from "marked";
 
-import { DocumentGroupConfig, RootConfig } from "../config";
+import { DocumentGroupConfig, GeneratedDocument, RootConfig } from "../config";
 import { InputDocument, InputDocumentInventory } from "../input";
 import { OutputFileSystem } from "../fileSystem";
 
@@ -19,9 +19,13 @@ export class SiteRenderer {
   }
 
   public render() {
-    this.rootConfig.documentGroups.forEach((g) => {
-      this.inputDocumentInventory.get(g.documentGroupName)?.forEach((d) => this.renderDocument(g, d));
-    });
+    // Static documents
+    this.rootConfig.documentGroups.forEach((g) =>
+      this.inputDocumentInventory.get(g.documentGroupName)?.forEach((d) => this.renderDocument(g, d)),
+    );
+
+    // Generated documents
+    this.rootConfig.generatedDocuments?.(this.inputDocumentInventory).forEach((d) => this.renderGeneratedDocument(d));
   }
 
   private renderDocument(documentGroupConfig: DocumentGroupConfig, inputDocument: InputDocument) {
@@ -33,7 +37,7 @@ export class SiteRenderer {
     );
 
     try {
-      // Render content
+      // Render content from Markdown
       const contentHtml = this.marked.parse(inputDocument.content) as string;
 
       // Render template
@@ -57,6 +61,43 @@ export class SiteRenderer {
     } catch (error) {
       console.error(`While creating ${outputPath} from ${inputDocument.documentGroupRelativePath}:`);
       console.error(`with frontmatter: ${JSON.stringify(inputDocument.frontMatter)}`);
+      throw error;
+    }
+  }
+
+  private renderGeneratedDocument(generatedDocument: GeneratedDocument) {
+    const outputPath = this.outputFileSystem.getAbsolutePath(generatedDocument.siteRelativeOutputPath);
+    this.outputFileSystem.ensureOutputPathExists(outputPath);
+
+    console.log(`${generatedDocument.siteRelativeOutputPath} -> ${outputPath}`);
+
+    try {
+      // Render content from Eta template and context
+      const contentHtml = this.eta.render(generatedDocument.contentTemplateName, {
+        // Site-provided context (bring this in first so it can't override "official" fields)
+        ...generatedDocument.contentTemplateContext,
+        // Inventory
+        inputDocumentInventory: this.inputDocumentInventory,
+      });
+
+      // Render template
+      const pageHtml = this.eta.render(generatedDocument.templateName, {
+        // Site-provided context (bring this in first so it can't override "official" fields)
+        ...generatedDocument.templateRenderContext,
+        // This document
+        inputDocument: {
+          frontMatter: generatedDocument.frontMatter,
+        },
+        contentHtml,
+        // Inventory
+        inputDocumentInventory: this.inputDocumentInventory,
+      });
+
+      // Output
+      fs.writeFileSync(outputPath, pageHtml);
+    } catch (error) {
+      console.error(`While creating ${outputPath} from ${generatedDocument.siteRelativeOutputPath}:`);
+      console.error(`with frontmatter: ${JSON.stringify(generatedDocument.frontMatter)}`);
       throw error;
     }
   }

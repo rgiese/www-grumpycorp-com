@@ -2,7 +2,7 @@
 <html lang="en">
   <!-- prettier-ignore -->
   <% 
-    const documentGroupName = data.inputDocument.documentGroupName; 
+    const documentGroupName = data.inputDocument?.documentGroupName || "other"; 
     const frontMatter = data.inputDocument.frontMatter;
   %>
 

@@ -5,6 +5,22 @@ export type RenderContextGenerator = (
   inputDocumentInventory: InputDocumentInventory,
 ) => object;
 
+export type GeneratedDocument = {
+  // Destination
+  siteRelativeOutputPath: string;
+  // Content
+  frontMatter: {
+    title: string;
+  };
+  contentTemplateName: string;
+  contentTemplateContext: object;
+  // Render
+  templateName: string;
+  templateRenderContext: object;
+};
+
+export type GeneratedDocumentsGenerator = (inputDocumentInventory: InputDocumentInventory) => GeneratedDocument[];
+
 export type DocumentGroupConfig = {
   // About
   documentGroupName: string;
@@ -23,8 +39,9 @@ export type RootConfig = {
   inputRootPath: string;
   themeRootPath: string;
 
-  // Transformation
+  // Input
   documentGroups: DocumentGroupConfig[];
+  generatedDocuments: GeneratedDocumentsGenerator | undefined;
 
   // Destination
   outputRootPath: string;

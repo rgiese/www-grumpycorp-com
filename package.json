@@ -1,7 +1,7 @@
 {
   "scripts": {
     "clean": "rimraf bin cache obj output temp wwwroot",
-    "build": "tsx ./src/build.ts",
+    "build": "tsx --no-deprecation ./src/build.ts",
     "serve": "http-server output --port 5080 -c-1",
     "format:fix": "prettier --write .",
     "lint": "tsc --noEmit && eslint ."

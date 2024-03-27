@@ -4,11 +4,11 @@ import * as path from "path";
 import { RootConfig, DocumentGroupConfig } from "../config";
 
 import { InputDocument, InputDocumentInventory, FrontMatterSchema } from "./inputDocument";
-import { SourceFile, SourceFileSystem } from "../fileSystem";
+import { FileSpec, SourceFileSystem } from "../fileSystem";
 
 export { InputDocument, InputDocumentInventory };
 
-function ingestInputDocument(documentGroupConfig: DocumentGroupConfig, sourceFile: SourceFile): InputDocument {
+function ingestInputDocument(documentGroupConfig: DocumentGroupConfig, sourceFile: FileSpec): InputDocument {
   try {
     const document = matter.read(sourceFile.absolutePath);
     const frontMatter = FrontMatterSchema.validateSync(document.data, { stripUnknown: true });

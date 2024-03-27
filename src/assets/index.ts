@@ -2,13 +2,13 @@ import * as fs from "fs";
 import * as path from "path";
 import * as sass from "sass";
 
-import { OutputFileSystem, SourceFile } from "../fileSystem";
+import { OutputFileSystem, FileSpec } from "../fileSystem";
 
 function replaceFileExtension(originalPath: path.ParsedPath, revisedExtension: string): string {
   return path.format({ ...originalPath, base: undefined /* so `ext` is used */, ext: revisedExtension });
 }
 
-export function processAssets(sourceFiles: SourceFile[], outputFileSystem: OutputFileSystem) {
+export function processAssets(sourceFiles: FileSpec[], outputFileSystem: OutputFileSystem) {
   // Copy simple assets
   const simpleAssetExtensions = [".css", ".jpg", ".png", ".svg", ".eot", ".ttf", ".woff", ".woff2"];
 

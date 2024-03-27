@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-import { SourceFile } from "../fileSystem";
+import { FileSpec } from "../fileSystem";
 
 export const FrontMatterSchema = yup.object({
   title: yup.string().required(),
@@ -12,7 +12,7 @@ export type InputFrontmatter = yup.InferType<typeof FrontMatterSchema>;
 
 export type InputDocument = {
   // Source
-  sourceFile: SourceFile;
+  sourceFile: FileSpec;
   // Grouping
   documentGroupName: string;
   documentGroupRelativePath: string;

@@ -29,28 +29,16 @@ Every element of a setting (e.g. _Weekdays at 07:00, heat to 24&deg;C_) is click
 The only thing keeping this from being fully word-based is that I use color-coded iconography instead of "heat to" etc.
 since I think it's easier to parse visually and it takes up less space (and it still works for color-blind people).
 
-<div class="mw6-ns center">
-
-::figure[Changing the days on a scheduled setting]{src="webapp-settings-days.png"}
-
-</div>
+::figure[Changing the days on a scheduled setting]{src="webapp-settings-days.png" class="mw6-ns center"}
 
 The system does let you select arbitrary days (e.g. just Mondays and Wednesdays),
 but it's also smart enough to collapse the obvious combinations of days into "weekdays", "weekends", and "everyday".
 
-<div class="mw6-ns center">
-
-::figure[Changing the setpoint on a scheduled setting]{src="webapp-settings-setpoint.png"}
-
-</div>
+::figure[Changing the setpoint on a scheduled setting]{src="webapp-settings-setpoint.png" class="mw6-ns center"}
 
 Once a setting is changed, an undo and save button are injected into the setting "bean" for the modified setting:
 
-<div class="mw6-ns center">
-
-::figure[After starting to change a setpoint]{src="webapp-settings-setpoint-modified.png"}
-
-</div>
+::figure[After starting to change a setpoint]{src="webapp-settings-setpoint-modified.png" class="mw6-ns center"}
 
 ### Preferences
 
@@ -69,11 +57,7 @@ and it looks basically like the database UI that it is, plus proper units annota
 
 This was the first editing UI I created so I'm just phoning it in with a Modal:
 
-<div class="mw6-ns center">
-
-::figure[Modal for a single thermostat]{src="webapp-configuration-modal.png"}
-
-</div>
+::figure[Modal for a single thermostat]{src="webapp-configuration-modal.png" class="mw6-ns center"}
 
 ## How it's built
 

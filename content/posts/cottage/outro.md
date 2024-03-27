@@ -76,12 +76,12 @@ These didn't make the cut for the [portfolio page](/portfolio/cottage/) so I'll 
 The roof has now lived through a fall and winter and did so wonderfully.
 I'm really happy with how it came together even though (or especially because?) I passionately hate heights.
 
-<?# SimpleFigure src="images/IMG_4023.jpg" caption="Finished roof close-up" /?>
+::figure[Finished roof close-up]{src="IMG_4023.jpg"}
 
 The exterior finishes are an exact clone of what [Build LLC](https://www.buildllc.com/) used
 and it's just a joy seeing my structure in relation to theirs.
 
-<?# SimpleFigure src="images/IMG_4008.jpg" caption="Exterior shot looking out towards the main house" /?>
+::figure[Exterior shot looking out towards the main house]{src="IMG_4008.jpg"}
 
 Finally, in the weeks after I framed the floor and before I put on the roof, I spent many a break
 just lying on my back and looking up into the trees.
@@ -89,4 +89,4 @@ The view was so beautiful I briefly considered making a glass roof but ditched t
 
 Here's a small indication of what the canopy has to offer (and it's not even properly Spring yet) - come visit and find out for yourself!
 
-<?# SimpleFigure src="images/IMG_4025.jpg" caption="Ad astra" /?>
+::figure[Ad astra]{src="IMG_4025.jpg"}

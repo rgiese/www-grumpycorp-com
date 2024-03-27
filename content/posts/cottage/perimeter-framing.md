@@ -13,7 +13,7 @@ I built up beams out of 9-1/4" x 1-3/4" LVLs which allowed me to route a channel
 I sort-of leveled the contraption and expended a bunch of energy compensating for the fact that we hadn't poured the footings in a perfectly square or straight
 layout, but it was close enough (about 2" out of square and 1/4" out of straight over 12').
 
-<?# SimpleFigure src="images/IMG_20180613_165833.jpg" caption="Perimeter LVLs - long sides" /?>
+::figure[Perimeter LVLs - long sides]{src="IMG_20180613_165833.jpg"}
 
 Next, I installed the LVLs for the short sides and got it all leveled out. I notched the ends of the short side LVLs to fit around the screws
 that were holding the beam hangers on the long side LVLs so that the core of them was exactly the right length for the sides, allowing me to use
@@ -21,7 +21,7 @@ long HeadLok screws to get the long side LVLs pulled tight to the short side LVL
 
 I also rolled out some landscaping fabric and covered it with gravel to keep any bio-misadventures from getting into my insulation.
 
-<?# SimpleFigure src="images/IMG_20180626_161442.jpg" caption="Perimeter LVLs - all sides" /?>
+::figure[Perimeter LVLs - all sides]{src="images/IMG_20180626_161442.jpg"}
 
 ### Lessons learned
 

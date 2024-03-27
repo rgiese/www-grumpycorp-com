@@ -14,7 +14,7 @@ the membrane needs to be designed for that.
 Instead I ordered [Benjamin Obdyke FlatWrap](http://www.benjaminobdyke.com/products/housewrap-flatwrap-uv) directly from the manufacturer and used about 70% of the roll.
 Since it came from the same manufacturer, I used [HydroFlash](http://www.benjaminobdyke.com/products/hydroflash-self-adhered-flashing) as the corresponding self-adhered flashing.
 
-<?# SimpleFigure src="images/IMG_20180907_110201.jpg" caption="House wrap and window flashing" /?>
+::figure[House wrap and window flashing]{src="IMG_20180907_110201.jpg"}
 
 The house wrap was perfectly pleasant to install. I tacked it on with a few staples but relied on the cedar rain screen runners (installed next) to really hold it in place.
 The flashing, however, was just horrible to work with. Compared to my favorite, [Grace VycorPlus](https://gcpat.com/en/solutions/products/vycor-weather-barrier-flashing-tapes/vycor-plus),
@@ -26,7 +26,7 @@ For the one wall that didn't have any openings, I just left it at the 3/4" depth
 For the two walls that had windows, I took half of the allotted stock and planed it down to just under 1/2" and sandwiched it on top of a 3/4" piece.
 This would position the finished (front) depth of the aluminum panel to be in plane with the front of the window frames.
 
-<?# SimpleFigure src="images/IMG_20180907_110123.jpg" caption="Cedar runners on two walls" /?>
+::figure[Cedar runners on two walls]{src="IMG_20180907_110123.jpg"}
 
 Next came the most difficult part of the project: bending corners into the composite aluminum panels. It's super-slick and agonizingly difficult.
 Sure, you could also have open edged corners, but this is just so much nicer...
@@ -38,14 +38,14 @@ I needed to use a blunt-tip groove bit with my router to give the outer aluminum
 I obtained the bit from our super-friendly and supportive supplier and panel manufacturer [Northwest Green Building](http://www.northwestgreenbuilding.com/) who as it happens
 is also a former Microsoft employee. They manufacture these bits themselves by getting a commercially available sharp tip 135-degree bit and then blunting it to spec.
 
-<?# SimpleFigure src="images/IMG_20180907_085706.jpg" caption="Specialized router bit" /?>
+::figure[Specialized router bit]{src="IMG_20180907_085706.jpg"}
 
 I routed the groove very carefully to just the right depth using the track from my Festool track saw as a guide.
 After I got it adjusted just so, I measured the width of the groove as a proxy for its depth since that was easier and more accurate to measure.
 
-<?# SimpleFigure src="images/IMG_20180907_090618.jpg" caption="Groove viewed from the side" /?>
-<?# SimpleFigure src="images/IMG_20180907_090951.jpg" caption="Bent test piece" /?>
-<?# SimpleFigure src="images/IMG_20180907_091324.jpg" caption="Un-bent test piece with registered measurements" /?>
+::figure[Groove viewed from the side]{src="IMG_20180907_090618.jpg"}
+::figure[Bent test piece]{src="IMG_20180907_090951.jpg"}
+::figure[Un-bent test piece with registered measurements]{src="IMG_20180907_091324.jpg"}
 
 Of course doing this on a full 10' tall corner piece instead of a little test piece is challenging because the saw horses I'd set up had a hard time keeping the piece flat while I was routing it.
 As I routed more of a groove into it, it became less flat, thus changing the surface the router was riding on, and by extension the depth of the bit.
@@ -59,7 +59,7 @@ You really need to get the depth right by better than 1/32" of an inch:
 
 After much labor, the first corner was fabricated and mounted. I back-filled the bend with some OSI silicone caulk for good measure.
 
-<?# SimpleFigure src="images/IMG_20180907_154744.jpg" caption="South-east corner" /?>
+::figure[South-east corner]{src="IMG_20180907_154744.jpg"}
 
 Speaking of mounting, let's talk about screws. The panels are affixed with screws that are color-matched by the manufacturer, have nice wide heads, and a sensible Torx-20 interface.
 Due to all of that they're also expensive at a buck and a quarter each (!).
@@ -81,7 +81,7 @@ I also previously rabbeted the inside of the jamb to receive the drywall L-bead 
 
 The sheer complexity involved in figuring out what to do with that door was hours of head-scratching over many days. Like most good design, it looks trivial when completed, but the variables and constraints that needed to be considered were staggering.
 
-<?# SimpleFigure src="images/IMG_20180922_163646.jpg" caption="Front door and siding corner" /?>
+::figure[Front door and siding corner]{src="IMG_20180922_163646.jpg"}
 
 Speaking of the door, the door slab needed to be finished prior to installation. I used some MinWax oil-based poly and it was terrible - I needed to strip it off and redo it twice;
 once the stain pad I was using to apply the finish lost loads of little fuzzy hairs (never buy paint equipment from the big box store if you can avoid it),
@@ -93,7 +93,7 @@ Well, not quite. I ran out of screws as I was doing the final, least visible wal
 I didn't feel like buying another 250-pack of screws since I only needed another forty, so I bought some just-similar-enough stainless screws
 from [McMaster-Carr](https://www.mcmaster.com/), part `93406A298` and spray-painted them silver to knock down the shiny stainless sheen and match the panels better.
 
-<?# SimpleFigure src="images/IMG_20181014_141315.jpg" caption="Hacked-up custom screws" /?>
+::figure[Hacked-up custom screws]{src="IMG_20181014_141315.jpg"}
 
 Additional complexity was contributed by
 the Panasonic [passive air intake](https://na.panasonic.com/us/home-and-building-solutions/ventilation-indoor-air-quality/ventilation-accessories/passive-inlet) (part `FV-GKF32S1`)
@@ -102,16 +102,16 @@ flapped the weather-resistant barrier over some HydroFlash, and sealed that down
 Then I mounted the panel and finally used a hole saw to cut the right opening through the panel, blocking, and sheathing at the same time,
 somewhat reminiscent of the self-aligning patterning in my (brief) days of doing VLSI photolithography in college.
 
-<?# SimpleFigure src="images/IMG_20180927_125827.jpg" caption="Blocking behind the passive air intake" /?>
-<?# SimpleFigure src="images/IMG_20180927_132038.jpg" caption="Drilled hole" /?>
-<?# SimpleFigure src="images/IMG_20180927_132943.jpg" caption="Installed PAI hood" /?>
+::figure[Blocking behind the passive air intake]{src="IMG_20180927_125827.jpg"}
+::figure[Drilled hole]{src="IMG_20180927_132038.jpg"}
+::figure[Installed PAI hood]{src="IMG_20180927_132943.jpg"}
 
 The PAI hood and fan hood were each spray-painted silver as well.
 
 But eventually, it was all done.
 
-<?# SimpleFigure src="images/IMG_20181024_141815.jpg" caption="Completed siding" /?>
-<?# SimpleFigure src="images/IMG_20181014_161648.jpg" caption="Siding paperwork" /?>
+::figure[Completed siding]{src="IMG_20181024_141815.jpg"}
+::figure[Siding paperwork]{src="IMG_20181014_161648.jpg"}
 
 ### Lessons learned
 

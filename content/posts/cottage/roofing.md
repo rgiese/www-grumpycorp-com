@@ -29,17 +29,17 @@ and replace it with a new (painstakingly trimmed) piece.
 
 All in all, a job that was supposed to have been a quick morning jaunt took several days, but at least it came out looking alright:
 
-<?# SimpleFigure src="images/IMG_20180719_162052.jpg" caption="Fascia install" /?>
+::figure[Fascia install]{src="IMG_20180719_162052.jpg"}
 
 Next, I rolled out the roofing felt and installed the front drip edge (part `TSNET`):
 
-<?# SimpleFigure src="images/IMG_20180722_133153.jpg" caption="Roofing felt and drip edge" /?>
+::figure[Roofing felt and drip edge]{src="IMG_20180722_133153.jpg"}
 
 After that it was pretty easy to finish up the rest of the job with the main panels locking nicely into one another, trimming up the sides with gable trim (`TSNGT`)
 and the back with shed metal (`TSNSM`).
 
-<?# SimpleFigure src="images/IMG_20180724_095757.jpg" caption="Finished roof, from above" /?>
-<?# SimpleFigure src="images/IMG_20180724_100008.jpg" caption="Finished roof, from below" /?>
+::figure[Finished roof, from above]{src="IMG_20180724_095757.jpg"}
+::figure[Finished roof, from below]{src="IMG_20180724_100008.jpg"}
 
 Somewhere along the way I also used some cutoffs of some angled stock to insert some corners into the fascia corners to provide some more continuity there.
 

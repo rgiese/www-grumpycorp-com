@@ -16,27 +16,27 @@ I should have been more careful the first time 'round about nailing off a diagon
 
 After I had two walls in place, I put up the lower roof beam (two 7-1/4" x 1-3/4" LVLs), partially just out of spite.
 
-<?# SimpleFigure src="images/IMG_20180701_180854.jpg" caption="Two walls in place" /?>
+::figure[Two walls in place]{src="IMG_20180701_180854.jpg"}
 
 I then put up the remaining walls, plumbed and installed the first piece of sheathing for each wall to start getting things more solid, and got the second roof beam in place.
 
-<?# SimpleFigure src="images/IMG_20180710_160619.jpg" caption="All walls in place" /?>
+::figure[All walls in place]{src="IMG_20180710_160619.jpg"}
 
 The threaded rod attaches to double studs via an HDU5 holddown for glorious shear walls.
 
-<?# SimpleFigure src="images/IMG_20180703_144729.jpg" caption="Close-up of regular hold-down" /?>
+::figure[Close-up of regular hold-down]{src="IMG_20180703_144729.jpg"}
 
 And since the floor-to-ceiling windows are also corner-to-ceiling windows (i.e. the interior side trim of the window is just the drywall continuing on from the adjacent wall), the holddowns for those needed to be a bit special (HTT5).
 
-<?# SimpleFigure src="images/IMG_20180707_164752.jpg" caption="Close-up of extra hold-down" /?>
+::figure[Close-up of extra hold-down]{src="IMG_20180707_164752.jpg"}
 
 I plumbed every wall with the most accurate of tools, a simple gravity-bound plumb bob. This one I happened to have turned myself in machine shop back in college.
 
-<?# SimpleFigure src="images/IMG_20180707_154854_Bokeh.jpg" caption="Close-up of plumb bob" /?>
+::figure[Close-up of plumb bob]{src="IMG_20180707_154854_Bokeh.jpg"}
 
 Since I was solo-plumbing my solo-built walls, I relied on ratchet straps to surrounding trees to encourage the framing to reach plumb before I nailed off the sheathing.
 
-<?# SimpleFigure src="images/IMG_20180707_154200.jpg" caption="Stretching the framing with ratchet straps" /?>
+::figure[Stretching the framing with ratchet straps]{src="IMG_20180707_154200.jpg"}
 
 At this point it had become obvious that the new tree near the cottage's front door (planted after the actual house was built) was going to be in the way so we ended up moving the tree before I could finish up all the sheathing. We tried to dig a pit for the tree nearby but ended up pick-axing into two of the pipes for the irrigation system so that project grew needlessly complex. The tree now lives on another side of the property and we'll see if it makes it.
 

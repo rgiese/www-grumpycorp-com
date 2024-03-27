@@ -12,7 +12,7 @@ Having spent some time with it, though, I realized that a 3' deep stoop for a 3'
 I used the opportunity of creating the step to also tack on a partial-width extension to the main decking surface, and build a nicely finished concrete pad since it was going to remain visible.
 Per usual I covered the deck framing with Vycor just in case.
 
-<?# SimpleFigure src="images/IMG_20181019_164254.jpg" caption="Completed deck framing" /?>
+::figure[Completed deck framing]{src="IMG_20181019_164254.jpg"}
 
 The decking material is 1x4 ipe just like on the main house. Using the ipe as trim for the sides is a somewhat pricey way of covering up the pressure-treated framing but it sure looks nice.
 Ipe is time-consuming to work with since every screw needs to be not only pre-drilled but also pre-countersunk:
@@ -22,7 +22,7 @@ Not shown: the considerable amount of planning required to get this to look slic
 Even with that, a bunch of the vertically applied ipe needed to be ripped to subtly smaller widths; of course ripping it means you also need to re-round over the edges with a router, etc.
 As per above, ipe is time-consuming to work with.
 
-<?# SimpleFigure src="images/IMG_20181024_141747.jpg" caption="Completed deck with decking and trim" /?>
+::figure[Completed deck with decking and trim]{src="IMG_20181024_141747.jpg"}
 
 ### Lessons learned
 

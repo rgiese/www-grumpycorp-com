@@ -5,7 +5,7 @@ published: 2020-12-16
 
 Our first-ever real (more than a minute long) short film is here!
 
-<?# YouTubeIFrame Id="yeHrGgUA1q8" /?>
+::youtube{videoId="yeHrGgUA1q8"}
 
 This is the "director's cut" of our submission to the [48 Hour Horror Film Project](https://www.48hourfilm.com/seattle/horror) in Seattle:
 it adds everything I didn't have time for originally (a score, color grading, and better sound effects) and makes one or two minor edit tweaks.
@@ -452,4 +452,4 @@ because there were really only so many heads to keep in sync. The power of small
 
 Here's your reward for reading this far:
 
-<?# YouTubeIFrame Id="lABEAbZNPRY" /?>
+::youtube{videoId="lABEAbZNPRY"}

@@ -16,12 +16,12 @@ the otherwise dark mode-ish app, but whatever.
 <div class="cf">
   <div class="fl-ns fn w-10-m w-50-ns pa1">
 
-<?# SimpleFigure src="images/mobile-login.png" caption="Waiting to log in" /?>
+::figure[Waiting to log in]{src="mobile-login.png"}
 
   </div>
   <div class="fl-ns fn w-10-m w-50-ns pa1">
 
-<?# SimpleFigure src="images/mobile-login-auth0.png" caption="Logging in with Auth0" /?>
+::figure[Logging in with Auth0]{src="mobile-login-auth0.png"}
 
   </div>
 </div>
@@ -37,12 +37,12 @@ This felt like a more touch-friendly UX than porting the same concepts (and code
 <div class="cf">
   <div class="fl-ns fn w-10-m w-50-ns pa1">
 
-<?# SimpleFigure src="images/mobile-home.png" caption="Thermostats' latest values, actions, and setpoints" /?>
+::figure[Thermostats' latest values, actions, and setpoints]{src="mobile-home.png"}
 
   </div>
   <div class="fl-ns fn w-10-m w-50-ns pa1">
 
-<?# SimpleFigure src="images/mobile-settings.png" caption="Settings for a single thermostat" /?>
+::figure[Settings for a single thermostat]{src="mobile-settings.png"}
 
   </div>
 </div>
@@ -60,12 +60,12 @@ Navigating back before saving just discards the edits.
 <div class="cf">
   <div class="fl-ns fn w-10-m w-50-ns pa1">
 
-<?# SimpleFigure src="images/mobile-setting-scheduled.png" caption="Editing a scheduled setting" /?>
+::figure[Editing a scheduled setting]{src="mobile-setting-scheduled.png"}
 
   </div>
   <div class="fl-ns fn w-10-m w-50-ns pa1">
 
-<?# SimpleFigure src="images/mobile-setting-scheduled-modified.png" caption="Save button enabled for a modified setting" /?>
+::figure[Save button enabled for a modified setting]{src="mobile-setting-scheduled-modified.png"}
 
   </div>
 </div>
@@ -75,7 +75,7 @@ Changing the time of day for a scheduled setting is nice and Android-ish courtes
 
 <div class="mw55-ns center">
 
-<?# SimpleFigure src="images/mobile-setting-scheduled-time-of-day.png" caption="Editing a setting's time of day" /?>
+::figure[Editing a setting's time of day]{src="mobile-setting-scheduled-time-of-day.png"}
 
 </div>
 
@@ -86,7 +86,7 @@ effectively a mix of account information, account preferences, and various debug
 
 <div class="mw55-ns center">
 
-<?# SimpleFigure src="images/mobile-preferences.png" caption="The Account screen" /?>
+::figure[The Account screen]{src="mobile-preferences.png"}
 
 </div>
 
@@ -299,7 +299,7 @@ except opening the app just got me this:
 
 <div class="mw55-ns center">
 
-<?# SimpleFigure src="images/mobile-flatbuffers-wtf.png" caption="ReactNative shits the bed" /?>
+::figure[ReactNative shits the bed]{src="mobile-flatbuffers-wtf.png"}
 
 </div>
 

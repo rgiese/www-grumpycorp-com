@@ -6,7 +6,7 @@ keywords: ["IoT", "React", "TypeScript", "GraphQL", "Table"]
 
 To come back to the React-based web app again, note that every table's column headers are also a sort order affordance and indicator:
 
-<?# SimpleFigure src="images/webapp-home.png" caption="Tables with headers and sorting indicators" /?>
+::figure[Tables with headers and sorting indicators]{src="webapp-home.png"}
 
 Since we're getting all fancy up in here and have a few tables to show,
 I built a [`SortableTable`](https://github.com/rgiese/warm-and-fuzzy/blob/master/packages/webapp/src/components/SortableTable.tsx)

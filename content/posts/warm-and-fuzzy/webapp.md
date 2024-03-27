@@ -10,13 +10,13 @@ keywords: ["IoT", "AWS", "TypeScript", "React", "GraphQL"]
 
 The main page gives a quick run-down of what everything is up to (yeah, it's basically a database dump):
 
-<?# SimpleFigure src="images/webapp-home.png" caption="Home page: list of thermostats' and sensors' latest values" /?>
+::figure[Home page: list of thermostats' and sensors' latest values]{src="webapp-home.png"}
 
 ### Settings
 
 The other page any actual human might want to interact with is the thermostat settings page:
 
-<?# SimpleFigure src="images/webapp-settings.png" caption="Thermostat settings" /?>
+::figure[Thermostat settings]{src="webapp-settings.png"}
 
 Each thermostat first lists its holds followed by its schedule steps (sorted by time-of-day).
 
@@ -31,7 +31,7 @@ since I think it's easier to parse visually and it takes up less space (and it s
 
 <div class="mw6-ns center">
 
-<?# SimpleFigure src="images/webapp-settings-days.png" caption="Changing the days on a scheduled setting" /?>
+::figure[Changing the days on a scheduled setting]{src="webapp-settings-days.png"}
 
 </div>
 
@@ -40,7 +40,7 @@ but it's also smart enough to collapse the obvious combinations of days into "we
 
 <div class="mw6-ns center">
 
-<?# SimpleFigure src="images/webapp-settings-setpoint.png" caption="Changing the setpoint on a scheduled setting" /?>
+::figure[Changing the setpoint on a scheduled setting]{src="webapp-settings-setpoint.png"}
 
 </div>
 
@@ -48,7 +48,7 @@ Once a setting is changed, an undo and save button are injected into the setting
 
 <div class="mw6-ns center">
 
-<?# SimpleFigure src="images/webapp-settings-setpoint-modified.png" caption="After starting to change a setpoint" /?>
+::figure[After starting to change a setpoint]{src="webapp-settings-setpoint-modified.png"}
 
 </div>
 
@@ -58,20 +58,20 @@ There's not a lot that folks can adjust about how they experience the system ind
 I have begrudgingly added the ability to experience the system through irrational units (Fahrenheit)
 rather than the sane and reasonable system default of Celsius.
 
-<?# SimpleFigure src="images/webapp-preferences.png" caption="You can use Celsius or you can be wrong" /?>
+::figure[You can use Celsius or you can be wrong]{src="webapp-preferences.png"}
 
 ### Configuration
 
 All of the stuff that gets touched during system setup and then never again lives under the `System Configuration` tab
 and it looks basically like the database UI that it is, plus proper units annotations.
 
-<?# SimpleFigure src="images/webapp-configuration.png" caption="One-time configuration magic" /?>
+::figure[One-time configuration magic]{src="webapp-configuration.png"}
 
 This was the first editing UI I created so I'm just phoning it in with a Modal:
 
 <div class="mw6-ns center">
 
-<?# SimpleFigure src="images/webapp-configuration-modal.png" caption="Modal for a single thermostat" /?>
+::figure[Modal for a single thermostat]{src="webapp-configuration-modal.png"}
 
 </div>
 

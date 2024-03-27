@@ -1,12 +1,13 @@
 {
   "scripts": {
     "clean": "rimraf bin cache obj output temp wwwroot",
-    "build": "ts-node ./src/build.ts",
+    "build": "tsx ./src/build.ts",
     "serve": "http-server output --port 5080 -c-1",
     "format:fix": "prettier --write .",
-    "lint": "eslint ."
+    "lint": "tsc --noEmit && eslint ."
   },
   "devDependencies": {
+    "@tsconfig/recommended": "^1.0.5",
     "@types/node": "^20.11.30",
     "@typescript-eslint/eslint-plugin": "^7.3.1",
     "eslint": "^8.57.0",
@@ -17,7 +18,7 @@
     "prettier": "^3.2.5",
     "rimraf": "^5.0.5",
     "sass": "^1.72.0",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.7.1",
     "yup": "^1.4.0"
   },
   "prettier": {

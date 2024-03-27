@@ -48,7 +48,10 @@ export function processAssets(sourceFiles: FileSpec[], outputFileSystem: OutputF
     .filter((f) => f.parsedRootRelativePath.ext === ".scss")
     .forEach((sourceFile) => {
       try {
-        const compiledScss = sass.compile(sourceFile.absolutePath);
+        const compiledScss = sass.compile(sourceFile.absolutePath, {
+          loadPaths: [path.resolve("node_modules")],
+        });
+
         const outputScss = minifyOutput ? minifyHtml.minify(Buffer.from(compiledScss.css), {}) : compiledScss.css;
 
         const outputPath = outputFileSystem.getAbsolutePath(

@@ -1,8 +1,10 @@
 import { Buffer } from "node:buffer";
 import * as fs from "fs";
 import { Eta } from "eta";
+import hljs from "highlight.js";
 import { Marked } from "marked";
 import { createDirectives } from "marked-directive";
+import { markedHighlight } from "marked-highlight";
 import minifyHtml from "@minify-html/node";
 
 import { DocumentGroupConfig, GeneratedDocument, RootConfig } from "../config";
@@ -19,7 +21,16 @@ export class SiteRenderer {
     private readonly outputFileSystem: OutputFileSystem,
     private readonly minifyOutput: boolean,
   ) {
-    this.marked = new Marked({ pedantic: false }).use(createDirectives(rootConfig.customDirectives));
+    this.marked = new Marked(
+      { pedantic: false },
+      markedHighlight({
+        langPrefix: "hljs language-",
+        highlight(code, lang, _info) {
+          const language = hljs.getLanguage(lang) ? lang : "plaintext";
+          return hljs.highlight(code, { language }).value;
+        },
+      }),
+    ).use(createDirectives(rootConfig.customDirectives));
     this.eta = new Eta({ views: rootConfig.themeRootPath, varName: "data", debug: true });
   }
 

@@ -8,14 +8,14 @@ import { SiteValidator } from "./validate";
 
 import rootConfig from "./site";
 
-function build(minifyOutput: boolean) {
+async function build(minifyOutput: boolean) {
   const sourceFileSystem = createSourceFileSystem(rootConfig);
   const outputFileSystem = new OutputFileSystem(rootConfig.outputRootPath);
 
   const inputDocumentInventory = ingestInput(rootConfig, sourceFileSystem);
 
-  processAssets(sourceFileSystem.inputFiles, outputFileSystem, minifyOutput);
-  processAssets(sourceFileSystem.themeFiles, outputFileSystem, minifyOutput);
+  await processAssets(sourceFileSystem.inputFiles, outputFileSystem, minifyOutput);
+  await processAssets(sourceFileSystem.themeFiles, outputFileSystem, minifyOutput);
 
   const siteRenderer = new SiteRenderer(rootConfig, inputDocumentInventory, outputFileSystem, minifyOutput);
   siteRenderer.render();
@@ -41,4 +41,4 @@ if (verb !== "build") {
   usage();
 }
 
-build(argv.minify || false);
+build(argv.minify || false).catch(console.error);

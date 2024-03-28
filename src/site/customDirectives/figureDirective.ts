@@ -31,14 +31,18 @@ export const figureDirective: DirectiveConfig = {
       const sourceSets = sourceSetSizes.map((size) => `${getResizedImageName(parsedImagePath, size)} ${size}w`);
       const sizes = sourceSetSizes.map((size) => `(max-width: ${2 * size}px) ${size}px`);
 
-      return `
+      const figureHtml = `
         <figure ${token.attrs.class ? `class="${token.attrs.class}"` : ""}>
-          <a href="${src}">
+          <a href="${token.attrs.href ?? src}">
             <img src="${src}" alt="${token.text || token.attrs.alt || ""}" srcset="${sourceSets.join(", ")}" sizes="${sizes.join(", ")}"/>
           </a>
           ${token.text ? `<figcaption>${token.text}</figcaption>` : ""}
         </figure>
       `;
+
+      return token.attrs.outerDivWithClass
+        ? `<div class="${token.attrs.outerDivWithClass}">${figureHtml}</div>`
+        : figureHtml;
     }
 
     return false;

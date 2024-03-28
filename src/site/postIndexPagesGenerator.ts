@@ -1,4 +1,4 @@
-import { GeneratedDocumentsGenerator } from "../config";
+import { GeneratedDocumentsGenerator, TemplateType } from "../config";
 
 import { getDocumentTag, getDocumentTagSet } from "./documentTag";
 import { generateLayoutTemplateRenderContext } from "./layoutTemplateRenderContext";
@@ -22,6 +22,7 @@ export const postIndexPagesGenerator: GeneratedDocumentsGenerator = (inputDocume
       frontMatter: {
         title: "All",
       },
+      contentTemplateType: TemplateType.Eta,
       contentTemplateName: "_post_index.eta",
       contentTemplateContext: {
         postDocuments: [...postDocuments]
@@ -41,6 +42,7 @@ export const postIndexPagesGenerator: GeneratedDocumentsGenerator = (inputDocume
         frontMatter: {
           title: tag,
         },
+        contentTemplateType: TemplateType.Eta,
         contentTemplateName: "_post_index.eta",
         contentTemplateContext: {
           postDocuments: postDocuments

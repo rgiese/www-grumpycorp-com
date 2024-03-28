@@ -1,6 +1,6 @@
 import * as path from "path";
 
-import { RootConfig, RenderContextGenerator } from "../config";
+import { GeneratedDocumentsGenerator, RootConfig, RenderContextGenerator, TemplateType } from "../config";
 import { InputDocument } from "../input";
 
 import { generateLayoutTemplateRenderContext } from "./layoutTemplateRenderContext";
@@ -16,6 +16,24 @@ function outputPath(inputDocument: InputDocument, prefix?: string): string {
 
 const layoutTemplateRenderContext: RenderContextGenerator = (_inputDocument, inputDocumentInventory) =>
   generateLayoutTemplateRenderContext(inputDocumentInventory);
+
+const generatedDocuments: GeneratedDocumentsGenerator = (inputDocumentInventory) => {
+  return [
+    ...postIndexPagesGenerator(inputDocumentInventory),
+    {
+      siteRelativeOutputPath: "index.html",
+      frontMatter: {
+        title: "Home",
+      },
+      contentTemplateType: TemplateType.Marked,
+      contentTemplateName: "index.md",
+      contentTemplateContext: {},
+      templateName: "_layout.eta",
+      // We're relying on `generateLayoutTemplateRenderContext` not specializing on any given input document
+      templateRenderContext: generateLayoutTemplateRenderContext(inputDocumentInventory),
+    },
+  ];
+};
 
 const rootConfig: RootConfig = {
   // Paths are relative to repo root (by virtue of being invoked from the repo root)
@@ -49,7 +67,7 @@ const rootConfig: RootConfig = {
       outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument, "posts"),
     },
   ],
-  generatedDocuments: postIndexPagesGenerator,
+  generatedDocuments,
   // Transform
   customDirectives,
 };

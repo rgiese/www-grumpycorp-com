@@ -7,6 +7,11 @@ export type RenderContextGenerator = (
   inputDocumentInventory: InputDocumentInventory,
 ) => object;
 
+export enum TemplateType {
+  Eta,
+  Marked,
+}
+
 export type GeneratedDocument = {
   // Destination
   siteRelativeOutputPath: string;
@@ -14,6 +19,7 @@ export type GeneratedDocument = {
   frontMatter: {
     title: string;
   };
+  contentTemplateType: TemplateType;
   contentTemplateName: string;
   contentTemplateContext: object;
   // Render

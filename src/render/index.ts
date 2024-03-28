@@ -6,8 +6,9 @@ import { Marked } from "marked";
 import { createDirectives } from "marked-directive";
 import { markedHighlight } from "marked-highlight";
 import minifyHtml from "@minify-html/node";
+import * as path from "path";
 
-import { DocumentGroupConfig, GeneratedDocument, RootConfig } from "../config";
+import { DocumentGroupConfig, GeneratedDocument, RootConfig, TemplateType } from "../config";
 import { InputDocument, InputDocumentInventory } from "../input";
 import { OutputFileSystem } from "../fileSystem";
 
@@ -86,6 +87,28 @@ export class SiteRenderer {
     }
   }
 
+  private renderContentTemplate(generatedDocument: GeneratedDocument): string {
+    switch (generatedDocument.contentTemplateType) {
+      case TemplateType.Eta:
+        // Load Eta template from `templates` directory
+        return this.eta.render(generatedDocument.contentTemplateName, {
+          // Site-provided context (bring this in first so it can't override "official" fields)
+          ...generatedDocument.contentTemplateContext,
+          // Inventory
+          inputDocumentInventory: this.inputDocumentInventory,
+        });
+
+      case TemplateType.Marked:
+        // Load Marked template from `input` directory
+        return this.marked.parse(
+          fs.readFileSync(path.join(this.rootConfig.inputRootPath, generatedDocument.contentTemplateName), "utf8"),
+        ) as string;
+
+      default:
+        throw new Error(`Unsupported template type for ${generatedDocument.siteRelativeOutputPath}`);
+    }
+  }
+
   private renderGeneratedDocument(generatedDocument: GeneratedDocument) {
     const outputPath = this.outputFileSystem.getAbsolutePath(generatedDocument.siteRelativeOutputPath);
     this.outputFileSystem.ensureOutputPathExists(outputPath);
@@ -93,13 +116,8 @@ export class SiteRenderer {
     console.log(`${generatedDocument.siteRelativeOutputPath} -> ${outputPath}`);
 
     try {
-      // Render content from Eta template and context
-      const contentHtml = this.eta.render(generatedDocument.contentTemplateName, {
-        // Site-provided context (bring this in first so it can't override "official" fields)
-        ...generatedDocument.contentTemplateContext,
-        // Inventory
-        inputDocumentInventory: this.inputDocumentInventory,
-      });
+      // Render content from template and context
+      const contentHtml = this.renderContentTemplate(generatedDocument);
 
       // Render template
       const pageHtml = this.eta.render(generatedDocument.templateName, {

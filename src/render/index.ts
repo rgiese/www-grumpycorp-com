@@ -73,13 +73,8 @@ export class SiteRenderer {
         inputDocumentInventory: this.inputDocumentInventory,
       });
 
-      // Minify
-      const outputHtml = this.minifyOutput
-        ? minifyHtml.minify(Buffer.from(pageHtml), { keep_spaces_between_attributes: true })
-        : pageHtml;
-
       // Output
-      fs.writeFileSync(outputPath, outputHtml);
+      this.writeOutputHtml(outputPath, pageHtml);
     } catch (error) {
       console.error(`While creating ${outputPath} from ${inputDocument.documentGroupRelativePath}:`);
       console.error(`with frontmatter: ${JSON.stringify(inputDocument.frontMatter)}`);
@@ -133,11 +128,21 @@ export class SiteRenderer {
       });
 
       // Output
-      fs.writeFileSync(outputPath, pageHtml);
+      this.writeOutputHtml(outputPath, pageHtml);
     } catch (error) {
       console.error(`While creating ${outputPath} from ${generatedDocument.siteRelativeOutputPath}:`);
       console.error(`with frontmatter: ${JSON.stringify(generatedDocument.frontMatter)}`);
       throw error;
     }
+  }
+
+  private writeOutputHtml(outputPath: string, pageHtml: string) {
+    // Minify
+    const outputHtml = this.minifyOutput
+      ? minifyHtml.minify(Buffer.from(pageHtml), { keep_spaces_between_attributes: true })
+      : pageHtml;
+
+    // Output
+    fs.writeFileSync(outputPath, outputHtml);
   }
 }

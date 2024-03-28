@@ -41,7 +41,7 @@ export async function processAssets(
 
   // Copy simple assets
   const imageAssetExtensions = [".jpg", ".png"];
-  const simpleAssetExtensions = [...imageAssetExtensions, ".svg", ".eot", ".ttf", ".woff", ".woff2"];
+  const simpleAssetExtensions = [...imageAssetExtensions, ".svg", ".eot", ".ttf", ".woff", ".woff2", ".txt"];
 
   await Promise.all(
     explicitAssetSourceFiles

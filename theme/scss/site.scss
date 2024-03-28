@@ -218,12 +218,12 @@ figcaption {
 }
 
 .home-page-figure-div {
-  @include medium {
-    width: 100%;
-  }
-
   @include non-small {
     width: 50%;
+  }
+
+  @include medium {
+    width: 100%;
   }
 
   padding: 0.25rem;

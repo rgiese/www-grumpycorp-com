@@ -1,4 +1,4 @@
-<div class="f5 black-60 main-page-tags-container">
+<div class="f5 black-60 home-page-tags-container">
   Latest post:
   <a href="/<%= data.latestPostDocument.siteRelativeOutputPath %>"><%= data.latestPostDocument.frontMatter.title %></a>
   in

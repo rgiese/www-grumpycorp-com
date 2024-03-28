@@ -209,15 +209,15 @@ figcaption {
 }
 
 //
-// Main page
+// Home page
 //
 
-.main-page-figure-container {
+.home-page-figure-container {
   display: flex;
   flex-wrap: wrap;
 }
 
-.main-page-figure-div {
+.home-page-figure-div {
   @include medium {
     width: 100%;
   }
@@ -234,7 +234,7 @@ figcaption {
   }
 }
 
-.main-page-tags-container {
+.home-page-tags-container {
   a {
     color: var(--accent);
     text-decoration: none;

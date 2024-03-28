@@ -74,7 +74,9 @@
                 <%~ include("posts/_prevnext", data) %> 
             <% } else if (documentGroupName === "pages") { %> 
                 <%~ include("pages/_header", data) %>
-            <% } %>
+            <% } else if (data.isHomePage) { %>
+              <%~ include("home/_header", data) %>
+              <% } %>
 
             <div class="lh-copy content <%= documentGroupName === 'portfolio' ? 'portfolio-container' : '' %>">
               <%~ data.contentHtml %>

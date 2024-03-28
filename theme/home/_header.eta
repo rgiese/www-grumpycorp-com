@@ -1,0 +1,9 @@
+<div class="f5 black-60 main-page-tags-container">
+  Latest post:
+  <a href="/<%= data.latestPostDocument.siteRelativeOutputPath %>"><%= data.latestPostDocument.frontMatter.title %></a>
+  in
+  <a href="/tags/posts/<%= encodeURIComponent(data.latestPostTag) %>" class="link accent-mono">
+    <img class="w1 h1 v-mid" src="/assets/icons/tag.svg" alt="tag" />
+    <%= data.latestPostTag %>
+  </a>
+</div>

@@ -8,6 +8,7 @@ import { generatePostTemplateRenderContext } from "./postTemplateRenderContext";
 import { postIndexPagesGenerator } from "./postIndexPagesGenerator";
 
 import { customDirectives } from "./customDirectives";
+import { getDocumentTag } from "./documentTag";
 
 function outputPath(inputDocument: InputDocument, prefix?: string): string {
   const relativePath = path.parse(inputDocument.documentGroupRelativePath);
@@ -18,6 +19,9 @@ const layoutTemplateRenderContext: RenderContextGenerator = (_inputDocument, inp
   generateLayoutTemplateRenderContext(inputDocumentInventory);
 
 const generatedDocuments: GeneratedDocumentsGenerator = (inputDocumentInventory) => {
+  const postDocuments = inputDocumentInventory.get("posts") || [];
+  const latestPostDocument = postDocuments.length ? postDocuments[postDocuments.length - 1] : undefined;
+
   return [
     ...postIndexPagesGenerator(inputDocumentInventory),
     {
@@ -30,7 +34,12 @@ const generatedDocuments: GeneratedDocumentsGenerator = (inputDocumentInventory)
       contentTemplateContext: {},
       templateName: "_layout.eta",
       // We're relying on `generateLayoutTemplateRenderContext` not specializing on any given input document
-      templateRenderContext: generateLayoutTemplateRenderContext(inputDocumentInventory),
+      templateRenderContext: {
+        ...generateLayoutTemplateRenderContext(inputDocumentInventory),
+        isHomePage: true,
+        latestPostDocument,
+        latestPostTag: latestPostDocument ? getDocumentTag(latestPostDocument) : "",
+      },
     },
   ];
 };

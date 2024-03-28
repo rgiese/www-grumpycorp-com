@@ -24,6 +24,7 @@ const generatedDocuments: GeneratedDocumentsGenerator = (inputDocumentInventory)
 
   return [
     ...postIndexPagesGenerator(inputDocumentInventory),
+    // Home
     {
       siteRelativeOutputPath: "index.html",
       frontMatter: {
@@ -40,6 +41,19 @@ const generatedDocuments: GeneratedDocumentsGenerator = (inputDocumentInventory)
         latestPostDocument,
         latestPostTag: latestPostDocument ? getDocumentTag(latestPostDocument) : "",
       },
+    },
+    // 404
+    {
+      siteRelativeOutputPath: "404.html",
+      frontMatter: {
+        title: "Sadness",
+      },
+      contentTemplateType: TemplateType.Marked,
+      contentTemplateName: "404.md",
+      contentTemplateContext: {},
+      templateName: "_layout.eta",
+      // We're relying on `generateLayoutTemplateRenderContext` not specializing on any given input document
+      templateRenderContext: generateLayoutTemplateRenderContext(inputDocumentInventory),
     },
   ];
 };

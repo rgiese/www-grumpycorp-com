@@ -25,8 +25,8 @@
 
   <h4>Topics</h4>
   <div>
-    <% data.postTags.forEach(function(postTag) { %>
-    <a class="<%= linkDefaultClass %>" href="/tags/posts/<%= encodeURIComponent(postTag) %>"><%= postTag %></a>
+    <% data.postTags.forEach(function(postTag, index) { %>
+    <a class="<%= linkDefaultClass %> <%= (index > 0) ? "pl1" : "" %>" href="/tags/posts/<%= encodeURIComponent(postTag) %>"><%= postTag %></a>
     <% }) %>
   </div>
 

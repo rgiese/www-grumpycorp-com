@@ -135,5 +135,5 @@ Further reading that has informed my views and opinions:
 
 - Levy's [Industrial Organizational Psychology](https://www.powells.com/book/-9781429242295)
 - Julia Evans' [Questions I'm asking in intervews](https://jvns.ca/blog/2013/12/30/questions-im-asking-in-interviews/)
-- Liz Abinante's [Getting hired without getting burned: Sniffing for culture smells](http://lizabinante.com/blog/getting-hired-without-getting-burned/)
+- Liz Abinante's [Getting hired without getting burned: Sniffing for culture smells](https://web.archive.org/web/20190729195612/http://lizabinante.com/blog/getting-hired-without-getting-burned/)
 - Gabe's [12 Essential Leadership Experiences](https://g-rand.com/2018/12/10/12-essential-leadership-experiences/)

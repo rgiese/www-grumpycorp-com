@@ -1,8 +1,7 @@
 ---
 title: "Details: API implementation"
 published: 2020-02-01 02:40
-keywords:
-  ["IoT", "AWS", "Lambda", "DynamoDB", "Serverless", "TypeScript", "GraphQL"]
+keywords: ["IoT", "AWS", "Lambda", "DynamoDB", "Serverless", "TypeScript", "GraphQL"]
 ---
 
 ## Don't repeat yourself

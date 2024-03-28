@@ -5,7 +5,7 @@ published: 2020-12-16
 
 Our first-ever real (more than a minute long) short film is here!
 
-<?# YouTubeIFrame Id="yeHrGgUA1q8" /?>
+::youtube{videoId="yeHrGgUA1q8"}
 
 This is the "director's cut" of our submission to the [48 Hour Horror Film Project](https://www.48hourfilm.com/seattle/horror) in Seattle:
 it adds everything I didn't have time for originally (a score, color grading, and better sound effects) and makes one or two minor edit tweaks.
@@ -32,7 +32,7 @@ and a friend of the family over Zoom for the initial writing session:
 
 In case you can't get YouTube working above, here's the thumbnail for [the official video](https://www.youtube.com/watch?v=yeHrGgUA1q8&t=2s&ab_channel=GrumpycorpStudios):
 
-<?# SimpleFigure src="images/home_body_thumbnail.png" caption="The video thumbnail a.k.a. my favorite shot in the movie" /?>
+::figure[The video thumbnail a.k.a. my favorite shot in the movie]{src="home_body_thumbnail.png"}
 
 So, here's how it all went down. (Note: contains spoilers.)
 
@@ -61,7 +61,7 @@ I'm tremendously grateful to my friend Russell for loaning us his Ursa Mini Pro 
 I did not expect to shoot anything with a two-camera setup but having the flexibility to do that for one of our setups
 ended up being a massive timesaver.
 
-<?# SimpleFigure src="images/home_body_cameras.jpg" caption="Two cameras (mine on the left, Russell's on the right)" /?>
+::figure[Two cameras (mine on the left, Russell's on the right)]{src="home_body_cameras.jpg"}
 
 I also rented an Easyrig vest (for sort-of Steadicam-ish shots) and two extra lights through ShareGrid.
 
@@ -91,7 +91,7 @@ At this point anything is possible (we could make a film in the forest, in a car
 We debate what the required items even mean (e.g. what a "virtual healer" is), which of the two genre options we want to lean into,
 and how concrete vs. absurdist we want to be (e.g. what if a character is mortally afraid of ducks?).
 
-<?# SimpleFigure src="images/home_body_writers_room.jpg" caption="The writer's room" /?>
+::figure[The writer's room]{src="home_body_writers_room.jpg"}
 
 ## 9:00pm (46.5 hours remaining)
 
@@ -120,7 +120,7 @@ First we pick the locations where we're going to shoot (the kitchen, the entry, 
 Next, we write each shot on an index card (location, shot type, what happens) and tape it to the big glass door in the writer's room.
 We re-arrange cards as needed, adding and removing shots as we go, and marking some as "nice to haves". We talk through it a couple of times to test the pacing.
 
-<?# SimpleFigure src="images/home_body_shot_board.jpg" caption="The shot board in the writer's room - in shot order" /?>
+::figure[The shot board in the writer's room - in shot order]{src="home_body_shot_board.jpg"}
 
 Note that at this point we haven't actually written any of the lines, and it turns out we never will.
 Because there's so few of us (with Sarah, Robin, and myself being the core cast and crew) we can keep it in our heads and improvise everything as we go
@@ -139,7 +139,7 @@ This is not a good idea to put it mildly but we're gonna do it anyways.
 
 We re-arrange the shot cards by setup and sequence out how the next day is going to run. Now we sleep.
 
-<?# SimpleFigure src="images/home_body_shot_board_by_setup.jpg" caption="The shot board in the writer's room - ordered by setup" /?>
+::figure[The shot board in the writer's room - ordered by setup]{src="home_body_shot_board_by_setup.jpg"}
 
 # Saturday, October 17th 2020
 
@@ -151,16 +151,16 @@ First up: paperwork. If there's anything I've learned from the live shows I've w
 
 I create a Google Sheets doc listing each shot that I can order by shot (for editing purposes) and setup (for planning and filming purposes).
 
-<?# SimpleFigure src="images/home_body_shot_list_full.jpg" caption="The full shot list" /?>
+::figure[The full shot list]{src="home_body_shot_list_full.jpg"}
 
 I also create and print a page per shot from a Google Docs template. It includes the shot number, setup, plot summary, and per-take information to be filled in while filming.
 This had all seemed like a better idea when Robin was going to be my Assistant Director instead of main cast member but it still proved useful for me to have something to scribble on while filming.
 
-<?# SimpleFigure src="images/home_body_shot_page.jpg" caption="A shot page" /?>
+::figure[A shot page]{src="home_body_shot_page.jpg"}
 
 Each location gets its shot pages stapled together into packets so I don't need to lug the entire thing around all day long.
 
-<?# SimpleFigure src="images/home_body_shot_list.jpg" caption="The shot list packets, setup diagrams in the background" /?>
+::figure[The shot list packets, setup diagrams in the background]{src="home_body_shot_list.jpg"}
 
 ## 8:00am (35.5 hours remaining)
 
@@ -186,7 +186,7 @@ The greenscreening works like a charm - it's completely undiscoverable like most
 
 We entertain ourselves by getting some blood whipped up - one syringe for faster-flowing and one for goopier blood. Cash'n'Carry is a beautiful place for bulk corn syrup and food color purchases...
 
-<?# SimpleFigure src="images/home_body_blood.jpg" caption="Blood prep in the kitchen" /?>
+::figure[Blood prep in the kitchen]{src="home_body_blood.jpg"}
 
 ## 11:00am (32.5 hours remaining)
 
@@ -290,14 +290,14 @@ Time to sleep.
 
 It's time to import footage and get everything in Resolve organized. I flag takes as "good" (green) and "has color card" (purple) and mark in/out points.
 
-<?# SimpleFigure src="images/home_body_media.png" caption="A few of our 150+ takes in Resolve's Media page" /?>
+::figure[A few of our 150+ takes in Resolve's Media page]{src="home_body_media.png"}
 
 ## 8:00am (11.5 hours remaining)
 
 More coffee. I put together the "flossy ghost" sequence in its own timeline, that is, the scene of the ghost of Moonshadow Jones appearing in the bathroom window while Molly is flossing.
 It's really amazing what you can do just with retiming clips and good cuts and dissolves.
 
-<?# SimpleFigure src="images/home_body_flossy_ghost.png" caption="The Flossy Ghost timeline" /?>
+::figure[The Flossy Ghost timeline]{src="home_body_flossy_ghost.png"}
 
 I work on getting some of greenscreening to work and blessedly it all works out fine.
 
@@ -336,7 +336,7 @@ This is super dangerous and bites me in the ass about an hour before we need to 
 Thankfully I've spent some time playing with Fairlight (the audio part of Resolve) so it's fast to build out tracks and buses, adjust EQ and dynamics on the tracks,
 and manage stereo imaging on the buses with Izotope's wonderful and free Ozone Imager.
 
-<?# SimpleFigure src="images/home_body_audio.png" caption="Audio routing in Fairlight" /?>
+::figure[Audio routing in Fairlight]{src="home_body_audio.png"}
 
 At this point it has become clear that I will not be making a score for this joint.
 
@@ -348,7 +348,7 @@ At this point it is also clear that I will not be doing any meaningful color gra
 Everything you see in the 48 submission is straight from camera (no LUT, just a basic BMPCC6K->Rec709 transform)
 with the exception of some oranging in the night time scene:
 
-<?# SimpleFigure src="images/home_body_og_color.png" caption="The only color grade in the original short" /?>
+::figure[The only color grade in the original short]{src="home_body_og_color.png"}
 
 ## 6:45pm (45 minutes remaining)
 
@@ -356,7 +356,7 @@ I start the final render and do a final proof with Sarah.
 
 Here's the finished timeline:
 
-<?# SimpleFigure src="images/home_body_48_timeline.png" caption="Easy-peasy timeline view" /?>
+::figure[Easy-peasy timeline view]{src="home_body_48_timeline.png"}
 
 ## 7:00pm (30 minutes remaining)
 
@@ -386,7 +386,7 @@ If anyone needs help, I've written up how I got it to work on [Reddit](https://w
 The score ends up being fairly minimal because the movie already worked surprisingly well without any score
 so I didn't see any use in messing with that a lot.
 
-<?# SimpleFigure src="images/home_body_score.png" caption="Session view of the score" /?>
+::figure[Session view of the score]{src="home_body_score.png"}
 
 The instruments are mostly from Native Instruments' [Arkhis](https://www.native-instruments.com/en/products/komplete/cinematic/arkhis/)
 and [Ethereal Earth](https://www.native-instruments.com/en/products/komplete/play-series/ethereal-earth/)
@@ -416,12 +416,12 @@ This is where the YOLO approach to lighting the kitchen scenes costs a lot of ti
 
 Everything looks a bit more grown-up now. Each shot has a node pipe for color correction:
 
-<?# SimpleFigure src="images/home_body_clip_color.png" caption="The upgraded version of the only color grade in the original short: clip correction" /?>
+::figure[The upgraded version of the only color grade in the original short: clip correction]{src="home_body_clip_color.png"}
 
 Each _setup_ (e.g. Kitchen A-Cam vs. Kitchen B-Cam) has a shared node for matching to other shots in its family.
 Each _family_ of shots (all the kitchen stuff, all the entry stuff, ...) lives in a group and that's where the color grading (the "artistic" look development happens):
 
-<?# SimpleFigure src="images/home_body_group_color.png" caption="The upgraded version of the only color grade in the original short: grading" /?>
+::figure[The upgraded version of the only color grade in the original short: grading]{src="home_body_group_color.png"}
 
 This particular one is actually pretty funny because for a realistic vibe we'd added some post-it notes to the books Robin's character was reading.
 Well, they popped like crazy and wrecked the mellow night-time vibe so their colors needed to be Qualifier'd and toned wayyyy down.
@@ -452,4 +452,4 @@ because there were really only so many heads to keep in sync. The power of small
 
 Here's your reward for reading this far:
 
-<?# YouTubeIFrame Id="lABEAbZNPRY" /?>
+::youtube{videoId="lABEAbZNPRY"}

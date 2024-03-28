@@ -16,14 +16,14 @@ offering three former USPS parcel trucks. (I think they're now calling themselve
 
 A few days later I end up parking this ridiculous new acquisition in front of my house:
 
-<?# SimpleFigure src="grip-truck/IMG_20210518_191749.jpg" caption="Brand new truck" /?>
+::figure[Brand new truck]{src="IMG_20210518_191749.jpg"}
 
 ## October 2021
 
 The truck gets a paint job to look more like an Amazon truck so it can blend in a bit better (the dude at Maaco kindly color-matched it for me).
-Of course it then gets roped into doing all sorts of [theater stuff](../theater/the-odyssey/) while I take about a year off from filmmaking.
+Of course it then gets roped into doing all sorts of [theater stuff](../../theater/the-odyssey/) while I take about a year off from filmmaking.
 
-<?# SimpleFigure src="grip-truck/IMG_0166.jpg" caption="Brand new paint job" /?>
+::figure[Brand new paint job]{src="IMG_0166.jpg"}
 
 Note the nifty fold-down shelving attached to the walls, tracing back to its parcel truck heritage.
 
@@ -57,97 +57,96 @@ I compile a spreadsheet of every item that needs to get on the truck, including 
 
 The custom shelving is going to be based on aluminum extrusion - a fun material I've worked with before, and something that I calculate to weigh about half of what the equivalent wood structure would have been.
 
-<?# SimpleFigure src="grip-truck/truck-model.png" caption="Isometric view of a whole bunch of crap crammed into one truck" /?>
-<?# SimpleFigure src="grip-truck/elevation-L.png" caption="Shop drawings for the left side" /?>
-<?# SimpleFigure src="grip-truck/elevation-R.png" caption="Shop drawings for the right side" /?>
+::figure[Isometric view of a whole bunch of crap crammed into one truck]{src="truck-model.png"}
+::figure[Shop drawings for the left side]{src="elevation-L.png"}
+::figure[Shop drawings for the right side]{src="elevation-R.png"}
 
 It takes about four months (lolwut) but the results are pretty dope.
 
 I attach LED strip lighting to the roll-up door so I can still find my way around even at night.
 
-<?# SimpleFigure src="grip-truck/IMG_0430.jpg" caption="Interior at night, roll-up door closed" /?>
+::figure[Interior at night, roll-up door closed]{src="IMG_0430.jpg"}
 
-<?# SimpleFigure src="grip-truck/IMG_0435.jpg" caption="Interior at night, roll-up door open" /?>
+::figure[Interior at night, roll-up door open]{src="IMG_0435.jpg"}
 
-<?# SimpleFigure src="grip-truck/IMG_0437.jpg" caption="Exterior at night, flood lights because tripping is bad for insurance and people too" /?>
+::figure[Exterior at night, flood lights because tripping is bad for insurance and people too]{src="IMG_0437.jpg"}
 
-<?# SimpleFigure src="grip-truck/IMG_0461.jpg" caption="Rows and rows of shelving" /?>
+::figure[Rows and rows of shelving]{src="IMG_0461.jpg"}
 
 I finally manage to groom my pile of pipe for my frames, DanaDolly, and so on.
 And because it's important to me that I can send any ol' PA to the truck and have them quickly grab what I need, everything is neatly labeled:
 
-<?# SimpleFigure src="grip-truck/IMG_0465.jpg" caption="Labels for short pipes" /?>
+::figure[Labels for short pipes]{src="IMG_0465.jpg"}
 
-<?# SimpleFigure src="grip-truck/IMG_0464.jpg" caption="Storage for short pipes for frames" /?>
-<?# SimpleFigure src="grip-truck/IMG_0473.jpg" caption="Storage for long (8', 12') pipes for bigger frames and dolly" /?>
+::figure[Storage for short pipes for frames]{src="IMG_0464.jpg"}
+::figure[Storage for long (8', 12') pipes for bigger frames and dolly]{src="IMG_0473.jpg"}
 
 I also make some minor modifications to the roll-up door's framing and extend the storage a little about the passenger seat to make sure I can get 12' pipes in and out properly.
 
-<?# SimpleFigure src="grip-truck/IMG_0475.jpg" caption="Storage extension for long (8', 12') pipes" /?>
+::figure[Storage extension for long (8', 12') pipes]{src="IMG_0475.jpg"}
 
 Each side gets a collection of sandbags stored behind an open-frame door with slam latches (one side has black sandbags, the other orange-black for safety):
 
-<?# SimpleFigure src="grip-truck/IMG_0469.jpg" caption="Sandbag prison" /?>
+::figure[Sandbag prison]{src="IMG_0469.jpg"}
 
 Milk crates abound:
 
-<?# SimpleFigure src="grip-truck/IMG_0467.jpg" caption="Library of half-height crates" /?>
-<?# SimpleFigure src="grip-truck/IMG_0470.jpg" caption="Library of full-height crates (partial)" /?>
+::figure[Library of half-height crates]{src="IMG_0467.jpg"}
+::figure[Library of full-height crates (partial)]{src="IMG_0470.jpg"}
 
 The shelves on the left side of the truck are all on full extension slides so I can easily grab stuff out of a case without having to find a place to put said case.
 
-<?# SimpleFigure src="grip-truck/IMG_0480.jpg" caption="B-CAM Pelican case (A-CAM currently in the shop)" /?>
+::figure[B-CAM Pelican case (A-CAM currently in the shop)]{src="IMG_0480.jpg"}
 
 Aluminum bars keep anything from falling off the shelves ever again:
 
-<?# SimpleFigure src="grip-truck/IMG_0477.jpg" caption="Guard bar latched shut" /?>
-<?# SimpleFigure src="grip-truck/IMG_0479.jpg" caption="Guard bar latch open" /?>
+::figure[Guard bar latched shut]{src="IMG_0477.jpg"}
+::figure[Guard bar latch open]{src="IMG_0479.jpg"}
 
 Little baby latches make sure that the sliding shelves don't get any ideas while driving:
 
-<?# SimpleFigure src="grip-truck/IMG_0481.jpg" caption="Shelf latch" /?>
+::figure[Shelf latch]{src="IMG_0481.jpg"}
 
 I build a tracked cart for 4x4 diffusion frames, floppies, and so on:
 
-<?# SimpleFigure src="grip-truck/IMG_0482.jpg" caption="Diffusion cart" /?>
-<?# SimpleFigure src="grip-truck/IMG_0483.jpg" caption="Diffusion cart track wheel" /?>
-<?# SimpleFigure src="grip-truck/IMG_0484.jpg" caption="Diffusion cart track brake" /?>
+::figure[Diffusion cart]{src="IMG_0482.jpg"}
+::figure[Diffusion cart track wheel]{src="IMG_0483.jpg"}
+::figure[Diffusion cart track brake]{src="IMG_0484.jpg"}
 
 I can also take the diffusion cart off the track and (with help from a second person) take it on location:
 
-<?# SimpleFigure src="grip-truck/IMG_0488.jpg" caption="Diffusion cart in the wild" /?>
+::figure[Diffusion cart in the wild]{src="IMG_0488.jpg"}
 
 When slid to the right, I can access all the sliding shelves; when slid to the left, I can access a bunch of heavier lights as well as my C-stand cart.
 
-<?# SimpleFigure src="grip-truck/IMG_0486.jpg" caption="Those pesky Nova P300c's now finally on the ground where they belong" /?>
+::figure[Those pesky Nova P300c's now finally on the ground where they belong]{src="IMG_0486.jpg"}
 
 There's a wider-than-4' shelf for looong modifiers/softboxes, and of course my trusty CamWok that I used for at least a quarter of the shots in October:
 
-<?# SimpleFigure src="grip-truck/IMG_0491.jpg" caption="CamWok and large modifiers" /?>
+::figure[CamWok and large modifiers]{src="IMG_0491.jpg"}
 
 Milk crates and the like are kept from sliding out of their homes using a fairly space-efficient locking system that stays out of the way,
 whether locked or unlocked.
 
-<?# SimpleFigure src="grip-truck/IMG_0503.jpg" caption="Milk crate gate, unlocked" /?>
-
-<?# SimpleFigure src="grip-truck/IMG_0504.jpg" caption="Milk crate gate, locked" /?>
+::figure[Milk crate gate, unlocked]{src="IMG_0503.jpg"}
+::figure[Milk crate gate, locked]{src="IMG_0504.jpg"}
 
 ## Construction
 
 The construction starts with some 3x1 extrusion anchored into the framing of the truck, repurposing holes and taps left behind from taking off the original shelving.
 
-<?# SimpleFigure src="grip-truck/IMG_0496.jpg" caption="Horizontal base strut" /?>
+::figure[Horizontal base strut]{src="IMG_0496.jpg"}
 
 The vertical posts are attached using brackets I fabricated from 3/16" angle aluminum.
 The back posts are just 1x1 (since they get lateral bracing from the horizontal runs)
 while the front posts are 1x2, being less braced. They're attached to the floor with another set of custom brackets I fabricated from 1/4" aluminum.
 
-<?# SimpleFigure src="grip-truck/IMG_0507.jpg" caption="Note the squishy gym flooring to keep the stands from bouncing" /?>
+::figure[Note the squishy gym flooring to keep the stands from bouncing]{src="IMG_0507.jpg"}
 
 Whenever possible, I use plates to stiffen the joints and give the structure more rigidity.
 I've also placed diagonal braces in the top plane wherever there's space to keep the shelving from wanting to shear while driving.
 
-<?# SimpleFigure src="grip-truck/IMG_0495.jpg" caption="Joint plate and cross-brace detail" /?>
+::figure[Joint plate and cross-brace detail]{src="IMG_0495.jpg"}
 
 This entire exercise in aluminum fabrication made me a lot more comfortable with aluminum work and much of it could perhaps be described as fun.
 I will say, however, that working metal in a truck outside in the middle of winter is a stupid idea.

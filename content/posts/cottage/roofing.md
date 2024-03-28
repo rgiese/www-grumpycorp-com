@@ -7,7 +7,7 @@ As discussed previously, I already don't enjoy heights, so spending a lot of tim
 
 Our main house (which this cottage is intended to mirror) uses a dark brown standing seam metal roof with 1' rib spacing and flat metal fascia covering the roof framing.
 I wasn't able to source the same product (they don't sell non-wholesale) but I got close by using [Champion Metal Snap-Loc](https://championmetal.com/residential/snap-loc/)
-in Kodiak Brown sourced from my friends at [Dunn Lumber](http://www.dunnlumber.com/).
+in Kodiak Brown sourced from my friends at [Dunn Lumber](https://dunnlumber.com/).
 
 The hack job, however, started with the fascia. The supplier doesn't provide any dedicated fascia stock (i.e. just something flat with hemmed edges) but they _do_ offer
 a ridge cap with hemmed edges that they custom bend to the angle of your ridge. Great - let's just get that with a zero degree bend in it and we're off.
@@ -29,17 +29,17 @@ and replace it with a new (painstakingly trimmed) piece.
 
 All in all, a job that was supposed to have been a quick morning jaunt took several days, but at least it came out looking alright:
 
-<?# SimpleFigure src="images/IMG_20180719_162052.jpg" caption="Fascia install" /?>
+::figure[Fascia install]{src="IMG_20180719_162052.jpg"}
 
 Next, I rolled out the roofing felt and installed the front drip edge (part `TSNET`):
 
-<?# SimpleFigure src="images/IMG_20180722_133153.jpg" caption="Roofing felt and drip edge" /?>
+::figure[Roofing felt and drip edge]{src="IMG_20180722_133153.jpg"}
 
 After that it was pretty easy to finish up the rest of the job with the main panels locking nicely into one another, trimming up the sides with gable trim (`TSNGT`)
 and the back with shed metal (`TSNSM`).
 
-<?# SimpleFigure src="images/IMG_20180724_095757.jpg" caption="Finished roof, from above" /?>
-<?# SimpleFigure src="images/IMG_20180724_100008.jpg" caption="Finished roof, from below" /?>
+::figure[Finished roof, from above]{src="IMG_20180724_095757.jpg"}
+::figure[Finished roof, from below]{src="IMG_20180724_100008.jpg"}
 
 Somewhere along the way I also used some cutoffs of some angled stock to insert some corners into the fascia corners to provide some more continuity there.
 

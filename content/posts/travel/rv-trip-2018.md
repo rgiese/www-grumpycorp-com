@@ -17,10 +17,10 @@ Much like my dad did back in the day (minus the website), I'll go into full-on '
 | --------- | ---------------------------------------------------------------------------------------------------- | ------------ | ------------------ |
 | 8-21      | [Three Island Crossing State Park](https://parksandrecreation.idaho.gov/parks/three-island-crossing) | \$44.22      | \$44.22            |
 | 8-22,-23  | [Ruby's Inn (Bryce Canyon)](https://www.brycecanyoncampgrounds.com/)                                 | \$128.26     | \$64.13            |
-| 8-24      | [Fossil Valley RV Park](http://www.fossilvalleyrvpark.com/)                                          | \$46         | \$46               |
+| 8-24      | [Fossil Valley RV Park](https://www.fossilvalleyrvpark.com/)                                         | \$46         | \$46               |
 | 8-25      | [Montpelier Creek KOA](https://koa.com/campgrounds/montpelier-creek/)                                | \$64.14      | \$64.14            |
 | 8-26,-27  | [Yellowstone West Gate KOA](https://koa.com/campgrounds/yellowstone-park/)                           | \$102.07     | \$51.04            |
-| 8-28      | [Camp Coeur d'Alene](http://campcoeurdalene.com/)                                                    | \$64.80      | \$64.80            |
+| 8-28      | [Camp Coeur d'Alene](https://campcoeurdalene.com/)                                                   | \$64.80      | \$64.80            |
 | **Total** |                                                                                                      | **\$449.49** | \$56.19            |
 
 Overall, campground costs were reasonably consistent and commensurate with services offered (e.g. Ruby's Inn (pool, store, ...) vs. Fossil Valley (nothing)).

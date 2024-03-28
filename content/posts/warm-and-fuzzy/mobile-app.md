@@ -14,16 +14,10 @@ The login happens on an Auth0 web page hosted in an in-app browser - it's a bit 
 the otherwise dark mode-ish app, but whatever.
 
 <div class="cf">
-  <div class="fl-ns fn w-10-m w-50-ns pa1">
 
-<?# SimpleFigure src="images/mobile-login.png" caption="Waiting to log in" /?>
+::figure[Waiting to log in]{src="mobile-login.png" class="fl-ns fn w-10-m w-50-ns"}
+::figure[Logging in with Auth0]{src="mobile-login-auth0.png" class="fl-ns fn w-10-m w-50-ns"}
 
-  </div>
-  <div class="fl-ns fn w-10-m w-50-ns pa1">
-
-<?# SimpleFigure src="images/mobile-login-auth0.png" caption="Logging in with Auth0" /?>
-
-  </div>
 </div>
 
 ### Status
@@ -35,16 +29,10 @@ Unlike the webapp, settings for each thermostat can be changed by clicking on an
 This felt like a more touch-friendly UX than porting the same concepts (and code, perhaps) from the web version.
 
 <div class="cf">
-  <div class="fl-ns fn w-10-m w-50-ns pa1">
 
-<?# SimpleFigure src="images/mobile-home.png" caption="Thermostats' latest values, actions, and setpoints" /?>
+::figure[Thermostats' latest values, actions, and setpoints]{src="mobile-home.png" class="fl-ns fn w-10-m w-50-ns"}
+::figure[Settings for a single thermostat]{src="mobile-settings.png" class="fl-ns fn w-10-m w-50-ns"}
 
-  </div>
-  <div class="fl-ns fn w-10-m w-50-ns pa1">
-
-<?# SimpleFigure src="images/mobile-settings.png" caption="Settings for a single thermostat" /?>
-
-  </div>
 </div>
 
 ### Settings
@@ -58,37 +46,23 @@ the _Remove_ button becomes disabled when the setting is changed to avoid lettin
 Navigating back before saving just discards the edits.
 
 <div class="cf">
-  <div class="fl-ns fn w-10-m w-50-ns pa1">
 
-<?# SimpleFigure src="images/mobile-setting-scheduled.png" caption="Editing a scheduled setting" /?>
+::figure[Editing a scheduled setting]{src="mobile-setting-scheduled.png" class="fl-ns fn w-10-m w-50-ns"}
+::figure[Save button enabled for a modified setting]{src="mobile-setting-scheduled-modified.png" class="fl-ns fn w-10-m w-50-ns"}
 
-  </div>
-  <div class="fl-ns fn w-10-m w-50-ns pa1">
-
-<?# SimpleFigure src="images/mobile-setting-scheduled-modified.png" caption="Save button enabled for a modified setting" /?>
-
-  </div>
 </div>
 
 Changing the time of day for a scheduled setting is nice and Android-ish courtesy of
 [`@react-native-community/datetimepicker`](https://github.com/react-native-community/react-native-datetimepicker):
 
-<div class="mw55-ns center">
-
-<?# SimpleFigure src="images/mobile-setting-scheduled-time-of-day.png" caption="Editing a setting's time of day" /?>
-
-</div>
+::figure[Editing a setting's time of day]{src="mobile-setting-scheduled-time-of-day.png" class="mw55-ns center"}
 
 ### Preferences
 
 Tapping the person-shaped icon at the top right of the home screen gets to the Account screen,
 effectively a mix of account information, account preferences, and various debugging information.
 
-<div class="mw55-ns center">
-
-<?# SimpleFigure src="images/mobile-preferences.png" caption="The Account screen" /?>
-
-</div>
+::figure[The Account screen]{src="mobile-preferences.png" class="mw55-ns center"}
 
 ## How it's built
 
@@ -297,11 +271,7 @@ the approach taken above worked fine in my `shared-client` package and in my `we
 Hilariously (not), the `mobile` package built fine and deployed fine all the way through Google Play,
 except opening the app just got me this:
 
-<div class="mw55-ns center">
-
-<?# SimpleFigure src="images/mobile-flatbuffers-wtf.png" caption="ReactNative shits the bed" /?>
-
-</div>
+::figure[ReactNative shits the bed]{src="mobile-flatbuffers-wtf.png" class="mw55-ns center"}
 
 And of course I can't be bothered to have any actual UI tests (preferring to invest my time in compile-time type safety instead),
 so I managed to break an actual deploy to the Play Store without noticing that the app was completely dead in the water.

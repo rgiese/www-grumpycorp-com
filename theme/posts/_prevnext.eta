@@ -1,0 +1,22 @@
+<table class="w-100 pv3">
+  <tbody>
+    <tr>
+      <td class="w-50">
+        <!-- prettier-ignore -->
+        <% if (data.previousDocument) { %>
+        <a class="black-40" href="/<%= data.previousDocument.siteRelativeOutputPath %>"
+          >&laquo; <%= data.previousDocument.frontMatter.title %></a
+        >
+        <% } %>
+      </td>
+      <td class="w-50 tr">
+        <!-- prettier-ignore -->
+        <% if (data.nextDocument) { %>
+        <a class="black-40" href="/<%= data.nextDocument.siteRelativeOutputPath %>"
+          ><%= data.nextDocument.frontMatter.title %> &raquo;</a
+        >
+        <% } %>
+      </td>
+    </tr>
+  </tbody>
+</table>

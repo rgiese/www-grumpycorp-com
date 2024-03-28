@@ -1,17 +1,7 @@
 ---
 title: "Details: Why Flatbuffers?"
 published: 2020-02-09 10:00
-keywords:
-  [
-    "IoT",
-    "AWS",
-    "Lambda",
-    "TypeScript",
-    "Particle",
-    "C++",
-    "Flatbuffers",
-    "DRY",
-  ]
+keywords: ["IoT", "AWS", "Lambda", "TypeScript", "Particle", "C++", "Flatbuffers", "DRY"]
 ---
 
 #### So much complaining

@@ -60,9 +60,9 @@ Plan everything as early as need be (lest you fuck it up) but no earlier (lest y
 ### What would [BUILD](https://www.buildllc.com/) do?
 
 When in doubt, strive to do the most BUILD-ish thing.
-Given their [amazing blog](http://blog.buildllc.com/) it's easy to take hero worship to the next level.
+Given their [amazing blog](https://blog.buildllc.com/) it's easy to take hero worship to the next level.
 
-The final example of this working out in my favor was following their guide on [architectural photography](http://blog.buildllc.com/2016/07/an-architects-guide-to-photography/)
+The final example of this working out in my favor was following their guide on [architectural photography](https://blog.buildllc.com/2016/07/an-architects-guide-to-photography/)
 for my [portfolio](/portfolio/cottage/) shots for this project.
 I rented a [Canon 16-35mm f/4 IS](https://www.borrowlenses.com/product/Canon-EF-1635mm-f4L-IS-USM-Lens) lens per their recommendation
 and it made for some awesome photos (as well as oodles of post in Adobe Lightroom).
@@ -76,12 +76,12 @@ These didn't make the cut for the [portfolio page](/portfolio/cottage/) so I'll 
 The roof has now lived through a fall and winter and did so wonderfully.
 I'm really happy with how it came together even though (or especially because?) I passionately hate heights.
 
-<?# SimpleFigure src="images/IMG_4023.jpg" caption="Finished roof close-up" /?>
+::figure[Finished roof close-up]{src="IMG_4023.jpg"}
 
 The exterior finishes are an exact clone of what [Build LLC](https://www.buildllc.com/) used
 and it's just a joy seeing my structure in relation to theirs.
 
-<?# SimpleFigure src="images/IMG_4008.jpg" caption="Exterior shot looking out towards the main house" /?>
+::figure[Exterior shot looking out towards the main house]{src="IMG_4008.jpg"}
 
 Finally, in the weeks after I framed the floor and before I put on the roof, I spent many a break
 just lying on my back and looking up into the trees.
@@ -89,4 +89,4 @@ The view was so beautiful I briefly considered making a glass roof but ditched t
 
 Here's a small indication of what the canopy has to offer (and it's not even properly Spring yet) - come visit and find out for yourself!
 
-<?# SimpleFigure src="images/IMG_4025.jpg" caption="Ad astra" /?>
+::figure[Ad astra]{src="IMG_4025.jpg"}

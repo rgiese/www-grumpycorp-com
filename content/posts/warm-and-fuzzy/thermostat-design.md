@@ -77,7 +77,7 @@ However, building power-efficient systems is the stuff of nightmares and again, 
 
 I'm using the venerable DHT22/AM2302 temperature/humidity sensor for the on-board sensor.
 It is the cheapest sensor that measures both temperature and humidity at okay-enough accuracy
-(see [this page](http://www.kandrsmith.org/RJS/Misc/Hygrometers/calib_many.html) for a great comparison).
+(see [this page](https://www.kandrsmith.org/RJS/Misc/Hygrometers/calib_many.html) for a great comparison).
 
 I'm using the equally venerable DS18B20 temperature sensor for off-board radiant loop sensing.
 Even though Dallas' 1-Wire protocol seems largely abandoned this component is still kicking around
@@ -100,11 +100,11 @@ I'm using the SP3485 3.3V-compatible RS485 transceiver and it's all pretty vanil
 
 Here's a breadboard version of _most_ of the components:
 
-<?# SimpleFigure src="images/IMG_20190317_143534.jpg" caption="Breadboard with power, relays, on-board sensor, and core" /?>
+::figure[Breadboard with power, relays, on-board sensor, and core]{src="IMG_20190317_143534.jpg"}
 
 Here's an action shot of the system successfully controlling my heat pump:
 
-<?# SimpleFigure src="images/IMG_20190303_100932.jpg" caption="Heat pump control via laptop" /?>
+::figure[Heat pump control via laptop]{src="IMG_20190303_100932.jpg"}
 
 ### The in-progress stuff
 
@@ -120,7 +120,7 @@ however, the darn thing is so darn tiny that I can't even get it connected.
 
 Here we are trying to attach leads to it so I can put it into a breadboard:
 
-<?# SimpleFigure src="images/IMG_20190308_151347.jpg" caption="Attaching leads to an SOT-23-packed DS2484" /?>
+::figure[Attaching leads to an SOT-23-packed DS2484]{src="IMG_20190308_151347.jpg"}
 
 Match provided for scale.
 
@@ -142,11 +142,11 @@ And when all else fails there's rework.
 
 Here's the current schematic (save any potential change-out in 1-Wire driver chips) created in [Altium CircuitMaker](https://circuitmaker.com):
 
-<?# SimpleFigure src="images/2019-03-17-110627.png" caption="Preliminary schematic" /?>
+::figure[Preliminary schematic]{src="2019-03-17-110627.png"}
 
 And I did a preliminary place and auto-route to see how small a board I could get away with:
 
-<?# SimpleFigure src="images/2019-03-17-110725.png" caption="Preliminary place-and-route" /?>
+::figure[Preliminary place-and-route]{src="2019-03-17-110725.png"}
 
 We're currently at 2.6" x 1.7" which will fit nicely inside the electrical boxes behind each of our in-wall thermostats.
 

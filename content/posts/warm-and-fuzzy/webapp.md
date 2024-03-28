@@ -10,18 +10,18 @@ keywords: ["IoT", "AWS", "TypeScript", "React", "GraphQL"]
 
 The main page gives a quick run-down of what everything is up to (yeah, it's basically a database dump):
 
-<?# SimpleFigure src="images/webapp-home.png" caption="Home page: list of thermostats' and sensors' latest values" /?>
+::figure[Home page: list of thermostats' and sensors' latest values]{src="webapp-home.png"}
 
 ### Settings
 
 The other page any actual human might want to interact with is the thermostat settings page:
 
-<?# SimpleFigure src="images/webapp-settings.png" caption="Thermostat settings" /?>
+::figure[Thermostat settings]{src="webapp-settings.png"}
 
 Each thermostat first lists its holds followed by its schedule steps (sorted by time-of-day).
 
 The approach to editing a setting is heavily inspired by Bret Victor's manifesto
-[Magic Ink: Information Software and the Graphical Interface](http://worrydream.com/MagicInk/)
+[Magic Ink: Information Software and the Graphical Interface](https://worrydream.com/MagicInk/)
 from 2006. I've always wanted to build UI this way but repeatedly was dismissed for wanting to build some sort of "MadLibs" craziness.
 Well, for better or worse, there's nobody here to tell me what to do, so here we are.
 
@@ -29,28 +29,16 @@ Every element of a setting (e.g. _Weekdays at 07:00, heat to 24&deg;C_) is click
 The only thing keeping this from being fully word-based is that I use color-coded iconography instead of "heat to" etc.
 since I think it's easier to parse visually and it takes up less space (and it still works for color-blind people).
 
-<div class="mw6-ns center">
-
-<?# SimpleFigure src="images/webapp-settings-days.png" caption="Changing the days on a scheduled setting" /?>
-
-</div>
+::figure[Changing the days on a scheduled setting]{src="webapp-settings-days.png" class="mw6-ns center"}
 
 The system does let you select arbitrary days (e.g. just Mondays and Wednesdays),
 but it's also smart enough to collapse the obvious combinations of days into "weekdays", "weekends", and "everyday".
 
-<div class="mw6-ns center">
-
-<?# SimpleFigure src="images/webapp-settings-setpoint.png" caption="Changing the setpoint on a scheduled setting" /?>
-
-</div>
+::figure[Changing the setpoint on a scheduled setting]{src="webapp-settings-setpoint.png" class="mw6-ns center"}
 
 Once a setting is changed, an undo and save button are injected into the setting "bean" for the modified setting:
 
-<div class="mw6-ns center">
-
-<?# SimpleFigure src="images/webapp-settings-setpoint-modified.png" caption="After starting to change a setpoint" /?>
-
-</div>
+::figure[After starting to change a setpoint]{src="webapp-settings-setpoint-modified.png" class="mw6-ns center"}
 
 ### Preferences
 
@@ -58,22 +46,18 @@ There's not a lot that folks can adjust about how they experience the system ind
 I have begrudgingly added the ability to experience the system through irrational units (Fahrenheit)
 rather than the sane and reasonable system default of Celsius.
 
-<?# SimpleFigure src="images/webapp-preferences.png" caption="You can use Celsius or you can be wrong" /?>
+::figure[You can use Celsius or you can be wrong]{src="webapp-preferences.png"}
 
 ### Configuration
 
 All of the stuff that gets touched during system setup and then never again lives under the `System Configuration` tab
 and it looks basically like the database UI that it is, plus proper units annotations.
 
-<?# SimpleFigure src="images/webapp-configuration.png" caption="One-time configuration magic" /?>
+::figure[One-time configuration magic]{src="webapp-configuration.png"}
 
 This was the first editing UI I created so I'm just phoning it in with a Modal:
 
-<div class="mw6-ns center">
-
-<?# SimpleFigure src="images/webapp-configuration-modal.png" caption="Modal for a single thermostat" /?>
-
-</div>
+::figure[Modal for a single thermostat]{src="webapp-configuration-modal.png" class="mw6-ns center"}
 
 ## How it's built
 

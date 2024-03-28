@@ -1,17 +1,7 @@
 ---
 title: IoT thermostat design part 2
 published: 2020-02-09 13:00
-keywords:
-  [
-    "IoT",
-    "thermostat",
-    "hardware",
-    "firmware",
-    "schematics",
-    "PCB",
-    "3D printing",
-    "Prusa",
-  ]
+keywords: ["IoT", "thermostat", "hardware", "firmware", "schematics", "PCB", "3D printing", "Prusa"]
 ---
 
 It's been a while -- nearly a year -- since I posted [Part 1](/posts/warm-and-fuzzy/thermostat-design/) describing the thermostat design.
@@ -22,7 +12,7 @@ Here, finally, is the conclusion.
 The electronics side of things has largely worked out the way I'd originally planned it.
 The schematic remains unchanged and the PCB isn't far from the initial place-and-route:
 
-<?# SimpleFigure src="images/pcb.png" caption="Thermostat PCB, final layout" /?>
+::figure[Thermostat PCB, final layout]{src="pcb.png"}
 
 I made the mistake of sending the PCB off to get manufactured before I had all the components in front of me
 to place on a 1:1 printout to check pad sizes.
@@ -53,10 +43,14 @@ and exposed the DHT22 temperature and humidity sensor through a nice grille in t
 
 <div class="cf">
   <div class="fl-ns fn w-10-m w-50-ns pa1">
-    <?# SimpleFigure src="images/thermostatCoverFront.png" caption="In-wall cover, front" /?>
+
+::figure[In-wall cover, front]{src="thermostatCoverFront.png"}
+
   </div>
   <div class="fl-ns fn w-10-m w-50-ns pa1">
-    <?# SimpleFigure src="images/thermostatCoverBack.png" caption="In-wall cover, back" /?>
+
+::figure[In-wall cover, back]{src="thermostatCoverBack.png"}
+
   </div>
 </div>
 
@@ -64,9 +58,9 @@ I got it 3D-printed through [CraftCloud](https://www.craftcloud3d.com/) with a t
 I only screwed it up and needed to re-print once (the receiving post for the plastic screw holding the PCB to the mount was too flimsy to have a thread tapped into it)
 and the quality of the prints was okay enough, at about $20 for 25 of these (plus $20 in shipping or so).
 
-<?# SimpleFigure src="images/IMG_20190811_150235.jpg" caption="All the thermostats attached to their in-wall mounts" /?>
+::figure[All the thermostats attached to their in-wall mounts]{src="IMG_20190811_150235.jpg"}
 
-<?# SimpleFigure src="images/IMG_20190811_142202.jpg" caption="The business end of the in-wall thermostat" /?>
+::figure[The business end of the in-wall thermostat]{src="IMG_20190811_142202.jpg"}
 
 I enthusiastically assembled all the thermostats, installed the first five of them downstairs, verified that everything checked out, and went to bed.
 
@@ -153,10 +147,14 @@ and it made the cover easy-ish to print as well (by printing it upside down, wit
 
 <div class="cf">
   <div class="fl-ns fn w-10-m w-50-ns pa1">
-    <?# SimpleFigure src="images/thermostat-housing.png" caption="Two-part thermostat housing, with cover" /?>
+
+::figure[Two-part thermostat housing, with cover]{src="thermostat-housing.png"}
+
   </div>
   <div class="fl-ns fn w-10-m w-50-ns pa1">
-    <?# SimpleFigure src="images/thermostat-housing-base.png" caption="Two-part thermostat housing, just the base" /?>
+
+::figure[Two-part thermostat housing, just the base]{src="thermostat-housing-base.png"}
+
   </div>
 </div>
 
@@ -169,7 +167,7 @@ and it made the cover easy-ish to print as well (by printing it upside down, wit
 
 Here's a subset of the evolution of the body:
 
-<?# SimpleFigure src="images/IMG_20200209_121107.jpg" caption="Evolution of the body" /?>
+::figure[Evolution of the body]{src="IMG_20200209_121107.jpg"}
 
 1. On the left, I'd screwed up the dimensions as part of a general brain flub. Thankfully, parametric design in Fusion360 made this a fast fix.
 1. Next comes the final print I wanted to rough in before switching from the free PLA that came with the printer to the production-grade white PLA I'd bought for the project.
@@ -179,12 +177,12 @@ Here's a subset of the evolution of the body:
 
 Here's a bunch of them with the components installed; you can also see that I chewed the grille off the DHT22's in an attempt to maximize their airflow.
 
-<?# SimpleFigure src="images/IMG_20200126_155317.jpg" caption="Final revised packaging" /?>
+::figure[Final revised packaging]{src="IMG_20200126_155317.jpg"}
 
 Up next came the design of the cover, which was also a convenient and cutesey branding opportunity
 for me and <img src="/assets/icons/grumpy-robin.svg" class="h1 w1" /> GRUMPYCORP.
 
-<?# SimpleFigure src="images/IMG_20200209_121201.jpg" caption="Evolution of the cover" /?>
+::figure[Evolution of the cover]{src="IMG_20200209_121201.jpg"}
 
 1. The first cover came out pretty rough and partially lifted off the build plate.
    I corrected for this by raising the build plate temperature slightly and printing a thinner first layer.
@@ -192,7 +190,7 @@ for me and <img src="/assets/icons/grumpy-robin.svg" class="h1 w1" /> GRUMPYCORP
 1. The third cover shows off the circular fill pattern that I liked the best of all the fill patterns.
 1. The fourth go-to-market version shows how much better it can get when tuning the first layer Z-height and the angle of the in-fill bridging at the back of the logo.
 
-<?# SimpleFigure src="images/IMG_20200209_121229.jpg" caption="Evolution of the cover pins" /?>
+::figure[Evolution of the cover pins]{src="IMG_20200209_121229.jpg"}
 
 The cover is held on by pins that slot into the vent holes of the body.
 I initially figured I'd make the pins bendable for installing and removing the cover; however, PLA is more brittle than flexible so this ended poorly.
@@ -200,7 +198,7 @@ I initially figured I'd make the pins bendable for installing and removing the c
 It occured to me that I can just warp the entire cover while installing it, rather than the pins, so the go-to-market version has reinforced pins
 that, rather than bending, can withstand the pressure put on them by warping the whole cover.
 
-<?# SimpleFigure src="images/IMG_20200209_121338.jpg" caption="A finished thermostat in its natural habitat" /?>
+::figure[A finished thermostat in its natural habitat]{src="IMG_20200209_121338.jpg"}
 
 Of course there were two locations that had to be extra:
 
@@ -210,7 +208,7 @@ Of course there were two locations that had to be extra:
 I whipped up a "back body" component that makes with the body and gives the necessary offset for the PCB and its components.
 For shits and grins I printed it with the silver PLA that came with the printer:
 
-<?# SimpleFigure src="images/IMG_20200209_121937.jpg" caption="The extra edition of on-wall thermostaty goodness" /?>
+::figure[The extra edition of on-wall thermostaty goodness]{src="IMG_20200209_121937.jpg"}
 
 The print time for a pair of bodies was about nine hours and used $0.70 of filament per body.
 The print time for a pair of covers was about four hours and used $0.56 of filament per cover.
@@ -242,7 +240,7 @@ like having to clean the bed with 99% isopropyl alcohol instead of the more comm
 Tools like PrusaSlicer and OctoPrint are quite capable, and I kind of love the PrusaSlicer UI that exposes gradually more settings
 as you go from _simple_ (green) to _advanced_ (yellow) to _expert_ (red) mode:
 
-<?# SimpleFigure src="images/prusaslicer.png" caption="Expert mode is generally unnecessary" /?>
+::figure[Expert mode is generally unnecessary]{src="prusaslicer.png"}
 
 The defaults offered in _simple_ mode are generally enough; I had to twiddle with some _advanced_ settings for the cover but for the most part it was pretty straight-forward.
 

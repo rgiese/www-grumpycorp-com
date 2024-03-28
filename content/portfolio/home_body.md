@@ -2,7 +2,7 @@
 title: Home Body
 ---
 
-<?# YouTubeIFrame Id="yeHrGgUA1q8" /?>
+::youtube{videoId="yeHrGgUA1q8"}
 
 # Home Body
 

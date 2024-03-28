@@ -83,16 +83,15 @@ export async function processAssets(
       try {
         const compiledScss = sass.compile(sourceFile.absolutePath, {
           loadPaths: [path.resolve("node_modules")],
+          style: minifyOutput ? "compressed" : "expanded",
         });
-
-        const outputScss = minifyOutput ? minifyHtml.minify(Buffer.from(compiledScss.css), {}) : compiledScss.css;
 
         const outputPath = outputFileSystem.getAbsolutePath(
           replaceFileExtension(sourceFile.parsedRootRelativePath, ".css"),
         );
 
         outputFileSystem.ensureOutputPathExists(outputPath);
-        fs.writeFileSync(outputPath, outputScss);
+        fs.writeFileSync(outputPath, compiledScss.css);
       } catch (error) {
         console.error(`While processing ${sourceFile.absolutePath}:`);
         throw error;

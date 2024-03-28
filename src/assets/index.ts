@@ -1,4 +1,3 @@
-import { Buffer } from "node:buffer";
 import * as fs from "fs";
 import minifyHtml from "@minify-html/node";
 import * as path from "path";

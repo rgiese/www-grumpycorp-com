@@ -30,7 +30,7 @@
 <div class="home-page-figure-container">
 
 ::figure[Built-in furniture]{src="/portfolio/library/DSC04689.jpg" href="/portfolio/library/" outerDivWithClass="home-page-figure-div"}
-::figure[UI design]{src="/posts/warm-and-fuzzy/webapp/webapp-settings-days.png" href="/posts/warm-and-fuzzy/webapp/" outerDivWithClass="home-page-figure-div"}
+::figure[Interface design]{src="/posts/warm-and-fuzzy/webapp/webapp-settings-days.png" href="/posts/warm-and-fuzzy/webapp/" outerDivWithClass="home-page-figure-div"}
 ::figure[Cottage]{src="/portfolio/cottage/IMG_3758.jpg" href="/portfolio/cottage/" outerDivWithClass="home-page-figure-div"}
 ::figure[Circuit boards]{src="/posts/warm-and-fuzzy/thermostat-design-2/pcb.png" href="/posts/warm-and-fuzzy/thermostat-design-2/" outerDivWithClass="home-page-figure-div"}
 

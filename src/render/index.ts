@@ -9,7 +9,7 @@ import minifyHtml from "@minify-html/node";
 import * as path from "path";
 
 import { DocumentGroupConfig, RootConfig } from "../config";
-import { figureDirective } from "./figureDirective";
+import { createFigureDirective } from "./figureDirective";
 import { GeneratedDocument, TemplateType, InputDocument, InputDocumentInventory } from "../types";
 import { OutputFileSystem } from "../fileSystem";
 
@@ -45,7 +45,11 @@ export class SiteRenderer {
 
     try {
       // Render content from Markdown
-      const contentHtml = this.renderMarkdown(inputDocument.content);
+      const contentHtml = this.renderMarkdown(
+        inputDocument.sourceFile.rootRelativePath,
+        inputDocument.siteRelativeOutputPath,
+        inputDocument.content,
+      );
 
       // Render template
       const templateRenderContext = documentGroupConfig.templateRenderContext?.(
@@ -86,6 +90,8 @@ export class SiteRenderer {
       case TemplateType.Marked:
         // Load Marked template from `input` directory
         return this.renderMarkdown(
+          generatedDocument.contentTemplateName,
+          generatedDocument.siteRelativeOutputPath,
           fs.readFileSync(path.join(this.rootConfig.inputRootPath, generatedDocument.contentTemplateName), "utf8"),
         );
 
@@ -126,7 +132,9 @@ export class SiteRenderer {
     }
   }
 
-  private renderMarkdown(md: string): string {
+  private renderMarkdown(siteRelativeInputPath: string, siteRelativeOutputPath: string, md: string): string {
+    const figureDirective = createFigureDirective(siteRelativeInputPath, siteRelativeOutputPath);
+
     const marked = new Marked({ pedantic: false })
       .use(
         markedHighlight({

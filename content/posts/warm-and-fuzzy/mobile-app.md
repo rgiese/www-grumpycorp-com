@@ -15,8 +15,8 @@ the otherwise dark mode-ish app, but whatever.
 
 <div class="cf">
 
-::figure[Waiting to log in]{src="mobile-login.png" class="fl-ns fn w-10-m w-50-ns"}
-::figure[Logging in with Auth0]{src="mobile-login-auth0.png" class="fl-ns fn w-10-m w-50-ns"}
+::figure[Waiting to log in]{src="mobile-app/mobile-login.png" class="fl-ns fn w-10-m w-50-ns"}
+::figure[Logging in with Auth0]{src="mobile-app/mobile-login-auth0.png" class="fl-ns fn w-10-m w-50-ns"}
 
 </div>
 
@@ -30,8 +30,8 @@ This felt like a more touch-friendly UX than porting the same concepts (and code
 
 <div class="cf">
 
-::figure[Thermostats' latest values, actions, and setpoints]{src="mobile-home.png" class="fl-ns fn w-10-m w-50-ns"}
-::figure[Settings for a single thermostat]{src="mobile-settings.png" class="fl-ns fn w-10-m w-50-ns"}
+::figure[Thermostats' latest values, actions, and setpoints]{src="mobile-app/mobile-home.png" class="fl-ns fn w-10-m w-50-ns"}
+::figure[Settings for a single thermostat]{src="mobile-app/mobile-settings.png" class="fl-ns fn w-10-m w-50-ns"}
 
 </div>
 
@@ -47,22 +47,22 @@ Navigating back before saving just discards the edits.
 
 <div class="cf">
 
-::figure[Editing a scheduled setting]{src="mobile-setting-scheduled.png" class="fl-ns fn w-10-m w-50-ns"}
-::figure[Save button enabled for a modified setting]{src="mobile-setting-scheduled-modified.png" class="fl-ns fn w-10-m w-50-ns"}
+::figure[Editing a scheduled setting]{src="mobile-app/mobile-setting-scheduled.png" class="fl-ns fn w-10-m w-50-ns"}
+::figure[Save button enabled for a modified setting]{src="mobile-app/mobile-setting-scheduled-modified.png" class="fl-ns fn w-10-m w-50-ns"}
 
 </div>
 
 Changing the time of day for a scheduled setting is nice and Android-ish courtesy of
 [`@react-native-community/datetimepicker`](https://github.com/react-native-community/react-native-datetimepicker):
 
-::figure[Editing a setting's time of day]{src="mobile-setting-scheduled-time-of-day.png" class="mw55-ns center"}
+::figure[Editing a setting's time of day]{src="mobile-app/mobile-setting-scheduled-time-of-day.png" class="mw55-ns center"}
 
 ### Preferences
 
 Tapping the person-shaped icon at the top right of the home screen gets to the Account screen,
 effectively a mix of account information, account preferences, and various debugging information.
 
-::figure[The Account screen]{src="mobile-preferences.png" class="mw55-ns center"}
+::figure[The Account screen]{src="mobile-app/mobile-preferences.png" class="mw55-ns center"}
 
 ## How it's built
 
@@ -271,7 +271,7 @@ the approach taken above worked fine in my `shared-client` package and in my `we
 Hilariously (not), the `mobile` package built fine and deployed fine all the way through Google Play,
 except opening the app just got me this:
 
-::figure[ReactNative shits the bed]{src="mobile-flatbuffers-wtf.png" class="mw55-ns center"}
+::figure[ReactNative shits the bed]{src="mobile-app/mobile-flatbuffers-wtf.png" class="mw55-ns center"}
 
 And of course I can't be bothered to have any actual UI tests (preferring to invest my time in compile-time type safety instead),
 so I managed to break an actual deploy to the Play Store without noticing that the app was completely dead in the water.

@@ -37,7 +37,7 @@ You'll notice that AWS SSM used to stand for _Simple Systems Manager_ - looking 
 and dropped the _Simple_ from their name.
 At any rate, there seems to be just one SSM and KMS in any AWS account so there was nothing to be provisioned prior to doing this.
 
-::figure[My lone parameter in SSM]{src="api-ssm-overview.png"}
+::figure[My lone parameter in SSM]{src="details-aws-secrets/api-ssm-overview.png"}
 
 In my case, the name of the parameter is `particleAPIKey`,
 brutally and mercilessly linebroken by the AWS UI above that refuses to allow for resizable columns using any of the mouse gestures I could imagine.

@@ -40,7 +40,7 @@ plus of course a number of untouched sticks.
 
 Here's what I had after installing the flooring and spreading wood filler over any gaps.
 
-::figure[Post-install with cured wood filler]{src="IMG_20190125_120444.jpg"}
+::figure[Post-install with cured wood filler]{src="flooring/IMG_20190125_120444.jpg"}
 
 The next two days I groaned loudly anytime I sat down on _anything_ - all the muscles from my knees to my chest
 were just completely done with moving after a day of constant crouching/standing/crouching/... for the install.
@@ -109,7 +109,7 @@ hairs might have gotten into the finish somewhere.
 
 Should I ever have to or get to finish a floor again (e.g. in theater), these'll be the products I'll use.
 
-::figure[The finished product]{src="IMG_20190130_113050.jpg"}
+::figure[The finished product]{src="flooring/IMG_20190130_113050.jpg"}
 
 ### Lessons learned
 

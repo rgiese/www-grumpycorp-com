@@ -10,7 +10,7 @@ After all it's a completely needless side project and I didn't want to spend any
 
 My target cost was order-of-magnitude a buck a month, and we're doing pretty well:
 
-::figure[AWS billing: just under $1 a month]{src="aws-costs.png"}
+::figure[AWS billing: just under $1 a month]{src="architecture/aws-costs.png"}
 
 It's pretty miraculous what you can do with high-level PaaS cloud-hosted services that bill by use
 and have a pretty high free tier. At this point I cut could my costs in half by hosting my DNS elsewhere;

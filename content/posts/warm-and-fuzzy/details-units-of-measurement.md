@@ -9,7 +9,7 @@ keywords: ["IoT", "React", "ReactNative", "TypeScript", "GraphQL", "Units", "Tem
 One of us in the house (who is wrong) prefers to see temperatures in Fahrenheit (eww).
 With my (obviously boundless) empathy engaged, I put together a shwifty UI, as shown previously:
 
-::figure[You can have preferences and still be wrong]{src="../webapp/webapp-preferences.png"}
+::figure[You can have preferences and still be wrong]{src="webapp/webapp-preferences.png"}
 
 Wowsers.
 
@@ -252,18 +252,18 @@ I don't bother converting the type of the underlying data and just use the stati
 The initial reason for building [`RelativeTemperature`](https://github.com/rgiese/warm-and-fuzzy/blob/master/packages/shared-client/src/RelativeTemperature.ts)
 was to be a bit completist and make the configuration table's temperature threshold (a delta value) display correctly:
 
-::figure[Behold the Threshold column]{src="../webapp/webapp-configuration.png"}
+::figure[Behold the Threshold column]{src="webapp/webapp-configuration.png"}
 
 The edit modal is even so douchey as to say &#X0394;&#X00B0;C...
 
-::figure[Gangster units on that Threshold]{src="../webapp/webapp-configuration-modal.png"}
+::figure[Gangster units on that Threshold]{src="webapp/webapp-configuration-modal.png"}
 
 Regardless, the place we _actually_ need `RelativeTemperature` is in the setpoint popup
 because the dang thing has a spinner that needs to be told how much it should spin up and down by:
 
 <div class="mw6-ns center">
 
-::figure[Changing the setpoint with a spinner]{src="../webapp/webapp-settings-setpoint.png"}
+::figure[Changing the setpoint with a spinner]{src="webapp/webapp-settings-setpoint.png"}
 
 </div>
 

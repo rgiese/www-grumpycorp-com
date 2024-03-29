@@ -36,20 +36,20 @@ Except I don't even need to wrap this around an actual ShowBaby, I can just buy 
 [Multiverse receiver card](https://www.citytheatrical.com/products/electronic/multiverse-wireless-dmx-rdm/multiverse-receiver-card) and save on space and money!
 The power supply is a [random 12V buck power supply](https://www.amazon.com/dp/B07FNJZ1PR?ref=ppx_yo2ov_dt_b_product_details&th=1) from Amazon.
 
-::figure[Multiverse box, open]{src="multiverse-box-open.jpg"}
+::figure[Multiverse box, open]{src="dmx-case/multiverse-box-open.jpg"}
 
 I spent a few design iterations figuring out how to most efficiently stack the power in/out, power supply, and receiver card:
 
-::figure[When at first you don't succeed]{src="multiverse-box-prototypes.jpg"}
+::figure[When at first you don't succeed]{src="dmx-case/multiverse-box-prototypes.jpg"}
 
 Printing the enclosure out of translucent PETG means I can see the status LEDs while it's running,
 loosely pooping out the butt of my company logo:
 
-::figure[Blink if you're happy]{src="multiverse-box-on.jpg"}
+::figure[Blink if you're happy]{src="dmx-case/multiverse-box-on.jpg"}
 
 And then for good measure I made six of these:
 
-::figure[Not sure why six but it seemed right at the time]{src="multiverse-boxes.jpg"}
+::figure[Not sure why six but it seemed right at the time]{src="dmx-case/multiverse-boxes.jpg"}
 
 Some administrative notes about Multiverse:
 
@@ -74,7 +74,7 @@ The only platform that could meaningfully control that at that time was ETC's fa
 
 Thankfully you can now run ETC boards on a laptop with [ETCnomad](https://www.etcconnect.com/ETCnomad/):
 
-::figure[ETCnomad with a custom magic sheet for my inventory]{src="eos.jpg"}
+::figure[ETCnomad with a custom magic sheet for my inventory]{src="dmx-case/eos.jpg"}
 
 ...and just like that, the days of unreliable Bluetooth apps are over.
 And because this is just Eos, I can remote-control this from any iOS or Android device with any of the Eos-compatible apps.
@@ -87,7 +87,7 @@ A cheap-as-dirt wireless router,
 another excellent DMXKing device to translate sACN to wired DMX (the [eDMX4 MAX DIN](https://dmxking.com/artnetsacn/edmx4-max-din) is stunningly compact),
 and then my two wireless transmitters.
 
-::figure[Network, DMX, Multiverse, and CRMX all in one place]{src="dmx-case.jpg"}
+::figure[Network, DMX, Multiverse, and CRMX all in one place]{src="dmx-case/dmx-case.jpg"}
 
 The back of the case has three DMX outputs: the first two universes directly, a loop-through of the third universe via the ShowBaby transmitter,
 and sadly the Astera BOX swallows the fourth universe (no through port).
@@ -96,11 +96,11 @@ In the front is a USB hub with a built-in Ethernet adapter to connect my laptop 
 and also give me a place to plug in my customized [XKeys keyboard](https://xkeys.com/xk60.html) that mimics the ETC console keypad more or less -
 sadly this is pretty much a necessity because the keyboard shortcuts for ETCnomad are nonsensical and thus impossible to remember.
 
-::figure[Eos keyboard courtesy of XKeys]{src="eos-keyboard.jpg"}
+::figure[Eos keyboard courtesy of XKeys]{src="dmx-case/eos-keyboard.jpg"}
 
 And here is the whole happy family of gadgets sitting side-by-side on my cart (with the assumption that the actual DMX case gets tossed on the lower shelf
 while on set):
 
-::figure[The whole Eos happy family in one place]{src="eos-happy-family.jpg"}
+::figure[The whole Eos happy family in one place]{src="dmx-case/eos-happy-family.jpg"}
 
 Off to the next project! (And hopefully sooner or later, an actual dang film set again.)

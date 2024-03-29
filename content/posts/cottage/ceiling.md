@@ -9,7 +9,7 @@ to become the undersides of the eaves as well.
 Not only is it beautiful, it also offers a nice opportunity to connect the interior and exterior finishes with one another,
 particularly given that the floor-to-ceiling windows make the continuity of the cedar readily apparent.
 
-::figure[Main house ceiling for reference]{src="IMG_20190214_094401.jpg"}
+::figure[Main house ceiling for reference]{src="ceiling/IMG_20190214_094401.jpg"}
 
 ### Sourcing
 
@@ -45,12 +45,12 @@ a few weeks prior.
 
 They required some finicky cuts in places, particularly around windows and exterior corners:
 
-::figure[Exterior board fancy cuts]{src="IMG_20181030_140526.jpg"}
+::figure[Exterior board fancy cuts]{src="ceiling/IMG_20181030_140526.jpg"}
 
 But in the end it came together nicely and I'm quite happy with the outcome.
 
-::figure[Fancy ceiling - indoors]{src="IMG_20181215_151123.jpg"}
-::figure[Fancy ceiling - outdoors]{src="IMG_20181215_151238.jpg"}
+::figure[Fancy ceiling - indoors]{src="ceiling/IMG_20181215_151123.jpg"}
+::figure[Fancy ceiling - outdoors]{src="ceiling/IMG_20181215_151238.jpg"}
 
 ### Lessons learned
 

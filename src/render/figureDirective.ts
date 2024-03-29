@@ -30,12 +30,7 @@ export function createFigureDirective(imageManager: ImageManager, siteRelativeIn
 
           const siteRelativeImagePath = src.startsWith("/")
             ? src
-            : "/" +
-              path.join(
-                parsedSiteRelativeInputPath.dir,
-                parsedSiteRelativeInputPath.name, // TEMPORARY: given that .../foo.md will render into .../foo/index.html
-                src,
-              );
+            : "/" + path.join(parsedSiteRelativeInputPath.dir, src);
 
           // Inspect image metadata
           const inputImage = imageManager.getImage(decodeURIComponent(siteRelativeImagePath));
@@ -43,7 +38,7 @@ export function createFigureDirective(imageManager: ImageManager, siteRelativeIn
           // Emit figure
           const figureHtml = `
             <figure ${token.attrs.class ? `class="${token.attrs.class}"` : ""}>
-              <a href="${token.attrs.href ?? src}">
+              <a href="${token.attrs.href ?? siteRelativeImagePath}">
                 <img 
                     src="${siteRelativeImagePath}"
                     width=${inputImage.width}

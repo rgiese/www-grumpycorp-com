@@ -9,27 +9,27 @@ We had a nice space available on the underside of a cabinet in the ideal locatio
 I also wanted the gizmo to vibe with other interior details of our Danish Modern house;
 for reference, here's a close-up of our stair railings fabricated by Bart at [Build LLC](https://www.buildllc.com/):
 
-::figure[Stair railing detail]{src="IMG_20180816_133549_Bokeh.jpg"}
+::figure[Stair railing detail]{src="paper-towel-holder/IMG_20180816_133549_Bokeh.jpg"}
 
 After a half hour of internet shopping I gave up and decided to just make the dang thing myself. If nothing else, this would be a nice diversion from all the woodworking on the cottage.
 
 I got some square stock and some round from Home Depot (sigh):
 
-::figure[Steel stock]{src="IMG_20180813_092616.jpg"}
+::figure[Steel stock]{src="paper-towel-holder/IMG_20180813_092616.jpg"}
 
 I then cut them to length, drilled holes into the square stock to receive the round, and also fabbed up some bar stock I had floating around to become a mounting plate:
 
-::figure[Fabricated pieces]{src="IMG_20180813_103403.jpg"}
+::figure[Fabricated pieces]{src="paper-towel-holder/IMG_20180813_103403.jpg"}
 
 Time to weld and grind (I just flat welded the ends of the square stock where it had received the round and that turned out to be perfectly sufficient):
 
-::figure[Welding time]{src="IMG_20180813_105927.jpg"}
-::figure[Post-grinding]{src="IMG_20180813_111823.jpg"}
+::figure[Welding time]{src="paper-towel-holder/IMG_20180813_105927.jpg"}
+::figure[Post-grinding]{src="paper-towel-holder/IMG_20180813_111823.jpg"}
 
 Then I primed and painted the thing with flat black automotive spray paint and installed it a day later. For the record, it's perfectly even and level,
 it just looks a bit off due to the perspective in the photo...
 
-::figure[Finished and installed end product]{src="IMG_20180816_121344.jpg"}
+::figure[Finished and installed end product]{src="paper-towel-holder/IMG_20180816_121344.jpg"}
 
 ### Lessons learned
 

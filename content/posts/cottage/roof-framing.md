@@ -8,26 +8,26 @@ I made a template out of scrap plywood, transcribed AutoCAD-derived dimensions o
 
 Additional preciousness came from having to make landing spots for the joist hangers (simple LUS26Z, not fancy sloped ones) and having to kick them up a bit so they wouldn't project into the ceiling plane.
 
-::figure[Close-up of roof rafter end]{src="IMG_20180712_153621.jpg"}
+::figure[Close-up of roof rafter end]{src="roof-framing/IMG_20180712_153621.jpg"}
 
 They came together pretty quickly, even though a number of variations were needed (e.g. accounting for presence/absence of sheathing on the overhangs, end pieces, etc.).
 
-::figure[Roof rafters, installed]{src="IMG_20180716_114318.jpg"}
+::figure[Roof rafters, installed]{src="roof-framing/IMG_20180716_114318.jpg"}
 
 The notched nature made them self-supporting while I was installing the joist hangers which was quite nice when handling 10' long pieces mid-air.
 
-::figure[Close-up of roof rafter hangers]{src="IMG_20180716_114512_Bokeh.jpg"}
+::figure[Close-up of roof rafter hangers]{src="roof-framing/IMG_20180716_114512_Bokeh.jpg"}
 
 I then added LVL rimboards (per my usual rule of not trusting dimensional lumber to be straight for more than 4')...
 
-::figure[Close-up of roof rafter hangers]{src="IMG_20180717_101929.jpg"}
+::figure[Close-up of roof rafter hangers]{src="roof-framing/IMG_20180717_101929.jpg"}
 
 ...though in defense of dimensional lumber, the 2x10s from [Dunn Lumber](https://www.dunnlumber.com/) were for the most part quite straight (less than 1/8" of deviation) and I aligned any non-straight pieces to crown sequentially and in the same direction, much like [Precision Framing](https://www.tauntonstore.com/carpentry/precision-framing-mike-guertin-070570.html) had taught me many years ago.
 
-::figure[Close-up of roof rafter hangers]{src="IMG_20180716_114347.jpg"}
+::figure[Close-up of roof rafter hangers]{src="roof-framing/IMG_20180716_114347.jpg"}
 
 Finally, I nailed on and trimmed off the roof sheathing (simple 1/2" plywood, same as the wall sheathing).
 
-::figure[Roof sheathing]{src="IMG_20180717_134903.jpg"}
+::figure[Roof sheathing]{src="roof-framing/IMG_20180717_134903.jpg"}
 
 Oh, and did I mention I hate heights? Getting all the roofing plywood up and installed was pretty close to a hard _nope_ but I managed to get through it.

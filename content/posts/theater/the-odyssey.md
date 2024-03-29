@@ -5,7 +5,7 @@ published: 2021-11-11
 
 Or: _How to put together a complex show in seven weeks or less in a new-to-us theater after having previously retired from theater_
 
-::figure[Creating new magic from old skills]{src="B006.jpg"}
+::figure[Creating new magic from old skills]{src="the-odyssey/B006.jpg"}
 
 ### September 14th, 2021 - T minus 8 weeks
 
@@ -34,34 +34,34 @@ The production is supposed to take place in a quasi-blackbox position with the a
 We decide to create a raked stage with an upstage wave (an idea I stole from a production of A Winter's Tale I saw at the Delacorte in NYC some twenty years ago)
 to marry The Odyssey's land and ocean themes into a single space. There'll also be another platform above the wave for The Gods as well as entrances and exits over said wave.
 
-::figure[Model of rake, wave, and audience]{src="odyssey_model.png"}
+::figure[Model of rake, wave, and audience]{src="the-odyssey/odyssey_model.png"}
 
 Much noodling goes into the shape of the rake and wave, balancing the desire for incline (to provide visibility for upstage actors)
 against walkability/safety, and also just the money we need to spend on legs for all the platforms.
 
-::figure[Elevation of rake with wave]{src="rake_elevation.png"}
+::figure[Elevation of rake with wave]{src="the-odyssey/rake_elevation.png"}
 
 I then spend a few hours watching YouTube videos to learn how skater ramps are built and settle on using plywood ribs every 4' with 2x4's spanning them every ~12",
 skinned with two layers of 3/8" plywood, which is just bendable enough.
 I tune the shape of the wave so that I can cut three ribs out of each sheet of 3/4" plywood.
 
-::figure[Detailed elevation of wave rib]{src="rake_framing.png"}
+::figure[Detailed elevation of wave rib]{src="the-odyssey/rake_framing.png"}
 
 ### October 16th, 2021 - T minus 4 weeks
 
 Time to spend some money. I use my grip truck to pick up a pile of plywood and 2x4s.
 
-::figure[Plywood for ribs and skin, framing 2x4s]{src="IMG_0166.jpg"}
+::figure[Plywood for ribs and skin, framing 2x4s]{src="the-odyssey/IMG_0166.jpg"}
 
 Then I print a 1:1 drawing of the rib with alignment marks for the 2x4s and spray-glue it to a sheet of plywood to make a primary rib.
 
-::figure[Primary rib ready to cut]{src="IMG_0167.jpg"}
+::figure[Primary rib ready to cut]{src="the-odyssey/IMG_0167.jpg"}
 
 Much cutting and duplicating (tracing, jig saw rough cut, and router + flush trim bit copying) later, I start assembling the wave.
 
-::figure[Wave piece #1, without skin]{src="IMG_0171.jpg"}
+::figure[Wave piece #1, without skin]{src="the-odyssey/IMG_0171.jpg"}
 
-::figure[Wave piece #1, with skin]{src="IMG_0172.jpg"}
+::figure[Wave piece #1, with skin]{src="the-odyssey/IMG_0172.jpg"}
 
 ### October 27th, 2021 - T minus 2 weeks
 
@@ -80,13 +80,13 @@ on the downstage two-thirds of the rake to look like stone tile.
 
 **Tech day!** The set is mostly together, though we're still working on properly covering the seams in the wave units in the back.
 
-::figure[Mostly complete set]{src="IMG_0211.jpg"}
+::figure[Mostly complete set]{src="the-odyssey/IMG_0211.jpg"}
 
 To our eternal chagrin, our attempts to use gaff tape to cover the seams don't work and I reach for left-over floor patch compound from the [cottage](/tags/posts/cottage) project.
 It works, but we don't get around to painting it until just before opening night, so all the photos taken of the production show a big shit-colored streak up the wave from the unpainted compound.
 Lovely.
 
-::figure[The wave shart ugh ugh]{src="415A.jpg"}
+::figure[The wave shart ugh ugh]{src="the-odyssey/415A.jpg"}
 
 ## The lights
 
@@ -110,7 +110,7 @@ With the help of the amazing Michael Ferguson at [Christie Lites](https://www.ch
 
 I put together detailed paperwork starting with a list of scenes.
 
-::figure[Color-coded scene list]{src="scene_list.png"}
+::figure[Color-coded scene list]{src="the-odyssey/scene_list.png"}
 
 We do paper tech so I can figure out where the actors will enter/play/exit, how small or large the acting areas will be, and what the lights actually need to be able to do.
 The more theater I do, the more valuable I find this exercise, and the earlier in the rehearsal and design process I try to push it.
@@ -118,14 +118,14 @@ The more theater I do, the more valuable I find this exercise, and the earlier i
 
 The cue list sheet pulls the scene location and description text from the scene list automatically based on the scene number - quite handy.
 
-::figure[Cue list (~150 cues in total)]{src="cue_list.png"}
+::figure[Cue list (~150 cues in total)]{src="the-odyssey/cue_list.png"}
 
 With a firm idea of what things ought to look like and what the lights need to be able to do, I can turn back towards the engineering side of lighting design.
 
 My light plot establishes a grid of 4 rows of 5 columns of side/side/front/back light.
 I use Source4's for the side light so I can stuff templates in them - this is going to be a dark show so there best be lots of pretty texture.
 
-::figure[Hand-drafted light plot, no wiggles yet]{src="IMG_0213.jpg"}
+::figure[Hand-drafted light plot, no wiggles yet]{src="the-odyssey/IMG_0213.jpg"}
 
 The run-up to tech is a bit harrowing: the moving lights arrive just in time, as do all the DMX and power cables I need.
 I've "permanently borrowed" most of the Source4 inventory of the late Microsoft Theater Troupe, so I contribute ten white (!) Source4's from that
@@ -133,7 +133,7 @@ for the upstage-most row of side light.
 I also find a place for some gobo rotators I'd bought for my filmmaking adventures and slap those into two 50-degree Source4's I'd bought when I first moved to Seattle
 and plain missed doing theater.
 
-::figure[Looking into the grid]{src="IMG_0210.jpg"}
+::figure[Looking into the grid]{src="the-odyssey/IMG_0210.jpg"}
 
 ### November 6th, 2021 - Tech!
 
@@ -170,42 +170,42 @@ The tech doesn't suck, either, and the set and lights are proving as versatile a
 The grid system lets me expand or contract the audience's focus in whichever way serves the story best.
 The templates/patterns/gobos in the side light can be pronounced and moody, or I can wash them back out with top light while retaining the side light's edge definition.
 
-::figure[Bright, open space]{src="B215.jpg"}
+::figure[Bright, open space]{src="the-odyssey/B215.jpg"}
 
-::figure[Bright, open space with some texture in the background]{src="B058.jpg"}
+::figure[Bright, open space with some texture in the background]{src="the-odyssey/B058.jpg"}
 
-::figure[Small and friendly space]{src="B079.jpg"}
+::figure[Small and friendly space]{src="the-odyssey/B079.jpg"}
 
-::figure[Moody space, lots of texture]{src="B155.jpg"}
+::figure[Moody space, lots of texture]{src="the-odyssey/B155.jpg"}
 
-::figure[Texture on people]{src="B432.jpg"}
+::figure[Texture on people]{src="the-odyssey/B432.jpg"}
 
-::figure[The grid system at work]{src="B189.jpg"}
+::figure[The grid system at work]{src="the-odyssey/B189.jpg"}
 
 The versatility of the moving lights helps me paint people and spaces with color (the only color in the entire show comes from those little MAC Auras).
 
-::figure[Color for separation]{src="B015.jpg"}
+::figure[Color for separation]{src="the-odyssey/B015.jpg"}
 
-::figure[Color for mood]{src="B268.jpg"}
+::figure[Color for mood]{src="the-odyssey/B268.jpg"}
 
-::figure[One more because it's so pretty]{src="B270.jpg"}
+::figure[One more because it's so pretty]{src="the-odyssey/B270.jpg"}
 
-::figure[Floor color gradient - all light, not paint]{src="B101.jpg"}
+::figure[Floor color gradient - all light, not paint]{src="the-odyssey/B101.jpg"}
 
-::figure[Everybody dies]{src="B713.jpg"}
+::figure[Everybody dies]{src="the-odyssey/B713.jpg"}
 
 Since the wiggles can also adjust their beam spread from 11 degrees to 58 degrees, it's easy to create very tightly scoped spaces
 that my baseline grid system of front/side/side/back cannot accomplish.
 
-::figure[Opening narrator inspired by a muse]{src="B012.jpg"}
+::figure[Opening narrator inspired by a muse]{src="the-odyssey/B012.jpg"}
 
-::figure[Super-moody underworld scene with projection on the cyc]{src="B347.jpg"}
+::figure[Super-moody underworld scene with projection on the cyc]{src="the-odyssey/B347.jpg"}
 
-::figure[The gods keep meddling with things]{src="B077.jpg"}
+::figure[The gods keep meddling with things]{src="the-odyssey/B077.jpg"}
 
-::figure[Further meddling]{src="B119.jpg"}
+::figure[Further meddling]{src="the-odyssey/B119.jpg"}
 
-::figure[Even further meddling]{src="B461.jpg"}
+::figure[Even further meddling]{src="the-odyssey/B461.jpg"}
 
 We're very happy with the outcome, though rather exhausted.
 

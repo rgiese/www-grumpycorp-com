@@ -10,13 +10,13 @@ keywords: ["IoT", "AWS", "TypeScript", "React", "GraphQL"]
 
 The main page gives a quick run-down of what everything is up to (yeah, it's basically a database dump):
 
-::figure[Home page: list of thermostats' and sensors' latest values]{src="webapp-home.png"}
+::figure[Home page: list of thermostats' and sensors' latest values]{src="webapp/webapp-home.png"}
 
 ### Settings
 
 The other page any actual human might want to interact with is the thermostat settings page:
 
-::figure[Thermostat settings]{src="webapp-settings.png"}
+::figure[Thermostat settings]{src="webapp/webapp-settings.png"}
 
 Each thermostat first lists its holds followed by its schedule steps (sorted by time-of-day).
 
@@ -29,16 +29,16 @@ Every element of a setting (e.g. _Weekdays at 07:00, heat to 24&deg;C_) is click
 The only thing keeping this from being fully word-based is that I use color-coded iconography instead of "heat to" etc.
 since I think it's easier to parse visually and it takes up less space (and it still works for color-blind people).
 
-::figure[Changing the days on a scheduled setting]{src="webapp-settings-days.png" class="mw6-ns center"}
+::figure[Changing the days on a scheduled setting]{src="webapp/webapp-settings-days.png" class="mw6-ns center"}
 
 The system does let you select arbitrary days (e.g. just Mondays and Wednesdays),
 but it's also smart enough to collapse the obvious combinations of days into "weekdays", "weekends", and "everyday".
 
-::figure[Changing the setpoint on a scheduled setting]{src="webapp-settings-setpoint.png" class="mw6-ns center"}
+::figure[Changing the setpoint on a scheduled setting]{src="webapp/webapp-settings-setpoint.png" class="mw6-ns center"}
 
 Once a setting is changed, an undo and save button are injected into the setting "bean" for the modified setting:
 
-::figure[After starting to change a setpoint]{src="webapp-settings-setpoint-modified.png" class="mw6-ns center"}
+::figure[After starting to change a setpoint]{src="webapp/webapp-settings-setpoint-modified.png" class="mw6-ns center"}
 
 ### Preferences
 
@@ -46,18 +46,18 @@ There's not a lot that folks can adjust about how they experience the system ind
 I have begrudgingly added the ability to experience the system through irrational units (Fahrenheit)
 rather than the sane and reasonable system default of Celsius.
 
-::figure[You can use Celsius or you can be wrong]{src="webapp-preferences.png"}
+::figure[You can use Celsius or you can be wrong]{src="webapp/webapp-preferences.png"}
 
 ### Configuration
 
 All of the stuff that gets touched during system setup and then never again lives under the `System Configuration` tab
 and it looks basically like the database UI that it is, plus proper units annotations.
 
-::figure[One-time configuration magic]{src="webapp-configuration.png"}
+::figure[One-time configuration magic]{src="webapp/webapp-configuration.png"}
 
 This was the first editing UI I created so I'm just phoning it in with a Modal:
 
-::figure[Modal for a single thermostat]{src="webapp-configuration-modal.png" class="mw6-ns center"}
+::figure[Modal for a single thermostat]{src="webapp/webapp-configuration-modal.png" class="mw6-ns center"}
 
 ## How it's built
 

@@ -14,19 +14,19 @@ so I whipped something up in Fusion 360 ([F3D](https://github.com/rgiese/www-gru
 <div class="cf">
   <div class="fl-ns fn w-10-m w-50-ns pa1">
 
-::figure[Clamp render from Fusion 360]{src="NVMeClampRender.png"}
+::figure[Clamp render from Fusion 360]{src="nvme-clamp/NVMeClampRender.png"}
 
   </div>
   <div class="fl-ns fn w-10-m w-50-ns pa1">
 
-::figure[Clamp fresh off the printer]{src="NVMeClampPrinted.png"}
+::figure[Clamp fresh off the printer]{src="nvme-clamp/NVMeClampPrinted.png"}
 
   </div>
 </div>
 
-::figure[Test fit with enclosure]{src="NVMeClampTest.jpg"}
+::figure[Test fit with enclosure]{src="nvme-clamp/NVMeClampTest.jpg"}
 
-::figure[Installed on the camera]{src="NVMeClampInstalled.jpg"}
+::figure[Installed on the camera]{src="nvme-clamp/NVMeClampInstalled.jpg"}
 
 The material is perhaps a bit thick but I keyed the shell thickness to a design parameter so it's easy to change.
 

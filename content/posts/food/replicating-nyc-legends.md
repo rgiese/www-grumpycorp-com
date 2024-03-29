@@ -7,18 +7,18 @@ published: 2018-08-05
 
 I recently had the good fortune of visiting Ivan Ramen in New York City.
 
-::figure[Ivan Ramen exterior]{src="IMG_20180731_103705.jpg"}
+::figure[Ivan Ramen exterior]{src="replicating-nyc-legends/IMG_20180731_103705.jpg"}
 
 Since corn was in season, they featured an amazing corn dish with _miso-roasted corn, shio-koji butter, togarashi, bonito_.
 
-::figure[Ivan Ramen grilled miso corn]{src="IMG_20180802_124834_Bokeh.jpg"}
+::figure[Ivan Ramen grilled miso corn]{src="replicating-nyc-legends/IMG_20180802_124834_Bokeh.jpg"}
 
 As soon as I got home, it was time to riff and improvise with my NYC-garnered inspiration.
 I rubbed the corn with some miso, grilled and buttered it, then placed it on (and further drenched it with) some thrown-together special sauce-ish mayo with mayo, shio koji, and sriracha,
 then topped it with bonito flakes, togarashi, and chives.
 (I'm very fortunate to live with someone who stocks shio koji, bonito, and togarashi.)
 
-::figure[DIY corn situation]{src="IMG_20180805_135613.jpg"}
+::figure[DIY corn situation]{src="replicating-nyc-legends/IMG_20180805_135613.jpg"}
 
 While my grilling skills need some further work, overall it was a pretty close replica and I really enjoyed it.
 Shio koji is just a magically umami ingredient that pairs beautifully with the fattiness of mayo.
@@ -29,13 +29,13 @@ And speaking of shio koji...
 
 This dish (_watermelon nigiri, koji tofu, shio kombu, shiso, togarashi oil_) sounded too crazy not to get, so there we were.
 
-::figure[Watermelon nigiri]{src="IMG_20180731_132857.jpg"}
+::figure[Watermelon nigiri]{src="replicating-nyc-legends/IMG_20180731_132857.jpg"}
 
 It's tofu marinated in shio koji (magical ingredient from above) layered on top of accurately cut watermelon, topped with spicy oil and shiso leaves.
 
 Back at home, I rebuilt it to the same specs and arrived at a pretty similar-looking and near-identical-tasting replica.
 
-::figure[DIY watermelon nigiri situation]{src="IMG_20180805_124328_Bokeh.jpg"}
+::figure[DIY watermelon nigiri situation]{src="replicating-nyc-legends/IMG_20180805_124328_Bokeh.jpg"}
 
 I marinated the tofu in shio koji overnight and that was a bit much of a good thing - for a second round I just left it in shio koji for an hour or two.
 I wasn't able to source baby shiso leaves so I just went with a shiso chiffonade on top of some assorted chili oil and fried shallot crumbles.
@@ -47,14 +47,14 @@ They keep exceedingly well, stay surprisingly crispy, and add a magical dimensio
 
 And what does one do with the left-over watermelon from the nigiri? One makes drinks, of course.
 
-::figure[Oishii melon with Mio sparkling sake]{src="IMG_20180802_124637.jpg"}
+::figure[Oishii melon with Mio sparkling sake]{src="replicating-nyc-legends/IMG_20180802_124637.jpg"}
 
 This was also easy to replicate. For one, Uwajimaya carries the Mio sparkling sake (however much it seems like a bit of a novelty product).
 And second, of course I did have loads of seedless watermelon cutoffs.
 
 A trip through the Vitamix and conical strainer later, I had my fancy 2" cocktail ice cube molds filled with watermelon goop, so a day later we got this:
 
-::figure[Watermelon ice cube and sake]{src="IMG_20180805_130720_Bokeh.jpg"}
+::figure[Watermelon ice cube and sake]{src="replicating-nyc-legends/IMG_20180805_130720_Bokeh.jpg"}
 
 Unfortunately this was before I got to run out and get the Mio sparkling sake so some leftover cloudy sake had to do,
 but I tried it again a few days later with the right sake and it was identical to the Ivan Ramen experience.
@@ -68,11 +68,11 @@ into a giant mass.
 
 On the same trip I also pilgrimage'd to the Momofuku empire.
 
-::figure[Momofuku Ssäm exterior]{src="IMG_20180729_184635.jpg"}
+::figure[Momofuku Ssäm exterior]{src="replicating-nyc-legends/IMG_20180729_184635.jpg"}
 
 One particularly striking dish I had was the _fried curly corn on the cob with charred eggplant aioli and ricotta_.
 
-::figure[Fried curly corn]{src="IMG_20180729_185839_Bokeh.jpg"}
+::figure[Fried curly corn]{src="replicating-nyc-legends/IMG_20180729_185839_Bokeh.jpg"}
 
 I created a decent replica of this as well but was too carried away to actually take pictures. However, we learned the following:
 

@@ -16,11 +16,11 @@ I special-ordered it and was rewarded with some thicker-than-I-desired cuts a fe
 
 I lathered them with mustard, onions, pancetta, salt & pepper, and also experimented with adding chopped pickles and carrot sticks.
 
-::figure[Meat mayhem stage 1]{src="IMG_20180930_190533.jpg"}
+::figure[Meat mayhem stage 1]{src="rouladen/IMG_20180930_190533.jpg"}
 
 I rolled them up and trussed them with butcher's twine prior to searing them and then letting them braise in stock for about an hour.
 
-::figure[Trussed meat rolls pre-sear]{src="IMG_20180930_194039.jpg"}
+::figure[Trussed meat rolls pre-sear]{src="rouladen/IMG_20180930_194039.jpg"}
 
 The result wasn't a disaster but it wasn't good either.
 The meat was too thick yet simultaneously overcooked. There was not enough mustard, pancetta wasn't the right choice (should have just used bacon),
@@ -56,11 +56,11 @@ Then I freed it from its various plastic-y layers, dried it off, and seared it i
 
 The resulting mongo meat roll was essentially perfect - the ideal texture inside and out, held together beautifully without any onerous twine or resulting twine marks.
 
-::figure[Laminated meat roll of doom]{src="IMG_20181025_131928.jpg"}
+::figure[Laminated meat roll of doom]{src="rouladen/IMG_20181025_131928.jpg"}
 
 The final assembly involved some grilled cabbage, sauteed mushrooms, and a cream sauce built from de-glazing the searing pan, fortified with ground dried porcinis for extra umami.
 
-::figure[Final assembled dish]{src="IMG_20181025_133534.jpg"}
+::figure[Final assembled dish]{src="rouladen/IMG_20181025_133534.jpg"}
 
 I was really happy with the end result. Not only was it the perfect flavor and texture, but laminating up the meat effectively insulated me
 from whatever frivolities the butcher felt like engaging in with respect to thickness and shape, the transglutaminase was faster and prettier

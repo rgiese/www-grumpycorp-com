@@ -100,11 +100,11 @@ I'm using the SP3485 3.3V-compatible RS485 transceiver and it's all pretty vanil
 
 Here's a breadboard version of _most_ of the components:
 
-::figure[Breadboard with power, relays, on-board sensor, and core]{src="IMG_20190317_143534.jpg"}
+::figure[Breadboard with power, relays, on-board sensor, and core]{src="thermostat-design/IMG_20190317_143534.jpg"}
 
 Here's an action shot of the system successfully controlling my heat pump:
 
-::figure[Heat pump control via laptop]{src="IMG_20190303_100932.jpg"}
+::figure[Heat pump control via laptop]{src="thermostat-design/IMG_20190303_100932.jpg"}
 
 ### The in-progress stuff
 
@@ -120,7 +120,7 @@ however, the darn thing is so darn tiny that I can't even get it connected.
 
 Here we are trying to attach leads to it so I can put it into a breadboard:
 
-::figure[Attaching leads to an SOT-23-packed DS2484]{src="IMG_20190308_151347.jpg"}
+::figure[Attaching leads to an SOT-23-packed DS2484]{src="thermostat-design/IMG_20190308_151347.jpg"}
 
 Match provided for scale.
 
@@ -142,11 +142,11 @@ And when all else fails there's rework.
 
 Here's the current schematic (save any potential change-out in 1-Wire driver chips) created in [Altium CircuitMaker](https://circuitmaker.com):
 
-::figure[Preliminary schematic]{src="2019-03-17-110627.png"}
+::figure[Preliminary schematic]{src="thermostat-design/2019-03-17-110627.png"}
 
 And I did a preliminary place and auto-route to see how small a board I could get away with:
 
-::figure[Preliminary place-and-route]{src="2019-03-17-110725.png"}
+::figure[Preliminary place-and-route]{src="thermostat-design/2019-03-17-110725.png"}
 
 We're currently at 2.6" x 1.7" which will fit nicely inside the electrical boxes behind each of our in-wall thermostats.
 

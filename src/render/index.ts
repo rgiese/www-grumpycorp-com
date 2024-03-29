@@ -9,11 +9,11 @@ import minifyHtml from "@minify-html/node";
 import * as path from "path";
 
 import { DocumentGroupConfig, RootConfig } from "../config";
+import { figureDirective } from "./figureDirective";
 import { GeneratedDocument, TemplateType, InputDocument, InputDocumentInventory } from "../types";
 import { OutputFileSystem } from "../fileSystem";
 
 export class SiteRenderer {
-  private readonly marked: Marked;
   private readonly eta: Eta;
 
   constructor(
@@ -22,16 +22,6 @@ export class SiteRenderer {
     private readonly outputFileSystem: OutputFileSystem,
     private readonly minifyOutput: boolean,
   ) {
-    this.marked = new Marked(
-      { pedantic: false },
-      markedHighlight({
-        langPrefix: "hljs language-",
-        highlight(code, lang, _info) {
-          const language = hljs.getLanguage(lang) ? lang : "plaintext";
-          return hljs.highlight(code, { language }).value;
-        },
-      }),
-    ).use(createDirectives(rootConfig.customDirectives));
     this.eta = new Eta({ views: rootConfig.themeRootPath, varName: "data", debug: true });
   }
 
@@ -55,7 +45,7 @@ export class SiteRenderer {
 
     try {
       // Render content from Markdown
-      const contentHtml = this.marked.parse(inputDocument.content) as string;
+      const contentHtml = this.renderMarkdown(inputDocument.content);
 
       // Render template
       const templateRenderContext = documentGroupConfig.templateRenderContext?.(
@@ -95,9 +85,9 @@ export class SiteRenderer {
 
       case TemplateType.Marked:
         // Load Marked template from `input` directory
-        return this.marked.parse(
+        return this.renderMarkdown(
           fs.readFileSync(path.join(this.rootConfig.inputRootPath, generatedDocument.contentTemplateName), "utf8"),
-        ) as string;
+        );
 
       default:
         throw new Error(`Unsupported template type for ${generatedDocument.siteRelativeOutputPath}`);
@@ -134,6 +124,22 @@ export class SiteRenderer {
       console.error(`with frontmatter: ${JSON.stringify(generatedDocument.frontMatter)}`);
       throw error;
     }
+  }
+
+  private renderMarkdown(md: string): string {
+    const marked = new Marked({ pedantic: false })
+      .use(
+        markedHighlight({
+          langPrefix: "hljs language-",
+          highlight(code, lang, _info) {
+            const language = hljs.getLanguage(lang) ? lang : "plaintext";
+            return hljs.highlight(code, { language }).value;
+          },
+        }),
+      )
+      .use(createDirectives([figureDirective, ...this.rootConfig.customDirectives]));
+
+    return marked.parse(md) as string;
   }
 
   private writeOutputHtml(outputPath: string, pageHtml: string) {

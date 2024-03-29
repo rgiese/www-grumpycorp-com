@@ -1,7 +1,7 @@
 import { DirectiveConfig } from "marked-directive";
 import * as path from "path";
 
-import { sourceSetSizes, getResizedImageName } from "../../assets/imageResizing";
+import { sourceSetSizes, getResizedImageName } from "../assets/imageResizing";
 
 export const figureDirective: DirectiveConfig = {
   level: "block",

@@ -2,61 +2,31 @@ import * as fs from "fs";
 import minifyHtml from "@minify-html/node";
 import * as path from "path";
 import * as sass from "sass";
-import sharp from "sharp";
 
 import { OutputFileSystem } from "../fileSystem";
-import { sourceSetSizes, getResizedImageName } from "./imageResizing";
+import { ImageManager } from "./imageManager";
 import { FileSpec } from "../types";
+
+export { ImageManager };
 
 function replaceFileExtension(originalPath: path.ParsedPath, revisedExtension: string): string {
   return path.format({ ...originalPath, base: undefined /* so `ext` is used */, ext: revisedExtension });
 }
 
-async function processImageAsset(sourceFile: FileSpec, outputFileSystem: OutputFileSystem) {
-  const parsedOutputPath = path.parse(outputFileSystem.getAbsolutePath(sourceFile.rootRelativePath));
-
-  const sourceSharp = sharp(sourceFile.absolutePath);
-
-  await Promise.all(
-    sourceSetSizes.map((size) => {
-      const resizedOutputPath = getResizedImageName(parsedOutputPath, size);
-
-      if (fs.existsSync(resizedOutputPath)) {
-        // We'll anticipate that the source file hasn't changed so we won't re-generate.
-        // (If the source file did change, just wipe the output directory.)
-        return;
-      }
-
-      return sourceSharp.resize(size).toFile(resizedOutputPath);
-    }),
-  );
-}
-
-export async function processAssets(
-  sourceFiles: FileSpec[],
-  outputFileSystem: OutputFileSystem,
-  minifyOutput: boolean,
-) {
+export function processAssets(sourceFiles: FileSpec[], outputFileSystem: OutputFileSystem, minifyOutput: boolean) {
   const explicitAssetSourceFiles = sourceFiles.filter((f) => !f.parsedRootRelativePath.base.startsWith("_"));
 
   // Copy simple assets
-  const imageAssetExtensions = [".jpg", ".png"];
-  const simpleAssetExtensions = [...imageAssetExtensions, ".svg", ".eot", ".ttf", ".woff", ".woff2", ".txt"];
+  const simpleAssetExtensions = [".jpg", ".png", ".svg", ".eot", ".ttf", ".woff", ".woff2", ".txt"];
 
-  await Promise.all(
-    explicitAssetSourceFiles
-      .filter((f) => simpleAssetExtensions.includes(f.parsedRootRelativePath.ext))
-      .map((sourceFile) => {
-        const outputPath = outputFileSystem.getAbsolutePath(sourceFile.rootRelativePath);
+  explicitAssetSourceFiles
+    .filter((f) => simpleAssetExtensions.includes(f.parsedRootRelativePath.ext))
+    .forEach((sourceFile) => {
+      const outputPath = outputFileSystem.getAbsolutePath(sourceFile.rootRelativePath);
 
-        outputFileSystem.ensureOutputPathExists(outputPath);
-        fs.copyFileSync(sourceFile.absolutePath, outputPath);
-
-        if (imageAssetExtensions.includes(sourceFile.parsedRootRelativePath.ext)) {
-          return processImageAsset(sourceFile, outputFileSystem);
-        }
-      }),
-  );
+      outputFileSystem.ensureOutputPathExists(outputPath);
+      fs.copyFileSync(sourceFile.absolutePath, outputPath);
+    });
 
   // Process CSS
   explicitAssetSourceFiles

@@ -3,7 +3,7 @@ import minimist from "minimist";
 import { createSourceFileSystem, OutputFileSystem } from "./fileSystem";
 import { ingestInput } from "./input";
 import { SiteRenderer } from "./render";
-import { processAssets } from "./assets";
+import { ImageManager, processAssets } from "./assets";
 import { SiteValidator } from "./validate";
 
 import rootConfig from "./site";
@@ -14,10 +14,19 @@ async function build(minifyOutput: boolean) {
 
   const inputDocumentInventory = ingestInput(rootConfig, sourceFileSystem);
 
-  await processAssets(sourceFileSystem.inputFiles, outputFileSystem, minifyOutput);
-  await processAssets(sourceFileSystem.themeFiles, outputFileSystem, minifyOutput);
+  const imageManager = new ImageManager(rootConfig);
 
-  const siteRenderer = new SiteRenderer(rootConfig, inputDocumentInventory, outputFileSystem, minifyOutput);
+  processAssets(sourceFileSystem.inputFiles, outputFileSystem, minifyOutput);
+  processAssets(sourceFileSystem.themeFiles, outputFileSystem, minifyOutput);
+
+  const siteRenderer = new SiteRenderer(
+    rootConfig,
+    inputDocumentInventory,
+    imageManager,
+    outputFileSystem,
+    minifyOutput,
+  );
+
   siteRenderer.render();
 
   new SiteValidator(rootConfig.outputRootPath).validate();

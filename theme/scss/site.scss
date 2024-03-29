@@ -49,6 +49,9 @@ body {
 img {
   // Don't let images scale up past their built-in size (but they'll still scale down)
   max-width: 100%;
+  // https://web.dev/learn/design/responsive-images
+  max-inline-size: 100%;
+  block-size: auto;
 }
 
 .content {

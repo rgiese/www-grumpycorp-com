@@ -8,6 +8,7 @@ import { markedHighlight } from "marked-highlight";
 import minifyHtml from "@minify-html/node";
 import * as path from "path";
 
+import { ImageManager } from "../assets";
 import { DocumentGroupConfig, RootConfig } from "../config";
 import { createFigureDirective } from "./figureDirective";
 import { GeneratedDocument, TemplateType, InputDocument, InputDocumentInventory } from "../types";
@@ -19,6 +20,7 @@ export class SiteRenderer {
   constructor(
     private readonly rootConfig: RootConfig,
     private readonly inputDocumentInventory: InputDocumentInventory,
+    private readonly imageManager: ImageManager,
     private readonly outputFileSystem: OutputFileSystem,
     private readonly minifyOutput: boolean,
   ) {
@@ -45,11 +47,7 @@ export class SiteRenderer {
 
     try {
       // Render content from Markdown
-      const contentHtml = this.renderMarkdown(
-        inputDocument.sourceFile.rootRelativePath,
-        inputDocument.siteRelativeOutputPath,
-        inputDocument.content,
-      );
+      const contentHtml = this.renderMarkdown(inputDocument.sourceFile.rootRelativePath, inputDocument.content);
 
       // Render template
       const templateRenderContext = documentGroupConfig.templateRenderContext?.(
@@ -91,7 +89,6 @@ export class SiteRenderer {
         // Load Marked template from `input` directory
         return this.renderMarkdown(
           generatedDocument.contentTemplateName,
-          generatedDocument.siteRelativeOutputPath,
           fs.readFileSync(path.join(this.rootConfig.inputRootPath, generatedDocument.contentTemplateName), "utf8"),
         );
 
@@ -132,8 +129,8 @@ export class SiteRenderer {
     }
   }
 
-  private renderMarkdown(siteRelativeInputPath: string, siteRelativeOutputPath: string, md: string): string {
-    const figureDirective = createFigureDirective(siteRelativeInputPath, siteRelativeOutputPath);
+  private renderMarkdown(siteRelativeInputPath: string, md: string): string {
+    const figureDirective = createFigureDirective(this.imageManager, siteRelativeInputPath);
 
     const marked = new Marked({ pedantic: false })
       .use(

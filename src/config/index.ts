@@ -1,33 +1,6 @@
 import { DirectiveConfig } from "marked-directive";
 
-import { InputDocument, InputDocumentInventory } from "../input/inputDocument";
-
-export type RenderContextGenerator = (
-  inputDocument: InputDocument,
-  inputDocumentInventory: InputDocumentInventory,
-) => object;
-
-export enum TemplateType {
-  Eta,
-  Marked,
-}
-
-export type GeneratedDocument = {
-  // Destination
-  siteRelativeOutputPath: string;
-  // Content
-  frontMatter: {
-    title: string;
-  };
-  contentTemplateType: TemplateType;
-  contentTemplateName: string;
-  contentTemplateContext: object;
-  // Render
-  templateName: string;
-  templateRenderContext: object;
-};
-
-export type GeneratedDocumentsGenerator = (inputDocumentInventory: InputDocumentInventory) => GeneratedDocument[];
+import { InputDocument, RenderContextGenerator, GeneratedDocumentsGenerator } from "../types";
 
 export type DocumentGroupConfig = {
   // About

@@ -1,7 +1,7 @@
 import * as path from "path";
 
-import { GeneratedDocumentsGenerator, RootConfig, RenderContextGenerator, TemplateType } from "../config";
-import { InputDocument } from "../input";
+import { RootConfig } from "../config";
+import { GeneratedDocumentsGenerator, RenderContextGenerator, InputDocument, TemplateType } from "../types";
 
 import { generateLayoutTemplateRenderContext } from "./layoutTemplateRenderContext";
 import { generatePostTemplateRenderContext } from "./postTemplateRenderContext";

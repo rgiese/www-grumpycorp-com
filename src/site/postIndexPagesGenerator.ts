@@ -1,4 +1,4 @@
-import { GeneratedDocumentsGenerator, TemplateType } from "../config";
+import { GeneratedDocumentsGenerator, TemplateType } from "../types";
 
 import { getDocumentTag, getDocumentTagSet } from "./documentTag";
 import { generateLayoutTemplateRenderContext } from "./layoutTemplateRenderContext";

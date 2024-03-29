@@ -1,5 +1,4 @@
-import { RenderContextGenerator } from "../config";
-import { InputDocument } from "../input";
+import { InputDocument, RenderContextGenerator } from "../types";
 
 import { getDocumentTag } from "./documentTag";
 import { generateLayoutTemplateRenderContext } from "./layoutTemplateRenderContext";

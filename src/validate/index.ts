@@ -2,7 +2,8 @@ import * as fs from "fs";
 import * as path from "path";
 import { JSDOM } from "jsdom";
 
-import { FileSpec, enumerateFilesRecursive } from "../fileSystem/enumerateFiles";
+import { FileSpec } from "../types";
+import { enumerateFilesRecursive } from "../fileSystem/enumerateFiles";
 
 export class SiteValidator {
   constructor(private readonly outputRootPath: string) {}

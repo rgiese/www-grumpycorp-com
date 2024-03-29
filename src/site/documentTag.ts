@@ -1,6 +1,6 @@
 import * as path from "path";
 
-import { InputDocument } from "../input";
+import { InputDocument } from "../types";
 
 export function getDocumentTag(inputDocument: InputDocument) {
   return path.dirname(inputDocument.documentGroupRelativePath);

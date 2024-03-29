@@ -8,8 +8,8 @@ import { markedHighlight } from "marked-highlight";
 import minifyHtml from "@minify-html/node";
 import * as path from "path";
 
-import { DocumentGroupConfig, GeneratedDocument, RootConfig, TemplateType } from "../config";
-import { InputDocument, InputDocumentInventory } from "../input";
+import { DocumentGroupConfig, RootConfig } from "../config";
+import { GeneratedDocument, TemplateType, InputDocument, InputDocumentInventory } from "../types";
 import { OutputFileSystem } from "../fileSystem";
 
 export class SiteRenderer {

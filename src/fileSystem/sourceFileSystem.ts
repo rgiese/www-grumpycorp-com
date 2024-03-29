@@ -1,5 +1,6 @@
 import { RootConfig } from "../config";
-import { enumerateFilesRecursive, FileSpec } from "./enumerateFiles";
+import { enumerateFilesRecursive } from "./enumerateFiles";
+import { FileSpec } from "../types";
 
 export { FileSpec };
 

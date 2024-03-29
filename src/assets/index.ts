@@ -4,8 +4,9 @@ import * as path from "path";
 import * as sass from "sass";
 import sharp from "sharp";
 
-import { OutputFileSystem, FileSpec } from "../fileSystem";
+import { OutputFileSystem } from "../fileSystem";
 import { sourceSetSizes, getResizedImageName } from "./imageResizing";
+import { FileSpec } from "../types";
 
 function replaceFileExtension(originalPath: path.ParsedPath, revisedExtension: string): string {
   return path.format({ ...originalPath, base: undefined /* so `ext` is used */, ext: revisedExtension });

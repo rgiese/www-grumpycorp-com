@@ -1,11 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 
-export type FileSpec = {
-  rootRelativePath: string;
-  parsedRootRelativePath: path.ParsedPath;
-  absolutePath: string;
-};
+import { FileSpec } from "../types";
 
 export function* enumerateFilesRecursive(rootPath: string, dir: string): Generator<FileSpec> {
   const files = fs.readdirSync(dir, { withFileTypes: true });

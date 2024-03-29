@@ -1,12 +1,10 @@
-import * as matter from "gray-matter";
+import matter from "gray-matter";
 import * as path from "path";
 
 import { RootConfig, DocumentGroupConfig } from "../config";
 
-import { InputDocument, InputDocumentInventory, FrontMatterSchema } from "./inputDocument";
-import { FileSpec, SourceFileSystem } from "../fileSystem";
-
-export { InputDocument, InputDocumentInventory };
+import { FileSpec, InputDocument, InputDocumentInventory, FrontMatterSchema } from "../types";
+import { SourceFileSystem } from "../fileSystem";
 
 function ingestInputDocument(documentGroupConfig: DocumentGroupConfig, sourceFile: FileSpec): InputDocument {
   try {

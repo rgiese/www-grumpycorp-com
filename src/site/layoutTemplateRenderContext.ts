@@ -1,4 +1,4 @@
-import { InputDocumentInventory } from "../input";
+import { InputDocumentInventory } from "../types";
 
 import { getDocumentTagSet } from "./documentTag";
 

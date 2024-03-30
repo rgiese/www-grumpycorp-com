@@ -50,15 +50,23 @@ export function createFigureDirective(
           resizedWidths.forEach((width) => inputImage.resizeImage(width));
 
           // Emit figure
+          const srcset = (ext?: string) =>
+            resizedWidths
+              .map((width) => `${encodeURI(inputImage.getResizedSiteRelativeImagePath(width, ext))} ${width}w`)
+              .join(", ");
+
           const figureHtml = `
             <figure ${token.attrs.class ? `class="${token.attrs.class}"` : ""}>
               <a href="${token.attrs.href ?? siteRelativeImagePath}">
                 <picture>
+                  ${imageManager.additionalFormats
+                    .map((format) => `<source type="image/${format}" srcset="${srcset(`.${format}`)}">`)
+                    .join("\n")}
                   <img 
                       src="${encodeURI(siteRelativeImagePath)}"
                       width=${inputImage.width}
                       height=${inputImage.height}
-                      srcset="${resizedWidths.map((width) => `${encodeURI(inputImage.getResizedSiteRelativeImagePath(width))} ${width}w`).join(", ")}"
+                      srcset="${srcset()}"
                       sizes="${customSizes ?? defaultImageSizes.join(", ")}"
                       alt="${token.text || token.attrs.alt || ""}"
                       >
@@ -66,7 +74,7 @@ export function createFigureDirective(
               </a>
               ${token.text ? `<figcaption>${token.text}</figcaption>` : ""}
             </figure>
-      `;
+          `;
 
           // Emit complete HTML
           return token.attrs.outerDivWithClass

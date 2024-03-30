@@ -9,13 +9,15 @@ export class ImageManagerImage {
   public readonly width: number;
   public readonly height: number;
 
+  private readonly siteRelativeImagePath: string;
+  private readonly parsedSiteRelativeImagePath: path.ParsedPath;
   private readonly absoluteImagePath: string;
+
   private readonly requestedWidths: Set<number> = new Set();
 
-  constructor(
-    inputRootPath: string,
-    private readonly siteRelativeImagePath: string,
-  ) {
+  constructor(inputRootPath: string, siteRelativeImagePath: string) {
+    this.siteRelativeImagePath = siteRelativeImagePath;
+    this.parsedSiteRelativeImagePath = path.parse(siteRelativeImagePath);
     this.absoluteImagePath = path.join(inputRootPath, siteRelativeImagePath);
 
     // Read image synchronously (because MarkedJS doesn't let us use async in a renderer and I'm too lazy to use Marked's async `walkTokens`)
@@ -36,29 +38,37 @@ export class ImageManagerImage {
     this.requestedWidths.add(width);
   }
 
-  public getResizedSiteRelativeImagePath(width: number): string {
-    const parsedSiteRelativeImagePath = path.parse(this.siteRelativeImagePath);
-
+  public getResizedSiteRelativeImagePath(width: number, ext?: string): string {
     return path.format({
-      ...parsedSiteRelativeImagePath,
+      ...this.parsedSiteRelativeImagePath,
       base: undefined /* so `name` is used */,
-      name: `${parsedSiteRelativeImagePath.name}-${width}w`,
+      name: `${this.parsedSiteRelativeImagePath.name}-${width}w`,
+      ext: ext ?? this.parsedSiteRelativeImagePath.ext,
     });
   }
 
-  public async renderImage(outputRootPath: string) {
+  public async renderImage(additionalFormats: string[], outputRootPath: string) {
+    const outputExtensions = [
+      this.parsedSiteRelativeImagePath.ext /* use original format */,
+      ...additionalFormats.map((format) => `.${format}`),
+    ];
+
     const sharpImage = sharp(this.absoluteImagePath);
 
     await Promise.all(
-      Array.from(this.requestedWidths, (width) => {
-        const absoluteOutputPath = path.join(outputRootPath, this.getResizedSiteRelativeImagePath(width));
+      Array.from(this.requestedWidths, (width) =>
+        outputExtensions.map((extension) => {
+          const absoluteOutputPath = path.join(outputRootPath, this.getResizedSiteRelativeImagePath(width, extension));
 
-        if (fs.existsSync(absoluteOutputPath)) {
-          return;
-        }
+          if (fs.existsSync(absoluteOutputPath)) {
+            return;
+          }
 
-        return sharpImage.resize(width).toFile(absoluteOutputPath);
-      }),
+          console.log(`Emitting ${absoluteOutputPath}`);
+
+          return sharpImage.resize(width).toFile(absoluteOutputPath);
+        }),
+      ).flatMap((p) => p),
     );
   }
 }
@@ -81,10 +91,14 @@ export class ImageManager {
     return image;
   }
 
+  get additionalFormats() {
+    return ["avif", "webp"];
+  }
+
   public async renderImages() {
     await Promise.all(
       Array.from(this.images.entries(), async ([_siteRelativeInputPath, image]) =>
-        image.renderImage(this.rootConfig.outputRootPath),
+        image.renderImage(this.additionalFormats, this.rootConfig.outputRootPath),
       ),
     );
   }

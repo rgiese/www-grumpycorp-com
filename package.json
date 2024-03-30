@@ -1,7 +1,7 @@
 {
   "scripts": {
     "clean": "rimraf bin cache obj output temp wwwroot",
-    "build": "tsx --no-deprecation ./src/index.ts build",
+    "build": "UV_THREADPOOL_SIZE=32 tsx --no-deprecation ./src/index.ts build",
     "build-prod": "tsx --no-deprecation ./src/index.ts build --minify",
     "serve": "http-server output --port 5080 -c-1",
     "format:fix": "prettier --write .",

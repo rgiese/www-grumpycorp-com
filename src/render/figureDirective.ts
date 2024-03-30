@@ -44,6 +44,7 @@ export function createFigureDirective(
           const inputImage = imageManager.getImage(siteRelativeImagePath);
 
           // Resize image
+          // - we should always include 1.0 so we get a good re-encoding of our source image as a fallback
           const resizeFactors = [0.25, 0.5, 1.0];
           const resizedWidths = resizeFactors.map((resizeFactor) => Math.floor(inputImage.width * resizeFactor));
 
@@ -63,7 +64,7 @@ export function createFigureDirective(
                     .map((format) => `<source type="image/${format}" srcset="${srcset(`.${format}`)}">`)
                     .join("\n")}
                   <img 
-                      src="${encodeURI(siteRelativeImagePath)}"
+                      src="${encodeURI(inputImage.getResizedSiteRelativeImagePath(inputImage.width))}"
                       width=${inputImage.width}
                       height=${inputImage.height}
                       srcset="${srcset()}"

@@ -1,7 +1,7 @@
 import { DirectiveConfig } from "marked-directive";
 import * as path from "path";
 
-import { ImageManager, ImageResizeRequest } from "../assets";
+import { ImageManager } from "../assets";
 
 export function createFigureDirective(
   imageManager: ImageManager,
@@ -40,44 +40,29 @@ export function createFigureDirective(
             ? src
             : "/" + path.join(path.dirname(siteRelativeInputPath), src);
 
-          const parsedSiteRelativeImagePath = path.parse(siteRelativeImagePath);
-
           // Inspect image metadata
           const inputImage = imageManager.getImage(siteRelativeImagePath);
 
           // Resize image
           const resizeFactors = [0.25, 0.5, 1.0];
+          const resizedWidths = resizeFactors.map((resizeFactor) => Math.floor(inputImage.width * resizeFactor));
 
-          const resizedImages: { siteRelativeOutputPath: string; imageResizeRequest: ImageResizeRequest }[] =
-            resizeFactors.map((resizeFactor) => {
-              const width = Math.floor(inputImage.width * resizeFactor);
-
-              const siteRelativeOutputPath = path.format({
-                ...parsedSiteRelativeImagePath,
-                base: undefined /* so `name` is used */,
-                name: `${parsedSiteRelativeImagePath.name}-${width}w`,
-              });
-
-              return {
-                siteRelativeOutputPath,
-                imageResizeRequest: { width },
-              };
-            });
-
-          resizedImages.forEach((r) => inputImage.resizeImage(r.siteRelativeOutputPath, r.imageResizeRequest));
+          resizedWidths.forEach((width) => inputImage.resizeImage(width));
 
           // Emit figure
           const figureHtml = `
             <figure ${token.attrs.class ? `class="${token.attrs.class}"` : ""}>
               <a href="${token.attrs.href ?? siteRelativeImagePath}">
-                <img 
-                    src="${encodeURI(siteRelativeImagePath)}"
-                    width=${inputImage.width}
-                    height=${inputImage.height}
-                    srcset="${resizedImages.map((r) => `${encodeURI(r.siteRelativeOutputPath)} ${r.imageResizeRequest.width}w`).join(", ")}"
-                    sizes="${customSizes ?? defaultImageSizes.join(", ")}"
-                    alt="${token.text || token.attrs.alt || ""}"
-                    >
+                <picture>
+                  <img 
+                      src="${encodeURI(siteRelativeImagePath)}"
+                      width=${inputImage.width}
+                      height=${inputImage.height}
+                      srcset="${resizedWidths.map((width) => `${encodeURI(inputImage.getResizedSiteRelativeImagePath(width))} ${width}w`).join(", ")}"
+                      sizes="${customSizes ?? defaultImageSizes.join(", ")}"
+                      alt="${token.text || token.attrs.alt || ""}"
+                      >
+                </picture>  
               </a>
               ${token.text ? `<figcaption>${token.text}</figcaption>` : ""}
             </figure>

@@ -2,9 +2,9 @@
 title: About
 ---
 
-<img src="/pages/about/profile.jpg" alt="Robin and Chester" style="float: left; max-width: 30%; margin-right: 1em; margin-bottom: 1em;">
+::figure[This guy]{src="about/profile.jpg" alt="Robin and Chester" class="fl mw-30 mr2"}
 
-Hi, I'm Robin (thus <img class="h2" src="/assets/icons/grumpy-robin.svg"/>).
+Hi, I'm Robin (thus <img class="h2" width="32" height="32" src="/assets/icons/grumpy-robin.svg"/>).
 I'm an engineer, artist, and fabricator driven by a compulsion to learn, teach, and make.
 
 My engineering work includes [software](https://www.linkedin.com/in/robingiese/),

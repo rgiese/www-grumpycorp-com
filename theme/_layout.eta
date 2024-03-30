@@ -95,7 +95,7 @@
             <!-- Logo on the side for not-small screens -->
             <div class="mb4 dn db-ns">
               <a href="/">
-                <img class="w5" src="/assets/icons/studiosLogo.svg" alt="Grumpycorp logo" />
+                <img class="w5" width="1225" height="564" src="/assets/icons/studiosLogo.svg" alt="Grumpycorp logo" />
               </a>
             </div>
 

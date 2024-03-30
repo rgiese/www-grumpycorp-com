@@ -65,8 +65,8 @@ export function createFigureDirective(
                     .join("\n")}
                   <img 
                       src="${encodeURI(inputImage.getResizedSiteRelativeImagePath(inputImage.width))}"
-                      width=${inputImage.width}
-                      height=${inputImage.height}
+                      width="${inputImage.width}"
+                      height="${inputImage.height}"
                       srcset="${srcset()}"
                       sizes="${customSizes ?? defaultImageSizes.join(", ")}"
                       alt="${token.text || token.attrs.alt || ""}"

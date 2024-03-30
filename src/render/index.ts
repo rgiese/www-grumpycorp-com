@@ -130,7 +130,11 @@ export class SiteRenderer {
   }
 
   private renderMarkdown(siteRelativeInputPath: string, md: string): string {
-    const figureDirective = createFigureDirective(this.imageManager, siteRelativeInputPath);
+    const figureDirective = createFigureDirective(
+      this.imageManager,
+      this.rootConfig.defaultImageSizes,
+      siteRelativeInputPath,
+    );
 
     const marked = new Marked({ pedantic: false })
       .use(

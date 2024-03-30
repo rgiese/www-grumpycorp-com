@@ -26,6 +26,7 @@ export type RootConfig = {
 
   // Transform
   customDirectives: DirectiveConfig[];
+  defaultImageSizes: string[]; // for figureDirective, c.f. <img ... sizes="">
 
   // Destination
   outputRootPath: string;

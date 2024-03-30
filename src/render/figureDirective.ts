@@ -3,7 +3,11 @@ import * as path from "path";
 
 import { ImageManager, ImageResizeRequest } from "../assets";
 
-export function createFigureDirective(imageManager: ImageManager, siteRelativeInputPath: string): DirectiveConfig {
+export function createFigureDirective(
+  imageManager: ImageManager,
+  defaultImageSizes: string[],
+  siteRelativeInputPath: string,
+): DirectiveConfig {
   return {
     level: "block",
     marker: "::",
@@ -20,7 +24,13 @@ export function createFigureDirective(imageManager: ImageManager, siteRelativeIn
           }
 
           if (typeof token.attrs.src !== "string") {
-            throw new Error(`"src" attribute "${token.attrs.src} is not a string`);
+            throw new Error(`"src" attribute "${token.attrs.src}" should be a string`);
+          }
+
+          const customSizes = token.attrs.sizes;
+
+          if (customSizes && typeof customSizes !== "string") {
+            throw new Error(`"sizes" attribute "${customSizes}" should be a string`);
           }
 
           // Derive site-relative image paths
@@ -65,7 +75,7 @@ export function createFigureDirective(imageManager: ImageManager, siteRelativeIn
                     width=${inputImage.width}
                     height=${inputImage.height}
                     srcset="${resizedImages.map((r) => `${encodeURI(r.siteRelativeOutputPath)} ${r.imageResizeRequest.width}w`).join(", ")}"
-                    sizes="(max-width: 30em) 100vw, 50vw"
+                    sizes="${customSizes ?? defaultImageSizes.join(", ")}"
                     alt="${token.text || token.attrs.alt || ""}"
                     >
               </a>

@@ -93,6 +93,17 @@ const rootConfig: RootConfig = {
   generatedDocuments,
   // Transform
   customDirectives,
+  // defaultImageSizes:
+  // - We present with _layout.eta which formats core content as `fl-ns fn w-50-ns`, i.e. single column for small screens, 50% width for non-small screens.
+  //
+  //   This means we can assume:
+  //     - full-width (100vw) images for small screens
+  //     - half-width (50vw) images for non-small screens
+  //
+  // - Tachyons sets the breakpoint for non-small at 30em.
+  //
+  // - The first image size that meets the constraints is chosen, so start with max-width: @non-small.
+  defaultImageSizes: ["(max-width: 30em) 100vw", "50vw"],
 };
 
 export default rootConfig;

@@ -92,7 +92,7 @@ export class ImageManager {
   }
 
   get additionalFormats() {
-    return ["avif", "webp"];
+    return [/* "avif", */ "webp"]; // avif is fantastically slow to generate
   }
 
   public async renderImages() {

@@ -29,6 +29,8 @@ async function build(minifyOutput: boolean) {
 
   siteRenderer.render();
 
+  await imageManager.renderImages();
+
   new SiteValidator(rootConfig.outputRootPath).validate();
 }
 

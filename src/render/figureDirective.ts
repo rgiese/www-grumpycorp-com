@@ -1,7 +1,7 @@
 import { DirectiveConfig } from "marked-directive";
 import * as path from "path";
 
-import { ImageManager } from "../assets";
+import { ImageManager, ImageResizeRequest } from "../assets";
 
 export function createFigureDirective(imageManager: ImageManager, siteRelativeInputPath: string): DirectiveConfig {
   return {
@@ -24,25 +24,48 @@ export function createFigureDirective(imageManager: ImageManager, siteRelativeIn
           }
 
           // Derive site-relative image paths
-          const src = token.attrs.src;
-
-          const parsedSiteRelativeInputPath = path.parse(siteRelativeInputPath);
+          const src = decodeURI(token.attrs.src);
 
           const siteRelativeImagePath = src.startsWith("/")
             ? src
-            : "/" + path.join(parsedSiteRelativeInputPath.dir, src);
+            : "/" + path.join(path.dirname(siteRelativeInputPath), src);
+
+          const parsedSiteRelativeImagePath = path.parse(siteRelativeImagePath);
 
           // Inspect image metadata
-          const inputImage = imageManager.getImage(decodeURIComponent(siteRelativeImagePath));
+          const inputImage = imageManager.getImage(siteRelativeImagePath);
+
+          // Resize image
+          const resizeFactors = [0.25, 0.5, 1.0];
+
+          const resizedImages: { siteRelativeOutputPath: string; imageResizeRequest: ImageResizeRequest }[] =
+            resizeFactors.map((resizeFactor) => {
+              const width = Math.floor(inputImage.width * resizeFactor);
+
+              const siteRelativeOutputPath = path.format({
+                ...parsedSiteRelativeImagePath,
+                base: undefined /* so `name` is used */,
+                name: `${parsedSiteRelativeImagePath.name}-${width}w`,
+              });
+
+              return {
+                siteRelativeOutputPath,
+                imageResizeRequest: { width },
+              };
+            });
+
+          resizedImages.forEach((r) => inputImage.resizeImage(r.siteRelativeOutputPath, r.imageResizeRequest));
 
           // Emit figure
           const figureHtml = `
             <figure ${token.attrs.class ? `class="${token.attrs.class}"` : ""}>
               <a href="${token.attrs.href ?? siteRelativeImagePath}">
                 <img 
-                    src="${siteRelativeImagePath}"
+                    src="${encodeURI(siteRelativeImagePath)}"
                     width=${inputImage.width}
                     height=${inputImage.height}
+                    srcset="${resizedImages.map((r) => `${encodeURI(r.siteRelativeOutputPath)} ${r.imageResizeRequest.width}w`).join(", ")}"
+                    sizes="(max-width: 30em) 100vw, 50vw"
                     alt="${token.text || token.attrs.alt || ""}"
                     >
               </a>

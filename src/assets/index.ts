@@ -4,10 +4,10 @@ import * as path from "path";
 import * as sass from "sass";
 
 import { OutputFileSystem } from "../fileSystem";
-import { ImageManager } from "./imageManager";
+import { ImageManager, ImageManagerImage, ImageResizeRequest } from "./imageManager";
 import { FileSpec } from "../types";
 
-export { ImageManager };
+export { ImageManager, ImageManagerImage, ImageResizeRequest };
 
 function replaceFileExtension(originalPath: path.ParsedPath, revisedExtension: string): string {
   return path.format({ ...originalPath, base: undefined /* so `ext` is used */, ext: revisedExtension });

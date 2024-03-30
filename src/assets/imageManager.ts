@@ -64,8 +64,6 @@ export class ImageManagerImage {
             return;
           }
 
-          console.log(`Emitting ${absoluteOutputPath}`);
-
           return sharpImage.resize(width).toFile(absoluteOutputPath);
         }),
       ).flatMap((p) => p),

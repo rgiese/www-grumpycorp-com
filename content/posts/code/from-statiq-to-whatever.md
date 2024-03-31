@@ -99,6 +99,10 @@ Lolwut.
 
 I've been fighting publicly available static site generators for going on five years so I wouldn't need to write ~600 lines of TypeScript? Inconceivable.
 
+_Update from 2024/03/30:_ I've added much better image resizing and also started inlining commonly used SVGs in my CSS.
+The total lines of TypeScript customizing the site are now down to 284 from 323 (I moved the `figureDirective` into the site generator)
+and the site generator itself is now 894 lines. Still stunning how much you can get done in so little code...
+
 ## Changes made
 
 This redo was also an opportunity to refresh the home (i.e. index/root/...) page of the site.

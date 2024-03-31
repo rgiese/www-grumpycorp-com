@@ -3,7 +3,7 @@
   <a href="/<%= data.latestPostDocument.siteRelativeOutputPath %>"><%= data.latestPostDocument.frontMatter.title %></a>
   in
   <a href="/tags/posts/<%= encodeURIComponent(data.latestPostTag) %>" class="link accent-mono">
-    <img class="w1 h1 v-mid" src="/assets/icons/tag.svg" alt="tag" />
+    <span class="w1 h1 dib svg-tag"></span>
     <%= data.latestPostTag %>
   </a>
 </div>

@@ -62,11 +62,9 @@
           <!-- Main div -->
           <main class="<%= documentGroupName === 'portfolio' ? 'mw8' : 'mw7' %> center pt2">
             <!-- Logo on top for small screens -->
-            <div class="mb4 dn-ns">
-              <a href="/">
-                <img class="w5" src="/assets/icons/studiosLogo.svg" alt="Grumpycorp logo" />
-              </a>
-            </div>
+            <a href="/">
+              <div class="mb4 dn-ns svg-studiosLogo w-70"></div>
+            </a>
 
             <!-- prettier-ignore -->
             <% if (documentGroupName === "posts") { %> 
@@ -93,11 +91,9 @@
           <!-- Right div -->
           <nav class="mw5 pl2 pl5-ns pb3">
             <!-- Logo on the side for not-small screens -->
-            <div class="mb4 dn db-ns">
-              <a href="/">
-                <img class="w5" width="1225" height="564" src="/assets/icons/studiosLogo.svg" alt="Grumpycorp logo" />
-              </a>
-            </div>
+            <a href="/">
+              <div class="mb4 dn db-ns svg-studiosLogo w-100"></div>
+            </a>
 
             <%~ include("_rightbar", data) %>
           </nav>

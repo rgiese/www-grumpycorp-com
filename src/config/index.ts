@@ -15,6 +15,11 @@ export type DocumentGroupConfig = {
   outputPathFromDocumentPath: (inputDocument: InputDocument) => string;
 };
 
+export type SvgToCssConfig = {
+  inputRootRelativePath: string;
+  siteRelativeOutputPath: string;
+};
+
 export type RootConfig = {
   // Source
   inputRootPath: string;
@@ -27,6 +32,9 @@ export type RootConfig = {
   // Transform
   customDirectives: DirectiveConfig[];
   defaultImageSizes: string[]; // for figureDirective, c.f. <img ... sizes="">
+
+  // Asset transcodes
+  svgToCssTranscodes: SvgToCssConfig[];
 
   // Destination
   outputRootPath: string;

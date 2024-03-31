@@ -104,6 +104,8 @@ const rootConfig: RootConfig = {
   //
   // - The first image size that meets the constraints is chosen, so start with max-width: @non-small.
   defaultImageSizes: ["(max-width: 30em) 100vw", "50vw"],
+  // Asset transcodes
+  svgToCssTranscodes: [{ inputRootRelativePath: "assets/packed", siteRelativeOutputPath: "assets/svg.scss" }],
 };
 
 export default rootConfig;

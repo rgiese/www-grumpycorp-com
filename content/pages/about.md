@@ -4,7 +4,7 @@ title: About
 
 ::figure[This guy]{src="about/profile.jpg" alt="Robin and Chester" class="fl mw-30 mr2"}
 
-Hi, I'm Robin (thus <img class="h2" width="32" height="32" src="/assets/icons/grumpy-robin.svg"/>).
+Hi, I'm Robin (thus <span class="h2 svg-grumpy-robin"></span>).
 I'm an engineer, artist, and fabricator driven by a compulsion to learn, teach, and make.
 
 My engineering work includes [software](https://www.linkedin.com/in/robingiese/),

@@ -37,26 +37,46 @@
   <h4>Elsewhere</h4>
   <div>
     <span class="pr1 pr2-ns">
-      <a class="link dim" href="mailto:robin@grumpycorp.com" rel="noopener noreferrer" target="_blank">
-        <img class="w1 h1 v-base social-svg-gray" src="/assets/icons/logo-gmail.svg" alt="Gmail logo" />
+      <!--
+        - `link dim`: style link
+        - `w1 h1`: set size for SVG
+        - `dib`: make sure the size is actually used (display as inline block)
+      -->
+      <a
+        class="link dim w1 h1 dib social-svg-gray svg-logo-gmail"
+        href="mailto:robin@grumpycorp.com"
+        rel="noopener noreferrer"
+        target="_blank"
+      ></a>
+    </span>
+
+    <span class="pr1 pr2-ns">
+      <a
+        class="link dim w1 h1 dib social-svg-gray svg-logo-linkedin"
+        href="https://www.linkedin.com/in/robingiese"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
       </a>
     </span>
 
     <span class="pr1 pr2-ns">
-      <a class="link dim" href="https://www.linkedin.com/in/robingiese" rel="noopener noreferrer" target="_blank">
-        <img class="w1 h1 v-base social-svg-gray" src="/assets/icons/logo-linkedin.svg" alt="LinkedIn logo" />
+      <a
+        class="link dim w1 h1 dib social-svg-gray svg-logo-imdb"
+        href="https://www.imdb.com/name/nm8515322/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
       </a>
     </span>
 
     <span class="pr1 pr2-ns">
-      <a class="link dim" href="https://www.imdb.com/name/nm8515322/" rel="noopener noreferrer" target="_blank">
-        <img class="w1 h1 v-base social-svg-gray" src="/assets/icons/logo-imdb.svg" alt="IMDb logo" />
-      </a>
-    </span>
-
-    <span class="pr1 pr2-ns">
-      <a class="link dim" href="https://github.com/rgiese/" rel="noopener noreferrer" target="_blank">
-        <img class="w1 h1 v-base social-svg-gray" src="/assets/icons/logo-github.svg" alt="GitHub logo" />
+      <a
+        class="link dim w1 h1 dib social-svg-gray svg-logo-github"
+        href="https://github.com/rgiese/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
       </a>
     </span>
   </div>
@@ -65,9 +85,7 @@
 
   <div class="<%= footerSectionClass %>">&copy;2024 Grumpy Company Studios LLC.</div>
 
-  <div class="<%= footerSectionClass %>">
-    Made with <img class="v-mid w1 h1" src="/assets/icons/heart.svg" alt="love" /> in Seattle.
-  </div>
+  <div class="<%= footerSectionClass %>">Made with <span class="v-mid w1 h1 dib svg-heart"></span> in Seattle.</div>
 
   <div class="<%= footerSectionClass %>">
     Licensed under

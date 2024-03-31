@@ -4,7 +4,7 @@ import * as path from "path";
 export class OutputFileSystem {
   private createdOutputDirectories: Set<string>;
 
-  constructor(private readonly outputRootPath: string) {
+  constructor(public readonly outputRootPath: string) {
     this.createdOutputDirectories = new Set<string>();
   }
 

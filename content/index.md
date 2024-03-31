@@ -10,7 +10,7 @@
 </div>
 
 <div class="home-page-tags-container">
-  <a href="/tags/posts/film%20making/"><img class="w1 h1 v-mid" src="/assets/icons/tag.svg" alt="tag" /> everything in film making</a>
+  <a href="/tags/posts/film%20making/"><span class="w1 h1 dib svg-tag"></span> everything in film making</a>
 </div>
 
 ## Theater
@@ -22,7 +22,7 @@
 </div>
 
 <div class="home-page-tags-container">
-  <a href="/tags/posts/theater/"><img class="w1 h1 v-mid" src="/assets/icons/tag.svg" alt="tag" /> everything in theater</a>
+  <a href="/tags/posts/theater/"><span class="w1 h1 dib svg-tag"></span> everything in theater</a>
 </div>
 
 ## Fabricating
@@ -37,7 +37,7 @@
 </div>
 
 <div class="home-page-tags-container">
-  <img class="w1 h1 v-mid" src="/assets/icons/tag.svg" alt="tag" /> everything in 
+  <span class="w1 h1 dib svg-tag"></span> everything in 
   <a href="/tags/posts/code/">code</a>, <a href="/tags/posts/cottage/">cottage</a>, <a href="/tags/posts/crafting/">crafting</a>, and <a href="/tags/posts/warm-and-fuzzy/">warm-and-fuzzy</a>
 </div>
 

@@ -5,7 +5,6 @@
   <span class="ph2 black-40">in</span>
 
   <a href="/tags/posts/<%= encodeURIComponent(data.documentTag) %>" class="link accent-mono">
-    <img class="w1 h1 v-mid" src="/assets/icons/tag.svg" alt="tag" />
-    <%= data.documentTag %>
+    <span class="w1 h1 dib svg-tag"></span> <%= data.documentTag %>
   </a>
 </div>

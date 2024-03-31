@@ -2,12 +2,14 @@ import * as fs from "fs";
 import minifyHtml from "@minify-html/node";
 import * as path from "path";
 import * as sass from "sass";
+import svgo from "svgo";
 
+import { SvgToCssConfig } from "../config";
 import { OutputFileSystem } from "../fileSystem";
-import { ImageManager, ImageManagerImage, ImageResizeRequest } from "./imageManager";
+import { ImageManager, ImageManagerImage } from "./imageManager";
 import { FileSpec } from "../types";
 
-export { ImageManager, ImageManagerImage, ImageResizeRequest };
+export { ImageManager, ImageManagerImage };
 
 function replaceFileExtension(originalPath: path.ParsedPath, revisedExtension: string): string {
   return path.format({ ...originalPath, base: undefined /* so `ext` is used */, ext: revisedExtension });
@@ -52,7 +54,10 @@ export function processAssets(sourceFiles: FileSpec[], outputFileSystem: OutputF
     .forEach((sourceFile) => {
       try {
         const compiledScss = sass.compile(sourceFile.absolutePath, {
-          loadPaths: [path.resolve("node_modules")],
+          loadPaths: [
+            path.resolve("node_modules"),
+            outputFileSystem.outputRootPath, // for generated SVG->CSS files
+          ],
           style: minifyOutput ? "compressed" : "expanded",
         });
 
@@ -67,4 +72,83 @@ export function processAssets(sourceFiles: FileSpec[], outputFileSystem: OutputF
         throw error;
       }
     });
+}
+
+function cssFromSvg(name: string, inputSvg: string): string {
+  // Capture viewBox attribute from input SVG and also optimize the SVG code while we're at it
+  let viewBoxAttributeValue = "";
+
+  const captureViewBox: svgo.CustomPlugin = {
+    name: "captureViewBox",
+    fn: () => {
+      return {
+        element: {
+          enter: (node) => {
+            if (node.name === "svg") {
+              viewBoxAttributeValue = node.attributes.viewBox;
+            }
+          },
+        },
+      };
+    },
+  };
+
+  const optimizedSvg = svgo.optimize(inputSvg, { multipass: true, plugins: ["preset-default", captureViewBox] }).data;
+
+  // Parse viewBox
+  if (!viewBoxAttributeValue) {
+    throw new Error(`viewBox attribute not found`);
+  }
+
+  const viewBoxParsedValues = viewBoxAttributeValue.split(" ").map((x) => parseInt(x));
+
+  if (viewBoxParsedValues.length !== 4) {
+    throw new Error(`viewBox attribute value "${viewBoxAttributeValue}" invalid`);
+  }
+
+  // Encode SVG so we can use it in a CSS data url
+  let encodedSvg = optimizedSvg
+    .replaceAll("\n", " ") // no newlines allowed in CSS
+    .replaceAll("'", '"'); // we'll contain with single quotes below so transform in-SVG single quotes to double quotes
+
+  const charactersToConvert = "%&#{}<>"; // courtesy of https://codepen.io/jakob-e/pen/doMoML. Note that '%' _has_ to come first.
+
+  [...charactersToConvert].forEach((characterToConvert) => {
+    encodedSvg = encodedSvg.replaceAll(
+      characterToConvert,
+      `%${characterToConvert.charCodeAt(0).toString(16).padStart(2, "0")}`,
+    );
+  });
+
+  // Emit CSS class
+  return `.svg-${name} {
+    background: url('data:image/svg+xml,${encodedSvg}') no-repeat top left;
+    background-size: contain;
+    aspect-ratio: ${viewBoxParsedValues[2 /* width */]} / ${viewBoxParsedValues[3 /* height */]};  
+  }`;
+}
+
+export function transcodeSvgsToCss(
+  sourceFiles: FileSpec[],
+  outputFileSystem: OutputFileSystem,
+  svgToCssConfig: SvgToCssConfig,
+) {
+  const svgDocuments = sourceFiles
+    .filter((f) => f.rootRelativePath.startsWith(svgToCssConfig.inputRootRelativePath))
+    .filter((f) => f.parsedRootRelativePath.ext === ".svg");
+
+  const cssContent = svgDocuments
+    .map((sourceFile) => {
+      try {
+        return cssFromSvg(sourceFile.parsedRootRelativePath.name, fs.readFileSync(sourceFile.absolutePath, "utf8"));
+      } catch (error) {
+        console.error(`While processing ${sourceFile.absolutePath}:`);
+        throw error;
+      }
+    })
+    .join("\n");
+
+  const outputPath = outputFileSystem.getAbsolutePath(svgToCssConfig.siteRelativeOutputPath);
+  outputFileSystem.ensureOutputPathExists(outputPath);
+  fs.writeFileSync(outputPath, cssContent);
 }

@@ -3,7 +3,7 @@ import minimist from "minimist";
 import { createSourceFileSystem, OutputFileSystem } from "./fileSystem";
 import { ingestInput } from "./input";
 import { SiteRenderer } from "./render";
-import { ImageManager, processAssets } from "./assets";
+import { ImageManager, processAssets, transcodeSvgsToCss } from "./assets";
 import { SiteValidator } from "./validate";
 
 import rootConfig from "./site";
@@ -15,6 +15,10 @@ async function build(minifyOutput: boolean) {
   const inputDocumentInventory = ingestInput(rootConfig, sourceFileSystem);
 
   const imageManager = new ImageManager(rootConfig);
+
+  rootConfig.svgToCssTranscodes.forEach((svgToCssTranscode) =>
+    transcodeSvgsToCss(sourceFileSystem.themeFiles, outputFileSystem, svgToCssTranscode),
+  );
 
   processAssets(sourceFileSystem.inputFiles, outputFileSystem, minifyOutput);
   processAssets(sourceFileSystem.themeFiles, outputFileSystem, minifyOutput);

@@ -11,6 +11,13 @@
 @use "external/_tachyons.css";
 
 //
+// Fonts
+// - also note the corresponding preload directives in `_layout.eta`
+//
+
+@use "fonts";
+
+//
 // SVGs
 //
 
@@ -75,10 +82,7 @@ img {
 
 //
 // Typefaces
-// -  Note: external typefaces are managed as fontsource-* npm packages.
 //
-
-@import "fonts";
 
 html {
   font-family: "Questrial", "sans-serif";

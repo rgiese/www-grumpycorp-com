@@ -29,6 +29,11 @@
     <!-- Style sheets -->
     <link href="/scss/site.css" rel="stylesheet" />
 
+    <!-- Font preloading -->
+    <%~ ["dosis-v27-latin-regular", "questrial-v18-latin-regular", "quicksand-v30-latin-regular"].map((font) => `
+    <link rel="preload" href="/fonts/${font}.woff2" as="font" type="font/woff2" crossorigin />
+    `).join("") %>
+
     <!-- SimpleAnalytics -->
     <script async defer src="https://sa.grumpycorp.com/latest.js"></script>
     <noscript>

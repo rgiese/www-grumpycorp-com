@@ -96,7 +96,7 @@
 
   <div class="<%= footerSectionClass %>">
     Powered by
-    <a class="<%= linkDefaultClass%>" href="https://tachyons.io">Tachyions</a> and
+    <a class="<%= linkDefaultClass%>" href="https://tachyons.io">Tachyons</a> and
     <a class="<%= linkDefaultClass%>" href="https://pages.cloudflare.com/">Cloudflare</a>.
   </div>
 

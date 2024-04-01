@@ -9,6 +9,11 @@ Website for GrumpyCorp Creative Industries (via [Statiq](https://statiq.dev)).
 - `npm install`
 - Consider installing the [ETA VSCode extension](https://marketplace.visualstudio.com/items?itemName=shadowtime2000.eta-vscode)
 
+On M1 devices, consider:
+- `brew install nvm`
+- `arch -x86_64 zsh`
+- `nvm install --lts --default`
+
 ## Running
 
 - `npm run build` to build site

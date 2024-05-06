@@ -299,6 +299,11 @@ figcaption {
   height: 0.75rem;
 }
 
+.h15 {
+  // as a complement to http://tachyons.io/docs/layout/heights/
+  height: 1.5rem;
+}
+
 .mw55-ns {
   // as a complement to http://tachyons.io/docs/layout/max-widths/
   @include non-small {

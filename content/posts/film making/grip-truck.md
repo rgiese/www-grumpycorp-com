@@ -183,3 +183,4 @@ I also got to acquire a bunch of magical and mind-blowing tools that made everyt
 ## But onward!
 
 Now it's time to actually do something with all this gear! Time to write some scripts and get things moving.
+[See here](/grip-truck/) for an inventory of everything currently on the truck.

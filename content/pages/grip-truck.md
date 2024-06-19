@@ -49,8 +49,9 @@ BMPCC 4K with Viltrox EF-M2 SpeedBooster, rigged into kit with V-mount battery, 
 
 ## Lenses (EF mount)
 
-- DZOFilm Vespid primes (16mm, 25mm, 35mm, 50mm, 75mm, 90mm macro, 100mm, 125mm)
-- DZOFilm Pictor zooms (14-30mm, 20-55mm, 50-125mm)
+- DZOFilm Vespid full-frame primes (16mm, 25mm, 35mm, 50mm, 75mm, 90mm macro, 100mm, 125mm)
+- DZOFilm Catta Ace full-frame zooms (18-35mm, 35-80mm, 70-135mm)
+- DZOFilm Pictor Super35 zooms (14-30mm, 20-55mm, 50-125mm)
 - Zoom: Sigma 17-50mm f/2.8 (because the Pictor zooms don’t fit on the 4K speedbooster)
 - Rokinon primes <span class="h1 dib svg-not-on-truck" title="Not on truck"></span> (77mm filter thread, T1.5): 14mm, 24mm, 35mm, 50mm, 85mm
 - Kenko extension tubes <span class="h1 dib svg-not-on-truck" title="Not on truck"></span> (12/20/36mm, though only the 12mm seems to be particularly useful, bringing the minimum focus length of the 35mm lens from ~6.5” to ~2”)
@@ -85,7 +86,7 @@ BMPCC 4K with Viltrox EF-M2 SpeedBooster, rigged into kit with V-mount battery, 
 
 - 2x Teradek Bolt LT 750 TX/RX (on A-CAM/B-CAM and Video Village, respectively)
 - 3x SmallHD 702 Touch (two on A-CAM/B-CAM, one with Teradek Bolt RX as director/FP monitor)
-- 1x SmallHD Cine 18 with Teradek Bolt 6 LT 750 HDMI RX
+- 2x SmallHD Cine 18 with Teradek Bolt 6 LT 750 HDMI RX
 - 2x Client monitor (27” BenQ 4K monitor PD2705U)
 - Live grade with Resolve (UltraStudio 3G I/O)
 - 2x Impact monitor stand (with wheels)
@@ -225,6 +226,7 @@ BMPCC 4K with Viltrox EF-M2 SpeedBooster, rigged into kit with V-mount battery, 
 
 See [DMX case](/posts/film%20making/dmx-case/index.html) for details.
 
+- Surface Pro with ETC Nomad, custom XKeys keyboard, MidiFighter Twister controller with TwisterEos
 - Multiverse
   - 2x ShowBaby wireless DMX transceiver with UltraDMX sACN transmitter
   - 6x Multiverse receiver/power-thru custom dongles for wireless DMX
@@ -393,6 +395,7 @@ See [DMX case](/posts/film%20making/dmx-case/index.html) for details.
 
 ## Mics and mic support
 
+- 1x Sennheiser MKH 50
 - 1x Rode NT5
 - 1x Rode NTG4
 - 1x Shure SM7B <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>

@@ -401,7 +401,7 @@ See [DMX case](/posts/film%20making/dmx-case/index.html) for details.
 - 1x Shure SM7B <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
 - 1x Rycote classic softie
 - 1x Rode Blimp
-- 4x Tentacle Track E recorder
+- 4x Tentacle Track E recorder with Sanken COS-11d mics (2x beige, 1x black, 1x white)
 - 1x RodeLink wireless lav set
 - 1x Sound Devices MixPre-6 II with bag and Tentacle Sync, wired for V-mount battery
 - K-Tek 16’ boom pole with PSC M5 Pro shock mount

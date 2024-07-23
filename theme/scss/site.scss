@@ -231,6 +231,8 @@ figcaption {
 }
 
 .home-page-figure-div {
+  padding: 0.25rem;
+
   @include non-small {
     width: 50%;
   }
@@ -238,8 +240,6 @@ figcaption {
   @include medium {
     width: 100%;
   }
-
-  padding: 0.25rem;
 
   figure {
     margin-block-start: 0;

@@ -104,3 +104,38 @@ while on set):
 ::figure[The whole Eos happy family in one place]{src="dmx-case/eos-happy-family.jpg"}
 
 Off to the next project! (And hopefully sooner or later, an actual dang film set again.)
+
+# Addendum (five months later)
+
+After using this setup on two film shoots, I wanted to make some modifications and upgrades.
+
+### Better wireless
+
+The cheap-as-dirt wireless router did not provide a durable backbone for my iPad or phone to connect to EOS with: they kept losing their connection
+and the reconnection would take long (10+ seconds), which is time I do not have when I'm just trying to cheat a light up or down real fast.
+
+I replaced the router with a Ubiquiti [Unifi Express router/AP combo](https://techspecs.ui.com/unifi/unifi-cloud-gateways/ux) paired with a
+Ubiquiti [Flex Mini switch](https://store.ui.com/us/en/collections/unifi-switching-utility-mini/products/usw-flex-mini) and it is now much more stable.
+
+I also added a GL.iNet "travel router" (a GL-SFT1200, whatever was cheap on Amazon that day)
+to provide an uplink to whatever local WiFi I might want to chain my network to
+so my production network can also provide internet access, behind the Unifi Express router's firewall.
+
+On some level that's a bit of a luxury; however, the iPad app I use to remote-control EOS wants to re-authorize itself via the app store every so often
+and it does not spark joy to have to hop between a private production network and tethered internet while trying to get the first setup of the day off the ground.
+Hopefully this somewhat elaborate setup fixes that, assuming I can remember how to attach the GL.iNet router to new wifi networks...
+
+### Better EOS control
+
+I added a [MidiFighter Twister](https://www.midifighter.com/#Twister) controller that offers knobs for intensity, color, and most importantly, pan/tilt,
+addressing a long-standing gripe I've had with using EOS Nomad (or my EOS Element console) with moving lights.
+
+The fairly excellent [TwisterEos](https://en.nolaskey.com/twistereos) freeware interfaces the controller into EOS via OSC.
+
+### Stand-alone computer
+
+I wanted to have the case be fully stand-alone rather than requiring an external laptop because not every shooting location allows me to roll in
+with my Inovativ cart with the nice laptop stand, and I don't trust my MacBook Pro to just sort of _float around_ freely outside of that setup.
+
+I ended up buying a darling little Surface Pro 9 tablet because I love having a touchscreen for Nomad
+and the Surface was the (relatively) cheapest way of achieving a 4K display with touch support.

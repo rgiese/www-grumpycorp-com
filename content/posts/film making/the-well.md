@@ -172,12 +172,8 @@ Marco gets here (with 4+ changes of clothes in hand for all the different story 
 
 Let me take this moment for a quick detour to justify my continued gear acquisition anxiety.
 
-I worked as a gaffer for my friend [Raymond](https://www.rpcreative.studio/) earlier this year and - as an aside to this aside - I love
-that he has _so much_ [camera gear](https://www.rpcreative.studio/equipment) that pretty much no matter what I buy,
-I'm still spending less money on gear than him and that makes me feel less crazy. Thank you, Raymond.
-
-At any rate, one of the very nice pieces of kit he had on set was a large wireless monitor (the SmallHD Cine18, to be precise).
-I've been eyeing this item for a while but it's almost unconscionably expensive (don't even look it up).
+I worked as a gaffer for my friend [Raymond](https://www.rpcreative.studio/) earlier this year and one of the very nice pieces of kit
+he had on set was a large wireless monitor (the SmallHD Cine18, to be precise).
 
 What I observed on that shoot was that any actor or crew member who was able to see the monitor was instantly invested in the work:
 they got to see what the camera is seeing, were buoyed by how good the image looked, and could contribute set decoration and such as needed.

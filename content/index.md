@@ -2,10 +2,10 @@
 
 <div class="home-page-figure-container">
 
+::figure[The Well]{src="/posts/film%20making/the-well/front-page-image-16-9.jpg" href="/posts/film%20making/the-well/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
 ::figure[Home Body]{src="/posts/film%20making/home-body/home_body_thumbnail.png" href="/posts/film%20making/home-body/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
 ::figure[Nutella Thief]{src="/posts/film%20making/nutella-thief/title.png" href="/posts/film%20making/nutella-thief/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
-::figure[Grip truck]{src="/posts/film%20making/grip-truck/IMG_0437.jpg" href="/posts/film%20making/grip-truck/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
-::figure[Lighting control]{src="/posts/film%20making/dmx-case/eos.jpg" href="/posts/film%20making/dmx-case/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
+::figure[Grip truck]{src="/posts/film%20making/grip-truck/front-page-image.jpg" href="/posts/film%20making/grip-truck/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
 
 </div>
 

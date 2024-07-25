@@ -15,7 +15,7 @@ other than the trivial additions of:
 - a Grumpycorp Studios pre-roll replacing the 48-mandated pre-roll
 
 This is the first 48 Hour Film project I've ever done where I felt that the delivered product is truly a finished product:
-the last time (Home Body), we lacked both a score and any sort of reasonable color grade, and this time I was fast enough to
+The last time (Home Body), we lacked both a score and any sort of reasonable color grade, and this time I was fast enough to
 be able to do all of it by the deadline.
 
 So, here's how it all went down. (Note: contains spoilers.)
@@ -23,16 +23,17 @@ So, here's how it all went down. (Note: contains spoilers.)
 # Prep work
 
 I'd been hoping to make this another family project but it turned out that the weekend of this 48 competition coincided with
-a family reunion in Mexico for most of my household. This meant that all we were left with in the house was me, Harry (the fifteen-year-old),
+a family reunion in Mexico for most of my household.
+This meant that all we were left with in the house were me, Harry (the fifteen-year-old),
 five cats, one dog, and [a lot of gear](/grip-truck), yielding a two person / single adult team.
 
-(I should mention that Harry just completed the Media Tech class in his freshman year of high school and is pretty stoked about filmmaking
+(I should mention that Harry just completed the Media Tech class in his freshman year of high school and is pretty stoked about filmmaking,
 so I'm definitely not roping him into this against his wishes.)
 
 My aspiration rolling up to the weekend had been to create something dark and moody, ideally some sort of sci-fi thing,
 because moody lighting and haze are my bag, I've watched Dune a lot of late (with Harry),
 and it would support night shoots along with a generally sort of altered schedule.
-I'd also spent some time dorking around with granular synths of late so a dark and moody score could be really dope.
+I'd also spent some time dorking around with granular synths for Home Body so a dark and moody score could be really dope.
 
 Harry managed to recruit Marco (formally credited as "Katie" by their choice),
 a friend of ours from the high school's drama department. We found out the day before the competition started
@@ -76,7 +77,7 @@ Harry has the brilliant idea of coming up with a musical theme in the score that
 as the character during the film as mood music for the game, thus connecting the score into the action of the film (something something _diegetic_).
 We decide to allocate some time toward this adventure for Saturday morning since we have to wait for Marco to get off work at 3pm anyway.
 
-Sarah has to log off because she's two timezones ahead and we decide that we'll regroup at 7:30am her time / 5:30am my time to work on script and storyboards.
+Sarah has to log off because she's two timezones ahead, and we decide that we'll regroup at 7:30am her time / 5:30am my time to work on script and storyboards.
 
 ## 9pm (46.5 hours remaining)
 
@@ -109,7 +110,7 @@ Sarah and I hop on Google Meet (Harry joins, too) to discuss details and more st
 We decide that rather than trying to greek out the artwork of a game like Talisman or manufacturing our own,
 we're just going to use our resident RPG developer's game, [The Well](https://www.shoelesspetegames.com/the-well),
 because he's willing to give us the rights to use the book, artwork, and text from it.
-I'm deeply grateful for this and you should totally buys his game - it's awesome.
+I'm deeply grateful for this and you should totally buy his game - it's awesome.
 
 ## 7:10am (36.25 hours remaining)
 
@@ -124,7 +125,7 @@ Harry and I start storyboarding in parallel with Sarah, organizing the scenes an
 (Milanote really is the perfect tool for this and worth every dollar.)
 
 You can easily tell below which drawings are Sarah's and which are mine.
-However, it doesn't really matter how good or shitty the drawings are: what matters is that we have them.
+However, it doesn't really matter how good or shitty the drawings are; what matters is that we have them.
 
 ::figure[Storyboards in Milanote]{src="the-well/milanote.png"}
 
@@ -137,25 +138,25 @@ Does a real movie script look like this? No. Do I care? Also no.
 
 ## 11am (32.5 hours remaining)
 
-Harry and I start messing around with the score. My beloved granular synths are not the right tool for this job
+Harry and I start messing around with the score. My beloved granular synths are not the right tool for this job,
 but thankfully I jumped on a sale of some [ProjectSAM libraries](https://projectsam.com/libraries) last year and their Lumina library
 is pretty great for what we're aiming for.
 
 Harry writes the theme he wants to use and we record it into Ableton (both the synth sequence as well as his acoustic guitar).
 
-I set up an outdoor light that I know I will need at night and setting it up during the daytime means I don't need to trip
+I set up an outdoor light that I know I will need at night. Setting it up during the daytime means I don't need to trip
 over massive light stands and cases in the dark.
 
 Something always goes wrong and somehow the GFCI of the exterior outlet along that side of the house has decided it's on vacation.
 Thankfully I keep many 25' and 50' TRUE1 cables on the truck (most often used when I bring my moving lights to a theater)
 so within ten minutes, this problem is thankfully also dealt with and in such a way that if it should rain, I'm still fine.
-(Blessedly the later-generation Aputure lights are rain-tolerant.) (Also it doesn't rain all weekend, instead it's unforgivingly hot as balls.)
+(Blessedly the later-generation Aputure lights are rain-tolerant.) (Also it doesn't rain all weekend; instead, it's unforgivingly hot as balls.)
 
 ## 1pm (30.5 hours remaining)
 
-Sarah hops onto Google Meet one more time from the beach but the connection is pretty terrible so we decide to call it good enough.
+Sarah hops onto Google Meet one more time from the beach, but the connection is pretty terrible so we decide to call it good enough.
 
-Harry and I set-decorate the house and get everything put in place for Marco's arrival.
+Harry and I set-decorate the house to get everything put in place for Marco's arrival.
 I'm happy about the sheer curtains and spring-tension shower curtain rod I anxiety-bought&trade; some weeks prior
 as they are coming in super-handy with one of the rooms we'll be filming in.
 
@@ -176,16 +177,16 @@ I worked as a gaffer for my friend [Raymond](https://www.rpcreative.studio/) ear
 he had on set was a large wireless monitor (the SmallHD Cine18, to be precise).
 
 What I observed on that shoot was that any actor or crew member who was able to see the monitor was instantly invested in the work:
-they got to see what the camera is seeing, were buoyed by how good the image looked, and could contribute set decoration and such as needed.
+They got to see what the camera is seeing, were buoyed by how good the image looked, and could contribute set decoration and such as needed.
 In short, they were invested.
 
 Any actor or crew member who was _not_ able to see the monitor ended up staring at their phone or (far worse) ended up in random conversations
 that I personally found quite disruptive (though my brain does seem to get disrupted by words more than most).
 
-And so I realized that the price of this piece of equipment should not be considered the price of the item itself but
+And so I realized that the price of this piece of equipment should not be considered the price of the item itself, but should
 instead be viewed as the price of admission to having a fully bought-in and invested cast and crew.
 
-So some months and a bunch of financial ass-puckering later, here we are with a beautiful and exciting on-set image for all to see:
+So some months and a certain amount of financial ass-puckering later, here we are with a beautiful and exciting on-set image for all to see:
 
 ::figure[The first setup as shown on one of my shiny new monitors]{src="the-well/first-setup-monitoring.jpg"}
 
@@ -193,7 +194,7 @@ And it works! Best as I can tell, this instantly boosts our actors' confidence a
 
 ## 5pm (26.5 hours remaining)
 
-The film's story spans months (which in hindsight I highly recommend against for a 48) and Sarah has storyboarded a top-down dolly shot
+The film's story spans months (which in hindsight I highly recommend against for a 48), and Sarah has storyboarded a top-down dolly shot
 over the dining table as part of a montage suggesting said passage of time.
 
 Is this a good use of time? I don't know. But! I had anxiety-bought&trade; the necessary ingredients for a double-goal-post DanaDolly setup
@@ -231,7 +232,7 @@ Good news: I have backups for every significant piece of equipment.
 Not so good news: I've somewhat cheaped out on the backup / B-CAM camera, a Blackmagic Pocket 4K.
 It has some godforsaken speed booster / adapter from EF to MFT that I bought the cheaper version of many years ago
 and it has major focusing problems (i.e. its internal optics prevent me from focusing any further out than a few feet).
-It's also not compatible with the zoom lenses I've been using all day which have been a major time saver compared to primes.
+It's also not compatible with the zoom lenses I've been using all day, which have been a major time saver compared to primes.
 
 I had noticed this problem with the B-CAM at a different shoot in March, had read up on how to fix it,
 but had unfortunately not actually implemented the fix.
@@ -239,7 +240,7 @@ but had unfortunately not actually implemented the fix.
 With the actors wondering why I look like I'm maybe losing my mind (which I am), I dial in the speed booster's backfocus just well enough,
 rotate through a couple of prime lenses to get the one I need for the shot, and off we go.
 
-I suspect this speed booster is why those shots also look a bit different in terms of image quality and color - more so than I would have expected
+I suspect this speed booster is why those shots also look a bit different in terms of image quality and color, more so than I would have expected
 between the Blackmagic Pocket 6K (my A-CAM) and 4K (my B-CAM) themselves. Current score in favor of anxiety-buying&trade; better gear: two for two.
 
 Thankfully, my A-CAM decides to turn back on after this grouping of setups.
@@ -249,7 +250,7 @@ Thankfully, my A-CAM decides to turn back on after this grouping of setups.
 We've managed to squeeze in the hallway scene (more CamWok!) and head off to the dock.
 
 As we set up to film I notice that I forgot my RBQ-to-Manfrotto adapter on the CamWok at home
-(another item I had saved money on by not buying a dedicated one for the CamWok &rarr; anxiety-buying&trade; intensifies / would have been justified)
+(another item I had saved money on by not buying a dedicated one for the CamWok &rarr; anxiety-buying&trade; intensifies / would have been justified),
 so I have to run home again (as the sun is setting) so I can put my camera on my tripod. Yay.
 
 Here's what Harry and I location-scouted a week before the 48:
@@ -288,9 +289,9 @@ At this point we're filming the early morning scenes in Peter's office (the open
 
 Marco's parents would like Marco home because they've got work at 8am. Fair.
 
-However, this does mean that _we have not actually filmed the pivotal three scenes that end the movie_. Whoops.
+However, this does mean that _we have not actually filmed the pivotal three scenes that end the movie_. Whoops. My bad.
 
-However-however, Marco is willing and able to be back at 11:30am the next day (my eternal gratitude) so we still have the chance to have a movie.
+However-however, Marco is willing and able to be back at 11:30am the next day (my eternal gratitude) so we still have a chance to have a movie.
 
 # Sunday, July 14th 2024
 
@@ -301,10 +302,10 @@ Not all hope is lost.
 
 ## 1am (18.5 hours remaining)
 
-Recall that the film's story spans months (still just as inadvisable as it was at 5pm on Saturday).
+Recall that the film's story spans months (still just as inadvisable as it was at 5pm).
 
 Sarah had mentioned that we could use this flip book-style calendar we have in our entry to suggest the progression of time.
-She'd of course had something subtle in mind (like showing it in the montage sequences) but somehow my brain got this idea that I should show
+She'd of course had something subtle in mind (like showing it in the montage sequences), but somehow my brain got this idea that I should show
 time passing with full-frame (more or less) dissolving shots of that calendar in a rather unsubtle way. Why? I don't know, I was tired.
 
 So what better thing to do at 1am Sunday when we haven't even shot a complete film yet but get out my [eMotimo motion control rig](https://emotimo.com/)
@@ -342,7 +343,7 @@ This is not where we spend our time.
 
 ## 10am (9.5 hours remaining)
 
-I have a workable cut of all the material we have so far and Harry and I start to set up our final shooting location.
+I have a workable cut of all the material we have so far, and Harry and I start to set up our final shooting location.
 
 ## 11:30am (8 hours remaining)
 
@@ -387,7 +388,7 @@ My recent upgrade of my lavs (COS11d) and boom (MKH50) means that the sound qual
 as I need it to be for a 48 without a lot of manipulation (it's not anxiety if it's justified, just sayin').
 Dialog compressor + EQ on the bus, done.
 
-Good news: the poor-person's-ADR I recorded for the lake-side scene is really useful in making that scene not sound like ass.
+Good news: The poor-person's-ADR I recorded for the lake-side scene is really useful in making that scene not sound like ass.
 
 Less good news: I chopped/ADR'd the takes first, _then_ processed them in RX, and I could have saved myself a bunch of RX'ing time
 if I had reversed that order. A lesson for next time.
@@ -395,14 +396,14 @@ if I had reversed that order. A lesson for next time.
 ## 4pm (3.5 hours remaining)
 
 Time for color. Some years back I invested in the Davinci Resolve MicroPanel and all the physical wheels, balls, and buttons are just a huge timesaver.
-I've watched and journaled most of [Cullen Kelly](https://www.youtube.com/@CullenKelly) and [Darren Mostyn](https://www.youtube.com/@DarrenMostyn)'s
+I've watched and journaled most of [Cullen Kelly](https://www.youtube.com/@CullenKelly)'s and [Darren Mostyn](https://www.youtube.com/@DarrenMostyn)'s
 YouTube channels so I at least kind of know what I'm doing and I have a good recipe to follow.
 
 Every shot gets a happy little node tree with exposure, contrast, balance, and saturation managed step by step.
 
 ::figure[Happy little node trees for every shot]{src="the-well/node-tree.png"}
 
-A few shots get put into groups for group-level tuning but this is all pretty much getting only a single pass anyhow (there isn't the time to do more)
+A few shots get put into groups for group-level tuning but this is all pretty much getting only a single pass anyhow (there isn't the time to do more),
 so I don't need to get precious about it.
 
 At the timeline level, the project gets sweetened with a few subtler picks from Cullen Kelly's [Voyager LUT Pack](https://procolor.ist/voyager-lut-pack/),
@@ -416,20 +417,21 @@ It's really not doing a lot:
 
 ...but it adds some subtle interest.
 
-I'm generally not a fan of the _slaps some LUTs on it_ approach to color grading, I'd rather understand every transformation that's happening
+I'm generally not a fan of the _slaps some LUTs on it_ approach to color grading; I'd rather understand every transformation that's happening
 (like with the [PixelTools Film Lab](https://pixeltoolspost.com/products/pixeltools-film-lab-collection) collection of node trees),
 but there's only so much time remaining.
 
 ## 5:30pm (2 hours remaining)
 
-Time to write (finish?) the score. I chuck an export of the video into Ableton and Harry and I get to work stacking up our synths.
+Time to write (finish?) the score. I chuck an export of the video into Ableton and Harry and I get to work stacking up our synths
+against the picture-locked video.
 
-The ProjectSAM synths are being cumbersome because their patterns don't align against any sort of click so we have to keep adjusting by ear
+The ProjectSAM synths are being cumbersome because their patterns don't align against any sort of click. We have to keep adjusting by ear
 and trial-and-error. Less in love with them now than I was just a day prior. I should probably read the manual.
 
 ## 6:55pm (35 minutes remaining)
 
-We're doing a final export of the score from Ableton, re-ingesting that into Resolve, and do our first "probably good enough" export.
+We do a final export of the score from Ableton, re-ingest that into Resolve, and run our first "probably good enough" export from Resolve.
 
 Thankfully the Mac Pro I anxiety-bought&trade; after my PC kept crashing during the _last_ 48 is capable of rendering in faster-than-real-time even
 with the color grade and the goofy delivery codec (H.265), allowing us to make another tweak or two on music versus dialog leveling.
@@ -451,13 +453,13 @@ and finally go to sleep.
 
 # It's a wrap
 
-This was an equal parts amazing and terrifying experience: during the experience itself, it was largely terrifying
-(even if I managed to hide my panic and worry from those around me well); afterwards, though, I'm just amazed that we pulled this off.
+This was an equal parts amazing and terrifying experience. During the experience itself, it was largely terrifying
+(even if I managed to hide my panic and worry from those around me well). Afterwards, though, I'm just amazed that we pulled this off.
 
-I reckon there are very few teams with a single grown-up on site. I follow lots of local filmmakers on Instagram and they were all participating
+I reckon there are few teams with just a single grown-up on site. I follow lots of local filmmakers on Instagram and they were all participating
 (we had around eighty teams this year!), many of them with 10+ person crews, some of them renting a giant studio space at Harbor Island Studios,
 and one of them even had a dude with an [Arri Trinity](https://www.arri.com/en/camera-systems/camera-stabilizer-systems/legacy/trinity) rig (how the even).
-I'm sure their work came out looking much higher end but that doesn't make me any less happy with what we were able to create.
+I'm sure their work came out looking much higher-end but that doesn't make me any less happy with what we were able to create.
 
 Would I do this again? Maybe. Definitely, actually, if I didn't also have people reviews happening at work on the days bracketing the 48,
 as well as having to prep for this ridiculous Nickelback burlesque show that I'm playing drums for (but that's a story for another day).
@@ -485,15 +487,15 @@ with the actors and coaching them through the performances instead of having to 
 
 During the edit, I just used duration markers in Resolve to call out good/best takes within each clip and it was just as easy to work with as separate takes.
 
-Would I recommend this for a more rigorous/lower-pressure show? Maybe not? But for my own work moving forward (where I'm running both the set and post),
-this is making me happy. The only exception to this will be tracking lens data for gyro-based motion stabilization.
+Would I recommend this for a more rigorous/lower-pressure show? Maybe not? But for my own work moving forward (whenever I'm running both the set and post),
+this is making me happy. The only exception to this would be tracking lens data for gyro-based motion stabilization.
 
 ### On having a script
 
-For our last 48 ([Home Body](../home-body)) we just storyboarded, we didn't even write a script and just improvised the lines on set
+For our last 48 ([Home Body](../home-body)) we just storyboarded, we didn't even write a script, and just improvised the lines on set
 based on knowing what beats we wanted to hit.
 
-I think that was a fine choice but I'm also glad that we did have a script for this one.
+I think that was a fine choice, but I'm also glad that we did have a script for this one.
 
 I was very open with the actors that the script was just a starting point and we could modify and re-work things on the fly if they didn't feel right.
 We took advantage of that on several occasions and it absolutely made the film better.
@@ -503,9 +505,9 @@ We took advantage of that on several occasions and it absolutely made the film b
 I cannot overstate how valuable storyboards are, especially with such a limited crew on site (i.e. me, and Harry's brain for shot composition as well).
 
 When I'm framing and lighting a shot, it's incredibly valuable that I don't need to second-guess whether this is the right shot,
-whether I'm going to use it or not (and where), and whether I might need other shots. I have neither the time nor emotional energy for it.
+whether I'm going to use it or not (and where), and whether I might need other shots. I have neither the time nor the emotional energy for it.
 
-Just like with Home Body, the storyboards were the shot list were the edit. It all just came together from the storyboards. No setup or shot was wasted.
+Just like with Home Body, the storyboards were the shot list, were the edit. It all just came together from the storyboards. No setup or shot was wasted.
 
 I've worked on enough other projects (from/with/for other people) _without_ storyboards that I'm pretty much going to refuse working on
 non-storyboarded shows from now on. It's just not a good use of time if we don't invest that level of intentionality and foresight in pre-production.

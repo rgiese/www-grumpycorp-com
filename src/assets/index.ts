@@ -22,7 +22,7 @@ export function processAssets(sourceFiles: FileSpec[], outputFileSystem: OutputF
   const simpleAssetExtensions = [".jpg", ".png", ".svg", ".eot", ".ttf", ".woff", ".woff2", ".txt"];
 
   explicitAssetSourceFiles
-    .filter((f) => simpleAssetExtensions.includes(f.parsedRootRelativePath.ext))
+    .filter((f) => simpleAssetExtensions.includes(f.parsedRootRelativePath.ext.toLowerCase()))
     .forEach((sourceFile) => {
       const outputPath = outputFileSystem.getAbsolutePath(sourceFile.rootRelativePath);
 

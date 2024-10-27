@@ -64,7 +64,9 @@ export class SiteValidator {
               }
             }
 
-            throw new Error(`Can't find /${siteRootRelativeTarget} targeted by ${element.outerHTML}`);
+            throw new Error(
+              `Can't find /${siteRootRelativeTarget} (${absoluteTarget}) targeted by ${element.outerHTML}`,
+            );
           }
         }
       });

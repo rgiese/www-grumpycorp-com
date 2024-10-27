@@ -19,7 +19,7 @@ export function processAssets(sourceFiles: FileSpec[], outputFileSystem: OutputF
   const explicitAssetSourceFiles = sourceFiles.filter((f) => !f.parsedRootRelativePath.base.startsWith("_"));
 
   // Copy simple assets
-  const simpleAssetExtensions = [".jpg", ".png", ".svg", ".eot", ".ttf", ".woff", ".woff2", ".txt"];
+  const simpleAssetExtensions = [".jpg", ".png", ".svg", ".eot", ".ttf", ".woff", ".woff2", ".txt", ".stl", ".f3d"];
 
   explicitAssetSourceFiles
     .filter((f) => simpleAssetExtensions.includes(f.parsedRootRelativePath.ext.toLowerCase()))

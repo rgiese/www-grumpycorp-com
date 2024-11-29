@@ -23,15 +23,23 @@ All gear listed below is on the truck unless marked as <span class="h15 dib svg-
 
 ## A-CAM
 
-::figure[A-CAM]{src="grip-truck/A-CAM.png"}
+::figure[Ursa Cine (A-CAM)]{src="grip-truck/A-CAM.jpg"}
 
-BMPCC 6K, rigged into kit with V-mount battery + SharkFin, Teradek transmitter, Teradek RT FIZ with TOF range finder, SmallHD 702 Touch monitor, ARRI LMB 4x5.65 matte box, Lemo 0B.2-based power distro, Cleans Camera MiniQRB
+[Blackmagic Design Ursa Cine](/posts/film%20making/ursa-cine-buildout), B-mount hotswap, B-mount battery, SmallHD Ultra 7 monitor,
+Teradek transmitter (12G-SDI/4K image), Teradek RT FIZ, ARRI LMB 4x5.65 matte box, Cleans Camera MiniQRB
 
 ## B-CAM
 
-::figure[B-CAM]{src="grip-truck/B-CAM.png"}
+::figure[Pyxis (B-CAM)]{src="grip-truck/B-CAM.jpg"}
 
-BMPCC 4K with Viltrox EF-M2 SpeedBooster, rigged into kit with V-mount battery, Teradek transmitter, Nucleus-M FIZ, SmallHD 702 Touch monitor, SmallRig 4x5.65 matte box, Lemo 0B.2-based power distro, Cleans Camera MiniQRB
+[Blackmagic Design Pyxis](/posts/film%20making/pyxis-buildout), XLCS Designs cage, V-mount battery with Shark Fin, SmallHD 702 Touch monitor,
+Teradek transmitter (12G-SDI/4K image), Nucleus-M FIZ, ARRI LMB 4x5.65 matte box
+
+## C-CAM <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+
+::figure[BMPCC 6K (C-CAM)]{src="grip-truck/C-CAM.jpg"}
+
+BMPCC 6K, rigged into kit with V-mount battery, Teradek transmitter, Lemo 0B.2-based power distro, Cleans Camera MiniQRB
 
 ## Other
 
@@ -60,7 +68,7 @@ BMPCC 4K with Viltrox EF-M2 SpeedBooster, rigged into kit with V-mount battery, 
 
 ### 4x5.65
 
-- Tiffen Water White NATural IRND: 1, 2, 3, 4, 5, 6, 7 stops (0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1)
+- Tiffen Water White NATural IRND: 1, 2, 3, 4, 5, 6, 7, 8 stops (0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4)
 - Lindsey Optics Rota-Pol circular polarizer (138mm) (automatable)
 - NiSi clear filter
 
@@ -84,8 +92,9 @@ BMPCC 4K with Viltrox EF-M2 SpeedBooster, rigged into kit with V-mount battery, 
 
 ## Monitoring
 
-- 2x Teradek Bolt LT 750 TX/RX (on A-CAM/B-CAM and Video Village, respectively)
-- 3x SmallHD 702 Touch (two on A-CAM/B-CAM, one with Teradek Bolt RX as director/FP monitor)
+- Teradek Bolt 4K/6-series transmitters (on A-CAM/B-CAM/C-CAM and Video Village, respectively)
+- 1x SmallHD Ultra 7 (A-CAM)
+- 3x SmallHD 702 Touch (one on B-CAM, two more with Teradek Bolt RX as director/FP monitor)
 - 2x SmallHD Cine 18 with Teradek Bolt 6 LT 750 HDMI RX
 - 2x Client monitor (27” BenQ 4K monitor PD2705U)
 - Live grade with Resolve (UltraStudio 3G I/O)
@@ -96,23 +105,29 @@ BMPCC 4K with Viltrox EF-M2 SpeedBooster, rigged into kit with V-mount battery, 
 - Sachtler aktiv8 fluid head and Flowtech75 tripod, MiniQRB base on Manfrotto plate
 - aktiv8 to ⅜” adapter + ⅜” to baby pin
 - Steadicam (see below)
-- CamWok with drop-in base plate
+- CamWok with MiniQRB base
 - Tilta light-weight shoulder rig, MiniQRB base
 - Super-short tripod (Field Optics FT5021A with FVH-450 fluid head)
-- Heavy Manfrotto tripod with 502HD fluid head
-- S&V basic-ish tripod with XYZ head
+- Heavy Manfrotto tripod with 502HD fluid head <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+- S&V basic-ish tripod with XYZ head <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
 
 ## Timecode
 
-- 4x Tentacle Sync E (two cameras, sound recorder, spare)
+- 4x Tentacle Sync E (three cameras, sound recorder)
 
 ## Batteries
+
+### B-mount
+
+- 6x Core SWX Helix Max Dual-Voltage, 275Wh
+- 2x four-battery charger
 
 ### V-mount
 
 - 8x CAME-TV MINI 99Wh
 - 1x Wasabi 195Wh
 - 1x four-battery charger
+- 1x two-battery charger
 
 ## Steadicam
 
@@ -233,6 +248,7 @@ See [DMX case](/posts/film%20making/dmx-case/index.html) for details.
 - CRMX
   - Aptera Box (ART7)
 - Ubiquiti Wireless AP
+- GL-iNet uplink router to venue WiFi/Ethernet
 
 ## Atmospherics
 

@@ -3,7 +3,8 @@ title: Building out a Pyxis
 published: 2024-11-27
 ---
 
-Some minor tips and tricks from my B-CAM (Blackmagic Design Pyxis) buildout.
+Some minor tips and tricks from my B-CAM (Blackmagic Design Pyxis) buildout - relatively more restrained
+than the [A-CAM](../ursa-cine-buildout/) buildout.
 
 ::figure[Full rig]{src="pyxis-buildout/full_rig.jpg"}
 
@@ -28,7 +29,7 @@ The gak in the back consists of:
 
 ::figure[Back side]{src="pyxis-buildout/back_side.jpg"}
 
-I route an additional three-way 2-pin Lemo distributor from Alvin's Cables to the side, for the FIZ system and monitor.
+I routed an additional three-way 2-pin Lemo distributor from Alvin's Cables to the side, for the FIZ system and monitor.
 
 However. Just when I thought I was done 3D-printing for the [Ursa Cine](../ursa-cine-buildout/),
 I discovered that the rods on the XLCS cage are set down so much that they interfere

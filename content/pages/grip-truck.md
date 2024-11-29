@@ -39,17 +39,22 @@ Teradek transmitter (12G-SDI/4K image), Nucleus-M FIZ, ARRI LMB 4x5.65 matte box
 
 ::figure[BMPCC 6K (C-CAM)]{src="grip-truck/C-CAM.jpg"}
 
-BMPCC 6K, rigged into kit with V-mount battery, Teradek transmitter, Lemo 0B.2-based power distro, Cleans Camera MiniQRB
+BMPCC 6K converted to PL mount, rigged with V-mount battery, Teradek transmitter, Lemo 0B.2-based power distro, Cleans Camera MiniQRB
+
+## D-CAM <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+
+BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek transmitter or de-rigged for small quarters shooting.
 
 ## Other
 
 - GoPro Hero 9 <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
 - GoPro Hero 10 <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+- Spare Cleans Camera MiniQRB plate
 
 ## Media
 
-- 4x 1TB AngelBird AV PRO CF
-- 2x 2TB, 1x 256GB nvmE SSD in USB-C case <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+- 2x 2TB Lexar CF Express Type B (Pyxis)
+- 4x 1TB AngelBird AV PRO CF (Pocket)
 
 ## Protection
 

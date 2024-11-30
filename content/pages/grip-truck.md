@@ -73,7 +73,7 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
 
 ### 4x5.65
 
-- Tiffen Water White NATural IRND: 1, 2, 3, 4, 5, 6, 7, 8 stops (0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4)
+- Tiffen Water White NATural IRND: 1, 2, 3, 4, 5, 6, 7, 9 stops (0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.7)
 - Lindsey Optics Rota-Pol circular polarizer (138mm) (automatable)
 - NiSi clear filter
 

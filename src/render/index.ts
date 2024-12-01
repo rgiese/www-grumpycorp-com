@@ -12,7 +12,7 @@ import { ImageManager } from "../assets";
 import { DocumentGroupConfig, RootConfig } from "../config";
 import { createFigureDirective } from "./figureDirective";
 import { GeneratedDocument, TemplateType, InputDocument, InputDocumentInventory } from "../types";
-import { OutputFileSystem } from "../fileSystem";
+import { FileSystemStat, OutputFileSystem } from "../fileSystem";
 
 export class SiteRenderer {
   private readonly eta: Eta;
@@ -34,13 +34,33 @@ export class SiteRenderer {
     );
 
     // Generated documents
-    this.rootConfig.generatedDocuments?.(this.inputDocumentInventory).forEach((d) => this.renderGeneratedDocument(d));
+    const newestInputDocumentModifiedTimeMs = Math.max(
+      ...Array.from(this.inputDocumentInventory).flatMap(([_documentGroupName, inputDocuments]) =>
+        inputDocuments.map(
+          (inputDocument) => FileSystemStat.get(inputDocument.sourceFile.absolutePath, { requireExists: true }).mtimeMs,
+        ),
+      ),
+    );
+
+    this.rootConfig
+      .generatedDocuments?.(this.inputDocumentInventory)
+      .forEach((d) => this.renderGeneratedDocument(newestInputDocumentModifiedTimeMs, d));
   }
 
   private renderDocument(documentGroupConfig: DocumentGroupConfig, inputDocument: InputDocument) {
+    // Set up paths
+    const sourceFileStat = FileSystemStat.get(inputDocument.sourceFile.absolutePath, { requireExists: true });
+
     const outputPath = this.outputFileSystem.getAbsolutePath(inputDocument.siteRelativeOutputPath);
+    const outputFileStat = FileSystemStat.get(outputPath, { requireExists: false });
+
+    if (outputFileStat && sourceFileStat.mtimeMs < outputFileStat.mtimeMs) {
+      return;
+    }
+
     this.outputFileSystem.ensureOutputPathExists(outputPath);
 
+    // Process content
     console.log(
       `${inputDocument.documentGroupRelativePath} -> ${inputDocument.siteRelativeOutputPath} -> ${outputPath}`,
     );
@@ -97,10 +117,19 @@ export class SiteRenderer {
     }
   }
 
-  private renderGeneratedDocument(generatedDocument: GeneratedDocument) {
+  private renderGeneratedDocument(newestInputDocumentModifiedTimeMs: number, generatedDocument: GeneratedDocument) {
+    // Set up paths
     const outputPath = this.outputFileSystem.getAbsolutePath(generatedDocument.siteRelativeOutputPath);
+
+    const outputFileStat = FileSystemStat.get(outputPath, { requireExists: false });
+
+    if (outputFileStat && newestInputDocumentModifiedTimeMs < outputFileStat.mtimeMs) {
+      return;
+    }
+
     this.outputFileSystem.ensureOutputPathExists(outputPath);
 
+    // Process content
     console.log(`${generatedDocument.siteRelativeOutputPath} -> ${outputPath}`);
 
     try {

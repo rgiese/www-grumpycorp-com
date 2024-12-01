@@ -5,7 +5,7 @@ import * as sass from "sass";
 import svgo from "svgo";
 
 import { SvgToCssConfig } from "../config";
-import { OutputFileSystem } from "../fileSystem";
+import { FileSystemStat, OutputFileSystem } from "../fileSystem";
 import { ImageManager, ImageManagerImage } from "./imageManager";
 import { FileSpec } from "../types";
 
@@ -24,8 +24,17 @@ export function processAssets(sourceFiles: FileSpec[], outputFileSystem: OutputF
   explicitAssetSourceFiles
     .filter((f) => simpleAssetExtensions.includes(f.parsedRootRelativePath.ext.toLowerCase()))
     .forEach((sourceFile) => {
-      const outputPath = outputFileSystem.getAbsolutePath(sourceFile.rootRelativePath);
+      // Set up paths
+      const sourceFileStat = FileSystemStat.get(sourceFile.absolutePath, { requireExists: true });
 
+      const outputPath = outputFileSystem.getAbsolutePath(sourceFile.rootRelativePath);
+      const outputFileStat = FileSystemStat.get(outputPath, { requireExists: false });
+
+      if (outputFileStat && sourceFileStat.mtimeMs < outputFileStat.mtimeMs) {
+        return;
+      }
+
+      // Process content
       outputFileSystem.ensureOutputPathExists(outputPath);
       fs.copyFileSync(sourceFile.absolutePath, outputPath);
     });
@@ -35,10 +44,19 @@ export function processAssets(sourceFiles: FileSpec[], outputFileSystem: OutputF
     .filter((f) => f.parsedRootRelativePath.ext === ".css")
     .forEach((sourceFile) => {
       try {
-        const inputCss = fs.readFileSync(sourceFile.absolutePath);
-        const outputCss = minifyOutput ? minifyHtml.minify(inputCss, { keep_comments: false }) : inputCss;
+        // Set up paths
+        const sourceFileStat = FileSystemStat.get(sourceFile.absolutePath, { requireExists: true });
 
         const outputPath = outputFileSystem.getAbsolutePath(sourceFile.rootRelativePath);
+        const outputFileStat = FileSystemStat.get(outputPath, { requireExists: false });
+
+        if (outputFileStat && sourceFileStat.mtimeMs < outputFileStat.mtimeMs) {
+          return;
+        }
+
+        // Process content
+        const inputCss = fs.readFileSync(sourceFile.absolutePath);
+        const outputCss = minifyOutput ? minifyHtml.minify(inputCss, { keep_comments: false }) : inputCss;
 
         outputFileSystem.ensureOutputPathExists(outputPath);
         fs.writeFileSync(outputPath, outputCss);
@@ -53,6 +71,19 @@ export function processAssets(sourceFiles: FileSpec[], outputFileSystem: OutputF
     .filter((f) => f.parsedRootRelativePath.ext === ".scss")
     .forEach((sourceFile) => {
       try {
+        // Set up paths
+        const sourceFileStat = FileSystemStat.get(sourceFile.absolutePath, { requireExists: true });
+
+        const outputPath = outputFileSystem.getAbsolutePath(
+          replaceFileExtension(sourceFile.parsedRootRelativePath, ".css"),
+        );
+        const outputFileStat = FileSystemStat.get(outputPath, { requireExists: false });
+
+        if (outputFileStat && sourceFileStat.mtimeMs < outputFileStat.mtimeMs) {
+          return;
+        }
+
+        // Process content
         const compiledScss = sass.compile(sourceFile.absolutePath, {
           loadPaths: [
             path.resolve("node_modules"),
@@ -60,10 +91,6 @@ export function processAssets(sourceFiles: FileSpec[], outputFileSystem: OutputF
           ],
           style: minifyOutput ? "compressed" : "expanded",
         });
-
-        const outputPath = outputFileSystem.getAbsolutePath(
-          replaceFileExtension(sourceFile.parsedRootRelativePath, ".css"),
-        );
 
         outputFileSystem.ensureOutputPathExists(outputPath);
         fs.writeFileSync(outputPath, compiledScss.css);

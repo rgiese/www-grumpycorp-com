@@ -4,6 +4,7 @@ import { imageSize } from "image-size";
 import sharp from "sharp";
 
 import { RootConfig } from "../config";
+import { FileSystemStat } from "../fileSystem";
 
 export class ImageManagerImage {
   public readonly width: number;
@@ -51,20 +52,23 @@ export class ImageManagerImage {
       ...additionalFormats.map((format) => `.${format}`),
     ];
 
-    const sourceImageStats = fs.statSync(this.absoluteImagePath);
+    const sourceImageStats = FileSystemStat.get(this.absoluteImagePath, { requireExists: true });
+
     const sharpImage = sharp(this.absoluteImagePath);
 
     await Promise.all(
       Array.from(this.requestedWidths, (width) =>
         outputExtensions.map((extension) => {
+          // Set up paths
           const absoluteOutputPath = path.join(outputRootPath, this.getResizedSiteRelativeImagePath(width, extension));
 
-          const outputImageStats = fs.statSync(absoluteOutputPath, { throwIfNoEntry: false });
+          const outputImageStats = FileSystemStat.get(absoluteOutputPath, { requireExists: false });
 
           if (outputImageStats && sourceImageStats.mtimeMs < outputImageStats.mtimeMs) {
             return;
           }
 
+          // Process content
           return sharpImage.resize(width).toFile(absoluteOutputPath);
         }),
       ).flatMap((p) => p),

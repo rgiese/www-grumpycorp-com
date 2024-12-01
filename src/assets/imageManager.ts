@@ -9,14 +9,12 @@ export class ImageManagerImage {
   public readonly width: number;
   public readonly height: number;
 
-  private readonly siteRelativeImagePath: string;
   private readonly parsedSiteRelativeImagePath: path.ParsedPath;
   private readonly absoluteImagePath: string;
 
   private readonly requestedWidths: Set<number> = new Set();
 
   constructor(inputRootPath: string, siteRelativeImagePath: string) {
-    this.siteRelativeImagePath = siteRelativeImagePath;
     this.parsedSiteRelativeImagePath = path.parse(siteRelativeImagePath);
     this.absoluteImagePath = path.join(inputRootPath, siteRelativeImagePath);
 

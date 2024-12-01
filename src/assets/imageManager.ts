@@ -51,6 +51,7 @@ export class ImageManagerImage {
       ...additionalFormats.map((format) => `.${format}`),
     ];
 
+    const sourceImageStats = fs.statSync(this.absoluteImagePath);
     const sharpImage = sharp(this.absoluteImagePath);
 
     await Promise.all(
@@ -58,7 +59,9 @@ export class ImageManagerImage {
         outputExtensions.map((extension) => {
           const absoluteOutputPath = path.join(outputRootPath, this.getResizedSiteRelativeImagePath(width, extension));
 
-          if (fs.existsSync(absoluteOutputPath)) {
+          const outputImageStats = fs.statSync(absoluteOutputPath, { throwIfNoEntry: false });
+
+          if (outputImageStats && sourceImageStats.mtimeMs < outputImageStats.mtimeMs) {
             return;
           }
 

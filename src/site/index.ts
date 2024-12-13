@@ -107,7 +107,7 @@ const rootConfig: RootConfig = {
   // Asset transcodes
   svgToCssTranscodes: [{ inputRootRelativePath: "assets/packed", siteRelativeOutputPath: "assets/svg.scss" }],
   // Redirects
-  redirects: [{ source: ":prefix/film%20making/:suffix", destination: ":prefix/film-making/:suffix", code: 301 }],
+  redirects: [{ source: "/:prefix/film%20making/:suffix", destination: "/:prefix/film-making/:suffix", code: 301 }],
 };
 
 export default rootConfig;

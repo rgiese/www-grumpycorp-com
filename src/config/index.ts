@@ -20,6 +20,12 @@ export type SvgToCssConfig = {
   siteRelativeOutputPath: string;
 };
 
+export type Redirect = {
+  source: string;
+  destination: string;
+  code?: number;
+};
+
 export type RootConfig = {
   // Source
   inputRootPath: string;
@@ -35,6 +41,9 @@ export type RootConfig = {
 
   // Asset transcodes
   svgToCssTranscodes: SvgToCssConfig[];
+
+  // Redirects
+  redirects: Redirect[];
 
   // Destination
   outputRootPath: string;

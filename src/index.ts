@@ -2,6 +2,7 @@ import minimist from "minimist";
 
 import { createSourceFileSystem, OutputFileSystem } from "./fileSystem";
 import { ingestInput } from "./input";
+import { processRedirects } from "./redirects";
 import { SiteRenderer } from "./render";
 import { ImageManager, processAssets, transcodeSvgsToCss } from "./assets";
 import { SiteValidator } from "./validate";
@@ -34,6 +35,8 @@ async function build(minifyOutput: boolean) {
   siteRenderer.render();
 
   await imageManager.renderImages();
+
+  processRedirects(outputFileSystem, rootConfig.redirects);
 
   new SiteValidator(rootConfig.outputRootPath).validate();
 }

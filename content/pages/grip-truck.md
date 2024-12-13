@@ -2,7 +2,7 @@
 title: Grip truck
 ---
 
-[ [Build blog post](/posts/film%20making/grip-truck/) ]
+[ [Build blog post](/posts/film-making/grip-truck/) ]
 
 <div class="cf">
   <div class="fl-ns fn w-10-m w-50-ns pa1">
@@ -25,14 +25,14 @@ All gear listed below is on the truck unless marked as <span class="h15 dib svg-
 
 ::figure[Ursa Cine (A-CAM)]{src="grip-truck/A-CAM.jpg"}
 
-[Blackmagic Design Ursa Cine](/posts/film%20making/ursa-cine-buildout), B-mount hotswap, B-mount battery, SmallHD Ultra 7 monitor,
+[Blackmagic Design Ursa Cine](/posts/film-making/ursa-cine-buildout), B-mount hotswap, B-mount battery, SmallHD Ultra 7 monitor,
 Teradek transmitter (12G-SDI/4K image), Teradek RT FIZ, ARRI LMB 4x5.65 matte box, Cleans Camera MiniQRB
 
 ## B-CAM
 
 ::figure[Pyxis (B-CAM)]{src="grip-truck/B-CAM.jpg"}
 
-[Blackmagic Design Pyxis](/posts/film%20making/pyxis-buildout), XLCS Designs cage, V-mount battery with Shark Fin, SmallHD 702 Touch monitor,
+[Blackmagic Design Pyxis](/posts/film-making/pyxis-buildout), XLCS Designs cage, V-mount battery with Shark Fin, SmallHD 702 Touch monitor,
 Teradek transmitter (12G-SDI/4K image), Nucleus-M FIZ, ARRI LMB 4x5.65 matte box
 
 ## C-CAM <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
@@ -244,7 +244,7 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
 
 ## Control
 
-See [DMX case](/posts/film%20making/dmx-case/index.html) for details.
+See [DMX case](/posts/film-making/dmx-case/index.html) for details.
 
 - Surface Pro with ETC Nomad, custom XKeys keyboard, MidiFighter Twister controller with TwisterEos
 - Multiverse

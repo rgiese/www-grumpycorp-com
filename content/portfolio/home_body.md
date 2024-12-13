@@ -6,4 +6,4 @@ title: Home Body
 
 # Home Body
 
-My first longer-than-one-minute short film! For the making-of story, see my [detailed post](/posts/film%20making/home-body/).
+My first longer-than-one-minute short film! For the making-of story, see my [detailed post](/posts/film-making/home-body/).

@@ -2,15 +2,15 @@
 
 <div class="home-page-figure-container">
 
-::figure[The Well]{src="/posts/film%20making/the-well/front-page-image-16-9.jpg" href="/posts/film%20making/the-well/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
-::figure[Home Body]{src="/posts/film%20making/home-body/home_body_thumbnail.png" href="/posts/film%20making/home-body/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
-::figure[Nutella Thief]{src="/posts/film%20making/nutella-thief/title.png" href="/posts/film%20making/nutella-thief/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
-::figure[Grip truck]{src="/posts/film%20making/grip-truck/front-page-image.jpg" href="/posts/film%20making/grip-truck/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
+::figure[The Well]{src="/posts/film-making/the-well/front-page-image-16-9.jpg" href="/posts/film-making/the-well/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
+::figure[Home Body]{src="/posts/film-making/home-body/home_body_thumbnail.png" href="/posts/film-making/home-body/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
+::figure[Nutella Thief]{src="/posts/film-making/nutella-thief/title.png" href="/posts/film-making/nutella-thief/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
+::figure[Grip truck]{src="/posts/film-making/grip-truck/front-page-image.jpg" href="/posts/film-making/grip-truck/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
 
 </div>
 
 <div class="home-page-tags-container">
-  <a href="/tags/posts/film%20making/"><span class="w1 h1 dib svg-tag"></span> everything in film making</a>
+  <a href="/tags/posts/film-making/"><span class="w1 h1 dib svg-tag"></span> everything in film making</a>
 </div>
 
 ## Theater

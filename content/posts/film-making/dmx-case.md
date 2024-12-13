@@ -3,7 +3,7 @@ title: Magical DMX case of wonders
 published: 2023-12-27
 ---
 
-The same shoots that kicked off the [grip truck](/posts/film%20making/grip-truck) redo also kicked off my quest for better on-set lighting control.
+The same shoots that kicked off the [grip truck](/posts/film-making/grip-truck) redo also kicked off my quest for better on-set lighting control.
 
 I'm primarily invested in the Aputure ecosystem of film lighting and the ETC Source4 ecosystem of stage lighting.
 

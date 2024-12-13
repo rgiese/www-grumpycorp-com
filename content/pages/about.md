@@ -10,10 +10,10 @@ I'm an engineer, artist, and fabricator driven by a compulsion to learn, teach, 
 My engineering work includes [software](https://www.linkedin.com/in/robingiese/),
 [hardware](/posts/warm-and-fuzzy/thermostat-design-2), and [structural engineering / architecture](/portfolio/cottage).
 
-My art includes [film](/posts/film%20making/home-body), [theater design](/posts/theater/the-odyssey), and music.
+My art includes [film](/posts/film-making/home-body), [theater design](/posts/theater/the-odyssey), and music.
 
 If there's anything you want made, [come find me](mailto:robin@grumpycorp.com).
-My [grip truck](/posts/film%20making/grip-truck) is ready to roll anytime day or night.
+My [grip truck](/posts/film-making/grip-truck) is ready to roll anytime day or night.
 
 ### Resume
 

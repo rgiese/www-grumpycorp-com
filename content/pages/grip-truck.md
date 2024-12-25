@@ -26,20 +26,20 @@ All gear listed below is on the truck unless marked as <span class="h15 dib svg-
 ::figure[Ursa Cine (A-CAM)]{src="grip-truck/A-CAM.jpg"}
 
 [Blackmagic Design Ursa Cine](/posts/film-making/ursa-cine-buildout), B-mount hotswap, B-mount battery, SmallHD Ultra 7 monitor,
-Teradek transmitter (12G-SDI/4K image), Teradek RT FIZ, ARRI LMB 4x5.65 matte box, Cleans Camera MiniQRB
+Teradek transmitter (12G-SDI/4K image), Teradek RT FIZ, ARRI LMB 4x5.65 matte box, Cleans Camera MiniQRB plate
 
 ## B-CAM
 
 ::figure[Pyxis (B-CAM)]{src="grip-truck/B-CAM.jpg"}
 
 [Blackmagic Design Pyxis](/posts/film-making/pyxis-buildout), XLCS Designs cage, V-mount battery with Shark Fin, SmallHD 702 Touch monitor,
-Teradek transmitter (12G-SDI/4K image), Nucleus-M FIZ, ARRI LMB 4x5.65 matte box
+Teradek transmitter (12G-SDI/4K image), Nucleus-M FIZ, ARRI LMB 4x5.65 matte box, Cleans Camera MiniQRB plate
 
 ## C-CAM <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
 
 ::figure[BMPCC 6K (C-CAM)]{src="grip-truck/C-CAM.jpg"}
 
-BMPCC 6K converted to PL mount, rigged with V-mount battery, Teradek transmitter, Lemo 0B.2-based power distro, Cleans Camera MiniQRB
+BMPCC 6K converted to PL mount, rigged with V-mount battery, Teradek transmitter, Lemo 0B.2-based power distro, Cleans Camera MiniQRB plate
 
 ## D-CAM <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
 
@@ -62,12 +62,31 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
 
 ## Lenses (EF mount)
 
-- DZOFilm Vespid full-frame primes (16mm, 25mm, 35mm, 50mm, 75mm, 90mm macro, 100mm, 125mm)
-- DZOFilm Catta Ace full-frame zooms (18-35mm, 35-80mm, 70-135mm)
-- DZOFilm Pictor Super35 zooms (14-30mm, 20-55mm, 50-125mm)
-- Zoom: Sigma 17-50mm f/2.8 (because the Pictor zooms don’t fit on the 4K speedbooster)
-- Rokinon primes <span class="h1 dib svg-not-on-truck" title="Not on truck"></span> (77mm filter thread, T1.5): 14mm, 24mm, 35mm, 50mm, 85mm
-- Kenko extension tubes <span class="h1 dib svg-not-on-truck" title="Not on truck"></span> (12/20/36mm, though only the 12mm seems to be particularly useful, bringing the minimum focus length of the 35mm lens from ~6.5” to ~2”)
+- DZOFilm Vespid full-frame primes, PL mount
+  - 16mm T2.8
+  - 25mm T2.1
+  - 35mm T2.1
+  - 50mm T2.1
+  - 75mm T2.1
+  - 90mm T2.8 macro
+  - 100mm T2.1
+  - 125mm T2.1
+- DZOFilm Catta Ace full-frame zooms, PL mount
+  - 18-35mm T2.9
+  - 35-80mm T2.9
+  - 70-135mm T2.9
+- DZOFilm Pictor Super35 zooms, PL mount
+  - 14-30mm T2.8
+  - 20-55mm T2.8
+  - 50-125mm T2.8
+- Sigma 17-50mm f/2.8 zoom (for D-CAM), EF mount <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+- Rokinon primes, EF mount <span class="h1 dib svg-not-on-truck" title="Not on truck"></span> (77mm filter thread)
+  - 14mm T1.5
+  - 24mm T1.5
+  - 35mm T1.5
+  - 50mm T1.5
+  - 85mm T1.5
+- Kenko EF extension tubes <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
 
 ## Filters
 
@@ -107,7 +126,7 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
 
 ## Camera support
 
-- Sachtler aktiv8 fluid head and Flowtech75 tripod, MiniQRB base on Manfrotto plate
+- 2x Sachtler aktiv8 fluid head and Flowtech75 tripod, MiniQRB base on Manfrotto plate
 - aktiv8 to ⅜” adapter + ⅜” to baby pin
 - Steadicam (see below)
 - CamWok with MiniQRB base
@@ -178,15 +197,12 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
 - Aputure
   - 8x MC Pro tiny lights with charging case [weather-resistant] [w/ CRMX]
   - 2x MT Pro small pixel light [w/ CRMX]
-  - 4x PB12 4’ tube light [w/ CRMX]
-  - 2x grid
+  - 4x PB12 4’ tube light [w/ CRMX], two with grid
   - 4x Amaran T4c 4’ tube light <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
-  - 2x 45 degree grid
   - 2x Nova P300C
     - 1x SNAPGRID 40 degree modifier
     - 2x soft box
-  - 3x Amaran F22c 2’ x 2’ panel color light
-    - 2x lantern/skirt
+  - 3x Amaran F22c 2’ x 2’ panel color light with lantern/skirt
 - ColorSpike
   - 3x ColorSpike 2’ tube light
 
@@ -195,7 +211,7 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
 - Wash
   - 12x Mac Aura LED moving head <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
 - Spot
-  - 12x ETC Source Four incandescent at 375W/575W/750W <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+  - 10x ETC Source Four incandescent at 375W/575W/750W <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
     - 10x 36 degree lens tube
 
 ## Stand-alone modifiers
@@ -251,7 +267,7 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
   - 2x ShowBaby wireless DMX transceiver with UltraDMX sACN transmitter
   - 6x Multiverse receiver/power-thru custom dongles for wireless DMX
 - CRMX
-  - Aptera Box (ART7)
+  - Aptera Box (ART7) + spare
 - Ubiquiti Wireless AP
 - GL-iNet uplink router to venue WiFi/Ethernet
 
@@ -414,19 +430,30 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
 
 # Sound
 
-## Mics and mic support
+## Recording
+
+- 1x Zaxcom Nova 2 with one MRX414 module and TentacleSync
+- 1x Sound Devices MixPre-6 II with bag, wired for V-mount battery <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+
+## Lavalier mics and transmitters
+
+- 4x Zaxcom ZMT4 wireless transmitters with Sanken COS-11d mics (2x beige, 1x black, 1x white)
+- 4x Tentacle Track E recorder with factory-issue mics
+- 1x RodeLink wireless lav set <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+
+## Non-lavalier mics
 
 - 1x Sennheiser MKH 50
 - 1x Rode NT5
 - 1x Rode NTG4
 - 1x Shure SM7B <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+
+## Mic support
+
+- K-Tek KP16CCR internally cabled 16’ graphite boom pole with PSC M5 Pro shock mount
+- Boom pole holder for C-stand
 - 1x Rycote classic softie
 - 1x Rode Blimp
-- 4x Tentacle Track E recorder with Sanken COS-11d mics (2x beige, 1x black, 1x white)
-- 1x RodeLink wireless lav set
-- 1x Sound Devices MixPre-6 II with bag and Tentacle Sync, wired for V-mount battery
-- K-Tek 16’ boom pole with PSC M5 Pro shock mount
-- Boom pole holder for C-stand
 - 7’ coiled XLR cable
 
 # Location support

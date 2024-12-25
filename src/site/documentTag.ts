@@ -9,3 +9,7 @@ export function getDocumentTag(inputDocument: InputDocument) {
 export function getDocumentTagSet(inputDocuments: InputDocument[]) {
   return Array.from(new Set(inputDocuments.map((d) => getDocumentTag(d)))).sort();
 }
+
+export function tagPresenter(tag: string) {
+  return tag.replaceAll("-", '<span class="tag-dash">-</span>');
+}

@@ -1,6 +1,6 @@
 import { GeneratedDocumentsGenerator, TemplateType } from "../types";
 
-import { getDocumentTag, getDocumentTagSet } from "./documentTag";
+import { getDocumentTag, getDocumentTagSet, tagPresenter } from "./documentTag";
 import { generateLayoutTemplateRenderContext } from "./layoutTemplateRenderContext";
 
 export const postIndexPagesGenerator: GeneratedDocumentsGenerator = (inputDocumentInventory) => {
@@ -9,6 +9,10 @@ export const postIndexPagesGenerator: GeneratedDocumentsGenerator = (inputDocume
     templateName: "_layout.eta",
     // We're relying on `generateLayoutTemplateRenderContext` not specializing on any given input document
     templateRenderContext: generateLayoutTemplateRenderContext(inputDocumentInventory),
+  };
+
+  const contentTemplateContextBase = {
+    tagPresenter,
   };
 
   // Find all posts and their tags
@@ -25,6 +29,7 @@ export const postIndexPagesGenerator: GeneratedDocumentsGenerator = (inputDocume
       contentTemplateType: TemplateType.Eta,
       contentTemplateName: "_post_index.eta",
       contentTemplateContext: {
+        ...contentTemplateContextBase,
         postDocuments: [...postDocuments]
           // Show newest first (copy it with the ^spread we don't change the original array)
           // - `.published` is guaranteed from input validation
@@ -45,6 +50,7 @@ export const postIndexPagesGenerator: GeneratedDocumentsGenerator = (inputDocume
         contentTemplateType: TemplateType.Eta,
         contentTemplateName: "_post_index.eta",
         contentTemplateContext: {
+          ...contentTemplateContextBase,
           postDocuments: postDocuments
             // Show oldest first, i.e. in existing sort order
             .map((d) => {

@@ -1,6 +1,6 @@
 import { InputDocument, RenderContextGenerator } from "../types";
 
-import { getDocumentTag } from "./documentTag";
+import { getDocumentTag, tagPresenter } from "./documentTag";
 import { generateLayoutTemplateRenderContext } from "./layoutTemplateRenderContext";
 
 const generatePreviousNext: RenderContextGenerator = (
@@ -30,6 +30,7 @@ const generatePreviousNext: RenderContextGenerator = (
 export const generatePostTemplateRenderContext: RenderContextGenerator = (inputDocument, inputDocumentInventory) => {
   return {
     documentTag: getDocumentTag(inputDocument),
+    tagPresenter,
     ...generatePreviousNext(inputDocument, inputDocumentInventory),
     ...generateLayoutTemplateRenderContext(inputDocumentInventory),
   };

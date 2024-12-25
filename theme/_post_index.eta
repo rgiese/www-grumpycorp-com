@@ -3,9 +3,9 @@
     <% data.postDocuments.forEach(function(postDocument) { %>
     <tr>
       <td>
-        <a href="/tags/posts/<%= encodeURIComponent(postDocument.documentTag) %>" class="link accent-mono"
-          ><%= postDocument.documentTag %></a
-        >
+        <a href="/tags/posts/<%= encodeURIComponent(postDocument.documentTag) %>" class="link accent-mono">
+          <%~ data.tagPresenter(postDocument.documentTag) %>
+        </a>
       </td>
       <td class="b ph3"><%= postDocument.frontMatter.published.toLocaleDateString() %></td>
       <td>

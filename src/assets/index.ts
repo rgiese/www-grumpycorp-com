@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import minifyHtml from "@minify-html/node";
+import htmlMinifier from "html-minifier";
 import * as path from "path";
 import * as sass from "sass";
 import svgo from "svgo";
@@ -8,6 +8,7 @@ import { SvgToCssConfig } from "../config";
 import { FileSystemStat, OutputFileSystem } from "../fileSystem";
 import { ImageManager, ImageManagerImage } from "./imageManager";
 import { FileSpec } from "../types";
+import { minifyOptions } from "../render/minifyOptions";
 
 export { ImageManager, ImageManagerImage };
 
@@ -55,8 +56,8 @@ export function processAssets(sourceFiles: FileSpec[], outputFileSystem: OutputF
         }
 
         // Process content
-        const inputCss = fs.readFileSync(sourceFile.absolutePath);
-        const outputCss = minifyOutput ? minifyHtml.minify(inputCss, { keep_comments: false }) : inputCss;
+        const inputCss = fs.readFileSync(sourceFile.absolutePath).toString();
+        const outputCss = minifyOutput ? htmlMinifier.minify(inputCss, minifyOptions) : inputCss;
 
         outputFileSystem.ensureOutputPathExists(outputPath);
         fs.writeFileSync(outputPath, outputCss);

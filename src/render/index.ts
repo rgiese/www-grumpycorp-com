@@ -1,16 +1,16 @@
-import { Buffer } from "node:buffer";
 import * as fs from "fs";
 import { Eta } from "eta";
 import hljs from "highlight.js";
 import { Marked } from "marked";
 import { createDirectives } from "marked-directive";
 import { markedHighlight } from "marked-highlight";
-import minifyHtml from "@minify-html/node";
+import htmlMinifier from "html-minifier";
 import * as path from "path";
 
 import { ImageManager } from "../assets";
 import { DocumentGroupConfig, RootConfig } from "../config";
 import { createFigureDirective } from "./figureDirective";
+import { minifyOptions } from "./minifyOptions";
 import { GeneratedDocument, TemplateType, InputDocument, InputDocumentInventory } from "../types";
 import { FileSystemStat, OutputFileSystem } from "../fileSystem";
 
@@ -182,9 +182,7 @@ export class SiteRenderer {
 
   private writeOutputHtml(outputPath: string, pageHtml: string) {
     // Minify
-    const outputHtml = this.minifyOutput
-      ? minifyHtml.minify(Buffer.from(pageHtml), { keep_spaces_between_attributes: true })
-      : pageHtml;
+    const outputHtml = this.minifyOutput ? htmlMinifier.minify(pageHtml, minifyOptions) : pageHtml;
 
     // Output
     fs.writeFileSync(outputPath, outputHtml);

@@ -17,7 +17,7 @@ title: Grip truck
   </div>
 </div>
 
-All gear listed below is on the truck unless marked as <span class="h15 dib svg-not-on-truck" title="Not on truck"></span>.
+All gear listed below is on the truck unless marked as :notOnTruck.
 
 # Cameras
 
@@ -35,20 +35,20 @@ Teradek transmitter (12G-SDI/4K image), Teradek RT FIZ, ARRI LMB 4x5.65 matte bo
 [Blackmagic Design Pyxis](/posts/film-making/pyxis-buildout), XLCS Designs cage, V-mount battery with Shark Fin, SmallHD 702 Touch monitor,
 Teradek transmitter (12G-SDI/4K image), Nucleus-M FIZ, ARRI LMB 4x5.65 matte box, Cleans Camera MiniQRB plate
 
-## C-CAM <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+## C-CAM :notOnTruck{className="h15"}</span>
 
 ::figure[BMPCC 6K (C-CAM)]{src="grip-truck/C-CAM.jpg"}
 
 BMPCC 6K converted to PL mount, rigged with V-mount battery, Teradek transmitter, Lemo 0B.2-based power distro, Cleans Camera MiniQRB plate
 
-## D-CAM <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+## D-CAM :notOnTruck{className="h15"}</span>
 
 BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek transmitter or de-rigged for small quarters shooting.
 
 ## Other
 
-- GoPro Hero 9 <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
-- GoPro Hero 10 <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+- GoPro Hero 9 :notOnTruck
+- GoPro Hero 10 :notOnTruck
 - Spare Cleans Camera MiniQRB plate
 
 ## Media
@@ -79,14 +79,14 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
   - 14-30mm T2.8
   - 20-55mm T2.8
   - 50-125mm T2.8
-- Sigma 17-50mm f/2.8 zoom (for D-CAM), EF mount <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
-- Rokinon primes, EF mount <span class="h1 dib svg-not-on-truck" title="Not on truck"></span> (77mm filter thread)
+- Sigma 17-50mm f/2.8 zoom (for D-CAM), EF mount :notOnTruck
+- Rokinon primes, EF mount :notOnTruck (77mm filter thread)
   - 14mm T1.5
   - 24mm T1.5
   - 35mm T1.5
   - 50mm T1.5
   - 85mm T1.5
-- Kenko EF extension tubes <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+- Kenko EF extension tubes :notOnTruck
 
 ## Filters
 
@@ -112,7 +112,7 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
 - DanaDolly
 - 6” camera riser for underslung
 - Sachtler aktiv adapter
-- Ride-on DIY dolly with 10’ 1” PVC pipe track (or use aluminum pipe) <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+- Ride-on DIY dolly with 10’ 1” PVC pipe track (or use aluminum pipe) :notOnTruck
 
 ## Monitoring
 
@@ -132,8 +132,8 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
 - CamWok with MiniQRB base
 - Tilta light-weight shoulder rig, MiniQRB base
 - Super-short tripod (Field Optics FT5021A with FVH-450 fluid head)
-- Heavy Manfrotto tripod with 502HD fluid head <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
-- S&V basic-ish tripod with XYZ head <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+- Heavy Manfrotto tripod with 502HD fluid head :notOnTruck
+- S&V basic-ish tripod with XYZ head :notOnTruck
 
 ## Timecode
 
@@ -166,7 +166,7 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
 ## COB and attached modifiers
 
 - Aputure
-  - 1x LS C120D <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+  - 1x LS C120D :notOnTruck
   - 2x LS 300D II
   - 1x LS 300X
   - 1x LS 600D Pro [weather-resistant] [w/ CRMX]
@@ -182,10 +182,10 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
     - 3x Space light tubular softbox for 120D/300D/X
   - 3x ETC Source Four LED Series 3x Lustr x8 [w/ MultiVerse]
     - 1x 19 degree lens tube
-    - 1x 50 degree lens tube (one more <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>)
+    - 1x 50 degree lens tube (one more :notOnTruck)
     - 1x 90 degree lens tube
-    - 1x zoom lens tube, 15-30 degrees <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
-    - 2x zoom lens tube, 25-50 degrees <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+    - 1x zoom lens tube, 15-30 degrees :notOnTruck
+    - 2x zoom lens tube, 25-50 degrees :notOnTruck
     - 3x Rosco SimpleSpin (local/dimmer control)
   - Accessories
     - 2x 12”x12” gel holders
@@ -198,7 +198,7 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
   - 8x MC Pro tiny lights with charging case [weather-resistant] [w/ CRMX]
   - 2x MT Pro small pixel light [w/ CRMX]
   - 4x PB12 4’ tube light [w/ CRMX], two with grid
-  - 4x Amaran T4c 4’ tube light <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+  - 4x Amaran T4c 4’ tube light :notOnTruck
   - 2x Nova P300C
     - 1x SNAPGRID 40 degree modifier
     - 2x soft box
@@ -209,9 +209,9 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
 ## Theatrical
 
 - Wash
-  - 12x Mac Aura LED moving head <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+  - 12x Mac Aura LED moving head :notOnTruck
 - Spot
-  - 10x ETC Source Four incandescent at 375W/575W/750W <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+  - 10x ETC Source Four incandescent at 375W/575W/750W :notOnTruck
     - 10x 36 degree lens tube
 
 ## Stand-alone modifiers
@@ -225,7 +225,7 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
   - Neg and single net fingers
   - Neg and single net dots
 - 30”x36”
-  - 2x open-ended black scrim (1.2 stops) (<span class="h1 dib svg-not-on-truck" title="Not on truck"></span>, in floppy road case)
+  - 2x open-ended black scrim (1.2 stops) (:notOnTruck, in floppy road case)
 - 48”x48”
   - 4x floppy (48x90)
   - 1x not-floppy (48x48)
@@ -273,7 +273,7 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
 
 ## Atmospherics
 
-- Hazer (Antari Z-350) with Antari FLG fluid <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+- Hazer (Antari Z-350) with Antari FLG fluid :notOnTruck
 
 ## Cable
 
@@ -351,16 +351,16 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
 - 1” aluminum pipe
   - 4x 3’
   - 2x 4’
-  - 10x 6’ (eight for 12’x12’ frame, two in use for crane prototype <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>)
+  - 10x 6’ (eight for 12’x12’ frame, two in use for crane prototype :notOnTruck)
   - 6x 8’
   - 2x 12’
 - 1-¼” aluminum pipe
-  - 4x 4’ (two in use for crane prototype <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>)
+  - 4x 4’ (two in use for crane prototype :notOnTruck)
   - 2x 6’
   - 8x 8’
   - 4x 12’
 - 1” black pipe
-  - 1x 10’ threaded <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+  - 1x 10’ threaded :notOnTruck
 
 ## Pipe clamps
 
@@ -426,27 +426,27 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
 ## Weights
 
 - ~15+ sand bags
-- 3x steel weight with clamp for extension arms <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+- 3x steel weight with clamp for extension arms :notOnTruck
 
 # Sound
 
 ## Recording
 
 - 1x Zaxcom Nova 2 with one MRX414 module and TentacleSync
-- 1x Sound Devices MixPre-6 II with bag, wired for V-mount battery <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+- 1x Sound Devices MixPre-6 II with bag, wired for V-mount battery :notOnTruck
 
 ## Lavalier mics and transmitters
 
 - 4x Zaxcom ZMT4 wireless transmitters with Sanken COS-11d mics (2x beige, 1x black, 1x white)
 - 4x Tentacle Track E recorder with factory-issue mics
-- 1x RodeLink wireless lav set <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+- 1x RodeLink wireless lav set :notOnTruck
 
 ## Non-lavalier mics
 
 - 1x Sennheiser MKH 50
 - 1x Rode NT5
 - 1x Rode NTG4
-- 1x Shure SM7B <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+- 1x Shure SM7B :notOnTruck
 
 ## Mic support
 
@@ -468,7 +468,7 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
 - Voyager NXT cart (42”)
   - Camera support kit with MiniQRB
 - 2x SidioSkate wheels for SidioCrates
-- 3x cart with carpeted low and high shelves; 4 ea swivel wheels for crabbing <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+- 3x cart with carpeted low and high shelves; 4 ea swivel wheels for crabbing :notOnTruck
 
 ## Comms
 
@@ -485,10 +485,10 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
 
 ## Power
 
-- 1x Ecoflow Delta Pro power station 3.6kWh (3.6kW/7.2kW output) + 3.6kWh extra battery <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
-- 2x Jackery Explorer 500Wh station <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+- 1x Ecoflow Delta Pro power station 3.6kWh (3.6kW/7.2kW output) + 3.6kWh extra battery :notOnTruck
+- 2x Jackery Explorer 500Wh station :notOnTruck
 
 ## Cover
 
-- 10’x10’ black video village tent with side walls and door <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
-- Cassette toilet for remote location support <span class="h1 dib svg-not-on-truck" title="Not on truck"></span>
+- 10’x10’ black video village tent with side walls and door :notOnTruck
+- Cassette toilet for remote location support :notOnTruck

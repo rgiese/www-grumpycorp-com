@@ -80,7 +80,7 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
   - 20-55mm T2.8
   - 50-125mm T2.8
 - Sigma 17-50mm f/2.8 zoom (for D-CAM), EF mount :notOnTruck
-- Rokinon primes, EF mount :notOnTruck (77mm filter thread)
+- Rokinon primes, EF mount (77mm filter thread) :notOnTruck
   - 14mm T1.5
   - 24mm T1.5
   - 35mm T1.5
@@ -110,7 +110,7 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
 - Tilta Nucleus-M FIZ system (three motors)
 - 1x eMotimo Spectrum ST4.3 7-axis robot with 1x focus motor
 - DanaDolly
-- 6” camera riser for underslung
+- 6” camera riser for underslung dolly setups
 - Sachtler aktiv adapter
 - Ride-on DIY dolly with 10’ 1” PVC pipe track (or use aluminum pipe) :notOnTruck
 
@@ -120,7 +120,7 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
 - 1x SmallHD Ultra 7 (A-CAM)
 - 3x SmallHD 702 Touch (one on B-CAM, two more with Teradek Bolt RX as director/FP monitor)
 - 2x SmallHD Cine 18 with Teradek Bolt 6 LT 750 HDMI RX
-- 2x Client monitor (27” BenQ 4K monitor PD2705U)
+- 2x Client monitor (27” BenQ 4K monitor PD2705U) :notOnTruck
 - Live grade with Resolve (UltraStudio 3G I/O)
 - 2x Impact monitor stand (with wheels)
 
@@ -131,7 +131,7 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
 - Steadicam (see below)
 - CamWok with MiniQRB base
 - Tilta light-weight shoulder rig, MiniQRB base
-- Super-short tripod (Field Optics FT5021A with FVH-450 fluid head)
+- Super-short tripod (Field Optics FT5021A with FVH-450 fluid head) :notOnTruck
 - Heavy Manfrotto tripod with 502HD fluid head :notOnTruck
 - S&V basic-ish tripod with XYZ head :notOnTruck
 
@@ -145,6 +145,7 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
 
 - 6x Core SWX Helix Max Dual-Voltage, 275Wh
 - 2x four-battery charger
+- 1x SWIT hotswap plate (backup for camera-mounted one)
 
 ### V-mount
 
@@ -153,7 +154,7 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
 - 1x four-battery charger
 - 1x two-battery charger
 
-## Steadicam
+## Steadicam :notOnTruck{className="h15"}
 
 - SteadiCam Master Series vest (9MS800)
 - SteadiCam Flyer LE arm and sled with internal power and 3G-SDI, MiniQRB base
@@ -166,20 +167,24 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
 ## COB and attached modifiers
 
 - Aputure
-  - 1x LS C120D :notOnTruck
-  - 2x LS 300D II
-  - 1x LS 300X
-  - 1x LS 600D Pro [weather-resistant] [w/ CRMX]
+  - 2x STORM 1000C [weather-resistant] [w/ CRMX]
   - 1x LS 1200D Pro [weather-resistant] [w/ CRMX]
+  - 1x LS 600D Pro [weather-resistant] [w/ CRMX]
+  - 2x STORM 80c [weather-resistant] [w/ CRMX]
+  - 2x LS 300D II :notOnTruck
+  - 1x LS 300X :notOnTruck
+  - 1x LS C120D :notOnTruck
   - Modifiers
-    - 2x Fresnel 2X for 120D/300D/X
-    - 1x Fresnel 10 for 600D
-    - 1x LightDome II
-    - 1x Lantern for 120D/300D/X (may be missing?), 1 stop diffusion
-    - 1x Lantern 90 for 600D (?) (3’), 1 stop diffusion
+    - 2x Spotlight Max (1x 50 degree, 1x 19 degree lens tube) with 1x ETC barrel adapter
+    - 1x CF10 Fresnel for 600D
+    - 2x CF4 Fresnel for STORM 80c
+    - 1x Lantern 90 (3’), 1 stop diffusion
+    - 1x Lantern [good for all but 1200D], 1 stop diffusion
     - 1x Octabox (Impact) 84” with diffusion and grid
-    - 2x Soft box 30120 (1’ x 4’) with 1.5 stop and 2.5 stop diffusion and 45 degree grid
-    - 3x Space light tubular softbox for 120D/300D/X
+    - 1x LightDome II
+    - 2x Fresnel 2X for 120D/300D/X :notOnTruck
+    - 3x Space light tubular softbox for 120D/300D/X :notOnTruck
+    - 2x Soft box 30120 (1’ x 4’) with 1.5 stop and 2.5 stop diffusion and 45 degree grid :notOnTruck
   - 3x ETC Source Four LED Series 3x Lustr x8 [w/ MultiVerse]
     - 1x 19 degree lens tube
     - 1x 50 degree lens tube (one more :notOnTruck)
@@ -226,32 +231,35 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
   - Neg and single net dots
 - 30”x36”
   - 2x open-ended black scrim (1.2 stops) (:notOnTruck, in floppy road case)
-- 48”x48”
-  - 4x floppy (48x90)
-  - 1x not-floppy (48x48)
+- 4'x4' frames
+  - 4x floppy
+  - 1x not-floppy (4'x4' only)
   - 2x white silk (1.6 stops)
-  - 2x slip-on floppy (48x48) (in bags)
-  - 2x ultra-bounce/neg (in bags)
   - 2x bounce board with quacker clamps
-- 6’x6’
+- 4'x4' rags
+  - Silent ¼ grid (0.5 stops)
+  - Magic cloth (2.5 stops)
+  - 2x Ultra-bounce/neg
+- 6’x6’ rags
   - Ultrabounce/neg
   - Silent ¼ grid (0.5 stops)
   - Silent ½ grid (2 stops)
   - Magic cloth (2.5 stops)
   - Unbleached muslin
   - HoneyCrate LCD
-- 12’x12’
+- 12’x12’ rags
   - Ultrabounce/neg
   - Silent ¼ grid (0.5 stops)
   - Magic cloth (2.5 stops)
   - Unbleached muslin
   - HoneyCrate (knockoff) LCD
-- Neg, odd-sized
+- Neg rags
+  - 2x solid, 4'x4'
   - 4x Duvetyne, 5’x8’ with pockets
   - 2x cross bars (5’ to 13’) for holding duvetyne (attaches to baby pins)
 - 1x parabolic reflector umbrella, 7’
 - Multi-reflector (five-in-one) kits
-  - 1x 43” kit
+  - 2x 43” kit
   - 1x 40”x60” kit
 
 ## Reflectors
@@ -305,9 +313,9 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
 
 ## Lightweight light stands
 
-- 6x Impact 9’ stand [not all on truck]
 - 6x Impact 13’ stand
-- 8x wheels for stand
+- 6x Impact 9’ stand [2x on truck, 4x :notOnTruck]
+- 8x wheels for stand :notOnTruck
 
 ## C-stands
 
@@ -461,11 +469,11 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
 ## Carts
 
 - Inovativ Voyager EVO X cart (42”)
-  - Steadicam kit
   - Camera support kit with MiniQRB
   - 2x monitor mounts with Inovativ QuickRelease plates
   - DigiPlate kit for laptop (with shade)
-- Voyager NXT cart (42”)
+  - Steadicam kit
+- Inovativ Voyager NXT cart (42”)
   - Camera support kit with MiniQRB
 - 2x SidioSkate wheels for SidioCrates
 - 3x cart with carpeted low and high shelves; 4 ea swivel wheels for crabbing :notOnTruck

@@ -25,36 +25,37 @@ All gear listed below is on the truck unless marked as :notOnTruck.
 
 ::figure[Ursa Cine (A-CAM)]{src="grip-truck/A-CAM.jpg"}
 
-[Blackmagic Design Ursa Cine](/posts/film-making/ursa-cine-buildout), B-mount hotswap, B-mount battery, SmallHD Ultra 7 monitor,
+[Blackmagic Design Ursa Cine](/posts/film-making/ursa-cine-buildout), B-mount hotswap, B-mount battery (6x 275Wh), SmallHD Ultra 7 monitor,
 Teradek transmitter (12G-SDI/4K image), Teradek RT FIZ, ARRI LMB 4x5.65 matte box, Cleans Camera MiniQRB plate
 
 ## B-CAM
 
 ::figure[Pyxis (B-CAM)]{src="grip-truck/B-CAM.jpg"}
 
-[Blackmagic Design Pyxis](/posts/film-making/pyxis-buildout), XLCS Designs cage, V-mount battery with Shark Fin, SmallHD 702 Touch monitor,
+[Blackmagic Design Pyxis](/posts/film-making/pyxis-buildout), XLCS Designs cage, V-mount battery (8x 98Wh) with Shark Fin, SmallHD 702 Touch monitor,
 Teradek transmitter (12G-SDI/4K image), Nucleus-M FIZ, ARRI LMB 4x5.65 matte box, Cleans Camera MiniQRB plate
 
 ## C-CAM :notOnTruck{className="h15"}</span>
 
 ::figure[BMPCC 6K (C-CAM)]{src="grip-truck/C-CAM.jpg"}
 
-BMPCC 6K converted to PL mount, rigged with V-mount battery, Teradek transmitter, Lemo 0B.2-based power distro, Cleans Camera MiniQRB plate
+BMPCC 6K converted to PL mount, rigged with V-mount battery, Teradek transmitter (3G-SDI/HD image), Lemo 0B.2-based power distro, Cleans Camera MiniQRB plate
 
 ## D-CAM :notOnTruck{className="h15"}</span>
 
-BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek transmitter or de-rigged for small quarters shooting.
+BMPCC 4K with Wooden Camera EF mount adapter. Available with V-mount battery and Teradek transmitter (3G-SDI/HD image) or de-rigged for small quarters shooting.
 
 ## Other
 
 - GoPro Hero 9 :notOnTruck
 - GoPro Hero 10 :notOnTruck
-- Spare Cleans Camera MiniQRB plate
+- Spare Cleans Camera MiniQRB plate for 'guest' cameras
 
 ## Media
 
+- 1x 8TB Ursa Cine media module (in camera)
 - 2x 2TB Lexar CF Express Type B (Pyxis)
-- 4x 1TB AngelBird AV PRO CF (Pocket)
+- 4x 1TB AngelBird AV PRO CF (Pockets)
 
 ## Protection
 
@@ -106,7 +107,7 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
 
 ## FIZ and movement
 
-- Teradek RT FIZ system (three motors) + TOF-1 rangefinder
+- Teradek RT FIZ system (three motors) + TOF-1 rangefinder + CTRL.3 handset
 - Tilta Nucleus-M FIZ system (three motors)
 - 1x eMotimo Spectrum ST4.3 7-axis robot with 1x focus motor
 - DanaDolly
@@ -119,7 +120,7 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
 - Teradek Bolt 4K/6-series transmitters (on A-CAM/B-CAM/C-CAM and Video Village, respectively)
 - 1x SmallHD Ultra 7 (A-CAM)
 - 3x SmallHD 702 Touch (one on B-CAM, two more with Teradek Bolt RX as director/FP monitor)
-- 2x SmallHD Cine 18 with Teradek Bolt 6 LT 750 HDMI RX
+- 2x SmallHD Cine 18 with Teradek Bolt 6 LT 750 HDMI RX, 5 (total) 195Wh V-mount batteries
 - 2x Client monitor (27” BenQ 4K monitor PD2705U) :notOnTruck
 - Live grade with Resolve (UltraStudio 3G I/O)
 - 2x Impact monitor stand (with wheels)
@@ -150,7 +151,7 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
 ### V-mount
 
 - 8x CAME-TV MINI 99Wh
-- 1x Wasabi 195Wh
+- 5x Wasabi 195Wh
 - 1x four-battery charger
 - 1x two-battery charger
 
@@ -175,7 +176,9 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
   - 1x LS 300X :notOnTruck
   - 1x LS C120D :notOnTruck
   - Modifiers
-    - 2x Spotlight Max (1x 50 degree, 1x 19 degree lens tube) with 1x ETC barrel adapter
+    - 3x Spotlight Max (2x 50 degree, 1x 19 degree lens tube) with 1x ETC barrel adapter, 36 and 50 degree ETC lens tubes
+      - Extensive A-size gobo library (~30+ distinct patterns, some stocked in multiples of 20)
+    - 1x CF12 Fresnel for 1000C/1200D
     - 1x CF10 Fresnel for 600D
     - 2x CF4 Fresnel for STORM 80c
     - 1x Lantern 90 (3’), 1 stop diffusion
@@ -187,7 +190,7 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
     - 2x Soft box 30120 (1’ x 4’) with 1.5 stop and 2.5 stop diffusion and 45 degree grid :notOnTruck
   - 3x ETC Source Four LED Series 3x Lustr x8 [w/ MultiVerse]
     - 1x 19 degree lens tube
-    - 1x 50 degree lens tube (one more :notOnTruck)
+    - 1x 50 degree lens tube (second 50 degree tube with Spotlight Max above)
     - 1x 90 degree lens tube
     - 1x zoom lens tube, 15-30 degrees :notOnTruck
     - 2x zoom lens tube, 25-50 degrees :notOnTruck
@@ -230,7 +233,7 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
   - Neg and single net fingers
   - Neg and single net dots
 - 30”x36”
-  - 2x open-ended black scrim (1.2 stops) (:notOnTruck, in floppy road case)
+  - 2x open-ended black scrim (1.2 stops) (:notOnTruck)
 - 4'x4' frames
   - 4x floppy
   - 1x not-floppy (4'x4' only)
@@ -252,7 +255,7 @@ BMPCC 4K with EF mount adapter. Available with V-mount battery and Teradek trans
   - Silent ¼ grid (0.5 stops)
   - Magic cloth (2.5 stops)
   - Unbleached muslin
-  - HoneyCrate (knockoff) LCD
+  - HoneyCrate-ish (knockoff) LCD
 - Neg rags
   - 2x solid, 4'x4'
   - 4x Duvetyne, 5’x8’ with pockets
@@ -275,8 +278,12 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
   - 2x ShowBaby wireless DMX transceiver with UltraDMX sACN transmitter
   - 6x Multiverse receiver/power-thru custom dongles for wireless DMX
 - CRMX
-  - Aptera Box (ART7) + spare
-- Ubiquiti Wireless AP
+  - Aptera Box (ART7) + spare ART7 on truck
+
+## Network
+
+- Ubiquiti UniFi Express Wireless AP
+- Ubiquiti USW-FLEX-XG 10Gb switch
 - GL-iNet uplink router to venue WiFi/Ethernet
 
 ## Atmospherics
@@ -440,12 +447,12 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
 
 ## Recording
 
-- 1x Zaxcom Nova 2 with one MRX414 module and TentacleSync
+- 1x Zaxcom Nova 2 with two MRX414 modules (i.e. 8 channels) and TentacleSync
 - 1x Sound Devices MixPre-6 II with bag, wired for V-mount battery :notOnTruck
 
 ## Lavalier mics and transmitters
 
-- 4x Zaxcom ZMT4 wireless transmitters with Sanken COS-11d mics (2x beige, 1x black, 1x white)
+- 6x Zaxcom ZMT4 wireless transmitters with Sanken COS-11d mics (2x beige, 1x black, 3x white)
 - 4x Tentacle Track E recorder with factory-issue mics
 - 1x RodeLink wireless lav set :notOnTruck
 

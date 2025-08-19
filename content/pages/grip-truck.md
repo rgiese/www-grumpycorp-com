@@ -25,21 +25,27 @@ All gear listed below is on the truck unless marked as :notOnTruck.
 
 ::figure[Ursa Cine (A-CAM)]{src="grip-truck/A-CAM.jpg"}
 
-[Blackmagic Design Ursa Cine](/posts/film-making/ursa-cine-buildout), B-mount hotswap, B-mount battery (6x 275Wh), SmallHD Ultra 7 monitor,
-Teradek transmitter (12G-SDI/4K image), Teradek RT FIZ, ARRI LMB 4x5.65 matte box, Cleans Camera MiniQRB plate
+[Blackmagic Design Ursa Cine 12K](/posts/film-making/ursa-cine-buildout), 8TB module, shoulder mount + rods, B-mount hotswap, B-mount battery (6x 275Wh), SmallHD Ultra 7 monitor, EVF,
+Teradek transmitter (12G-SDI/4K image), Teradek RT FIZ with FocusBug, ARRI LMB 4x5.65 matte box, Cleans Camera MiniQRB plate
+
+## AA-CAM
+
+A second, identical Ursa Cine 12K in case the first one falls over. Already kitted with 8TB module, shoulder mount + rods, B-mount hotswap, Teradek Bolt 4K 3G-SDI transmitter, Cleans Camera MiniQRB plate
 
 ## B-CAM
 
-::figure[Pyxis (B-CAM)]{src="grip-truck/B-CAM.jpg"}
+::figure[Pyxis 6K (B-CAM)]{src="grip-truck/B-CAM.jpg"}
 
-[Blackmagic Design Pyxis](/posts/film-making/pyxis-buildout), XLCS Designs cage, V-mount battery (8x 98Wh) with Shark Fin, SmallHD 702 Touch monitor,
-Teradek transmitter (12G-SDI/4K image), Nucleus-M FIZ, ARRI LMB 4x5.65 matte box, Cleans Camera MiniQRB plate
+[Blackmagic Design Pyxis 6K](/posts/film-making/pyxis-buildout), XLCS Designs cage, V-mount battery (8x 98Wh) with Shark Fin, SmallHD 702 Touch monitor,
+Teradek transmitter (12G-SDI/4K image), Teradek RT FIZ and TOF-1, ARRI LMB 4x5.65 matte box, Cleans Camera MiniQRB plate.
+
+Nucleus-M FIZ system (three motors) also included in the coffin, just in case.
 
 ## C-CAM :notOnTruck{className="h15"}</span>
 
 ::figure[BMPCC 6K (C-CAM)]{src="grip-truck/C-CAM.jpg"}
 
-BMPCC 6K converted to PL mount, rigged with V-mount battery, Teradek transmitter (3G-SDI/HD image), Lemo 0B.2-based power distro, Cleans Camera MiniQRB plate
+BMPCC 6K converted to PL mount, rigged with V-mount battery, Teradek transmitter (3G-SDI/HD image), Lemo 0B.2-based power distro, Cleans Camera MiniQRB plate, dinky SmallRig matte box
 
 ## D-CAM :notOnTruck{className="h15"}</span>
 
@@ -53,8 +59,8 @@ BMPCC 4K with Wooden Camera EF mount adapter. Available with V-mount battery and
 
 ## Media
 
-- 1x 8TB Ursa Cine media module (in camera)
-- 2x 2TB Lexar CF Express Type B (Pyxis)
+- 2x 8TB Ursa Cine media module (in cameras)
+- 2x 2TB Lexar CF Express Type B (Pyxis, in camera)
 - 4x 1TB AngelBird AV PRO CF (Pockets)
 
 ## Protection
@@ -107,7 +113,9 @@ BMPCC 4K with Wooden Camera EF mount adapter. Available with V-mount battery and
 
 ## FIZ and movement
 
-- Teradek RT FIZ system (three motors) + TOF-1 rangefinder + CTRL.3 handset
+- (2x) Teradek RT FIZ systems (three motors each) + CTRL.3 handsets
+  - (1x) FocusBug Cine RT rangefinder system (sensor, handset, display, and one transmitter bug)
+  - (1x) TOF-1 rangefinder
 - Tilta Nucleus-M FIZ system (three motors)
 - 1x eMotimo Spectrum ST4.3 7-axis robot with 1x focus motor
 - DanaDolly
@@ -117,10 +125,11 @@ BMPCC 4K with Wooden Camera EF mount adapter. Available with V-mount battery and
 
 ## Monitoring
 
-- Teradek Bolt 4K/6-series transmitters (on A-CAM/B-CAM/C-CAM and Video Village, respectively)
+- Teradek Bolt 4K/6-series transmitters (on A-CAM/AA-CAM/B-CAM/C-CAM) and receivers (monitors and Video Village)
 - 1x SmallHD Ultra 7 (A-CAM)
-- 3x SmallHD 702 Touch (one on B-CAM, two more with Teradek Bolt RX as director/FP monitor)
+- 3x SmallHD 702 Touch (one on B-CAM, two more with Teradek Bolt RX as director/scriptie monitors)
 - 2x SmallHD Cine 18 with Teradek Bolt 6 LT 750 HDMI RX, 5 (total) 195Wh V-mount batteries
+- 2x SmallHD Cine 13 with Teradek Bolt 6 LT 750 HDMI RX, V-mount battery plate, mounts for FIZ handsets + cables
 - 2x Client monitor (27” BenQ 4K monitor PD2705U) :notOnTruck
 - Live grade with Resolve (UltraStudio 3G I/O)
 - 2x Impact monitor stand (with wheels)
@@ -138,7 +147,7 @@ BMPCC 4K with Wooden Camera EF mount adapter. Available with V-mount battery and
 
 ## Timecode
 
-- 4x Tentacle Sync E (three cameras, sound recorder)
+- 6x Tentacle Sync E (four cameras, sound recorder, spare)
 
 ## Batteries
 
@@ -157,8 +166,7 @@ BMPCC 4K with Wooden Camera EF mount adapter. Available with V-mount battery and
 
 ## Steadicam :notOnTruck{className="h15"}
 
-- SteadiCam Master Series vest (9MS800)
-- SteadiCam Flyer LE arm and sled with internal power and 3G-SDI, MiniQRB base
+- Steadicam Axis (sled/arm/vest), rated up to 20 lb payload
 - CineLevel digital level
 - Sunbounce wind killer
 - Steadicam support kit for Inovativ cart
@@ -337,7 +345,7 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
 - 3x slider stand (2’ to 3’8”)
 - 1x combo stand (11’) for jib
 - 3x wind-up light stand (12.5’) with wheels
-- 4x high roller stand (14’) with wheels
+- 8x high roller stand (14’) with wheels
 - 1x high roller boom stand (16’) with wheels
 - 2x high-high stand (19’5) with wheels
 - 3x 4.5” lollipop
@@ -448,7 +456,7 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
 ## Recording
 
 - 1x Zaxcom Nova 2 with two MRX414 modules (i.e. 8 channels) and TentacleSync
-- 1x Sound Devices MixPre-6 II with bag, wired for V-mount battery :notOnTruck
+- 1x Sound Devices MixPre-6 II with bag, wired for V-mount battery
 
 ## Lavalier mics and transmitters
 

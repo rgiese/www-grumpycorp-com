@@ -7,7 +7,7 @@ export function* enumerateFilesRecursive(rootPath: string, dir: string): Generat
   const files = fs.readdirSync(dir, { withFileTypes: true });
 
   for (const file of files) {
-    const absolutePath = path.join(file.path, file.name);
+    const absolutePath = path.join(file.parentPath, file.name);
 
     if (file.isDirectory()) {
       yield* enumerateFilesRecursive(rootPath, absolutePath);

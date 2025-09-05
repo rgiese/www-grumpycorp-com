@@ -2,9 +2,13 @@
 title: Grip truck
 ---
 
+<div class="dn-p">
+
 [ [Build blog post](/posts/film-making/grip-truck/) ]
 
-<div class="cf">
+</div>
+
+<div class="cf dn-p">
   <div class="fl-ns fn w-10-m w-50-ns pa1">
 
 ::figure[Crates]{src="grip-truck/IMG_0430.jpg"}
@@ -23,7 +27,7 @@ All gear listed below is on the truck unless marked as :notOnTruck.
 
 ## A-CAM
 
-::figure[Ursa Cine (A-CAM)]{src="grip-truck/A-CAM.jpg"}
+::figure[Ursa Cine (A-CAM)]{src="grip-truck/A-CAM.jpg" class="dn-p"}
 
 [Blackmagic Design Ursa Cine 12K](/posts/film-making/ursa-cine-buildout), 8TB module, shoulder mount + rods, B-mount hotswap, B-mount battery (6x 275Wh), SmallHD Ultra 7 monitor, EVF,
 Teradek transmitter (12G-SDI/4K image), Teradek RT FIZ with FocusBug, ARRI LMB 4x5.65 matte box, Cleans Camera MiniQRB plate
@@ -34,7 +38,7 @@ A second, identical Ursa Cine 12K in case the first one falls over. Already kitt
 
 ## B-CAM
 
-::figure[Pyxis 6K (B-CAM)]{src="grip-truck/B-CAM.jpg"}
+::figure[Pyxis 6K (B-CAM)]{src="grip-truck/B-CAM.jpg" class="dn-p"}
 
 [Blackmagic Design Pyxis 6K](/posts/film-making/pyxis-buildout), XLCS Designs cage, V-mount battery (8x 98Wh) with Shark Fin, SmallHD 702 Touch monitor,
 Teradek transmitter (12G-SDI/4K image), Teradek RT FIZ and TOF-1, ARRI LMB 4x5.65 matte box, Cleans Camera MiniQRB plate.
@@ -43,7 +47,7 @@ Nucleus-M FIZ system (three motors) also included in the coffin, just in case.
 
 ## C-CAM :notOnTruck{className="h15"}</span>
 
-::figure[BMPCC 6K (C-CAM)]{src="grip-truck/C-CAM.jpg"}
+::figure[BMPCC 6K (C-CAM)]{src="grip-truck/C-CAM.jpg" class="dn-p"}
 
 BMPCC 6K converted to PL mount, rigged with V-mount battery, Teradek transmitter (3G-SDI/HD image), Lemo 0B.2-based power distro, Cleans Camera MiniQRB plate, dinky SmallRig matte box
 

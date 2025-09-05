@@ -322,3 +322,9 @@ figcaption {
 .mw-30 {
   max-width: 30%;
 }
+
+@media print {
+  .dn-p {
+    display: none !important;
+  }
+}

@@ -57,6 +57,7 @@
         * - mw5: constrain width for readability
         * - device-dependent left padding
         * - a hint of bottom-padding for small screens
+        * - dn-p: don't print this
         *
         * Containing div (see above) clears floats.
         -->
@@ -92,7 +93,7 @@
           </main>
         </div>
 
-        <div class="fl-ns fn w-30-ns">
+        <div class="fl-ns fn w-30-ns dn-p">
           <!-- Right div -->
           <nav class="mw5 pl2 pl5-ns pb3">
             <!-- Logo on the side for not-small screens -->

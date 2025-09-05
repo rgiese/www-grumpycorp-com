@@ -327,4 +327,14 @@ figcaption {
   .dn-p {
     display: none !important;
   }
+
+  // Every h1 starts on a new page in print
+  h1 {
+    break-before: page;
+  }
+
+  // ...but not the very first one on the page/document
+  h1:first-of-type {
+    break-before: auto;
+  }
 }

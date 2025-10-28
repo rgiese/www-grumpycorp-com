@@ -110,6 +110,12 @@ const rootConfig: RootConfig = {
   redirects: [
     { source: "/posts/film%20making/*", destination: "/posts/film-making/:splat", code: 301 },
     { source: "/tags/posts/film%20making/*", destination: "/tags/posts/film-making/:splat", code: 301 },
+    {
+      // The "how to help PhinneyWood" doc
+      source: "/halp",
+      destination: "https://docs.google.com/document/d/1LdxnTdPSHpu5Qo9iqCBnGHIR1Bw7zhtbTvPyQM3A-Dw/edit?usp=sharing",
+      code: 301,
+    },
   ],
 };
 

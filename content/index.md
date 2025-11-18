@@ -1,3 +1,15 @@
+## Phinneywood
+
+<div class="home-page-figure-container">
+
+::figure[Welcome to Phinneywood]{src="/posts/phinneywood/first-post/1-16x9.jpg" href="/posts/phinneywood/first-post/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
+
+</div>
+
+<div class="home-page-tags-container">
+  <a href="/tags/posts/phinneywood/"><span class="w1 h1 dib svg-tag"></span> everything in phinneywood</a>
+</div>
+
 ## Film
 
 <div class="home-page-figure-container">

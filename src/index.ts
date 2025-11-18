@@ -21,8 +21,8 @@ async function build(minifyOutput: boolean) {
     transcodeSvgsToCss(sourceFileSystem.themeFiles, outputFileSystem, svgToCssTranscode),
   );
 
-  processAssets(sourceFileSystem.inputFiles, outputFileSystem, minifyOutput);
-  processAssets(sourceFileSystem.themeFiles, outputFileSystem, minifyOutput);
+  await processAssets(sourceFileSystem.inputFiles, outputFileSystem, minifyOutput);
+  await processAssets(sourceFileSystem.themeFiles, outputFileSystem, minifyOutput);
 
   const siteRenderer = new SiteRenderer(
     rootConfig,
@@ -32,7 +32,7 @@ async function build(minifyOutput: boolean) {
     minifyOutput,
   );
 
-  siteRenderer.render();
+  await siteRenderer.render();
 
   await imageManager.renderImages();
 

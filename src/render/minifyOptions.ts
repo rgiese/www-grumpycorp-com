@@ -1,7 +1,3 @@
-import htmlMinifier from "html-minifier";
+import { type Options } from "html-minifier-terser";
 
-export const minifyOptions: htmlMinifier.Options = {
-  collapseWhitespace: true,
-  minifyCSS: true,
-  removeComments: true,
-};
+export const minifyOptions: Options = { collapseWhitespace: true, minifyCSS: true, removeComments: true };

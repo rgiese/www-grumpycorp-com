@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import htmlMinifier from "html-minifier";
+import htmlMinifier from "html-minifier-terser";
 import * as path from "path";
 import * as sass from "sass";
 import svgo from "svgo";
@@ -16,7 +16,11 @@ function replaceFileExtension(originalPath: path.ParsedPath, revisedExtension: s
   return path.format({ ...originalPath, base: undefined /* so `ext` is used */, ext: revisedExtension });
 }
 
-export function processAssets(sourceFiles: FileSpec[], outputFileSystem: OutputFileSystem, minifyOutput: boolean) {
+export async function processAssets(
+  sourceFiles: FileSpec[],
+  outputFileSystem: OutputFileSystem,
+  minifyOutput: boolean,
+) {
   const explicitAssetSourceFiles = sourceFiles.filter((f) => !f.parsedRootRelativePath.base.startsWith("_"));
 
   // Copy simple assets
@@ -41,31 +45,33 @@ export function processAssets(sourceFiles: FileSpec[], outputFileSystem: OutputF
     });
 
   // Process CSS
-  explicitAssetSourceFiles
-    .filter((f) => f.parsedRootRelativePath.ext === ".css")
-    .forEach((sourceFile) => {
-      try {
-        // Set up paths
-        const sourceFileStat = FileSystemStat.get(sourceFile.absolutePath, { requireExists: true });
+  await Promise.all(
+    explicitAssetSourceFiles
+      .filter((f) => f.parsedRootRelativePath.ext === ".css")
+      .map(async (sourceFile) => {
+        try {
+          // Set up paths
+          const sourceFileStat = FileSystemStat.get(sourceFile.absolutePath, { requireExists: true });
 
-        const outputPath = outputFileSystem.getAbsolutePath(sourceFile.rootRelativePath);
-        const outputFileStat = FileSystemStat.get(outputPath, { requireExists: false });
+          const outputPath = outputFileSystem.getAbsolutePath(sourceFile.rootRelativePath);
+          const outputFileStat = FileSystemStat.get(outputPath, { requireExists: false });
 
-        if (outputFileStat && sourceFileStat.mtimeMs < outputFileStat.mtimeMs) {
-          return;
+          if (outputFileStat && sourceFileStat.mtimeMs < outputFileStat.mtimeMs) {
+            return;
+          }
+
+          // Process content
+          const inputCss = fs.readFileSync(sourceFile.absolutePath).toString();
+          const outputCss = minifyOutput ? await htmlMinifier.minify(inputCss, minifyOptions) : inputCss;
+
+          outputFileSystem.ensureOutputPathExists(outputPath);
+          fs.writeFileSync(outputPath, outputCss);
+        } catch (error) {
+          console.error(`While processing ${sourceFile.absolutePath}:`);
+          throw error;
         }
-
-        // Process content
-        const inputCss = fs.readFileSync(sourceFile.absolutePath).toString();
-        const outputCss = minifyOutput ? htmlMinifier.minify(inputCss, minifyOptions) : inputCss;
-
-        outputFileSystem.ensureOutputPathExists(outputPath);
-        fs.writeFileSync(outputPath, outputCss);
-      } catch (error) {
-        console.error(`While processing ${sourceFile.absolutePath}:`);
-        throw error;
-      }
-    });
+      }),
+  );
 
   // Process SCSS
   explicitAssetSourceFiles

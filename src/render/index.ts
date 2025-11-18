@@ -4,7 +4,7 @@ import hljs from "highlight.js";
 import { Marked } from "marked";
 import { createDirectives } from "marked-directive";
 import { markedHighlight } from "marked-highlight";
-import htmlMinifier from "html-minifier";
+import htmlMinifier from "html-minifier-terser";
 import * as path from "path";
 
 import { ImageManager } from "../assets";
@@ -27,10 +27,12 @@ export class SiteRenderer {
     this.eta = new Eta({ views: rootConfig.themeRootPath, varName: "data", debug: true });
   }
 
-  public render() {
+  public async render() {
     // Static documents
-    this.rootConfig.documentGroups.forEach((g) =>
-      this.inputDocumentInventory.get(g.documentGroupName)?.forEach((d) => this.renderDocument(g, d)),
+    await Promise.all(
+      this.rootConfig.documentGroups.flatMap(
+        (g) => this.inputDocumentInventory.get(g.documentGroupName)?.map((d) => this.renderDocument(g, d)) ?? [],
+      ),
     );
 
     // Generated documents
@@ -42,12 +44,14 @@ export class SiteRenderer {
       ),
     );
 
-    this.rootConfig
-      .generatedDocuments?.(this.inputDocumentInventory)
-      .forEach((d) => this.renderGeneratedDocument(newestInputDocumentModifiedTimeMs, d));
+    await Promise.all(
+      this.rootConfig
+        .generatedDocuments?.(this.inputDocumentInventory)
+        .map((d) => this.renderGeneratedDocument(newestInputDocumentModifiedTimeMs, d)) ?? [],
+    );
   }
 
-  private renderDocument(documentGroupConfig: DocumentGroupConfig, inputDocument: InputDocument) {
+  private async renderDocument(documentGroupConfig: DocumentGroupConfig, inputDocument: InputDocument) {
     // Set up paths
     const sourceFileStat = FileSystemStat.get(inputDocument.sourceFile.absolutePath, { requireExists: true });
 
@@ -86,7 +90,7 @@ export class SiteRenderer {
       });
 
       // Output
-      this.writeOutputHtml(outputPath, pageHtml);
+      await this.writeOutputHtml(outputPath, pageHtml);
     } catch (error) {
       console.error(`While creating ${outputPath} from ${inputDocument.documentGroupRelativePath}:`);
       console.error(`with frontmatter: ${JSON.stringify(inputDocument.frontMatter)}`);
@@ -117,7 +121,10 @@ export class SiteRenderer {
     }
   }
 
-  private renderGeneratedDocument(newestInputDocumentModifiedTimeMs: number, generatedDocument: GeneratedDocument) {
+  private async renderGeneratedDocument(
+    newestInputDocumentModifiedTimeMs: number,
+    generatedDocument: GeneratedDocument,
+  ) {
     // Set up paths
     const outputPath = this.outputFileSystem.getAbsolutePath(generatedDocument.siteRelativeOutputPath);
 
@@ -141,16 +148,14 @@ export class SiteRenderer {
         // Site-provided context (bring this in first so it can't override "official" fields)
         ...generatedDocument.templateRenderContext,
         // This document
-        inputDocument: {
-          frontMatter: generatedDocument.frontMatter,
-        },
+        inputDocument: { frontMatter: generatedDocument.frontMatter },
         contentHtml,
         // Inventory
         inputDocumentInventory: this.inputDocumentInventory,
       });
 
       // Output
-      this.writeOutputHtml(outputPath, pageHtml);
+      await this.writeOutputHtml(outputPath, pageHtml);
     } catch (error) {
       console.error(`While creating ${outputPath} from ${generatedDocument.siteRelativeOutputPath}:`);
       console.error(`with frontmatter: ${JSON.stringify(generatedDocument.frontMatter)}`);
@@ -180,9 +185,9 @@ export class SiteRenderer {
     return marked.parse(md) as string;
   }
 
-  private writeOutputHtml(outputPath: string, pageHtml: string) {
+  private async writeOutputHtml(outputPath: string, pageHtml: string) {
     // Minify
-    const outputHtml = this.minifyOutput ? htmlMinifier.minify(pageHtml, minifyOptions) : pageHtml;
+    const outputHtml = this.minifyOutput ? await htmlMinifier.minify(pageHtml, minifyOptions) : pageHtml;
 
     // Output
     fs.writeFileSync(outputPath, outputHtml);

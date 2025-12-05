@@ -5,6 +5,7 @@
     "build-prod": "tsx --no-deprecation ./src/index.ts build --minify",
     "watch:content": "chokidar 'content/**/*' -c 'npm run build'",
     "serve": "http-server output --port 5080 -c-1",
+    "serve:hmr": "browser-sync start --files 'output/**/*' --server 'output' --port 5080",
     "format:fix": "prettier --write .",
     "lint": "tsc --noEmit && DEBUG=eslint:eslint eslint ."
   },
@@ -15,6 +16,7 @@
     "@types/jsdom": "^27.0.0",
     "@types/minimist": "^1.2.5",
     "@types/node": "^24.10.1",
+    "browser-sync": "^3.0.4",
     "chokidar-cli": "^3.0.0",
     "eslint": "^9.39.1",
     "eslint-config-love": "^133.0.0",

@@ -3,6 +3,7 @@
     "clean": "rimraf bin cache obj output temp wwwroot",
     "build": "UV_THREADPOOL_SIZE=32 tsx --no-deprecation ./src/index.ts build",
     "build-prod": "tsx --no-deprecation ./src/index.ts build --minify",
+    "watch:content": "chokidar 'content/**/*' -c 'npm run build'",
     "serve": "http-server output --port 5080 -c-1",
     "format:fix": "prettier --write .",
     "lint": "tsc --noEmit && DEBUG=eslint:eslint eslint ."
@@ -14,6 +15,7 @@
     "@types/jsdom": "^27.0.0",
     "@types/minimist": "^1.2.5",
     "@types/node": "^24.10.1",
+    "chokidar-cli": "^3.0.0",
     "eslint": "^9.39.1",
     "eslint-config-love": "^133.0.0",
     "eta": "^4.4.1",

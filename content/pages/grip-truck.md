@@ -23,6 +23,8 @@ title: Grip truck
 
 All gear listed below is on the truck unless marked as :notOnTruck.
 
+Truck dimensions: 9'8" tall, 110" wide, 20'6" (liftgate up) / 23'6" (liftgate down) / 24'6" (liftgate down and leveling flap folded out) long. About 8 miles per gallon (diesel).
+
 # Cameras
 
 ## A-CAM

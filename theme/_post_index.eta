@@ -7,7 +7,7 @@
           <%~ data.tagPresenter(postDocument.documentTag) %>
         </a>
       </td>
-      <td class="font-bold px-3"><%= postDocument.frontMatter.published.toLocaleDateString() %></td>
+      <td class="font-bold px-3"><%= postDocument.frontMatter.published.toLocaleString() %></td>
       <td>
         <a class="no-underline accent" href="/<%= postDocument.siteRelativeOutputPath %>"
           ><%= postDocument.frontMatter.title %></a

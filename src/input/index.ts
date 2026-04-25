@@ -3,7 +3,14 @@ import * as path from "path";
 
 import { RootConfig, DocumentGroupConfig } from "../config";
 
-import { FileSpec, InputDocument, InputDocumentInventory, FrontMatterSchema } from "../types";
+import {
+  FileSpec,
+  InputDocument,
+  InputDocumentInventory,
+  FrontMatterSchema,
+  PlainDate,
+  comparePlainDates,
+} from "../types";
 import { SourceFileSystem } from "../fileSystem";
 
 function ingestInputDocument(documentGroupConfig: DocumentGroupConfig, sourceFile: FileSpec): InputDocument {
@@ -50,7 +57,9 @@ function ingestDocumentGroup(
     });
 
   return documentGroupConfig.requirePublishDate // .published not-undefined enforced via checks in ingestInputDocument()
-    ? documents.sort((lhs, rhs) => +(lhs.frontMatter.published as Date) - +(rhs.frontMatter.published as Date))
+    ? documents.sort((lhs, rhs) =>
+        comparePlainDates(lhs.frontMatter.published as PlainDate, rhs.frontMatter.published as PlainDate),
+      )
     : documents;
 }
 

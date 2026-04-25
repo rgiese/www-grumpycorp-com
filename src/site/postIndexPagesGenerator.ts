@@ -1,4 +1,4 @@
-import { GeneratedDocumentsGenerator, TemplateType } from "../types";
+import { GeneratedDocumentsGenerator, TemplateType, PlainDate, comparePlainDates } from "../types";
 
 import { getDocumentTag, getDocumentTagSet, tagPresenter } from "./documentTag";
 import { generateLayoutTemplateRenderContext } from "./layoutTemplateRenderContext";
@@ -33,7 +33,9 @@ export const postIndexPagesGenerator: GeneratedDocumentsGenerator = (inputDocume
         postDocuments: [...postDocuments]
           // Show newest first (copy it with the ^spread we don't change the original array)
           // - `.published` is guaranteed from input validation
-          .sort((lhs, rhs) => +(rhs.frontMatter.published as Date) - +(lhs.frontMatter.published as Date))
+          .sort((lhs, rhs) =>
+            comparePlainDates(rhs.frontMatter.published as PlainDate, lhs.frontMatter.published as PlainDate),
+          )
           .map((d) => {
             return { ...d, documentTag: getDocumentTag(d) };
           }),

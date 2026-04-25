@@ -27,7 +27,7 @@
     <meta name="theme-color" content="#f26739" />
 
     <!-- Style sheets -->
-    <link href="/scss/site.css" rel="stylesheet" />
+    <link href="/css/site.css" rel="stylesheet" />
 
     <!-- Font preloading -->
     <%~ ["dosis-v27-latin-regular", "questrial-v18-latin-regular", "quicksand-v30-latin-regular"].map((font) => `

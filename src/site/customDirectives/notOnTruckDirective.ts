@@ -5,7 +5,8 @@ export const notOnTruckDirective: DirectiveConfig = {
   marker: ":",
   renderer(token) {
     if (token.meta.name === "notOnTruck") {
-      const className = token?.attrs?.className || "h1";
+      const rawClassName = token.attrs?.className;
+      const className = typeof rawClassName === "string" ? rawClassName : "h1";
 
       return `<span class="${className} dib svg-not-on-truck" title="Not on truck"></span>`;
     }

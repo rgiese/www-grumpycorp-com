@@ -4,7 +4,7 @@ import { imageSize } from "image-size";
 import sharp from "sharp";
 
 import { RootConfig } from "../config";
-import { FileSystemStat } from "../fileSystem";
+import { getFileSystemStat } from "../fileSystem";
 
 export class ImageManagerImage {
   public readonly width: number;
@@ -13,7 +13,7 @@ export class ImageManagerImage {
   private readonly parsedSiteRelativeImagePath: path.ParsedPath;
   private readonly absoluteImagePath: string;
 
-  private readonly requestedWidths: Set<number> = new Set();
+  private readonly requestedWidths = new Set<number>();
 
   constructor(inputRootPath: string, siteRelativeImagePath: string) {
     this.parsedSiteRelativeImagePath = path.parse(siteRelativeImagePath);
@@ -52,7 +52,7 @@ export class ImageManagerImage {
       ...additionalFormats.map((format) => `.${format}`),
     ];
 
-    const sourceImageStats = FileSystemStat.get(this.absoluteImagePath, { requireExists: true });
+    const sourceImageStats = getFileSystemStat(this.absoluteImagePath, { requireExists: true });
 
     const sharpImage = sharp(this.absoluteImagePath);
 
@@ -62,10 +62,10 @@ export class ImageManagerImage {
           // Set up paths
           const absoluteOutputPath = path.join(outputRootPath, this.getResizedSiteRelativeImagePath(width, extension));
 
-          const outputImageStats = FileSystemStat.get(absoluteOutputPath, { requireExists: false });
+          const outputImageStats = getFileSystemStat(absoluteOutputPath, { requireExists: false });
 
           if (outputImageStats && sourceImageStats.mtimeMs < outputImageStats.mtimeMs) {
-            return;
+            return Promise.resolve();
           }
 
           // Process content
@@ -77,7 +77,7 @@ export class ImageManagerImage {
 }
 
 export class ImageManager {
-  private readonly images: Map<string /* siteRelativeImagePath */, ImageManagerImage> = new Map();
+  private readonly images = new Map<string /* siteRelativeImagePath */, ImageManagerImage>();
 
   constructor(private readonly rootConfig: RootConfig) {}
 

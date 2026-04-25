@@ -18,7 +18,7 @@ async function build(minifyOutput: boolean) {
   const imageManager = new ImageManager(rootConfig);
 
   rootConfig.svgToCssTranscodes.forEach((svgToCssTranscode) =>
-    transcodeSvgsToCss(sourceFileSystem.themeFiles, outputFileSystem, svgToCssTranscode),
+    { transcodeSvgsToCss(sourceFileSystem.themeFiles, outputFileSystem, svgToCssTranscode); },
   );
 
   await processAssets(sourceFileSystem.inputFiles, outputFileSystem, minifyOutput);
@@ -49,7 +49,7 @@ function usage() {
 
 const argv = minimist(process.argv.slice(2));
 
-if (!argv._ || argv._.length !== 1) {
+if (argv._.length !== 1) {
   usage();
 }
 
@@ -59,4 +59,4 @@ if (verb !== "build") {
   usage();
 }
 
-build(argv.minify || false).catch(console.error);
+build(Boolean(argv.minify)).catch(console.error);

@@ -12,7 +12,7 @@ import { DocumentGroupConfig, RootConfig } from "../config";
 import { createFigureDirective } from "./figureDirective";
 import { minifyOptions } from "./minifyOptions";
 import { GeneratedDocument, TemplateType, InputDocument, InputDocumentInventory } from "../types";
-import { FileSystemStat, OutputFileSystem } from "../fileSystem";
+import { getFileSystemStat, OutputFileSystem } from "../fileSystem";
 
 export class SiteRenderer {
   private readonly eta: Eta;
@@ -39,7 +39,7 @@ export class SiteRenderer {
     const newestInputDocumentModifiedTimeMs = Math.max(
       ...Array.from(this.inputDocumentInventory).flatMap(([_documentGroupName, inputDocuments]) =>
         inputDocuments.map(
-          (inputDocument) => FileSystemStat.get(inputDocument.sourceFile.absolutePath, { requireExists: true }).mtimeMs,
+          (inputDocument) => getFileSystemStat(inputDocument.sourceFile.absolutePath, { requireExists: true }).mtimeMs,
         ),
       ),
     );
@@ -53,10 +53,10 @@ export class SiteRenderer {
 
   private async renderDocument(documentGroupConfig: DocumentGroupConfig, inputDocument: InputDocument) {
     // Set up paths
-    const sourceFileStat = FileSystemStat.get(inputDocument.sourceFile.absolutePath, { requireExists: true });
+    const sourceFileStat = getFileSystemStat(inputDocument.sourceFile.absolutePath, { requireExists: true });
 
     const outputPath = this.outputFileSystem.getAbsolutePath(inputDocument.siteRelativeOutputPath);
-    const outputFileStat = FileSystemStat.get(outputPath, { requireExists: false });
+    const outputFileStat = getFileSystemStat(outputPath, { requireExists: false });
 
     if (outputFileStat && sourceFileStat.mtimeMs < outputFileStat.mtimeMs) {
       return;
@@ -128,7 +128,7 @@ export class SiteRenderer {
     // Set up paths
     const outputPath = this.outputFileSystem.getAbsolutePath(generatedDocument.siteRelativeOutputPath);
 
-    const outputFileStat = FileSystemStat.get(outputPath, { requireExists: false });
+    const outputFileStat = getFileSystemStat(outputPath, { requireExists: false });
 
     if (outputFileStat && newestInputDocumentModifiedTimeMs < outputFileStat.mtimeMs) {
       return;

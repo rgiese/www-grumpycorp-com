@@ -2,7 +2,7 @@ import { DirectiveConfig } from "marked-directive";
 
 import { InputDocument, RenderContextGenerator, GeneratedDocumentsGenerator } from "../types";
 
-export type DocumentGroupConfig = {
+export interface DocumentGroupConfig {
   // About
   documentGroupName: string;
   // Input
@@ -13,20 +13,20 @@ export type DocumentGroupConfig = {
   templateRenderContext: RenderContextGenerator | undefined;
   // Output
   outputPathFromDocumentPath: (inputDocument: InputDocument) => string;
-};
+}
 
-export type SvgToCssConfig = {
+export interface SvgToCssConfig {
   inputRootRelativePath: string;
   siteRelativeOutputPath: string;
-};
+}
 
-export type Redirect = {
+export interface Redirect {
   source: string;
   destination: string;
   code?: number;
-};
+}
 
-export type RootConfig = {
+export interface RootConfig {
   // Source
   inputRootPath: string;
   themeRootPath: string;
@@ -47,4 +47,4 @@ export type RootConfig = {
 
   // Destination
   outputRootPath: string;
-};
+}

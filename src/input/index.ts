@@ -50,7 +50,7 @@ function ingestDocumentGroup(
     });
 
   return documentGroupConfig.requirePublishDate // .published not-undefined enforced via checks in ingestInputDocument()
-    ? documents.sort((lhs, rhs) => +lhs.frontMatter.published! - +rhs.frontMatter.published!)
+    ? documents.sort((lhs, rhs) => +(lhs.frontMatter.published as Date) - +(rhs.frontMatter.published as Date))
     : documents;
 }
 

@@ -5,8 +5,10 @@ export const youtubeDirective: DirectiveConfig = {
   marker: "::",
   renderer(token) {
     if (token.meta.name === "youtube") {
-      if (!token.attrs || !token.attrs.videoId) {
-        throw new Error(`Missing "videoId" attribute on ${token.raw}`);
+      const videoId = token.attrs?.videoId;
+
+      if (typeof videoId !== "string" || !videoId) {
+        throw new Error(`Missing or invalid "videoId" attribute on ${token.raw}`);
       }
 
       return `
@@ -17,7 +19,7 @@ export const youtubeDirective: DirectiveConfig = {
             class="aspect-ratio--object"
             frameBorder="0"
             height="720"
-            src="https://www.youtube.com/embed/${token.attrs.videoId}"
+            src="https://www.youtube.com/embed/${videoId}"
             width="1280"
           ></iframe>
         </div>`;

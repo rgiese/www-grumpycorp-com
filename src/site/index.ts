@@ -19,7 +19,7 @@ const layoutTemplateRenderContext: RenderContextGenerator = (_inputDocument, inp
   generateLayoutTemplateRenderContext(inputDocumentInventory);
 
 const generatedDocuments: GeneratedDocumentsGenerator = (inputDocumentInventory) => {
-  const postDocuments = inputDocumentInventory.get("posts") || [];
+  const postDocuments = inputDocumentInventory.get("posts") ?? [];
   const latestPostDocument = postDocuments.length ? postDocuments[postDocuments.length - 1] : undefined;
 
   return [

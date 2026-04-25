@@ -5,8 +5,10 @@ export const vimeoDirective: DirectiveConfig = {
   marker: "::",
   renderer(token) {
     if (token.meta.name === "vimeo") {
-      if (!token.attrs || !token.attrs.videoId) {
-        throw new Error(`Missing "videoId" attribute on ${token.raw}`);
+      const videoId = token.attrs?.videoId;
+
+      if (typeof videoId !== "string" || !videoId) {
+        throw new Error(`Missing or invalid "videoId" attribute on ${token.raw}`);
       }
 
       return `
@@ -15,7 +17,7 @@ export const vimeoDirective: DirectiveConfig = {
             allowFullScreen
             class="aspect-ratio--object"
             frameBorder="0"
-            src="https://player.vimeo.com/video/${token.attrs.videoId}"
+            src="https://player.vimeo.com/video/${videoId}"
           >
           </iframe>
         </div>`;

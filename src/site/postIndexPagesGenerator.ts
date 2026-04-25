@@ -16,7 +16,7 @@ export const postIndexPagesGenerator: GeneratedDocumentsGenerator = (inputDocume
   };
 
   // Find all posts and their tags
-  const postDocuments = inputDocumentInventory.get("posts") || [];
+  const postDocuments = inputDocumentInventory.get("posts") ?? [];
   const postTags = getDocumentTagSet(postDocuments);
 
   return [
@@ -33,7 +33,7 @@ export const postIndexPagesGenerator: GeneratedDocumentsGenerator = (inputDocume
         postDocuments: [...postDocuments]
           // Show newest first (copy it with the ^spread we don't change the original array)
           // - `.published` is guaranteed from input validation
-          .sort((lhs, rhs) => +rhs.frontMatter.published! - +lhs.frontMatter.published!)
+          .sort((lhs, rhs) => +(rhs.frontMatter.published as Date) - +(lhs.frontMatter.published as Date))
           .map((d) => {
             return { ...d, documentTag: getDocumentTag(d) };
           }),

@@ -5,11 +5,11 @@ import * as yup from "yup";
 // Basics
 //
 
-export type FileSpec = {
+export interface FileSpec {
   rootRelativePath: string;
   parsedRootRelativePath: path.ParsedPath;
   absolutePath: string;
-};
+}
 
 //
 // Input
@@ -23,7 +23,7 @@ export const FrontMatterSchema = yup.object({
 
 export type InputFrontmatter = yup.InferType<typeof FrontMatterSchema>;
 
-export type InputDocument = {
+export interface InputDocument {
   // Source
   sourceFile: FileSpec;
   // Grouping
@@ -34,7 +34,7 @@ export type InputDocument = {
   // Content
   frontMatter: InputFrontmatter;
   content: string;
-};
+}
 
 export type InputDocumentInventory = Map<string /* documentGroupName */, InputDocument[]>;
 
@@ -52,7 +52,7 @@ export enum TemplateType {
   Marked,
 }
 
-export type GeneratedDocument = {
+export interface GeneratedDocument {
   // Destination
   siteRelativeOutputPath: string;
   // Content
@@ -65,6 +65,6 @@ export type GeneratedDocument = {
   // Render
   templateName: string;
   templateRenderContext: object;
-};
+}
 
 export type GeneratedDocumentsGenerator = (inputDocumentInventory: InputDocumentInventory) => GeneratedDocument[];

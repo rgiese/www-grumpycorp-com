@@ -5,7 +5,7 @@ import * as sass from "sass";
 import svgo from "svgo";
 
 import { SvgToCssConfig } from "../config";
-import { FileSystemStat, OutputFileSystem } from "../fileSystem";
+import { getFileSystemStat, OutputFileSystem } from "../fileSystem";
 import { ImageManager, ImageManagerImage } from "./imageManager";
 import { FileSpec } from "../types";
 import { minifyOptions } from "../render/minifyOptions";
@@ -42,10 +42,10 @@ export async function processAssets(
     .filter((f) => simpleAssetExtensions.includes(f.parsedRootRelativePath.ext.toLowerCase()))
     .forEach((sourceFile) => {
       // Set up paths
-      const sourceFileStat = FileSystemStat.get(sourceFile.absolutePath, { requireExists: true });
+      const sourceFileStat = getFileSystemStat(sourceFile.absolutePath, { requireExists: true });
 
       const outputPath = outputFileSystem.getAbsolutePath(sourceFile.rootRelativePath);
-      const outputFileStat = FileSystemStat.get(outputPath, { requireExists: false });
+      const outputFileStat = getFileSystemStat(outputPath, { requireExists: false });
 
       if (outputFileStat && sourceFileStat.mtimeMs < outputFileStat.mtimeMs) {
         return;
@@ -63,10 +63,10 @@ export async function processAssets(
       .map(async (sourceFile) => {
         try {
           // Set up paths
-          const sourceFileStat = FileSystemStat.get(sourceFile.absolutePath, { requireExists: true });
+          const sourceFileStat = getFileSystemStat(sourceFile.absolutePath, { requireExists: true });
 
           const outputPath = outputFileSystem.getAbsolutePath(sourceFile.rootRelativePath);
-          const outputFileStat = FileSystemStat.get(outputPath, { requireExists: false });
+          const outputFileStat = getFileSystemStat(outputPath, { requireExists: false });
 
           if (outputFileStat && sourceFileStat.mtimeMs < outputFileStat.mtimeMs) {
             return;
@@ -91,12 +91,12 @@ export async function processAssets(
     .forEach((sourceFile) => {
       try {
         // Set up paths
-        const sourceFileStat = FileSystemStat.get(sourceFile.absolutePath, { requireExists: true });
+        const sourceFileStat = getFileSystemStat(sourceFile.absolutePath, { requireExists: true });
 
         const outputPath = outputFileSystem.getAbsolutePath(
           replaceFileExtension(sourceFile.parsedRootRelativePath, ".css"),
         );
-        const outputFileStat = FileSystemStat.get(outputPath, { requireExists: false });
+        const outputFileStat = getFileSystemStat(outputPath, { requireExists: false });
 
         if (outputFileStat && sourceFileStat.mtimeMs < outputFileStat.mtimeMs) {
           return;
@@ -159,7 +159,7 @@ function cssFromSvg(name: string, inputSvg: string): string {
 
   const charactersToConvert = "%&#{}<>"; // courtesy of https://codepen.io/jakob-e/pen/doMoML. Note that '%' _has_ to come first.
 
-  [...charactersToConvert].forEach((characterToConvert) => {
+  Array.from(charactersToConvert).forEach((characterToConvert) => {
     encodedSvg = encodedSvg.replaceAll(
       characterToConvert,
       `%${characterToConvert.charCodeAt(0).toString(16).padStart(2, "0")}`,

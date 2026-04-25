@@ -4,10 +4,10 @@ import { FileSpec } from "../types";
 
 export { FileSpec };
 
-export type SourceFileSystem = {
+export interface SourceFileSystem {
   inputFiles: FileSpec[];
   themeFiles: FileSpec[];
-};
+}
 
 function createSourceFiles(rootPath: string): FileSpec[] {
   return Array.from(enumerateFilesRecursive(rootPath, rootPath));

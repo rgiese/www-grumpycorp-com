@@ -11,17 +11,17 @@ export class SiteValidator {
   public validate() {
     const outputFiles = Array.from(enumerateFilesRecursive(this.outputRootPath, this.outputRootPath));
 
-    outputFiles.filter((f) => f.parsedRootRelativePath.ext === ".html").forEach((f) => this.validateHtmlFile(f));
+    outputFiles.filter((f) => f.parsedRootRelativePath.ext === ".html").forEach((f) => { this.validateHtmlFile(f); });
   }
 
   private validateHtmlFile(fileSpec: FileSpec) {
     try {
       const dom = new JSDOM(fs.readFileSync(fileSpec.absolutePath, "utf8"));
 
-      type ElementAndAttribute = {
+      interface ElementAndAttribute {
         elementName: string;
         attributeName: string;
-      };
+      }
 
       const elementsAndAttributesToValidate: ElementAndAttribute[] = [
         { elementName: "a", attributeName: "href" },

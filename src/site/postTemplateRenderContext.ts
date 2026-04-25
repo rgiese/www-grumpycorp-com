@@ -10,7 +10,7 @@ const generatePreviousNext: RenderContextGenerator = (
   previousDocument?: InputDocument;
   nextDocument?: InputDocument;
 } => {
-  const inputDocumentsInGroup = inputDocumentInventory.get(inputDocument.documentGroupName) || [];
+  const inputDocumentsInGroup = inputDocumentInventory.get(inputDocument.documentGroupName) ?? [];
 
   const thisDocumentIndex = inputDocumentsInGroup.findIndex(
     (d) => d.sourceFile.rootRelativePath === inputDocument.sourceFile.rootRelativePath,

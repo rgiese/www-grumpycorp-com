@@ -46,7 +46,9 @@ export function createFigureDirective(
           const resizeFactors = [0.25, 0.5, 1.0];
           const resizedWidths = resizeFactors.map((resizeFactor) => Math.floor(inputImage.width * resizeFactor));
 
-          resizedWidths.forEach((width) => { inputImage.resizeImage(width); });
+          resizedWidths.forEach((width) => {
+            inputImage.resizeImage(width);
+          });
 
           // Emit figure
           const srcset = (ext?: string) =>

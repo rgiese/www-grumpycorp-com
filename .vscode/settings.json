@@ -28,9 +28,13 @@
     "typescriptreact",
     "yml"
   ],
+  // For TailwindCSS
+  "css.lint.unknownAtRules": "ignore",
+  // For templating
   "files.associations": {
     "*.eta": "html"
   },
+  // For Prettier
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.requireConfig": true

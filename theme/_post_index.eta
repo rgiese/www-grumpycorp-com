@@ -1,15 +1,15 @@
 <table>
-  <tbody class="lh-copy v-top">
+  <tbody class="align-top leading-normal [&_td]:py-0.5">
     <% data.postDocuments.forEach(function(postDocument) { %>
     <tr>
       <td>
-        <a href="/tags/posts/<%= encodeURIComponent(postDocument.documentTag) %>" class="link accent-mono">
+        <a href="/tags/posts/<%= encodeURIComponent(postDocument.documentTag) %>" class="no-underline accent-mono">
           <%~ data.tagPresenter(postDocument.documentTag) %>
         </a>
       </td>
-      <td class="b ph3"><%= postDocument.frontMatter.published.toLocaleDateString() %></td>
+      <td class="font-bold px-3"><%= postDocument.frontMatter.published.toLocaleDateString() %></td>
       <td>
-        <a class="link accent" href="/<%= postDocument.siteRelativeOutputPath %>"
+        <a class="no-underline accent" href="/<%= postDocument.siteRelativeOutputPath %>"
           ><%= postDocument.frontMatter.title %></a
         >
       </td>

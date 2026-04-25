@@ -261,7 +261,7 @@ The edit modal is even so douchey as to say &#X0394;&#X00B0;C...
 Regardless, the place we _actually_ need `RelativeTemperature` is in the setpoint popup
 because the dang thing has a spinner that needs to be told how much it should spin up and down by:
 
-<div class="mw6-ns center">
+<div class="sm:max-w-lg mx-auto">
 
 ::figure[Changing the setpoint with a spinner]{src="webapp/webapp-settings-setpoint.png"}
 

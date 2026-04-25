@@ -1,9 +1,9 @@
-<div class="f5 black-60 home-page-tags-container">
+<div class="text-base text-black/60 home-page-tags-container">
   Latest post:
   <a href="/<%= data.latestPostDocument.siteRelativeOutputPath %>"><%= data.latestPostDocument.frontMatter.title %></a>
   in
-  <a href="/tags/posts/<%= encodeURIComponent(data.latestPostTag) %>" class="link accent-mono">
-    <span class="w1 h1 dib svg-tag"></span>
+  <a href="/tags/posts/<%= encodeURIComponent(data.latestPostTag) %>" class="no-underline accent-mono">
+    <span class="svg-tag"></span>
     <%= data.latestPostTag %>
   </a>
 </div>

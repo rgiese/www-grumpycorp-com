@@ -41,13 +41,13 @@ So that kinda makes you wonder about what you're getting into when you're using 
 I designed a lovely insert for a Decora wallplate that stacked the big components in the back
 and exposed the DHT22 temperature and humidity sensor through a nice grille in the front.
 
-<div class="cf">
-  <div class="fl-ns fn w-10-m w-50-ns pa1">
+<div class="flow-root">
+  <div class="sm:float-left sm:max-lg:w-[10%] sm:w-1/2 p-1">
 
 ::figure[In-wall cover, front]{src="thermostat-design-2/thermostatCoverFront.png"}
 
   </div>
-  <div class="fl-ns fn w-10-m w-50-ns pa1">
+  <div class="sm:float-left sm:max-lg:w-[10%] sm:w-1/2 p-1">
 
 ::figure[In-wall cover, back]{src="thermostat-design-2/thermostatCoverBack.png"}
 
@@ -145,13 +145,13 @@ I designed a body that would carry the PCB in the back and have sides open to th
 This made the body easy to print (the big flat surface got to be on the bottom)
 and it made the cover easy-ish to print as well (by printing it upside down, with its "user-facing" flat surface face down on the build plate).
 
-<div class="cf">
-  <div class="fl-ns fn w-10-m w-50-ns pa1">
+<div class="flow-root">
+  <div class="sm:float-left sm:max-lg:w-[10%] sm:w-1/2 p-1">
 
 ::figure[Two-part thermostat housing, with cover]{src="thermostat-design-2/thermostat-housing.png"}
 
   </div>
-  <div class="fl-ns fn w-10-m w-50-ns pa1">
+  <div class="sm:float-left sm:max-lg:w-[10%] sm:w-1/2 p-1">
 
 ::figure[Two-part thermostat housing, just the base]{src="thermostat-design-2/thermostat-housing-base.png"}
 

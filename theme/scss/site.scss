@@ -5,12 +5,6 @@
 @use "highlight.js/styles/xcode.min.css";
 
 //
-// Tachyons
-//
-
-@use "external/_tachyons.css";
-
-//
 // Fonts
 // - also note the corresponding preload directives in `_layout.eta`
 //
@@ -23,24 +17,19 @@
 
 @use "assets/svg.scss";
 
+//
 // Configure Tailwind to scan generated HTML for class names
+//
+
 @import "tailwindcss";
 @source "../../output/**/*.html";
 
 //
-// Tachyon-equivalent media queries
+// SVGs, continued: default styling
 //
 
-@mixin non-small {
-  @media (min-width: 30em) {
-    @content;
-  }
-}
-
-@mixin medium {
-  @media (min-width: 30em) and (max-width: 60em) {
-    @content;
-  }
+.svg-tag {
+  @apply size-4 inline-block;
 }
 
 //
@@ -55,6 +44,14 @@
   --accent-mono-light: #a0cab3;
 }
 
+.accent {
+  color: var(--accent);
+}
+
+.accent-mono {
+  color: var(--accent-mono);
+}
+
 html,
 body {
   // Without this, browser enters quirk mode and top-level flexbox layout doesn't scale to full height
@@ -65,10 +62,108 @@ body {
 
 img {
   // Don't let images scale up past their built-in size (but they'll still scale down)
-  max-width: 100%;
   // https://web.dev/learn/design/responsive-images
   max-inline-size: 100%;
   block-size: auto;
+}
+
+// Tailwind preflight zeroes all heading, paragraph, figure, and list margins/styles; restore browser defaults.
+// Must be in @layer base so Tailwind utilities (e.g. mb-1) can override on a per-element basis.
+@layer base {
+  p {
+    margin-block: 1em;
+  }
+
+  h1 {
+    margin-block: 0.67em;
+  }
+
+  h2 {
+    margin-block: 0.83em;
+  }
+
+  h3 {
+    margin-block: 1em;
+  }
+
+  h4 {
+    margin-block: 1.33em 0;
+  }
+
+  figure {
+    margin-block: 1em;
+  }
+
+  ol {
+    list-style-type: decimal;
+    margin-block: 1em;
+    padding-inline-start: 40px;
+  }
+
+  ul {
+    list-style-type: disc;
+    margin-block: 1em;
+    padding-inline-start: 40px;
+  }
+}
+
+//
+// Typefaces
+//
+
+html {
+  font-family: "Questrial", sans-serif;
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 1.2;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  color: var(--accent);
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+}
+
+h2 {
+  font-size: 1.5em;
+  line-height: 1.2;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+h3 {
+  font-size: 1.17em;
+  line-height: 1.2;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--accent-light);
+}
+
+h4 {
+  font-size: 1em;
+  line-height: 1.2;
+  font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent-mono);
+}
+
+figcaption {
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.875rem;
+  color: white;
+  background-color: rgb(0 0 0 / 50%);
+}
+
+code {
+  font-size: 0.9em;
 }
 
 .content {
@@ -84,58 +179,8 @@ img {
   }
 }
 
-//
-// Typefaces
-//
-
-html {
-  font-family: "Questrial", "sans-serif";
-}
-
-h1 {
-  font-family: "Quicksand", "sans-serif";
-  font-weight: 500;
-  color: var(--accent);
-
-  a {
-    color: var(--accent);
-    text-decoration: none;
-  }
-}
-
-h2 {
-  font-family: "Quicksand", "sans-serif";
-  font-weight: 500;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-
-h3 {
-  font-family: "Quicksand", "sans-serif";
-  font-weight: 500;
-  text-transform: uppercase;
-  color: var(--accent-light);
-}
-
-h4 {
-  font-family: "Dosis", "sans-serif";
-  font-weight: 600;
-  text-transform: uppercase;
-  color: var(--accent-mono);
-  margin-block-end: 0;
-}
-
-code {
-  font-size: 0.9em;
-}
-
-//
-// SVG madness
-//
-
-.social-svg-gray {
-  // c.f. https://blog.union.io/code/2017/08/10/img-svg-fill/
-  filter: invert(0.5);
+.link-subdued {
+  @apply no-underline hover:opacity-50 text-black/80;
 }
 
 //
@@ -145,24 +190,15 @@ code {
 figure {
   display: table;
   width: 100%;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-}
+  margin-inline: 0;
 
-figcaption {
-  display: table-caption;
-  caption-side: top;
+  figcaption {
+    display: table-caption;
+    caption-side: top;
 
-  font-family: "Quicksand", "sans-serif";
-  font-size: 0.875rem;
-  padding-left: 0.5rem;
-  padding-right: 1rem;
-
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+    padding-block: 0.25rem;
+    padding-inline: 0.5rem 1rem;
+  }
 }
 
 //
@@ -170,56 +206,34 @@ figcaption {
 //
 
 .portfolio-container {
-  max-width: 72rem; // in between .mw8 and .mw9
-}
+  max-width: 72rem;
 
-.portfolio-container figure {
-  margin-block-start: 0;
-  margin-block-end: 0;
-}
+  figure {
+    margin-block: 0;
+  }
 
-.portfolio-container img {
-  // c.f. https://stackoverflow.com/questions/5804256/image-inside-div-has-extra-space-below-the-image
-  display: block;
-}
-
-@mixin portfolio-item-padding {
-  // in between .pa2 and .pa3
-  padding: 0.75rem;
+  img {
+    // c.f. https://stackoverflow.com/questions/5804256/image-inside-div-has-extra-space-below-the-image
+    display: block;
+  }
 }
 
 .portfolio-w100 {
-  @include portfolio-item-padding;
-}
-
-.portfolio-sxs-container:before,
-.portfolio-sxs-container:after {
-  content: " ";
-  display: table;
-}
-
-.portfolio-sxs-container:after {
-  clear: both;
+  padding: 0.75rem;
 }
 
 .portfolio-sxs-container {
-  *zoom: 1; // .cf
-  width: 100%; // .w-100
+  display: flow-root;
+  width: 100%;
 }
 
 @each $width in 40, 50, 60 {
   .portfolio-sxs-w#{$width} {
-    @include portfolio-item-padding;
-
-    // .fl
+    padding: 0.75rem;
     float: left;
-    _display: inline;
-
-    // .w-100 - Default to 100% width, reduce to 50% width on non-small screens
     width: 100%;
 
-    // .w-XXX-ns
-    @include non-small {
+    @media (min-width: 30em) {
       width: $width * 1%;
     }
   }
@@ -238,24 +252,14 @@ figcaption {
 //
 
 .home-page-figure-container {
-  display: flex;
-  flex-wrap: wrap;
+  @apply flex flex-wrap;
 }
 
 .home-page-figure-div {
-  padding: 0.25rem;
-
-  @include non-small {
-    width: 50%;
-  }
-
-  @include medium {
-    width: 100%;
-  }
+  @apply p-1 lg:w-1/2;
 
   figure {
-    margin-block-start: 0;
-    margin-block-end: 0;
+    margin-block: 0;
   }
 }
 
@@ -267,61 +271,16 @@ figcaption {
 }
 
 //
-// Tachyons extensions
+// _rightbar.eta
 //
 
-.accent {
-  color: var(--accent);
+.colophon-row {
+  @apply text-sm pt-1;
 }
 
-.bg-accent {
-  background-color: var(--accent);
-}
-
-.b--accent {
-  border-color: var(--accent);
-}
-
-.accent-mono {
-  color: var(--accent-mono);
-}
-
-.bg-accent-mono {
-  background-color: var(--accent-mono);
-}
-
-.b--accent-mono {
-  border-color: var(--accent-mono);
-}
-
-.accent-mono-light {
-  color: var(--accent-mono-light);
-}
-
-.bg-accent-mono-light {
-  background-color: var(--accent-mono-light);
-}
-
-.b--accent-mono-light {
-  border-color: var(--accent-mono-light);
-}
-
-.h075 {
-  // as a complement to http://tachyons.io/docs/layout/heights/
-  height: 0.75rem;
-}
-
-.h15 {
-  // as a complement to http://tachyons.io/docs/layout/heights/
-  height: 1.5rem;
-}
-
-.mw55-ns {
-  // as a complement to http://tachyons.io/docs/layout/max-widths/
-  @include non-small {
-    max-width: 24rem;
-  }
-}
+//
+// Site utility classes
+//
 
 .mw-30 {
   max-width: 30%;

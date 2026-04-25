@@ -1,14 +1,8 @@
-<!-- prettier-ignore -->
-<% 
-    const footerSectionClass = "f6 pt1"; 
-    const linkDefaultClass = "link dim black-80"; 
-%>
-
-<div class="f5 lh-copy center">
+<div class="text-base leading-normal mx-auto">
   <h4>Pinned</h4>
   <% data.inputDocumentInventory.get("pages").forEach(function(inputDocument) { %>
   <div>
-    <a class="<%= linkDefaultClass %>" href="/<%= inputDocument.siteRelativeOutputPath %>"
+    <a class="link-subdued" href="/<%= inputDocument.siteRelativeOutputPath %>"
       ><%= inputDocument.frontMatter.title %></a
     >
   </div>
@@ -17,7 +11,7 @@
   <h4>Portfolio</h4>
   <% data.inputDocumentInventory.get("portfolio").forEach(function(inputDocument) { %>
   <div>
-    <a class="<%= linkDefaultClass %>" href="/<%= inputDocument.siteRelativeOutputPath %>"
+    <a class="link-subdued" href="/<%= inputDocument.siteRelativeOutputPath %>"
       ><%= inputDocument.frontMatter.title %></a
     >
   </div>
@@ -26,83 +20,65 @@
   <h4>Topics</h4>
   <div>
     <% data.postTags.forEach(function(postTag) { %>
-    <a class="<%= linkDefaultClass %> pr1" href="/tags/posts/<%= encodeURIComponent(postTag) %>"
+    <a class="link-subdued pr-1" href="/tags/posts/<%= encodeURIComponent(postTag) %>"
       ><%~ data.tagPresenter(postTag) %></a
     >
     <% }) %>
   </div>
 
-  <div class="pt3">
-    <a class="<%= linkDefaultClass %>" href="/posts/all">every damn thing</a>
+  <div class="pt-4">
+    <a class="link-subdued" href="/posts/all">every damn thing</a>
   </div>
 
   <h4>Elsewhere</h4>
-  <div>
-    <span class="pr1 pr2-ns">
-      <!--
-        - `link dim`: style link
-        - `w1 h1`: set size for SVG
-        - `dib`: make sure the size is actually used (display as inline block)
-      -->
+  <div
+    class="[&>span]:pr-1 sm:[&>span]:pr-2 [&_a]:no-underline [&_a:hover]:opacity-50 [&_a]:size-4 [&_a]:inline-block [&_a]:[filter:invert(0.5)]"
+  >
+    <span>
+      <a class="svg-logo-gmail" href="mailto:robin@grumpycorp.com" rel="noopener noreferrer" target="_blank"></a>
+    </span>
+
+    <span>
       <a
-        class="link dim w1 h1 dib social-svg-gray svg-logo-gmail"
-        href="mailto:robin@grumpycorp.com"
+        class="svg-logo-linkedin"
+        href="https://www.linkedin.com/in/robingiese"
         rel="noopener noreferrer"
         target="_blank"
       ></a>
     </span>
 
-    <span class="pr1 pr2-ns">
+    <span>
       <a
-        class="link dim w1 h1 dib social-svg-gray svg-logo-linkedin"
-        href="https://www.linkedin.com/in/robingiese"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-      </a>
-    </span>
-
-    <span class="pr1 pr2-ns">
-      <a
-        class="link dim w1 h1 dib social-svg-gray svg-logo-imdb"
+        class="svg-logo-imdb"
         href="https://www.imdb.com/name/nm8515322/"
         rel="noopener noreferrer"
         target="_blank"
-      >
-      </a>
+      ></a>
     </span>
 
-    <span class="pr1 pr2-ns">
-      <a
-        class="link dim w1 h1 dib social-svg-gray svg-logo-github"
-        href="https://github.com/rgiese/"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-      </a>
+    <span>
+      <a class="svg-logo-github" href="https://github.com/rgiese/" rel="noopener noreferrer" target="_blank"></a>
     </span>
   </div>
 
   <h4>Not a colophon</h4>
 
-  <div class="<%= footerSectionClass %>">&copy;2024 Grumpy Company Studios LLC.</div>
+  <div class="colophon-row">&copy;2024 Grumpy Company Studios LLC.</div>
 
-  <div class="<%= footerSectionClass %>">Made with <span class="v-mid w1 h1 dib svg-heart"></span> in Seattle.</div>
+  <div class="colophon-row">Made with <span class="align-middle size-4 inline-block svg-heart"></span> in Seattle.</div>
 
-  <div class="<%= footerSectionClass %>">
+  <div class="colophon-row">
     Licensed under
-    <a class="<%= linkDefaultClass%>" href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license"
-      >CC-BY-SA-4.0</a
-    >.
+    <a class="link-subdued" href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">CC-BY-SA-4.0</a>.
   </div>
 
-  <div class="<%= footerSectionClass %>">
+  <div class="colophon-row">
     Powered by
-    <a class="<%= linkDefaultClass%>" href="https://tachyons.io">Tachyons</a> and
-    <a class="<%= linkDefaultClass%>" href="https://pages.cloudflare.com/">Cloudflare</a>.
+    <a class="link-subdued" href="https://tailwindcss.com">Tailwind</a> and
+    <a class="link-subdued" href="https://pages.cloudflare.com/">Cloudflare</a>.
   </div>
 
-  <div class="<%= footerSectionClass %>">
-    <a class="<%= linkDefaultClass%>" href="/posts/code/improving-site-visitor-privacy/"> Privacy notice. </a>
+  <div class="colophon-row">
+    <a class="link-subdued" href="/posts/code/improving-site-visitor-privacy/">Privacy notice.</a>
   </div>
 </div>

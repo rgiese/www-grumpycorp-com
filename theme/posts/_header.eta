@@ -1,11 +1,11 @@
-<h1 class="mb1"><a href="."><%= data.inputDocument.frontMatter.title %></a></h1>
+<h1 class="mb-1"><a href="."><%= data.inputDocument.frontMatter.title %></a></h1>
 
-<div class="f5 black-60">
+<div class="text-base text-black/60">
   <%= data.inputDocument.frontMatter.published.toLocaleDateString() %>
-  <span class="ph2 black-40">in</span>
+  <span class="px-2 text-black/40">in</span>
 
-  <a href="/tags/posts/<%= encodeURIComponent(data.documentTag) %>" class="link accent-mono">
-    <span class="w1 h1 dib svg-tag"></span>
+  <a href="/tags/posts/<%= encodeURIComponent(data.documentTag) %>" class="no-underline accent-mono">
+    <span class="svg-tag"></span>
 
     <%~ data.tagPresenter(data.documentTag) %>
   </a>

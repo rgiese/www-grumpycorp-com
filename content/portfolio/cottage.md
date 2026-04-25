@@ -55,15 +55,15 @@ All images by Robin Giese / GRUMPYCORP.
 
 <!-- Closing para -->
 
-<div class="portfolio-sxs-container pt2">
-  <div class="portfolio-sxs-w60 accent-mono pt4">
+<div class="portfolio-sxs-container pt-2">
+  <div class="portfolio-sxs-w60 accent-mono pt-8">
 
 Design and construction by Robin Giese / GRUMPYCORP
 based on design and architecture by [BUILD LLC](https://www.buildllc.com)
 for the adjoining house.
 
 For more about the design and construction process,
-see the [<span class="w075 h075 dib svg-tag"></span> cottage](/tags/posts/cottage) post series.
+see the [<span class="!size-3 svg-tag"></span> cottage](/tags/posts/cottage) post series.
 
   </div>
 

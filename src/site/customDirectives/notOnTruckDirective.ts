@@ -6,9 +6,9 @@ export const notOnTruckDirective: DirectiveConfig = {
   renderer(token) {
     if (token.meta.name === "notOnTruck") {
       const rawClassName = token.attrs?.className;
-      const className = typeof rawClassName === "string" ? rawClassName : "h1";
+      const className = typeof rawClassName === "string" ? rawClassName : "size-4";
 
-      return `<span class="${className} dib svg-not-on-truck" title="Not on truck"></span>`;
+      return `<span class="${className} inline-block svg-not-on-truck" title="Not on truck"></span>`;
     }
 
     return false;

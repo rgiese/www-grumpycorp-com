@@ -13,10 +13,10 @@ Prior to authenticating I take the opportunity to display my "fancy" "brand" ima
 The login happens on an Auth0 web page hosted in an in-app browser - it's a bit jarring transitioning into this from
 the otherwise dark mode-ish app, but whatever.
 
-<div class="cf">
+<div class="flow-root">
 
-::figure[Waiting to log in]{src="mobile-app/mobile-login.png" class="fl-ns fn w-10-m w-50-ns"}
-::figure[Logging in with Auth0]{src="mobile-app/mobile-login-auth0.png" class="fl-ns fn w-10-m w-50-ns"}
+::figure[Waiting to log in]{src="mobile-app/mobile-login.png" outerDivWithClass="sm:float-left sm:w-1/2"}
+::figure[Logging in with Auth0]{src="mobile-app/mobile-login-auth0.png" outerDivWithClass="sm:float-left sm:w-1/2"}
 
 </div>
 
@@ -28,10 +28,10 @@ including a description of what setpoints they're chasing and what actions they'
 Unlike the webapp, settings for each thermostat can be changed by clicking on any thermostat from the home page.
 This felt like a more touch-friendly UX than porting the same concepts (and code, perhaps) from the web version.
 
-<div class="cf">
+<div class="flow-root">
 
-::figure[Thermostats' latest values, actions, and setpoints]{src="mobile-app/mobile-home.png" class="fl-ns fn w-10-m w-50-ns"}
-::figure[Settings for a single thermostat]{src="mobile-app/mobile-settings.png" class="fl-ns fn w-10-m w-50-ns"}
+::figure[Thermostats' latest values, actions, and setpoints]{src="mobile-app/mobile-home.png" outerDivWithClass="sm:float-left sm:w-1/2"}
+::figure[Settings for a single thermostat]{src="mobile-app/mobile-settings.png" outerDivWithClass="sm:float-left sm:w-1/2"}
 
 </div>
 
@@ -45,24 +45,24 @@ Once the setting has been changed, the _Save_ button is enabled and will similar
 the _Remove_ button becomes disabled when the setting is changed to avoid letting a user accidentally delete a setting when they meant to save it.
 Navigating back before saving just discards the edits.
 
-<div class="cf">
+<div class="flow-root">
 
-::figure[Editing a scheduled setting]{src="mobile-app/mobile-setting-scheduled.png" class="fl-ns fn w-10-m w-50-ns"}
-::figure[Save button enabled for a modified setting]{src="mobile-app/mobile-setting-scheduled-modified.png" class="fl-ns fn w-10-m w-50-ns"}
+::figure[Editing a scheduled setting]{src="mobile-app/mobile-setting-scheduled.png" outerDivWithClass="sm:float-left sm:w-1/2"}
+::figure[Save button enabled for a modified setting]{src="mobile-app/mobile-setting-scheduled-modified.png" outerDivWithClass="sm:float-left sm:w-1/2"}
 
 </div>
 
 Changing the time of day for a scheduled setting is nice and Android-ish courtesy of
 [`@react-native-community/datetimepicker`](https://github.com/react-native-community/react-native-datetimepicker):
 
-::figure[Editing a setting's time of day]{src="mobile-app/mobile-setting-scheduled-time-of-day.png" class="mw55-ns center"}
+::figure[Editing a setting's time of day]{src="mobile-app/mobile-setting-scheduled-time-of-day.png" outerDivWithClass="sm:max-w-sm mx-auto"}
 
 ### Preferences
 
 Tapping the person-shaped icon at the top right of the home screen gets to the Account screen,
 effectively a mix of account information, account preferences, and various debugging information.
 
-::figure[The Account screen]{src="mobile-app/mobile-preferences.png" class="mw55-ns center"}
+::figure[The Account screen]{src="mobile-app/mobile-preferences.png" outerDivWithClass="sm:max-w-sm mx-auto"}
 
 ## How it's built
 
@@ -271,7 +271,7 @@ the approach taken above worked fine in my `shared-client` package and in my `we
 Hilariously (not), the `mobile` package built fine and deployed fine all the way through Google Play,
 except opening the app just got me this:
 
-::figure[ReactNative shits the bed]{src="mobile-app/mobile-flatbuffers-wtf.png" class="mw55-ns center"}
+::figure[ReactNative shits the bed]{src="mobile-app/mobile-flatbuffers-wtf.png" outerDivWithClass="sm:max-w-sm mx-auto"}
 
 And of course I can't be bothered to have any actual UI tests (preferring to invest my time in compile-time type safety instead),
 so I managed to break an actual deploy to the Play Store without noticing that the app was completely dead in the water.

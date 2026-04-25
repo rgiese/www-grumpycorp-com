@@ -12,15 +12,13 @@ export const youtubeDirective: DirectiveConfig = {
       }
 
       return `
-        <div class="aspect-ratio overflow-hidden" style="padding-bottom: 60%; padding-top: 30px">
+        <div class="relative h-0 pb-[60%] pt-[30px] overflow-hidden">
           <iframe
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            class="aspect-ratio--object"
+            class="absolute inset-0 w-full h-full"
             frameBorder="0"
-            height="720"
             src="https://www.youtube.com/embed/${videoId}"
-            width="1280"
           ></iframe>
         </div>`;
     }

@@ -8,13 +8,13 @@ title: Grip truck
 
 </div>
 
-<div class="cf dn-p">
-  <div class="fl-ns fn w-10-m w-50-ns pa1">
+<div class="flow-root dn-p">
+  <div class="sm:float-left sm:max-lg:w-[10%] sm:w-1/2 p-1">
 
 ::figure[Crates]{src="grip-truck/IMG_0430.jpg"}
 
   </div>
-  <div class="fl-ns fn w-10-m w-50-ns pa1">
+  <div class="sm:float-left sm:max-lg:w-[10%] sm:w-1/2 p-1">
 
 ::figure[Cases]{src="grip-truck/IMG_0435.jpg"}
 
@@ -47,13 +47,13 @@ Teradek transmitter (12G-SDI/4K image), Teradek RT FIZ and TOF-1, ARRI LMB 4x5.6
 
 Nucleus-M FIZ system (three motors) also included in the coffin, just in case.
 
-## C-CAM :notOnTruck{className="h15"}</span>
+## C-CAM :notOnTruck{className="size-6"}</span>
 
 ::figure[BMPCC 6K (C-CAM)]{src="grip-truck/C-CAM.jpg" class="dn-p"}
 
 BMPCC 6K converted to PL mount, rigged with V-mount battery, Teradek transmitter (3G-SDI/HD image), Lemo 0B.2-based power distro, Cleans Camera MiniQRB plate, dinky SmallRig matte box
 
-## D-CAM :notOnTruck{className="h15"}</span>
+## D-CAM :notOnTruck{className="size-6"}</span>
 
 BMPCC 4K with Wooden Camera EF mount adapter. Available with V-mount battery and Teradek transmitter (3G-SDI/HD image) or de-rigged for small quarters shooting.
 
@@ -170,7 +170,7 @@ BMPCC 4K with Wooden Camera EF mount adapter. Available with V-mount battery and
 - 1x four-battery charger
 - 1x two-battery charger
 
-## Steadicam :notOnTruck{className="h15"}
+## Steadicam :notOnTruck{className="size-6"}
 
 - Steadicam Axis (sled/arm/vest), rated up to 20 lb payload
 - CineLevel digital level

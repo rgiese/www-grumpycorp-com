@@ -7,7 +7,7 @@
 </div>
 
 <div class="home-page-tags-container">
-  <a href="/tags/posts/phinneywood/"><span class="w1 h1 dib svg-tag"></span> everything in phinneywood</a>
+  <a href="/tags/posts/phinneywood/"><span class="svg-tag"></span> everything in phinneywood</a>
 </div>
 
 ## Film
@@ -22,7 +22,7 @@
 </div>
 
 <div class="home-page-tags-container">
-  <a href="/tags/posts/film-making/"><span class="w1 h1 dib svg-tag"></span> everything in film making</a>
+  <a href="/tags/posts/film-making/"><span class="svg-tag"></span> everything in film making</a>
 </div>
 
 ## Theater
@@ -34,7 +34,7 @@
 </div>
 
 <div class="home-page-tags-container">
-  <a href="/tags/posts/theater/"><span class="w1 h1 dib svg-tag"></span> everything in theater</a>
+  <a href="/tags/posts/theater/"><span class="svg-tag"></span> everything in theater</a>
 </div>
 
 ## Fabricating
@@ -49,7 +49,7 @@
 </div>
 
 <div class="home-page-tags-container">
-  <span class="w1 h1 dib svg-tag"></span> everything in 
+  <span class="svg-tag"></span> everything in 
   <a href="/tags/posts/code/">code</a>, <a href="/tags/posts/cottage/">cottage</a>, <a href="/tags/posts/crafting/">crafting</a>, and <a href="/tags/posts/warm-and-fuzzy/">warm-and-fuzzy</a>
 </div>
 
@@ -63,6 +63,6 @@
 
 </div>
 
-<div class="home-page-tags-container pa3">
+<div class="home-page-tags-container p-4">
   ...or just read <a href="/posts/all/">every damn thing</a>.
 </div>

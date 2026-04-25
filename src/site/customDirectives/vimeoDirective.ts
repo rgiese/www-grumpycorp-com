@@ -12,10 +12,10 @@ export const vimeoDirective: DirectiveConfig = {
       }
 
       return `
-        <div class="aspect-ratio overflow-hidden" style="padding-bottom: 60%; padding-top: 30px;">
+        <div class="relative h-0 pb-[60%] pt-[30px] overflow-hidden">
           <iframe
             allowFullScreen
-            class="aspect-ratio--object"
+            class="absolute inset-0 w-full h-full"
             frameBorder="0"
             src="https://player.vimeo.com/video/${videoId}"
           >

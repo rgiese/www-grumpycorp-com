@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
   <!-- prettier-ignore -->
-  <% 
-    const documentGroupName = data.inputDocument?.documentGroupName || "other"; 
+  <%
+    const documentGroupName = data.inputDocument?.documentGroupName || "other";
     const frontMatter = data.inputDocument.frontMatter;
   %>
 
@@ -42,63 +42,49 @@
   </head>
 
   <body>
-    <div class="ph3 pt4-ns tl bg-white">
-      <div class="cf">
-        <!--
-        * Top-level layout: three divs (left = empty, main, and right)
-        * - fl-ns: float-left the for non-small (-ns) screens at [10 @ medium / 20 @ large] / 50 / 30 percent widths
-        * - fn: don't float (== stack) the divs on small screens
-        *
-        * Main div layout:
-        * - mw7: constrain width for readability
-        * - center: center content box
-        *
-        * Right div layout:
-        * - mw5: constrain width for readability
-        * - device-dependent left padding
-        * - a hint of bottom-padding for small screens
-        * - dn-p: don't print this
-        *
-        * Containing div (see above) clears floats.
-        -->
+    <div class="px-4 sm:pt-8 text-left bg-white">
+      <!--
+      * Three-column float layout: empty spacer [10%@sm / 20%@lg] | main [50%] | right [30%]
+      * Columns stack vertically on small screens; flow-root clears the floats.
+      -->
+      <div class="flow-root">
+        <div class="sm:float-left sm:w-[10%] lg:w-[20%]">&nbsp;</div>
 
-        <div class="fl-ns fn w-10-m w-20-l">&nbsp;</div>
-
-        <div class="fl-ns fn w-50-ns">
+        <div class="sm:float-left sm:w-1/2">
           <!-- Main div -->
-          <main class="<%= documentGroupName === 'portfolio' ? 'mw8' : 'mw7' %> center pt2">
+          <main class="<%= documentGroupName === 'portfolio' ? 'max-w-5xl' : 'max-w-3xl' %> mx-auto pt-2">
             <!-- Logo on top for small screens -->
             <a href="/">
-              <div class="mb4 dn-ns svg-studiosLogo w-70"></div>
+              <div class="mb-8 sm:hidden svg-studiosLogo w-[70%]"></div>
             </a>
 
             <!-- prettier-ignore -->
-            <% if (documentGroupName === "posts") { %> 
-                <%~ include("posts/_header", data) %> 
-                <%~ include("posts/_prevnext", data) %> 
-            <% } else if (documentGroupName === "pages") { %> 
+            <% if (documentGroupName === "posts") { %>
+                <%~ include("posts/_header", data) %>
+                <%~ include("posts/_prevnext", data) %>
+            <% } else if (documentGroupName === "pages") { %>
                 <%~ include("pages/_header", data) %>
             <% } else if (data.isHomePage) { %>
               <%~ include("home/_header", data) %>
               <% } %>
 
-            <div class="lh-copy content <%= documentGroupName === 'portfolio' ? 'portfolio-container' : '' %>">
+            <div class="leading-normal content <%= documentGroupName === 'portfolio' ? 'portfolio-container' : '' %>">
               <%~ data.contentHtml %>
             </div>
 
             <!-- prettier-ignore -->
-            <% if (documentGroupName === "posts") { %> 
+            <% if (documentGroupName === "posts") { %>
                 <%~ include("posts/_prevnext", data) %>
             <% } %>
           </main>
         </div>
 
-        <div class="fl-ns fn w-30-ns dn-p">
+        <div class="sm:float-left sm:w-[30%] print:hidden">
           <!-- Right div -->
-          <nav class="mw5 pl2 pl5-ns pb3">
+          <nav class="max-w-64 pl-2 sm:pl-16 pb-4">
             <!-- Logo on the side for not-small screens -->
             <a href="/">
-              <div class="mb4 dn db-ns svg-studiosLogo w-100"></div>
+              <div class="mb-8 hidden sm:block svg-studiosLogo w-full"></div>
             </a>
 
             <%~ include("_rightbar", data) %>

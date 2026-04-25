@@ -18,8 +18,8 @@ On M1 devices, consider:
 ## Running
 
 - `npm run build` to build site
-- <TBD> to build and [serve](http://localhost:5080) site while watching for updates to the input
 - `npm serve` to [serve](http://localhost:5080) a separately built version of the site
+- `npm run watch:content` to re-build the site while watching for updates to the input
 
 ## Icons and Fonts
 

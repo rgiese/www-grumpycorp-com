@@ -1,4 +1,4 @@
-import * as fs from "fs";
+import fs from "node:fs/promises";
 import htmlMinifier from "html-minifier-terser";
 import * as path from "path";
 import * as sass from "sass";
@@ -38,23 +38,30 @@ export async function processAssets(
     ".f3d",
   ];
 
-  explicitAssetSourceFiles
-    .filter((f) => simpleAssetExtensions.includes(f.parsedRootRelativePath.ext.toLowerCase()))
-    .forEach((sourceFile) => {
-      // Set up paths
-      const sourceFileStat = getFileSystemStat(sourceFile.absolutePath, { requireExists: true });
+  await Promise.all(
+    explicitAssetSourceFiles
+      .filter((f) => simpleAssetExtensions.includes(f.parsedRootRelativePath.ext.toLowerCase()))
+      .map(async (sourceFile) => {
+        try {
+          // Set up paths
+          const sourceFileStat = getFileSystemStat(sourceFile.absolutePath, { requireExists: true });
 
-      const outputPath = outputFileSystem.getAbsolutePath(sourceFile.rootRelativePath);
-      const outputFileStat = getFileSystemStat(outputPath, { requireExists: false });
+          const outputPath = outputFileSystem.getAbsolutePath(sourceFile.rootRelativePath);
+          const outputFileStat = getFileSystemStat(outputPath, { requireExists: false });
 
-      if (outputFileStat && sourceFileStat.mtimeMs < outputFileStat.mtimeMs) {
-        return;
-      }
+          if (outputFileStat && sourceFileStat.mtimeMs < outputFileStat.mtimeMs) {
+            return;
+          }
 
-      // Process content
-      outputFileSystem.ensureOutputPathExists(outputPath);
-      fs.copyFileSync(sourceFile.absolutePath, outputPath);
-    });
+          // Process content
+          outputFileSystem.ensureOutputPathExists(outputPath);
+          await fs.copyFile(sourceFile.absolutePath, outputPath);
+        } catch (error) {
+          console.error(`While processing ${sourceFile.absolutePath}:`);
+          throw error;
+        }
+      }),
+  );
 
   // Process CSS
   await Promise.all(
@@ -73,11 +80,11 @@ export async function processAssets(
           }
 
           // Process content
-          const inputCss = fs.readFileSync(sourceFile.absolutePath).toString();
+          const inputCss = await fs.readFile(sourceFile.absolutePath, "utf8");
           const outputCss = minifyOutput ? await htmlMinifier.minify(inputCss, minifyOptions) : inputCss;
 
           outputFileSystem.ensureOutputPathExists(outputPath);
-          fs.writeFileSync(outputPath, outputCss);
+          await fs.writeFile(outputPath, outputCss);
         } catch (error) {
           console.error(`While processing ${sourceFile.absolutePath}:`);
           throw error;
@@ -86,38 +93,40 @@ export async function processAssets(
   );
 
   // Process SCSS
-  explicitAssetSourceFiles
-    .filter((f) => f.parsedRootRelativePath.ext === ".scss")
-    .forEach((sourceFile) => {
-      try {
-        // Set up paths
-        const sourceFileStat = getFileSystemStat(sourceFile.absolutePath, { requireExists: true });
+  await Promise.all(
+    explicitAssetSourceFiles
+      .filter((f) => f.parsedRootRelativePath.ext === ".scss")
+      .map(async (sourceFile) => {
+        try {
+          // Set up paths
+          const sourceFileStat = getFileSystemStat(sourceFile.absolutePath, { requireExists: true });
 
-        const outputPath = outputFileSystem.getAbsolutePath(
-          replaceFileExtension(sourceFile.parsedRootRelativePath, ".css"),
-        );
-        const outputFileStat = getFileSystemStat(outputPath, { requireExists: false });
+          const outputPath = outputFileSystem.getAbsolutePath(
+            replaceFileExtension(sourceFile.parsedRootRelativePath, ".css"),
+          );
+          const outputFileStat = getFileSystemStat(outputPath, { requireExists: false });
 
-        if (outputFileStat && sourceFileStat.mtimeMs < outputFileStat.mtimeMs) {
-          return;
+          if (outputFileStat && sourceFileStat.mtimeMs < outputFileStat.mtimeMs) {
+            return;
+          }
+
+          // Process content
+          const compiledScss = await sass.compileAsync(sourceFile.absolutePath, {
+            loadPaths: [
+              path.resolve("node_modules"),
+              outputFileSystem.outputRootPath, // for generated SVG->CSS files
+            ],
+            style: minifyOutput ? "compressed" : "expanded",
+          });
+
+          outputFileSystem.ensureOutputPathExists(outputPath);
+          await fs.writeFile(outputPath, compiledScss.css);
+        } catch (error) {
+          console.error(`While processing ${sourceFile.absolutePath}:`);
+          throw error;
         }
-
-        // Process content
-        const compiledScss = sass.compile(sourceFile.absolutePath, {
-          loadPaths: [
-            path.resolve("node_modules"),
-            outputFileSystem.outputRootPath, // for generated SVG->CSS files
-          ],
-          style: minifyOutput ? "compressed" : "expanded",
-        });
-
-        outputFileSystem.ensureOutputPathExists(outputPath);
-        fs.writeFileSync(outputPath, compiledScss.css);
-      } catch (error) {
-        console.error(`While processing ${sourceFile.absolutePath}:`);
-        throw error;
-      }
-    });
+      }),
+  );
 }
 
 function cssFromSvg(name: string, inputSvg: string): string {
@@ -174,7 +183,7 @@ function cssFromSvg(name: string, inputSvg: string): string {
   }`;
 }
 
-export function transcodeSvgsToCss(
+export async function transcodeSvgsToCss(
   sourceFiles: FileSpec[],
   outputFileSystem: OutputFileSystem,
   svgToCssConfig: SvgToCssConfig,
@@ -183,18 +192,20 @@ export function transcodeSvgsToCss(
     .filter((f) => f.rootRelativePath.startsWith(svgToCssConfig.inputRootRelativePath))
     .filter((f) => f.parsedRootRelativePath.ext === ".svg");
 
-  const cssContent = svgDocuments
-    .map((sourceFile) => {
-      try {
-        return cssFromSvg(sourceFile.parsedRootRelativePath.name, fs.readFileSync(sourceFile.absolutePath, "utf8"));
-      } catch (error) {
-        console.error(`While processing ${sourceFile.absolutePath}:`);
-        throw error;
-      }
-    })
-    .join("\n");
+  const cssContent = (
+    await Promise.all(
+      svgDocuments.map(async (sourceFile) => {
+        try {
+          return cssFromSvg(sourceFile.parsedRootRelativePath.name, await fs.readFile(sourceFile.absolutePath, "utf8"));
+        } catch (error) {
+          console.error(`While processing ${sourceFile.absolutePath}:`);
+          throw error;
+        }
+      }),
+    )
+  ).join("\n");
 
   const outputPath = outputFileSystem.getAbsolutePath(svgToCssConfig.siteRelativeOutputPath);
   outputFileSystem.ensureOutputPathExists(outputPath);
-  fs.writeFileSync(outputPath, cssContent);
+  await fs.writeFile(outputPath, cssContent);
 }

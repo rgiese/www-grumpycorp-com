@@ -17,8 +17,10 @@ async function build(minifyOutput: boolean) {
 
   const imageManager = new ImageManager(rootConfig);
 
-  rootConfig.svgToCssTranscodes.forEach((svgToCssTranscode) =>
-    { transcodeSvgsToCss(sourceFileSystem.themeFiles, outputFileSystem, svgToCssTranscode); },
+  await Promise.all(
+    rootConfig.svgToCssTranscodes.map((svgToCssTranscode) =>
+      transcodeSvgsToCss(sourceFileSystem.themeFiles, outputFileSystem, svgToCssTranscode),
+    ),
   );
 
   await processAssets(sourceFileSystem.inputFiles, outputFileSystem, minifyOutput);

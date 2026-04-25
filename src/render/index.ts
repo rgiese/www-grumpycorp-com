@@ -13,9 +13,11 @@ import { createFigureDirective } from "./figureDirective";
 import { minifyOptions } from "./minifyOptions";
 import { GeneratedDocument, TemplateType, InputDocument, InputDocumentInventory } from "../types";
 import { getFileSystemStat, OutputFileSystem } from "../fileSystem";
+import { enumerateFilesRecursive } from "../fileSystem/enumerateFiles";
 
 export class SiteRenderer {
   private readonly eta: Eta;
+  private readonly newestThemeFileMtimeMs: number;
 
   constructor(
     private readonly rootConfig: RootConfig,
@@ -25,11 +27,17 @@ export class SiteRenderer {
     private readonly minifyOutput: boolean,
   ) {
     this.eta = new Eta({ views: rootConfig.themeRootPath, varName: "data", debug: true });
+
+    this.newestThemeFileMtimeMs = Math.max(
+      ...Array.from(enumerateFilesRecursive(rootConfig.themeRootPath, rootConfig.themeRootPath)).map(
+        (f) => getFileSystemStat(f.absolutePath, { requireExists: true }).mtimeMs,
+      ),
+    );
   }
 
-  public async render() {
+  public async render(): Promise<boolean /* didRegenerate */> {
     // Static documents
-    await Promise.all(
+    const staticResults = await Promise.all(
       this.rootConfig.documentGroups.flatMap(
         (g) => this.inputDocumentInventory.get(g.documentGroupName)?.map((d) => this.renderDocument(g, d)) ?? [],
       ),
@@ -44,22 +52,27 @@ export class SiteRenderer {
       ),
     );
 
-    await Promise.all(
+    const generatedResults = await Promise.all(
       this.rootConfig
         .generatedDocuments?.(this.inputDocumentInventory)
         .map((d) => this.renderGeneratedDocument(newestInputDocumentModifiedTimeMs, d)) ?? [],
     );
+
+    return [...staticResults, ...generatedResults].some(Boolean);
   }
 
-  private async renderDocument(documentGroupConfig: DocumentGroupConfig, inputDocument: InputDocument) {
+  private async renderDocument(
+    documentGroupConfig: DocumentGroupConfig,
+    inputDocument: InputDocument,
+  ): Promise<boolean /* didRegenerate */> {
     // Set up paths
     const sourceFileStat = getFileSystemStat(inputDocument.sourceFile.absolutePath, { requireExists: true });
 
     const outputPath = this.outputFileSystem.getAbsolutePath(inputDocument.siteRelativeOutputPath);
     const outputFileStat = getFileSystemStat(outputPath, { requireExists: false });
 
-    if (outputFileStat && sourceFileStat.mtimeMs < outputFileStat.mtimeMs) {
-      return;
+    if (outputFileStat && Math.max(sourceFileStat.mtimeMs, this.newestThemeFileMtimeMs) < outputFileStat.mtimeMs) {
+      return false;
     }
 
     this.outputFileSystem.ensureOutputPathExists(outputPath);
@@ -96,6 +109,8 @@ export class SiteRenderer {
       console.error(`with frontmatter: ${JSON.stringify(inputDocument.frontMatter)}`);
       throw error;
     }
+
+    return true;
   }
 
   private renderContentTemplate(generatedDocument: GeneratedDocument): string {
@@ -124,14 +139,17 @@ export class SiteRenderer {
   private async renderGeneratedDocument(
     newestInputDocumentModifiedTimeMs: number,
     generatedDocument: GeneratedDocument,
-  ) {
+  ): Promise<boolean> {
     // Set up paths
     const outputPath = this.outputFileSystem.getAbsolutePath(generatedDocument.siteRelativeOutputPath);
 
     const outputFileStat = getFileSystemStat(outputPath, { requireExists: false });
 
-    if (outputFileStat && newestInputDocumentModifiedTimeMs < outputFileStat.mtimeMs) {
-      return;
+    if (
+      outputFileStat &&
+      Math.max(newestInputDocumentModifiedTimeMs, this.newestThemeFileMtimeMs) < outputFileStat.mtimeMs
+    ) {
+      return false;
     }
 
     this.outputFileSystem.ensureOutputPathExists(outputPath);
@@ -161,6 +179,8 @@ export class SiteRenderer {
       console.error(`with frontmatter: ${JSON.stringify(generatedDocument.frontMatter)}`);
       throw error;
     }
+
+    return true;
   }
 
   private renderMarkdown(siteRelativeInputPath: string, md: string): string {

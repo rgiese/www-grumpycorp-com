@@ -31,10 +31,10 @@ async function build(minifyOutput: boolean) {
     minifyOutput,
   );
 
-  await siteRenderer.render();
+  const anyDocumentsUpdated = await siteRenderer.render();
 
-  await processAssets(sourceFileSystem.inputFiles, outputFileSystem, minifyOutput);
-  await processAssets(sourceFileSystem.themeFiles, outputFileSystem, minifyOutput);
+  await processAssets(sourceFileSystem.inputFiles, outputFileSystem, minifyOutput, anyDocumentsUpdated);
+  await processAssets(sourceFileSystem.themeFiles, outputFileSystem, minifyOutput, anyDocumentsUpdated);
 
   await imageManager.renderImages();
 

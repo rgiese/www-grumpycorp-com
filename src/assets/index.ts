@@ -24,6 +24,7 @@ export async function processAssets(
   sourceFiles: FileSpec[],
   outputFileSystem: OutputFileSystem,
   minifyOutput: boolean,
+  forceRegenerateCss = false,
 ) {
   const explicitAssetSourceFiles = sourceFiles.filter((f) => !f.parsedRootRelativePath.base.startsWith("_"));
 
@@ -68,7 +69,7 @@ export async function processAssets(
   );
 
   // Process CSS
-  await Promise.all(
+  const cssResults = await Promise.all(
     explicitAssetSourceFiles
       .filter((f) => f.parsedRootRelativePath.ext === ".css")
       .map(async (sourceFile) => {
@@ -80,7 +81,7 @@ export async function processAssets(
           const outputFileStat = getFileSystemStat(outputPath, { requireExists: false });
 
           if (outputFileStat && sourceFileStat.mtimeMs < outputFileStat.mtimeMs) {
-            return;
+            return false;
           }
 
           // Process content
@@ -89,12 +90,15 @@ export async function processAssets(
 
           outputFileSystem.ensureOutputPathExists(outputPath);
           await fs.writeFile(outputPath, outputCss);
+          return true;
         } catch (error) {
           console.error(`While processing ${sourceFile.absolutePath}:`);
           throw error;
         }
       }),
   );
+
+  const regenerateScss = forceRegenerateCss || cssResults.some(Boolean);
 
   // Process SCSS
   await Promise.all(
@@ -110,7 +114,7 @@ export async function processAssets(
           );
           const outputFileStat = getFileSystemStat(outputPath, { requireExists: false });
 
-          if (outputFileStat && sourceFileStat.mtimeMs < outputFileStat.mtimeMs) {
+          if (!regenerateScss && outputFileStat && sourceFileStat.mtimeMs < outputFileStat.mtimeMs) {
             return;
           }
 

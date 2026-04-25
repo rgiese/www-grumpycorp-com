@@ -30,5 +30,8 @@
   ],
   "files.associations": {
     "*.eta": "html"
-  }
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.requireConfig": true
 }

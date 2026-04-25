@@ -9,7 +9,7 @@ import autoprefixer from "autoprefixer";
 import postcss from "postcss";
 
 import { SvgToCssConfig } from "../config";
-import { getFileSystemStat, OutputFileSystem, repoRootPath } from "../fileSystem";
+import { getFileSystemStat, OutputFileSystem, repoRootPath, siteBuildId } from "../fileSystem";
 import { ImageManager, ImageManagerImage } from "./imageManager";
 import { FileSpec } from "../types";
 import { minifyOptions } from "../render/minifyOptions";
@@ -110,7 +110,7 @@ export async function processAssets(
           const sourceFileStat = getFileSystemStat(sourceFile.absolutePath, { requireExists: true });
 
           const outputPath = outputFileSystem.getAbsolutePath(
-            replaceFileExtension(sourceFile.parsedRootRelativePath, ".css"),
+            replaceFileExtension(sourceFile.parsedRootRelativePath, `${siteBuildId}.css`),
           );
           const outputFileStat = getFileSystemStat(outputPath, { requireExists: false });
 

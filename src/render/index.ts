@@ -12,7 +12,7 @@ import { DocumentGroupConfig, RootConfig } from "../config";
 import { createFigureDirective } from "./figureDirective";
 import { minifyOptions } from "./minifyOptions";
 import { GeneratedDocument, TemplateType, InputDocument, InputDocumentInventory } from "../types";
-import { getFileSystemStat, OutputFileSystem } from "../fileSystem";
+import { getFileSystemStat, OutputFileSystem, siteBuildId } from "../fileSystem";
 import { enumerateFilesRecursive } from "../fileSystem/enumerateFiles";
 
 export class SiteRenderer {
@@ -100,6 +100,8 @@ export class SiteRenderer {
         contentHtml,
         // Inventory
         inputDocumentInventory: this.inputDocumentInventory,
+        // Site build identifier
+        siteBuildId,
       });
 
       // Output

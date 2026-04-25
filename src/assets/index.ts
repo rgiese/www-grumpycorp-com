@@ -4,8 +4,12 @@ import * as path from "path";
 import * as sass from "sass";
 import svgo from "svgo";
 
+import tailwindcss from "@tailwindcss/postcss";
+import autoprefixer from "autoprefixer";
+import postcss from "postcss";
+
 import { SvgToCssConfig } from "../config";
-import { getFileSystemStat, OutputFileSystem } from "../fileSystem";
+import { getFileSystemStat, OutputFileSystem, repoRootPath } from "../fileSystem";
 import { ImageManager, ImageManagerImage } from "./imageManager";
 import { FileSpec } from "../types";
 import { minifyOptions } from "../render/minifyOptions";
@@ -117,10 +121,26 @@ export async function processAssets(
               outputFileSystem.outputRootPath, // for generated SVG->CSS files
             ],
             style: minifyOutput ? "compressed" : "expanded",
+            silenceDeprecations: ["import"], // @import "tailwindcss" passes through to PostCSS
           });
 
+          const compiledCss = await postcss([tailwindcss({ base: repoRootPath }), autoprefixer()]).process(
+            compiledScss.css,
+            {
+              from: sourceFile.absolutePath,
+              to: outputPath,
+            },
+          );
+
           outputFileSystem.ensureOutputPathExists(outputPath);
-          await fs.writeFile(outputPath, compiledScss.css);
+          await fs.writeFile(outputPath, compiledCss.css);
+
+          // Write source map if available
+          // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- result.map is typed incorrectly, can be undefined
+          const sourceMap = compiledCss.map?.toString();
+          if (sourceMap) {
+            await fs.writeFile(outputPath + ".map", sourceMap);
+          }
         } catch (error) {
           console.error(`While processing ${sourceFile.absolutePath}:`);
           throw error;

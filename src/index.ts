@@ -23,9 +23,6 @@ async function build(minifyOutput: boolean) {
     ),
   );
 
-  await processAssets(sourceFileSystem.inputFiles, outputFileSystem, minifyOutput);
-  await processAssets(sourceFileSystem.themeFiles, outputFileSystem, minifyOutput);
-
   const siteRenderer = new SiteRenderer(
     rootConfig,
     inputDocumentInventory,
@@ -35,6 +32,9 @@ async function build(minifyOutput: boolean) {
   );
 
   await siteRenderer.render();
+
+  await processAssets(sourceFileSystem.inputFiles, outputFileSystem, minifyOutput);
+  await processAssets(sourceFileSystem.themeFiles, outputFileSystem, minifyOutput);
 
   await imageManager.renderImages();
 

@@ -23,6 +23,10 @@
 
 @use "assets/svg.scss";
 
+// Configure Tailwind to scan generated HTML for class names
+@import "tailwindcss";
+@source "../../output/**/*.html";
+
 //
 // Tachyon-equivalent media queries
 //

@@ -1,7 +1,7 @@
 import { getFileSystemStat } from "./fileSystemStat";
-import { SourceFileSystem, createSourceFileSystem } from "./sourceFileSystem";
+import { SourceFileSystem, createSourceFileSystem, repoRootPath } from "./sourceFileSystem";
 import { OutputFileSystem } from "./outputFileSystem";
 
 export { getFileSystemStat };
-export { SourceFileSystem, createSourceFileSystem };
+export { SourceFileSystem, createSourceFileSystem, repoRootPath };
 export { OutputFileSystem };

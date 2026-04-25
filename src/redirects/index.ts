@@ -1,4 +1,4 @@
-import * as fs from "fs";
+import fs from "node:fs";
 
 import { OutputFileSystem } from "../fileSystem";
 import { Redirect } from "../config";

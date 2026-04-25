@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 import htmlMinifier from "html-minifier-terser";
-import * as path from "path";
+import path from "node:path";
 import * as sass from "sass";
 import svgo from "svgo";
 

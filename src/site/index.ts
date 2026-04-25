@@ -1,4 +1,4 @@
-import * as path from "path";
+import path from "node:path";
 
 import { RootConfig } from "../config";
 import { GeneratedDocumentsGenerator, RenderContextGenerator, InputDocument, TemplateType } from "../types";

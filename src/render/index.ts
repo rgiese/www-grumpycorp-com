@@ -1,11 +1,11 @@
-import * as fs from "fs";
+import fs from "node:fs";
 import { Eta } from "eta";
 import hljs from "highlight.js";
 import { Marked } from "marked";
 import { createDirectives } from "marked-directive";
 import { markedHighlight } from "marked-highlight";
 import htmlMinifier from "html-minifier-terser";
-import * as path from "path";
+import path from "node:path";
 
 import { ImageManager } from "../assets";
 import { DocumentGroupConfig, RootConfig } from "../config";
@@ -210,6 +210,6 @@ export class SiteRenderer {
     const outputHtml = this.minifyOutput ? await htmlMinifier.minify(pageHtml, minifyOptions) : pageHtml;
 
     // Output
-    fs.writeFileSync(outputPath, outputHtml);
+    await fs.promises.writeFile(outputPath, outputHtml);
   }
 }

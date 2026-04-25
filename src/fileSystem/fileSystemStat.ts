@@ -1,4 +1,4 @@
-import * as fs from "fs";
+import fs from "node:fs";
 
 // Wrap fs.Stats in an object so we can store `fsStats | undefined` in a map
 interface FileStats {

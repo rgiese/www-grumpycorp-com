@@ -1,4 +1,4 @@
-import * as path from "path";
+import path from "node:path";
 import * as yup from "yup";
 
 export { PlainDate, comparePlainDates, plainDateFrom } from "./temporal";

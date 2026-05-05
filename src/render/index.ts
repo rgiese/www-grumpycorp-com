@@ -18,6 +18,7 @@ import { enumerateFilesRecursive } from "../fileSystem/enumerateFiles";
 export class SiteRenderer {
   private readonly eta: Eta;
   private readonly newestThemeFileMtimeMs: number;
+  private readonly baseRenderContext = { siteBuildId };
 
   constructor(
     private readonly rootConfig: RootConfig,
@@ -95,13 +96,13 @@ export class SiteRenderer {
       const pageHtml = this.eta.render(documentGroupConfig.templateName, {
         // Site-provided context (bring this in first so it can't override "official" fields)
         ...templateRenderContext,
+        // Base context
+        ...this.baseRenderContext,
         // This document
         inputDocument,
         contentHtml,
         // Inventory
         inputDocumentInventory: this.inputDocumentInventory,
-        // Site build identifier
-        siteBuildId,
       });
 
       // Output
@@ -122,6 +123,8 @@ export class SiteRenderer {
         return this.eta.render(generatedDocument.contentTemplateName, {
           // Site-provided context (bring this in first so it can't override "official" fields)
           ...generatedDocument.contentTemplateContext,
+          // Base context
+          ...this.baseRenderContext,
           // Inventory
           inputDocumentInventory: this.inputDocumentInventory,
         });
@@ -167,6 +170,8 @@ export class SiteRenderer {
       const pageHtml = this.eta.render(generatedDocument.templateName, {
         // Site-provided context (bring this in first so it can't override "official" fields)
         ...generatedDocument.templateRenderContext,
+        // Base context
+        ...this.baseRenderContext,
         // This document
         inputDocument: { frontMatter: generatedDocument.frontMatter },
         contentHtml,

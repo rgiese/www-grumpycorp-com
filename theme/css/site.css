@@ -107,62 +107,61 @@ img {
 }
 
 /*
- * Typefaces
+ * Typography
  */
 
-html {
-  font-family: "Questrial", sans-serif;
+@theme {
+  --font-sans: "Questrial", sans-serif;
 }
 
-h1 {
-  font-size: 2em;
-  line-height: 1.2;
-  font-family: "Quicksand", sans-serif;
-  font-weight: 500;
-  color: var(--accent);
-
-  a {
-    color: var(--accent);
-    text-decoration: none;
+@layer base {
+  html {
+    @apply font-sans;
   }
-}
 
-h2 {
-  font-size: 1.5em;
-  line-height: 1.2;
-  font-family: "Quicksand", sans-serif;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: var(--accent);
-}
+  h1 {
+    font-size: 2em;
+    line-height: 1.2;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    color: var(--accent);
 
-h3 {
-  font-size: 1.17em;
-  line-height: 1.2;
-  font-family: "Quicksand", sans-serif;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: var(--accent-light);
-}
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+  }
 
-h4 {
-  font-size: 1em;
-  line-height: 1.2;
-  font-family: "Dosis", sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: var(--accent-mono);
-}
+  h2 {
+    font-size: 1.5em;
+    line-height: 1.2;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
 
-figcaption {
-  font-family: "Quicksand", sans-serif;
-  font-size: 0.875rem;
-  color: white;
-  background-color: rgb(0 0 0 / 50%);
-}
+  h3 {
+    font-size: 1.17em;
+    line-height: 1.2;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--accent-light);
+  }
 
-code {
-  font-size: 0.9em;
+  h4 {
+    font-size: 1em;
+    line-height: 1.2;
+    font-family: "Dosis", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--accent-mono);
+  }
+
+  code {
+    font-size: 0.9em;
+  }
 }
 
 .content {
@@ -197,6 +196,11 @@ figure {
 
     padding-block: 0.25rem;
     padding-inline: 0.5rem 1rem;
+
+    font-family: "Quicksand", sans-serif;
+    @apply text-sm;
+    color: white;
+    background-color: rgb(0 0 0 / 50%);
   }
 }
 

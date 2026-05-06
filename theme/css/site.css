@@ -1,27 +1,13 @@
-/*
- * Syntax highlighting
- */
+@import "tailwindcss";
 
-@import "highlight.js/styles/xcode.min.css";
-
-/*
- * Fonts
- * - also note the corresponding preload directives in `_layout.eta`
- */
-
+/* Fonts (also note the corresponding preload directives in `_layout.eta` */
 @import "./_fonts.css";
 
-/*
- * SVGs
- */
+/* Syntax highlighting */
+@import "highlight.js/styles/xcode.min.css";
 
+/* Generated SVGs->CSS */
 @import "assets/svg.css";
-
-/*
- * Configure Tailwind to scan generated HTML for class names
- */
-
-@import "tailwindcss";
 
 /*
  * SVGs, continued: default styling

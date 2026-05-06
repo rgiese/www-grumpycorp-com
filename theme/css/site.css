@@ -194,8 +194,8 @@ figure {
  * Portfolio page styles
  */
 
-.portfolio-container {
-  max-width: 72rem;
+.portfolio-content {
+  @apply max-w-6xl;
 
   figure {
     margin-block: 0;
@@ -205,33 +205,21 @@ figure {
     /* c.f. https://stackoverflow.com/questions/5804256/image-inside-div-has-extra-space-below-the-image */
     display: block;
   }
-}
 
-.portfolio-w100 {
-  @apply p-3;
-}
-
-.portfolio-sxs-container {
-  @apply flow-root w-full;
-}
-
-.portfolio-sxs-w40,
-.portfolio-sxs-w50,
-.portfolio-sxs-w60 {
-  padding: 0.75rem;
-  float: left;
-  width: 100%;
-}
-
-@media (min-width: 30em) {
-  .portfolio-sxs-w40 {
-    width: 40%;
+  .portfolio-w100 {
+    @apply p-3;
   }
+
+  .portfolio-sxs-container {
+    @apply flow-root w-full;
+  }
+
   .portfolio-sxs-w50 {
-    width: 50%;
+    @apply p-3 float-left w-full lg:w-1/2;
   }
+
   .portfolio-sxs-w60 {
-    width: 60%;
+    @apply p-3 float-left w-full lg:w-3/5;
   }
 }
 

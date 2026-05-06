@@ -9,10 +9,6 @@
 /* Generated SVGs->CSS */
 @import "assets/svg.css";
 
-.svg-tag {
-  @apply size-4 inline-block;
-}
-
 /*
  * Global
  */
@@ -33,24 +29,19 @@
   color: var(--accent-mono);
 }
 
-html,
-body {
-  /* Without this, browser enters quirk mode and top-level flexbox layout doesn't scale to full height
-   * unless you remove the top-level DOCTYPE - oy.
-   * See https://stackoverflow.com/questions/32214152/why-does-my-div-height-100-work-only-when-doctype-is-removed/32215263#32215263. */
-  height: 100%;
-}
-
-img {
-  /* Don't let images scale up past their built-in size (but they'll still scale down)
-   * https://web.dev/learn/design/responsive-images */
-  max-inline-size: 100%;
-  block-size: auto;
-}
-
-/* Tailwind preflight zeroes all heading, paragraph, figure, and list margins/styles; restore browser defaults.
- * Must be in @layer base so Tailwind utilities (e.g. mb-1) can override on a per-element basis. */
 @layer base {
+  html,
+  body {
+    /* Without this, browser enters quirk mode and top-level flexbox layout doesn't scale to full height
+     * unless you remove the top-level DOCTYPE - oy.
+     * See https://stackoverflow.com/questions/32214152/why-does-my-div-height-100-work-only-when-doctype-is-removed/32215263#32215263. */
+    height: 100%;
+  }
+
+  /* 
+   * Tailwind preflight zeroes all heading, paragraph, figure, and list margins/styles; restore browser defaults.
+   * Must be in @layer base so Tailwind utilities (e.g. mb-1) can override on a per-element basis. 
+   */
   p {
     margin-block: 1em;
   }
@@ -85,6 +76,35 @@ img {
     list-style-type: disc;
     margin-block: 1em;
     padding-inline-start: 40px;
+  }
+
+  /* Other basic element settings */
+  img {
+    /* 
+     * Don't let images scale up past their built-in size (but they'll still scale down)
+     * https://web.dev/learn/design/responsive-images 
+     */
+    max-inline-size: 100%;
+    block-size: auto;
+  }
+
+  figure {
+    display: table;
+    width: 100%;
+    margin-inline: 0;
+
+    figcaption {
+      display: table-caption;
+      caption-side: top;
+
+      padding-block: 0.25rem;
+      padding-inline: 0.5rem 1rem;
+
+      font-family: "Quicksand", sans-serif;
+      @apply text-sm;
+      color: white;
+      background-color: rgb(0 0 0 / 50%);
+    }
   }
 }
 
@@ -147,103 +167,86 @@ img {
 }
 
 /*
- * Main content sections
+ * Components
  */
 
-.content {
-  font-size: 1.05em;
-
-  a:link {
-    color: var(--accent);
+@layer components {
+  .svg-tag {
+    @apply size-4 inline-block;
   }
 
-  a:hover,
-  a:visited {
-    color: #ae4820; /* Can't use var() here for security reasons */
-  }
-}
+  .content {
+    font-size: 1.05em;
 
-.portfolio-content {
-  /* Note: applied in addition to .content for portfolio pages */
-  @apply max-w-6xl;
+    a:link {
+      color: var(--accent);
+    }
 
-  figure {
-    margin-block: 0;
-  }
-
-  img {
-    /* c.f. https://stackoverflow.com/questions/5804256/image-inside-div-has-extra-space-below-the-image */
-    display: block;
+    a:hover,
+    a:visited {
+      color: #ae4820; /* Can't use var() here for security reasons */
+    }
   }
 
-  .portfolio-w100 {
-    @apply p-3;
-  }
-
-  .portfolio-sxs-container {
-    @apply flow-root w-full;
-  }
-
-  .portfolio-sxs-w50 {
-    @apply p-3 float-left w-full lg:w-1/2;
-  }
-
-  .portfolio-sxs-w60 {
-    @apply p-3 float-left w-full lg:w-3/5;
-  }
-}
-
-.home-page {
-  .home-page-figure-container {
-    @apply flex flex-wrap;
-  }
-
-  .home-page-figure-div {
-    @apply p-1 lg:w-1/2;
+  .portfolio-content {
+    /* Note: applied in addition to .content for portfolio pages */
+    @apply max-w-6xl;
 
     figure {
       margin-block: 0;
     }
-  }
 
-  .home-page-tags-container {
-    a {
-      color: var(--accent);
-      text-decoration: none;
+    img {
+      /* c.f. https://stackoverflow.com/questions/5804256/image-inside-div-has-extra-space-below-the-image */
+      display: block;
+    }
+
+    .portfolio-w100 {
+      @apply p-3;
+    }
+
+    .portfolio-sxs-container {
+      @apply flow-root w-full;
+    }
+
+    .portfolio-sxs-w50 {
+      @apply p-3 float-left w-full lg:w-1/2;
+    }
+
+    .portfolio-sxs-w60 {
+      @apply p-3 float-left w-full lg:w-3/5;
     }
   }
-}
 
-.rightbar {
-  .colophon-row {
-    @apply text-sm pt-1;
+  .home-page {
+    .home-page-figure-container {
+      @apply flex flex-wrap;
+    }
+
+    .home-page-figure-div {
+      @apply p-1 lg:w-1/2;
+
+      figure {
+        margin-block: 0;
+      }
+    }
+
+    .home-page-tags-container {
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+    }
   }
 
-  .link-subdued {
-    @apply no-underline hover:opacity-50 text-black/80;
-  }
-}
+  .rightbar {
+    .colophon-row {
+      @apply text-sm pt-1;
+    }
 
-/*
- * Figures (i.e. image captions) madness
- */
-
-figure {
-  display: table;
-  width: 100%;
-  margin-inline: 0;
-
-  figcaption {
-    display: table-caption;
-    caption-side: top;
-
-    padding-block: 0.25rem;
-    padding-inline: 0.5rem 1rem;
-
-    font-family: "Quicksand", sans-serif;
-    @apply text-sm;
-    color: white;
-    background-color: rgb(0 0 0 / 50%);
+    .link-subdued {
+      @apply no-underline hover:opacity-50 text-black/80;
+    }
   }
 }
 

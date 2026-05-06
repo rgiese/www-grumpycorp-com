@@ -1,4 +1,4 @@
-<div class="text-base leading-normal mx-auto">
+<div class="rightbar text-base leading-normal mx-auto">
   <h4>Pinned</h4>
   <% data.inputDocumentInventory.get("pages").forEach(function(inputDocument) { %>
   <div>

@@ -2,7 +2,7 @@
 title: About
 ---
 
-::figure[This guy]{src="about/profile.jpg" alt="Robin and Chester" outerDivWithClass="float-left mw-30 mr-2"}
+::figure[This guy]{src="about/profile.jpg" alt="Robin and Chester" outerDivWithClass="float-left max-w-3/10 mr-2"}
 
 Hi, I'm Robin (thus <span class="h-8 inline-block svg-grumpy-robin"></span>).
 I'm an engineer, artist, and fabricator driven by a compulsion to learn, teach, and make.

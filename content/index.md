@@ -1,5 +1,7 @@
 ## Phinneywood
 
+<div class="home-page">
+
 <div class="home-page-figure-container">
 
 ::figure[Welcome to Phinneywood]{src="/posts/phinneywood/first-post/1-16x9.jpg" href="/posts/phinneywood/first-post/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
@@ -65,4 +67,6 @@
 
 <div class="home-page-tags-container p-4">
   ...or just read <a href="/posts/all/">every damn thing</a>.
+</div>
+
 </div>

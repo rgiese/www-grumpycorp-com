@@ -9,10 +9,6 @@
 /* Generated SVGs->CSS */
 @import "assets/svg.css";
 
-/*
- * SVGs, continued: default styling
- */
-
 .svg-tag {
   @apply size-4 inline-block;
 }
@@ -150,6 +146,10 @@ img {
   }
 }
 
+/*
+ * Main content sections
+ */
+
 .content {
   font-size: 1.05em;
 
@@ -163,38 +163,8 @@ img {
   }
 }
 
-.link-subdued {
-  @apply no-underline hover:opacity-50 text-black/80;
-}
-
-/*
- * Figures (i.e. image captions) madness
- */
-
-figure {
-  display: table;
-  width: 100%;
-  margin-inline: 0;
-
-  figcaption {
-    display: table-caption;
-    caption-side: top;
-
-    padding-block: 0.25rem;
-    padding-inline: 0.5rem 1rem;
-
-    font-family: "Quicksand", sans-serif;
-    @apply text-sm;
-    color: white;
-    background-color: rgb(0 0 0 / 50%);
-  }
-}
-
-/*
- * Portfolio page styles
- */
-
 .portfolio-content {
+  /* Note: applied in addition to .content for portfolio pages */
   @apply max-w-6xl;
 
   figure {
@@ -223,52 +193,63 @@ figure {
   }
 }
 
-/*
- * Tag styling
- */
+.home-page {
+  .home-page-figure-container {
+    @apply flex flex-wrap;
+  }
 
-.tag-dash {
-  @apply opacity-50;
-}
+  .home-page-figure-div {
+    @apply p-1 lg:w-1/2;
 
-/*
- * Home page
- */
+    figure {
+      margin-block: 0;
+    }
+  }
 
-.home-page-figure-container {
-  @apply flex flex-wrap;
-}
-
-.home-page-figure-div {
-  @apply p-1 lg:w-1/2;
-
-  figure {
-    margin-block: 0;
+  .home-page-tags-container {
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
   }
 }
 
-.home-page-tags-container {
-  a {
-    color: var(--accent);
-    text-decoration: none;
+.rightbar {
+  .colophon-row {
+    @apply text-sm pt-1;
+  }
+
+  .link-subdued {
+    @apply no-underline hover:opacity-50 text-black/80;
   }
 }
 
 /*
- * _rightbar.eta
+ * Figures (i.e. image captions) madness
  */
 
-.colophon-row {
-  @apply text-sm pt-1;
+figure {
+  display: table;
+  width: 100%;
+  margin-inline: 0;
+
+  figcaption {
+    display: table-caption;
+    caption-side: top;
+
+    padding-block: 0.25rem;
+    padding-inline: 0.5rem 1rem;
+
+    font-family: "Quicksand", sans-serif;
+    @apply text-sm;
+    color: white;
+    background-color: rgb(0 0 0 / 50%);
+  }
 }
 
 /*
- * Site utility classes
+ * Print settings
  */
-
-.mw-30 {
-  @apply max-w-[30%];
-}
 
 @media print {
   .dn-p {

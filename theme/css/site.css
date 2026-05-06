@@ -1,40 +1,39 @@
-//
-// Syntax highlighting
-//
+/*
+ * Syntax highlighting
+ */
 
-@use "highlight.js/styles/xcode.min.css";
+@import "highlight.js/styles/xcode.min.css";
 
-//
-// Fonts
-// - also note the corresponding preload directives in `_layout.eta`
-//
+/*
+ * Fonts
+ * - also note the corresponding preload directives in `_layout.eta`
+ */
 
-@use "fonts";
+@import "./_fonts.css";
 
-//
-// SVGs
-//
+/*
+ * SVGs
+ */
 
-@use "assets/svg.scss";
+@import "assets/svg.css";
 
-//
-// Configure Tailwind to scan generated HTML for class names
-//
+/*
+ * Configure Tailwind to scan generated HTML for class names
+ */
 
 @import "tailwindcss";
-@source "../../output/**/*.html";
 
-//
-// SVGs, continued: default styling
-//
+/*
+ * SVGs, continued: default styling
+ */
 
 .svg-tag {
   @apply size-4 inline-block;
 }
 
-//
-// Global
-//
+/*
+ * Global
+ */
 
 :root {
   --accent: #dc6c40;
@@ -54,21 +53,21 @@
 
 html,
 body {
-  // Without this, browser enters quirk mode and top-level flexbox layout doesn't scale to full height
-  // unless you remove the top-level DOCTYPE - oy.
-  // See https://stackoverflow.com/questions/32214152/why-does-my-div-height-100-work-only-when-doctype-is-removed/32215263#32215263.
+  /* Without this, browser enters quirk mode and top-level flexbox layout doesn't scale to full height
+   * unless you remove the top-level DOCTYPE - oy.
+   * See https://stackoverflow.com/questions/32214152/why-does-my-div-height-100-work-only-when-doctype-is-removed/32215263#32215263. */
   height: 100%;
 }
 
 img {
-  // Don't let images scale up past their built-in size (but they'll still scale down)
-  // https://web.dev/learn/design/responsive-images
+  /* Don't let images scale up past their built-in size (but they'll still scale down)
+   * https://web.dev/learn/design/responsive-images */
   max-inline-size: 100%;
   block-size: auto;
 }
 
-// Tailwind preflight zeroes all heading, paragraph, figure, and list margins/styles; restore browser defaults.
-// Must be in @layer base so Tailwind utilities (e.g. mb-1) can override on a per-element basis.
+/* Tailwind preflight zeroes all heading, paragraph, figure, and list margins/styles; restore browser defaults.
+ * Must be in @layer base so Tailwind utilities (e.g. mb-1) can override on a per-element basis. */
 @layer base {
   p {
     margin-block: 1em;
@@ -107,9 +106,9 @@ img {
   }
 }
 
-//
-// Typefaces
-//
+/*
+ * Typefaces
+ */
 
 html {
   font-family: "Questrial", sans-serif;
@@ -175,7 +174,7 @@ code {
 
   a:hover,
   a:visited {
-    color: #ae4820; // Can't use var() here for security reasons
+    color: #ae4820; /* Can't use var() here for security reasons */
   }
 }
 
@@ -183,9 +182,9 @@ code {
   @apply no-underline hover:opacity-50 text-black/80;
 }
 
-//
-// Figures (i.e. image captions) madness
-//
+/*
+ * Figures (i.e. image captions) madness
+ */
 
 figure {
   display: table;
@@ -201,9 +200,9 @@ figure {
   }
 }
 
-//
-// Portfolio page styles
-//
+/*
+ * Portfolio page styles
+ */
 
 .portfolio-container {
   max-width: 72rem;
@@ -213,43 +212,50 @@ figure {
   }
 
   img {
-    // c.f. https://stackoverflow.com/questions/5804256/image-inside-div-has-extra-space-below-the-image
+    /* c.f. https://stackoverflow.com/questions/5804256/image-inside-div-has-extra-space-below-the-image */
     display: block;
   }
 }
 
 .portfolio-w100 {
-  padding: 0.75rem;
+  @apply p-3;
 }
 
 .portfolio-sxs-container {
-  display: flow-root;
+  @apply flow-root w-full;
+}
+
+.portfolio-sxs-w40,
+.portfolio-sxs-w50,
+.portfolio-sxs-w60 {
+  padding: 0.75rem;
+  float: left;
   width: 100%;
 }
 
-@each $width in 40, 50, 60 {
-  .portfolio-sxs-w#{$width} {
-    padding: 0.75rem;
-    float: left;
-    width: 100%;
-
-    @media (min-width: 30em) {
-      width: $width * 1%;
-    }
+@media (min-width: 30em) {
+  .portfolio-sxs-w40 {
+    width: 40%;
+  }
+  .portfolio-sxs-w50 {
+    width: 50%;
+  }
+  .portfolio-sxs-w60 {
+    width: 60%;
   }
 }
 
-//
-// Tag styling
-//
+/*
+ * Tag styling
+ */
 
 .tag-dash {
-  opacity: 0.5;
+  @apply opacity-50;
 }
 
-//
-// Home page
-//
+/*
+ * Home page
+ */
 
 .home-page-figure-container {
   @apply flex flex-wrap;
@@ -270,20 +276,20 @@ figure {
   }
 }
 
-//
-// _rightbar.eta
-//
+/*
+ * _rightbar.eta
+ */
 
 .colophon-row {
   @apply text-sm pt-1;
 }
 
-//
-// Site utility classes
-//
+/*
+ * Site utility classes
+ */
 
 .mw-30 {
-  max-width: 30%;
+  @apply max-w-[30%];
 }
 
 @media print {
@@ -291,12 +297,12 @@ figure {
     display: none !important;
   }
 
-  // Every h1 starts on a new page in print
+  /* Every h1 starts on a new page in print */
   h1 {
     break-before: page;
   }
 
-  // ...but not the very first one on the page/document
+  /* ...but not the very first one on the page/document */
   h1:first-of-type {
     break-before: auto;
   }

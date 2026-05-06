@@ -105,7 +105,7 @@ const rootConfig: RootConfig = {
   // - The first image size that meets the constraints is chosen, so start with max-width: @non-small.
   defaultImageSizes: ["(max-width: 30em) 100vw", "50vw"],
   // Asset transcodes
-  svgToCssTranscodes: [{ inputRootRelativePath: "assets/packed", siteRelativeOutputPath: "assets/svg.scss" }],
+  svgToCssTranscodes: [{ inputRootRelativePath: "assets/packed", siteRelativeOutputPath: "assets/svg.css" }],
   // Redirects
   redirects: [
     { source: "/posts/film%20making/*", destination: "/posts/film-making/:splat", code: 301 },

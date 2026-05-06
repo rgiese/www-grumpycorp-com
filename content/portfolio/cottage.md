@@ -14,7 +14,7 @@ icon: cottage
 
 ## Writer's cottage
 
-  <div class="accent-mono">
+  <div class="text-accent-mono">
 
 _March 2019_
 
@@ -56,7 +56,7 @@ All images by Robin Giese / GRUMPYCORP.
 <!-- Closing para -->
 
 <div class="portfolio-sxs-container pt-2">
-  <div class="portfolio-sxs-w60 accent-mono pt-8">
+  <div class="portfolio-sxs-w60 text-accent-mono pt-8">
 
 Design and construction by Robin Giese / GRUMPYCORP
 based on design and architecture by [BUILD LLC](https://www.buildllc.com)

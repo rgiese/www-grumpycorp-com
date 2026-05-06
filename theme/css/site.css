@@ -9,26 +9,6 @@
 /* Generated SVGs->CSS */
 @import "assets/svg.css";
 
-/*
- * Global
- */
-
-:root {
-  --accent: #dc6c40;
-  --accent-light: #f79a5e;
-  --accent-dark: #0d5258;
-  --accent-mono: #03061f;
-  --accent-mono-light: #a0cab3;
-}
-
-.accent {
-  color: var(--accent);
-}
-
-.accent-mono {
-  color: var(--accent-mono);
-}
-
 @layer base {
   html,
   body {
@@ -38,9 +18,9 @@
     height: 100%;
   }
 
-  /* 
+  /*
    * Tailwind preflight zeroes all heading, paragraph, figure, and list margins/styles; restore browser defaults.
-   * Must be in @layer base so Tailwind utilities (e.g. mb-1) can override on a per-element basis. 
+   * Must be in @layer base so Tailwind utilities (e.g. mb-1) can override on a per-element basis.
    */
   p {
     margin-block: 1em;
@@ -109,6 +89,18 @@
 }
 
 /*
+ * Colors
+ */
+
+@theme {
+  --color-accent: #dc6c40;
+  --color-accent-light: #f79a5e;
+  --color-accent-dark: #0d5258;
+  --color-accent-mono: #03061f;
+  --color-accent-mono-light: #a0cab3;
+}
+
+/*
  * Typography
  */
 
@@ -126,11 +118,10 @@
     line-height: 1.2;
     font-family: "Quicksand", sans-serif;
     font-weight: 500;
-    color: var(--accent);
+    @apply text-accent;
 
     a {
-      color: var(--accent);
-      text-decoration: none;
+      @apply text-accent no-underline;
     }
   }
 
@@ -140,7 +131,7 @@
     font-family: "Quicksand", sans-serif;
     font-weight: 500;
     text-transform: uppercase;
-    color: var(--accent);
+    @apply text-accent;
   }
 
   h3 {
@@ -149,7 +140,7 @@
     font-family: "Quicksand", sans-serif;
     font-weight: 500;
     text-transform: uppercase;
-    color: var(--accent-light);
+    @apply text-accent-light;
   }
 
   h4 {
@@ -158,7 +149,7 @@
     font-family: "Dosis", sans-serif;
     font-weight: 600;
     text-transform: uppercase;
-    color: var(--accent-mono);
+    @apply text-accent-mono;
   }
 
   code {
@@ -179,7 +170,7 @@
     font-size: 1.05em;
 
     a:link {
-      color: var(--accent);
+      @apply text-accent;
     }
 
     a:hover,
@@ -233,8 +224,7 @@
 
     .home-page-tags-container {
       a {
-        color: var(--accent);
-        text-decoration: none;
+        @apply text-accent no-underline;
       }
     }
   }

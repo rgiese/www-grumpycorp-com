@@ -3,13 +3,13 @@
     <% data.postDocuments.forEach(function(postDocument) { %>
     <tr>
       <td>
-        <a href="/tags/posts/<%= encodeURIComponent(postDocument.documentTag) %>" class="no-underline accent-mono">
+        <a href="/tags/posts/<%= encodeURIComponent(postDocument.documentTag) %>" class="no-underline text-accent-mono">
           <%~ data.tagPresenter(postDocument.documentTag) %>
         </a>
       </td>
       <td class="font-bold px-3"><%= postDocument.frontMatter.published.toLocaleString() %></td>
       <td>
-        <a class="no-underline accent" href="/<%= postDocument.siteRelativeOutputPath %>"
+        <a class="no-underline text-accent" href="/<%= postDocument.siteRelativeOutputPath %>"
           ><%= postDocument.frontMatter.title %></a
         >
       </td>

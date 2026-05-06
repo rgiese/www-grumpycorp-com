@@ -2,7 +2,7 @@
   Latest post:
   <a href="/<%= data.latestPostDocument.siteRelativeOutputPath %>"><%= data.latestPostDocument.frontMatter.title %></a>
   in
-  <a href="/tags/posts/<%= encodeURIComponent(data.latestPostTag) %>" class="no-underline accent-mono">
+  <a href="/tags/posts/<%= encodeURIComponent(data.latestPostTag) %>" class="no-underline text-accent-mono">
     <span class="svg-tag"></span>
     <%= data.latestPostTag %>
   </a>

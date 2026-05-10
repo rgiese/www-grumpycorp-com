@@ -1,18 +1,16 @@
 import fs from "node:fs/promises";
-import htmlMinifier from "html-minifier-terser";
 import path from "node:path";
-import * as sass from "sass";
 import svgo from "svgo";
 
 import tailwindcss from "@tailwindcss/postcss";
 import autoprefixer from "autoprefixer";
 import postcss from "postcss";
+import postcssImport from "postcss-import";
 
 import { SvgToCssConfig } from "../config";
-import { getFileSystemStat, OutputFileSystem, repoRootPath, siteBuildId } from "../fileSystem";
+import { getFileSystemStat, OutputFileSystem, siteBuildId } from "../fileSystem";
 import { ImageManager, ImageManagerImage } from "./imageManager";
 import { FileSpec } from "../types";
-import { minifyOptions } from "../render/minifyOptions";
 
 export { ImageManager, ImageManagerImage };
 
@@ -69,41 +67,9 @@ export async function processAssets(
   );
 
   // Process CSS
-  const cssResults = await Promise.all(
-    explicitAssetSourceFiles
-      .filter((f) => f.parsedRootRelativePath.ext === ".css")
-      .map(async (sourceFile) => {
-        try {
-          // Set up paths
-          const sourceFileStat = getFileSystemStat(sourceFile.absolutePath, { requireExists: true });
-
-          const outputPath = outputFileSystem.getAbsolutePath(sourceFile.rootRelativePath);
-          const outputFileStat = getFileSystemStat(outputPath, { requireExists: false });
-
-          if (outputFileStat && sourceFileStat.mtimeMs < outputFileStat.mtimeMs) {
-            return false;
-          }
-
-          // Process content
-          const inputCss = await fs.readFile(sourceFile.absolutePath, "utf8");
-          const outputCss = minifyOutput ? await htmlMinifier.minify(inputCss, minifyOptions) : inputCss;
-
-          outputFileSystem.ensureOutputPathExists(outputPath);
-          await fs.writeFile(outputPath, outputCss);
-          return true;
-        } catch (error) {
-          console.error(`While processing ${sourceFile.absolutePath}:`);
-          throw error;
-        }
-      }),
-  );
-
-  const regenerateScss = forceRegenerateCss || cssResults.some(Boolean);
-
-  // Process SCSS
   await Promise.all(
     explicitAssetSourceFiles
-      .filter((f) => f.parsedRootRelativePath.ext === ".scss")
+      .filter((f) => f.parsedRootRelativePath.ext === ".css")
       .map(async (sourceFile) => {
         try {
           // Set up paths
@@ -114,27 +80,24 @@ export async function processAssets(
           );
           const outputFileStat = getFileSystemStat(outputPath, { requireExists: false });
 
-          if (!regenerateScss && outputFileStat && sourceFileStat.mtimeMs < outputFileStat.mtimeMs) {
+          if (!forceRegenerateCss && outputFileStat && sourceFileStat.mtimeMs < outputFileStat.mtimeMs) {
             return;
           }
 
           // Process content
-          const compiledScss = await sass.compileAsync(sourceFile.absolutePath, {
-            loadPaths: [
-              path.resolve("node_modules"),
-              outputFileSystem.outputRootPath, // for generated SVG->CSS files
-            ],
-            style: minifyOutput ? "compressed" : "expanded",
-            silenceDeprecations: ["import"], // @import "tailwindcss" passes through to PostCSS
-          });
+          const inputCss = await fs.readFile(sourceFile.absolutePath, "utf8");
 
-          const compiledCss = await postcss([tailwindcss({ base: repoRootPath }), autoprefixer()]).process(
-            compiledScss.css,
-            {
-              from: sourceFile.absolutePath,
-              to: outputPath,
-            },
-          );
+          const compiledCss = await postcss([
+            postcssImport({
+              path: [outputFileSystem.outputRootPath], // for generated SVG->CSS files
+              filter: (importPath) => importPath !== "tailwindcss", // let Tailwind handle its own directive
+            }),
+            tailwindcss({ base: outputFileSystem.outputRootPath, optimize: minifyOutput ? { minify: true } : false }),
+            autoprefixer(),
+          ]).process(inputCss, {
+            from: sourceFile.absolutePath,
+            to: outputPath,
+          });
 
           outputFileSystem.ensureOutputPathExists(outputPath);
           await fs.writeFile(outputPath, compiledCss.css);

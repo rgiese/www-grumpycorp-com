@@ -11,5 +11,5 @@ export function getDocumentTagSet(inputDocuments: InputDocument[]) {
 }
 
 export function tagPresenter(tag: string) {
-  return tag.replaceAll("-", '<span class="tag-dash">-</span>');
+  return tag.replaceAll("-", '<span class="opacity-50">-</span>');
 }

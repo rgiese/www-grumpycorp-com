@@ -1,0 +1,261 @@
+@import "tailwindcss";
+
+/* Fonts (also note the corresponding preload directives in `_layout.eta` */
+@import "./_fonts.css";
+
+/* Syntax highlighting */
+@import "highlight.js/styles/xcode.min.css";
+
+/* Generated SVGs->CSS */
+@import "assets/svg.css";
+
+@layer base {
+  html,
+  body {
+    /* Without this, browser enters quirk mode and top-level flexbox layout doesn't scale to full height
+     * unless you remove the top-level DOCTYPE - oy.
+     * See https://stackoverflow.com/questions/32214152/why-does-my-div-height-100-work-only-when-doctype-is-removed/32215263#32215263. */
+    height: 100%;
+  }
+
+  /*
+   * Tailwind preflight zeroes all heading, paragraph, figure, and list margins/styles; restore browser defaults.
+   * Must be in @layer base so Tailwind utilities (e.g. mb-1) can override on a per-element basis.
+   */
+  p {
+    margin-block: 1em;
+  }
+
+  h1 {
+    margin-block: 0.67em;
+  }
+
+  h2 {
+    margin-block: 0.83em;
+  }
+
+  h3 {
+    margin-block: 1em;
+  }
+
+  h4 {
+    margin-block: 1.33em 0;
+  }
+
+  figure {
+    margin-block: 1em;
+  }
+
+  ol {
+    list-style-type: decimal;
+    margin-block: 1em;
+    padding-inline-start: 40px;
+  }
+
+  ul {
+    list-style-type: disc;
+    margin-block: 1em;
+    padding-inline-start: 40px;
+  }
+
+  /* Other basic element settings */
+  img {
+    /* 
+     * Don't let images scale up past their built-in size (but they'll still scale down)
+     * https://web.dev/learn/design/responsive-images 
+     */
+    max-inline-size: 100%;
+    block-size: auto;
+  }
+
+  figure {
+    display: table;
+    width: 100%;
+    margin-inline: 0;
+
+    figcaption {
+      display: table-caption;
+      caption-side: top;
+
+      padding-block: 0.25rem;
+      padding-inline: 0.5rem 1rem;
+
+      font-family: "Quicksand", sans-serif;
+      @apply text-sm;
+      color: white;
+      background-color: rgb(0 0 0 / 50%);
+    }
+  }
+}
+
+/*
+ * Colors
+ */
+
+@theme {
+  --color-accent: #dc6c40;
+  --color-accent-light: #f79a5e;
+  --color-accent-dark: #0d5258;
+  --color-accent-mono: #03061f;
+  --color-accent-mono-light: #a0cab3;
+}
+
+/*
+ * Typography
+ */
+
+@theme {
+  --font-sans: "Questrial", sans-serif;
+}
+
+@layer base {
+  html {
+    @apply font-sans;
+  }
+
+  h1 {
+    font-size: 2em;
+    line-height: 1.2;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    @apply text-accent;
+
+    a {
+      @apply text-accent no-underline;
+    }
+  }
+
+  h2 {
+    font-size: 1.5em;
+    line-height: 1.2;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    @apply text-accent;
+  }
+
+  h3 {
+    font-size: 1.17em;
+    line-height: 1.2;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    @apply text-accent-light;
+  }
+
+  h4 {
+    font-size: 1em;
+    line-height: 1.2;
+    font-family: "Dosis", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    @apply text-accent-mono;
+  }
+
+  code {
+    font-size: 0.9em;
+  }
+}
+
+/*
+ * Components
+ */
+
+@layer components {
+  .svg-tag {
+    @apply size-4 inline-block;
+  }
+
+  .content {
+    font-size: 1.05em;
+
+    a:link {
+      @apply text-accent;
+    }
+
+    a:hover,
+    a:visited {
+      color: #ae4820; /* Can't use var() here for security reasons */
+    }
+  }
+
+  .portfolio-content {
+    /* Note: applied in addition to .content for portfolio pages */
+    @apply max-w-6xl;
+
+    figure {
+      margin-block: 0;
+    }
+
+    img {
+      /* c.f. https://stackoverflow.com/questions/5804256/image-inside-div-has-extra-space-below-the-image */
+      display: block;
+    }
+
+    .portfolio-w100 {
+      @apply p-3;
+    }
+
+    .portfolio-sxs-container {
+      @apply flow-root w-full;
+    }
+
+    .portfolio-sxs-w50 {
+      @apply p-3 float-left w-full lg:w-1/2;
+    }
+
+    .portfolio-sxs-w60 {
+      @apply p-3 float-left w-full lg:w-3/5;
+    }
+  }
+
+  .home-page {
+    .home-page-figure-container {
+      @apply flex flex-wrap;
+    }
+
+    .home-page-figure-div {
+      @apply p-1 lg:w-1/2;
+
+      figure {
+        margin-block: 0;
+      }
+    }
+
+    .home-page-tags-container {
+      a {
+        @apply text-accent no-underline;
+      }
+    }
+  }
+
+  .rightbar {
+    .colophon-row {
+      @apply text-sm pt-1;
+    }
+
+    .link-subdued {
+      @apply no-underline hover:opacity-50 text-black/80;
+    }
+  }
+}
+
+/*
+ * Print settings
+ */
+
+@media print {
+  .dn-p {
+    display: none !important;
+  }
+
+  /* Every h1 starts on a new page in print */
+  h1 {
+    break-before: page;
+  }
+
+  /* ...but not the very first one on the page/document */
+  h1:first-of-type {
+    break-before: auto;
+  }
+}

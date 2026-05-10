@@ -14,7 +14,7 @@ icon: cottage
 
 ## The Walnut Library
 
-  <div class="accent-mono">
+  <div class="text-accent-mono">
 
 _February 2018_
 
@@ -65,7 +65,7 @@ All images by Robin Giese / GRUMPYCORP.
 <!-- Closing para -->
 
 <div class="portfolio-sxs-container pt-2">
-  <div class="portfolio-sxs-w60 accent-mono pt-8">
+  <div class="portfolio-sxs-w60 text-accent-mono pt-8">
 
 Design and construction by Robin Giese / GRUMPYCORP,
 _except_ shelves, bench tops, and edge banding fabricated by Ramon Rivera / Rivera 26 Remodeling

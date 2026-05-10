@@ -68,7 +68,7 @@
               <%~ include("home/_header", data) %>
               <% } %>
 
-            <div class="leading-normal content <%= documentGroupName === 'portfolio' ? 'portfolio-container' : '' %>">
+            <div class="leading-normal content <%= documentGroupName === 'portfolio' ? 'portfolio-content' : '' %>">
               <%~ data.contentHtml %>
             </div>
 

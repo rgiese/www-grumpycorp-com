@@ -30,7 +30,7 @@
     <link href="/css/site.<%= data.siteBuildId %>.css" rel="stylesheet" />
 
     <!-- Font preloading -->
-    <%~ ["dosis-v27-latin-regular", "questrial-v18-latin-regular", "quicksand-v30-latin-regular"].map((font) => `
+    <%~ ["ibm-plex-sans-v23-latin-regular", "ibm-plex-mono-v20-latin-regular"].map((font) => `
     <link rel="preload" href="/fonts/${font}.woff2" as="font" type="font/woff2" crossorigin />
     `).join("") %>
 

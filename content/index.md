@@ -1,11 +1,11 @@
 <div class="home-page">
 
 <!-- Hero -->
-<section class="section hero" id="phinneywood">
+<section class="section hero">
   <div class="hero-grid">
     <div>
       <p class="mt-0 mb-[22px] text-sm tracking-[0.08em] text-muted uppercase font-normal">Seattle</p>
-      <div class="hero-title">Phinneywood</div>
+      <h1 class="hero-title">Phinneywood</h1>
       <div class="hero-phrase" aria-label="a place for art, production, practice, and performance">
         <span class="hero-rotator-prefix">a place for</span><br />
         <span class="hero-rotator" aria-hidden="true">
@@ -24,18 +24,18 @@
 <section class="section pillars">
   <div class="pillar-grid">
     <article class="pillar">
-      <div class="pillar-heading"><a href="">Phinneywood</a></div>
+      <h2 class="pillar-heading"><a href="">Phinneywood</a></h2>
       <p>A place-based studio for art, production, practice, and performance.</p>
     </article>
     <article class="pillar">
-      <div class="pillar-heading"><a href="">Production</a></div>
+      <h2 class="pillar-heading"><a href="">Production</a></h2>
       <p>
         Camera, lighting, grip, electrical, sound, and technical direction for film, theater, music, and live
         performance.<br /><br />At Phinneywood or wherever the work needs to happen.
       </p>
     </article>
     <article class="pillar">
-      <div class="pillar-heading"><a href="">Collaborations</a></div>
+      <h2 class="pillar-heading"><a href="">Collaborations</a></h2>
       <p>Projects developed together, from early exploration through production and public presentation.</p>
     </article>
   </div>
@@ -44,12 +44,12 @@
 <!-- Selected work (must wrap in selected-work before wrapping in section) -->
 <section class="selected-work">
   <div class="section">
-    <div class="section-title">Selected work</div>
+    <h2 class="section-title">Selected work</h2>
     <div class="selected-work-grid">
       <article class="selected-work-card">
         <div class="image-placeholder">feature / case study image</div>
         <div>
-          <p class="selected-work-card-title">Production infrastructure</p>
+          <h3 class="selected-work-card-title">Production infrastructure</h3>
           <p>
             Feature-scale camera, grip, and electric support; on-set leadership; practical systems that keep work
             moving.
@@ -59,7 +59,7 @@
       <article class="selected-work-card">
         <div class="image-placeholder">space / theater image</div>
         <div>
-          <p class="selected-work-card-title">Live systems</p>
+          <h3 class="selected-work-card-title">Live systems</h3>
           <p>
             Theater, music, and performance environments designed around people, safety, timing, and repeatable
             use.
@@ -69,7 +69,7 @@
       <article class="selected-work-card">
         <div class="image-placeholder">furniture / fabrication image</div>
         <div>
-          <p class="selected-work-card-title">Fabrication</p>
+          <h3 class="selected-work-card-title">Fabrication</h3>
           <p>
             Custom furniture, scenic elements, and built environments shaped with the same attention to detail as
             production work.
@@ -79,7 +79,7 @@
       <article class="selected-work-card">
         <div class="image-placeholder">electronics / systems image</div>
         <div>
-          <p class="selected-work-card-title">Engineering</p>
+          <h3 class="selected-work-card-title">Engineering</h3>
           <p>
             Custom electronics, control systems, and technical infrastructure for creative spaces, installations,
             and live environments.

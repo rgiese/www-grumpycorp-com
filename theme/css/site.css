@@ -100,13 +100,14 @@
  */
 
 @theme {
+  --color-text: #2b2b2b;
+  --color-bg: #fffaf4;
+
   --color-accent: #dc6c40;
   --color-accent-light: #f79a5e;
   --color-accent-dark: #0d5258;
   --color-accent-mono: #03061f;
   --color-accent-mono-light: #a0cab3;
-  --color-bg: #fffaf4;
-  --color-text: #2b2b2b;
   --color-muted: #77736d;
   --color-line: #ded8cf;
   --color-panel: #f4eee6;
@@ -131,21 +132,33 @@
     sans-serif /* if all else fails */;
 }
 
+/* Utility to clear text styling to the body default */
+@utility text-reset {
+  @apply font-sans /* type face */ font-normal /* weight */;
+  @apply text-base /* size */ leading-normal /* line height */ tracking-normal /* letter spacing */;
+  @apply text-text /* color */;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply font-sans font-normal text-base;
-    @apply bg-bg text-text antialiased leading-[1.6];
+    @apply text-reset;
+    @apply leading-[1.6];
+
+    @apply antialiased;
     text-rendering: optimizeLegibility;
+
+    @apply bg-bg;
   }
 
   a {
     @apply text-inherit no-underline;
   }
 
+  /* Default heading styles (anything set here should be clear-able with @apply heading-reset */
   h1 {
     @apply text-4xl font-light;
 
@@ -168,6 +181,11 @@
   }
 }
 
+@utility heading-reset {
+  @apply text-reset;
+  margin-block: 0;
+}
+
 /*
  * Components for v2 of site
  */
@@ -180,6 +198,8 @@
   }
 
   .section-title {
+    @apply heading-reset; /* h2 for semantic purposes, but don't inherit any of its styling */
+
     @apply font-normal leading-[1.05] mb-[54px];
     font-size: clamp(30px, 4vw, 56px);
     letter-spacing: -0.03em;

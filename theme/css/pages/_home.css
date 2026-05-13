@@ -46,7 +46,8 @@
         }
 
         .hero-title {
-          @apply font-normal mt-0 mb-[34px];
+          @apply heading-reset; /* h1 for semantic purposes, but don't inherit any of its styling */
+          @apply mt-0 mb-[34px];
           font-size: clamp(56px, 10vw, 118px);
           line-height: 0.94;
           letter-spacing: -0.045em;
@@ -150,11 +151,12 @@
 
           /* Inner components */
           .pillar-heading {
-            @apply font-normal leading-[1.05] mb-6;
+            @apply heading-reset; /* h2 for semantic purposes, but don't inherit any of its styling */
+            @apply mb-6;
             font-size: clamp(26px, 3vw, 42px);
             letter-spacing: -0.025em;
 
-            @apply text-text no-underline cursor-pointer;
+            @apply no-underline cursor-pointer;
           }
 
           p {
@@ -188,7 +190,8 @@
         grid-template-rows: auto 1fr;
 
         .selected-work-card-title {
-          @apply font-normal text-text mt-0 mb-1;
+          @apply heading-reset; /* h3 for semantic purposes, but don't inherit any of its styling */
+          @apply mt-0 mb-1;
           font-size: 22px;
           letter-spacing: -0.015em;
         }

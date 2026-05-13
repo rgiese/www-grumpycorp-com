@@ -150,9 +150,17 @@ export class SiteRenderer {
 
     const outputFileStat = getFileSystemStat(outputPath, { requireExists: false });
 
+    const contentTemplateMtimeMs =
+      generatedDocument.contentTemplateType === TemplateType.Marked
+        ? getFileSystemStat(path.join(this.rootConfig.inputRootPath, generatedDocument.contentTemplateName), {
+            requireExists: true,
+          }).mtimeMs
+        : 0;
+
     if (
       outputFileStat &&
-      Math.max(newestInputDocumentModifiedTimeMs, this.newestThemeFileMtimeMs) < outputFileStat.mtimeMs
+      Math.max(newestInputDocumentModifiedTimeMs, this.newestThemeFileMtimeMs, contentTemplateMtimeMs) <
+        outputFileStat.mtimeMs
     ) {
       return false;
     }

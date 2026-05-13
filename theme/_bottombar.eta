@@ -1,0 +1,16 @@
+<section class="section contact">
+  <div class="contact-inner">
+    <div class="colophon">
+      <div class="colophon-title">Grumpycorp Studios</div>
+      <div class="colophon-location">Seattle, Washington</div>
+    </div>
+
+    <div class="footer-links">
+      <a href="">Instagram</a>
+      <a href="">IMDb</a>
+      <a href="">Vimeo</a>
+      <a href="">GitHub</a>
+      <a href="mailto:hello@grumpycorp.com">Email</a>
+    </div>
+  </div>
+</section>

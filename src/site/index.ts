@@ -33,7 +33,7 @@ const generatedDocuments: GeneratedDocumentsGenerator = (inputDocumentInventory)
       contentTemplateType: TemplateType.Marked,
       contentTemplateName: "index.md",
       contentTemplateContext: {},
-      templateName: "_layout.eta",
+      templateName: "_layout_v2.eta",
       // We're relying on `generateLayoutTemplateRenderContext` not specializing on any given input document
       templateRenderContext: {
         ...generateLayoutTemplateRenderContext(inputDocumentInventory),

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <!-- prettier-ignore -->
+  <%
+    const documentGroupName = data.inputDocument?.documentGroupName || "other";
+    const frontMatter = data.inputDocument.frontMatter;
+  %>
+
+  <head>
+    <!-- `meta` configuration: basics -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- `meta` configuration: metadata -->
+    <meta name="author" content="Robin Giese" />
+
+    <% if (frontMatter.keywords) { %>
+    <meta name="keywords" content="<%= frontMatter.keywords.join(', ') %>" />
+    <% } %>
+
+    <!-- Document title and link -->
+    <title><%= frontMatter.title %></title>
+    <meta property="og:title" content="<%= frontMatter.title %>" />
+
+    <!-- FavIcon and other theming -->
+    <link rel="icon" href="/assets/icons/grumpy-robin.svg" />
+    <meta name="theme-color" content="#f26739" />
+
+    <!-- Font preloading -->
+    <!-- prettier-ignore -->
+    <%~ ["ibm-plex-sans-v23-latin-regular", "ibm-plex-sans-v23-latin-300", "ibm-plex-mono-v20-latin-regular"].map((font) => `
+    <link rel="preload" href="/fonts/${font}.woff2" as="font" type="font/woff2" crossorigin />
+    `).join("") %>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Style sheets -->
+    <link href="/css/site.<%= data.siteBuildId %>.css" rel="stylesheet" />
+
+    <!-- SimpleAnalytics -->
+    <script async defer src="https://sa.grumpycorp.com/latest.js"></script>
+    <noscript>
+      <img src="https://sa.grumpycorp.com/noscript.gif" alt="" />
+    </noscript>
+  </head>
+
+  <body>
+    <main class="min-h-screen">
+      <%~ include("_navbar", data) %> <%~ data.contentHtml %> <%~ include("_bottombar", data) %>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Phinneywood — Grumpycorp Studios</title>
+    <style>
+      :root {
+        --bg: #fffaf4;
+        --text: #2b2b2b;
+        --muted: #77736d;
+        --line: #ded8cf;
+        --accent: #dc6c40;
+        --panel: #f4eee6;
+        --max: 1180px;
+        --gutter: clamp(24px, 5vw, 72px);
+        --font: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font);
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      .nav {
+        position: fixed;
+        inset: 0 0 auto 0;
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 22px var(--gutter);
+        backdrop-filter: blur(12px);
+        background: color-mix(in srgb, var(--bg) 86%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, var(--line) 62%, transparent);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .brand-mark {
+        width: 24px;
+        height: 24px;
+        border-radius: 999px;
+        background: color-mix(in srgb, var(--accent) 18%, transparent);
+        position: relative;
+      }
+
+      .brand-mark::after {
+        content: "";
+        position: absolute;
+        inset: 7px;
+        border-radius: 999px;
+        border: 1.5px solid var(--accent);
+      }
+
+      .brand-copy strong {
+        display: block;
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      .brand-copy span {
+        display: block;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+      }
+
+      .slash {
+        color: var(--accent);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: clamp(18px, 3vw, 42px);
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      .nav-links a:hover {
+        color: var(--accent);
+      }
+
+      .section {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding-left: var(--gutter);
+        padding-right: var(--gutter);
+      }
+
+      .hero {
+        min-height: 100vh;
+        display: grid;
+        align-items: center;
+        padding-top: 120px;
+        padding-bottom: 100px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(260px, 0.5fr);
+        gap: clamp(48px, 9vw, 120px);
+        align-items: end;
+      }
+
+      .eyebrow {
+        margin: 0 0 20px;
+        font-size: 14px;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        text-transform: uppercase;
+      }
+
+      h1 {
+        font-size: clamp(64px, 11vw, 132px);
+        line-height: 0.92;
+        letter-spacing: -0.05em;
+        font-weight: 400;
+        margin-bottom: 36px;
+      }
+
+      .hero-statement {
+        font-size: clamp(28px, 4vw, 54px);
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+        max-width: 12ch;
+      }
+
+      .hero-statement .muted {
+        color: var(--muted);
+      }
+
+      .hero-note {
+        max-width: 340px;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.7;
+        border-left: 1px solid var(--line);
+        padding-left: 24px;
+        margin-bottom: 10px;
+      }
+
+      .image-band {
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: white;
+        padding: 72px 0;
+      }
+
+      .image-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 28px;
+      }
+
+      .image {
+        aspect-ratio: 4 / 3;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        display: grid;
+        place-items: center;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 12px;
+      }
+
+      .modes {
+        padding-top: 120px;
+        padding-bottom: 120px;
+      }
+
+      .mode {
+        display: grid;
+        grid-template-columns: minmax(200px, 0.34fr) minmax(0, 1fr);
+        gap: clamp(36px, 7vw, 96px);
+        padding: 54px 0;
+        border-top: 1px solid var(--line);
+        scroll-margin-top: 100px;
+      }
+
+      .mode:last-child {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .mode h2 {
+        font-size: clamp(34px, 5vw, 76px);
+        line-height: 0.96;
+        letter-spacing: -0.05em;
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+
+      .mode-copy {
+        max-width: 780px;
+        display: grid;
+        gap: 28px;
+      }
+
+      .mode-copy p {
+        font-size: clamp(20px, 2vw, 30px);
+        line-height: 1.35;
+        letter-spacing: -0.02em;
+        margin-bottom: 0;
+      }
+
+      .mode-meta {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .mode-meta div {
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+      }
+
+      .closing {
+        padding-top: 120px;
+        padding-bottom: 130px;
+      }
+
+      .closing p {
+        max-width: 16ch;
+        font-size: clamp(34px, 5vw, 70px);
+        line-height: 1.02;
+        letter-spacing: -0.045em;
+        margin-bottom: 0;
+      }
+
+      .contact {
+        padding: 22px var(--gutter);
+        border-top: 1px solid var(--line);
+        max-width: var(--max);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 36px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .footer-title {
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .footer-location {
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: 10px;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .footer-links a:hover {
+        color: var(--accent);
+      }
+
+      @media (max-width: 820px) {
+        .hero-grid,
+        .image-grid,
+        .mode {
+          grid-template-columns: 1fr;
+        }
+
+        .mode-meta {
+          grid-template-columns: 1fr;
+        }
+
+        .nav {
+          align-items: start;
+        }
+
+        .nav-links {
+          display: grid;
+          gap: 4px;
+          text-align: right;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#">
+        <div class="brand-copy">
+          <div style="display: flex; align-items: center; gap: 10px">
+            <strong>Grumpycorp Studios</strong>
+            <div class="brand-mark"></div>
+          </div>
+          <span>creative <span class="slash">/</span> engineering</span>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="#">Phinneywood</a>
+        <a href="#">Production</a>
+        <a href="#">Collaborations</a>
+        <a href="#">About</a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="section hero">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Seattle</p>
+            <h1>Phinneywood</h1>
+            <div class="hero-statement">
+              <span class="muted">A base for</span><br />
+              art, production, practice, and performance.
+            </div>
+          </div>
+
+          <p class="hero-note">
+            A flexible studio environment available for rehearsals, workshops, filming, classes, installations,
+            performances, postproduction sessions, and collaborative development.
+          </p>
+        </div>
+      </section>
+
+      <section class="image-band">
+        <div class="section image-grid">
+          <div class="image">main studio image</div>
+          <div class="image">detail / process image</div>
+        </div>
+      </section>
+
+      <section class="section modes">
+        <article class="mode" id="planning">
+          <h2>Planning</h2>
+
+          <div class="mode-copy">
+            <p>
+              Projects often begin long before production. Phinneywood is designed to support ideation, preproduction,
+              technical planning, design development, and collaborative exploration.
+            </p>
+
+            <div class="mode-meta">
+              <div>Creative development, production meetings, workshops, and technical planning.</div>
+              <div>Space for drawing, layout, system design, budgeting, and experimentation.</div>
+              <div>Built to support both artistic direction and practical execution.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="mode" id="fabrication">
+          <h2>Fabrication</h2>
+
+          <div class="mode-copy">
+            <p>
+              The studio supports the physical side of production as well: fabrication, engineering, electronics, scenic
+              work, technical integration, and custom-built systems.
+            </p>
+
+            <div class="mode-meta">
+              <div>Furniture, scenic construction, electronics, control systems, and installations.</div>
+              <div>Technical infrastructure designed for reliability, adaptability, and repeated use.</div>
+              <div>Creative and engineering work developed side-by-side.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="mode" id="rehearsal">
+          <h2>Rehearsal</h2>
+
+          <div class="mode-copy">
+            <p>
+              Practice and iteration are treated as central creative activities. The space is intended to support
+              rehearsal, refinement, experimentation, classes, and collaborative development over time.
+            </p>
+
+            <div class="mode-meta">
+              <div>Music rehearsals, staging, workshops, classes, and production development.</div>
+              <div>Flexible layouts designed to evolve with the work being created.</div>
+              <div>A place for repeated use, adaptation, and long-term process.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="mode" id="production">
+          <h2>Production</h2>
+
+          <div class="mode-copy">
+            <p>
+              Phinneywood supports filming, live performance, installations, and public presentation with integrated
+              technical systems and practical production infrastructure.
+            </p>
+
+            <div class="mode-meta">
+              <div>Camera, grip, lighting, sound, power, staging, and technical direction.</div>
+              <div>Support for shoots, performances, screenings, presentations, and gatherings.</div>
+              <div>Designed to move fluidly between closed development and public-facing work.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="mode" id="post">
+          <h2>Post</h2>
+
+          <div class="mode-copy">
+            <p>
+              The work continues after production. Editing, sound, music, finishing, review, and reflection are treated
+              as part of the same creative arc rather than separate downstream steps.
+            </p>
+
+            <div class="mode-meta">
+              <div>Editing, review, music, sound, finishing, and collaborative postproduction.</div>
+              <div>Support for long-form development and iterative refinement.</div>
+              <div>A continuous environment for work from concept through completion.</div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section closing">
+        <p>Creative and technical work for film, performance, and live environments.</p>
+      </section>
+
+      <footer class="contact">
+        <div>
+          <div class="footer-title">Grumpycorp Studios</div>
+          <div class="footer-location">Seattle, Washington</div>
+        </div>
+
+        <div class="footer-links">
+          <a href="#">Instagram</a>
+          <a href="#">IMDb</a>
+          <a href="#">Vimeo</a>
+          <a href="#">GitHub</a>
+          <a href="mailto:hello@grumpycorp.com">Email</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

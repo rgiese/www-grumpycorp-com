@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Grumpycorp Studios — Homepage Mockup v0</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+      :root {
+        --bg: #fffaf4;
+        --text: #2b2b2b;
+        --muted: #77736d;
+        --line: #ded8cf;
+        --accent: #dc6c40;
+        --accent-light: #f79a5e;
+        --panel: #f4eee6;
+        --max: 1180px;
+        --gutter: clamp(24px, 5vw, 72px);
+        --font:
+          -apple-system /* Safari */, BlinkMacSystemFont /* Chrome */, "Inter" /* our fallback */,
+          sans-serif /* if all else fails */;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font);
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        font-size: 16px;
+        line-height: 1.6;
+        font-weight: 400;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        min-height: 100vh;
+      }
+
+      .nav {
+        position: fixed;
+        inset: 0 0 auto 0;
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 22px var(--gutter);
+        backdrop-filter: blur(12px);
+        background: color-mix(in srgb, var(--bg) 86%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, var(--line) 62%, transparent);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        letter-spacing: 0.01em;
+      }
+
+      .brand-mark {
+        width: 24px;
+        height: auto;
+        flex: 0 0 24px;
+        display: block;
+        transform: translateY(-1px);
+      }
+
+      .brand-copy {
+        display: grid;
+        gap: 1px;
+      }
+
+      .brand strong {
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      .brand span {
+        font-size: 12px;
+        color: var(--muted);
+        letter-spacing: 0.08em;
+      }
+
+      .brand .slash {
+        color: var(--accent);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: clamp(18px, 3vw, 42px);
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      .nav-links a:hover {
+        color: var(--accent);
+      }
+
+      .section {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding-left: var(--gutter);
+        padding-right: var(--gutter);
+      }
+
+      .hero {
+        min-height: 100vh;
+        display: grid;
+        align-items: center;
+        padding-top: 92px;
+        padding-bottom: 80px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.5fr);
+        gap: clamp(48px, 9vw, 120px);
+        align-items: end;
+      }
+
+      .eyebrow {
+        margin: 0 0 22px;
+        font-size: 14px;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        text-transform: uppercase;
+        font-weight: 400;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        font-size: clamp(56px, 10vw, 118px);
+        line-height: 0.94;
+        letter-spacing: -0.045em;
+        font-weight: 400;
+        margin-bottom: 34px;
+      }
+
+      .hero-phrase {
+        font-size: clamp(28px, 5vw, 58px);
+        line-height: 1.08;
+        letter-spacing: -0.025em;
+        font-weight: 400;
+      }
+
+      .hero-phrase .prefix {
+        color: var(--muted);
+      }
+
+      .rotator {
+        position: relative;
+        display: inline-block;
+        min-width: 8.2ch;
+        color: var(--accent);
+        cursor: pointer;
+      }
+
+      .rotator a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .rotator span {
+        position: absolute;
+        inset: 0 auto auto 0;
+        opacity: 0;
+        animation: rotateWords 20s infinite;
+      }
+
+      .rotator span:first-child {
+        position: relative;
+      }
+      .rotator span:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .rotator span:nth-child(2) {
+        animation-delay: 5s;
+      }
+      .rotator span:nth-child(3) {
+        animation-delay: 10s;
+      }
+      .rotator span:nth-child(4) {
+        animation-delay: 15s;
+      }
+
+      @keyframes rotateWords {
+        0% {
+          opacity: 0;
+          transform: translateY(0.08em);
+        }
+        6% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        22% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        28% {
+          opacity: 0;
+          transform: translateY(-0.04em);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(-0.04em);
+        }
+      }
+
+      .hero-note {
+        max-width: 320px;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.65;
+        border-left: 1px solid var(--line);
+        padding-left: 24px;
+        margin-bottom: 12px;
+      }
+
+      .pillars {
+        padding-top: 80px;
+        padding-bottom: 120px;
+      }
+
+      .pillar-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(24px, 4vw, 54px);
+      }
+
+      .pillar {
+        padding-top: 24px;
+        border-top: 1px solid var(--text);
+        transition:
+          transform 180ms ease,
+          border-color 180ms ease,
+          color 180ms ease;
+      }
+
+      .pillar:hover,
+      .pillar:focus-within {
+        transform: translateY(-8px);
+        border-top-color: var(--accent);
+      }
+
+      .pillar:hover h2,
+      .pillar:focus-within h2 {
+        color: var(--accent);
+      }
+
+      .pillar p {
+        transition: transform 180ms ease;
+      }
+
+      .pillar:hover p,
+      .pillar:focus-within p {
+        transform: translateY(-2px);
+      }
+
+      .pillar-heading-link {
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .pillar-heading-link:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 6px;
+      }
+
+      .pillar h2 {
+        font-size: clamp(26px, 3vw, 42px);
+        line-height: 1.05;
+        letter-spacing: -0.025em;
+        font-weight: 400;
+        margin-bottom: 24px;
+      }
+
+      .pillar p {
+        color: var(--muted);
+        max-width: 310px;
+        font-size: 15px;
+        line-height: 1.65;
+      }
+
+      .selected {
+        padding-top: 110px;
+        padding-bottom: 130px;
+        background: #ffffff;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .section-title {
+        font-size: clamp(30px, 4vw, 56px);
+        font-weight: 400;
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+        margin-bottom: 54px;
+      }
+
+      .work-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(28px, 5vw, 70px);
+        align-items: start;
+      }
+
+      .work-card {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        gap: 18px;
+        height: 100%;
+      }
+
+      .thumb {
+        aspect-ratio: 4 / 3;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        display: grid;
+        place-items: center;
+        color: var(--muted);
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .work-card h3 {
+        font-size: 22px;
+        font-weight: 400;
+        letter-spacing: -0.015em;
+        margin-bottom: 4px;
+      }
+
+      .work-card p {
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.65;
+        max-width: 420px;
+      }
+
+      .about {
+        padding-top: 120px;
+        padding-bottom: 130px;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 0.42fr 1fr;
+        gap: clamp(36px, 8vw, 110px);
+      }
+
+      .about p {
+        max-width: 690px;
+        font-size: clamp(20px, 2.1vw, 30px);
+        line-height: 1.42;
+        letter-spacing: -0.018em;
+        font-weight: 400;
+      }
+
+      .contact {
+        padding-top: 22px;
+        padding-bottom: 22px;
+        border-top: 1px solid var(--line);
+      }
+
+      .contact-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 48px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .colophon {
+        display: grid;
+        gap: 6px;
+      }
+
+      .colophon-title {
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+      }
+
+      .colophon-subtitle {
+        font-size: 12px;
+        color: var(--muted);
+        letter-spacing: 0.08em;
+      }
+
+      .colophon-subtitle .slash {
+        color: var(--accent);
+      }
+
+      .colophon-location {
+        margin-top: 12px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+        font-size: 13px;
+        color: var(--muted);
+        align-items: center;
+      }
+
+      .footer-links a {
+        transition: color 140ms ease;
+      }
+
+      .footer-links a:hover {
+        color: var(--accent);
+      }
+
+      @media (max-width: 780px) {
+        .work-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 780px) {
+        .nav {
+          position: sticky;
+          align-items: start;
+          gap: 18px;
+        }
+
+        .nav-links {
+          display: grid;
+          gap: 4px;
+          text-align: right;
+        }
+
+        .hero-grid,
+        .pillar-grid,
+        .work-grid,
+        .about-grid,
+        .contact-inner {
+          grid-template-columns: 1fr;
+          display: grid;
+        }
+
+        .hero {
+          min-height: auto;
+          padding-top: 120px;
+        }
+
+        .hero-note {
+          border-left: 0;
+          padding-left: 0;
+        }
+
+        .contact-inner {
+          align-items: start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="#">
+          <div class="brand-copy">
+            <div style="display: flex; align-items: center; gap: 10px">
+              <strong>Grumpycorp Studios</strong>
+              <svg class="brand-mark" viewBox="0 0 24 24" aria-label="Grumpycorp Studios logo" role="img">
+                <circle cx="12" cy="12" r="10" fill="#dc6d40" opacity="0.16"></circle>
+                <path
+                  d="M7 14c2.5-4 7.5-4 10 0"
+                  stroke="#dc6d40"
+                  stroke-width="1.8"
+                  fill="none"
+                  stroke-linecap="round"
+                ></path>
+                <circle cx="9" cy="10" r="1" fill="#dc6d40"></circle>
+                <circle cx="15" cy="10" r="1" fill="#dc6d40"></circle>
+              </svg>
+            </div>
+            <span>creative <span class="slash">/</span> engineering</span>
+          </div>
+        </a>
+        <div class="nav-links">
+          <a href="#phinneywood">Phinneywood</a>
+          <a href="#production">Production</a>
+          <a href="#collaborations">Collaborations</a>
+          <a href="#about">About</a>
+        </div>
+      </nav>
+
+      <section class="section hero" id="phinneywood">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Seattle</p>
+            <h1>Phinneywood</h1>
+            <div class="hero-phrase" aria-label="a place for art, production, practice, and performance">
+              <span class="prefix">a place for</span><br />
+              <span class="rotator" aria-hidden="true">
+                <span><a href="#art-detail">art</a></span>
+                <span><a href="#production-detail">production</a></span>
+                <span><a href="#practice-detail">practice</a></span>
+                <span><a href="#performance-detail">performance</a></span>
+              </span>
+            </div>
+          </div>
+          <p class="hero-note">Creative and technical work for film, performance, and live environments.</p>
+        </div>
+      </section>
+
+      <section class="section pillars" id="production">
+        <div class="pillar-grid">
+          <article class="pillar">
+            <h2><a class="pillar-heading-link" href="#phinneywood-detail">Phinneywood</a></h2>
+            <p>A place-based studio for art, production, practice, and performance.</p>
+          </article>
+          <article class="pillar">
+            <h2><a class="pillar-heading-link" href="#production-detail">Production</a></h2>
+            <p>
+              Camera, lighting, grip, electrical, sound, and technical direction for film, theater, music, and live
+              performance.<br /><br />At Phinneywood or wherever the work needs to happen.
+            </p>
+          </article>
+          <article class="pillar" id="collaborations">
+            <h2><a class="pillar-heading-link" href="#collaborations-detail">Collaborations</a></h2>
+            <p>Projects developed together, from early exploration through production and public presentation.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="selected">
+        <div class="section">
+          <h2 class="section-title">Selected work</h2>
+          <div class="work-grid">
+            <article class="work-card">
+              <div class="thumb">feature / case study image</div>
+              <div>
+                <h3>Production infrastructure</h3>
+                <p>
+                  Feature-scale camera, grip, and electric support; on-set leadership; practical systems that keep work
+                  moving.
+                </p>
+              </div>
+            </article>
+            <article class="work-card">
+              <div class="thumb">space / theater image</div>
+              <div>
+                <h3>Live systems</h3>
+                <p>
+                  Theater, music, and performance environments designed around people, safety, timing, and repeatable
+                  use.
+                </p>
+              </div>
+            </article>
+            <article class="work-card">
+              <div class="thumb">furniture / fabrication image</div>
+              <div>
+                <h3>Fabrication</h3>
+                <p>
+                  Custom furniture, scenic elements, and built environments shaped with the same attention to detail as
+                  production work.
+                </p>
+              </div>
+            </article>
+            <article class="work-card">
+              <div class="thumb">electronics / systems image</div>
+              <div>
+                <h3>Engineering</h3>
+                <p>
+                  Custom electronics, control systems, and technical infrastructure for creative spaces, installations,
+                  and live environments.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact">
+        <div class="contact-inner">
+          <div class="colophon">
+            <div class="colophon-title">Grumpycorp Studios</div>
+            <div class="colophon-location">Seattle, Washington</div>
+          </div>
+
+          <div class="footer-links">
+            <a href="#">Instagram</a>
+            <a href="#">IMDb</a>
+            <a href="#">Vimeo</a>
+            <a href="#">GitHub</a>
+            <a href="mailto:hello@grumpycorp.com">Email</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

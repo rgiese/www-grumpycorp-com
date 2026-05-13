@@ -2,12 +2,19 @@
 
 /* Fonts (also note the corresponding preload directives in `_layout.eta` */
 @import "./_fonts.css";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
 
 /* Syntax highlighting */
 @import "highlight.js/styles/xcode.min.css";
 
 /* Generated SVGs->CSS */
 @import "assets/svg.css";
+
+/* v2 component partials */
+@import "./_navbar.css";
+@import "./_bottombar.css";
+
+@import "./pages/_home.css";
 
 @layer base {
   html,
@@ -61,9 +68,9 @@
 
   /* Other basic element settings */
   img {
-    /* 
+    /*
      * Don't let images scale up past their built-in size (but they'll still scale down)
-     * https://web.dev/learn/design/responsive-images 
+     * https://web.dev/learn/design/responsive-images
      */
     max-inline-size: 100%;
     block-size: auto;
@@ -98,6 +105,20 @@
   --color-accent-dark: #0d5258;
   --color-accent-mono: #03061f;
   --color-accent-mono-light: #a0cab3;
+  --color-bg: #fffaf4;
+  --color-text: #2b2b2b;
+  --color-muted: #77736d;
+  --color-line: #ded8cf;
+  --color-panel: #f4eee6;
+}
+
+/*
+ * Layout
+ */
+
+:root {
+  --max: 1180px;
+  --gutter: clamp(24px, 5vw, 72px);
 }
 
 /*
@@ -105,34 +126,40 @@
  */
 
 @theme {
-  --font-sans: "IBM Plex Sans", sans-serif;
-  --font-mono: "IBM Plex Mono", monospace;
+  --font-sans:
+    -apple-system /* Safari */, BlinkMacSystemFont /* Chrome */, "Inter" /* our fallback */,
+    sans-serif /* if all else fails */;
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply font-sans /* typeface */;
-    @apply font-normal /* weight */;
-    @apply text-base /* size */;
+    @apply font-sans font-normal text-base;
+    @apply bg-bg text-text antialiased leading-[1.6];
+    text-rendering: optimizeLegibility;
+  }
+
+  a {
+    @apply text-inherit no-underline;
   }
 
   h1 {
     @apply text-4xl font-light;
-    @apply text-accent;
 
     a {
-      @apply text-accent no-underline;
+      @apply text-inherit no-underline;
     }
   }
 
   h2 {
     @apply text-2xl;
-    @apply text-accent;
   }
 
   h3 {
     @apply text-lg;
-    @apply text-accent-light;
   }
 
   h4 {
@@ -142,7 +169,51 @@
 }
 
 /*
- * Components
+ * Components for v2 of site
+ */
+
+@layer components {
+  .section {
+    @apply mx-auto;
+    max-width: var(--max);
+    padding-inline: var(--gutter);
+  }
+
+  .section-title {
+    @apply font-normal leading-[1.05] mb-[54px];
+    font-size: clamp(30px, 4vw, 56px);
+    letter-spacing: -0.03em;
+  }
+
+  .image-placeholder {
+    @apply bg-panel border border-line grid place-items-center text-muted text-xs tracking-[0.06em] uppercase;
+    aspect-ratio: 4 / 3;
+  }
+
+  .about {
+    @apply pt-[120px] pb-[130px];
+
+    p {
+      @apply font-normal leading-[1.42];
+      max-width: 690px;
+      font-size: clamp(20px, 2.1vw, 30px);
+      letter-spacing: -0.018em;
+    }
+  }
+
+  .about-grid {
+    @apply grid;
+    grid-template-columns: 0.42fr 1fr;
+    gap: clamp(36px, 8vw, 110px);
+
+    @media (max-width: 780px) {
+      @apply grid-cols-1;
+    }
+  }
+}
+
+/*
+ * Components for v1 of site
  */
 
 @layer components {
@@ -188,26 +259,6 @@
 
     .portfolio-sxs-w60 {
       @apply p-3 float-left w-full lg:w-3/5;
-    }
-  }
-
-  .home-page {
-    .home-page-figure-container {
-      @apply flex flex-wrap;
-    }
-
-    .home-page-figure-div {
-      @apply p-1 lg:w-1/2;
-
-      figure {
-        margin-block: 0;
-      }
-    }
-
-    .home-page-tags-container {
-      a {
-        @apply text-accent no-underline;
-      }
     }
   }
 

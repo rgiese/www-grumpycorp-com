@@ -1,0 +1,16 @@
+<nav class="nav" aria-label="Primary navigation">
+  <a class="brand" href="">
+    <div class="brand-copy">
+      <div style="display: flex; align-items: center; gap: 10px">
+        <strong>Grumpycorp Studios</strong>
+      </div>
+      <span>creative <span class="slash">/</span> engineering</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="">Phinneywood</a>
+    <a href="">Production</a>
+    <a href="">Collaborations</a>
+    <a href="">About</a>
+  </div>
+</nav>

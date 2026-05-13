@@ -1,72 +1,93 @@
-## Phinneywood
-
 <div class="home-page">
 
-<div class="home-page-figure-container">
+<!-- Hero -->
+<section class="section hero" id="phinneywood">
+  <div class="hero-grid">
+    <div>
+      <p class="mt-0 mb-[22px] text-sm tracking-[0.08em] text-muted uppercase font-normal">Seattle</p>
+      <div class="hero-title">Phinneywood</div>
+      <div class="hero-phrase" aria-label="a place for art, production, practice, and performance">
+        <span class="hero-rotator-prefix">a place for</span><br />
+        <span class="hero-rotator" aria-hidden="true">
+          <span><a href="">art</a></span>
+          <span><a href="">production</a></span>
+          <span><a href="">practice</a></span>
+          <span><a href="">performance</a></span>
+        </span>
+      </div>
+    </div>
+    <p class="hero-note">Creative and technical work for film, performance, and live environments.</p>
+  </div>
+</section>
 
-::figure[Welcome to Phinneywood]{src="/posts/phinneywood/first-post/1-16x9.jpg" href="/posts/phinneywood/first-post/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
+<!-- Pillars -->
+<section class="section pillars">
+  <div class="pillar-grid">
+    <article class="pillar">
+      <div class="pillar-heading"><a href="">Phinneywood</a></div>
+      <p>A place-based studio for art, production, practice, and performance.</p>
+    </article>
+    <article class="pillar">
+      <div class="pillar-heading"><a href="">Production</a></div>
+      <p>
+        Camera, lighting, grip, electrical, sound, and technical direction for film, theater, music, and live
+        performance.<br /><br />At Phinneywood or wherever the work needs to happen.
+      </p>
+    </article>
+    <article class="pillar">
+      <div class="pillar-heading"><a href="">Collaborations</a></div>
+      <p>Projects developed together, from early exploration through production and public presentation.</p>
+    </article>
+  </div>
+</section>
 
-</div>
-
-<div class="home-page-tags-container">
-  <a href="/tags/posts/phinneywood/"><span class="svg-tag"></span> everything in phinneywood</a>
-</div>
-
-## Film
-
-<div class="home-page-figure-container">
-
-::figure[The Well]{src="/posts/film-making/the-well/front-page-image-16-9.jpg" href="/posts/film-making/the-well/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
-::figure[Home Body]{src="/posts/film-making/home-body/home_body_thumbnail.png" href="/posts/film-making/home-body/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
-::figure[Nutella Thief]{src="/posts/film-making/nutella-thief/title.png" href="/posts/film-making/nutella-thief/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
-::figure[Grip truck]{src="/posts/film-making/grip-truck/front-page-image.jpg" href="/posts/film-making/grip-truck/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
-
-</div>
-
-<div class="home-page-tags-container">
-  <a href="/tags/posts/film-making/"><span class="svg-tag"></span> everything in film making</a>
-</div>
-
-## Theater
-
-<div class="home-page-figure-container">
-
-::figure[The Odyssey]{src="/posts/theater/the-odyssey/B006.jpg" href="/posts/theater/the-odyssey/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
-
-</div>
-
-<div class="home-page-tags-container">
-  <a href="/tags/posts/theater/"><span class="svg-tag"></span> everything in theater</a>
-</div>
-
-## Fabricating
-
-<div class="home-page-figure-container">
-
-::figure[Built-in furniture]{src="/portfolio/library/DSC04689.jpg" href="/portfolio/library/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
-::figure[Interface design]{src="/posts/warm-and-fuzzy/webapp/webapp-settings-days.png" href="/posts/warm-and-fuzzy/webapp/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
-::figure[Cottage]{src="/portfolio/cottage/IMG_3758.jpg" href="/portfolio/cottage/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
-::figure[Circuit boards]{src="/posts/warm-and-fuzzy/thermostat-design-2/pcb.png" href="/posts/warm-and-fuzzy/thermostat-design-2/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
-
-</div>
-
-<div class="home-page-tags-container">
-  <span class="svg-tag"></span> everything in 
-  <a href="/tags/posts/code/">code</a>, <a href="/tags/posts/cottage/">cottage</a>, <a href="/tags/posts/crafting/">crafting</a>, and <a href="/tags/posts/warm-and-fuzzy/">warm-and-fuzzy</a>
-</div>
-
-## Anxiety
-
-<div class="home-page-figure-container">
-
-::figure[dwell on the past]{src="/posts/crafting/dwell/DwellOnThePast.png" href="/posts/crafting/dwell/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
-::figure[dwell on the future]{src="/posts/crafting/dwell/DwellOnTheFuture.png" href="/posts/crafting/dwell/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
-::figure[dwell on yourself]{src="/posts/crafting/dwell/DwellOnTheFuture2.png" href="/posts/crafting/dwell/" sizes="(max-width: 30em) 100vw, 25vw" outerDivWithClass="home-page-figure-div"}
-
-</div>
-
-<div class="home-page-tags-container p-4">
-  ...or just read <a href="/posts/all/">every damn thing</a>.
-</div>
+<!-- Selected work (must wrap in selected-work before wrapping in section) -->
+<section class="selected-work">
+  <div class="section">
+    <div class="section-title">Selected work</div>
+    <div class="selected-work-grid">
+      <article class="selected-work-card">
+        <div class="image-placeholder">feature / case study image</div>
+        <div>
+          <p class="selected-work-card-title">Production infrastructure</p>
+          <p>
+            Feature-scale camera, grip, and electric support; on-set leadership; practical systems that keep work
+            moving.
+          </p>
+        </div>
+      </article>
+      <article class="selected-work-card">
+        <div class="image-placeholder">space / theater image</div>
+        <div>
+          <p class="selected-work-card-title">Live systems</p>
+          <p>
+            Theater, music, and performance environments designed around people, safety, timing, and repeatable
+            use.
+          </p>
+        </div>
+      </article>
+      <article class="selected-work-card">
+        <div class="image-placeholder">furniture / fabrication image</div>
+        <div>
+          <p class="selected-work-card-title">Fabrication</p>
+          <p>
+            Custom furniture, scenic elements, and built environments shaped with the same attention to detail as
+            production work.
+          </p>
+        </div>
+      </article>
+      <article class="selected-work-card">
+        <div class="image-placeholder">electronics / systems image</div>
+        <div>
+          <p class="selected-work-card-title">Engineering</p>
+          <p>
+            Custom electronics, control systems, and technical infrastructure for creative spaces, installations,
+            and live environments.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
 </div>

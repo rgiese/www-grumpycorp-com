@@ -67,20 +67,26 @@ export async function processAssets(
   );
 
   // Process CSS
+  // Use the newest mtime across ALL CSS source files (including _ partials) so that edits to
+  // imported partials correctly invalidate the compiled output even when the entry point didn't change.
+  const newestCssMtimeMs = Math.max(
+    ...sourceFiles
+      .filter((f) => f.parsedRootRelativePath.ext === ".css")
+      .map((f) => getFileSystemStat(f.absolutePath, { requireExists: true }).mtimeMs),
+  );
+
   await Promise.all(
     explicitAssetSourceFiles
       .filter((f) => f.parsedRootRelativePath.ext === ".css")
       .map(async (sourceFile) => {
         try {
           // Set up paths
-          const sourceFileStat = getFileSystemStat(sourceFile.absolutePath, { requireExists: true });
-
           const outputPath = outputFileSystem.getAbsolutePath(
             replaceFileExtension(sourceFile.parsedRootRelativePath, `${siteBuildId}.css`),
           );
           const outputFileStat = getFileSystemStat(outputPath, { requireExists: false });
 
-          if (!forceRegenerateCss && outputFileStat && sourceFileStat.mtimeMs < outputFileStat.mtimeMs) {
+          if (!forceRegenerateCss && outputFileStat && newestCssMtimeMs < outputFileStat.mtimeMs) {
             return;
           }
 

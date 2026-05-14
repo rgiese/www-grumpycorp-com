@@ -2,16 +2,14 @@
 title: Home
 ---
 
-<div class="home-page">
-
 <!-- Hero -->
 <section class="section hero">
   <div class="hero-grid">
     <div>
-      <p class="mt-0 mb-6 text-sm tracking-widest text-muted uppercase font-normal">Seattle</p>
-      <h1 class="hero-title">Phinneywood</h1>
-      <div class="hero-phrase" aria-label="a place for art, production, practice, and performance">
-        <span class="hero-rotator-prefix">a place for</span><br />
+      <p class="hero-super-title">Seattle</p>
+      <h1>Phinneywood</h1>
+      <div class="hero-statement" aria-label="a place for art, production, practice, and performance">
+        <span class="text-muted" aria-hidden="true">a place for</span><br />
         <span class="hero-rotator" aria-hidden="true">
           <span><a href="">art</a></span>
           <span><a href="">production</a></span>
@@ -25,65 +23,65 @@ title: Home
 </section>
 
 <!-- Pillars -->
-<section class="section pillars">
-  <div class="pillar-grid">
-    <article class="pillar">
-      <h2 class="pillar-heading"><a href="">Phinneywood</a></h2>
+<section class="section pt-20 pb-30">
+  <div class="pillar-card-grid">
+    <article>
+      <h2><a href="">Phinneywood</a></h2>
       <p>A place-based studio for art, production, practice, and performance.</p>
     </article>
-    <article class="pillar">
-      <h2 class="pillar-heading"><a href="">Production</a></h2>
+    <article>
+      <h2><a href="">Production</a></h2>
       <p>
         Camera, lighting, grip, electrical, sound, and technical direction for film, theater, music, and live
         performance.<br /><br />At Phinneywood or wherever the work needs to happen.
       </p>
     </article>
-    <article class="pillar">
-      <h2 class="pillar-heading"><a href="">Collaborations</a></h2>
+    <article>
+      <h2><a href="">Collaborations</a></h2>
       <p>Projects developed together, from early exploration through production and public presentation.</p>
     </article>
   </div>
 </section>
 
 <!-- Selected work (must wrap in selected-work before wrapping in section) -->
-<section class="selected-work">
+<section class="white-section-wrapper py-30 max-md:pt-15">
   <div class="section">
-    <h2 class="section-title">Selected work</h2>
-    <div class="selected-work-grid">
-      <article class="selected-work-card">
+    <h2>Selected work</h2>
+    <div class="image-card-grid">
+      <article>
         <div class="image-placeholder">feature / case study image</div>
         <div>
-          <h3 class="selected-work-card-title">Production infrastructure</h3>
+          <h3>Production infrastructure</h3>
           <p>
             Feature-scale camera, grip, and electric support; on-set leadership; practical systems that keep work
             moving.
           </p>
         </div>
       </article>
-      <article class="selected-work-card">
+      <article>
         <div class="image-placeholder">space / theater image</div>
         <div>
-          <h3 class="selected-work-card-title">Live systems</h3>
+          <h3>Live systems</h3>
           <p>
             Theater, music, and performance environments designed around people, safety, timing, and repeatable
             use.
           </p>
         </div>
       </article>
-      <article class="selected-work-card">
+      <article>
         <div class="image-placeholder">furniture / fabrication image</div>
         <div>
-          <h3 class="selected-work-card-title">Fabrication</h3>
+          <h3>Fabrication</h3>
           <p>
             Custom furniture, scenic elements, and built environments shaped with the same attention to detail as
             production work.
           </p>
         </div>
       </article>
-      <article class="selected-work-card">
+      <article>
         <div class="image-placeholder">electronics / systems image</div>
         <div>
-          <h3 class="selected-work-card-title">Engineering</h3>
+          <h3>Engineering</h3>
           <p>
             Custom electronics, control systems, and technical infrastructure for creative spaces, installations,
             and live environments.
@@ -93,5 +91,3 @@ title: Home
     </div>
   </div>
 </section>
-
-</div>

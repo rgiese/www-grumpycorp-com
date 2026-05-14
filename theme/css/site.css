@@ -14,8 +14,6 @@
 @import "./_navbar.css";
 @import "./_bottombar.css";
 
-@import "./pages/_home.css";
-
 @layer base {
   html,
   body {
@@ -187,26 +185,287 @@
  */
 
 @theme {
-  --spacing-gutter: clamp(1.5rem, 5vw, 4.5rem);
+  /* Sizes for space and text, from smallest to largest */
+  --spacing-gutter: calc(var(--spacing) * 8);
+  --spacing-gap: calc(var(--spacing) * 12);
+
+  --text-card-content: clamp(1.25rem, 2vw, 1.875rem);
   --text-pillar-title: clamp(1.625rem, 3vw, 2.625rem);
   --text-section-title: clamp(1.875rem, 4vw, 3.5rem);
 }
 
 @layer components {
-  .section {
-    @apply mx-auto max-w-5xl px-gutter;
+  /* Page sections */
+  .white-section-wrapper {
+    /* Use as <section class="white-section-outer"><div class="section">...</div></section> */
+    @apply bg-white border-y border-line;
   }
 
-  .section-title {
-    @apply heading-reset; /* h2 for semantic purposes, but don't inherit any of its styling */
-    @apply font-normal text-section-title tracking-tighter;
-    @apply leading-none mb-12;
+  .section {
+    /* Use as a child of .white-section-wrapper or on its own for regular-background sections */
+    @apply mx-auto max-w-5xl px-gutter;
+    @apply scroll-margin-for-navbar;
+
+    h2 {
+      @apply heading-reset; /* h2 for semantic purposes, but don't inherit any of its styling */
+      @apply text-section-title /* size */ font-normal /* weight */ tracking-tighter /* leading-spacing */;
+      @apply leading-none mb-12;
+    }
   }
 
   .image-placeholder {
     @apply text-muted text-xs tracking-wider uppercase;
     @apply bg-panel border border-line grid place-items-center;
     aspect-ratio: 4 / 3;
+  }
+
+  /* Hero section for tops of pages */
+  .hero {
+    @apply min-h-screen grid items-center py-20;
+
+    @variant max-md {
+      @apply min-h-auto pt-30;
+    }
+
+    .hero-grid {
+      @apply grid items-end;
+      grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.5fr);
+      gap: clamp(3rem, 9vw, 7.5rem);
+
+      @variant max-md {
+        @apply grid-cols-1;
+      }
+
+      .hero-super-title {
+        @apply m-0 mb-5 text-sm tracking-widest text-muted uppercase;
+      }
+
+      h1 {
+        @apply heading-reset; /* h1 for semantic purposes, but don't inherit any of its styling */
+        @apply tracking-tighter;
+        font-size: clamp(3.5rem, 10vw, 7.375rem);
+
+        @apply leading-none mt-0 mb-8;
+      }
+
+      .hero-statement {
+        @apply font-normal text-section-title tracking-tight;
+        @apply leading-none;
+
+        .hero-rotator {
+          @apply relative inline-block text-accent cursor-pointer;
+          min-width: 8ch;
+
+          a {
+            @apply text-inherit no-underline;
+          }
+
+          span {
+            @apply absolute opacity-0;
+            inset: 0 auto auto 0;
+            animation: hero-rotator-keyframes 20s infinite;
+
+            &:first-child {
+              @apply relative;
+            }
+
+            &:nth-child(1) {
+              animation-delay: 0s;
+            }
+
+            &:nth-child(2) {
+              animation-delay: 5s;
+            }
+
+            &:nth-child(3) {
+              animation-delay: 10s;
+            }
+
+            &:nth-child(4) {
+              animation-delay: 15s;
+            }
+          }
+        }
+      }
+
+      .hero-note {
+        @apply text-base text-muted;
+        @apply border-l border-line;
+        @apply pl-6 mb-3 leading-normal;
+        max-width: 320px;
+
+        @variant max-md {
+          @apply border-l-0 pl-0;
+        }
+      }
+    }
+  }
+
+  @keyframes hero-rotator-keyframes {
+    0% {
+      opacity: 0;
+      transform: translateY(0.08em);
+    }
+
+    6% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    22% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    28% {
+      opacity: 0;
+      transform: translateY(-0.04em);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateY(-0.04em);
+    }
+  }
+
+  /* Image card grid: a two-wide grid of images with optional titles/text */
+  .image-card-grid {
+    @apply grid gap-gap items-start;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    @variant max-md {
+      @apply grid-cols-1;
+    }
+
+    article {
+      @apply grid gap-4 h-full;
+      grid-template-rows: auto 1fr;
+
+      h3 {
+        @apply heading-reset; /* h3 for semantic purposes, but don't inherit any of its styling */
+        @apply text-2xl tracking-tight;
+        @apply mt-0 mb-1;
+      }
+
+      p {
+        @apply text-base text-muted;
+        @apply leading-normal mt-0;
+        max-width: 420px;
+      }
+    }
+  }
+
+  /* Pillar card grid: a three-wide grid of "pillar" cards, each with a title and short description */
+  .pillar-card-grid {
+    @apply grid gap-gutter;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    @variant max-md {
+      @apply grid-cols-1;
+    }
+
+    /* Pillar card */
+    article {
+      /* Padding/border */
+      @apply pt-6;
+      border-top: 1px solid var(--color-text);
+
+      /* Animation */
+      transition:
+        translate 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease;
+
+      &:hover,
+      &:focus-within {
+        @apply -translate-y-2;
+        border-top-color: var(--color-accent);
+
+        h2 {
+          @apply text-accent;
+        }
+
+        p {
+          @apply -translate-y-0.5;
+        }
+      }
+
+      h2 {
+        @apply heading-reset; /* h2 for semantic purposes, but don't inherit any of its styling */
+        @apply text-pillar-title tracking-tight no-underline cursor-pointer;
+
+        @apply mb-6;
+      }
+
+      p {
+        @apply text-base text-muted;
+        @apply leading-normal;
+        max-width: 310px;
+        transition: translate 180ms ease;
+      }
+    }
+  }
+
+  /* Feature card: a wide feature card with a large title and nested content section */
+  .feature-card {
+    @apply py-14;
+
+    @apply border-t border-line;
+    &:first-child {
+      @apply border-t-0;
+    }
+
+    @apply grid gap-gap;
+    grid-template-columns: minmax(200px, 0.34fr) minmax(0, 1fr);
+
+    @variant max-md {
+      @apply grid-cols-1;
+    }
+
+    @apply scroll-margin-for-navbar;
+
+    &:last-child {
+      @apply border-b border-line;
+    }
+
+    h2 {
+      @apply heading-reset; /* h2 for semantic purposes, but don't inherit any of its styling */
+      @apply text-section-title /* size */ font-normal /* weight */ tracking-tighter /* letter spacing */;
+      @apply leading-none /* to align top */;
+    }
+
+    .feature-card-content {
+      @apply grid gap-gutter;
+
+      p {
+        @apply text-card-content /* size */ leading-snug /* line height */ tracking-tight /* letter spacing */;
+        @apply m-0;
+      }
+
+      .feature-card-pillars {
+        @apply grid gap-6 text-sm text-muted leading-relaxed;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        @variant max-md {
+          @apply grid-cols-1;
+        }
+
+        div {
+          @apply pt-4 border-t border-line;
+        }
+      }
+    }
+  }
+
+  /* "Closing thoughts" section at the end of pages */
+  .closing {
+    @apply py-10;
+
+    p {
+      @apply text-card-content /* size */ tracking-tighter /* letter spacing */ leading-none /* line height */;
+      @apply text-muted /* color */;
+      @apply m-0 max-w-lg;
+    }
   }
 }
 

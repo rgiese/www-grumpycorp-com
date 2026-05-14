@@ -7,7 +7,8 @@
     "serve": "http-server output --port 5080 -c-1",
     "serve:hmr": "browser-sync start --files 'output/**/*' --server 'output' --port 5080",
     "format:fix": "prettier --write .",
-    "lint": "tsc --noEmit && DEBUG=eslint:eslint eslint ."
+    "lint": "tsc --noEmit && DEBUG=eslint:eslint eslint .",
+    "lint:fix": "tsc --noEmit && DEBUG=eslint:eslint eslint . --fix"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

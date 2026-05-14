@@ -10,10 +10,6 @@
 /* Generated SVGs->CSS */
 @import "assets/svg.css";
 
-/* v2 component partials */
-@import "./_navbar.css";
-@import "./_bottombar.css";
-
 @layer base {
   html,
   body {
@@ -185,7 +181,55 @@
 }
 
 /*
- * Components for v2 of site
+ *  Template components (top/bottom bars)
+ */
+
+@utility scroll-margin-for-navbar {
+  scroll-margin-top: 100px; /* For deep links to sections - account for fixed navbar height */
+}
+
+@layer components {
+  /* Nav bar */
+  .nav {
+    @apply fixed inset-x-0 top-0 z-10;
+    @apply flex justify-between items-center;
+    @apply px-gutter py-5;
+
+    border-bottom: 1px solid color-mix(in srgb, var(--color-line) 62%, transparent);
+
+    @apply backdrop-blur-md;
+    background: color-mix(in srgb, var(--color-bg) 86%, transparent);
+
+    @variant max-md {
+      @apply sticky items-start gap-4;
+    }
+
+    .nav-links {
+      @apply flex gap-gutter;
+      @apply text-sm text-muted;
+
+      @variant max-md {
+        @apply grid gap-1 text-right;
+      }
+
+      a:hover {
+        @apply text-accent;
+      }
+    }
+  }
+
+  /* Bottom bar / "colophon" */
+  .contact-inner {
+    @apply flex justify-between gap-12 items-center flex-wrap;
+
+    @variant max-md {
+      @apply grid grid-cols-1 items-start;
+    }
+  }
+}
+
+/*
+ * Page components for v2 of site
  */
 
 @theme {

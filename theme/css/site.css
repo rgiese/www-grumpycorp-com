@@ -49,13 +49,19 @@
   }
 
   ol {
+    /* Text */
     list-style-type: decimal;
+
+    /* Positioning */
     margin-block: 1em;
     padding-inline-start: 40px;
   }
 
   ul {
+    /* Text */
     list-style-type: disc;
+
+    /* Positioning */
     margin-block: 1em;
     padding-inline-start: 40px;
   }
@@ -71,20 +77,28 @@
   }
 
   figure {
-    display: table;
-    width: 100%;
+    /* Positioning */
     margin-inline: 0;
 
-    figcaption {
-      display: table-caption;
-      caption-side: top;
+    /* Sizing */
+    width: 100%;
 
+    /* Inner */
+    display: table;
+
+    figcaption {
+      /* Text */
+      @apply text-sm /* size */;
+      color: white; /* color */
+
+      /* Positioning */
       padding-block: 0.25rem;
       padding-inline: 0.5rem 1rem;
 
-      @apply text-sm;
-      color: white;
+      /* Inner */
       background-color: rgb(0 0 0 / 50%);
+      display: table-caption;
+      caption-side: top;
     }
   }
 }
@@ -120,7 +134,7 @@
 
 /* Utility to clear text styling to the body default */
 @utility text-reset {
-  @apply font-sans /* type face */ font-normal /* weight */;
+  @apply font-sans /* font */ font-normal /* weight */;
   @apply text-base /* size */ leading-normal /* line height */ tracking-normal /* letter spacing */;
   @apply text-text /* color */;
 }
@@ -135,48 +149,52 @@
   }
 
   body {
-    @apply text-reset;
-    @apply leading-[1.6];
+    /* Text */
+    @apply text-reset /* font, weight, size, line height, letter spacing, color */;
+    @apply leading-[1.6] /* line height */;
+    @apply antialiased /* rendering */;
+    text-rendering: optimizeLegibility; /* rendering */
 
-    @apply antialiased;
-    text-rendering: optimizeLegibility;
-
+    /* Inner */
     @apply bg-bg;
   }
 
   a {
-    @apply text-inherit no-underline;
+    @apply text-inherit /* color */ no-underline /* decoration */;
 
     &:hover {
-      @apply text-accent;
+      @apply text-accent /* color */;
     }
   }
 
   /* Default heading styles (anything set here should be clear-able with @apply heading-reset */
   h1 {
-    @apply text-4xl tracking-tighter;
+    @apply text-4xl /* size */ tracking-tighter /* letter spacing */;
 
     a {
-      @apply text-inherit no-underline;
+      @apply text-inherit /* color */ no-underline /* decoration */;
     }
   }
 
   h2 {
-    @apply text-2xl tracking-tight;
+    @apply text-2xl /* size */ tracking-tight /* letter spacing */;
   }
 
   h3 {
-    @apply text-lg;
+    @apply text-lg /* size */;
   }
 
   h4 {
-    @apply text-base uppercase;
-    @apply text-accent-mono;
+    @apply text-base /* size */ uppercase /* case */;
+    @apply text-accent-mono /* color */;
   }
 }
 
 @utility heading-reset {
-  @apply text-reset;
+  /* Text */
+  @apply text-reset /* font, weight, size, line height, letter spacing, color */;
+
+  /* Positioning */
   margin-block: 0;
 }
 
@@ -191,29 +209,35 @@
 @layer components {
   /* Nav bar */
   .nav {
+    /* Positioning */
     @apply fixed inset-x-0 top-0 z-10;
-    @apply flex justify-between items-center;
     @apply px-gutter py-5;
 
+    /* Outer */
     border-bottom: 1px solid color-mix(in srgb, var(--color-line) 62%, transparent);
-
     @apply backdrop-blur-md;
+
+    /* Inner */
     background: color-mix(in srgb, var(--color-bg) 86%, transparent);
+    @apply flex justify-between items-center;
 
     @variant max-md {
       @apply sticky items-start gap-4;
     }
 
     .nav-links {
+      /* Text */
+      @apply text-sm /* size */ text-muted /* color */;
+
+      /* Inner */
       @apply flex gap-gutter;
-      @apply text-sm text-muted;
 
       @variant max-md {
         @apply grid gap-1 text-right;
       }
 
       a:hover {
-        @apply text-accent;
+        @apply text-accent /* color */;
       }
     }
   }
@@ -246,32 +270,63 @@
   /* Page sections */
   .white-section-wrapper {
     /* Use as <section class="white-section-outer"><div class="section">...</div></section> */
-    @apply bg-white border-y border-line;
+
+    /* Positioning */
     @apply py-8 /* additional padding on top of what the inner .section will do */;
+
+    /* Outer */
+    @apply border-y border-line;
+
+    /* Inner */
+    @apply bg-white;
   }
 
   .section {
     /* Use as a child of .white-section-wrapper or on its own for regular-background sections */
-    @apply mx-auto max-w-5xl px-gutter;
+
+    /* Positioning */
+    @apply mx-auto px-gutter;
     @apply py-10;
     @apply scroll-margin-for-navbar;
 
+    /* Sizing */
+    @apply max-w-5xl;
+
     h2 {
-      @apply heading-reset; /* h2 for semantic purposes, but don't inherit any of its styling */
-      @apply text-section-title /* size */ font-normal /* weight */ tracking-tighter /* leading-spacing */;
-      @apply leading-none mb-12;
+      /* Text */
+      @apply heading-reset /* font, weight, size, line height, letter spacing, color */;
+      @apply text-section-title /* size */ font-normal /* weight */ leading-none /* line height */ tracking-tighter /* letter spacing */;
+
+      /* Positioning */
+      @apply mb-12;
     }
   }
 
   .image-placeholder {
-    @apply text-muted text-xs tracking-wider uppercase;
-    @apply bg-panel border border-line grid place-items-center;
+    /* Text */
+    @apply text-muted /* color */ text-xs /* size */ tracking-wider /* letter spacing */ uppercase /* case */;
+
+    /* Sizing */
     aspect-ratio: 4 / 3;
+
+    /* Outer */
+    @apply border border-line;
+
+    /* Inner */
+    @apply bg-panel;
+    @apply grid place-items-center;
   }
 
   /* Hero section for tops of pages */
   .hero {
-    @apply min-h-screen grid items-center py-20;
+    /* Positioning */
+    @apply py-20;
+
+    /* Sizing */
+    @apply min-h-screen;
+
+    /* Inner */
+    @apply grid items-center;
 
     @variant max-md {
       @apply min-h-auto pt-30;
@@ -287,32 +342,53 @@
       }
 
       .hero-super-title {
-        @apply m-0 mb-5 text-sm tracking-widest text-muted uppercase;
+        /* Text */
+        @apply text-sm /* size */ tracking-widest /* letter spacing */ text-muted /* color */ uppercase /* case */;
+
+        /* Positioning */
+        @apply m-0 mb-5;
       }
 
       h1 {
-        @apply heading-reset; /* h1 for semantic purposes, but don't inherit any of its styling */
-        @apply tracking-tighter;
-        font-size: clamp(3.5rem, 10vw, 7.375rem);
+        /* Text */
+        @apply heading-reset /* font, weight, size, line height, letter spacing, color */;
+        @apply leading-none /* line height */ tracking-tighter /* letter spacing */;
+        font-size: clamp(3.5rem, 10vw, 7.375rem); /* size */
 
-        @apply leading-none mt-0 mb-8;
+        /* Positioning */
+        @apply mt-0 mb-8;
       }
 
       .hero-statement {
-        @apply font-normal text-section-title tracking-tight;
-        @apply leading-none;
+        @apply font-normal /* weight */ text-section-title /* size */ leading-none /* line height */ tracking-tight /* letter spacing */;
 
         .hero-rotator {
-          @apply relative inline-block text-accent cursor-pointer;
+          /* Text */
+          @apply text-accent /* color */;
+
+          /* Positioning */
+          @apply relative;
+
+          /* Sizing */
           min-width: 8ch;
 
+          /* Outer */
+          @apply cursor-pointer;
+
+          /* Inner */
+          @apply inline-block;
+
           a {
-            @apply text-inherit no-underline;
+            @apply text-inherit /* color */ no-underline /* decoration */;
           }
 
           span {
-            @apply absolute opacity-0;
+            /* Positioning */
+            @apply absolute;
             inset: 0 auto auto 0;
+
+            /* Outer */
+            @apply opacity-0;
             animation: hero-rotator-keyframes 20s infinite;
 
             &:first-child {
@@ -339,10 +415,17 @@
       }
 
       .hero-note {
-        @apply text-base text-muted;
+        /* Text */
+        @apply text-base /* size */ leading-normal /* line height */ text-muted /* color */;
+
+        /* Positioning */
+        @apply pl-6 mb-3;
+
+        /* Sizing */
+        @apply max-w-xs;
+
+        /* Outer */
         @apply border-l border-line;
-        @apply pl-6 mb-3 leading-normal;
-        max-width: 320px;
 
         @variant max-md {
           @apply border-l-0 pl-0;
@@ -392,15 +475,23 @@
       @apply grid gap-4;
 
       h3 {
-        @apply heading-reset; /* h3 for semantic purposes, but don't inherit any of its styling */
-        @apply text-2xl tracking-tight;
+        /* Text */
+        @apply heading-reset /* font, weight, size, line height, letter spacing, color */;
+        @apply text-2xl /* size */ tracking-tight /* letter spacing */;
+
+        /* Positioning */
         @apply mt-0 mb-1;
       }
 
       p {
-        @apply text-base text-muted;
-        @apply leading-normal mt-0;
-        max-width: 420px;
+        /* Text */
+        @apply text-base /* size */ leading-normal /* line height */ text-muted /* color */;
+
+        /* Positioning */
+        @apply mt-0;
+
+        /* Sizing */
+        @apply max-w-md;
       }
     }
   }
@@ -416,8 +507,10 @@
 
     /* Pillar card */
     article {
-      /* Padding/border */
+      /* Positioning */
       @apply pt-6;
+
+      /* Outer */
       border-top: 1px solid var(--color-text);
 
       /* Animation */
@@ -432,7 +525,7 @@
         border-top-color: var(--color-accent);
 
         h2 {
-          @apply text-accent;
+          @apply text-accent /* color */;
         }
 
         p {
@@ -441,16 +534,22 @@
       }
 
       h2 {
-        @apply heading-reset; /* h2 for semantic purposes, but don't inherit any of its styling */
-        @apply text-pillar-title tracking-tight no-underline cursor-pointer;
+        /* Text */
+        @apply heading-reset /* font, weight, size, line height, letter spacing, color */;
+        @apply text-pillar-title /* size */ tracking-tight /* letter spacing */ no-underline /* decoration */ cursor-pointer /* cursor */;
 
+        /* Positioning */
         @apply mb-6;
       }
 
       p {
-        @apply text-base text-muted;
-        @apply leading-normal;
+        /* Text */
+        @apply text-base /* size */ leading-normal /* line height */ text-muted /* color */;
+
+        /* Sizing */
         max-width: 310px;
+
+        /* Outer */
         transition: translate 180ms ease;
       }
     }
@@ -458,13 +557,20 @@
 
   /* Feature card: a wide card with a large title on the left and content on the right. */
   .feature-card {
+    /* Positioning */
     @apply py-14;
+    @apply scroll-margin-for-navbar;
 
+    /* Outer */
     @apply border-t border-line;
     &:first-child {
       @apply border-t-0;
     }
+    &:last-child {
+      @apply border-b border-line;
+    }
 
+    /* Inner */
     @apply grid gap-gap;
     /* Left (title) column width is configurable via --left-column-width (e.g. on a parent section), defaults to 200px */
     grid-template-columns: minmax(var(--left-column-width, 200px), 0.34fr) minmax(0, 1fr);
@@ -473,20 +579,17 @@
       @apply grid-cols-1;
     }
 
-    @apply scroll-margin-for-navbar;
-
-    &:last-child {
-      @apply border-b border-line;
-    }
-
     h3 {
-      @apply heading-reset; /* h3 for semantic purposes, but don't inherit any of its styling */
-      @apply text-sm tracking-widest text-muted uppercase;
+      /* Text */
+      @apply heading-reset /* font, weight, size, line height, letter spacing, color */;
+      @apply text-sm /* size */ tracking-widest /* letter spacing */ text-muted /* color */ uppercase /* case */;
+
+      /* Positioning */
       @apply mb-4;
     }
 
     h2 {
-      @apply heading-reset; /* h2 for semantic purposes, but don't inherit any of its styling */
+      @apply heading-reset /* font, weight, size, line height, letter spacing, color */;
       @apply text-section-title /* size */ font-normal /* weight */ leading-none /* line height */ tracking-tighter /* letter spacing */;
       @apply align-to-top-capital /* alignment with p to the right */;
     }
@@ -495,13 +598,20 @@
       @apply grid gap-gutter;
 
       p {
+        /* Text */
         @apply text-card-content /* size */ leading-snug /* line height */ tracking-tight /* letter spacing */;
-        @apply align-to-top-capital; /* align with h2 to the left */
+        @apply align-to-top-capital /* alignment */;
+
+        /* Positioning */
         @apply m-0;
       }
 
       .feature-card-pillars {
-        @apply grid gap-6 text-sm text-muted leading-relaxed;
+        /* Text */
+        @apply text-sm /* size */ text-muted /* color */ leading-relaxed /* line height */;
+
+        /* Inner */
+        @apply grid gap-6;
         grid-template-columns: repeat(3, minmax(0, 1fr));
 
         @variant max-md {
@@ -509,7 +619,11 @@
         }
 
         div {
-          @apply pt-4 border-t border-line;
+          /* Positioning */
+          @apply pt-4;
+
+          /* Outer */
+          @apply border-t border-line;
         }
       }
     }
@@ -520,9 +634,15 @@
     @apply pt-0 /* coasting on the previous section's end padding */;
 
     p {
+      /* Text */
       @apply text-card-content /* size */ tracking-tighter /* letter spacing */ leading-none /* line height */;
       @apply text-muted /* color */;
-      @apply m-0 max-w-lg;
+
+      /* Positioning */
+      @apply m-0;
+
+      /* Sizing */
+      @apply max-w-lg;
     }
   }
 }
@@ -533,17 +653,21 @@
 
 @layer components {
   .svg-tag {
-    @apply size-4 inline-block;
+    /* Sizing */
+    @apply size-4;
+
+    /* Inner */
+    @apply inline-block;
   }
 
   .content {
     a:link {
-      @apply text-accent;
+      @apply text-accent /* color */;
     }
 
     a:hover,
     a:visited {
-      color: #ae4820; /* Can't use var() here for security reasons */
+      color: #ae4820; /* Can't use var() here for security reasons */ /* color */
     }
   }
 
@@ -565,25 +689,51 @@
     }
 
     .portfolio-sxs-container {
-      @apply flow-root w-full;
+      /* Sizing */
+      @apply w-full;
+
+      /* Inner */
+      @apply flow-root;
     }
 
     .portfolio-sxs-w50 {
-      @apply p-3 float-left w-full lg:w-1/2;
+      /* Positioning */
+      @apply p-3;
+
+      /* Sizing */
+      @apply w-full lg:w-1/2;
+
+      /* Inner */
+      @apply float-left;
     }
 
     .portfolio-sxs-w60 {
-      @apply p-3 float-left w-full lg:w-3/5;
+      /* Positioning */
+      @apply p-3;
+
+      /* Sizing */
+      @apply w-full lg:w-3/5;
+
+      /* Inner */
+      @apply float-left;
     }
   }
 
   .rightbar {
     .colophon-row {
-      @apply text-sm pt-1;
+      /* Text */
+      @apply text-sm /* size */;
+
+      /* Positioning */
+      @apply pt-1;
     }
 
     .link-subdued {
-      @apply no-underline hover:opacity-50 text-black/80;
+      /* Text */
+      @apply no-underline /* decoration */ text-black/80 /* color */;
+
+      /* Outer */
+      @apply hover:opacity-50;
     }
   }
 }

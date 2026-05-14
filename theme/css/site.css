@@ -129,6 +129,10 @@
   @apply text-text /* color */;
 }
 
+@utility align-to-top-capital {
+  text-box: trim-start cap alphabetic;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -328,18 +332,20 @@
     }
   }
 
-  /* Image card grid: a two-wide grid of images with optional titles/text */
+  /* Image card grid: a configurable-column grid of images with optional titles/text */
   .image-card-grid {
+    /* Column count is configurable (e.g. style="--cols: 3" on the invoking element), defaults to two */
+    --cols: 2;
+
     @apply grid gap-gap items-start;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
 
     @variant max-md {
       @apply grid-cols-1;
     }
 
     article {
-      @apply grid gap-4 h-full;
-      grid-template-rows: auto 1fr;
+      @apply grid gap-4;
 
       h3 {
         @apply heading-reset; /* h3 for semantic purposes, but don't inherit any of its styling */
@@ -431,7 +437,7 @@
     h2 {
       @apply heading-reset; /* h2 for semantic purposes, but don't inherit any of its styling */
       @apply text-section-title /* size */ font-normal /* weight */ tracking-tighter /* letter spacing */;
-      @apply leading-none /* to align top */;
+      @apply align-to-top-capital /* alignment with p to the right */;
     }
 
     .feature-card-content {
@@ -439,6 +445,7 @@
 
       p {
         @apply text-card-content /* size */ leading-snug /* line height */ tracking-tight /* letter spacing */;
+        @apply align-to-top-capital; /* align with h2 to the left */
         @apply m-0;
       }
 

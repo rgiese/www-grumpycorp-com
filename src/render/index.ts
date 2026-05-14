@@ -210,11 +210,26 @@ export class SiteRenderer {
         markedHighlight({
           langPrefix: "hljs language-",
           highlight(code, lang, _info) {
+            if (lang === "html") {
+              return code; // preserve raw text so our renderer can pass it through as-is
+            }
             const language = hljs.getLanguage(lang) ? lang : "plaintext";
             return hljs.highlight(code, { language }).value;
           },
         }),
       )
+      .use({
+        renderer: {
+          // Pass ```html blocks through as raw HTML rather than syntax-highlighting and escaping them
+          // This allows `prettier` to auto-format HTML for us inside Markdown files
+          code({ text, lang }: { text: string; lang?: string }): string | false {
+            if (lang === "html") {
+              return text;
+            }
+            return false;
+          },
+        },
+      })
       .use(createDirectives([figureDirective, ...this.rootConfig.customDirectives]));
 
     return marked.parse(md) as string;

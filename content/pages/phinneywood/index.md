@@ -2,6 +2,7 @@
 title: Phinneywood
 ---
 
+```html
 <!-- Hero -->
 <section class="section hero">
   <div class="hero-grid">
@@ -14,8 +15,8 @@ title: Phinneywood
       </div>
     </div>
     <p class="hero-note">
-      A flexible studio environment available for rehearsals, workshops, filming, classes, installations,
-      performances, postproduction sessions, and collaborative development.
+      A flexible studio environment available for rehearsals, workshops, filming, classes, installations, performances,
+      postproduction sessions, and collaborative development.
     </p>
   </div>
 </section>
@@ -53,8 +54,8 @@ title: Phinneywood
     <h2>Fabrication</h2>
     <div class="feature-card-content">
       <p>
-        The studio supports the physical side of production as well: fabrication, engineering, electronics, scenic
-        work, technical integration, and custom-built systems.
+        The studio supports the physical side of production as well: fabrication, engineering, electronics, scenic work,
+        technical integration, and custom-built systems.
       </p>
       <div class="feature-card-pillars">
         <div>Furniture, scenic construction, electronics, control systems, and installations.</div>
@@ -68,8 +69,8 @@ title: Phinneywood
     <h2>Rehearsal</h2>
     <div class="feature-card-content">
       <p>
-        Practice and iteration are treated as central creative activities. The space is intended to support
-        rehearsal, refinement, experimentation, classes, and collaborative development over time.
+        Practice and iteration are treated as central creative activities. The space is intended to support rehearsal,
+        refinement, experimentation, classes, and collaborative development over time.
       </p>
       <div class="feature-card-pillars">
         <div>Music rehearsals, staging, workshops, classes, and production development.</div>
@@ -83,8 +84,8 @@ title: Phinneywood
     <h2>Production</h2>
     <div class="feature-card-content">
       <p>
-        Phinneywood supports filming, live performance, installations, and public presentation with integrated
-        technical systems and practical production infrastructure.
+        Phinneywood supports filming, live performance, installations, and public presentation with integrated technical
+        systems and practical production infrastructure.
       </p>
       <div class="feature-card-pillars">
         <div>Camera, grip, lighting, sound, power, staging, and technical direction.</div>
@@ -98,8 +99,8 @@ title: Phinneywood
     <h2>Post</h2>
     <div class="feature-card-content">
       <p>
-        The work continues after production. Editing, sound, music, finishing, review, and reflection are treated
-        as part of the same creative arc rather than separate downstream steps.
+        The work continues after production. Editing, sound, music, finishing, review, and reflection are treated as
+        part of the same creative arc rather than separate downstream steps.
       </p>
       <div class="feature-card-pillars">
         <div>Editing, review, music, sound, finishing, and collaborative postproduction.</div>
@@ -114,3 +115,4 @@ title: Phinneywood
 <section class="section closing">
   <p>Creative and technical work for film, performance, and live environments.</p>
 </section>
+```

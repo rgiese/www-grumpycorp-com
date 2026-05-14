@@ -2,6 +2,7 @@
 title: Home
 ---
 
+```html
 <!-- Hero -->
 <section class="section hero">
   <div class="hero-grid">
@@ -63,8 +64,7 @@ title: Home
         <div>
           <h3>Live systems</h3>
           <p>
-            Theater, music, and performance environments designed around people, safety, timing, and repeatable
-            use.
+            Theater, music, and performance environments designed around people, safety, timing, and repeatable use.
           </p>
         </div>
       </article>
@@ -83,11 +83,12 @@ title: Home
         <div>
           <h3>Engineering</h3>
           <p>
-            Custom electronics, control systems, and technical infrastructure for creative spaces, installations,
-            and live environments.
+            Custom electronics, control systems, and technical infrastructure for creative spaces, installations, and
+            live environments.
           </p>
         </div>
       </article>
     </div>
   </div>
 </section>
+```

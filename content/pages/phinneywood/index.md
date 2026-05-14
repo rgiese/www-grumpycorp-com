@@ -22,7 +22,7 @@ title: Phinneywood
 </section>
 
 <!-- Image band -->
-<section class="white-section-wrapper py-18">
+<section class="white-section-wrapper">
   <div class="section image-card-grid">
     <article>
       <div class="image-placeholder">main studio image</div>
@@ -34,7 +34,7 @@ title: Phinneywood
 </section>
 
 <!-- Modes -->
-<section class="section pt-10">
+<section class="section">
   <article class="feature-card" id="planning">
     <h2>Planning</h2>
     <div class="feature-card-content">

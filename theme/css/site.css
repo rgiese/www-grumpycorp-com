@@ -203,11 +203,13 @@
   .white-section-wrapper {
     /* Use as <section class="white-section-outer"><div class="section">...</div></section> */
     @apply bg-white border-y border-line;
+    @apply py-8 /* additional padding on top of what the inner .section will do */;
   }
 
   .section {
     /* Use as a child of .white-section-wrapper or on its own for regular-background sections */
     @apply mx-auto max-w-5xl px-gutter;
+    @apply py-10;
     @apply scroll-margin-for-navbar;
 
     h2 {
@@ -471,7 +473,7 @@
 
   /* "Closing thoughts" section at the end of pages */
   .closing {
-    @apply py-10;
+    @apply pt-0 /* coasting on the previous section's end padding */;
 
     p {
       @apply text-card-content /* size */ tracking-tighter /* letter spacing */ leading-none /* line height */;

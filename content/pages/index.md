@@ -24,7 +24,7 @@ title: Home
 </section>
 
 <!-- Pillars -->
-<section class="section pt-20 pb-30">
+<section class="section">
   <div class="pillar-card-grid">
     <article>
       <h2><a href="">Phinneywood</a></h2>
@@ -45,7 +45,7 @@ title: Home
 </section>
 
 <!-- Selected work (must wrap in selected-work before wrapping in section) -->
-<section class="white-section-wrapper py-30 max-md:pt-15">
+<section class="white-section-wrapper">
   <div class="section">
     <h2>Selected work</h2>
     <div class="image-card-grid">

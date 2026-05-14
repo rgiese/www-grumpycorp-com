@@ -22,7 +22,7 @@ title: Collaborations
 </section>
 
 <!-- Projects -->
-<section class="section pt-10" style="--left-column-width: 260px">
+<section class="section" style="--left-column-width: 260px">
   <article class="feature-card">
     <div>
       <h3>Feature Film</h3>

@@ -22,7 +22,7 @@ title: Production
 </section>
 
 <!-- Image band -->
-<section class="white-section-wrapper py-18">
+<section class="white-section-wrapper">
   <div class="section image-card-grid" style="--cols: 3">
     <article>
       <div class="image-placeholder">film production image</div>
@@ -37,7 +37,7 @@ title: Production
 </section>
 
 <!-- Systems -->
-<section class="section pt-10">
+<section class="section">
   <article class="feature-card">
     <h2>Camera</h2>
     <div class="feature-card-content">

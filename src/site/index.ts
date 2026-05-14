@@ -12,7 +12,12 @@ import { getDocumentTag } from "./documentTag";
 
 function outputPath(inputDocument: InputDocument, prefix?: string): string {
   const relativePath = path.parse(inputDocument.documentGroupRelativePath);
-  return path.join(prefix ?? "", relativePath.dir, relativePath.name, "index.html");
+  return path.join(
+    prefix ?? "",
+    relativePath.dir,
+    relativePath.name === "index" ? "" : relativePath.name,
+    "index.html",
+  );
 }
 
 const layoutTemplateRenderContext: RenderContextGenerator = (_inputDocument, inputDocumentInventory) =>
@@ -24,24 +29,6 @@ const generatedDocuments: GeneratedDocumentsGenerator = (inputDocumentInventory)
 
   return [
     ...postIndexPagesGenerator(inputDocumentInventory),
-    // Home
-    {
-      siteRelativeOutputPath: "index.html",
-      frontMatter: {
-        title: "Home",
-      },
-      contentTemplateType: TemplateType.Marked,
-      contentTemplateName: "index.md",
-      contentTemplateContext: {},
-      templateName: "_layout_v2.eta",
-      // We're relying on `generateLayoutTemplateRenderContext` not specializing on any given input document
-      templateRenderContext: {
-        ...generateLayoutTemplateRenderContext(inputDocumentInventory),
-        isHomePage: true,
-        latestPostDocument,
-        latestPostTag: latestPostDocument ? getDocumentTag(latestPostDocument) : "",
-      },
-    },
     // 404
     {
       siteRelativeOutputPath: "404.html",
@@ -69,8 +56,9 @@ const rootConfig: RootConfig = {
       documentGroupName: "pages",
       inputRootRelativePath: "pages",
       requirePublishDate: false,
-      templateName: "_layout.eta",
+      templateName: "_layout_v2.eta",
       templateRenderContext: layoutTemplateRenderContext,
+      // Output pages at the root level, e.g. content/pages/foo.md -> output/foo/index.html
       outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument),
     },
     {
@@ -79,6 +67,7 @@ const rootConfig: RootConfig = {
       requirePublishDate: false,
       templateName: "_layout.eta",
       templateRenderContext: layoutTemplateRenderContext,
+      // Output pages under the "portfolio" path, e.g. content/portfolio/foo.md -> output/portfolio/foo/index.html
       outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument, "portfolio"),
     },
     {
@@ -87,6 +76,7 @@ const rootConfig: RootConfig = {
       requirePublishDate: true,
       templateName: "_layout.eta",
       templateRenderContext: generatePostTemplateRenderContext,
+      // Output pages under the "posts" path, e.g. content/posts/collection/foo.md -> output/posts/collection/foo/index.html
       outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument, "posts"),
     },
   ],

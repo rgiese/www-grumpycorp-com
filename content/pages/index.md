@@ -1,3 +1,7 @@
+---
+title: Home
+---
+
 <div class="home-page">
 
 <!-- Hero -->

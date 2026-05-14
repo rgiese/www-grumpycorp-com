@@ -334,11 +334,9 @@
 
   /* Image card grid: a configurable-column grid of images with optional titles/text */
   .image-card-grid {
-    /* Column count is configurable (e.g. style="--cols: 3" on the invoking element), defaults to two */
-    --cols: 2;
-
     @apply grid gap-gap items-start;
-    grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+    /* Column count is configurable (e.g. style="--cols: 3" on the invoking element), defaults to two */
+    grid-template-columns: repeat(var(--cols, 2), minmax(0, 1fr));
 
     @variant max-md {
       @apply grid-cols-1;
@@ -412,7 +410,7 @@
     }
   }
 
-  /* Feature card: a wide feature card with a large title and nested content section */
+  /* Feature card: a wide card with a large title on the left and content on the right. */
   .feature-card {
     @apply py-14;
 
@@ -422,7 +420,8 @@
     }
 
     @apply grid gap-gap;
-    grid-template-columns: minmax(200px, 0.34fr) minmax(0, 1fr);
+    /* Left (title) column width is configurable via --left-column-width (e.g. on a parent section), defaults to 200px */
+    grid-template-columns: minmax(var(--left-column-width, 200px), 0.34fr) minmax(0, 1fr);
 
     @variant max-md {
       @apply grid-cols-1;
@@ -434,9 +433,15 @@
       @apply border-b border-line;
     }
 
+    h3 {
+      @apply heading-reset; /* h3 for semantic purposes, but don't inherit any of its styling */
+      @apply text-sm tracking-widest text-muted uppercase;
+      @apply mb-4;
+    }
+
     h2 {
       @apply heading-reset; /* h2 for semantic purposes, but don't inherit any of its styling */
-      @apply text-section-title /* size */ font-normal /* weight */ tracking-tighter /* letter spacing */;
+      @apply text-section-title /* size */ font-normal /* weight */ leading-none /* line height */ tracking-tighter /* letter spacing */;
       @apply align-to-top-capital /* alignment with p to the right */;
     }
 

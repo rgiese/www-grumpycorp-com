@@ -31,9 +31,8 @@
     .hero {
       @apply min-h-screen grid items-center py-20;
 
-      @media (max-width: 780px) {
-        min-height: auto;
-        @apply pt-30;
+      @variant max-md {
+        @apply min-h-auto pt-30;
       }
 
       .hero-grid {
@@ -41,7 +40,7 @@
         grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.5fr);
         gap: clamp(3rem, 9vw, 7.5rem);
 
-        @media (max-width: 780px) {
+        @variant max-md {
           @apply grid-cols-1;
         }
 
@@ -100,11 +99,10 @@
         .hero-note {
           @apply text-base text-muted;
           @apply border-l border-line;
-
           @apply pl-6 mb-3 leading-normal;
           max-width: 320px;
 
-          @media (max-width: 780px) {
+          @variant max-md {
             @apply border-l-0 pl-0;
           }
         }
@@ -119,7 +117,7 @@
         @apply grid gap-gutter;
         grid-template-columns: repeat(3, minmax(0, 1fr));
 
-        @media (max-width: 780px) {
+        @variant max-md {
           @apply grid-cols-1;
         }
 
@@ -168,14 +166,14 @@
 
     /* Selected work */
     .selected-work {
-      @apply py-30;
+      @apply py-30 max-md:pt-15;
       @apply bg-white border-y border-line;
 
       .selected-work-grid {
         @apply grid gap-gutter items-start;
         grid-template-columns: repeat(2, minmax(0, 1fr));
 
-        @media (max-width: 780px) {
+        @variant max-md {
           @apply grid-cols-1;
         }
       }

@@ -9,17 +9,17 @@
     @apply backdrop-blur-md;
     background: color-mix(in srgb, var(--color-bg) 86%, transparent);
 
-    @media (max-width: 780px) {
+    @variant max-md {
       @apply sticky items-start gap-4;
-
-      .nav-links {
-        @apply grid gap-1 text-right;
-      }
     }
 
     .nav-links {
       @apply flex gap-gutter;
       @apply text-sm text-muted;
+
+      @variant max-md {
+        @apply grid gap-1 text-right;
+      }
 
       a:hover {
         @apply text-accent;

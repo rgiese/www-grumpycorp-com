@@ -1,5 +1,5 @@
 <nav class="nav" aria-label="Primary navigation">
-  <a class="flex items-center gap-2" href="">
+  <a class="flex items-center gap-2" href="/">
     <div class="grid gap-px">
       <div class="flex items-center gap-2">
         <strong class="text-base font-medium">Grumpycorp Studios</strong>
@@ -8,9 +8,9 @@
     </div>
   </a>
   <div class="nav-links">
-    <a href="">Phinneywood</a>
-    <a href="">Production</a>
-    <a href="">Collaborations</a>
-    <a href="">About</a>
+    <a href="/phinneywood">Phinneywood</a>
+    <a href="/production">Production</a>
+    <a href="/collaborations">Collaborations</a>
+    <a href="/">About</a>
   </div>
 </nav>

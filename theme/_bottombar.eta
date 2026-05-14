@@ -6,10 +6,9 @@
     </div>
 
     <div class="text-sm text-muted flex gap-5 flex-wrap items-center">
-      <a href="">Instagram</a>
-      <a href="">IMDb</a>
-      <a href="">Vimeo</a>
-      <a href="">GitHub</a>
+      <a href="https://www.instagram.com/grumpycorp/">Instagram</a>
+      <a href="https://www.imdb.com/name/nm8515322/">IMDb</a>
+      <a href="https://github.com/rgiese/">GitHub</a>
       <a href="mailto:hello@grumpycorp.com">Email</a>
     </div>
   </div>

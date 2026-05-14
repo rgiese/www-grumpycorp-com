@@ -12,10 +12,10 @@ title: Home
       <div class="hero-statement" aria-label="a place for art, production, practice, and performance">
         <span class="text-muted" aria-hidden="true">a place for</span><br />
         <span class="hero-rotator" aria-hidden="true">
-          <span><a href="">art</a></span>
-          <span><a href="">production</a></span>
-          <span><a href="">practice</a></span>
-          <span><a href="">performance</a></span>
+          <span>art</span>
+          <span>production</span>
+          <span>practice</span>
+          <span>performance</span>
         </span>
       </div>
     </div>
@@ -27,18 +27,18 @@ title: Home
 <section class="section">
   <div class="pillar-card-grid">
     <article>
-      <h2><a href="">Phinneywood</a></h2>
+      <h2><a href="/phinneywood">Phinneywood</a></h2>
       <p>A place-based studio for art, production, practice, and performance.</p>
     </article>
     <article>
-      <h2><a href="">Production</a></h2>
+      <h2><a href="/production">Production</a></h2>
       <p>
         Camera, lighting, grip, electrical, sound, and technical direction for film, theater, music, and live
         performance.<br /><br />At Phinneywood or wherever the work needs to happen.
       </p>
     </article>
     <article>
-      <h2><a href="">Collaborations</a></h2>
+      <h2><a href="/collaborations">Collaborations</a></h2>
       <p>Projects developed together, from early exploration through production and public presentation.</p>
     </article>
   </div>

@@ -29,17 +29,17 @@
   .home-page {
     /* Hero */
     .hero {
-      @apply min-h-screen grid items-center pt-[92px] pb-[80px];
+      @apply min-h-screen grid items-center py-20;
 
       @media (max-width: 780px) {
         min-height: auto;
-        @apply pt-[120px];
+        @apply pt-30;
       }
 
       .hero-grid {
         @apply grid items-end;
         grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.5fr);
-        gap: clamp(48px, 9vw, 120px);
+        gap: clamp(3rem, 9vw, 7.5rem);
 
         @media (max-width: 780px) {
           @apply grid-cols-1;
@@ -47,16 +47,15 @@
 
         .hero-title {
           @apply heading-reset; /* h1 for semantic purposes, but don't inherit any of its styling */
-          @apply mt-0 mb-[34px];
-          font-size: clamp(56px, 10vw, 118px);
-          line-height: 0.94;
-          letter-spacing: -0.045em;
+          @apply tracking-tighter;
+          font-size: clamp(3.5rem, 10vw, 7.375rem);
+
+          @apply leading-none mt-0 mb-8;
         }
 
         .hero-phrase {
-          @apply font-normal leading-[1.08];
-          font-size: clamp(28px, 5vw, 58px);
-          letter-spacing: -0.025em;
+          @apply font-normal text-section-title tracking-tight;
+          @apply leading-none;
 
           .hero-rotator-prefix {
             @apply text-muted;
@@ -64,7 +63,7 @@
 
           .hero-rotator {
             @apply relative inline-block text-accent cursor-pointer;
-            min-width: 8.2ch;
+            min-width: 8ch;
 
             a {
               @apply text-inherit no-underline;
@@ -99,10 +98,11 @@
         }
 
         .hero-note {
-          @apply text-muted border-l border-line pl-6 mb-3;
+          @apply text-base text-muted;
+          @apply border-l border-line;
+
+          @apply pl-6 mb-3 leading-normal;
           max-width: 320px;
-          font-size: 15px;
-          line-height: 1.65;
 
           @media (max-width: 780px) {
             @apply border-l-0 pl-0;
@@ -113,12 +113,11 @@
 
     /* Pillars */
     .pillars {
-      @apply pt-[80px] pb-[120px];
+      @apply pt-20 pb-30;
 
       .pillar-grid {
-        @apply grid;
+        @apply grid gap-gutter;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: clamp(24px, 4vw, 54px);
 
         @media (max-width: 780px) {
           @apply grid-cols-1;
@@ -152,19 +151,15 @@
           /* Inner components */
           .pillar-heading {
             @apply heading-reset; /* h2 for semantic purposes, but don't inherit any of its styling */
-            @apply mb-6;
-            font-size: clamp(26px, 3vw, 42px);
-            letter-spacing: -0.025em;
+            @apply text-pillar-title tracking-tight no-underline cursor-pointer;
 
-            @apply no-underline cursor-pointer;
+            @apply mb-6;
           }
 
           p {
-            @apply text-muted;
+            @apply text-base text-muted;
+            @apply leading-normal;
             max-width: 310px;
-            font-size: 15px;
-            line-height: 1.65;
-
             transition: translate 180ms ease;
           }
         }
@@ -173,12 +168,12 @@
 
     /* Selected work */
     .selected-work {
-      @apply pt-[110px] pb-[130px] bg-white border-y border-line;
+      @apply py-30;
+      @apply bg-white border-y border-line;
 
       .selected-work-grid {
-        @apply grid items-start;
+        @apply grid gap-gutter items-start;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: clamp(28px, 5vw, 70px);
 
         @media (max-width: 780px) {
           @apply grid-cols-1;
@@ -186,20 +181,18 @@
       }
 
       .selected-work-card {
-        @apply grid gap-[18px] h-full;
+        @apply grid gap-4 h-full;
         grid-template-rows: auto 1fr;
 
         .selected-work-card-title {
-          @apply heading-reset; /* h3 for semantic purposes, but don't inherit any of its styling */
+          @apply heading-reset; /* h2 for semantic purposes, but don't inherit any of its styling */
+          @apply text-2xl tracking-tight;
           @apply mt-0 mb-1;
-          font-size: 22px;
-          letter-spacing: -0.015em;
         }
 
         p {
-          @apply text-muted mt-0;
-          font-size: 15px;
-          line-height: 1.65;
+          @apply text-base text-muted;
+          @apply leading-normal mt-0;
           max-width: 420px;
         }
       }

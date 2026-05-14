@@ -1,10 +1,10 @@
 <nav class="nav" aria-label="Primary navigation">
-  <a class="brand" href="">
-    <div class="brand-copy">
-      <div style="display: flex; align-items: center; gap: 10px">
-        <strong>Grumpycorp Studios</strong>
+  <a class="flex items-center gap-2" href="">
+    <div class="grid gap-px">
+      <div class="flex items-center gap-2">
+        <strong class="text-base font-medium">Grumpycorp Studios</strong>
       </div>
-      <span>creative <span class="slash">/</span> engineering</span>
+      <span class="text-xs text-muted tracking-widest">creative <span class="text-accent">/</span> engineering</span>
     </div>
   </a>
   <div class="nav-links">

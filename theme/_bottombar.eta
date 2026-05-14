@@ -1,11 +1,11 @@
-<section class="section contact">
+<section class="section py-5 border-t border-line">
   <div class="contact-inner">
-    <div class="colophon">
-      <div class="colophon-title">Grumpycorp Studios</div>
-      <div class="colophon-location">Seattle, Washington</div>
+    <div class="grid">
+      <div class="text-sm font-medium">Grumpycorp Studios</div>
+      <div class="text-xs text-muted tracking-wide">Seattle, Washington</div>
     </div>
 
-    <div class="footer-links">
+    <div class="text-sm text-muted flex gap-5 flex-wrap items-center">
       <a href="">Instagram</a>
       <a href="">IMDb</a>
       <a href="">Vimeo</a>

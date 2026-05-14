@@ -4,7 +4,7 @@
 <section class="section hero">
   <div class="hero-grid">
     <div>
-      <p class="mt-0 mb-[22px] text-sm tracking-[0.08em] text-muted uppercase font-normal">Seattle</p>
+      <p class="mt-0 mb-6 text-sm tracking-widest text-muted uppercase font-normal">Seattle</p>
       <h1 class="hero-title">Phinneywood</h1>
       <div class="hero-phrase" aria-label="a place for art, production, practice, and performance">
         <span class="hero-rotator-prefix">a place for</span><br />

@@ -1,45 +1,25 @@
 @layer components {
   .nav {
-    @apply fixed inset-x-0 top-0 z-10 flex justify-between items-center backdrop-blur-md;
-    padding: 22px var(--gutter);
-    background: color-mix(in srgb, var(--color-bg) 86%, transparent);
+    @apply fixed inset-x-0 top-0 z-10;
+    @apply flex justify-between items-center;
+    @apply px-gutter py-5;
+
     border-bottom: 1px solid color-mix(in srgb, var(--color-line) 62%, transparent);
 
+    @apply backdrop-blur-md;
+    background: color-mix(in srgb, var(--color-bg) 86%, transparent);
+
     @media (max-width: 780px) {
-      @apply sticky items-start gap-[18px];
+      @apply sticky items-start gap-4;
 
       .nav-links {
         @apply grid gap-1 text-right;
       }
     }
 
-    .brand {
-      @apply flex items-center gap-2.5 tracking-[0.01em];
-
-      .brand-mark {
-        @apply block w-6 h-auto shrink-0 grow-0 -translate-y-px;
-      }
-
-      .brand-copy {
-        @apply grid gap-px;
-      }
-
-      strong {
-        @apply text-[15px] font-medium;
-      }
-
-      span {
-        @apply text-xs text-muted tracking-[0.08em];
-      }
-
-      .slash {
-        @apply text-accent;
-      }
-    }
-
     .nav-links {
-      @apply flex text-sm text-muted;
-      gap: clamp(18px, 3vw, 42px);
+      @apply flex gap-gutter;
+      @apply text-sm text-muted;
 
       a:hover {
         @apply text-accent;

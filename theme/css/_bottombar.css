@@ -1,45 +1,9 @@
 @layer components {
-  .contact {
-    @apply py-[22px] border-t border-line;
-  }
-
   .contact-inner {
     @apply flex justify-between gap-12 items-center flex-wrap;
 
     @media (max-width: 780px) {
       @apply grid grid-cols-1 items-start;
-    }
-  }
-
-  .colophon {
-    @apply grid gap-[6px];
-  }
-
-  .colophon-title {
-    @apply text-sm font-medium tracking-[0.01em];
-  }
-
-  .colophon-subtitle {
-    @apply text-xs text-muted tracking-[0.08em];
-
-    .slash {
-      @apply text-accent;
-    }
-  }
-
-  .colophon-location {
-    @apply text-[13px] text-muted mt-3;
-  }
-
-  .footer-links {
-    @apply flex gap-[18px] flex-wrap text-[13px] text-muted items-center;
-
-    a {
-      transition: color 140ms ease;
-
-      &:hover {
-        @apply text-accent;
-      }
     }
   }
 }

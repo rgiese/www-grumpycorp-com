@@ -108,18 +108,10 @@
   --color-accent-dark: #0d5258;
   --color-accent-mono: #03061f;
   --color-accent-mono-light: #a0cab3;
+
   --color-muted: #77736d;
-  --color-line: #ded8cf;
   --color-panel: #f4eee6;
-}
-
-/*
- * Layout
- */
-
-:root {
-  --max: 1180px;
-  --gutter: clamp(24px, 5vw, 72px);
+  --color-line: #ded8cf;
 }
 
 /*
@@ -156,11 +148,15 @@
 
   a {
     @apply text-inherit no-underline;
+
+    &:hover {
+      @apply text-accent;
+    }
   }
 
   /* Default heading styles (anything set here should be clear-able with @apply heading-reset */
   h1 {
-    @apply text-4xl font-light;
+    @apply text-4xl tracking-tighter;
 
     a {
       @apply text-inherit no-underline;
@@ -168,7 +164,7 @@
   }
 
   h2 {
-    @apply text-2xl;
+    @apply text-2xl tracking-tight;
   }
 
   h3 {
@@ -190,45 +186,27 @@
  * Components for v2 of site
  */
 
+@theme {
+  --spacing-gutter: clamp(1.5rem, 5vw, 4.5rem);
+  --text-pillar-title: clamp(1.625rem, 3vw, 2.625rem);
+  --text-section-title: clamp(1.875rem, 4vw, 3.5rem);
+}
+
 @layer components {
   .section {
-    @apply mx-auto;
-    max-width: var(--max);
-    padding-inline: var(--gutter);
+    @apply mx-auto max-w-5xl px-gutter;
   }
 
   .section-title {
     @apply heading-reset; /* h2 for semantic purposes, but don't inherit any of its styling */
-
-    @apply font-normal leading-[1.05] mb-[54px];
-    font-size: clamp(30px, 4vw, 56px);
-    letter-spacing: -0.03em;
+    @apply font-normal text-section-title tracking-tighter;
+    @apply leading-none mb-12;
   }
 
   .image-placeholder {
-    @apply bg-panel border border-line grid place-items-center text-muted text-xs tracking-[0.06em] uppercase;
+    @apply text-muted text-xs tracking-wider uppercase;
+    @apply bg-panel border border-line grid place-items-center;
     aspect-ratio: 4 / 3;
-  }
-
-  .about {
-    @apply pt-[120px] pb-[130px];
-
-    p {
-      @apply font-normal leading-[1.42];
-      max-width: 690px;
-      font-size: clamp(20px, 2.1vw, 30px);
-      letter-spacing: -0.018em;
-    }
-  }
-
-  .about-grid {
-    @apply grid;
-    grid-template-columns: 0.42fr 1fr;
-    gap: clamp(36px, 8vw, 110px);
-
-    @media (max-width: 780px) {
-      @apply grid-cols-1;
-    }
   }
 }
 

@@ -269,18 +269,11 @@
 
   /* Hero section for tops of pages, a specialization of .page-section */
   .hero {
-    /* Positioning */
-    @apply py-20;
-
     /* Sizing */
-    @apply min-h-screen;
+    @apply min-h-dvh;
 
     /* Inner */
-    @apply grid items-center;
-
-    @variant max-md {
-      @apply min-h-auto pt-30;
-    }
+    @apply grid content-center;
 
     .hero-grid {
       @apply grid items-end;
@@ -602,6 +595,13 @@
  * - listed after the standard page components so they can use + override them
  */
 
+@utility navbar-border-and-background {
+  border-bottom: 1px solid color-mix(in srgb, var(--color-line) 62%, transparent);
+  @apply backdrop-blur-md;
+
+  background: color-mix(in srgb, var(--color-bg) 86%, transparent);
+}
+
 @layer components {
   /* Nav bar */
   .nav {
@@ -610,30 +610,69 @@
     @apply px-gutter py-5;
 
     /* Outer */
-    border-bottom: 1px solid color-mix(in srgb, var(--color-line) 62%, transparent);
-    @apply backdrop-blur-md;
+    @apply navbar-border-and-background;
 
     /* Inner */
-    background: color-mix(in srgb, var(--color-bg) 86%, transparent);
     @apply flex justify-between items-center;
 
-    @variant max-md {
-      @apply sticky items-start gap-4;
+    .nav-mobile-toggle {
+      /* Visually hidden but kept in accessibility tree for keyboard nav */
+      @apply sr-only;
+    }
+
+    .nav-hamburger {
+      /* Sizing */
+      @apply size-5;
+
+      /* Outer */
+      @apply cursor-pointer;
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='3' y1='6' x2='21' y2='6'/%3E%3Cline x1='3' y1='12' x2='21' y2='12'/%3E%3Cline x1='3' y1='18' x2='21' y2='18'/%3E%3C/svg%3E");
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+
+      /* Inner */
+      @apply bg-muted;
+
+      @variant md {
+        @apply hidden;
+      }
     }
 
     .nav-links {
       /* Text */
       @apply text-sm /* size */ text-muted /* color */;
 
-      /* Inner */
-      @apply flex gap-gutter;
-
-      @variant max-md {
-        @apply grid gap-1 text-right;
-      }
-
       a:hover {
         @apply text-accent /* color */;
+      }
+
+      @variant md {
+        /* Inner */
+        @apply flex gap-gutter;
+      }
+
+      @variant max-md {
+        /* Text */
+        @apply text-right /* alignment */;
+
+        /* Positioning */
+        @apply absolute top-full inset-x-0;
+        @apply px-gutter py-4;
+
+        /* Outer */
+        @apply navbar-border-and-background;
+
+        /* Inner */
+        @apply gap-3;
+        @apply hidden /* the default, overridden below when the hamburger checkbox is checked */;
+      }
+    }
+
+    /* Show nav-links when hamburger checkbox is checked (mobile only) */
+    .nav-mobile-toggle:checked ~ .nav-links {
+      @variant max-md {
+        @apply grid;
       }
     }
   }

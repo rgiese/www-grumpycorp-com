@@ -58,6 +58,8 @@
             >
           </div>
         </a>
+        <input type="checkbox" id="nav-mobile-toggle" class="nav-mobile-toggle" />
+        <label for="nav-mobile-toggle" class="nav-hamburger" aria-label="Navigation menu"></label>
         <div class="nav-links">
           <a href="/phinneywood">Phinneywood</a>
           <a href="/production">Production</a>

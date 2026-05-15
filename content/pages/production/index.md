@@ -4,7 +4,7 @@ title: Production
 
 ```html
 <!-- Hero -->
-<section class="section hero">
+<section class="page-section hero">
   <div class="hero-grid">
     <div>
       <p class="hero-super-title">Film · Theater · Music · Live Performance</p>
@@ -22,8 +22,8 @@ title: Production
 </section>
 
 <!-- Image band -->
-<section class="white-section-wrapper">
-  <div class="section image-card-grid" style="--cols: 3">
+<div class="white-section-wrapper">
+  <section class="page-section image-card-grid" style="--cols: 3">
     <article>
       <div class="image-placeholder">film production image</div>
     </article>
@@ -33,11 +33,11 @@ title: Production
     <article>
       <div class="image-placeholder">technical systems image</div>
     </article>
-  </div>
-</section>
+  </section>
+</div>
 
 <!-- Systems -->
-<section class="section">
+<section class="page-section">
   <article class="feature-card">
     <h2>Camera</h2>
     <div class="feature-card-content">
@@ -112,7 +112,7 @@ title: Production
 </section>
 
 <!-- Closing -->
-<section class="section closing">
+<section class="page-section closing">
   <p>Production systems for film, performance, fabrication, and live environments.</p>
 </section>
 ```

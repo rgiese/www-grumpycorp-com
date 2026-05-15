@@ -4,7 +4,7 @@ title: Phinneywood
 
 ```html
 <!-- Hero -->
-<section class="section hero">
+<section class="page-section hero">
   <div class="hero-grid">
     <div>
       <p class="hero-super-title">Seattle</p>
@@ -22,19 +22,19 @@ title: Phinneywood
 </section>
 
 <!-- Image band -->
-<section class="white-section-wrapper">
-  <div class="section image-card-grid">
+<div class="white-section-wrapper">
+  <section class="page-section image-card-grid">
     <article>
       <div class="image-placeholder">main studio image</div>
     </article>
     <article>
       <div class="image-placeholder">detail / process image</div>
     </article>
-  </div>
-</section>
+  </section>
+</div>
 
 <!-- Modes -->
-<section class="section">
+<section class="page-section">
   <article class="feature-card" id="planning">
     <h2>Planning</h2>
     <div class="feature-card-content">
@@ -112,7 +112,7 @@ title: Phinneywood
 </section>
 
 <!-- Closing -->
-<section class="section closing">
+<section class="page-section closing">
   <p>Creative and technical work for film, performance, and live environments.</p>
 </section>
 ```

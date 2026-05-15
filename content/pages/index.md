@@ -4,7 +4,7 @@ title: Home
 
 ```html
 <!-- Hero -->
-<section class="section hero">
+<section class="page-section hero">
   <div class="hero-grid">
     <div>
       <p class="hero-super-title">Seattle</p>
@@ -24,7 +24,7 @@ title: Home
 </section>
 
 <!-- Pillars -->
-<section class="section">
+<section class="page-section">
   <div class="pillar-card-grid">
     <article>
       <h2><a href="/phinneywood">Phinneywood</a></h2>
@@ -44,9 +44,9 @@ title: Home
   </div>
 </section>
 
-<!-- Selected work (must wrap in selected-work before wrapping in section) -->
-<section class="white-section-wrapper">
-  <div class="section">
+<!-- Selected work -->
+<div class="white-section-wrapper">
+  <section class="page-section">
     <h2>Selected work</h2>
     <div class="image-card-grid">
       <article>
@@ -89,6 +89,6 @@ title: Home
         </div>
       </article>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 ```

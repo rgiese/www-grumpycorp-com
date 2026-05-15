@@ -269,7 +269,7 @@
 @layer components {
   /* Page sections */
   .white-section-wrapper {
-    /* Use as <section class="white-section-outer"><div class="section">...</div></section> */
+    /* Use as <div class="white-section-outer"><section class="section">...</section></div> */
 
     /* Positioning */
     @apply py-8 /* additional padding on top of what the inner .section will do */;
@@ -281,7 +281,7 @@
     @apply bg-white;
   }
 
-  .section {
+  .page-section {
     /* Use as a child of .white-section-wrapper or on its own for regular-background sections */
 
     /* Positioning */

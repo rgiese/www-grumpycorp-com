@@ -4,7 +4,7 @@ title: Collaborations
 
 ```html
 <!-- Hero -->
-<section class="section hero">
+<section class="page-section hero">
   <div class="hero-grid">
     <div>
       <p class="hero-super-title">Creative Partnerships · Shared Work · Development</p>
@@ -22,7 +22,7 @@ title: Collaborations
 </section>
 
 <!-- Projects -->
-<section class="section" style="--left-column-width: 260px">
+<section class="page-section" style="--left-column-width: 260px">
   <article class="feature-card">
     <div>
       <h3>Feature Film</h3>
@@ -82,7 +82,7 @@ title: Collaborations
 </section>
 
 <!-- Closing -->
-<section class="section closing">
+<section class="page-section closing">
   <p>Collaborative creative and technical work across film, performance, fabrication, and live environments.</p>
 </section>
 ```

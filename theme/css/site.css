@@ -649,13 +649,11 @@
     /* Outer */
     @apply border-t border-line;
 
-    .contact-inner {
-      @apply flex justify-between gap-12 items-center flex-wrap;
-
-      @variant max-md {
-        @apply grid grid-cols-1 items-start;
-      }
-    }
+    /* Inner */
+    @apply flex justify-between /* maximize space between elements -> far left / far right */;
+    @apply flex-wrap /* wrap into single column on small screens */;
+    @apply gap-4 /* horizontal or vertical gap between elements */;
+    @apply items-center /* vertically center items when in a row, and align to top when wrapped into a column */;
   }
 
   .white-section-wrapper + .colophon {

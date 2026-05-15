@@ -198,58 +198,8 @@
   margin-block: 0;
 }
 
-/*
- *  Template components (top/bottom bars)
- */
-
 @utility scroll-margin-for-navbar {
   scroll-margin-top: 100px; /* For deep links to sections - account for fixed navbar height */
-}
-
-@layer components {
-  /* Nav bar */
-  .nav {
-    /* Positioning */
-    @apply fixed inset-x-0 top-0 z-10;
-    @apply px-gutter py-5;
-
-    /* Outer */
-    border-bottom: 1px solid color-mix(in srgb, var(--color-line) 62%, transparent);
-    @apply backdrop-blur-md;
-
-    /* Inner */
-    background: color-mix(in srgb, var(--color-bg) 86%, transparent);
-    @apply flex justify-between items-center;
-
-    @variant max-md {
-      @apply sticky items-start gap-4;
-    }
-
-    .nav-links {
-      /* Text */
-      @apply text-sm /* size */ text-muted /* color */;
-
-      /* Inner */
-      @apply flex gap-gutter;
-
-      @variant max-md {
-        @apply grid gap-1 text-right;
-      }
-
-      a:hover {
-        @apply text-accent /* color */;
-      }
-    }
-  }
-
-  /* Bottom bar / "colophon" */
-  .contact-inner {
-    @apply flex justify-between gap-12 items-center flex-wrap;
-
-    @variant max-md {
-      @apply grid grid-cols-1 items-start;
-    }
-  }
 }
 
 /*
@@ -258,7 +208,7 @@
 
 @theme {
   /* Sizes for space and text, from smallest to largest */
-  --spacing-gutter: calc(var(--spacing) * 8);
+  --spacing-gutter: clamp(calc(var(--spacing) * 6), 5vw, calc(var(--spacing) * 18));
   --spacing-gap: calc(var(--spacing) * 12);
 
   --text-card-content: clamp(1.25rem, 2vw, 1.875rem);
@@ -269,7 +219,7 @@
 @layer components {
   /* Page sections */
   .white-section-wrapper {
-    /* Use as <div class="white-section-outer"><section class="section">...</section></div> */
+    /* Use as <div class="white-section-outer"><section class="page-section">...</section></div> */
 
     /* Positioning */
     @apply py-8 /* additional padding on top of what the inner .section will do */;
@@ -285,8 +235,8 @@
     /* Use as a child of .white-section-wrapper or on its own for regular-background sections */
 
     /* Positioning */
-    @apply mx-auto px-gutter;
-    @apply py-10;
+    @apply mx-auto;
+    @apply px-gutter py-10;
     @apply scroll-margin-for-navbar;
 
     /* Sizing */
@@ -317,7 +267,7 @@
     @apply grid place-items-center;
   }
 
-  /* Hero section for tops of pages */
+  /* Hero section for tops of pages, a specialization of .page-section */
   .hero {
     /* Positioning */
     @apply py-20;
@@ -629,7 +579,7 @@
     }
   }
 
-  /* "Closing thoughts" section at the end of pages */
+  /* "Closing thoughts" section at the end of pages, a specialization of .page-section */
   .closing {
     @apply pt-0 /* coasting on the previous section's end padding */;
 
@@ -644,6 +594,73 @@
       /* Sizing */
       @apply max-w-lg;
     }
+  }
+}
+
+/*
+ * Template components (top/bottom bars)
+ * - listed after the standard page components so they can use + override them
+ */
+
+@layer components {
+  /* Nav bar */
+  .nav {
+    /* Positioning */
+    @apply fixed inset-x-0 top-0 z-10;
+    @apply px-gutter py-5;
+
+    /* Outer */
+    border-bottom: 1px solid color-mix(in srgb, var(--color-line) 62%, transparent);
+    @apply backdrop-blur-md;
+
+    /* Inner */
+    background: color-mix(in srgb, var(--color-bg) 86%, transparent);
+    @apply flex justify-between items-center;
+
+    @variant max-md {
+      @apply sticky items-start gap-4;
+    }
+
+    .nav-links {
+      /* Text */
+      @apply text-sm /* size */ text-muted /* color */;
+
+      /* Inner */
+      @apply flex gap-gutter;
+
+      @variant max-md {
+        @apply grid gap-1 text-right;
+      }
+
+      a:hover {
+        @apply text-accent /* color */;
+      }
+    }
+  }
+
+  /* Bottom bar / "colophon", a specialization of .page-section */
+  .colophon {
+    /* Positioning */
+    @apply py-5;
+
+    /* Sizing */
+    @apply max-w-5xl;
+
+    /* Outer */
+    @apply border-t border-line;
+
+    .contact-inner {
+      @apply flex justify-between gap-12 items-center flex-wrap;
+
+      @variant max-md {
+        @apply grid grid-cols-1 items-start;
+      }
+    }
+  }
+
+  .white-section-wrapper + .colophon {
+    /* Fix the awkward double-border when the previous section (.white-section-wrapper) provided a bottom border */
+    @apply border-t-0;
   }
 }
 

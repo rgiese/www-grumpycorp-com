@@ -46,7 +46,45 @@
 
   <body>
     <main class="min-h-screen">
-      <%~ include("_navbar", data) %> <%~ data.contentHtml %> <%~ include("_bottombar", data) %>
+      <!-- Nav bar -->
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="flex items-center gap-2" href="/">
+          <div class="grid gap-px">
+            <div class="flex items-center gap-2">
+              <strong class="text-base font-medium">Grumpycorp Studios</strong>
+            </div>
+            <span class="text-xs text-muted tracking-widest"
+              >creative <span class="text-accent">/</span> engineering</span
+            >
+          </div>
+        </a>
+        <div class="nav-links">
+          <a href="/phinneywood">Phinneywood</a>
+          <a href="/production">Production</a>
+          <a href="/collaborations">Collaborations</a>
+          <a href="/">About</a>
+        </div>
+      </nav>
+
+      <!-- Page content -->
+      <%~ data.contentHtml %>
+
+      <!-- Colophon -->
+      <section class="page-section colophon">
+        <div class="contact-inner">
+          <div class="grid">
+            <div class="text-sm font-medium">Grumpycorp Studios</div>
+            <div class="text-xs text-muted tracking-wide">Seattle, Washington</div>
+          </div>
+
+          <div class="text-sm text-muted flex gap-5 flex-wrap items-center">
+            <a href="https://www.instagram.com/grumpycorp/">Instagram</a>
+            <a href="https://www.imdb.com/name/nm8515322/">IMDb</a>
+            <a href="https://github.com/rgiese/">GitHub</a>
+            <a href="mailto:hello@grumpycorp.com">Email</a>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>

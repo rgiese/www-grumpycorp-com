@@ -643,10 +643,6 @@
       /* Text */
       @apply text-sm /* size */ text-muted /* color */;
 
-      a:hover {
-        @apply text-accent /* color */;
-      }
-
       @variant md {
         /* Inner */
         @apply flex gap-gutter;

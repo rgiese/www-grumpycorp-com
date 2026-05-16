@@ -49,14 +49,17 @@
       <!-- Nav bar -->
       <nav class="nav" aria-label="Primary navigation">
         <a class="flex items-center gap-2" href="/">
-          <div class="grid gap-px">
-            <div class="flex items-center gap-2">
-              <strong class="text-base font-medium">Grumpycorp Studios</strong>
-            </div>
+          <div class="flex flex-col">
+            <strong
+              class="text-base font-medium uppercase leading-tight"
+              style="color: color-mix(in oklab, var(--color-text) 70%, var(--color-muted))"
+              >Grumpycorp Studios</strong
+            >
             <span class="text-xs text-muted tracking-widest"
               >creative <span class="text-accent">/</span> engineering</span
             >
           </div>
+          <span class="h-7 inline-block svg-grumpy-robin"></span>
         </a>
         <input type="checkbox" id="nav-mobile-toggle" class="nav-mobile-toggle" />
         <label for="nav-mobile-toggle" class="nav-hamburger" aria-label="Navigation menu"></label>

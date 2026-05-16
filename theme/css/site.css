@@ -2,7 +2,6 @@
 
 /* Fonts (also note the corresponding preload directives in `_layout.eta` */
 @import "./_fonts.css";
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
 
 /* Syntax highlighting */
 @import "highlight.js/styles/xcode.min.css";

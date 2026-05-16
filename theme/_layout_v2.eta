@@ -28,11 +28,9 @@
 
     <!-- Font preloading -->
     <!-- prettier-ignore -->
-    <%~ ["ibm-plex-sans-v23-latin-regular", "ibm-plex-sans-v23-latin-300", "ibm-plex-mono-v20-latin-regular"].map((font) => `
+    <%~ ["inter-v20-latin-regular", "inter-v20-latin-500"].map((font) => `
     <link rel="preload" href="/fonts/${font}.woff2" as="font" type="font/woff2" crossorigin />
     `).join("") %>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
     <!-- Style sheets -->
     <link href="/css/site.<%= data.siteBuildId %>.css" rel="stylesheet" />

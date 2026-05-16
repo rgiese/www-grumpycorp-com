@@ -180,7 +180,7 @@ Here's a bunch of them with the components installed; you can also see that I ch
 ::figure[Final revised packaging]{src="thermostat-design-2/IMG_20200126_155317.jpg"}
 
 Up next came the design of the cover, which was also a convenient and cutesey branding opportunity
-for me and <span class="w1 h1 dib svg-grumpy-robin"></span> GRUMPYCORP.
+for me and <span class="align-middle size-4 inline-block svg-grumpy-robin"></span> GRUMPYCORP.
 
 ::figure[Evolution of the cover]{src="thermostat-design-2/IMG_20200209_121201.jpg"}
 

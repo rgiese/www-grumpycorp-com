@@ -750,6 +750,17 @@
       @apply flow-root;
     }
 
+    .portfolio-sxs-w40 {
+      /* Positioning */
+      @apply p-3;
+
+      /* Sizing */
+      @apply w-full lg:w-2/5;
+
+      /* Inner */
+      @apply float-left;
+    }
+
     .portfolio-sxs-w50 {
       /* Positioning */
       @apply p-3;

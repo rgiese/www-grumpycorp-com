@@ -23,7 +23,7 @@
     <meta property="og:title" content="<%= frontMatter.title %>" />
 
     <!-- FavIcon and other theming -->
-    <link rel="icon" href="/assets/icons/grumpy-robin.svg" />
+    <link rel="icon" href="/assets/packed/grumpy-robin.svg" />
     <meta name="theme-color" content="#f26739" />
 
     <!-- Font preloading -->

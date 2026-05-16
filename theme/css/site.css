@@ -108,18 +108,19 @@
  */
 
 @theme {
-  --color-text: #2b2b2b;
-  --color-bg: #fffaf4;
-
+  /* Primary brand guide */
   --color-accent: #dc6c40;
   --color-accent-light: #f79a5e;
-  --color-accent-dark: #0d5258;
-  --color-accent-mono: #03061f;
-  --color-accent-mono-light: #a0cab3;
+  --color-bg: #fff8f1;
 
+  /* Newer additions for v2026 of site */
+  --color-text: #2b2b2b;
   --color-muted: #77736d;
-  --color-panel: #f4eee6;
-  --color-line: #ded8cf;
+  --color-line: #ded8cf; /* Separator between sections */
+  --color-panel: #f4eee6; /* Utility color for image placeholders etc. */
+
+  /* Old colors, to be retired */
+  --color-accent-mono: #03061f;
 }
 
 /*
@@ -186,7 +187,6 @@
 
   h4 {
     @apply text-base /* size */ uppercase /* case */;
-    @apply text-accent-mono /* color */;
   }
 }
 

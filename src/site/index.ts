@@ -30,11 +30,12 @@ const generatedDocuments: GeneratedDocumentsGenerator = (inputDocumentInventory)
       siteRelativeOutputPath: "404.html",
       frontMatter: {
         title: "Sadness",
+        useDefaultLayout: true,
       },
       contentTemplateType: TemplateType.Marked,
       contentTemplateName: "404.md",
       contentTemplateContext: {},
-      templateName: "_layout.eta",
+      templateName: "_layout_v2.eta",
       // We're relying on `generateLayoutTemplateRenderContext` not specializing on any given input document
       templateRenderContext: generateLayoutTemplateRenderContext(inputDocumentInventory),
     },

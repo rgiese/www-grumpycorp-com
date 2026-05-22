@@ -1,13 +1,20 @@
 import path from "node:path";
 
 import { RootConfig } from "../config";
-import { GeneratedDocumentsGenerator, RenderContextGenerator, InputDocument, TemplateType } from "../types";
+import {
+  GeneratedDocumentsGenerator,
+  RenderContextGenerator,
+  InputDocument,
+  TemplateType,
+  PlainDate,
+  comparePlainDates,
+} from "../types";
 
 import { generateLayoutTemplateRenderContext } from "./layoutTemplateRenderContext";
 import { generatePostTemplateRenderContext } from "./postTemplateRenderContext";
-import { postIndexPagesGenerator } from "./postIndexPagesGenerator";
 
 import { customDirectives } from "./customDirectives";
+import { getDocumentTag } from "./documentTag";
 
 function outputPath(inputDocument: InputDocument, prefix?: string): string {
   const relativePath = path.parse(inputDocument.documentGroupRelativePath);
@@ -24,7 +31,6 @@ const layoutTemplateRenderContext: RenderContextGenerator = (_inputDocument, inp
 
 const generatedDocuments: GeneratedDocumentsGenerator = (inputDocumentInventory) => {
   return [
-    ...postIndexPagesGenerator(inputDocumentInventory),
     // 404
     {
       siteRelativeOutputPath: "404.html",
@@ -35,6 +41,29 @@ const generatedDocuments: GeneratedDocumentsGenerator = (inputDocumentInventory)
       contentTemplateType: TemplateType.Marked,
       contentTemplateName: "404.md",
       contentTemplateContext: {},
+      templateName: "_layout_v2.eta",
+      // We're relying on `generateLayoutTemplateRenderContext` not specializing on any given input document
+      templateRenderContext: generateLayoutTemplateRenderContext(inputDocumentInventory),
+    },
+    // Posts index
+    {
+      siteRelativeOutputPath: "posts/index.html",
+      frontMatter: {
+        title: "All blog posts",
+        useDefaultLayout: false,
+      },
+      contentTemplateType: TemplateType.Eta,
+      contentTemplateName: "_post_index.eta",
+      contentTemplateContext: {
+        ...generateLayoutTemplateRenderContext(inputDocumentInventory),
+        postDocuments: (inputDocumentInventory.get("posts") ?? [])
+          .sort((lhs, rhs) =>
+            comparePlainDates(rhs.frontMatter.published as PlainDate, lhs.frontMatter.published as PlainDate),
+          )
+          .map((d) => {
+            return { ...d, documentTag: getDocumentTag(d) };
+          }),
+      },
       templateName: "_layout_v2.eta",
       // We're relying on `generateLayoutTemplateRenderContext` not specializing on any given input document
       templateRenderContext: generateLayoutTemplateRenderContext(inputDocumentInventory),

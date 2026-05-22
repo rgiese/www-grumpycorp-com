@@ -1,5 +1,6 @@
 ---
 title: Home
+useDefaultLayout: false
 ---
 
 ```html

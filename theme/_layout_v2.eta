@@ -71,8 +71,13 @@
         </div>
       </nav>
 
-      <!-- Page content (not wrapped in other divs so that the "did the previous section have an end border" logic for the colophon below works) -->
-      <%~ data.contentHtml %>
+      <!-- Page content (not nested in other (non-`page-section`) divs so that the "did the previous section have an end border" logic for the colophon below works) -->
+      <% if (frontMatter.useDefaultLayout) { %>
+      <section class="page-section">
+        <h2><%= frontMatter.title %></h2>
+        <%~ data.contentHtml %>
+      </section>
+      <% } else { %> <%~ data.contentHtml %> <% } %>
 
       <!-- Colophon -->
       <section class="page-section colophon">

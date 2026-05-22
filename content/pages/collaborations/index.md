@@ -1,5 +1,6 @@
 ---
 title: Collaborations
+useDefaultLayout: false
 ---
 
 ```html

@@ -1,5 +1,6 @@
 ---
 title: Phinneywood
+useDefaultLayout: false
 ---
 
 ```html

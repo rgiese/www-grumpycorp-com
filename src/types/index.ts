@@ -19,6 +19,7 @@ export interface FileSpec {
 //
 
 export const FrontMatterSchema = yup.object({
+  useDefaultLayout: yup.boolean().default(true),
   title: yup.string().required(),
   published: yup.mixed<PlainDate>().transform((value: unknown) => {
     if (!value) {

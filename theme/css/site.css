@@ -593,6 +593,22 @@
       @apply max-w-lg;
     }
   }
+
+  /* Conventional content formatting */
+  .content {
+    a {
+      @apply text-accent /* color */;
+
+      &:hover,
+      &:visited {
+        color: #ae4820; /* Can't use var() here for security reasons */ /* color */
+      }
+
+      &:hover {
+        @apply underline /* decoration */;
+      }
+    }
+  }
 }
 
 /*
@@ -718,17 +734,6 @@
 
     /* Inner */
     @apply inline-block;
-  }
-
-  .content {
-    a:link {
-      @apply text-accent /* color */;
-    }
-
-    a:hover,
-    a:visited {
-      color: #ae4820; /* Can't use var() here for security reasons */ /* color */
-    }
   }
 
   .portfolio-content {

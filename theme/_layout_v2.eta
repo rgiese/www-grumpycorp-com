@@ -73,7 +73,7 @@
 
       <!-- Page content (not nested in other (non-`page-section`) divs so that the "did the previous section have an end border" logic for the colophon below works) -->
       <% if (frontMatter.useDefaultLayout) { %>
-      <section class="page-section">
+      <section class="page-section content">
         <h2><%= frontMatter.title %></h2>
         <%~ data.contentHtml %>
       </section>

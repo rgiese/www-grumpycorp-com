@@ -45,7 +45,7 @@
   <body>
     <!-- `min-h-screen`: be at least as tall as the viewport so full-page hero layouts function correctly -->
     <!-- `pt-nav-height`: add padding to account for fixed navbar height -->
-    <main class="min-h-screen pt-nav-height">
+    <main class="min-h-screen pt-nav-height flex flex-col">
       <!-- Nav bar: fixed position at the top -> removed from layout flow for other page elements -->
       <nav class="nav" aria-label="Primary navigation">
         <a class="flex items-center gap-2" href="/">

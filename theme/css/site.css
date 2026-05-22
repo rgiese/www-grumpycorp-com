@@ -242,6 +242,7 @@
 
     /* Sizing */
     @apply max-w-5xl;
+    @apply w-full /* make sure we fill the flex container from <main/> */;
 
     h2 {
       /* Text */
@@ -685,7 +686,7 @@
   /* Bottom bar / "colophon", a specialization of .page-section */
   .colophon {
     /* Positioning */
-    @apply py-5;
+    @apply mt-auto py-5;
 
     /* Sizing */
     @apply max-w-5xl;

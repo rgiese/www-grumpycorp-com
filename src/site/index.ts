@@ -1,7 +1,7 @@
 import path from "node:path";
 
 import { RootConfig } from "../config";
-import { GeneratedDocumentsGenerator, InputDocument, TemplateType, PlainDate, comparePlainDates } from "../types";
+import { InputDocument, TemplateType, PlainDate, comparePlainDates } from "../types";
 
 import { generatePostTemplateRenderContext } from "./postTemplateRenderContext";
 
@@ -17,45 +17,6 @@ function outputPath(inputDocument: InputDocument, prefix?: string): string {
     "index.html",
   );
 }
-
-const generatedDocuments: GeneratedDocumentsGenerator = (inputDocumentInventory) => {
-  return [
-    // 404
-    {
-      siteRelativeOutputPath: "404.html",
-      frontMatter: {
-        title: "Sadness",
-        useDefaultLayout: true,
-      },
-      contentTemplateType: TemplateType.Marked,
-      contentTemplateName: "404.md",
-      contentTemplateContext: {},
-      templateName: "_layout_v2.eta",
-    },
-    // Posts index
-    {
-      siteRelativeOutputPath: "posts/index.html",
-      frontMatter: {
-        title: "All blog posts",
-        useDefaultLayout: false,
-      },
-      contentTemplateType: TemplateType.Eta,
-      contentTemplateName: "_post_index.eta",
-      contentTemplateContext: {
-        tagPresenter,
-        postTags: getDocumentTagSet(inputDocumentInventory.get("posts") ?? []),
-        postDocuments: (inputDocumentInventory.get("posts") ?? [])
-          .sort((lhs, rhs) =>
-            comparePlainDates(rhs.frontMatter.published as PlainDate, lhs.frontMatter.published as PlainDate),
-          )
-          .map((d) => {
-            return { ...d, documentTag: getDocumentTag(d) };
-          }),
-      },
-      templateName: "_layout_v2.eta",
-    },
-  ];
-};
 
 const rootConfig: RootConfig = {
   // Paths are relative to repo root (by virtue of being invoked from the repo root)
@@ -90,7 +51,42 @@ const rootConfig: RootConfig = {
       outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument, "posts"),
     },
   ],
-  generatedDocuments,
+  generatedDocuments: (inputDocumentInventory) => [
+    // 404
+    {
+      siteRelativeOutputPath: "404.html",
+      frontMatter: {
+        title: "Sadness",
+        useDefaultLayout: true,
+      },
+      contentTemplateType: TemplateType.Marked,
+      contentTemplateName: "404.md",
+      contentTemplateContext: {},
+      templateName: "_layout_v2.eta",
+    },
+    // Posts index
+    {
+      siteRelativeOutputPath: "posts/index.html",
+      frontMatter: {
+        title: "All blog posts",
+        useDefaultLayout: false,
+      },
+      contentTemplateType: TemplateType.Eta,
+      contentTemplateName: "_post_index.eta",
+      contentTemplateContext: {
+        tagPresenter,
+        postTags: getDocumentTagSet(inputDocumentInventory.get("posts") ?? []),
+        postDocuments: (inputDocumentInventory.get("posts") ?? [])
+          .sort((lhs, rhs) =>
+            comparePlainDates(rhs.frontMatter.published as PlainDate, lhs.frontMatter.published as PlainDate),
+          )
+          .map((d) => {
+            return { ...d, documentTag: getDocumentTag(d) };
+          }),
+      },
+      templateName: "_layout_v2.eta",
+    },
+  ],
   // Transform
   customDirectives,
   // defaultImageSizes:

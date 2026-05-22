@@ -198,7 +198,7 @@
 }
 
 @utility scroll-margin-for-navbar {
-  scroll-margin-top: 100px; /* For deep links to sections - account for fixed navbar height */
+  scroll-margin-top: var(--spacing-nav-height);
 }
 
 /*
@@ -209,6 +209,8 @@
   /* Sizes for space and text, from smallest to largest */
   --spacing-gutter: clamp(calc(var(--spacing) * 6), 5vw, calc(var(--spacing) * 18));
   --spacing-gap: calc(var(--spacing) * 12);
+
+  --spacing-nav-height: 4.5rem;
 
   --text-card-content: clamp(1.25rem, 2vw, 1.875rem);
   --text-pillar-title: clamp(1.625rem, 3vw, 2.625rem);
@@ -268,7 +270,10 @@
 
   /* Hero section for tops of pages, a specialization of .page-section */
   .hero {
-    /* Sizing */
+    /* Positioning: undo the pt-nav-height applied by the layout template so we are centered in the full screen */
+    @apply -mt-nav-height;
+
+    /* Sizing: take up full page */
     @apply min-h-dvh;
 
     /* Inner */
@@ -605,8 +610,13 @@
   /* Nav bar */
   .nav {
     /* Positioning */
-    @apply fixed inset-x-0 top-0 z-10;
-    @apply px-gutter py-5;
+    @apply top-0 fixed /* always there, not part of regular layout flow */;
+    @apply left-0 right-0 /* full width */;
+    @apply z-10 /* above all other content */;
+    @apply px-gutter;
+
+    /* Sizing */
+    @apply h-nav-height;
 
     /* Outer */
     @apply navbar-border-and-background;

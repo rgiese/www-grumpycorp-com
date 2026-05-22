@@ -38,7 +38,7 @@
     <!-- SimpleAnalytics -->
     <script async defer src="https://sa.grumpycorp.com/latest.js"></script>
     <noscript>
-      <img src="https://sa.grumpycorp.com/noscript.gif" alt="" />
+      <img src="https://sa.grumpycorp.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" />
     </noscript>
   </head>
 
@@ -80,10 +80,14 @@
         </div>
 
         <div class="text-sm text-muted flex gap-5 flex-wrap items-center">
-          <a href="https://www.instagram.com/grumpycorp/">Instagram</a>
           <a href="https://www.imdb.com/name/nm8515322/">IMDb</a>
+          <a href="https://www.instagram.com/grumpycorp/">Instagram</a>
           <a href="https://github.com/rgiese/">GitHub</a>
           <a href="mailto:hello@grumpycorp.com">Email</a>
+        </div>
+
+        <div class="text-sm text-muted flex gap-5 flex-wrap items-center">
+          <a href="/privacy">Privacy</a>
         </div>
       </section>
     </main>

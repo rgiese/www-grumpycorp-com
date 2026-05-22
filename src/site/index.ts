@@ -1,20 +1,12 @@
 import path from "node:path";
 
 import { RootConfig } from "../config";
-import {
-  GeneratedDocumentsGenerator,
-  RenderContextGenerator,
-  InputDocument,
-  TemplateType,
-  PlainDate,
-  comparePlainDates,
-} from "../types";
+import { GeneratedDocumentsGenerator, InputDocument, TemplateType, PlainDate, comparePlainDates } from "../types";
 
-import { generateLayoutTemplateRenderContext } from "./layoutTemplateRenderContext";
 import { generatePostTemplateRenderContext } from "./postTemplateRenderContext";
 
 import { customDirectives } from "./customDirectives";
-import { getDocumentTag } from "./documentTag";
+import { getDocumentTag, getDocumentTagSet, tagPresenter } from "./documentTag";
 
 function outputPath(inputDocument: InputDocument, prefix?: string): string {
   const relativePath = path.parse(inputDocument.documentGroupRelativePath);
@@ -25,9 +17,6 @@ function outputPath(inputDocument: InputDocument, prefix?: string): string {
     "index.html",
   );
 }
-
-const layoutTemplateRenderContext: RenderContextGenerator = (_inputDocument, inputDocumentInventory) =>
-  generateLayoutTemplateRenderContext(inputDocumentInventory);
 
 const generatedDocuments: GeneratedDocumentsGenerator = (inputDocumentInventory) => {
   return [
@@ -42,8 +31,6 @@ const generatedDocuments: GeneratedDocumentsGenerator = (inputDocumentInventory)
       contentTemplateName: "404.md",
       contentTemplateContext: {},
       templateName: "_layout_v2.eta",
-      // We're relying on `generateLayoutTemplateRenderContext` not specializing on any given input document
-      templateRenderContext: generateLayoutTemplateRenderContext(inputDocumentInventory),
     },
     // Posts index
     {
@@ -55,7 +42,8 @@ const generatedDocuments: GeneratedDocumentsGenerator = (inputDocumentInventory)
       contentTemplateType: TemplateType.Eta,
       contentTemplateName: "_post_index.eta",
       contentTemplateContext: {
-        ...generateLayoutTemplateRenderContext(inputDocumentInventory),
+        tagPresenter,
+        postTags: getDocumentTagSet(inputDocumentInventory.get("posts") ?? []),
         postDocuments: (inputDocumentInventory.get("posts") ?? [])
           .sort((lhs, rhs) =>
             comparePlainDates(rhs.frontMatter.published as PlainDate, lhs.frontMatter.published as PlainDate),
@@ -65,8 +53,6 @@ const generatedDocuments: GeneratedDocumentsGenerator = (inputDocumentInventory)
           }),
       },
       templateName: "_layout_v2.eta",
-      // We're relying on `generateLayoutTemplateRenderContext` not specializing on any given input document
-      templateRenderContext: generateLayoutTemplateRenderContext(inputDocumentInventory),
     },
   ];
 };
@@ -83,7 +69,6 @@ const rootConfig: RootConfig = {
       inputRootRelativePath: "pages",
       requirePublishDate: false,
       templateName: "_layout_v2.eta",
-      templateRenderContext: layoutTemplateRenderContext,
       // Output pages at the root level, e.g. content/pages/foo.md -> output/foo/index.html
       outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument),
     },
@@ -92,7 +77,6 @@ const rootConfig: RootConfig = {
       inputRootRelativePath: "portfolio",
       requirePublishDate: false,
       templateName: "_layout.eta",
-      templateRenderContext: layoutTemplateRenderContext,
       // Output pages under the "portfolio" path, e.g. content/portfolio/foo.md -> output/portfolio/foo/index.html
       outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument, "portfolio"),
     },

@@ -17,19 +17,6 @@
   </div>
   <% }) %>
 
-  <h4>Topics</h4>
-  <div>
-    <% data.postTags.forEach(function(postTag) { %>
-    <a class="link-subdued pr-1" href="/tags/posts/<%= encodeURIComponent(postTag) %>"
-      ><%~ data.tagPresenter(postTag) %></a
-    >
-    <% }) %>
-  </div>
-
-  <div class="pt-4">
-    <a class="link-subdued" href="/posts/all">every damn thing</a>
-  </div>
-
   <h4>Not a colophon</h4>
 
   <div class="colophon-row">&copy;2024 Grumpy Company Studios LLC.</div>

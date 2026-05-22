@@ -10,7 +10,7 @@ export interface DocumentGroupConfig {
   requirePublishDate: boolean;
   // Render
   templateName: string;
-  templateRenderContext: RenderContextGenerator | undefined;
+  templateRenderContext?: RenderContextGenerator;
   // Output
   outputPathFromDocumentPath: (inputDocument: InputDocument) => string;
 }

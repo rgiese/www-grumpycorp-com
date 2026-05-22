@@ -82,7 +82,7 @@ export interface GeneratedDocument {
   contentTemplateContext: object;
   // Render
   templateName: string;
-  templateRenderContext: object;
+  templateRenderContext?: object;
 }
 
 export type GeneratedDocumentsGenerator = (inputDocumentInventory: InputDocumentInventory) => GeneratedDocument[];

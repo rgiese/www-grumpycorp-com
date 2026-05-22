@@ -608,6 +608,11 @@
         @apply underline /* decoration */;
       }
     }
+
+    h2 {
+      /* Positioning: a little less expansive than more themed pages */
+      @apply mb-8;
+    }
   }
 }
 

@@ -65,7 +65,7 @@ Technology to the rescue ([sigh](/hire-me/)).
 
 - We have an alarm system that already knows when windows are open in each room.
 - We all have phones we can deliver notifications to.
-- And we have (non-IoT) thermostats in each room that are remotely 24VAC-powered (courtesy of my [recent re-work](/posts/crafting/radiant-rework/)).
+- And we have (non-IoT) thermostats in each room that are remotely 24VAC-powered (courtesy of my [recent re-work](/notes/crafting/radiant-rework/)).
 - We have an internet connection to all the cloud resources ever (of course) with [lovely](https://www.ui.com/unifi/unifi-ap-ac-pro/) WiFi coverage everywhere.
 
 I'll stitch this together over a couple of phases:

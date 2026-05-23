@@ -62,7 +62,7 @@ Most importantly, though, I care that _you_ care.
 If you don't have the time or energy to actually care about culture, empathy, or diversity - we're just not right for one another at this time and that's okay.
 
 To figure out whether we might have a good time together I thought of some questions as conversation starters.
-(I've also extracted these into [a stand-alone post](/posts/code/questions-about-organizational-culture/) for less self-involved sharing.)
+(I've also extracted these into [a stand-alone post](/notes/code/questions-about-organizational-culture/) for less self-involved sharing.)
 
 ## Questions I find interesting
 

@@ -8,12 +8,12 @@ Hi, I'm Robin (thus <span class="h-8 inline-block svg-grumpy-robin"></span>).
 I'm an engineer, artist, and fabricator driven by a compulsion to learn, teach, and make.
 
 My engineering work includes [software](https://www.linkedin.com/in/robingiese/),
-[hardware](/posts/warm-and-fuzzy/thermostat-design-2), and [structural engineering / architecture](/portfolio/cottage).
+[hardware](/notes/warm-and-fuzzy/thermostat-design-2), and [structural engineering / architecture](/portfolio/cottage).
 
-My art includes [film](/posts/film-making/home-body), [theater design](/posts/theater/the-odyssey), and music.
+My art includes [film](/notes/film-making/home-body), [theater design](/notes/theater/the-odyssey), and music.
 
 If there's anything you want made, [come find me](mailto:robin@grumpycorp.com).
-My [grip truck](/posts/film-making/grip-truck) is ready to roll anytime day or night.
+My [grip truck](/notes/film-making/grip-truck) is ready to roll anytime day or night.
 
 ### Resume
 
@@ -24,4 +24,4 @@ My [grip truck](/posts/film-making/grip-truck) is ready to roll anytime day or n
   - [McCarter Theater](https://www.mccarter.org/) (Princeton, NJ)
   - [Microsoft Theater Troupe](https://www.facebook.com/MicrosoftTheaterTroupe/) (Redmond, WA)
   - [Theatre Intime](https://www.theatreintime.org/) (Princeton, NJ)
-  - [Mercer Island High School](/posts/theater/the-odyssey) (Mercer Island, WA)
+  - [Mercer Island High School](/notes/theater/the-odyssey) (Mercer Island, WA)

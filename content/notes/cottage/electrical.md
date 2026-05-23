@@ -30,6 +30,6 @@ It's also a delight to finally have high-fidelity internet in the cottage.
 
 The interior lighting consists of two cheap Halo `E5ICAT` fixtures from Home Depot.
 
-The exterior sconce as shown in the [post on siding](/posts/cottage/siding/)
+The exterior sconce as shown in the [post on siding](/notes/cottage/siding/)
 is a RAB Lighting `VXBR100DG`, one of Build LLC's [favorite lighting fixures](https://blog.buildllc.com/2008/02/lighting/).
 It's cute and _cheap_, around \$35.

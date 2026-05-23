@@ -4,7 +4,7 @@ title: Grip truck
 
 <div class="dn-p">
 
-[ [Build blog post](/posts/film-making/grip-truck/) ]
+[ [Build blog post](/notes/film-making/grip-truck/) ]
 
 </div>
 
@@ -31,7 +31,7 @@ Truck dimensions: 9'8" tall, 110" wide, 20'6" (liftgate up) / 23'6" (liftgate do
 
 ::figure[Ursa Cine (A-CAM)]{src="grip-truck/A-CAM.jpg" class="dn-p"}
 
-[Blackmagic Design Ursa Cine 12K](/posts/film-making/ursa-cine-buildout), 8TB module, shoulder mount + rods, B-mount hotswap, B-mount battery (6x 275Wh), SmallHD Ultra 7 monitor, EVF,
+[Blackmagic Design Ursa Cine 12K](/notes/film-making/ursa-cine-buildout), 8TB module, shoulder mount + rods, B-mount hotswap, B-mount battery (6x 275Wh), SmallHD Ultra 7 monitor, EVF,
 Teradek transmitter (12G-SDI/4K image), Teradek RT FIZ with FocusBug, ARRI LMB 4x5.65 matte box, Cleans Camera MiniQRB plate
 
 ## AA-CAM
@@ -42,7 +42,7 @@ A second, identical Ursa Cine 12K in case the first one falls over. Already kitt
 
 ::figure[Pyxis 6K (B-CAM)]{src="grip-truck/B-CAM.jpg" class="dn-p"}
 
-[Blackmagic Design Pyxis 6K](/posts/film-making/pyxis-buildout), XLCS Designs cage, V-mount battery (8x 98Wh) with Shark Fin, SmallHD 702 Touch monitor,
+[Blackmagic Design Pyxis 6K](/notes/film-making/pyxis-buildout), XLCS Designs cage, V-mount battery (8x 98Wh) with Shark Fin, SmallHD 702 Touch monitor,
 Teradek transmitter (12G-SDI/4K image), Teradek RT FIZ and TOF-1, ARRI LMB 4x5.65 matte box, Cleans Camera MiniQRB plate.
 
 Nucleus-M FIZ system (three motors) also included in the coffin, just in case.
@@ -285,7 +285,7 @@ BMPCC 4K with Wooden Camera EF mount adapter. Available with V-mount battery and
 
 ## Control
 
-See [DMX case](/posts/film-making/dmx-case/index.html) for details.
+See [DMX case](/notes/film-making/dmx-case/index.html) for details.
 
 - Surface Pro with ETC Nomad, custom XKeys keyboard, MidiFighter Twister controller with TwisterEos
 - Multiverse

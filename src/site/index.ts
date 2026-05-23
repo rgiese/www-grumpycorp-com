@@ -3,7 +3,7 @@ import path from "node:path";
 import { RootConfig } from "../config";
 import { InputDocument, TemplateType, PlainDate, comparePlainDates } from "../types";
 
-import { generatePostTemplateRenderContext } from "./postTemplateRenderContext";
+import { generateNoteTemplateRenderContext } from "./noteTemplateRenderContext";
 
 import { customDirectives } from "./customDirectives";
 import { getDocumentTag, getDocumentTagSet, tagPresenter } from "./documentTag";
@@ -42,13 +42,13 @@ const rootConfig: RootConfig = {
       outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument, "portfolio"),
     },
     {
-      documentGroupName: "posts",
-      inputRootRelativePath: "posts",
+      documentGroupName: "notes",
+      inputRootRelativePath: "notes",
       requirePublishDate: true,
       templateName: "_layout.eta",
-      templateRenderContext: generatePostTemplateRenderContext,
-      // Output pages under the "posts" path, e.g. content/posts/collection/foo.md -> output/posts/collection/foo/index.html
-      outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument, "posts"),
+      templateRenderContext: generateNoteTemplateRenderContext,
+      // Output pages under the "notes" path, e.g. content/notes/collection/foo.md -> output/notes/collection/foo/index.html
+      outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument, "notes"),
     },
   ],
   generatedDocuments: (inputDocumentInventory) => [
@@ -64,19 +64,19 @@ const rootConfig: RootConfig = {
       contentTemplateContext: {},
       templateName: "_layout.eta",
     },
-    // Posts index
+    // Notes index
     {
-      siteRelativeOutputPath: "posts/index.html",
+      siteRelativeOutputPath: "notes/index.html",
       frontMatter: {
-        title: "All blog posts",
+        title: "Notes",
         useDefaultLayout: false,
       },
       contentTemplateType: TemplateType.Eta,
-      contentTemplateName: "_post_index.eta",
+      contentTemplateName: "notes/_index.eta",
       contentTemplateContext: {
         tagPresenter,
-        postTags: getDocumentTagSet(inputDocumentInventory.get("posts") ?? []),
-        postDocuments: (inputDocumentInventory.get("posts") ?? [])
+        noteTags: getDocumentTagSet(inputDocumentInventory.get("notes") ?? []),
+        noteDocuments: (inputDocumentInventory.get("notes") ?? [])
           .sort((lhs, rhs) =>
             comparePlainDates(rhs.frontMatter.published as PlainDate, lhs.frontMatter.published as PlainDate),
           )
@@ -112,8 +112,7 @@ const rootConfig: RootConfig = {
       code: 301,
     },
     // Splat-based (wildcard) redirects
-    { source: "/posts/film%20making/*", destination: "/posts/film-making/:splat", code: 301 },
-    { source: "/tags/posts/film%20making/*", destination: "/tags/posts/film-making/:splat", code: 301 },
+    { source: "/posts/*", destination: "/notes/:splat", code: 301 },
   ],
 };
 

@@ -187,7 +187,7 @@ android {
 }
 ```
 
-(I'll talk about the `*.decrypted` files in [another post](/posts/warm-and-fuzzy/engineering-system/).)
+(I'll talk about the `*.decrypted` files in [another post](/notes/warm-and-fuzzy/engineering-system/).)
 
 #### Step 2: light up [`gradle-play-publisher`](https://github.com/Triple-T/gradle-play-publisher)
 

@@ -18,7 +18,7 @@ Solder three wires to the Breville UI board:
 Then connect to a Particle Argon as follows:
 
 1. Connect ground to ground
-2. Connect the switch signal via an SSR (I'm using a left-over TLP3122A from my [heating system project](https://www.grumpycorp.com/posts/warm-and-fuzzy/thermostat-design/)) to ground
+2. Connect the switch signal via an SSR (I'm using a left-over TLP3122A from my [heating system project](https://www.grumpycorp.com/notes/warm-and-fuzzy/thermostat-design/)) to ground
 3. Connect SSR to output pin (e.g. D7 which also gives me a free on-board LED on the Argon)
 4. Connect the power LED sniffer to the top of a resistor bridge to reduce its voltage (I used a 220K / 47K since that's what I had floating around)
 

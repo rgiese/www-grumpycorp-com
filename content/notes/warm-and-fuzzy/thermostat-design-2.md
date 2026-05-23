@@ -4,7 +4,7 @@ published: 2020-02-09 13:00
 keywords: ["IoT", "thermostat", "hardware", "firmware", "schematics", "PCB", "3D printing", "Prusa"]
 ---
 
-It's been a while -- nearly a year -- since I posted [Part 1](/posts/warm-and-fuzzy/thermostat-design/) describing the thermostat design.
+It's been a while -- nearly a year -- since I posted [Part 1](/notes/warm-and-fuzzy/thermostat-design/) describing the thermostat design.
 Here, finally, is the conclusion.
 
 ### Electronics

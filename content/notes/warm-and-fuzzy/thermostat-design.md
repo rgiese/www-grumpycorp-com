@@ -4,7 +4,7 @@ published: 2019-03-18
 keywords: ["IoT", "thermostat", "hardware", "firmware", "schematics", "PCB"]
 ---
 
-The WarmAndFuzzy thermostat is the in-room component of the [master plan](/posts/warm-and-fuzzy/intro/).
+The WarmAndFuzzy thermostat is the in-room component of the [master plan](/notes/warm-and-fuzzy/intro/).
 
 The primary objectives are:
 
@@ -33,7 +33,7 @@ adding to the sense of psychological safety I'd like my family to enjoy while th
 I'm designing a thermostat board to accomplish the above objectives with the following:
 
 - An IoT-enabled SoC core to talk to the internet when we need to while still containing all required logic and configuration locally (reliability!)
-- 24VAC-sourced power (i.e. what the heating/heat pump systems provide at each thermostat site per [my system rework](/posts/crafting/radiant-rework/))
+- 24VAC-sourced power (i.e. what the heating/heat pump systems provide at each thermostat site per [my system rework](/notes/crafting/radiant-rework/))
 - An on-board temperature and humidity sensor (humidity for good measure)
 - Three relays for 24VAC-based control (call for heat, cooling, and circulation, respectively)
 - An off-board temperature sensor topology to measure radiant loop temperatures

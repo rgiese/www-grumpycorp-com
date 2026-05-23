@@ -6,14 +6,14 @@ keywords: ["IoT", "AWS", "Lambda", "TypeScript", "Particle", "C++", "Flatbuffers
 
 #### So much complaining
 
-In past posts I have complained about [the pain of setting up CI/CD for Flatbuffers](/posts/warm-and-fuzzy/engineering-system/)
-and [the difficulties of using Flatbuffers in React Native](/posts/warm-and-fuzzy/mobile-app/),
+In past posts I have complained about [the pain of setting up CI/CD for Flatbuffers](/notes/warm-and-fuzzy/engineering-system/)
+and [the difficulties of using Flatbuffers in React Native](/notes/warm-and-fuzzy/mobile-app/),
 requiring me to "re-write" (in practice, reformat) Flatbuffers code into TypeScript.
 So why did I bother?
 
 #### Some history
 
-The initial version of the system gave thermostats one setpoint (i.e. the tuple of allowed actions and per-action setpoints, per our [terminology](/posts/warm-and-fuzzy/terminology/))
+The initial version of the system gave thermostats one setpoint (i.e. the tuple of allowed actions and per-action setpoints, per our [terminology](/notes/warm-and-fuzzy/terminology/))
 to chase.
 The full configuration for a thermostat consisted of that one setpoint and a few operational parameters like threshold, cadence, etc.
 The cloud sent this to the firmware as a reasonably small piece of JSON, e.g.:

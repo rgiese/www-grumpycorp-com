@@ -10,7 +10,7 @@ I wanted to carve out a small detached space-for-one in the back among the trees
 both in its interior and exterior.
 
 You can now go to the [portfolio page](/portfolio/cottage/) for a bunch of curated photos, courtesy of a rented Canon 16-35mm F/4 IS lens,
-and then go back to [what we started with](/posts/cottage/intro/) and keep reading.
+and then go back to [what we started with](/notes/cottage/intro/) and keep reading.
 
 ## Lessons learned
 
@@ -18,11 +18,11 @@ and then go back to [what we started with](/posts/cottage/intro/) and keep readi
 
 Never take shortcuts if you want to create high-quality outcomes.
 
-Whether I [wasted a \$200 router](/posts/cottage/floor-framing/) by skipping a proper bit fastening cycle (cost: \$200 + trip to hardware store),
-[dropped a wall overboard](/posts/cottage/wall-framing/) by not nailing off a safety (cost: two hours of jacking the wall back up),
-[failed to double-check a materials order](/posts/cottage/roofing/) and got the wrong roofing parts (cost: half a day of grinding),
-[failed to build a proper work surface](/posts/cottage/siding/) and struggled to get siding panels bent correctly (cost: three days and a wasted panel),
-or [didn't fully think through](/posts/cottage/deck/) the required depth of the front stoop (cost: one day on extra framing and concrete work),
+Whether I [wasted a \$200 router](/notes/cottage/floor-framing/) by skipping a proper bit fastening cycle (cost: \$200 + trip to hardware store),
+[dropped a wall overboard](/notes/cottage/wall-framing/) by not nailing off a safety (cost: two hours of jacking the wall back up),
+[failed to double-check a materials order](/notes/cottage/roofing/) and got the wrong roofing parts (cost: half a day of grinding),
+[failed to build a proper work surface](/notes/cottage/siding/) and struggled to get siding panels bent correctly (cost: three days and a wasted panel),
+or [didn't fully think through](/notes/cottage/deck/) the required depth of the front stoop (cost: one day on extra framing and concrete work),
 the lesson remained the same.
 
 I'm generally good at this so mistakes like the above are relatively rare; however, I still seem to require the occasional reminder.

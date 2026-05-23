@@ -63,7 +63,7 @@ based on design and architecture by [BUILD LLC](https://www.buildllc.com)
 for the adjoining house.
 
 For more about the design and construction process,
-see the [<span class="size-3 svg-tag"></span> cottage](/posts/index.html#cottage) post series.
+see the [<span class="size-3 svg-tag"></span> cottage](/notes/index.html#cottage) post series.
 
   </div>
 

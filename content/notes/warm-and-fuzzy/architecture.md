@@ -73,7 +73,7 @@ they'll continue to faithfully execute their schedules and/or expire previously 
 
 This wasn't as popular a decision with the residents of the house as it was with my inner software architecture nerd,
 but it's made the system far easier than it might have otherwise been, and if all else fails, we can always blam a physical jumper
-into the [control panel](/posts/crafting/radiant-rework/) for the system.
+into the [control panel](/notes/crafting/radiant-rework/) for the system.
 
 ## Particle in the middle
 
@@ -119,7 +119,7 @@ A few notable pieces of code that came in handy:
   to collect temperature readings from external sensors.
   All the OneWire code I could find relied on bit-banging GPIO ports and I'm using an I2C-based [DS2484](https://www.maximintegrated.com/en/products/interface/controllers-expanders/DS2484.html)
   as my bus controller since bit-banging a 6'/ten-device-long OneWire from GPIO just doesn't work well.
-  The most fun part of this ended up being the [bus enumeration code](/posts/warm-and-fuzzy/details-onewire-enum/).
+  The most fun part of this ended up being the [bus enumeration code](/notes/warm-and-fuzzy/details-onewire-enum/).
 
 ## The API
 
@@ -128,7 +128,7 @@ The cloud side of things (a.k.a. The API) lives in the [API package](https://git
 [`serverless.yml`](https://github.com/rgiese/warm-and-fuzzy/blob/master/packages/api/serverless.yml) defines all the infrastructure, consisting of:
 
 - A [bunch of DynamoDB tables](https://github.com/rgiese/warm-and-fuzzy/tree/master/packages/api/resources) that directly map to the concepts
-  outlined in the [post on terminology](/posts/warm-and-fuzzy/terminology).
+  outlined in the [post on terminology](/notes/warm-and-fuzzy/terminology).
 - An authorizer lambda that protects the GraphQL and REST endpoints
 - A single GraphQL endpoint for everything the frontends use, built on Apollo's GraphQL server
   which is pretty [trivial](https://github.com/rgiese/warm-and-fuzzy/blob/master/packages/api/src/graphql/index.ts)

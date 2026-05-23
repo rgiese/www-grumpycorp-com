@@ -7,8 +7,8 @@ published: 2025-12-01
 
 ## The motivation
 
-With a quarter-century of experience in [theater](/posts/index.html#theater) and [construction](/posts/index.html#cottage),
-even more than that in music, and now nearly a decade of experience in and around [film](/posts/index.html#film-making),
+With a quarter-century of experience in [theater](/notes/index.html#theater) and [construction](/notes/index.html#cottage),
+even more than that in music, and now nearly a decade of experience in and around [film](/notes/index.html#film-making),
 well &mdash; we still can't quite decide what we want to be when we grow up.
 
 The boundaries between different art forms have become ever more blurry (aided in part by the growth of platforms like YouTube that have provided increased access), allowing us to ask:

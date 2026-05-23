@@ -1,0 +1,41 @@
+<section class="page-section content">
+  <!-- Helper functions -->
+  <% function renderTable(noteTag, notes) { %>
+  <h1 class="mt-8 mb-2" id="<%= encodeURIComponent(noteTag) %>"><%~ data.tagPresenter(noteTag) %></h1>
+  <table>
+    <tbody class="align-top leading-normal [&_td]:py-0.5">
+      <% notes.forEach(function(noteDocument) { %>
+      <tr>
+        <td>
+          <a href="#<%= encodeURIComponent(noteDocument.documentTag) %>" class="no-underline text-accent-mono">
+            <%~ data.tagPresenter(noteDocument.documentTag) %>
+          </a>
+        </td>
+        <td class="font-bold px-3"><%= noteDocument.frontMatter.published.toLocaleString() %></td>
+        <td>
+          <a class="no-underline text-accent" href="/<%= noteDocument.siteRelativeOutputPath %>"
+            ><%= noteDocument.frontMatter.title %></a
+          >
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  <% } %>
+
+  <!-- Generate jumps to per-tag indexes -->
+  <div>
+    Jump to: <% data.noteTags.forEach(function(noteTag) { %>
+    <a class="link-subdued pr-1" href="#<%= encodeURIComponent(noteTag) %>"><%~ data.tagPresenter(noteTag) %></a>
+    <% }) %>
+  </div>
+
+  <!-- Emit "all" index -->
+  <% renderTable("all", data.noteDocuments) %>
+
+  <!-- Emit per-tag indexes -->
+  <!-- prettier-ignore -->
+  <% data.noteTags.forEach(function(noteTag) { %>
+    <% renderTable(noteTag, data.noteDocuments.filter(noteDocument => noteDocument.documentTag === noteTag)) %>
+  <% }) %>
+</section>

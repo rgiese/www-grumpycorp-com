@@ -3,7 +3,7 @@ title: Magical DMX case of wonders
 published: 2023-12-27
 ---
 
-The same shoots that kicked off the [grip truck](/posts/film-making/grip-truck) redo also kicked off my quest for better on-set lighting control.
+The same shoots that kicked off the [grip truck](/notes/film-making/grip-truck) redo also kicked off my quest for better on-set lighting control.
 
 I'm primarily invested in the Aputure ecosystem of film lighting and the ETC Source4 ecosystem of stage lighting.
 
@@ -16,7 +16,7 @@ because we had the opportunity to tent the space from the outside and shape our 
 
 The Aputure Bluetooth app (on a recent vintage iPad) performed somewhere between "poorly" and "terribly", particularly when it came to controlling their bulbs:
 they'd randomly unpair, forget the names I'd assigned them, etc. - all in all, it was not pretty.
-My inner control freak wanted to get back the level of control I get in [theater work](/posts/theater/the-odyssey) so it was time to build some things.
+My inner control freak wanted to get back the level of control I get in [theater work](/notes/theater/the-odyssey) so it was time to build some things.
 
 ## Step 1: Multiverse all the things
 

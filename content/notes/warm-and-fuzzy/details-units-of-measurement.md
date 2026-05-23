@@ -15,7 +15,7 @@ Wowsers.
 
 #### Plumbing preferences
 
-As [described previously](/posts/warm-and-fuzzy/webapp/),
+As [described previously](/notes/warm-and-fuzzy/webapp/),
 I now have a [`UserPreferencesStore`](https://github.com/rgiese/warm-and-fuzzy/blob/master/packages/shared-client/src/stores/userPreferences/index.ts)
 that hands me the following as per my [GraphQL schema](https://github.com/rgiese/warm-and-fuzzy/blob/master/packages/shared/src/schema/schema.graphql):
 
@@ -204,7 +204,7 @@ Wowsers.
 
 #### Using strongly typed measurements
 
-For `SortableTable`, [as shown previously](/posts/warm-and-fuzzy/details-sortable-table/),
+For `SortableTable`, [as shown previously](/notes/warm-and-fuzzy/details-sortable-table/),
 it's straight-forward to upcast fields to (e.g.) `Temperature` by virtue of `Omit<>` and
 the magic of JavaScript object spreading:
 

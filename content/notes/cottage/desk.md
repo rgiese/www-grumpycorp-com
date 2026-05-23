@@ -39,7 +39,7 @@ It looked pretty narsty after curing but (as always) sanded up quite well with a
 
 From there I used a random orbital sander at 60, 100, 150, and 220 grit.
 
-I had a bunch of finish left over from the [flooring project](/posts/cottage/flooring)
+I had a bunch of finish left over from the [flooring project](/notes/cottage/flooring)
 (i.e. [DuraClear Sealer](https://www.duraseal.com/products/sealers/duraclear-sealer/) and
 [DuraClear Finish](https://www.duraseal.com/products/finishes/duraclear/) in satin) and gave that a whirl.
 

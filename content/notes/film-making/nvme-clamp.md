@@ -8,8 +8,8 @@ I bought a new camera and needed a way to mount my external storage, a [Plugable
 After spending a bunch of time browsing [SmallRig](https://smallrig.com)'s site I couldn't find anything that made me happy.
 
 I realized I could just make something on my 3D printer, particularly since I'd been doing a bunch of CF-PETG prints of late,
-so I whipped something up in Fusion 360 ([F3D](https://github.com/rgiese/www-grumpycorp-com/tree/master/src/content/posts/film-making/nvme-clamp/NVMeClamp.f3d),
-[STL](https://github.com/rgiese/www-grumpycorp-com/tree/master/src/content/posts/film-making/nvme-clamp/NVMeClamp.stl)) and an hour of printing later we're done!
+so I whipped something up in Fusion 360 ([F3D](https://github.com/rgiese/www-grumpycorp-com/tree/master/src/content/notes/film-making/nvme-clamp/NVMeClamp.f3d),
+[STL](https://github.com/rgiese/www-grumpycorp-com/tree/master/src/content/notes/film-making/nvme-clamp/NVMeClamp.stl)) and an hour of printing later we're done!
 
 <div class="flow-root">
   <div class="sm:float-left sm:max-lg:w-[10%] sm:w-1/2 p-1">

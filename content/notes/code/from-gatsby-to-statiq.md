@@ -7,7 +7,7 @@ published: 2023-06-03
 
 I think good software should just keep on working.
 
-[WarmAndFuzzy](/posts/index.html#warm-and-fuzzy) has been controlling my house's heating for four years continuously with no reboots, no bugs, no refactors, nothing.
+[WarmAndFuzzy](/notes/index.html#warm-and-fuzzy) has been controlling my house's heating for four years continuously with no reboots, no bugs, no refactors, nothing.
 I couldn't be more proud.
 
 However, it seems that the JavaScript/`npm` ecosystem punishes software that was built to just keep going (e.g. "We're deprecating your Node LTS version, you _must_ migrate").
@@ -16,7 +16,7 @@ WarmAndFuzzy is now at least a week+ of effort away from even being able _build_
 ## How we got here
 
 I [moved this site to Gatsby](../from-hugo-to-gatsby), a JavaScript and React-based static site generator, about four years ago.
-At the time I was about to start the [WarmAndFuzzy](/posts/index.html#warm-and-fuzzy) project, which I knew would be a full-stack TypeScript + React(Native) project,
+At the time I was about to start the [WarmAndFuzzy](/notes/index.html#warm-and-fuzzy) project, which I knew would be a full-stack TypeScript + React(Native) project,
 so it made sense to invest in the JavaScript ecosystem across all my projects.
 
 However, it seems that if you're not willing to invest about a day per quarter per project to move your dependencies to their latest-and-greatest versions,

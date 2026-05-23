@@ -67,6 +67,7 @@
           <a href="/phinneywood">Phinneywood</a>
           <a href="/production">Production</a>
           <a href="/collaborations">Collaborations</a>
+          <a href="/notes">Notes</a>
           <a href="/">About</a>
         </div>
       </nav>
@@ -75,9 +76,9 @@
       <% if (frontMatter.useDefaultLayout) { %>
       <section class="page-section content">
         <!-- prettier-ignore -->
-        <% if (documentGroupName === "posts") { %> 
-          <%~ include("posts/_header", data) %> 
-          <%~ include("posts/_prevnext", data) %> 
+        <% if (documentGroupName === "notes") { %> 
+          <%~ include("notes/_header", data) %> 
+          <%~ include("notes/_prevnext", data) %> 
         <% } else { %>
         <h1><%= frontMatter.title %></h1>
         <% } %>
@@ -86,8 +87,8 @@
         <%~ data.contentHtml %>
 
         <!-- prettier-ignore -->
-        <% if (documentGroupName === "posts") { %> 
-          <%~ include("posts/_prevnext", data) %> 
+        <% if (documentGroupName === "notes") { %> 
+          <%~ include("notes/_prevnext", data) %> 
         <% } %>
       </section>
       <% } else { %> <%~ data.contentHtml %> <% } %>
@@ -104,10 +105,6 @@
           <a href="https://www.instagram.com/grumpycorp/">Instagram</a>
           <a href="https://github.com/rgiese/">GitHub</a>
           <a href="mailto:hello@grumpycorp.com">Email</a>
-        </div>
-
-        <div class="text-sm text-muted flex gap-5 flex-wrap items-center">
-          <a href="/posts">Blog</a>
           <a href="/privacy">Privacy</a>
         </div>
       </section>

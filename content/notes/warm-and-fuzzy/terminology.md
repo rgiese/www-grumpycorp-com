@@ -4,7 +4,7 @@ published: 2020-02-01 01:00
 keywords: ["IoT", "thermostat", "temperature", "monitoring"]
 ---
 
-I've finally made it through Step 1 of the [master plan](/posts/warm-and-fuzzy/intro/):
+I've finally made it through Step 1 of the [master plan](/notes/warm-and-fuzzy/intro/):
 
 1. Build a replacement thermostat platform that is IoT-enlightened (but otherwise functionally identical) to make real-time temperature data available
 

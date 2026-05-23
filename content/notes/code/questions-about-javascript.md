@@ -95,7 +95,7 @@ the `node_modules` directory be yanked from `dev` mode to `production` mode with
 **Question**: This is nuts, right?
 
 **Answers**: Yes. I now manage this pretty carefully with a `generated` directory for codegen'd stuff needed during the build,
-and a `build` directory for build outputs, and it works for the [WarmAndFuzzy engineering system](/posts/warm-and-fuzzy/engineering-system/).
+and a `build` directory for build outputs, and it works for the [WarmAndFuzzy engineering system](/notes/warm-and-fuzzy/engineering-system/).
 
 **Question**: What build tools would be the right tools to add into my build chain to fix this,
 e.g. to project the right outputs including a `prod`-filtered `node_modules` tree?

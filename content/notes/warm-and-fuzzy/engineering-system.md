@@ -176,7 +176,7 @@ to encrypt files in the repo and then dressed it up a bit for my code base:
 
 - Modify `.gitignore` to exclude `*.decrypted`
 - Save secrets in plaintext files with a `.decrypted` extension (e.g. `waf-upload-key.keystore.decrypted`)
-- Reference secrets from these files in build automation (c.f. the [mobile app post](/posts/warm-and-fuzzy/mobile-app/)).
+- Reference secrets from these files in build automation (c.f. the [mobile app post](/notes/warm-and-fuzzy/mobile-app/)).
 - Create a random password with 1Password
   - Set it in an environment variable for local development (e.g. `WAF_GIT_SECRETS_KEY`)
   - Create a CircleCI context with that environment variable and assign it on the CircleCI job(s) in question

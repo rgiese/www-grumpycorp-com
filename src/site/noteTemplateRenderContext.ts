@@ -26,7 +26,7 @@ const generatePreviousNext: RenderContextGenerator = (
   };
 };
 
-export const generatePostTemplateRenderContext: RenderContextGenerator = (inputDocument, inputDocumentInventory) => {
+export const generateNoteTemplateRenderContext: RenderContextGenerator = (inputDocument, inputDocumentInventory) => {
   return {
     documentTag: getDocumentTag(inputDocument),
     tagPresenter,

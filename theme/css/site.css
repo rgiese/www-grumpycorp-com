@@ -27,7 +27,9 @@
   }
 
   p + h2,
-  p + h3 {
+  p + h3,
+  figure + h2,
+  figure + h3 {
     margin-block-start: 1em;
   }
 
@@ -40,21 +42,27 @@
   }
 
   ol {
-    /* Text */
     list-style-type: decimal;
-
-    /* Positioning */
-    margin-block: 1em;
-    padding-inline-start: 40px;
   }
 
   ul {
-    /* Text */
     list-style-type: disc;
+  }
 
-    /* Positioning */
+  ol,
+  ul {
+    padding-inline-start: 2em;
     margin-block: 1em;
-    padding-inline-start: 40px;
+  }
+
+  li ol,
+  li ul {
+    margin-block-start: 0em;
+  }
+
+  td,
+  th {
+    @apply pr-2;
   }
 
   /* Other basic element settings */
@@ -179,6 +187,10 @@
   h4 {
     @apply text-xl /* size */ uppercase /* case */;
   }
+
+  th {
+    @apply text-left;
+  }
 }
 
 @utility heading-reset {
@@ -202,7 +214,8 @@
   h1,
   h2,
   h3,
-  h4 {
+  h4,
+  tr {
     @apply scroll-margin-for-navbar;
   }
 }

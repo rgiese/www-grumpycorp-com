@@ -38,7 +38,7 @@ It's easy to either remove the top flag or mount the range finder's magic arm on
 Speaking of, don't mind the Teradek factory-default antennas; they'll be replaced with
 [Stubby antennas](https://stubby.shop/products/stubby-antenna-1) as soon as Nick's supplier cranks out more product.
 
-# Physical rigging
+## Physical rigging
 
 The hardware that comes with the camera is just fantastic and I saw no sense in trying for a cage system.
 
@@ -78,7 +78,7 @@ Having motors on a top rod keeps the bottom rods free for moving the lens suppor
 
 The top handle's mount also has a quick release to slide up and down which I use to quickly break the FIZ motors from the lens for lens swaps.
 
-# Power distribution
+## Power distribution
 
 The Ursa has a 12V 2-pin Lemo output on the back rated at 1.5A and a 24V output (3-pin Fischer R/S or 7-pin EXT connector) on the front rated at 2A combined.
 
@@ -91,7 +91,7 @@ That does still leave me with the problem of powering the FIZ, though, and I'm a
 and the 24V output isn't either (if it were to run FIZ + Ultra7) and, like, how hard would it have been to route out more power.
 (Plus my Teradek RT MDR-X isn't 24V-compatible, as a final poke in the eye.)
 
-## Enter the hotswap plate
+### Enter the hotswap plate
 
 SWIT makes a [B-mount to B-mount hotswap plate](https://www.swit.cc/index.php?c=article&id=2632) with a 14V 2-pin Lemo out rated at 5A as well as two equally-rated D-Taps.
 This nicely solves keeping the camera on all day and powers my FIZ just fine, all without ever having to D-Tap anything or connect directly to any battery.
@@ -113,7 +113,7 @@ The 1/4-20-tapped holes are just printed with the minor diameter for those screw
 
 The battery block is now rock solid and ready for operating.
 
-# Video distribution
+## Video distribution
 
 I'm not always going to use the external monitor (SmallHD Ultra7) but I still want tidy cabling.
 I elected to create a front SDI port connecting back to SDI Out 2 in the back with a simple SDI cable attached to a coupler.
@@ -131,9 +131,9 @@ Inevitably, more 3D-printing happened:
 Feel free to grab [the STL file](bnc_clamp.stl) or [the original Fusion360 f3d](bnc_clamp.f3d) and run your own.
 The clamp uses one M5 screw to hold on to the rail, with a recess for the nut on the underside.
 
-# Extras
+## Extras
 
-## Monitor adapter
+### Monitor adapter
 
 I like the SmallHD Ultra 7 monitor but want to remove it when putting the rig into its coffin.
 To that end, the monitor lives on a SmallRig HawkLock quick-release.
@@ -150,7 +150,7 @@ So when in doubt, 3D-print another thing: an ARRI-to-SmallHD locating pin adapte
 Go and grab [the STL file](arri_to_smallhd.stl) or [the original Fusion360 f3d](arri_to_smallhd.f3d) and run your own.
 You'll need a slightly longer 1/4-20 screw inside the HawkLock thing than what it ships with but I thankfully had one in my kit.
 
-## Monitor AirTag
+### Monitor AirTag
 
 I've got AirTags attached to all my other monitors.
 On this one, though, the mounting points are a bit less generous (because it's not wrapped in a SmallRig monitor cage).
@@ -166,7 +166,7 @@ or start with the [the original Fusion360 f3d](bnc_clamp.f3d) and run your own.
 Do note that because the locator pins should protrude from the otherwise flat-ish base, I printed them separately and inserted them into the base afterwards;
 this way I didn't need to print the base with a sea of supports.
 
-## Cables
+### Cables
 
 Major shoutout to Alvin's Cables on Amazon for making great, reliable cables, especially 90-degree rotatable Lemo 2-pin cables.
 The right-angle connector keeps the gak so much more tightly contained and less likely to catch on stuff.

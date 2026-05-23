@@ -3,9 +3,6 @@ title: Questions about organizational culture
 published: 2021-03-29
 ---
 
-_The following is extracted from my [Hire me](/hire-me/) page -
-basically all the stuff there that doesn't pertain to my personal employment._
-
 I promised myself I'd get better at identifying and contributing to healthy work environments.
 
 I believe the thoughts and feelings presented here aren't singular or disruptive

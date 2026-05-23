@@ -19,7 +19,7 @@ That said, the conversions aren't of tremendous precision either because we pret
 
 Finally, note that we use kosher salt rather than table salt since its larger grains make it easier to dispense in a controlled fashion.
 
-### Lessons learned
+## Lessons learned
 
 - It's amazing how readily available global food ingredients are basically everywhere.
   - My parents found an Asian store in Fulda, about a half hour away from their town, and we were able to get everything we needed.
@@ -32,7 +32,7 @@ Finally, note that we use kosher salt rather than table salt since its larger gr
 - Missing equipment can have colorful workarounds.
   - e.g. we needed to make a spice blend but didn't have a spice or coffee grinder so I ended up putting the spices into a pepper grinder and cranking it by hand for an hour.
 
-# Lemon chicken
+## Lemon chicken
 
 ### Sauce
 
@@ -60,7 +60,7 @@ Dredge consecutively in a mix of flour/salt/pepper, then beaten eggs, then bread
 Slice chicken, then plate, drizzle with some sauce (but allow end user to apply sauce separately for the most part so it doesn't get too soggy).
 Drizzle with sliced green onions, white sesame seeds, and lemon zest. Serve with a side of steamed rice.
 
-# Taiwanese popcorn chicken
+## Taiwanese popcorn chicken
 
 This is a fantastic fried chicken recipe and it's even gluten-free, though you wouldn't know it just from tasting it.
 
@@ -107,7 +107,7 @@ Fry chicken in deep fryer at 350F (175&deg;C).
 After frying a batch of chicken, deep fry herbs like shiso, thai basil, or sage.
 Drizzle spice mix over fried chicken, then cover with fried herbs.
 
-# Red braised pork
+## Red braised pork
 
 Combine
 
@@ -129,7 +129,7 @@ Keep the braising liquid (we freeze it) for the next time you make this and it'l
 This is really intended as a filling for steamed buns ([gua bao](https://en.wikipedia.org/wiki/Gua_bao)),
 we just ran out of time to make the buns.
 
-# Fried rice
+## Fried rice
 
 Make steamed rice a day or two ahead of time, then spread it on a sheet pan and place it in the fridge without covering it -
 it should be able to dry out some.

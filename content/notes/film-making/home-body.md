@@ -36,9 +36,9 @@ In case you can't get YouTube working above, here's the thumbnail for [the offic
 
 So, here's how it all went down. (Note: contains spoilers.)
 
-# Prep work
+## Prep work
 
-## Learning about horror
+### Learning about horror
 
 I had proposed that we enter the Horror category of the film festival because none of us in the house are horror people
 so this put every one of us on even ground, genre-wise.
@@ -55,7 +55,7 @@ I also loved how much of the story you can tell with visuals, sound, and music r
 That's a general film thing, of course, but it seems especially true in horror.
 (And yes, it's a bit ironic then that I didn't have time to create any music in those 48 hours. Alas.)
 
-## Gear
+### Gear
 
 I'm tremendously grateful to my friend Russell for loaning us his Ursa Mini Pro 4.6K camera.
 I did not expect to shoot anything with a two-camera setup but having the flexibility to do that for one of our setups
@@ -65,9 +65,9 @@ ended up being a massive timesaver.
 
 I also rented an Easyrig vest (for sort-of Steadicam-ish shots) and two extra lights through ShareGrid.
 
-# Friday, October 16th 2020
+## Friday, October 16th 2020
 
-## 6:57pm
+### 6:57pm
 
 The 48 Hour Horror Film Project staff announces this year's requirements. Every film must feature:
 
@@ -78,11 +78,11 @@ The 48 Hour Horror Film Project staff announces this year's requirements. Every 
 Each team is also assigned two **genres** that their film needed to adhere to (one or both);
 ours are _dark comedy_ and _phobia/isolation_.
 
-## 7:00pm (48.5 hours remaining)
+### 7:00pm (48.5 hours remaining)
 
 The writer's room starts. The clock is ticking - the film must begin uploading by 7:30pm on Sunday, just over 48 hours away.
 
-## 7:10pm (48.3 hours remaining)
+### 7:10pm (48.3 hours remaining)
 
 The writer's room _actually_ starts as people finally trickle in, Zoom starts working, and so on.
 
@@ -93,7 +93,7 @@ and how concrete vs. absurdist we want to be (e.g. what if a character is mortal
 
 ::figure[The writer's room]{src="home-body/home_body_writers_room.jpg"}
 
-## 9:00pm (46.5 hours remaining)
+### 9:00pm (46.5 hours remaining)
 
 An idea gels around a house-bound character who starts watching a woo-woo healer channel on YouTube after which weird things start happening.
 It's both dark comedy (with the framing/ending we had in mind) and a phobia/isolation thing so we're even hitting both genre options.
@@ -108,7 +108,7 @@ With our movie cast, we take a short break and then figure out the main beats an
 From time to time I take a break from the writer's room to build out my DaVinci Resolve project for editing, assemble the required opening sequence,
 and put together the end credits now that we know who's doing what.
 
-## 11:00pm (44.5 hours remaining)
+### 11:00pm (44.5 hours remaining)
 
 We now know what story we want to tell and where we're going to tell it (our house, thankfully, no location travel needed).
 The beats of the story create four plot days, each starting the same way but going progressively worse for our protagonist.
@@ -126,7 +126,7 @@ Note that at this point we haven't actually written any of the lines, and it tur
 Because there's so few of us (with Sarah, Robin, and myself being the core cast and crew) we can keep it in our heads and improvise everything as we go
 under each other's direction. I think this helped us get nice organic lines and interactions since we could just everything on the fly by feel.
 
-## 12:00am (43.5 hours remaining)
+### 12:00am (43.5 hours remaining)
 
 We have decided that the back-and-forth between Sarah (Moonshadow Jones) on YouTube and Robin (Molly) in front of the laptop will happen entirely
 in the editing room: we're going to record Robin first with a two-camera setup (over-the-shoulder and across) and film Sarah's part later and greenscreen
@@ -135,15 +135,15 @@ her in. (We've never greenscreened anything before.) We just don't have the time
 We number the shot cards and it's a bit scary: 52 shots plus all the Moonshadow work, six shooting areas, eighteen different setups.
 This is not a good idea to put it mildly but we're gonna do it anyways.
 
-## 1:00am (42.5 hours remaining)
+### 1:00am (42.5 hours remaining)
 
 We re-arrange the shot cards by setup and sequence out how the next day is going to run. Now we sleep.
 
 ::figure[The shot board in the writer's room - ordered by setup]{src="home-body/home_body_shot_board_by_setup.jpg"}
 
-# Saturday, October 17th 2020
+## Saturday, October 17th 2020
 
-## 7:30am (36 hours remaining)
+### 7:30am (36 hours remaining)
 
 Time for coffee.
 
@@ -162,7 +162,7 @@ Each location gets its shot pages stapled together into packets so I don't need 
 
 ::figure[The shot list packets, setup diagrams in the background]{src="home-body/home_body_shot_list.jpg"}
 
-## 8:00am (35.5 hours remaining)
+### 8:00am (35.5 hours remaining)
 
 Robin is off to Target to get props (an onion, of course, and two identical coffee mugs), clothes for her to wear that we can get dirty and/or get blood on, and fixings for signs.
 She doesn't find any appropriate clothes so we just end up using what she wears in real life and do our best not to get it dirty.
@@ -173,7 +173,7 @@ The Art Department a.k.a. Sarah is already feverishly at work crafting signs, se
 
 Peter is clearing out and cleaning up all the spaces we'll be filming in.
 
-## 9:00am (34.5 hours remaining)
+### 9:00am (34.5 hours remaining)
 
 Given that the production depends on our ability to greenscreen "YouTube" clips onto a laptop, it's time to learn how to greenscreen.
 
@@ -182,35 +182,35 @@ This is also where my triple-monitor editing setup comes in super handy: two scr
 
 The greenscreening works like a charm - it's completely undiscoverable like most features in Resolve, but hey, it works. I get to breathe a short sigh of relief and grab a cup of coffee.
 
-## 10:00am (33.5 hours remaining)
+### 10:00am (33.5 hours remaining)
 
 We entertain ourselves by getting some blood whipped up - one syringe for faster-flowing and one for goopier blood. Cash'n'Carry is a beautiful place for bulk corn syrup and food color purchases...
 
 ::figure[Blood prep in the kitchen]{src="home-body/home_body_blood.jpg"}
 
-## 11:00am (32.5 hours remaining)
+### 11:00am (32.5 hours remaining)
 
 The Drummond clan shows up for our exterior scenes. We've decided to film our exterior scenes first, followed by the exterior-adjacent scene in the hallway, just to make sure there's enough daylight.
 
 We're not ready on props yet and the Drummond clan chips in. I'm putting together the exterior camera setup. Of course it starts drizzling so I have to put a tent over the gear. Good times.
 
-## 12:00pm (31.5 hours remaining)
+### 12:00pm (31.5 hours remaining)
 
 We start shooting. The takes are blessedly fast. Sarah wrangles the crowd like the pro she is. Peter wrangles the dog.
 
-## 1:00pm (30.5 hours remaining)
+### 1:00pm (30.5 hours remaining)
 
 We dismiss the Drummond clan and film the remaining exterior shots that don't require the extras.
 
 It turns out that having someone run and trip in heels safely isn't easy. We ended up building a crash pad using an air mattress and a mattress topper.
 Numerous takes later we have some pretty great footage. Robin puts on and takes off makeup for the first of many times today.
 
-## 3:00pm (28.5 hours remaining)
+### 3:00pm (28.5 hours remaining)
 
 We film the hallway chase scene. Having my ~10lb camera rig hanging off the Easyrig vest is better than nothing but it sure doesn't make for stable shots.
 Time to learn how to shuffle on the quick. We do about ten practice runs and then ten real takes.
 
-## 4:00pm (27.5 hours remaining)
+### 4:00pm (27.5 hours remaining)
 
 We start filming in the kitchen with our one two-camera setup for the day (thank you again Russell!).
 Having a wireless and movable client monitor for our A-Cam makes it pretty convenient to see what both cameras are doing from one location.
@@ -228,7 +228,7 @@ The finished film looks more or less like they were real reactions but it's real
 It's getting later and the lighting needs constant adjusting. I gambled that we'd get through it fast enough to get to use ambient light with just some makeup artificial light.
 The gamble did not pan out.
 
-## 6:30pm (25 hours remaining)
+### 6:30pm (25 hours remaining)
 
 We briefly amuse ourselves by filming the scene where Robin looks for her mug in the dishwasher.
 This wasn't what I had anticipated when I bought the wireless HDMI transmitter for my camera but boy howdy is it useful here.
@@ -237,7 +237,7 @@ Nothing like sticking thousands of dollars of electronics into a dishwasher.
 We also hit the three Ed Wright-style inserts (coffee grinding, mug getting picked, coffee brewing).
 It's not a bad idea to film a shot involving coffee grounds - might as well drink more.
 
-## 7:00pm (24.5 hours remaining)
+### 7:00pm (24.5 hours remaining)
 
 We're filming the entry scenes (i.e. the stuff by the front door). Visually, this is supposed to be bright and early morning. It is 7pm and it's completely dark. Good times.
 
@@ -245,7 +245,7 @@ Sarah makes an uncredited appearance as a random delivery person who drops a pac
 
 Peter keeps moving equipment from us as we travel from setup to setup. He is a saint.
 
-## 9:00pm (22.5 hours remaining)
+### 9:00pm (22.5 hours remaining)
 
 We film the bathroom scene where a ghost (well, Moonshadow) appears in the window (first seen through the mirror, then whip-panned over and back again).
 This involves a bunch of adventurous clowning around outside to set up a light powerful enough to backlight Sarah
@@ -258,41 +258,41 @@ The scene is a bit challenging to film because my brain is starting to fade and 
 
 Sarah is outside, Robin and I are inside, so we kind of have to shout at each other through a barely tilted window.
 
-## 10:00pm (21.5 hours remaining)
+### 10:00pm (21.5 hours remaining)
 
 We film the "happy place" scene where Robin's character recovers from a traumatic moment.
 We end up using our powder room for this so it's got silly posters on the wall, but why not.
 
-## 10:30pm (21 hours remaining)
+### 10:30pm (21 hours remaining)
 
 We knock out the shots in Sarah's bedroom which we're using as Robin's (Molly)'s bedroom.
 I finally get to use my dolly and Harry finally gets a job as the dolly op. I get to chill on an apple box on the dolly after a long day's work while he trucks me back and forth. Kids are great.
 
-## 11:00pm (20.5 hours remaining)
+### 11:00pm (20.5 hours remaining)
 
 We start filming Moonshadow Jones' scenes downstairs. Sarah's been thinking about ideas and jokes and lines all day (like the "arm breathing" thing) so she's well prepared.
 It still takes two hours with Robin and I consulting/semi-directing.
 
-## 1:00am (18.5 hours remaining)
+### 1:00am (18.5 hours remaining)
 
 We find our last wind of the day and film the three shots for the "getting dressed montage".
 I was going to be too tired but then decided it would really tie the room together so we get it done.
 
-## 1:30am (18 hours remaining)
+### 1:30am (18 hours remaining)
 
 We have filmed 50 shots, 156 takes, and shot 220GB of footage.
 
 Time to sleep.
 
-# Sunday, October 18th 2020
+## Sunday, October 18th 2020
 
-## 5:30am (14 hours remaining)
+### 5:30am (14 hours remaining)
 
 It's time to import footage and get everything in Resolve organized. I flag takes as "good" (green) and "has color card" (purple) and mark in/out points.
 
 ::figure[A few of our 150+ takes in Resolve's Media page]{src="home-body/home_body_media.png"}
 
-## 8:00am (11.5 hours remaining)
+### 8:00am (11.5 hours remaining)
 
 More coffee. I put together the "flossy ghost" sequence in its own timeline, that is, the scene of the ghost of Moonshadow Jones appearing in the bathroom window while Molly is flossing.
 It's really amazing what you can do just with retiming clips and good cuts and dissolves.
@@ -301,7 +301,7 @@ It's really amazing what you can do just with retiming clips and good cuts and d
 
 I work on getting some of greenscreening to work and blessedly it all works out fine.
 
-## 10:00am (9.5 hours remaining)
+### 10:00am (9.5 hours remaining)
 
 Sarah and I start working together on the rough cut.
 
@@ -314,11 +314,11 @@ This will make audio sync really challenging since audio only went into A-Cam, n
 
 After an hour we realize that our rough cut is just going to be the final cut so we allow ourselves a bit more time tweaking edits to get it right the first time.
 
-## 2:00pm (5.5 hours remaining)
+### 2:00pm (5.5 hours remaining)
 
 We have a cut we're happy with. It's time to get all the greenscreening fully aligned and deal with assorted futz work.
 
-## 3:00pm (4.5 hours remaining)
+### 3:00pm (4.5 hours remaining)
 
 Time to work on sound. A few clips require special treatment with [RX8](https://www.izotope.com/en/products/rx.html) which is just a magical godsend of a tool.
 Thankfully bouncing to external processes is really easy in Resolve.
@@ -340,7 +340,7 @@ and manage stereo imaging on the buses with Izotope's wonderful and free Ozone I
 
 At this point it has become clear that I will not be making a score for this joint.
 
-## 5:00pm (2.5 hours remaining)
+### 5:00pm (2.5 hours remaining)
 
 Sarah is off looking through [Artlist](https://artlist.io) for sound effects which I edit in and mix as she finds them and I have time.
 
@@ -350,7 +350,7 @@ with the exception of some oranging in the night time scene:
 
 ::figure[The only color grade in the original short]{src="home-body/home_body_og_color.png"}
 
-## 6:45pm (45 minutes remaining)
+### 6:45pm (45 minutes remaining)
 
 I start the final render and do a final proof with Sarah.
 
@@ -358,22 +358,22 @@ Here's the finished timeline:
 
 ::figure[Easy-peasy timeline view]{src="home-body/home_body_48_timeline.png"}
 
-## 7:00pm (30 minutes remaining)
+### 7:00pm (30 minutes remaining)
 
 I start uploading. The site we're supposed to upload to is experiencing some growing pains but it gets there.
 For some reason we have to fill out some "how was your experience?" survey before we're able to upload. I am not in the mood for this.
 
-## 7:15pm (15 minutes remaining)
+### 7:15pm (15 minutes remaining)
 
 The upload has completed and we're officially done with everything due by the deadline.
 
 Time to finish the festival paperwork.
 
-## 8:30pm
+### 8:30pm
 
 I've finished uploading all the paperwork (permissions, releases, licenses, ...) that is due by midnight. We are done.
 
-# November 2020
+## November 2020
 
 I work on the score.
 
@@ -406,7 +406,7 @@ Balancing sound along the length of the movie also isn't easy, especially since 
 Many thanks to [Alex Knickerbocker's YouTube channel](https://www.youtube.com/channel/UCkX6iu7yxRs7BiK1LAk4aZA) for teaching me a lot of this,
 as well as DaVinci Resolve's excellent training videos.
 
-# December 2020
+## December 2020
 
 I work on color. I now simultaneously know a lot about color (luma vs. luminance, gamma, Log vs. Rec709 vs. Rec2020, primaries wheels vs. log wheels, ...)
 which really means I now also know that I know nothing (, Jon Snow). Good times.
@@ -433,7 +433,7 @@ I _am_ happy with how much I learned so I'm calling it good at that.
 Many thanks to [Gerald Undone's YouTube channel](https://www.youtube.com/channel/UC09qASY4ixFS-KXIH6Nw0rg) for teaching me a lot of this,
 as well as (again) DaVinci Resolve's excellent training videos and free e-books.
 
-# It's a wrap
+## It's a wrap
 
 This was an amazing experience.
 As a perfectionist I was extremely reticent to do something like this, and I'm eternally grateful to Sarah for convincing me to get on with it.
@@ -448,7 +448,7 @@ Many thanks to Peter for all his help, and the Drummond clan for taking our kids
 It was surprisingly magical to do this with a tiny crew. While it kept us from having the time to work on music or color (this time!), it meant that a lot less needed to be written down
 because there were really only so many heads to keep in sync. The power of small teams is real, y'all.
 
-# Bloopers
+## Bloopers
 
 Here's your reward for reading this far:
 

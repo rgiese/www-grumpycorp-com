@@ -20,7 +20,7 @@ be able to do all of it by the deadline.
 
 So, here's how it all went down. (Note: contains spoilers.)
 
-# Prep work
+## Prep work
 
 I'd been hoping to make this another family project but it turned out that the weekend of this 48 competition coincided with
 a family reunion in Mexico for most of my household.
@@ -40,9 +40,9 @@ a friend of ours from the high school's drama department. We found out the day b
 that Marco wouldn't get off work until ~3pm on Saturday, yielding a somewhat colorful three person / single adult team
 and cementing both a desire to do night shoots and an increasing sense of panic.
 
-# Friday, July 12th 2024
+## Friday, July 12th 2024
 
-## 6:20pm (49 hours remaining)
+### 6:20pm (49 hours remaining)
 
 The genre drawing begins. (Recall my desire for sci-fi and night shoots.)
 The card I pull:
@@ -55,7 +55,7 @@ As other teams draw their genres, I run a Google search on how broadly "Sports/G
 Turns out, some team not only made a film about an in-office game of tag under the "Sports/Game" genre but also won some awards for it,
 so we decide we can interpret this a bit liberally (being vehemently anti-Sports people).
 
-## 6:59pm (48.5 hours remaining)
+### 6:59pm (48.5 hours remaining)
 
 The required elements are announced:
 
@@ -63,12 +63,12 @@ The required elements are announced:
 - Required prop: Pill bottle or pill container
 - Required line: “Do us all a favor and stop talking.”
 
-## 7:45pm (47.75 hours remaining)
+### 7:45pm (47.75 hours remaining)
 
 We return home from the kickoff event, Marco arrives (I much prefer having actors around for the writing process),
 and Sarah joins us on Zoom from her hotel room in Mexico to toss around ideas.
 
-## 8:30pm (47 hours remaining)
+### 8:30pm (47 hours remaining)
 
 We pretty quickly coalesce on the spine of the story (a never-ending board game like Talisman supporting a sick kid).
 Because I live with a genius role-playing game developer, we own pretty much every RPG and board game in existence, including Talisman.
@@ -79,7 +79,7 @@ We decide to allocate some time toward this adventure for Saturday morning since
 
 Sarah has to log off because she's two timezones ahead, and we decide that we'll regroup at 7:30am her time / 5:30am my time to work on script and storyboards.
 
-## 9pm (46.5 hours remaining)
+### 9pm (46.5 hours remaining)
 
 Harry, Marco, and I start hauling gear from the grip truck to our living/dining/kitchen area in preparation for next day's shoot.
 
@@ -88,22 +88,22 @@ Harry, Marco, and I start hauling gear from the grip truck to our living/dining/
 This turns out to be a brilliant move because starting a filming day by carrying heavy gear around is exhausting, especially for a three person team.
 Much better to deal with it the night before when, say, _normal_ people might be writing their script, but somehow that's not us.
 
-## Midnight (43.5 hours remaining)
+### Midnight (43.5 hours remaining)
 
 I spend a bunch of time in bed reading up on A/ the intellectual property rights requirements for items featured in a 48 Hour Film Project project and
 B/ publicly available role-playing game art that we could use for our endeavor without running afoul of A/. I don't really have a great solution.
 
 Whatever time I spend in bed, most of it goes towards worrying and overthinking and I get around an hour or two of sleep. Yay.
 
-# Saturday, July 13th 2024
+## Saturday, July 13th 2024
 
-## 5:40am (38 hours remaining)
+### 5:40am (38 hours remaining)
 
 I start working on the script as Sarah starts developing storyboards.
 
 ::figure[Sarah's first storyboard at 6:01am]{src="the-well/story-board.jpg"}
 
-## 6:24am (37 hours remaining)
+### 6:24am (37 hours remaining)
 
 Sarah and I hop on Google Meet (Harry joins, too) to discuss details and more storyboard ideas.
 
@@ -112,12 +112,12 @@ we're just going to use our resident RPG developer's game, [The Well](https://ww
 because he's willing to give us the rights to use the book, artwork, and text from it.
 I'm deeply grateful for this and you should totally buy his game - it's awesome.
 
-## 7:10am (36.25 hours remaining)
+### 7:10am (36.25 hours remaining)
 
 I start writing down the script in WriterDuet.
 I really can't hype WriterDuet enough - it just works, it's really fast to use, and because it's cloud-based, collaboration is so dang easy.
 
-## 9:16am (34.25 hours remaining)
+### 9:16am (34.25 hours remaining)
 
 I send the first draft of the script to Sarah and create a spreadsheet of the scenes and shots.
 
@@ -136,7 +136,7 @@ basically just the script (for words and details) and the shotlist (to check off
 
 Does a real movie script look like this? No. Do I care? Also no.
 
-## 11am (32.5 hours remaining)
+### 11am (32.5 hours remaining)
 
 Harry and I start messing around with the score. My beloved granular synths are not the right tool for this job,
 but thankfully I jumped on a sale of some [ProjectSAM libraries](https://projectsam.com/libraries) last year and their Lumina library
@@ -152,7 +152,7 @@ Thankfully I keep many 25' and 50' TRUE1 cables on the truck (most often used wh
 so within ten minutes, this problem is thankfully also dealt with and in such a way that if it should rain, I'm still fine.
 (Blessedly the later-generation Aputure lights are rain-tolerant.) (Also it doesn't rain all weekend; instead, it's unforgivingly hot as balls.)
 
-## 1pm (30.5 hours remaining)
+### 1pm (30.5 hours remaining)
 
 Sarah hops onto Google Meet one more time from the beach, but the connection is pretty terrible so we decide to call it good enough.
 
@@ -163,7 +163,7 @@ as they are coming in super-handy with one of the rooms we'll be filming in.
 Sarah texts us various lines of game play banter for our characters. Will our actors actually deliver all of those lines?
 Not necessarily, but it's still really good to have a starting point.
 
-## 3:30pm (28 hours remaining)
+### 3:30pm (28 hours remaining)
 
 Marco gets here (with 4+ changes of clothes in hand for all the different story days we're filming, bless them) and we're off!
 
@@ -192,7 +192,7 @@ So some months and a certain amount of financial ass-puckering later, here we ar
 
 And it works! Best as I can tell, this instantly boosts our actors' confidence and makes me look like maybe I'm not a total clown.
 
-## 5pm (26.5 hours remaining)
+### 5pm (26.5 hours remaining)
 
 The film's story spans months (which in hindsight I highly recommend against for a 48), and Sarah has storyboarded a top-down dolly shot
 over the dining table as part of a montage suggesting said passage of time.
@@ -217,7 +217,7 @@ for an insert shot:
 I can never entirely tell whether Dave makes these as a joke or for serious, but this thing has been seriously useful to me
 on most productions I've DP'd, so, can't argue with that.
 
-## 6pm (25.5 hours remaining)
+### 6pm (25.5 hours remaining)
 
 After we finish filming the scenes at the dining table, we move to the scenes on the living room couch.
 
@@ -245,7 +245,7 @@ between the Blackmagic Pocket 6K (my A-CAM) and 4K (my B-CAM) themselves. Curren
 
 Thankfully, my A-CAM decides to turn back on after this grouping of setups.
 
-## 8pm (23.5 hours remaining)
+### 8pm (23.5 hours remaining)
 
 We've managed to squeeze in the hallway scene (more CamWok!) and head off to the dock.
 
@@ -264,7 +264,7 @@ Here's what we film:
 Many thanks to the random teens and adults who had gathered at the dock in anticipation of that evening's fireworks (wat - I hadn't known about that)
 who were super-pleasant about giving us ten minutes of private use of the space.
 
-## 9pm (22.5 hours remaining)
+### 9pm (22.5 hours remaining)
 
 Back at the house, we film our scenes in the entry area. Much like with Home Body, our last 48, we fake out daylight in the entry reasonably well.
 
@@ -275,7 +275,7 @@ There's something about delineating the passage of time using a house's front do
 This is also where it comes in incredibly handy that Marco - playing the required character of Sam, a coffee roaster - actually does work at Starbucks
 and brought in their green apron for wardrobe. Please don't sue me, Starbucks.
 
-## 10pm (21.5 hours remaining)
+### 10pm (21.5 hours remaining)
 
 At this point we're filming the early morning scenes in Peter's office (the opening of the movie)...
 
@@ -285,7 +285,7 @@ At this point we're filming the early morning scenes in Peter's office (the open
 
 ::figure[Not actually morning in Peter's office]{src="the-well/office-2.jpg"}
 
-## 11:30pm (20 hours remaining)
+### 11:30pm (20 hours remaining)
 
 Marco's parents would like Marco home because they've got work at 8am. Fair.
 
@@ -293,14 +293,14 @@ However, this does mean that _we have not actually filmed the pivotal three scen
 
 However-however, Marco is willing and able to be back at 11:30am the next day (my eternal gratitude) so we still have a chance to have a movie.
 
-# Sunday, July 14th 2024
+## Sunday, July 14th 2024
 
-## 12:30am (19 hours remaining)
+### 12:30am (19 hours remaining)
 
 I have offloaded all the media from the cameras, sound recorder, and lav recorders. Everything looks good, sounds good, and syncs up by timecode.
 Not all hope is lost.
 
-## 1am (18.5 hours remaining)
+### 1am (18.5 hours remaining)
 
 Recall that the film's story spans months (still just as inadvisable as it was at 5pm).
 
@@ -321,11 +321,11 @@ to blend the magic:
 
 That composite timeline then gets chopped and retimed into the edit ~the next day~ later on this final day.
 
-## 2:30am (17 hours remaining)
+### 2:30am (17 hours remaining)
 
 With all of this mischief managed, it's time for some sleep.
 
-## 5:30am (14 hours remaining)
+### 5:30am (14 hours remaining)
 
 Wakey wakey, time to edit.
 
@@ -341,11 +341,11 @@ This is also a fine time to update my title / credit cards with the name of the 
 Fun fact: I make my title cards in PowerPoint. Easy `.png` export, Resolve easily updates the images on the timeline, off we go.
 This is not where we spend our time.
 
-## 10am (9.5 hours remaining)
+### 10am (9.5 hours remaining)
 
 I have a workable cut of all the material we have so far, and Harry and I start to set up our final shooting location.
 
-## 11:30am (8 hours remaining)
+### 11:30am (8 hours remaining)
 
 Marco arrives and we're immediately shooting again.
 The first thing I have the actors do is record wild lines for the lake-side scene because I'd captured that scene just with lavs
@@ -372,11 +372,11 @@ A small light mat offers contrasting room tone and lets me dial in a bit more co
 Is this my best lighting ever? Definitely not. However, at this point it's nearly 2pm, I have five hours left to finish the movie,
 so it's a chop-chop type of mood.
 
-## 2pm (5.5 hours remaining)
+### 2pm (5.5 hours remaining)
 
 I repeat the earlier process of media offload, sync, selects, and rating. Just because time is running out isn't a reason to rush - if anything, the opposite.
 
-## 3pm (4.5 hours remaining)
+### 3pm (4.5 hours remaining)
 
 I'm done editing. Everything came together nicely. The only change from how I'd imagined I'd cut it is on the placement of the dice XCU shot:
 Marco's motion of sitting down cut together so nicely from the two angles that I don't want to cut away to the dice in the middle of it.
@@ -393,7 +393,7 @@ Good news: The poor-person's-ADR I recorded for the lake-side scene is really us
 Less good news: I chopped/ADR'd the takes first, _then_ processed them in RX, and I could have saved myself a bunch of RX'ing time
 if I had reversed that order. A lesson for next time.
 
-## 4pm (3.5 hours remaining)
+### 4pm (3.5 hours remaining)
 
 Time for color. Some years back I invested in the Davinci Resolve MicroPanel and all the physical wheels, balls, and buttons are just a huge timesaver.
 I've watched and journaled most of [Cullen Kelly](https://www.youtube.com/@CullenKelly)'s and [Darren Mostyn](https://www.youtube.com/@DarrenMostyn)'s
@@ -421,7 +421,7 @@ I'm generally not a fan of the _slaps some LUTs on it_ approach to color grading
 (like with the [PixelTools Film Lab](https://pixeltoolspost.com/products/pixeltools-film-lab-collection) collection of node trees),
 but there's only so much time remaining.
 
-## 5:30pm (2 hours remaining)
+### 5:30pm (2 hours remaining)
 
 Time to write (finish?) the score. I chuck an export of the video into Ableton and Harry and I get to work stacking up our synths
 against the picture-locked video.
@@ -429,29 +429,29 @@ against the picture-locked video.
 The ProjectSAM synths are being cumbersome because their patterns don't align against any sort of click. We have to keep adjusting by ear
 and trial-and-error. Less in love with them now than I was just a day prior. I should probably read the manual.
 
-## 6:55pm (35 minutes remaining)
+### 6:55pm (35 minutes remaining)
 
 We do a final export of the score from Ableton, re-ingest that into Resolve, and run our first "probably good enough" export from Resolve.
 
 Thankfully the Mac Pro I anxiety-bought&trade; after my PC kept crashing during the _last_ 48 is capable of rendering in faster-than-real-time even
 with the color grade and the goofy delivery codec (H.265), allowing us to make another tweak or two on music versus dialog leveling.
 
-## 7:13pm (17 minutes remaining)
+### 7:13pm (17 minutes remaining)
 
 The final render completes as I fill out the wrap-up paperwork. (So much paperwork to manage for these...)
 
-## 7:20pm (10 minutes remaining)
+### 7:20pm (10 minutes remaining)
 
 The final render has been uploaded, all time-critical paperwork is done - that's it! Ten minutes to spare.
 
 ::figure[The final edit timeline]{src="the-well/edit-timeline.png"}
 
-## 10pm
+### 10pm
 
 Peter, Sarah, and the rest of the family come home. I get the signatures I need from them for the final bits of paperwork, upload the paperwork,
 and finally go to sleep.
 
-# It's a wrap
+## It's a wrap
 
 This was an equal parts amazing and terrifying experience. During the experience itself, it was largely terrifying
 (even if I managed to hide my panic and worry from those around me well). Afterwards, though, I'm just amazed that we pulled this off.
@@ -472,7 +472,7 @@ worked out exactly as I'd wanted it to.
 Most of all I'm happy that I can consider this project _complete_ - there's nothing I still want to finish about it,
 nothing hanging over my head, and that feels really good right now.
 
-# Appendix: Some process notes
+## Appendix: Some process notes
 
 ### On (not) slating
 

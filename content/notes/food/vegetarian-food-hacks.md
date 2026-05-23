@@ -5,7 +5,7 @@ published: 2019-02-24
 
 A few trivial techniques to make it easier to enjoy a vegetable-centric diet.
 
-# Roast all the things
+## Roast all the things
 
 I haven't yet met a vegetable that wasn't improved by oven roasting.
 
@@ -17,7 +17,7 @@ Basic steps:
 - Open the oven every handful of minutes to let water vapor escape
   - We're trying to brown the veggies after all, not steam them
 
-## Carrots
+### Carrots
 
 My lazy bastard hack on carrots is to just buy them as matchsticks straight from the store. This way they cost about 3.5x as much as bulk carrots but
 
@@ -27,7 +27,7 @@ My lazy bastard hack on carrots is to just buy them as matchsticks straight from
 
 ::figure[Matchstick carrots]{src="vegetarian-food-hacks/IMG_20190224_101951.jpg"}
 
-## Broccoli, cauliflower, &amp;c.
+### Broccoli, cauliflower, &amp;c.
 
 Broccoli is really the mainstay of our roasting operation here but cauliflower makes for a nice color addition.
 If I feel like punishing future-me as the dishwasher I'll also toss them in some turmeric for added color
@@ -35,7 +35,7 @@ and some minor flavor improvement.
 
 ::figure[Broccoli and cauliflower]{src="vegetarian-food-hacks/IMG_20190224_101944.jpg"}
 
-## On-the-fly aioli
+### On-the-fly aioli
 
 The real fun comes from covering roast vegetables (or really anything) with a nice squeeze of flavored salt-acid-fat, a.k.a. aioli.
 It takes three minutes to make (and another three to clean up after), lasts for weeks, and upcycles _meh_ to _yay_ instantly.
@@ -50,7 +50,7 @@ Control viscosity with cream (one should always have cream).
 
 One of several reasons why we buy mayo from Costco.
 
-## Un-fresh ingredients
+### Un-fresh ingredients
 
 I've just about entirely switched to the un-fresh (frozen or refrigerated) versions of garlic and lemon juice.
 This way I actually use them rather than skip them (meh, don't want to peel/squeeze _X_) and it makes for an altogether better meal.

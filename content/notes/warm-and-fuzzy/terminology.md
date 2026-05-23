@@ -15,9 +15,9 @@ That only took nearly a year, though in fairness, I also got to:
 With all of this massive progress achieved (only 67% of the todo list remain!), it's time to journal what I've learned
 over a handful of posts.
 
-# Terminology!
+## Terminology!
 
-## Why I care
+### Why I care
 
 I start most projects by first nailing down terminology. The value of doing this cannot be understated.
 For one, having to rename stuff partway through a project can be distracting, time-consuming, and merge-conflict-inducing.

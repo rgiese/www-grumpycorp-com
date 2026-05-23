@@ -21,7 +21,7 @@ and the moment you want to do something more _right_ (by some definition of righ
 One of my main ambitions in designing software for engineers has been to create gentle slopes of increasing complexity rather than the walls I've been hitting with Hugo and Gatsby.
 My hope is that I can at least provide some solutions below for both of these engines that may someday save someone some time and soften some of the walls.
 
-# Life with `Hugo`
+## Life with `Hugo`
 
 Note: you can time-travel through my site's corresponding GitHub repo to see [the last version of my Hugo-based site](https://github.com/rgiese/www-grumpycorp-com/tree/79dd544ded3d747fe3139ff29bb431d2c1d4236d),
 as well as the [Gatsby-based version](https://github.com/rgiese/www-grumpycorp-com/tree/6ba3747e353297baae4240e200d843d57fc214cd) as of the time of writing for this post.
@@ -79,7 +79,7 @@ In the end I figured let's just go all-in on JavaScript and move away from Hugo.
 I also considered [Hexo](https://hexo.io/) but I wanted to spend more time with [React](https://reactjs.org/) (as much as anyone ever _wants_ to),
 so Gatsby it was.
 
-# Life with `Gatsby`
+## Life with `Gatsby`
 
 Several days later, life with Gatsby is lovely and it's just as fast as Hugo once it's running (for this site it has a ~15 second startup cost before it's rolling and monitoring for changes).
 

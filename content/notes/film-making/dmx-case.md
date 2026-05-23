@@ -66,7 +66,7 @@ So far so good but it turns out an ever-increasing percentage of my Aputure inve
 Given the nightmarish experience with the B7c bulbs and their inability to consume DMX in any other way, I fired them and upgraded to Astera NYX bulbs instead
 with, you guessed it, built-in CRMX. At that point it was only natural to get an Astera BOX as my CRMX transmitter.
 
-## Step 3: Eos all the things
+### Step 3: Eos all the things
 
 When I started down this path (well over a year ago), the film industry standard for iPad lighting control apps (Blackout) didn't support fixtures that color-mixed
 more than just RGB/RGBW and my Source4's have eight different colors (DrRALGCBI I guess?).
@@ -80,7 +80,7 @@ Thankfully you can now run ETC boards on a laptop with [ETCnomad](https://www.et
 And because this is just Eos, I can remote-control this from any iOS or Android device with any of the Eos-compatible apps.
 What a joy to get this software back in my life!
 
-## Step 4: Box up all the things
+### Step 4: Box up all the things
 
 I bought more of the same/similar gear I've been installing at our local highschool because it's just working so darn well:
 A cheap-as-dirt wireless router,
@@ -105,7 +105,7 @@ while on set):
 
 Off to the next project! (And hopefully sooner or later, an actual dang film set again.)
 
-# Addendum (five months later)
+## Addendum (five months later)
 
 After using this setup on two film shoots, I wanted to make some modifications and upgrades.
 

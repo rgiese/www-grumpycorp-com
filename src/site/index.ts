@@ -29,7 +29,7 @@ const rootConfig: RootConfig = {
       documentGroupName: "pages",
       inputRootRelativePath: "pages",
       requirePublishDate: false,
-      templateName: "_layout_v2.eta",
+      templateName: "_layout.eta",
       // Output pages at the root level, e.g. content/pages/foo.md -> output/foo/index.html
       outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument),
     },
@@ -37,7 +37,7 @@ const rootConfig: RootConfig = {
       documentGroupName: "portfolio",
       inputRootRelativePath: "portfolio",
       requirePublishDate: false,
-      templateName: "_layout_v2.eta",
+      templateName: "_layout.eta",
       // Output pages under the "portfolio" path, e.g. content/portfolio/foo.md -> output/portfolio/foo/index.html
       outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument, "portfolio"),
     },
@@ -45,7 +45,7 @@ const rootConfig: RootConfig = {
       documentGroupName: "posts",
       inputRootRelativePath: "posts",
       requirePublishDate: true,
-      templateName: "_layout_v2.eta",
+      templateName: "_layout.eta",
       templateRenderContext: generatePostTemplateRenderContext,
       // Output pages under the "posts" path, e.g. content/posts/collection/foo.md -> output/posts/collection/foo/index.html
       outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument, "posts"),
@@ -62,7 +62,7 @@ const rootConfig: RootConfig = {
       contentTemplateType: TemplateType.Marked,
       contentTemplateName: "404.md",
       contentTemplateContext: {},
-      templateName: "_layout_v2.eta",
+      templateName: "_layout.eta",
     },
     // Posts index
     {
@@ -84,7 +84,7 @@ const rootConfig: RootConfig = {
             return { ...d, documentTag: getDocumentTag(d) };
           }),
       },
-      templateName: "_layout_v2.eta",
+      templateName: "_layout.eta",
     },
   ],
   // Transform

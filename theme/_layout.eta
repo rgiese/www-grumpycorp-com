@@ -23,75 +23,94 @@
     <meta property="og:title" content="<%= frontMatter.title %>" />
 
     <!-- FavIcon and other theming -->
-    <link rel="icon" href="/assets/icons/grumpy-robin.svg" />
+    <link rel="icon" href="/assets/packed/grumpy-robin.svg" />
     <meta name="theme-color" content="#f26739" />
+
+    <!-- Font preloading -->
+    <!-- prettier-ignore -->
+    <%~ ["inter-v20-latin-regular", "inter-v20-latin-500"].map((font) => `
+    <link rel="preload" href="/fonts/${font}.woff2" as="font" type="font/woff2" crossorigin />
+    `).join("") %>
 
     <!-- Style sheets -->
     <link href="/css/site.<%= data.siteBuildId %>.css" rel="stylesheet" />
 
-    <!-- Font preloading -->
-    <!-- prettier-ignore -->
-    <%~ ["ibm-plex-sans-v23-latin-regular", "ibm-plex-sans-v23-latin-300", "ibm-plex-mono-v20-latin-regular"].map((font) => `
-    <link rel="preload" href="/fonts/${font}.woff2" as="font" type="font/woff2" crossorigin />
-    `).join("") %>
-
     <!-- SimpleAnalytics -->
     <script async defer src="https://sa.grumpycorp.com/latest.js"></script>
     <noscript>
-      <img src="https://sa.grumpycorp.com/noscript.gif" alt="" />
+      <img src="https://sa.grumpycorp.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" />
     </noscript>
   </head>
 
   <body>
-    <div class="px-4 sm:pt-8 text-left bg-white">
-      <!--
-      * Three-column float layout: empty spacer [10%@sm / 20%@lg] | main [50%] | right [30%]
-      * Columns stack vertically on small screens; flow-root clears the floats.
-      -->
-      <div class="flow-root">
-        <div class="sm:float-left sm:w-[10%] lg:w-[20%]">&nbsp;</div>
+    <!-- `min-h-screen`: be at least as tall as the viewport so full-page hero layouts function correctly -->
+    <!-- `pt-nav-height`: add padding to account for fixed navbar height -->
+    <main class="min-h-screen pt-nav-height flex flex-col">
+      <!-- Nav bar: fixed position at the top -> removed from layout flow for other page elements -->
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="flex items-center gap-2" href="/">
+          <div class="flex flex-col">
+            <strong
+              class="text-base font-medium uppercase leading-tight"
+              style="color: color-mix(in oklab, var(--color-text) 70%, var(--color-muted))"
+              >Grumpycorp Studios</strong
+            >
+            <span class="text-xs text-muted tracking-widest"
+              >creative <span class="text-accent">/</span> engineering</span
+            >
+          </div>
+          <span class="h-7 inline-block svg-grumpy-robin"></span>
+        </a>
+        <input type="checkbox" id="nav-mobile-toggle" class="nav-mobile-toggle" />
+        <label for="nav-mobile-toggle" class="nav-hamburger" aria-label="Navigation menu"></label>
+        <div class="nav-links">
+          <a href="/phinneywood">Phinneywood</a>
+          <a href="/production">Production</a>
+          <a href="/collaborations">Collaborations</a>
+          <a href="/">About</a>
+        </div>
+      </nav>
 
-        <div class="sm:float-left sm:w-1/2">
-          <!-- Main div -->
-          <main class="<%= documentGroupName === 'portfolio' ? 'max-w-5xl' : 'max-w-3xl' %> mx-auto pt-2">
-            <!-- Logo on top for small screens -->
-            <a href="/">
-              <div class="mb-8 sm:hidden svg-studiosLogo w-[70%]"></div>
-            </a>
+      <!-- Page content (not nested in other (non-`page-section`) divs so that the "did the previous section have an end border" logic for the colophon below works) -->
+      <% if (frontMatter.useDefaultLayout) { %>
+      <section class="page-section content">
+        <!-- prettier-ignore -->
+        <% if (documentGroupName === "posts") { %> 
+          <%~ include("posts/_header", data) %> 
+          <%~ include("posts/_prevnext", data) %> 
+        <% } else { %>
+        <h1><%= frontMatter.title %></h1>
+        <% } %>
 
-            <!-- prettier-ignore -->
-            <% if (documentGroupName === "posts") { %>
-                <%~ include("posts/_header", data) %>
-                <%~ include("posts/_prevnext", data) %>
-            <% } else if (documentGroupName === "pages") { %>
-                <%~ include("pages/_header", data) %>
-            <% } else if (data.isHomePage) { %>
-              <%~ include("home/_header", data) %>
-              <% } %>
+        <!-- prettier-ignore -->
+        <%~ data.contentHtml %>
 
-            <div class="leading-normal content <%= documentGroupName === 'portfolio' ? 'portfolio-content' : '' %>">
-              <%~ data.contentHtml %>
-            </div>
+        <!-- prettier-ignore -->
+        <% if (documentGroupName === "posts") { %> 
+          <%~ include("posts/_prevnext", data) %> 
+        <% } %>
+      </section>
+      <% } else { %> <%~ data.contentHtml %> <% } %>
 
-            <!-- prettier-ignore -->
-            <% if (documentGroupName === "posts") { %>
-                <%~ include("posts/_prevnext", data) %>
-            <% } %>
-          </main>
+      <!-- Colophon -->
+      <section class="page-section colophon">
+        <div class="grid">
+          <div class="text-sm font-medium">Grumpycorp Studios</div>
+          <div class="text-xs text-muted tracking-wide">Seattle, Washington</div>
         </div>
 
-        <div class="sm:float-left sm:w-[30%] print:hidden">
-          <!-- Right div -->
-          <nav class="max-w-64 pl-2 sm:pl-16 pb-4">
-            <!-- Logo on the side for not-small screens -->
-            <a href="/">
-              <div class="mb-8 hidden sm:block svg-studiosLogo w-full"></div>
-            </a>
-
-            <%~ include("_rightbar", data) %>
-          </nav>
+        <div class="text-sm text-muted flex gap-5 flex-wrap items-center">
+          <a href="https://www.imdb.com/name/nm8515322/">IMDb</a>
+          <a href="https://www.instagram.com/grumpycorp/">Instagram</a>
+          <a href="https://github.com/rgiese/">GitHub</a>
+          <a href="mailto:hello@grumpycorp.com">Email</a>
         </div>
-      </div>
-    </div>
+
+        <div class="text-sm text-muted flex gap-5 flex-wrap items-center">
+          <a href="/posts">Blog</a>
+          <a href="/privacy">Privacy</a>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

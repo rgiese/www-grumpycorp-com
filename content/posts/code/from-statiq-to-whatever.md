@@ -116,7 +116,7 @@ This also kept me from having to figure out how to rewrite the location-relative
 
 ## Promises kept
 
-This site continues to keep its promise of being [engineered for privacy first](/posts/code/improving-site-visitor-privacy/):
+This site continues to keep its promise of being [engineered for privacy first](/privacy/):
 
 - All assets are served directly from my domain, including all stylesheets, fonts, and images
 - The only visitor tracking is done via [SimpleAnalytics](https://www.simpleanalytics.com/), a tiny EU-based shop that never stores PII

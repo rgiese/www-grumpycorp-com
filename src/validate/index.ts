@@ -97,8 +97,8 @@ export class SiteValidator {
             throw new Error(`Attribute ${attributeName} not found on ${element.outerHTML}`);
           }
 
-          if (target.startsWith("https://") || target.startsWith("mailto:")) {
-            // Ignore off-site links
+          if (target.startsWith("https://") || target.startsWith("mailto:") || target.startsWith("#")) {
+            // Ignore off-site links and intra-page anchors
             continue;
           }
 
@@ -106,9 +106,11 @@ export class SiteValidator {
             throw new Error(`Should not link to http:// sites (${target} in ${element.outerHTML})`);
           }
 
-          const siteRootRelativeTarget = target.startsWith("/")
-            ? target
-            : path.join(fileSpec.parsedRootRelativePath.dir, target);
+          const targetPath = target.split("#")[0].split("?")[0];
+
+          const siteRootRelativeTarget = targetPath.startsWith("/")
+            ? targetPath
+            : path.join(fileSpec.parsedRootRelativePath.dir, targetPath);
 
           const absoluteTarget = path.join(this.outputRootPath, decodeURI(siteRootRelativeTarget));
 

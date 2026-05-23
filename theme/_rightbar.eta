@@ -33,8 +33,4 @@
     <a class="link-subdued" href="https://tailwindcss.com">Tailwind</a> and
     <a class="link-subdued" href="https://pages.cloudflare.com/">Cloudflare</a>.
   </div>
-
-  <div class="colophon-row">
-    <a class="link-subdued" href="/posts/code/improving-site-visitor-privacy/">Privacy notice.</a>
-  </div>
 </div>

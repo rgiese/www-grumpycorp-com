@@ -7,10 +7,7 @@
       <% posts.forEach(function(postDocument) { %>
       <tr>
         <td>
-          <a
-            href="/tags/posts/<%= encodeURIComponent(postDocument.documentTag) %>"
-            class="no-underline text-accent-mono"
-          >
+          <a href="#<%= encodeURIComponent(postDocument.documentTag) %>" class="no-underline text-accent-mono">
             <%~ data.tagPresenter(postDocument.documentTag) %>
           </a>
         </td>
@@ -29,9 +26,7 @@
   <!-- Generate jumps to per-tag indexes -->
   <div>
     Jump to: <% data.postTags.forEach(function(postTag) { %>
-    <a class="link-subdued pr-1" href="/tags/posts/<%= encodeURIComponent(postTag) %>"
-      ><%~ data.tagPresenter(postTag) %></a
-    >
+    <a class="link-subdued pr-1" href="#<%= encodeURIComponent(postTag) %>"><%~ data.tagPresenter(postTag) %></a>
     <% }) %>
   </div>
 

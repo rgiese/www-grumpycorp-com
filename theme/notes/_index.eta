@@ -21,7 +21,7 @@
       <%~ data.tagPresenter(noteDocument.documentTag) %>
     </a>
   </td>
-  <td class="font-bold px-3"><%= noteDocument.frontMatter.published.toLocaleString() %></td>
+  <td class="font-semibold px-3"><%= noteDocument.frontMatter.published.toLocaleString() %></td>
   <td>
     <a class="no-underline text-accent" href="/<%= noteDocument.siteRelativeOutputPath %>"
       ><%= noteDocument.frontMatter.title %></a

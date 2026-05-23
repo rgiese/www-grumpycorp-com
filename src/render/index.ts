@@ -181,7 +181,10 @@ export class SiteRenderer {
         // Base context
         ...this.baseRenderContext,
         // This document
-        inputDocument: { frontMatter: generatedDocument.frontMatter },
+        inputDocument: {
+          frontMatter: generatedDocument.frontMatter,
+          siteRelativeOutputPath: generatedDocument.siteRelativeOutputPath,
+        },
         contentHtml,
         // Inventory
         inputDocumentInventory: this.inputDocumentInventory,

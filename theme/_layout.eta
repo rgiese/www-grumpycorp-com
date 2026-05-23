@@ -28,7 +28,7 @@
 
     <!-- Font preloading -->
     <!-- prettier-ignore -->
-    <%~ ["inter-v20-latin-regular", "inter-v20-latin-500"].map((font) => `
+    <%~ ["inter-v20-latin-regular", "inter-v20-latin-500", "inter-v20-latin-600"].map((font) => `
     <link rel="preload" href="/fonts/${font}.woff2" as="font" type="font/woff2" crossorigin />
     `).join("") %>
 
@@ -64,11 +64,18 @@
         <input type="checkbox" id="nav-mobile-toggle" class="nav-mobile-toggle" />
         <label for="nav-mobile-toggle" class="nav-hamburger" aria-label="Navigation menu"></label>
         <div class="nav-links">
-          <a href="/phinneywood">Phinneywood</a>
-          <a href="/production">Production</a>
-          <a href="/collaborations">Collaborations</a>
-          <a href="/notes">Notes</a>
-          <a href="/">About</a>
+          <!-- prettier-ignore -->
+          <% 
+            const siteSections = ["phinneywood", "production", "collaborations", "notes", "about"];
+          
+            siteSections.forEach(section => { 
+              const isActiveSection = data.inputDocument.siteRelativeOutputPath.startsWith(section + '/');
+              const renderedSectionName = section.charAt(0).toUpperCase() + section.slice(1);
+          %>
+
+          <a href="/<%= section %>" class="<%= isActiveSection ? 'font-semibold' : '' %>"><%= renderedSectionName %></a>
+
+          <% }) %>
         </div>
       </nav>
 

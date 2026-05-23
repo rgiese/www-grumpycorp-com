@@ -48,7 +48,7 @@ useDefaultLayout: false
 <!-- Selected work -->
 <div class="white-section-wrapper">
   <section class="page-section">
-    <h2>Selected work</h2>
+    <h2 class="text-section-title mb-12">Selected work</h2>
     <div class="image-card-grid">
       <article>
         <div class="image-placeholder">feature / case study image</div>

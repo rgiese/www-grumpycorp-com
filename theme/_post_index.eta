@@ -1,7 +1,7 @@
 <section class="page-section content">
   <!-- Helper functions -->
   <% function renderTable(postTag, posts) { %>
-  <h2 id="<%= encodeURIComponent(postTag) %>"><%~ data.tagPresenter(postTag) %></h2>
+  <h1 class="mt-8 mb-2" id="<%= encodeURIComponent(postTag) %>"><%~ data.tagPresenter(postTag) %></h1>
   <table>
     <tbody class="align-top leading-normal [&_td]:py-0.5">
       <% posts.forEach(function(postDocument) { %>

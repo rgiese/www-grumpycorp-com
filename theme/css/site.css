@@ -19,20 +19,11 @@
   }
 
   /*
-   * Tailwind preflight zeroes all heading, paragraph, figure, and list margins/styles; restore browser defaults.
+   * Tailwind preflight zeroes all heading, paragraph, figure, and list margins/styles; provide appropriate defaults.
    * Must be in @layer base so Tailwind utilities (e.g. mb-1) can override on a per-element basis.
    */
   p {
     margin-block: 1em;
-  }
-
-  h1 {
-    margin-block: 0.67em;
-  }
-
-  h2 {
-    margin-block-start: 0.83em;
-    margin-block-end: 0em;
   }
 
   h3 {
@@ -201,6 +192,15 @@
   scroll-margin-top: var(--spacing-nav-height);
 }
 
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply scroll-margin-for-navbar;
+  }
+}
+
 /*
  * Page components for v2 of site
  */
@@ -243,15 +243,6 @@
     /* Sizing */
     @apply max-w-5xl;
     @apply w-full /* make sure we fill the flex container from <main/> */;
-
-    h2 {
-      /* Text */
-      @apply heading-reset /* font, weight, size, line height, letter spacing, color */;
-      @apply text-section-title /* size */ font-normal /* weight */ leading-none /* line height */ tracking-tighter /* letter spacing */;
-
-      /* Positioning */
-      @apply mb-12;
-    }
   }
 
   .image-placeholder {
@@ -607,11 +598,6 @@
       &:hover {
         @apply underline /* decoration */;
       }
-    }
-
-    h2 {
-      /* Positioning: a little less expansive than more themed pages */
-      @apply my-8;
     }
   }
 }

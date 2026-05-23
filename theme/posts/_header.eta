@@ -1,4 +1,4 @@
-<h1 class="mb-1"><a href="."><%= data.inputDocument.frontMatter.title %></a></h1>
+<h1 class="mb-1"><%= data.inputDocument.frontMatter.title %></h1>
 
 <div class="text-base text-black/60">
   <%= data.inputDocument.frontMatter.published.toLocaleString() %>

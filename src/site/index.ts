@@ -37,7 +37,7 @@ const rootConfig: RootConfig = {
       documentGroupName: "portfolio",
       inputRootRelativePath: "portfolio",
       requirePublishDate: false,
-      templateName: "_layout.eta",
+      templateName: "_layout_v2.eta",
       // Output pages under the "portfolio" path, e.g. content/portfolio/foo.md -> output/portfolio/foo/index.html
       outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument, "portfolio"),
     },
@@ -45,7 +45,7 @@ const rootConfig: RootConfig = {
       documentGroupName: "posts",
       inputRootRelativePath: "posts",
       requirePublishDate: true,
-      templateName: "_layout.eta",
+      templateName: "_layout_v2.eta",
       templateRenderContext: generatePostTemplateRenderContext,
       // Output pages under the "posts" path, e.g. content/posts/collection/foo.md -> output/posts/collection/foo/index.html
       outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument, "posts"),

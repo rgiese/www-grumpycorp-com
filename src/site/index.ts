@@ -1,7 +1,7 @@
 import path from "node:path";
 
 import { RootConfig } from "../config";
-import { InputDocument, TemplateType, PlainDate, comparePlainDates } from "../types";
+import { InputDocument, TemplateType } from "../types";
 
 import { generateNoteTemplateRenderContext } from "./noteTemplateRenderContext";
 
@@ -69,20 +69,16 @@ const rootConfig: RootConfig = {
       siteRelativeOutputPath: "notes/index.html",
       frontMatter: {
         title: "Notes",
-        useDefaultLayout: false,
+        useDefaultLayout: true,
       },
       contentTemplateType: TemplateType.Eta,
       contentTemplateName: "notes/_index.eta",
       contentTemplateContext: {
         tagPresenter,
-        noteTags: getDocumentTagSet(inputDocumentInventory.get("notes") ?? []),
-        noteDocuments: (inputDocumentInventory.get("notes") ?? [])
-          .sort((lhs, rhs) =>
-            comparePlainDates(rhs.frontMatter.published as PlainDate, lhs.frontMatter.published as PlainDate),
-          )
-          .map((d) => {
-            return { ...d, documentTag: getDocumentTag(d) };
-          }),
+        tags: getDocumentTagSet(inputDocumentInventory.get("notes") ?? []),
+        documents: (inputDocumentInventory.get("notes") ?? []).map((d) => {
+          return { ...d, documentTag: getDocumentTag(d) };
+        }),
       },
       templateName: "_layout.eta",
     },

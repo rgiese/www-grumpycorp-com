@@ -26,12 +26,13 @@
     margin-block: 1em;
   }
 
-  h3 {
-    margin-block: 1em;
+  p + h2,
+  p + h3 {
+    margin-block-start: 1em;
   }
 
-  h4 {
-    margin-block: 1.33em 0;
+  h2 + h3 {
+    margin-block-start: 0.5em;
   }
 
   figure {
@@ -160,7 +161,7 @@
 
   /* Default heading styles (anything set here should be clear-able with @apply heading-reset */
   h1 {
-    @apply text-4xl /* size */ tracking-tighter /* letter spacing */;
+    @apply text-5xl /* size */ tracking-tighter /* letter spacing */;
 
     a {
       @apply text-inherit /* color */ no-underline /* decoration */;
@@ -168,19 +169,24 @@
   }
 
   h2 {
-    @apply text-2xl /* size */ tracking-tight /* letter spacing */;
+    @apply text-4xl /* size */ tracking-tight /* letter spacing */;
   }
 
   h3 {
-    @apply text-lg /* size */;
+    @apply text-2xl /* size */;
   }
 
   h4 {
-    @apply text-base /* size */ uppercase /* case */;
+    @apply text-xl /* size */ uppercase /* case */;
   }
 }
 
 @utility heading-reset {
+  /* 
+   * Use this when defining a heading style for a page component where it should semantically be declared as a heading
+   * but should not inherit default (content) heading styles. 
+   */
+
   /* Text */
   @apply text-reset /* font, weight, size, line height, letter spacing, color */;
 

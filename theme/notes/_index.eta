@@ -1,41 +1,71 @@
-<section class="page-section content">
-  <!-- Helper functions -->
-  <% function renderTable(noteTag, notes) { %>
-  <h1 class="mt-8 mb-2" id="<%= encodeURIComponent(noteTag) %>"><%~ data.tagPresenter(noteTag) %></h1>
-  <table>
-    <tbody class="align-top leading-normal [&_td]:py-0.5">
-      <% notes.forEach(function(noteDocument) { %>
-      <tr>
-        <td>
-          <a href="#<%= encodeURIComponent(noteDocument.documentTag) %>" class="no-underline text-accent-mono">
-            <%~ data.tagPresenter(noteDocument.documentTag) %>
-          </a>
-        </td>
-        <td class="font-bold px-3"><%= noteDocument.frontMatter.published.toLocaleString() %></td>
-        <td>
-          <a class="no-underline text-accent" href="/<%= noteDocument.siteRelativeOutputPath %>"
-            ><%= noteDocument.frontMatter.title %></a
-          >
-        </td>
-      </tr>
-      <% }) %>
-    </tbody>
-  </table>
-  <% } %>
+<!-- Helper functions -->
+<!-- prettier-ignore-->
+<% 
+  const knownTags = new Set(data.tags); 
 
-  <!-- Generate jumps to per-tag indexes -->
-  <div>
-    Jump to: <% data.noteTags.forEach(function(noteTag) { %>
-    <a class="link-subdued pr-1" href="#<%= encodeURIComponent(noteTag) %>"><%~ data.tagPresenter(noteTag) %></a>
-    <% }) %>
-  </div>
+  function renderNoteIndex(tag, description) { 
+    if (!knownTags.has(tag)) {
+      throw new Error(`Unknown tag "${tag}" passed to renderNoteIndex. Known tags: ${[...knownTags].join(", ")}`);
+    }
 
-  <!-- Emit "all" index -->
-  <% renderTable("all", data.noteDocuments) %>
+    knownTags.delete(tag);
+%>
 
-  <!-- Emit per-tag indexes -->
-  <!-- prettier-ignore -->
-  <% data.noteTags.forEach(function(noteTag) { %>
-    <% renderTable(noteTag, data.noteDocuments.filter(noteDocument => noteDocument.documentTag === noteTag)) %>
-  <% }) %>
-</section>
+<tr id="<%= encodeURIComponent(tag) %>">
+  <td colspan="3" class="pt-6 pb-1"><%= description %>.</td>
+</tr>
+<% data.documents.filter(noteDocument => noteDocument.documentTag === tag).forEach(function(noteDocument) { %>
+<tr>
+  <td class="py-0.5">
+    <a href="#<%= encodeURIComponent(noteDocument.documentTag) %>" class="font-mono text-sm text-muted no-underline">
+      <%~ data.tagPresenter(noteDocument.documentTag) %>
+    </a>
+  </td>
+  <td class="font-bold px-3"><%= noteDocument.frontMatter.published.toLocaleString() %></td>
+  <td>
+    <a class="no-underline text-accent" href="/<%= noteDocument.siteRelativeOutputPath %>"
+      ><%= noteDocument.frontMatter.title %></a
+    >
+  </td>
+</tr>
+
+<% }) } %>
+
+<!-- Content -->
+<p>
+  These notes collect ideas, challenges, and solutions encountered while working across a broad range of topics. Some
+  are polished; many are not.
+</p>
+
+<table>
+  <tbody class="align-top leading-normal">
+    <tr>
+      <td colspan="3" class="text-4xl pt-4">Project journals</td>
+    </tr>
+    <!-- prettier-ignore -->
+    <% 
+    renderNoteIndex("phinneywood", "Journaling the process of building out our Phinneywood facility");
+    renderNoteIndex("cottage", "Journaling the process of designing and building a Danish Modern cottage in the woods");
+    renderNoteIndex("warm-and-fuzzy", "Journaling the process of building the hardware and software for a sophisticated HVAC control system"); 
+    %>
+
+    <tr>
+      <td colspan="3" class="text-4xl pt-8">Topic-driven notes</td>
+    </tr>
+    <!-- prettier-ignore -->
+    <% 
+    renderNoteIndex("film-making", "Notes on film productions and film equipment fabrication");
+    renderNoteIndex("theater", "Notes on theater productions and performances");
+    renderNoteIndex("crafting", "One-off creations"); renderNoteIndex("food", "Do play with your food"); 
+    renderNoteIndex("code", "Highly opinionated notes on programming techniques");
+    renderNoteIndex("travel", "Notes on travel experiences and planning");
+    %>
+  </tbody>
+</table>
+
+<!-- prettier-ignore -->
+<%
+  if (knownTags.size > 0) {
+    throw new Error(`The following tags were not rendered for the index: ${[...knownTags].join(", ")}`);
+  }
+%>

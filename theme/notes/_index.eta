@@ -32,9 +32,9 @@
 <% }) } %>
 
 <!-- Content -->
-<p>
-  These notes collect ideas, challenges, and solutions encountered while working across a broad range of topics. Some
-  are polished; many are not.
+<p class="max-w-3xl">
+  These notes collect ideas, challenges, and solutions encountered while working across a broad range of projects and
+  time.
 </p>
 
 <table>

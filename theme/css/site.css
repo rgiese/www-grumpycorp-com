@@ -186,7 +186,7 @@
   }
 
   h4 {
-    @apply text-xl /* size */ uppercase /* case */;
+    @apply text-lg /* size */ uppercase /* case */ tracking-wider /* letter spacing */;
   }
 
   th {
@@ -830,7 +830,7 @@
  */
 
 @media print {
-  .dn-p {
+  .do-not-print {
     display: none !important;
   }
 

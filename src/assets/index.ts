@@ -172,7 +172,8 @@ function cssFromSvg(name: string, inputSvg: string): string {
   return `.svg-${name} {
     background: url('data:image/svg+xml,${encodedSvg}') no-repeat top left;
     background-size: contain;
-    aspect-ratio: ${viewBoxParsedValues[2 /* width */]} / ${viewBoxParsedValues[3 /* height */]};  
+    aspect-ratio: ${viewBoxParsedValues[2 /* width */]} / ${viewBoxParsedValues[3 /* height */]};
+    print-color-adjust: ${"exact" /* ensure SVG colors are preserved in print */};
   }`;
 }
 

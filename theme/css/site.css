@@ -643,6 +643,10 @@
     @apply z-10 /* above all other content */;
     @apply px-gutter;
 
+    @media print {
+      position: static; /* fixed repeats on every print page; static appears only on the first */
+    }
+
     /* Sizing */
     @apply h-nav-height;
 

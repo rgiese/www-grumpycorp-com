@@ -1,6 +1,6 @@
 # www-grumpycorp-com
 
-Website for GrumpyCorp Creative Industries (via our home-brew site generator at `src/`).
+Website for [Grumpycorp Studios](https://grumpycorp.com) (via our custom site generator at `src/`).
 
 ## Setup
 
@@ -20,8 +20,6 @@ On M1 devices, consider:
 - `npm serve:hmr` to serve with auto-reload
 - `npm run watch:content` to re-build the site while watching for updates to the input
 
-## Icons and Fonts
+## Fonts
 
-See [The Noun Project](https://thenounproject.com/).
-
-Using [google-webfonts-helper](https://gwfh.mranftl.com/fonts) to download Google fonts (Dosis, Questrial, Quicksand).
+Use [google-webfonts-helper](https://gwfh.mranftl.com/fonts) to download Google fonts.

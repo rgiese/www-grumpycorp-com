@@ -104,6 +104,9 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@custom-variant mobile (@media (width < theme(--breakpoint-md)));
+@custom-variant desktop (@media (width >= theme(--breakpoint-md)));
+
 @theme {
   /* Primary brand guide */
   --color-accent: #dc6c40;
@@ -316,7 +319,7 @@ html.dark {
       grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.5fr);
       gap: clamp(3rem, 9vw, 7.5rem);
 
-      @variant max-md {
+      @variant mobile {
         @apply grid-cols-1;
       }
 
@@ -406,7 +409,7 @@ html.dark {
         /* Outer */
         @apply border-l border-line;
 
-        @variant max-md {
+        @variant mobile {
           @apply border-l-0 pl-0;
         }
       }
@@ -446,7 +449,7 @@ html.dark {
     /* Column count is configurable (e.g. style="--cols: 3" on the invoking element), defaults to two */
     grid-template-columns: repeat(var(--cols, 2), minmax(0, 1fr));
 
-    @variant max-md {
+    @variant mobile {
       @apply grid-cols-1;
     }
 
@@ -480,7 +483,7 @@ html.dark {
     @apply grid gap-gutter;
     grid-template-columns: repeat(3, minmax(0, 1fr));
 
-    @variant max-md {
+    @variant mobile {
       @apply grid-cols-1;
     }
 
@@ -554,7 +557,7 @@ html.dark {
     /* Left (title) column width is configurable via --left-column-width (e.g. on a parent section), defaults to 200px */
     grid-template-columns: minmax(var(--left-column-width, 200px), 0.34fr) minmax(0, 1fr);
 
-    @variant max-md {
+    @variant mobile {
       @apply grid-cols-1;
     }
 
@@ -598,7 +601,7 @@ html.dark {
         @apply grid gap-6;
         grid-template-columns: repeat(3, minmax(0, 1fr));
 
-        @variant max-md {
+        @variant mobile {
           @apply grid-cols-1;
         }
 
@@ -700,7 +703,7 @@ html.dark {
       /* Inner */
       @apply bg-muted;
 
-      @variant md {
+      @variant desktop {
         @apply hidden;
       }
     }
@@ -709,12 +712,12 @@ html.dark {
       /* Text */
       @apply text-sm /* size */ text-muted /* color */;
 
-      @variant md {
+      @variant desktop {
         /* Inner */
         @apply flex gap-gutter;
       }
 
-      @variant max-md {
+      @variant mobile {
         /* Text */
         @apply text-right /* alignment */;
 
@@ -733,7 +736,7 @@ html.dark {
 
     /* Show nav-links when hamburger checkbox is checked (mobile only) */
     .nav-mobile-toggle:checked ~ .nav-links {
-      @variant max-md {
+      @variant mobile {
         @apply grid;
       }
     }
@@ -743,7 +746,7 @@ html.dark {
       @apply text-text /* color */;
 
       /* Positioning */
-      @variant md {
+      @variant desktop {
         @apply relative /* Makes this the anchor for the absolute positioning of the expand text */;
         margin-left: calc(-0.25 * var(--spacing-gutter));
       }
@@ -752,7 +755,7 @@ html.dark {
       @apply size-5;
 
       /* Mobile: right-align at the end of the nav bar, and let the expand text grow leftwards from there */
-      @variant max-md {
+      @variant mobile {
         @apply justify-self-end w-auto;
       }
 
@@ -769,7 +772,7 @@ html.dark {
       @apply text-accent /* color */;
 
       /* Desktop: expand to the right on hover */
-      @variant md {
+      @variant desktop {
         /* Positioning */
         @apply absolute inset-y-0 left-full /* start the left edge of the expand text at the right edge of the toggle */;
 
@@ -782,7 +785,7 @@ html.dark {
       }
 
       /* Mobile: always show */
-      @variant max-md {
+      @variant mobile {
         /* Let the defaults ride */
       }
 

@@ -622,7 +622,7 @@ html.dark {
 
     p {
       /* Text */
-      @apply text-card-content /* size */ tracking-tighter /* letter spacing */ leading-none /* line height */;
+      @apply text-card-content /* size */ tracking-tight /* letter spacing */ leading-none /* line height */;
       @apply text-muted /* color */;
 
       /* Positioning */

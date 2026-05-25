@@ -36,7 +36,10 @@ useDefaultLayout: false
         large-scale independent production.
       </p>
       <div class="feature-card-pillars">
-        <div>Lighting, grip, electrical, and technical production support.</div>
+        <div>
+          Lighting, grip, electrical, and technical production support in-studio and
+          <a href="/grip-truck">on the go</a>.
+        </div>
         <div>Integrated equipment, workflow, and production infrastructure.</div>
         <div>Creative collaboration developed across departments and disciplines.</div>
       </div>

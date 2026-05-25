@@ -87,16 +87,11 @@
     display: table;
 
     figcaption {
-      /* Text */
-      @apply text-sm /* size */;
-      color: white; /* color */
-
       /* Positioning */
       padding-block: 0.25rem;
       padding-inline: 0.5rem 1rem;
 
       /* Inner */
-      background-color: rgb(0 0 0 / 50%);
       display: table-caption;
       caption-side: top;
     }
@@ -206,6 +201,16 @@ html.dark {
 
   th {
     @apply text-left;
+  }
+
+  figure {
+    figcaption {
+      /* Text */
+      @apply text-sm /* size */ text-bg dark:text-text /* color */;
+
+      /* Inner */
+      @apply bg-text dark:bg-line;
+    }
   }
 }
 

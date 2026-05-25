@@ -2,16 +2,19 @@
 title: Privacy notice
 ---
 
-Our site uses [Simple Analytics](https://www.simpleanalytics.com/) for privacy-first site analytics.
+Our site uses [Simple Analytics](https://www.simpleanalytics.com/) for privacy-first site analytics, allowing us to dispense with disruptive pop-ups or consent banners.
+Your focus and attention should be and remain yours.
 
-It is:
+Our analytics provider:
 
-- EU-based and -hosted
 - does not use tracking cookies
+- is EU-based and -hosted
 - is GDPR-compliant
-- does not require disruptive pop-ups or consent banners
 
 You can [read more](https://docs.simpleanalytics.com/what-we-collect) about what we collect,
-and you're even welcome to [view the collected data](https://dashboard.simpleanalytics.com/grumpycorp.com).
+and you're welcome to [view the collected data](https://dashboard.simpleanalytics.com/grumpycorp.com).
 
 To ensure that nobody else tracks anything either, all assets are served from us directly: no external CSS, scripts, fonts, or images.
+
+If you've chosen to change the color theme of our site (<span class="inline-block align-middle size-4 svg-sun"></span> / <span class="inline-block align-middle size-4 svg-moon"></span>),
+that information is stored in your browser only and never transmitted.

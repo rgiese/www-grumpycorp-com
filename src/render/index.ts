@@ -4,6 +4,7 @@ import hljs from "highlight.js";
 import { Marked } from "marked";
 import { createDirectives } from "marked-directive";
 import { markedHighlight } from "marked-highlight";
+import markedCustomHeadingId from "marked-custom-heading-id";
 import htmlMinifier from "html-minifier-terser";
 import path from "node:path";
 
@@ -209,6 +210,7 @@ export class SiteRenderer {
     );
 
     const marked = new Marked({ pedantic: false })
+      .use(markedCustomHeadingId())
       .use(
         markedHighlight({
           langPrefix: "hljs language-",

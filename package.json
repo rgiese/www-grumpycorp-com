@@ -57,6 +57,7 @@
     ]
   },
   "dependencies": {
+    "marked-custom-heading-id": "^2.0.17",
     "postcss-import": "^16.1.1"
   }
 }

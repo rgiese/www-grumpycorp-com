@@ -744,11 +744,17 @@ html.dark {
 
       /* Positioning */
       @variant md {
+        @apply relative /* Makes this the anchor for the absolute positioning of the expand text */;
         margin-left: calc(-0.25 * var(--spacing-gutter));
       }
 
       /* Sizing */
       @apply size-5;
+
+      /* Mobile: right-align at the end of the nav bar, and let the expand text grow leftwards from there */
+      @variant max-md {
+        @apply justify-self-end w-auto;
+      }
 
       /* Outer */
       @apply cursor-pointer opacity-60;
@@ -756,6 +762,58 @@ html.dark {
 
       /* Inner */
       @apply inline-flex items-center;
+    }
+
+    .theme-toggle-expand {
+      /* Text */
+      @apply text-accent /* color */;
+
+      /* Desktop: expand to the right on hover */
+      @variant md {
+        /* Positioning */
+        @apply absolute inset-y-0 left-full /* start the left edge of the expand text at the right edge of the toggle */;
+
+        /* Sizing */
+        @apply max-w-0 /* Causes entire content to be considered 'overflow' */;
+
+        /* Outer */
+        @apply overflow-hidden /* hide overflow by default */;
+        @apply transition-[max-width] duration-200 ease-out;
+      }
+
+      /* Mobile: always show */
+      @variant max-md {
+        /* Let the defaults ride */
+      }
+
+      /* Inner */
+      @apply inline-flex items-center;
+    }
+
+    .theme-toggle:hover .theme-toggle-expand {
+      @apply max-w-10;
+    }
+
+    .theme-toggle-arrow {
+      /* 
+       * Create a perfectly centered '>' in pure CSS 
+       * because it's actually easier than trying to vertically center text
+       * around our SVGs
+       */
+
+      /* Positioning */
+      @apply ml-1 mr-1.75;
+
+      /* Sizing */
+      @apply size-1.5;
+
+      /* Outer */
+      border-right: 1.5px solid currentColor;
+      border-top: 1.5px solid currentColor;
+      transform: rotate(45deg);
+
+      /* Inner */
+      @apply shrink-0 /* prevent shrinking when the expand text grows */;
     }
   }
 

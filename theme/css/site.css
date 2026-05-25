@@ -245,7 +245,7 @@ html.dark {
 }
 
 /*
- * Page components for v2 of site
+ * Page components
  */
 
 @theme {
@@ -648,6 +648,15 @@ html.dark {
       }
     }
   }
+
+  /* Iconography */
+  .svg-tag {
+    /* Sizing */
+    @apply size-4;
+
+    /* Inner */
+    @apply inline-block;
+  }
 }
 
 /*
@@ -849,14 +858,6 @@ html.dark {
  */
 
 @layer components {
-  .svg-tag {
-    /* Sizing */
-    @apply size-4;
-
-    /* Inner */
-    @apply inline-block;
-  }
-
   .portfolio-content {
     /* Note: applied in addition to .content for portfolio pages */
     @apply max-w-6xl;

@@ -73,8 +73,8 @@
           </div>
           <span class="h-7 inline-block svg-grumpy-robin"></span>
         </a>
-        <input type="checkbox" id="nav-mobile-toggle" class="nav-mobile-toggle" />
-        <label for="nav-mobile-toggle" class="nav-hamburger" aria-label="Navigation menu"></label>
+        <input type="checkbox" id="nav-mobile-toggle" class="nav-mobile-toggle" aria-label="Navigation menu" />
+        <label for="nav-mobile-toggle" class="nav-hamburger"></label>
         <div class="nav-links do-not-print">
           <!-- prettier-ignore -->
           <% 

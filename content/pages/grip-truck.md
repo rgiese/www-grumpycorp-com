@@ -25,7 +25,7 @@ All gear listed below is on the truck unless marked as :notOnTruck.
 
 Truck dimensions: 9'8" tall, 110" wide, 20'6" (liftgate up) / 23'6" (liftgate down) / 24'6" (liftgate down and leveling flap folded out) long. About 8 miles per gallon (diesel).
 
-## Cameras
+## Cameras {#camera}
 
 ### A-CAM
 
@@ -169,7 +169,7 @@ BMPCC 4K with Wooden Camera EF mount adapter. Available with V-mount battery and
 - Sunbounce wind killer
 - Steadicam support kit for Inovativ cart
 
-## Lights
+## Lighting {#lighting}
 
 ### COB and attached modifiers
 
@@ -450,7 +450,7 @@ See [DMX case](/notes/film-making/dmx-case/index.html) for details.
 - ~15+ sand bags
 - 3x steel weight with clamp for extension arms :notOnTruck
 
-## Sound
+## Sound {#sound}
 
 ### Recording
 

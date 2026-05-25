@@ -46,6 +46,9 @@ useDefaultLayout: false
         Production support for narrative, documentary, commercial, music, and live projects, with systems designed
         around flexibility, reliability, and collaboration.
       </p>
+      <p class="feature-card-secondary">
+        <a href="/grip-truck/#camera">View camera department inventory →</a>
+      </p>
       <div class="feature-card-pillars">
         <div>Camera systems, monitoring, media workflows, and onset infrastructure.</div>
         <div>Support for both lightweight and technically complex productions.</div>
@@ -61,6 +64,9 @@ useDefaultLayout: false
         Lighting design and technical execution informed by years of work across theater, film, live performance, and
         architectural environments.
       </p>
+      <p class="feature-card-secondary">
+        <a href="/grip-truck/#lighting">View lighting department inventory →</a>
+      </p>
       <div class="feature-card-pillars">
         <div>Film lighting, theatrical systems, live performance, and practical integration.</div>
         <div>Rigging, power distribution, dimming, networking, and control systems.</div>
@@ -73,6 +79,9 @@ useDefaultLayout: false
     <h2>Sound</h2>
     <div class="feature-card-content">
       <p>Technical audio systems for production, rehearsal, presentation, and live environments.</p>
+      <p class="feature-card-secondary">
+        <a href="/grip-truck/#sound">View sound department inventory →</a>
+      </p>
       <div class="feature-card-pillars">
         <div>Playback, recording, reinforcement, monitoring, and live sound workflows.</div>
         <div>Integrated with production infrastructure and staging environments.</div>

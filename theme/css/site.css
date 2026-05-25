@@ -554,7 +554,7 @@
     }
 
     .feature-card-content {
-      @apply grid gap-gutter;
+      @apply grid gap-6;
 
       p {
         /* Text */
@@ -563,6 +563,11 @@
 
         /* Positioning */
         @apply m-0;
+      }
+
+      p.feature-card-secondary {
+        /* Text */
+        @apply text-sm /* size */ leading-relaxed /* line height */ tracking-normal /* letter spacing */ text-muted /* color */;
       }
 
       .feature-card-pillars {

@@ -19,6 +19,7 @@ export interface FileSpec {
 //
 
 export const FrontMatterSchema = yup.object({
+  useDefaultLayout: yup.boolean().default(true),
   title: yup.string().required(),
   published: yup.mixed<PlainDate>().transform((value: unknown) => {
     if (!value) {
@@ -81,7 +82,7 @@ export interface GeneratedDocument {
   contentTemplateContext: object;
   // Render
   templateName: string;
-  templateRenderContext: object;
+  templateRenderContext?: object;
 }
 
 export type GeneratedDocumentsGenerator = (inputDocumentInventory: InputDocumentInventory) => GeneratedDocument[];

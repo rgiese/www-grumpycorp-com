@@ -2,26 +2,30 @@
 title: About
 ---
 
-::figure[This guy]{src="about/profile.jpg" alt="Robin and Chester" outerDivWithClass="float-left max-w-3/10 mr-2"}
+## Grumpycorp Studios
 
-Hi, I'm Robin (thus <span class="h-8 inline-block svg-grumpy-robin"></span>).
-I'm an engineer, artist, and fabricator driven by a compulsion to learn, teach, and make.
+Grumpycorp Studios is a Seattle-based creative and technical practice working across film, performance, and built environments.
 
-My engineering work includes [software](https://www.linkedin.com/in/robingiese/),
-[hardware](/posts/warm-and-fuzzy/thermostat-design-2), and [structural engineering / architecture](/portfolio/cottage).
+The studio grew out of long-term work in theater, music, engineering, and collaborative making, and is organized around the idea that creative work and technical systems are most effective when developed together rather than separately.
 
-My art includes [film](/posts/film-making/home-body), [theater design](/posts/theater/the-odyssey), and music.
+The work spans production infrastructure, production design, fabrication, technical direction, and software systems, all in the service of collaborative endeavors. Some projects take the form of productions or installations; others become tools, workflows, or spaces for creative work.
 
-If there's anything you want made, [come find me](mailto:robin@grumpycorp.com).
-My [grip truck](/posts/film-making/grip-truck) is ready to roll anytime day or night.
+Phinneywood, the studio’s physical home base, reflects this approach directly: a flexible environment designed to support rehearsal, experimentation, production, performance, teaching, and ongoing practice over time.
 
-### Resume
+The studio operates with an emphasis on intentionality, versatility, and long-term collaboration.
+The goal is not just to produce finished work, but to build systems and environments that allow good work to continue evolving.
 
-- As a software engineer and engineering manager: see [LinkedIn](https://www.linkedin.com/in/robingiese)
-- As a film maker: see [IMDB](https://www.imdb.com/name/nm8515322/)
-- As a stage and lighting designer: some 40+ productions, including at:
-  - [ACT Theatre](https://acttheatre.org/) (Seattle)
-  - [McCarter Theater](https://www.mccarter.org/) (Princeton, NJ)
-  - [Microsoft Theater Troupe](https://www.facebook.com/MicrosoftTheaterTroupe/) (Redmond, WA)
-  - [Theatre Intime](https://www.theatreintime.org/) (Princeton, NJ)
-  - [Mercer Island High School](/posts/theater/the-odyssey) (Mercer Island, WA)
+## Robin Giese
+
+Robin’s work crosses creative and engineering disciplines, with a focus on balancing complex systems for spontaneity and human experience.
+Across theater, film, music, and live environments, his work has included feature-scale filmmaking, lighting and technical systems for performance spaces and touring productions, scenic and architectural design, technical direction, and custom infrastructure for creative environments.
+
+In parallel with this work, Robin spent over two decades in software engineering, engineering management, and product management roles across big tech and startups. That experience continues to shape the studio’s approach to systems thinking, workflow design, operational reliability, and the relationship between tools and creative practice.
+
+## Sarah Rodriguez Giese
+
+Sarah’s background combines theater, education, directing, and production, with an emphasis on storytelling, collaboration, and creative growth.
+
+She currently co-teaches technical theater at Mercer Island High School, guiding students through scenic construction, lighting, and live production. She also works with Youth Theatre Northwest as a director and outreach educator, helping lead theater programs for children and students across a range of ages and experience levels.
+
+Her involvement in theater began early and continued through her time at Princeton University, where she helped lead student-run productions and summer theater programs, and has since continued across school, community, and professional productions for more than two decades. Sarah’s approach has centered on collaborative environments where people can grow, take creative risks, and make meaningful work together over time.

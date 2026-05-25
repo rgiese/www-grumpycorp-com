@@ -4,6 +4,7 @@ import hljs from "highlight.js";
 import { Marked } from "marked";
 import { createDirectives } from "marked-directive";
 import { markedHighlight } from "marked-highlight";
+import markedCustomHeadingId from "marked-custom-heading-id";
 import htmlMinifier from "html-minifier-terser";
 import path from "node:path";
 
@@ -150,9 +151,17 @@ export class SiteRenderer {
 
     const outputFileStat = getFileSystemStat(outputPath, { requireExists: false });
 
+    const contentTemplateMtimeMs =
+      generatedDocument.contentTemplateType === TemplateType.Marked
+        ? getFileSystemStat(path.join(this.rootConfig.inputRootPath, generatedDocument.contentTemplateName), {
+            requireExists: true,
+          }).mtimeMs
+        : 0;
+
     if (
       outputFileStat &&
-      Math.max(newestInputDocumentModifiedTimeMs, this.newestThemeFileMtimeMs) < outputFileStat.mtimeMs
+      Math.max(newestInputDocumentModifiedTimeMs, this.newestThemeFileMtimeMs, contentTemplateMtimeMs) <
+        outputFileStat.mtimeMs
     ) {
       return false;
     }
@@ -173,7 +182,10 @@ export class SiteRenderer {
         // Base context
         ...this.baseRenderContext,
         // This document
-        inputDocument: { frontMatter: generatedDocument.frontMatter },
+        inputDocument: {
+          frontMatter: generatedDocument.frontMatter,
+          siteRelativeOutputPath: generatedDocument.siteRelativeOutputPath,
+        },
         contentHtml,
         // Inventory
         inputDocumentInventory: this.inputDocumentInventory,
@@ -198,15 +210,31 @@ export class SiteRenderer {
     );
 
     const marked = new Marked({ pedantic: false })
+      .use(markedCustomHeadingId())
       .use(
         markedHighlight({
           langPrefix: "hljs language-",
           highlight(code, lang, _info) {
+            if (lang === "html") {
+              return code; // preserve raw text so our renderer can pass it through as-is
+            }
             const language = hljs.getLanguage(lang) ? lang : "plaintext";
             return hljs.highlight(code, { language }).value;
           },
         }),
       )
+      .use({
+        renderer: {
+          // Pass ```html blocks through as raw HTML rather than syntax-highlighting and escaping them
+          // This allows `prettier` to auto-format HTML for us inside Markdown files
+          code({ text, lang }: { text: string; lang?: string }): string | false {
+            if (lang === "html") {
+              return text;
+            }
+            return false;
+          },
+        },
+      })
       .use(createDirectives([figureDirective, ...this.rootConfig.customDirectives]));
 
     return marked.parse(md) as string;

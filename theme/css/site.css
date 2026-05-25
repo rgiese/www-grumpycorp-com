@@ -19,27 +19,23 @@
   }
 
   /*
-   * Tailwind preflight zeroes all heading, paragraph, figure, and list margins/styles; restore browser defaults.
+   * Tailwind preflight zeroes all heading, paragraph, figure, and list margins/styles; provide appropriate defaults.
    * Must be in @layer base so Tailwind utilities (e.g. mb-1) can override on a per-element basis.
    */
   p {
     margin-block: 1em;
   }
 
-  h1 {
-    margin-block: 0.67em;
+  p + h2,
+  p + h3,
+  figure + h2,
+  figure + h3 {
+    margin-block-start: 1em;
   }
 
-  h2 {
-    margin-block: 0.83em;
-  }
-
-  h3 {
-    margin-block: 1em;
-  }
-
-  h4 {
-    margin-block: 1.33em 0;
+  h1 + h2,
+  h2 + h3 {
+    margin-block-start: 0.5em;
   }
 
   figure {
@@ -48,42 +44,56 @@
 
   ol {
     list-style-type: decimal;
-    margin-block: 1em;
-    padding-inline-start: 40px;
   }
 
   ul {
     list-style-type: disc;
+  }
+
+  ol,
+  ul {
+    padding-inline-start: 2em;
     margin-block: 1em;
-    padding-inline-start: 40px;
+  }
+
+  li ol,
+  li ul {
+    margin-block-start: 0em;
+  }
+
+  td,
+  th {
+    @apply pr-2;
   }
 
   /* Other basic element settings */
   img {
-    /* 
+    /*
      * Don't let images scale up past their built-in size (but they'll still scale down)
-     * https://web.dev/learn/design/responsive-images 
+     * https://web.dev/learn/design/responsive-images
      */
     max-inline-size: 100%;
     block-size: auto;
   }
 
   figure {
-    display: table;
-    width: 100%;
+    /* Positioning */
     margin-inline: 0;
 
-    figcaption {
-      display: table-caption;
-      caption-side: top;
+    /* Sizing */
+    width: 100%;
 
+    /* Inner */
+    display: table;
+
+    figcaption {
+      /* Positioning */
       padding-block: 0.25rem;
       padding-inline: 0.5rem 1rem;
 
-      font-family: "Quicksand", sans-serif;
-      @apply text-sm;
-      color: white;
-      background-color: rgb(0 0 0 / 50%);
+      /* Inner */
+      display: table-caption;
+      caption-side: top;
     }
   }
 }
@@ -92,12 +102,38 @@
  * Colors
  */
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@custom-variant mobile (@media (width < theme(--breakpoint-md)));
+@custom-variant desktop (@media (width >= theme(--breakpoint-md)));
+
 @theme {
+  /* Primary brand guide */
   --color-accent: #dc6c40;
   --color-accent-light: #f79a5e;
-  --color-accent-dark: #0d5258;
+
+  --color-bg: #fff8f1; /* Standard page background */
+  --color-surface: #ffffff; /* Elevated sections */
+
+  --color-text: #2b2b2b;
+  --color-muted: #77736d;
+  --color-line: #ded8cf; /* Separator between sections */
+  --color-panel: #f4eee6; /* Utility color for image placeholders etc. */
+
+  /* Old colors, to be retired */
   --color-accent-mono: #03061f;
-  --color-accent-mono-light: #a0cab3;
+}
+
+html.dark {
+  /* Primary brand guide */
+  /* (accent colors unchanged in dark mode) */
+  --color-bg: #1b1918; /* Standard page background */
+  --color-surface: #252322; /* Elevated sections */
+
+  --color-text: #e8ddd4;
+  --color-muted: #9e9690;
+  --color-line: #3a3432; /* Separator between sections */
+  --color-panel: #252322; /* Utility color for image placeholders etc. */
 }
 
 /*
@@ -105,80 +141,723 @@
  */
 
 @theme {
-  --font-sans: "Questrial", sans-serif;
+  --font-sans:
+    -apple-system /* Safari */, BlinkMacSystemFont /* Chrome */, "Inter" /* our fallback */,
+    sans-serif /* if all else fails */;
+}
+
+/* Utility to clear text styling to the body default */
+@utility text-reset {
+  @apply font-sans /* font */ font-normal /* weight */;
+  @apply text-base /* size */ leading-normal /* line height */ tracking-normal /* letter spacing */;
+  @apply text-text /* color */;
+}
+
+@utility align-to-top-capital {
+  text-box: trim-start cap alphabetic;
 }
 
 @layer base {
   html {
-    @apply font-sans;
+    scroll-behavior: smooth;
   }
 
+  body {
+    /* Text */
+    @apply text-reset /* font, weight, size, line height, letter spacing, color */;
+    @apply leading-[1.6] /* line height */;
+    @apply antialiased /* rendering */;
+    text-rendering: optimizeLegibility; /* rendering */
+
+    /* Inner */
+    @apply bg-bg;
+  }
+
+  a {
+    @apply text-inherit /* color */ no-underline /* decoration */;
+
+    &:hover {
+      @apply text-accent /* color */;
+    }
+  }
+
+  /* Default heading styles (anything set here should be clear-able with @apply heading-reset */
   h1 {
-    font-size: 2em;
-    line-height: 1.2;
-    font-family: "Quicksand", sans-serif;
-    font-weight: 500;
-    @apply text-accent;
+    @apply text-5xl /* size */ tracking-tight /* letter spacing */;
 
     a {
-      @apply text-accent no-underline;
+      @apply text-inherit /* color */ no-underline /* decoration */;
     }
   }
 
   h2 {
-    font-size: 1.5em;
-    line-height: 1.2;
-    font-family: "Quicksand", sans-serif;
-    font-weight: 500;
-    text-transform: uppercase;
-    @apply text-accent;
+    @apply text-4xl /* size */ tracking-tight /* letter spacing */;
   }
 
   h3 {
-    font-size: 1.17em;
-    line-height: 1.2;
-    font-family: "Quicksand", sans-serif;
-    font-weight: 500;
-    text-transform: uppercase;
-    @apply text-accent-light;
+    @apply text-2xl /* size */;
   }
 
   h4 {
-    font-size: 1em;
-    line-height: 1.2;
-    font-family: "Dosis", sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
-    @apply text-accent-mono;
+    @apply text-lg /* size */ uppercase /* case */ tracking-wider /* letter spacing */;
   }
 
-  code {
-    font-size: 0.9em;
+  th {
+    @apply text-left;
+  }
+
+  figure {
+    figcaption {
+      /* Text */
+      @apply text-sm /* size */ text-bg dark:text-text /* color */;
+
+      /* Inner */
+      @apply bg-text dark:bg-line;
+    }
+  }
+}
+
+@utility heading-reset {
+  /* 
+   * Use this when defining a heading style for a page component where it should semantically be declared as a heading
+   * but should not inherit default (content) heading styles. 
+   */
+
+  /* Text */
+  @apply text-reset /* font, weight, size, line height, letter spacing, color */;
+
+  /* Positioning */
+  margin-block: 0;
+}
+
+@utility scroll-margin-for-navbar {
+  scroll-margin-top: var(--spacing-nav-height);
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  tr {
+    @apply scroll-margin-for-navbar;
   }
 }
 
 /*
- * Components
+ * Page components
+ */
+
+@theme {
+  /* Sizes for space and text, from smallest to largest */
+  --spacing-gutter: clamp(calc(var(--spacing) * 6), 5vw, calc(var(--spacing) * 18));
+  --spacing-gap: calc(var(--spacing) * 12);
+
+  --spacing-nav-height: 4.5rem;
+
+  --text-card-content: clamp(1.25rem, 2vw, 1.875rem);
+  --text-pillar-title: clamp(1.625rem, 3vw, 2.625rem);
+  --text-section-title: clamp(1.875rem, 4vw, 3.5rem);
+}
+
+@layer components {
+  /* Page sections */
+  .white-section-wrapper {
+    /* Use as <div class="white-section-outer"><section class="page-section">...</section></div> */
+
+    /* Positioning */
+    @apply py-8 /* additional padding on top of what the inner .section will do */;
+
+    /* Outer */
+    @apply border-y border-line;
+
+    /* Inner */
+    @apply bg-surface;
+  }
+
+  .page-section {
+    /* Use as a child of .white-section-wrapper or on its own for regular-background sections */
+
+    /* Positioning */
+    @apply mx-auto;
+    @apply px-gutter py-10;
+    @apply scroll-margin-for-navbar;
+
+    /* Sizing */
+    @apply max-w-5xl;
+    @apply w-full /* make sure we fill the flex container from <main/> */;
+  }
+
+  .image-placeholder {
+    /* Text */
+    @apply text-muted /* color */ text-xs /* size */ tracking-wider /* letter spacing */ uppercase /* case */;
+
+    /* Sizing */
+    aspect-ratio: 4 / 3;
+
+    /* Outer */
+    @apply border border-line;
+
+    /* Inner */
+    @apply bg-panel;
+    @apply grid place-items-center;
+  }
+
+  /* Hero section for tops of pages, a specialization of .page-section */
+  .hero {
+    /* Positioning: undo the pt-nav-height applied by the layout template so we are centered in the full screen */
+    @apply -mt-nav-height;
+
+    /* Sizing: take up full page */
+    @apply min-h-dvh;
+
+    /* Inner */
+    @apply grid content-center;
+
+    .hero-grid {
+      @apply grid items-end;
+      grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.5fr);
+      gap: clamp(3rem, 9vw, 7.5rem);
+
+      @variant mobile {
+        @apply grid-cols-1;
+      }
+
+      .hero-super-title {
+        /* Text */
+        @apply text-sm /* size */ tracking-widest /* letter spacing */ text-muted /* color */ uppercase /* case */;
+
+        /* Positioning */
+        @apply m-0 mb-5;
+      }
+
+      h1 {
+        /* Text */
+        @apply heading-reset /* font, weight, size, line height, letter spacing, color */;
+        @apply leading-none /* line height */ tracking-tighter /* letter spacing */;
+        font-size: clamp(3.5rem, 10vw, 7.375rem); /* size */
+
+        /* Positioning */
+        @apply mt-0 mb-8;
+      }
+
+      .hero-statement {
+        @apply font-normal /* weight */ text-section-title /* size */ leading-none /* line height */ tracking-tight /* letter spacing */;
+
+        .hero-rotator {
+          /* Text */
+          @apply text-accent /* color */;
+
+          /* Positioning */
+          @apply relative;
+
+          /* Sizing */
+          min-width: 8ch;
+
+          /* Outer */
+          @apply cursor-pointer;
+
+          /* Inner */
+          @apply inline-block;
+
+          a {
+            @apply text-inherit /* color */ no-underline /* decoration */;
+          }
+
+          span {
+            /* Positioning */
+            @apply absolute;
+            inset: 0 auto auto 0;
+
+            /* Outer */
+            @apply opacity-0;
+            animation: hero-rotator-keyframes 20s infinite;
+
+            &:first-child {
+              @apply relative;
+            }
+
+            &:nth-child(1) {
+              animation-delay: 0s;
+            }
+
+            &:nth-child(2) {
+              animation-delay: 5s;
+            }
+
+            &:nth-child(3) {
+              animation-delay: 10s;
+            }
+
+            &:nth-child(4) {
+              animation-delay: 15s;
+            }
+          }
+        }
+      }
+
+      .hero-note {
+        /* Text */
+        @apply text-base /* size */ leading-normal /* line height */ text-muted /* color */;
+
+        /* Positioning */
+        @apply pl-6 mb-3;
+
+        /* Sizing */
+        @apply max-w-xs;
+
+        /* Outer */
+        @apply border-l border-line;
+
+        @variant mobile {
+          @apply border-l-0 pl-0;
+        }
+      }
+    }
+  }
+
+  @keyframes hero-rotator-keyframes {
+    0% {
+      opacity: 0;
+      transform: translateY(0.08em);
+    }
+
+    6% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    22% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    28% {
+      opacity: 0;
+      transform: translateY(-0.04em);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateY(-0.04em);
+    }
+  }
+
+  /* Image card grid: a configurable-column grid of images with optional titles/text */
+  .image-card-grid {
+    @apply grid gap-gap items-start;
+    /* Column count is configurable (e.g. style="--cols: 3" on the invoking element), defaults to two */
+    grid-template-columns: repeat(var(--cols, 2), minmax(0, 1fr));
+
+    @variant mobile {
+      @apply grid-cols-1;
+    }
+
+    article {
+      @apply grid gap-4;
+
+      h3 {
+        /* Text */
+        @apply heading-reset /* font, weight, size, line height, letter spacing, color */;
+        @apply text-2xl /* size */ tracking-tight /* letter spacing */;
+
+        /* Positioning */
+        @apply mt-0 mb-1;
+      }
+
+      p {
+        /* Text */
+        @apply text-base /* size */ leading-normal /* line height */ text-muted /* color */;
+
+        /* Positioning */
+        @apply mt-0;
+
+        /* Sizing */
+        @apply max-w-md;
+      }
+    }
+  }
+
+  /* Pillar card grid: a three-wide grid of "pillar" cards, each with a title and short description */
+  .pillar-card-grid {
+    @apply grid gap-gutter;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    @variant mobile {
+      @apply grid-cols-1;
+    }
+
+    /* Pillar card */
+    article {
+      /* Positioning */
+      @apply pt-6;
+
+      /* Outer */
+      border-top: 1px solid var(--color-text);
+
+      /* Animation */
+      transition:
+        translate 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease;
+
+      &:hover,
+      &:focus-within {
+        @apply -translate-y-2;
+        border-top-color: var(--color-accent);
+
+        h2 {
+          @apply text-accent /* color */;
+        }
+
+        p {
+          @apply -translate-y-0.5;
+        }
+      }
+
+      h2 {
+        /* Text */
+        @apply heading-reset /* font, weight, size, line height, letter spacing, color */;
+        @apply text-pillar-title /* size */ tracking-tight /* letter spacing */ no-underline /* decoration */ cursor-pointer /* cursor */;
+
+        /* Positioning */
+        @apply mb-6;
+      }
+
+      p {
+        /* Text */
+        @apply text-base /* size */ leading-normal /* line height */ text-muted /* color */;
+
+        /* Sizing */
+        max-width: 310px;
+
+        /* Outer */
+        transition: translate 180ms ease;
+      }
+    }
+  }
+
+  /* Feature card: a wide card with a large title on the left and content on the right. */
+  .feature-card {
+    /* Positioning */
+    @apply py-14;
+    @apply scroll-margin-for-navbar;
+
+    /* Outer */
+    @apply border-t border-line;
+    &:first-child {
+      @apply border-t-0;
+    }
+    &:last-child {
+      @apply border-b border-line;
+    }
+
+    /* Inner */
+    @apply grid gap-gap;
+    /* Left (title) column width is configurable via --left-column-width (e.g. on a parent section), defaults to 200px */
+    grid-template-columns: minmax(var(--left-column-width, 200px), 0.34fr) minmax(0, 1fr);
+
+    @variant mobile {
+      @apply grid-cols-1;
+    }
+
+    h3 {
+      /* Text */
+      @apply heading-reset /* font, weight, size, line height, letter spacing, color */;
+      @apply text-sm /* size */ tracking-widest /* letter spacing */ text-muted /* color */ uppercase /* case */;
+
+      /* Positioning */
+      @apply mb-4;
+    }
+
+    h2 {
+      @apply heading-reset /* font, weight, size, line height, letter spacing, color */;
+      @apply text-section-title /* size */ font-normal /* weight */ leading-none /* line height */ tracking-tighter /* letter spacing */;
+      @apply align-to-top-capital /* alignment with p to the right */;
+    }
+
+    .feature-card-content {
+      @apply grid gap-6;
+
+      p {
+        /* Text */
+        @apply text-card-content /* size */ leading-snug /* line height */ tracking-tight /* letter spacing */;
+        @apply align-to-top-capital /* alignment */;
+
+        /* Positioning */
+        @apply m-0;
+      }
+
+      p.feature-card-secondary {
+        /* Text */
+        @apply text-sm /* size */ leading-relaxed /* line height */ tracking-normal /* letter spacing */ text-muted /* color */;
+      }
+
+      .feature-card-pillars {
+        /* Text */
+        @apply text-sm /* size */ text-muted /* color */ leading-relaxed /* line height */;
+
+        /* Inner */
+        @apply grid gap-6;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        @variant mobile {
+          @apply grid-cols-1;
+        }
+
+        div {
+          /* Positioning */
+          @apply pt-4;
+
+          /* Outer */
+          @apply border-t border-line;
+        }
+      }
+    }
+  }
+
+  /* "Closing thoughts" section at the end of pages, a specialization of .page-section */
+  .closing {
+    @apply pt-0 /* coasting on the previous section's end padding */;
+
+    p {
+      /* Text */
+      @apply text-card-content /* size */ tracking-tight /* letter spacing */ leading-none /* line height */;
+      @apply text-muted /* color */;
+
+      /* Positioning */
+      @apply m-0;
+
+      /* Sizing */
+      @apply max-w-lg;
+    }
+  }
+
+  /* Conventional content formatting */
+  .content {
+    a {
+      @apply text-accent /* color */;
+
+      &:hover,
+      &:visited {
+        color: #ae4820; /* Can't use var() here for security reasons */ /* color */
+      }
+
+      &:hover {
+        @apply underline /* decoration */;
+      }
+    }
+  }
+
+  /* Iconography */
+  .svg-tag {
+    /* Sizing */
+    @apply size-4;
+
+    /* Inner */
+    @apply inline-block;
+  }
+}
+
+/*
+ * Template components (top/bottom bars)
+ * - listed after the standard page components so they can use + override them
+ */
+
+@utility navbar-border-and-background {
+  border-bottom: 1px solid color-mix(in srgb, var(--color-line) 62%, transparent);
+  @apply backdrop-blur-md;
+
+  background: color-mix(in srgb, var(--color-bg) 86%, transparent);
+}
+
+@layer components {
+  /* Nav bar */
+  .nav {
+    /* Positioning */
+    @apply top-0 fixed /* always there, not part of regular layout flow */;
+    @apply left-0 right-0 /* full width */;
+    @apply z-10 /* above all other content */;
+    @apply px-gutter;
+
+    @media print {
+      position: static; /* fixed repeats on every print page; static appears only on the first */
+    }
+
+    /* Sizing */
+    @apply h-nav-height;
+
+    /* Outer */
+    @apply navbar-border-and-background;
+
+    /* Inner */
+    @apply flex justify-between items-center;
+
+    .nav-mobile-toggle {
+      /* Visually hidden but kept in accessibility tree for keyboard nav */
+      @apply sr-only;
+    }
+
+    .nav-hamburger {
+      /* Sizing */
+      @apply size-5;
+
+      /* Outer */
+      @apply cursor-pointer;
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='3' y1='6' x2='21' y2='6'/%3E%3Cline x1='3' y1='12' x2='21' y2='12'/%3E%3Cline x1='3' y1='18' x2='21' y2='18'/%3E%3C/svg%3E");
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+
+      /* Inner */
+      @apply bg-muted;
+
+      @variant desktop {
+        @apply hidden;
+      }
+    }
+
+    .nav-links {
+      /* Text */
+      @apply text-sm /* size */ text-muted /* color */;
+
+      @variant desktop {
+        /* Inner */
+        @apply flex gap-gutter;
+      }
+
+      @variant mobile {
+        /* Text */
+        @apply text-right /* alignment */;
+
+        /* Positioning */
+        @apply absolute top-full inset-x-0;
+        @apply px-gutter py-4;
+
+        /* Outer */
+        @apply navbar-border-and-background;
+
+        /* Inner */
+        @apply gap-3;
+        @apply hidden /* the default, overridden below when the hamburger checkbox is checked */;
+      }
+    }
+
+    /* Show nav-links when hamburger checkbox is checked (mobile only) */
+    .nav-mobile-toggle:checked ~ .nav-links {
+      @variant mobile {
+        @apply grid;
+      }
+    }
+
+    .theme-toggle {
+      /* Text */
+      @apply text-text /* color */;
+
+      /* Positioning */
+      @variant desktop {
+        @apply relative /* Makes this the anchor for the absolute positioning of the expand text */;
+        margin-left: calc(-0.25 * var(--spacing-gutter));
+      }
+
+      /* Sizing */
+      @apply size-5;
+
+      /* Mobile: right-align at the end of the nav bar, and let the expand text grow leftwards from there */
+      @variant mobile {
+        @apply justify-self-end w-auto;
+      }
+
+      /* Outer */
+      @apply cursor-pointer opacity-60;
+      @apply hover:opacity-100;
+
+      /* Inner */
+      @apply inline-flex items-center;
+    }
+
+    .theme-toggle-expand {
+      /* Text */
+      @apply text-accent /* color */;
+
+      /* Desktop: expand to the right on hover */
+      @variant desktop {
+        /* Positioning */
+        @apply absolute inset-y-0 left-full /* start the left edge of the expand text at the right edge of the toggle */;
+
+        /* Sizing */
+        @apply max-w-0 /* Causes entire content to be considered 'overflow' */;
+
+        /* Outer */
+        @apply overflow-hidden /* hide overflow by default */;
+        @apply transition-[max-width] duration-200 ease-out;
+      }
+
+      /* Mobile: always show */
+      @variant mobile {
+        /* Let the defaults ride */
+      }
+
+      /* Inner */
+      @apply inline-flex items-center;
+    }
+
+    .theme-toggle:hover .theme-toggle-expand {
+      @apply max-w-10;
+    }
+
+    .theme-toggle-arrow {
+      /* 
+       * Create a perfectly centered '>' in pure CSS 
+       * because it's actually easier than trying to vertically center text
+       * around our SVGs
+       */
+
+      /* Positioning */
+      @apply ml-1 mr-1.75;
+
+      /* Sizing */
+      @apply size-1.5;
+
+      /* Outer */
+      border-right: 1.5px solid currentColor;
+      border-top: 1.5px solid currentColor;
+      transform: rotate(45deg);
+
+      /* Inner */
+      @apply shrink-0 /* prevent shrinking when the expand text grows */;
+    }
+  }
+
+  /* Bottom bar / "colophon", a specialization of .page-section */
+  .colophon {
+    /* Positioning */
+    @apply mt-auto py-5;
+
+    /* Sizing */
+    @apply max-w-5xl;
+
+    /* Outer */
+    @apply border-t border-line;
+
+    /* Inner */
+    @apply flex justify-between /* maximize space between elements -> far left / far right */;
+    @apply flex-wrap /* wrap into single column on small screens */;
+    @apply gap-4 /* horizontal or vertical gap between elements */;
+    @apply items-center /* vertically center items when in a row, and align to top when wrapped into a column */;
+  }
+
+  .white-section-wrapper + .colophon {
+    /* Fix the awkward double-border when the previous section (.white-section-wrapper) provided a bottom border */
+    @apply border-t-0;
+  }
+}
+
+/*
+ * Components for v1 of site
  */
 
 @layer components {
-  .svg-tag {
-    @apply size-4 inline-block;
-  }
-
-  .content {
-    font-size: 1.05em;
-
-    a:link {
-      @apply text-accent;
-    }
-
-    a:hover,
-    a:visited {
-      color: #ae4820; /* Can't use var() here for security reasons */
-    }
-  }
-
   .portfolio-content {
     /* Note: applied in addition to .content for portfolio pages */
     @apply max-w-6xl;
@@ -197,45 +876,44 @@
     }
 
     .portfolio-sxs-container {
-      @apply flow-root w-full;
+      /* Sizing */
+      @apply w-full;
+
+      /* Inner */
+      @apply flow-root;
+    }
+
+    .portfolio-sxs-w40 {
+      /* Positioning */
+      @apply p-3;
+
+      /* Sizing */
+      @apply w-full lg:w-2/5;
+
+      /* Inner */
+      @apply float-left;
     }
 
     .portfolio-sxs-w50 {
-      @apply p-3 float-left w-full lg:w-1/2;
+      /* Positioning */
+      @apply p-3;
+
+      /* Sizing */
+      @apply w-full lg:w-1/2;
+
+      /* Inner */
+      @apply float-left;
     }
 
     .portfolio-sxs-w60 {
-      @apply p-3 float-left w-full lg:w-3/5;
-    }
-  }
+      /* Positioning */
+      @apply p-3;
 
-  .home-page {
-    .home-page-figure-container {
-      @apply flex flex-wrap;
-    }
+      /* Sizing */
+      @apply w-full lg:w-3/5;
 
-    .home-page-figure-div {
-      @apply p-1 lg:w-1/2;
-
-      figure {
-        margin-block: 0;
-      }
-    }
-
-    .home-page-tags-container {
-      a {
-        @apply text-accent no-underline;
-      }
-    }
-  }
-
-  .rightbar {
-    .colophon-row {
-      @apply text-sm pt-1;
-    }
-
-    .link-subdued {
-      @apply no-underline hover:opacity-50 text-black/80;
+      /* Inner */
+      @apply float-left;
     }
   }
 }
@@ -245,7 +923,7 @@
  */
 
 @media print {
-  .dn-p {
+  .do-not-print {
     display: none !important;
   }
 

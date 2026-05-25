@@ -1,62 +1,22 @@
 import path from "node:path";
 
 import { RootConfig } from "../config";
-import { GeneratedDocumentsGenerator, RenderContextGenerator, InputDocument, TemplateType } from "../types";
+import { InputDocument, TemplateType } from "../types";
 
-import { generateLayoutTemplateRenderContext } from "./layoutTemplateRenderContext";
-import { generatePostTemplateRenderContext } from "./postTemplateRenderContext";
-import { postIndexPagesGenerator } from "./postIndexPagesGenerator";
+import { generateNoteTemplateRenderContext } from "./noteTemplateRenderContext";
 
 import { customDirectives } from "./customDirectives";
-import { getDocumentTag } from "./documentTag";
+import { getDocumentTag, getDocumentTagSet, tagPresenter } from "./documentTag";
 
 function outputPath(inputDocument: InputDocument, prefix?: string): string {
   const relativePath = path.parse(inputDocument.documentGroupRelativePath);
-  return path.join(prefix ?? "", relativePath.dir, relativePath.name, "index.html");
+  return path.join(
+    prefix ?? "",
+    relativePath.dir,
+    relativePath.name === "index" ? "" : relativePath.name,
+    "index.html",
+  );
 }
-
-const layoutTemplateRenderContext: RenderContextGenerator = (_inputDocument, inputDocumentInventory) =>
-  generateLayoutTemplateRenderContext(inputDocumentInventory);
-
-const generatedDocuments: GeneratedDocumentsGenerator = (inputDocumentInventory) => {
-  const postDocuments = inputDocumentInventory.get("posts") ?? [];
-  const latestPostDocument = postDocuments.length ? postDocuments[postDocuments.length - 1] : undefined;
-
-  return [
-    ...postIndexPagesGenerator(inputDocumentInventory),
-    // Home
-    {
-      siteRelativeOutputPath: "index.html",
-      frontMatter: {
-        title: "Home",
-      },
-      contentTemplateType: TemplateType.Marked,
-      contentTemplateName: "index.md",
-      contentTemplateContext: {},
-      templateName: "_layout.eta",
-      // We're relying on `generateLayoutTemplateRenderContext` not specializing on any given input document
-      templateRenderContext: {
-        ...generateLayoutTemplateRenderContext(inputDocumentInventory),
-        isHomePage: true,
-        latestPostDocument,
-        latestPostTag: latestPostDocument ? getDocumentTag(latestPostDocument) : "",
-      },
-    },
-    // 404
-    {
-      siteRelativeOutputPath: "404.html",
-      frontMatter: {
-        title: "Sadness",
-      },
-      contentTemplateType: TemplateType.Marked,
-      contentTemplateName: "404.md",
-      contentTemplateContext: {},
-      templateName: "_layout.eta",
-      // We're relying on `generateLayoutTemplateRenderContext` not specializing on any given input document
-      templateRenderContext: generateLayoutTemplateRenderContext(inputDocumentInventory),
-    },
-  ];
-};
 
 const rootConfig: RootConfig = {
   // Paths are relative to repo root (by virtue of being invoked from the repo root)
@@ -70,7 +30,7 @@ const rootConfig: RootConfig = {
       inputRootRelativePath: "pages",
       requirePublishDate: false,
       templateName: "_layout.eta",
-      templateRenderContext: layoutTemplateRenderContext,
+      // Output pages at the root level, e.g. content/pages/foo.md -> output/foo/index.html
       outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument),
     },
     {
@@ -78,19 +38,51 @@ const rootConfig: RootConfig = {
       inputRootRelativePath: "portfolio",
       requirePublishDate: false,
       templateName: "_layout.eta",
-      templateRenderContext: layoutTemplateRenderContext,
+      // Output pages under the "portfolio" path, e.g. content/portfolio/foo.md -> output/portfolio/foo/index.html
       outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument, "portfolio"),
     },
     {
-      documentGroupName: "posts",
-      inputRootRelativePath: "posts",
+      documentGroupName: "notes",
+      inputRootRelativePath: "notes",
       requirePublishDate: true,
       templateName: "_layout.eta",
-      templateRenderContext: generatePostTemplateRenderContext,
-      outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument, "posts"),
+      templateRenderContext: generateNoteTemplateRenderContext,
+      // Output pages under the "notes" path, e.g. content/notes/collection/foo.md -> output/notes/collection/foo/index.html
+      outputPathFromDocumentPath: (inputDocument) => outputPath(inputDocument, "notes"),
     },
   ],
-  generatedDocuments,
+  generatedDocuments: (inputDocumentInventory) => [
+    // 404
+    {
+      siteRelativeOutputPath: "404.html",
+      frontMatter: {
+        title: "Sadness",
+        useDefaultLayout: true,
+      },
+      contentTemplateType: TemplateType.Marked,
+      contentTemplateName: "404.md",
+      contentTemplateContext: {},
+      templateName: "_layout.eta",
+    },
+    // Notes index
+    {
+      siteRelativeOutputPath: "notes/index.html",
+      frontMatter: {
+        title: "Notes",
+        useDefaultLayout: true,
+      },
+      contentTemplateType: TemplateType.Eta,
+      contentTemplateName: "notes/_index.eta",
+      contentTemplateContext: {
+        tagPresenter,
+        tags: getDocumentTagSet(inputDocumentInventory.get("notes") ?? []),
+        documents: (inputDocumentInventory.get("notes") ?? []).map((d) => {
+          return { ...d, documentTag: getDocumentTag(d) };
+        }),
+      },
+      templateName: "_layout.eta",
+    },
+  ],
   // Transform
   customDirectives,
   // defaultImageSizes:
@@ -108,14 +100,15 @@ const rootConfig: RootConfig = {
   svgToCssTranscodes: [{ inputRootRelativePath: "assets/packed", siteRelativeOutputPath: "assets/svg.css" }],
   // Redirects
   redirects: [
-    { source: "/posts/film%20making/*", destination: "/posts/film-making/:splat", code: 301 },
-    { source: "/tags/posts/film%20making/*", destination: "/tags/posts/film-making/:splat", code: 301 },
+    // Specific redirects
     {
       // The "how to help PhinneyWood" doc
       source: "/halp",
       destination: "https://docs.google.com/document/d/1LdxnTdPSHpu5Qo9iqCBnGHIR1Bw7zhtbTvPyQM3A-Dw/edit?usp=sharing",
       code: 301,
     },
+    // Splat-based (wildcard) redirects
+    { source: "/posts/*", destination: "/notes/:splat", code: 301 },
   ],
 };
 

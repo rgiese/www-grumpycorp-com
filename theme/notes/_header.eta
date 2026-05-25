@@ -1,0 +1,12 @@
+<h1 class="mb-1"><%= data.inputDocument.frontMatter.title %></h1>
+
+<div class="text-base text-black/60">
+  <%= data.inputDocument.frontMatter.published.toLocaleString() %>
+  <span class="px-2 text-black/40">in</span>
+
+  <a href="/notes/index.html#<%= encodeURIComponent(data.documentTag) %>" class="no-underline text-accent-mono">
+    <span class="svg-tag"></span>
+
+    <%~ data.tagPresenter(data.documentTag) %>
+  </a>
+</div>

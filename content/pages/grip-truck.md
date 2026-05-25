@@ -2,13 +2,13 @@
 title: Grip truck
 ---
 
-<div class="dn-p">
+<div class="do-not-print">
 
-[ [Build blog post](/posts/film-making/grip-truck/) ]
+[ [Build notes](/notes/film-making/grip-truck/) ]
 
 </div>
 
-<div class="flow-root dn-p">
+<div class="flow-root do-not-print">
   <div class="sm:float-left sm:max-lg:w-[10%] sm:w-1/2 p-1">
 
 ::figure[Crates]{src="grip-truck/IMG_0430.jpg"}
@@ -25,55 +25,55 @@ All gear listed below is on the truck unless marked as :notOnTruck.
 
 Truck dimensions: 9'8" tall, 110" wide, 20'6" (liftgate up) / 23'6" (liftgate down) / 24'6" (liftgate down and leveling flap folded out) long. About 8 miles per gallon (diesel).
 
-# Cameras
+## Cameras {#camera}
 
-## A-CAM
+### A-CAM
 
-::figure[Ursa Cine (A-CAM)]{src="grip-truck/A-CAM.jpg" class="dn-p"}
+::figure[Ursa Cine (A-CAM)]{src="grip-truck/A-CAM.jpg" class="do-not-print"}
 
-[Blackmagic Design Ursa Cine 12K](/posts/film-making/ursa-cine-buildout), 8TB module, shoulder mount + rods, B-mount hotswap, B-mount battery (6x 275Wh), SmallHD Ultra 7 monitor, EVF,
+[Blackmagic Design Ursa Cine 12K](/notes/film-making/ursa-cine-buildout), 8TB module, shoulder mount + rods, B-mount hotswap, B-mount battery (6x 275Wh), SmallHD Ultra 7 monitor, EVF,
 Teradek transmitter (12G-SDI/4K image), Teradek RT FIZ with FocusBug, ARRI LMB 4x5.65 matte box, Cleans Camera MiniQRB plate
 
-## AA-CAM
+### AA-CAM
 
-A second, identical Ursa Cine 12K in case the first one falls over. Already kitted with 8TB module, shoulder mount + rods, B-mount hotswap, Teradek Bolt 4K 3G-SDI transmitter, Cleans Camera MiniQRB plate
+A second, identical Ursa Cine 12K in case the first one falls over. Already kitted with 8TB module, shoulder mount + rods, B-mount hotswap plate, Teradek Bolt 4K 3G-SDI transmitter, Cleans Camera MiniQRB plate
 
-## B-CAM
+### B-CAM
 
-::figure[Pyxis 6K (B-CAM)]{src="grip-truck/B-CAM.jpg" class="dn-p"}
+::figure[Pyxis 6K (B-CAM)]{src="grip-truck/B-CAM.jpg" class="do-not-print"}
 
-[Blackmagic Design Pyxis 6K](/posts/film-making/pyxis-buildout), XLCS Designs cage, V-mount battery (8x 98Wh) with Shark Fin, SmallHD 702 Touch monitor,
+[Blackmagic Design Pyxis 6K](/notes/film-making/pyxis-buildout), XLCS Designs cage, V-mount battery (8x 98Wh) with Shark Fin, SmallHD 702 Touch monitor,
 Teradek transmitter (12G-SDI/4K image), Teradek RT FIZ and TOF-1, ARRI LMB 4x5.65 matte box, Cleans Camera MiniQRB plate.
 
 Nucleus-M FIZ system (three motors) also included in the coffin, just in case.
 
-## C-CAM :notOnTruck{className="size-6"}</span>
+### C-CAM :notOnTruck{className="size-6"}</span>
 
-::figure[BMPCC 6K (C-CAM)]{src="grip-truck/C-CAM.jpg" class="dn-p"}
+::figure[BMPCC 6K (C-CAM)]{src="grip-truck/C-CAM.jpg" class="do-not-print"}
 
 BMPCC 6K converted to PL mount, rigged with V-mount battery, Teradek transmitter (3G-SDI/HD image), Lemo 0B.2-based power distro, Cleans Camera MiniQRB plate, dinky SmallRig matte box
 
-## D-CAM :notOnTruck{className="size-6"}</span>
+### D-CAM :notOnTruck{className="size-6"}</span>
 
 BMPCC 4K with Wooden Camera EF mount adapter. Available with V-mount battery and Teradek transmitter (3G-SDI/HD image) or de-rigged for small quarters shooting.
 
-## Other
+### Other
 
 - GoPro Hero 9 :notOnTruck
 - GoPro Hero 10 :notOnTruck
 - Spare Cleans Camera MiniQRB plate for 'guest' cameras
 
-## Media
+### Media
 
-- 2x 8TB Ursa Cine media module (in cameras)
+- 4x 8TB Ursa Cine media module (two in cameras, two extra), plus Ursa Cine Media Dock :notOnTruck
 - 2x 2TB Lexar CF Express Type B (Pyxis, in camera)
 - 4x 1TB AngelBird AV PRO CF (Pockets)
 
-## Protection
+### Protection
 
 - 5x white/black umbrella (rain cover)
 
-## Lenses (EF mount)
+### Lenses (EF mount)
 
 - DZOFilm Vespid full-frame primes, PL mount
   - 16mm T2.8
@@ -92,24 +92,16 @@ BMPCC 4K with Wooden Camera EF mount adapter. Available with V-mount battery and
   - 14-30mm T2.8
   - 20-55mm T2.8
   - 50-125mm T2.8
-- Sigma 17-50mm f/2.8 zoom (for D-CAM), EF mount :notOnTruck
-- Rokinon primes, EF mount (77mm filter thread) :notOnTruck
-  - 14mm T1.5
-  - 24mm T1.5
-  - 35mm T1.5
-  - 50mm T1.5
-  - 85mm T1.5
-- Kenko EF extension tubes :notOnTruck
 
-## Filters
+### Filters
 
-### 4x5.65
+#### 4x5.65
 
 - Tiffen Water White NATural IRND: 1, 2, 3, 4, 5, 6, 7, 9 stops (0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.7)
 - Lindsey Optics Rota-Pol circular polarizer (138mm) (automatable)
 - NiSi clear filter
 
-### 77mm
+#### 77mm
 
 - Tiffen Black Pro-Mist: ⅛, ¼, 1
 - Tiffen Glimmer Glass: ½, 1
@@ -117,7 +109,7 @@ BMPCC 4K with Wooden Camera EF mount adapter. Available with V-mount battery and
 - Tiffen circular polarizer
 - Cheap variable ND
 
-## FIZ and movement
+### FIZ and movement
 
 - (2x) Teradek RT FIZ systems (three motors each) + CTRL.3 handsets
   - (1x) FocusBug Cine RT rangefinder system (sensor, handset, display, and one transmitter bug)
@@ -129,7 +121,7 @@ BMPCC 4K with Wooden Camera EF mount adapter. Available with V-mount battery and
 - Sachtler aktiv adapter
 - Ride-on DIY dolly with 10’ 1” PVC pipe track (or use aluminum pipe) :notOnTruck
 
-## Monitoring
+### Monitoring
 
 - Teradek Bolt 4K/6-series transmitters (on A-CAM/AA-CAM/B-CAM/C-CAM) and receivers (monitors and Video Village)
 - 1x SmallHD Ultra 7 (A-CAM)
@@ -137,13 +129,13 @@ BMPCC 4K with Wooden Camera EF mount adapter. Available with V-mount battery and
 - 2x SmallHD Cine 18 with Teradek Bolt 6 LT 750 HDMI RX, 5 (total) 195Wh V-mount batteries
 - 2x SmallHD Cine 13 with Teradek Bolt 6 LT 750 HDMI RX, V-mount battery plate, mounts for FIZ handsets + cables
 - 2x Client monitor (27” BenQ 4K monitor PD2705U) :notOnTruck
-- Live grade with Resolve (UltraStudio 3G I/O)
+- Live grade with Resolve (UltraStudio 3G I/O) :notOnTruck
 - 2x Impact monitor stand (with wheels)
 
-## Camera support
+### Camera support
 
 - 2x Sachtler aktiv8 fluid head and Flowtech75 tripod, MiniQRB base on Manfrotto plate
-- aktiv8 to ⅜” adapter + ⅜” to baby pin
+- aktiv8 to ⅜” adapter + ⅜” to baby pin for creative grip options
 - Steadicam (see below)
 - CamWok with MiniQRB base
 - Tilta light-weight shoulder rig, MiniQRB base
@@ -151,38 +143,39 @@ BMPCC 4K with Wooden Camera EF mount adapter. Available with V-mount battery and
 - Heavy Manfrotto tripod with 502HD fluid head :notOnTruck
 - S&V basic-ish tripod with XYZ head :notOnTruck
 
-## Timecode
+### Timecode
 
 - 6x Tentacle Sync E (four cameras, sound recorder, spare)
 
-## Batteries
+### Batteries
 
-### B-mount
+#### B-mount
 
 - 6x Core SWX Helix Max Dual-Voltage, 275Wh
 - 2x four-battery charger
 - 1x SWIT hotswap plate (backup for camera-mounted one)
 
-### V-mount
+#### V-mount
 
 - 8x CAME-TV MINI 99Wh
 - 5x Wasabi 195Wh
 - 1x four-battery charger
 - 1x two-battery charger
 
-## Steadicam :notOnTruck{className="size-6"}
+### Steadicam :notOnTruck{className="size-6"}
 
 - Steadicam Axis (sled/arm/vest), rated up to 20 lb payload
 - CineLevel digital level
 - Sunbounce wind killer
 - Steadicam support kit for Inovativ cart
 
-# Lights
+## Lighting {#lighting}
 
-## COB and attached modifiers
+### COB and attached modifiers
 
 - Aputure
   - 2x STORM 1000C [weather-resistant] [w/ CRMX]
+  - 1x STORM 1200X [weather-resistant] [w/ CRMX]
   - 1x LS 1200D Pro [weather-resistant] [w/ CRMX]
   - 1x LS 600D Pro [weather-resistant] [w/ CRMX]
   - 2x STORM 80c [weather-resistant] [w/ CRMX]
@@ -212,7 +205,7 @@ BMPCC 4K with Wooden Camera EF mount adapter. Available with V-mount battery and
   - Accessories
     - 2x 12”x12” gel holders
 
-## Non-COB lights and attached modifiers
+### Non-COB lights and attached modifiers
 
 - Astera
   - 8x FP5 bulb with case [w/ CRMX]
@@ -228,7 +221,7 @@ BMPCC 4K with Wooden Camera EF mount adapter. Available with V-mount battery and
 - ColorSpike
   - 3x ColorSpike 2’ tube light
 
-## Theatrical
+### Theatrical
 
 - Wash
   - 12x Mac Aura LED moving head :notOnTruck
@@ -236,7 +229,7 @@ BMPCC 4K with Wooden Camera EF mount adapter. Available with V-mount battery and
   - 10x ETC Source Four incandescent at 375W/575W/750W :notOnTruck
     - 10x 36 degree lens tube
 
-## Stand-alone modifiers
+### Stand-alone modifiers
 
 - PortaFrame scrim kit 24” x 36”
   - Single net (green)
@@ -279,13 +272,13 @@ BMPCC 4K with Wooden Camera EF mount adapter. Available with V-mount battery and
   - 2x 43” kit
   - 1x 40”x60” kit
 
-## Reflectors
+### Reflectors
 
 - 1x DedoLight 50cm (20”) Lightstream Type 1 reflector with baby pin receiver
 
-## Control
+### Control
 
-See [DMX case](/posts/film-making/dmx-case/index.html) for details.
+See [DMX case](/notes/film-making/dmx-case/index.html) for details.
 
 - Surface Pro with ETC Nomad, custom XKeys keyboard, MidiFighter Twister controller with TwisterEos
 - Multiverse
@@ -294,17 +287,17 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
 - CRMX
   - Aptera Box (ART7) + spare ART7 on truck
 
-## Network
+### Network
 
 - Ubiquiti UniFi Express Wireless AP
 - Ubiquiti USW-FLEX-XG 10Gb switch
 - GL-iNet uplink router to venue WiFi/Ethernet
 
-## Atmospherics
+### Atmospherics
 
 - Hazer (Antari Z-350) with Antari FLG fluid :notOnTruck
 
-## Cable
+### Cable
 
 - DMX
   - 16x 15’ (dinky)
@@ -330,15 +323,15 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
 - Edison/GSP
   - 6x NEMA 5-15R -> GSPM
 
-# Stands and other grip goop
+## Stands and other grip equipment
 
-## Lightweight light stands
+### Lightweight light stands
 
 - 6x Impact 13’ stand
 - 6x Impact 9’ stand [2x on truck, 4x :notOnTruck]
 - 8x wheels for stand :notOnTruck
 
-## C-stands
+### C-stands
 
 - 6x C-stand, turtle base, with 48” arm incl. grip head
 - 4x C-stand, sliding leg, with 48” arm incl. grip head
@@ -346,7 +339,7 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
 - 6x 2.5” additional grip head to baby pin
 - FilmTools C-stand cart
 
-## Junior stands
+### Junior stands
 
 - 3x slider stand (2’ to 3’8”)
 - 1x combo stand (11’) for jib
@@ -358,12 +351,12 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
 - 2x 4.5” center lollipop for menace arm
 - 4x pipe clamp to junior pin
 
-## Extenders
+### Extenders
 
 - 2x menace arm for 1-¼” pipe
 - 3x steel baby boom (~11# at 7’ extension)
 
-## Frame kits
+### Frame kits
 
 - 2x 4’x4’ frame (¾” square tube)
 - 3x 6’x6’ frame (¾” square tube)
@@ -372,7 +365,7 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
 - 2x 1” pipe frame ear + 90s from misc SpeedRail fittings bin
 - 2x 1-¼” pipe frame ear + 90s from misc SpeedRail fittings bin
 
-## Pipe
+### Pipe
 
 - ¾” square aluminum tube
   - 4x ~4’ (4’x4’ frame)
@@ -391,7 +384,7 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
 - 1” black pipe
   - 1x 10’ threaded :notOnTruck
 
-## Pipe clamps
+### Pipe clamps
 
 - 1” pipe
   - 2x swivels
@@ -402,24 +395,24 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
   - 4x pipe clamp to junior pin
   - 4x pipe clamp to junior receiver
 
-## Adapters
+### Adapters
 
 - 5x TVMP
 - 4x nail-on baby pin plate
 
-## Clamps
+### Clamps
 
-### Magic Arms
+#### Magic Arms
 
 - 2x tiny magic arm
 - 3x 6” magic arm
 - 1x 10” magic arm
 
-### Smallest
+#### Smallest
 
 - 4x SmallRig mini SuperClamp
 
-### Small
+#### Small
 
 - 5x SuperClamp
 - 2x double-sided SuperClamp
@@ -427,57 +420,57 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
 - 2x clip clamp to baby pin
 - 13x Bessey clamps
 
-### Medium
+#### Medium
 
 - 2x duckbill clamps
 
-### Cardellinis
+#### Cardellinis
 
 - 2x 3” double spud
 - 1x 4” center jaw with threaded stud
 - 2x 4” end jaw
 
-### Suction cups / car mount with 1” starter pipe
+#### Suction cups / car mount with 1” starter pipe
 
 - 4x 4”
 - 2x 6”
 - 20x F24 (1” nominal) swivel truss clamps
 
-### Other
+#### Other
 
 - 4x drop ceiling scissor clamp with baby pin
 - 4x drop ceiling scissor clamp with cable support
 
-## Boxes
+### Boxes
 
 - 3 full sets of apple boxes
 
-## Weights
+### Weights
 
 - ~15+ sand bags
 - 3x steel weight with clamp for extension arms :notOnTruck
 
-# Sound
+## Sound {#sound}
 
-## Recording
+### Recording
 
 - 1x Zaxcom Nova 2 with two MRX414 modules (i.e. 8 channels) and TentacleSync
 - 1x Sound Devices MixPre-6 II with bag, wired for V-mount battery
 
-## Lavalier mics and transmitters
+### Lavalier mics and transmitters
 
 - 6x Zaxcom ZMT4 wireless transmitters with Sanken COS-11d mics (2x beige, 1x black, 3x white)
 - 4x Tentacle Track E recorder with factory-issue mics
 - 1x RodeLink wireless lav set :notOnTruck
 
-## Non-lavalier mics
+### Non-lavalier mics
 
 - 1x Sennheiser MKH 50
 - 1x Rode NT5
 - 1x Rode NTG4
 - 1x Shure SM7B :notOnTruck
 
-## Mic support
+### Mic support
 
 - K-Tek KP16CCR internally cabled 16’ graphite boom pole with PSC M5 Pro shock mount
 - Boom pole holder for C-stand
@@ -485,9 +478,9 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
 - 1x Rode Blimp
 - 7’ coiled XLR cable
 
-# Location support
+## Location support
 
-## Carts
+### Carts
 
 - Inovativ Voyager EVO X cart (42”)
   - Camera support kit with MiniQRB
@@ -496,10 +489,11 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
   - Steadicam kit
 - Inovativ Voyager NXT cart (42”)
   - Camera support kit with MiniQRB
+- Inovative Voyager EVO X cart (30")
+  - Gaffer and lighting controls cart
 - 2x SidioSkate wheels for SidioCrates
-- 3x cart with carpeted low and high shelves; 4 ea swivel wheels for crabbing :notOnTruck
 
-## Comms
+### Comms
 
 - Radios (long-range)
   - 3x Motorola DTR-700
@@ -512,12 +506,11 @@ See [DMX case](/posts/film-making/dmx-case/index.html) for details.
   - 1x Eartec UltraPak with corded double muff headset or security-style earpiece
   - 1x Eartec UltraHub base station with corded single muff headset
 
-## Power
+### Power
 
 - 1x Ecoflow Delta Pro power station 3.6kWh (3.6kW/7.2kW output) + 3.6kWh extra battery :notOnTruck
-- 2x Jackery Explorer 500Wh station :notOnTruck
 
-## Cover
+### Cover
 
 - 10’x10’ black video village tent with side walls and door :notOnTruck
 - Cassette toilet for remote location support :notOnTruck

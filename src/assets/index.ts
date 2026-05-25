@@ -123,17 +123,22 @@ export async function processAssets(
 }
 
 function cssFromSvg(name: string, inputSvg: string): string {
-  // Capture viewBox attribute from input SVG and also optimize the SVG code while we're at it
+  // Capture viewBox and currentColor usage from input SVG, and also optimize the SVG code while we're at it
   let viewBoxAttributeValue = "";
+  let useMask = false;
 
-  const captureViewBox: svgo.CustomPlugin = {
-    name: "captureViewBox",
+  const captureAttributes: svgo.CustomPlugin = {
+    name: "captureAttributes",
     fn: () => {
       return {
         element: {
           enter: (node) => {
             if (node.name === "svg") {
               viewBoxAttributeValue = node.attributes.viewBox;
+
+              if (Object.values(node.attributes).some((v) => v === "currentColor")) {
+                useMask = true;
+              }
             }
           },
         },
@@ -141,7 +146,10 @@ function cssFromSvg(name: string, inputSvg: string): string {
     },
   };
 
-  const optimizedSvg = svgo.optimize(inputSvg, { multipass: true, plugins: ["preset-default", captureViewBox] }).data;
+  const optimizedSvg = svgo.optimize(inputSvg, {
+    multipass: true,
+    plugins: ["preset-default", captureAttributes],
+  }).data;
 
   // Parse viewBox
   if (!viewBoxAttributeValue) {
@@ -169,11 +177,25 @@ function cssFromSvg(name: string, inputSvg: string): string {
   });
 
   // Emit CSS class
+  const dataUrl = `url('data:image/svg+xml,${encodedSvg}')`;
+
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- useMask is set inside the SVGO plugin closure which tsc can't see runs synchronously
+  const iconDataProperties = useMask
+    ? [
+        `background-color: currentColor`,
+        `mask: ${dataUrl} no-repeat center / contain`,
+        `-webkit-mask: ${dataUrl} no-repeat center / contain`,
+      ]
+    : [`background: ${dataUrl} no-repeat top left`, `background-size: contain`];
+
+  const properties = [
+    ...iconDataProperties,
+    `aspect-ratio: ${viewBoxParsedValues[2 /* width */]} / ${viewBoxParsedValues[3 /* height */]}`,
+    `print-color-adjust: exact`,
+  ];
+
   return `.svg-${name} {
-    background: url('data:image/svg+xml,${encodedSvg}') no-repeat top left;
-    background-size: contain;
-    aspect-ratio: ${viewBoxParsedValues[2 /* width */]} / ${viewBoxParsedValues[3 /* height */]};
-    print-color-adjust: ${"exact" /* ensure SVG colors are preserved in print */};
+    ${properties.join(";\n")};
   }`;
 }
 

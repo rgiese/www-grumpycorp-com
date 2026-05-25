@@ -183,7 +183,7 @@ html.dark {
 
   /* Default heading styles (anything set here should be clear-able with @apply heading-reset */
   h1 {
-    @apply text-5xl /* size */ tracking-tighter /* letter spacing */;
+    @apply text-5xl /* size */ tracking-tight /* letter spacing */;
 
     a {
       @apply text-inherit /* color */ no-underline /* decoration */;
